@@ -1,0 +1,22 @@
+{
+  "header": {
+    "home": "Karayaka",
+    "rent": "Rent",
+    "buy": "Buy",
+    "aboutUs": "About us",
+    "customOffers": "Custom Offers",
+    "blog": "Blog"
+  },
+  "blog": {
+    "header": "Blog"
+  },
+  "aboutUs": {
+    "header": "About us"
+  },
+  "custom-offers": {
+    "header": "Offer for you"
+  },
+  "search": {
+    "header": "Search"
+  }
+}

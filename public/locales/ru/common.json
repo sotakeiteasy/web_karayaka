@@ -1,0 +1,22 @@
+{
+  "header": {
+    "home": "Караяка",
+    "rent": "Аренда",
+    "buy": "Покупка",
+    "aboutUs": "О нас",
+    "customOffers": "Для вас",
+    "blog": "Блог"
+  },
+  "blog": {
+    "header": "Блог"
+  },
+  "aboutUs": {
+    "header": "О нас"
+  },
+  "custom-offers": {
+    "header": "Предложение для вас"
+  },
+  "search": {
+    "header": "Поиск"
+  }
+}
