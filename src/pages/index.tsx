@@ -54,20 +54,34 @@ export default function Home() {
             // }}
           />
         </div>
-        <div className={styles.block}>
+        <div className={styles.carouselBlock}>
             <p className={styles.blockTitle}>Some city</p>
             <div className={styles.carousel}>
               <SimpleSlider/>
             </div>
             <button className={styles.blockButton}>See all</button>
         </div>
-        <div className={styles.block}>
+        <div className={styles.carouselBlock}>
         </div>
-        <div className={styles.block}>
+        <div className={styles.carouselBlock}>
               
         </div>
-        <div className={styles.block}>
-              
+        <div className={styles.articleBlock}>
+            <p className={styles.blockTitle}>Some papers</p> 
+            <div className={styles.articleLink}>
+              <Image
+                className={styles.articleImage}
+                src={imageView}
+              />  
+              <p className={styles.articleDescription}>
+                <p className={styles.articleTitle}>articleTitle</p>
+                <p className={styles.articleText}> 
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                  Magni quo porro repellendus numquam aliquid eos iure, reiciendis doloribus. Earum, reprehenderit saepe?
+                  Laboriosam quam porro minus at excepturi consequatur sit ducimus.</p>
+              </p>
+            </div>    
+            <div className={styles.articleLink}></div>    
         </div>
       </main>
         <img src="@assets/images/turkey-view.png" alt="" />
