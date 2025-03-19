@@ -5,8 +5,8 @@ import Head from "next/head"
 
 import { useState, useEffect, ChangeEvent } from 'react';
 import { filterAds, getUniqueFilterValues } from '@/lib/ad';
-import { Ad } from '@/types/ad';
-import { Filter } from '@/types/filter';
+import { Ad } from '@/lib/types/ad';
+import { Filter } from '@/lib/types/filter';
 
 export default function Search() {
   const { t } = useTranslation("common")

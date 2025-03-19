@@ -1,6 +1,6 @@
-import { Ad } from "@/types/ad";
+import { Ad } from "@/lib/types/ad";
 import { ads } from "@/data/ads";
-import { Filter } from "@/types/filter";
+import { Filter } from "@/lib/types/filter";
 
 export function getAllAds() {
     return ads.map(ad => ({ params: {id: ad.id}}))

@@ -3,7 +3,7 @@ import styles from './index.module.scss'
 import { useTranslation } from 'next-i18next';
 
 import { getSortedPostsData } from '../../lib/blog';
-import Date from '@/components/date/date';
+import Date from '@components/date/date';
 // export async function getStaticProps() {
 //   const allBlogData = getSortedPostsData();
 //   return {
@@ -21,7 +21,7 @@ export default function Blog( {allBlogData}) {
           <ul>
             {allBlogData.map(({ id, date, title }) => (
               <li key={id}>
-                <Link href={`/blog/${id}`}>{title}</Link>
+                <Link href={`./blog/${id}`}>{title}</Link>
                 <br />
                 <Date dateString={date} />
               </li>

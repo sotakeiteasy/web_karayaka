@@ -1,9 +1,14 @@
 import Head from "next/head";
 // import Image from "next/image";
 // import { Geist, Geist_Mono } from "next/font/google";
-// import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Home.module.scss";
 
 import Link from "next/link";
+
+import Image from 'next/image'
+import imageView from '@assets/images/turkey-view.jpg'
+import SimpleSlider from '@components/carousel/carousel'
+// import videoView from '/videos/video-views.mp4'
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -25,6 +30,47 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <main className={styles.main}>
+        <div className={styles.mainImageContainer}>
+          {/* <Image 
+            src={imageView}
+            alt='views of turkey'
+            sizes="100vw"
+            quality={100}
+            fill
+            style={{
+              objectFit: 'cover',
+            }}
+            priority 
+          /> */}
+          <video className={styles.video}
+            src='/videos/video-views.mp4'
+            loop
+            autoPlay
+            muted
+            preload="auto"   
+            // style={{
+            //   objectFit: 'cover',
+            // }}
+          />
+        </div>
+        <div className={styles.block}>
+            <p className={styles.blockTitle}>Some city</p>
+            <div className={styles.carousel}>
+              <SimpleSlider/>
+            </div>
+            <button className={styles.blockButton}>See all</button>
+        </div>
+        <div className={styles.block}>
+        </div>
+        <div className={styles.block}>
+              
+        </div>
+        <div className={styles.block}>
+              
+        </div>
+      </main>
+        <img src="@assets/images/turkey-view.png" alt="" />
     </>
   );
 }

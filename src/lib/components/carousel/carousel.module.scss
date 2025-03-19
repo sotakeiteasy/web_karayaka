@@ -1,0 +1,59 @@
+.sliderWrapper {
+  max-width: 1000px;
+  position: relative;
+}
+
+.nextArrow,
+.prevArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 1;
+  
+  &:hover {
+    background: #f0f0f0;
+  }
+}
+
+.prevArrow {
+  left: 15px;
+}
+
+.nextArrow {
+  right: 15px;
+} 
+
+.adCard {
+  // display: block !important;
+  // width: 300px;
+  height: 400px;
+  margin: 0 10px;
+  border-radius: 20px;
+  box-shadow: 0 0 4px 1px black;
+
+  .cardImage {
+    object-fit: cover;
+    height: 80%;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .cardDescription {
+    font-size: .9rem;
+    padding: 10px 20px;
+
+    p {
+      // text-wrap: nowrap;
+      overflow: hidden;
+
+    }
+  }
+}

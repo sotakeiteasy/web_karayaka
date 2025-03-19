@@ -1,4 +1,4 @@
-import { Ad } from '../types/ad';
+import { Ad } from '../lib/types/ad';
 
 export const ads: Ad[] = [
   {

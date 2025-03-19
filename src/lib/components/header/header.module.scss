@@ -1,0 +1,37 @@
+@use "@styles/variables" as *;
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70px;
+    background-color: $primary-color;
+    color: $white-text;
+
+    .logo {
+        margin-right: 100px;
+    }
+
+    .nav {
+        display: flex;
+        gap: 50px;
+    }
+
+    .buttons {
+        margin-left: 100px;
+        display: flex;
+        gap: 10px;
+
+        .button {
+            border: none;
+            background-color: inherit;
+            color: inherit;
+            cursor: pointer;
+            display: flex;
+        }
+    }
+}
+
+// a {
+//     color: $white-text;
+// }
