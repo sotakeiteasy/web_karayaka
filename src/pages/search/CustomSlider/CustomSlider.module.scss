@@ -1,0 +1,24 @@
+
+.prevArrow, .nextArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    opacity: .6;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prevArrow {
+    left: 5px;
+}
+
+.nextArrow {
+    right: 5px;
+}

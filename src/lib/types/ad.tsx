@@ -28,7 +28,5 @@ export interface Ad {
     bathrooms: number;
     images: string[];
     createdAt: string;
-    updatedAt: string;
-    highlighted?: boolean;
 }
 

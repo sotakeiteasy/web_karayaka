@@ -1,0 +1,51 @@
+
+.main {
+    display: flex;
+    justify-content: center;
+
+    * {
+        outline: 1px dashed red; /* Временно помогает увидеть границы всех элементов */
+    }
+    
+    .filterBox {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        padding: 30px;
+    }
+
+    .searchBlock {
+        padding: 30px;
+
+        .controlPanel {
+            // display: flex;
+            justify-content: left;
+            padding: 10px;
+
+            .searchPanel {
+                display: flex;
+                flex-grow: 1;
+                justify-content: space-between;
+                padding: 10px 0;
+                gap: 10px;
+                
+                input {
+                    flex-grow: 1;
+                }
+            }
+
+            .addPanel {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px 0;
+
+                .filterTags {
+                    display: flex;
+                    gap: 20px;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+}

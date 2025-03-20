@@ -3,10 +3,13 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import Head from "next/head"
 
+
 import { useState, useEffect, ChangeEvent } from 'react';
 import { filterAds, getUniqueFilterValues } from '@/lib/ad';
 import { Ad } from '@/lib/types/ad';
 import { Filter } from '@/lib/types/filter';
+
+import PaginatedAds from './PaginatedAds/PaginatedAds';
 
 export default function Search() {
   const { t } = useTranslation("common")
@@ -23,6 +26,7 @@ export default function Search() {
     districts: [],
     features: []
   })
+  const [filterTags, setFilterTags] = useState<string[]>([])
 
   useEffect(() => {
     const ads = filterAds({})
@@ -30,6 +34,10 @@ export default function Search() {
 
     const values = getUniqueFilterValues()
     setFilterValues(values)
+
+    setFilterTags(Object.entries(filter)
+    .filter(([key, value]) => value !== undefined)
+    .map(([key, value]) => value))
   }, [])
 
   const handleFilterChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -41,6 +49,10 @@ export default function Search() {
 
   const applyFilter = () => {
     setFilteredAds(filterAds(filter))
+
+    setFilterTags(Object.entries(filter)
+    .filter(([key, value]) => value !== undefined)
+    .map(([key, value]) => value))
   }
 
   const [sortOption, setSortOption] = useState('')
@@ -63,75 +75,85 @@ export default function Search() {
     setFilteredAds(sortedAds)
   }
 
-  const filterTags = Object.entries(filter)
-    .filter(([key, value]) => value !== undefined)
-    .map(([key, value]) => value)
-  
+
+
+
   return (
     <>
       <Head>
           <title>Ads</title>
       </Head>
-      <h1>{t("search.header")}</h1>
-    
-      <div>
-        <label htmlFor="country">Страна</label>
-        <select name="country" id="country" value={filter.country} onChange={handleFilterChange}>
-          <option value="">Все страны</option>
-          {filterValues.countries?.map((country: string) => (
-            <option key={country} value={country}>{country}</option>
-          ))}
-        </select>
-        <button onClick={applyFilter}>Apply filters</button>
-
-        <div className={styles.filter}>
-          <label htmlFor="city">Город</label>
-          <select 
-            id="city" 
-            name="city" 
-            value={filter.city} 
-            onChange={handleFilterChange}
-          >
-            <option value="">Все города</option>
-            {filterValues.cities?.map((city: string) => (
-              <option key={city} value={city}>{city}</option>
-            ))}
-          </select>
-        </div>
-        <div className={styles.filter}>
-          <label htmlFor="type">Тип</label>
-          <select 
-            id="type" 
-            name="type" 
-            value={filter.type} 
-            onChange={handleFilterChange}
-          >
-            <option value="">Все типы</option>
-            <option value="sale">Продажа</option>
-            <option value="rent">Аренда</option>
-          </select>
-        </div>
-
-        <div>{filterTags.map(tag => <div>{tag}</div>)}</div>
-        <div>Find {filteredAds.length} ads</div>
-    
-        <select name="sort" id="sort" value = {sortOption} onChange = {handleSortChange}>
-          <option value="">Select Sorting</option>
-          <option value="date-new">Date (New Ones First)</option>
-          <option value="date-old">Date (Old Ones First)</option>
-          <option value="price-cheap">Price (Cheap Ones First)</option>
-          <option value="price-expensive">Price (Expensive Ones First)</option>
-          <option value="area-small">Area (Small Ones First)</option>
-          <option value="area-large">Area (Large Ones First)</option>
-        </select>
-        {filteredAds.map(ad => (
-          <div key={ad.id}>
-            <h2>{ad.title.en}</h2>
-            <p> {ad.location.country}, {ad.location.city}, {ad.location.district} </p>
-            <p> {ad.price}$ </p>
-            <a href={`/ads/${ad.id}`}>подробнее</a>
+      <div className={styles.main}>
+        <div className={styles.filterBox}>
+        <h1>{t("search.header")}</h1>
+          <div className={styles.filter}>
+            <label htmlFor="country">Страна</label>
+            <select name="country" id="country" value={filter.country} onChange={handleFilterChange}>
+              <option value="">Все страны</option>
+              {filterValues.countries?.map((country: string) => (
+                <option key={country} value={country}>{country}</option>
+              ))}
+            </select>
           </div>
-        ))}
+        
+          <div className={styles.filter}>
+            <label htmlFor="city">Город</label>
+            <select 
+              id="city" 
+              name="city" 
+              value={filter.city} 
+              onChange={handleFilterChange}
+            >
+              <option value="">Все города</option>
+              {filterValues.cities?.map((city: string) => (
+                <option key={city} value={city}>{city}</option>
+              ))}
+            </select>
+          </div>
+          <div className={styles.filter}>
+            <label htmlFor="type">Тип</label>
+            <select 
+              id="type" 
+              name="type" 
+              value={filter.type} 
+              onChange={handleFilterChange}
+            >
+              <option value="">Все типы</option>
+              <option value="sale">Продажа</option>
+              <option value="rent">Аренда</option>
+            </select>
+          </div>
+
+          <button onClick={applyFilter}>Apply filters</button>
+
+        </div>
+
+        <div className={styles.searchBlock}>
+          <div className={styles.controlPanel}>
+            <div className={styles.searchPanel}>
+              <input type="text" />
+              <button> Search </button>
+              <button> Sth button </button>
+            </div>
+            <div className={styles.addPanel}>
+              {/* <div>Find {filteredAds.length} ads</div> */}
+              <div className={styles.filterTags}>
+                {filterTags.map(tag => <div>{tag.charAt(0).toUpperCase() + tag.slice(1)}</div>)}
+              </div>
+
+              <select name="sort" id="sort" value = {sortOption} onChange = {handleSortChange}>
+                <option value="">Select Sorting</option>
+                <option value="date-new">Date (New Ones First)</option>
+                <option value="date-old">Date (Old Ones First)</option>
+                <option value="price-cheap">Price (Cheap Ones First)</option>
+                <option value="price-expensive">Price (Expensive Ones First)</option>
+                <option value="area-small">Area (Small Ones First)</option>
+                <option value="area-large">Area (Large Ones First)</option>
+              </select>
+            </div>
+          </div>
+          <PaginatedAds itemsPerPage={1} ads={filteredAds}/>
+        </div>
       </div>
     </>
   )

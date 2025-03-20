@@ -1,5 +1,4 @@
 import { Ad } from '../lib/types/ad';
-
 export const ads: Ad[] = [
   {
     id: '1',
@@ -26,10 +25,8 @@ export const ads: Ad[] = [
     area: 120,
     bedrooms: 2,
     bathrooms: 2,
-    images: ['/images/apartments1.jpg', '/images/apartments1-2.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
     createdAt: '2023-01-15T12:00:00Z',
-    updatedAt: '2023-01-15T12:00:00Z',
-    highlighted: true,
   },
   {
     id: '2',
@@ -56,9 +53,8 @@ export const ads: Ad[] = [
     area: 250,
     bedrooms: 4,
     bathrooms: 3,
-    images: ['/images/villa1.jpg', '/images/villa1-2.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
     createdAt: '2023-02-10T15:30:00Z',
-    updatedAt: '2023-02-10T15:30:00Z',
   },
   {
     id: '3',
@@ -86,8 +82,91 @@ export const ads: Ad[] = [
     area: 80,
     bedrooms: 2,
     bathrooms: 1,
-    images: ['/images/moscow-apt1.jpg', '/images/moscow-apt1-2.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
     createdAt: '2023-03-05T10:15:00Z',
-    updatedAt: '2023-03-05T10:15:00Z',
+  },
+  {
+    id: '4',
+    title: {
+      ru: 'Роскошная вилла на Кипре с бассейном',
+      en: 'Luxurious villa in Cyprus with pool',
+    },
+    description: {
+      ru: 'Элегантная вилла с великолепным видом на море, собственным бассейном и садом.',
+      en: 'Elegant villa with stunning sea views, private pool, and garden.',
+    },
+    price: 500000,
+    location: {
+      country: 'Cyprus',
+      city: 'Paphos',
+      district: 'Kato Paphos',
+      coordinates: {
+        lat: 34.7556,
+        lng: 32.4228,
+      },
+    },
+    type: 'sale',
+    features: ['sea view', 'private pool', 'garden', 'security'],
+    area: 300,
+    bedrooms: 5,
+    bathrooms: 4,
+    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    createdAt: '2023-03-15T14:00:00Z',
+  },
+  {
+    id: '5',
+    title: {
+      ru: 'Современная квартира в Стамбуле',
+      en: 'Modern apartment in Istanbul',
+    },
+    description: {
+      ru: 'Стильная квартира в центре Стамбула с видом на Босфор и удобной транспортной доступностью.',
+      en: 'Stylish apartment in central Istanbul with Bosphorus view and convenient transport access.',
+    },
+    price: 220000,
+    location: {
+      country: 'Turkey',
+      city: 'Istanbul',
+      district: 'Beyoglu',
+      coordinates: {
+        lat: 41.0353,
+        lng: 28.9784,
+      },
+    },
+    type: 'sale',
+    features: ['Bosphorus view', 'modern design', 'fully furnished'],
+    area: 100,
+    bedrooms: 2,
+    bathrooms: 2,
+    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    createdAt: '2023-03-18T08:45:00Z',
+  },
+  {
+    id: '6',
+    title: {
+      ru: 'Квартира с видом на Кремль',
+      en: 'Apartment with a view of the Kremlin',
+    },
+    description: {
+      ru: 'Уникальная квартира с панорамным видом на Кремль и исторический центр Москвы.',
+      en: 'Unique apartment with panoramic views of the Kremlin and historical center of Moscow.',
+    },
+    price: 2500,
+    location: {
+      country: 'Russia',
+      city: 'Moscow',
+      district: 'Kremlin',
+      coordinates: {
+        lat: 55.7522,
+        lng: 37.6173,
+      },
+    },
+    type: 'rent',
+    features: ['Kremlin view', 'city center', 'fully furnished'],
+    area: 120,
+    bedrooms: 3,
+    bathrooms: 2,
+    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    createdAt: '2023-03-20T09:30:00Z',
   },
 ];
