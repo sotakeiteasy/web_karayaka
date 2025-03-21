@@ -160,11 +160,9 @@ export default function Search() {
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export async function getStaticProps({ locale, params }) {
-  const adData = getAdById(params.id);   // for ad
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
-      adData                             // for ad
     },
   };
 }

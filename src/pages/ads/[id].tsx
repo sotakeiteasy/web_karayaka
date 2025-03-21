@@ -4,12 +4,12 @@ import Head from "next/head"
 import styles from "./id.module.scss"
 import Image from "next/image";
 
-export default function AdPage({postData}) {
+export default function AdPage({adData}) {
 
     return (
         <>
             <Head>
-                <title>{postData.title.en}</title>
+                <title>{adData.title.en}</title>
             </Head>
             <div className={styles.main}>
                 <div className={styles.mainImage}>
@@ -22,10 +22,10 @@ export default function AdPage({postData}) {
                 </div>
                 <div className={styles.info}>
                     <div className={styles.description}>
-                       { postData.description.en}
+                       { adData.description.en}
                     </div>
                     <div className={styles.tags}>
-                        {postData.features.map(f => (
+                        {adData.features.map(f => (
                             <div className={styles.tag} key={f}>{f}</div>
                         ))}
                     </div>
@@ -47,11 +47,11 @@ export function getStaticPaths() {
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export async function getStaticProps({ params, locale }) {
-    const postData = getAdById(params.id)
+    const adData = getAdById(params.id)
   return {
     props: {
           ...(await serverSideTranslations(locale, ['common'])),
-        postData
+          adData
     },
   };
 }
