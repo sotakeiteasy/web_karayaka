@@ -1,0 +1,126 @@
+.main{
+    display: flex;
+    flex-direction: column;
+
+    .header{
+        display: flex;
+        justify-content: space-between;
+        text-transform:uppercase;
+        align-items: center;
+        margin: 40px;
+        color: #002F6C;
+        font-weight: 100;
+    }
+    .header:after{
+        content: " ";
+        flex-grow: 1;
+        margin-left: 40px;
+        border-bottom: 1px solid black; 
+        display: block;
+    }
+
+    .infoBlock{
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        margin-left: 40px;
+        margin-right: 40px;
+
+        .faq{
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            background-color: #002F6C;
+            border-radius: 15px;   
+            color: white;
+
+                h2{
+                    font-size: 2rem;
+                    margin-bottom: 20px;
+                }
+                
+                p{
+                    border: 2px solid #011731;
+                    border-radius: 15px;
+                    background-color: #012047;
+                    margin-bottom: 10px;
+                    padding: 5px;
+                }
+        }
+        
+        .mapBlock{
+            display: flex;
+            flex-direction: column;
+            width: 55%;  
+
+            .map{
+                margin-bottom: 15px;
+                // temporal:
+                width: 100%;
+                height: 400px;
+                background-color: black;
+                
+            }
+
+            .mapDescription{
+                display: flex;
+                justify-content: space-between;
+                gap: 30px;
+            }
+        }
+
+    }
+
+    .form{
+        display: flex;
+        gap: 40px;
+        padding: 30px;
+        margin: 40px;
+        box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205);
+        border-radius: 15px;
+            form{
+                width: 50%;
+                input{
+                    border-radius: 8px;
+                    border: 2px solid #002F6C;
+                    font-size: 1.2rem;
+                    padding: 2px 5px;
+                    font-family: inherit;
+                }
+            }
+        
+
+        legend{
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .formRow:first-of-type{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            div{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        .formRow{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        textarea{
+            resize: none;
+            width: 50%;
+            border: 2px solid #002F6C;
+            border-radius: 8px;
+            padding: 10px 15px;
+            font-family: inherit;
+        }
+    
+    }
+}
