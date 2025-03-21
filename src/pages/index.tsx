@@ -73,7 +73,7 @@ export default function Home() {
                 className={styles.articleImage}
                 src={imageView}
               />  
-              <p className={styles.articleDescription}>
+              <div className={styles.articleDescription}>
                 <p className={styles.articleTitle}>
                   articleTitle
                 </p>
@@ -82,7 +82,7 @@ export default function Home() {
                   Magni quo porro repellendus numquam aliquid eos iure, reiciendis doloribus. Earum, reprehenderit saepe?
                   Laboriosam quam porro minus at excepturi consequatur sit ducimus.
                 </p>
-              </p>
+              </div>
             </div>      
             <div className={styles.articleLink}></div>    
         </div>
