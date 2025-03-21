@@ -3,9 +3,8 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import Head from "next/head"
 
-
 import { useState, useEffect, ChangeEvent } from 'react';
-import { filterAds, getUniqueFilterValues } from '@/lib/ad';
+import { filterAds, getAdById, getUniqueFilterValues } from '@/lib/ad';
 import { Ad } from '@/lib/types/ad';
 import { Filter } from '@/lib/types/filter';
 
@@ -160,10 +159,12 @@ export default function Search() {
 }
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale, params }) {
+  const adData = getAdById(params.id);   // for ad
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
+      adData                             // for ad
     },
   };
 }
@@ -174,78 +175,3 @@ export async function getStaticProps({ locale }) {
 
 
 
-
-
-
-
-
-
-// Также создайте страницу для просмотра деталей объявления `pages/advertisement/[id].tsx`:
-
-// tsx
-// import { GetServerSideProps } from 'next';
-// import { useRouter } from 'next/router';
-// import { getAdvertisementById } from '../../lib/advertisements';
-// import { Advertisement } from '../../types/advertisement';
-// import styles from './advertisement.module.scss';
-
-// interface AdvertisementPageProps {
-//   advertisement: Advertisement | null;
-// }
-
-// export default function AdvertisementPage({ advertisement }: AdvertisementPageProps) {
-//   const router = useRouter();
-  
-//   if (router.isFallback) {
-//     return <div>Загрузка...</div>;
-//   }
-  
-//   if (!advertisement) {
-//     return <div>Объявление не найдено</div>;
-//   }
-  
-//   return (
-//     <div className={styles.adDetailPage}>
-//       <div className={styles.adImagesSlider}>
-//         {advertisement.images.map((image, index) => (
-//           <div key={index} className={styles.adImageSlide}>
-//             <img src={image} alt={${advertisement.title} - фото ${index + 1}} />
-//           </div>
-//         ))}
-//       </div>
-      
-//       <div className={styles.adContent}>
-//         <h1>{advertisement.title}</h1>
-        
-//         <div className={styles.adLocation}>
-//           {advertisement.location.country}, {advertisement.location.city}, {advertisement.location.district}
-//           {advertisement.location.address && , ${advertisement.location.address}}
-//         </div>
-        
-//         <div className={styles.adPrice}>
-//           <span className={styles.priceValue}>{advertisement.price.amount}</span>
-//           <span className={styles.priceCurrency}>{advertisement.price.currency}</span>
-//           <span className={styles.adType}>{advertisement.type === 'sale' ? 'Продажа' : 'Аренда'}</span>
-//         </div>
-        
-//         <div className={styles.adSpecs}>
-//           <div className={styles.specItem}>
-//             <span className={styles.specValue}>{advertisement.area}</span>
-//             <span className={styles.specLabel}>м²</span>
-//           </div>
-//           <div className={styles.specItem}>
-//             <span className={styles.specValue}>{advertisement.bedrooms}</span>
-//             <span className={styles.specLabel}>спальни</span>
-//           </div>
-//           <div className={styles.specItem}>
-//             <span className={styles.specValue}>{advertisement.bathrooms}</span>
-//             <span className={styles.specLabel}>ванные</span>
-//           </div>
-//         </div>
-        
-//         <div className={styles.adDescription}>
-//           <h2>Описание</h2>
-//           <p>{advertisement.description.ru}</p>
-//         </div>
-        
-//         {advertisement.features.length > 0 && (

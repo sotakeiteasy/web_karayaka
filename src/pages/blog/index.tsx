@@ -4,14 +4,6 @@ import { useTranslation } from 'next-i18next';
 
 import { getSortedPostsData } from '../../lib/blog';
 import Date from '@components/date/date';
-// export async function getStaticProps() {
-//   const allBlogData = getSortedPostsData();
-//   return {
-//     props: {
-//       allBlogData,
-//     },
-//   };
-// }
 
 export default function Blog( {allBlogData}) {
     const { t } = useTranslation('common')

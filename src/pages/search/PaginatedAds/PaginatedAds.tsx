@@ -5,7 +5,7 @@ import CustomSlider from '../CustomSlider/CustomSlider';
 import styles from './PaginatedAds.module.scss';
 
 import { useRouter } from 'next/router';
-
+import Link from 'next/link';
 
 function Items({ currentItems }) {
   return (
@@ -32,7 +32,7 @@ function Items({ currentItems }) {
               <h2>{ad.title.en}</h2>
               <p> {ad.location.country}, {ad.location.city}, {ad.location.district} </p>
               <p> {ad.price}$ </p>
-              <a href={`/ads/${ad.id}`}>подробнее</a>
+              <Link href={`/ads/${ad.id}`}>подробнее</Link>
             </div>
           </div>
         ))} 
