@@ -100,10 +100,8 @@ export default function Search() {
       // 2. Формируем URL параметры
       const query: Record<string, string> = {};
       
-      // Сохраняем номер текущей страницы, если он есть
-      if (router.query.page) {
-        query.page = router.query.page as string;
-      }
+      // При изменении фильтров всегда сбрасываем на первую страницу
+      // Не добавляем параметр page - это автоматически означает первую страницу
       
       // Добавляем только значимые параметры в URL
       if (appliedFilter.type) query.type = appliedFilter.type;
@@ -161,9 +159,9 @@ export default function Search() {
 
   // Обновленная функция сброса фильтров
   const resetFilters = () => {
-    // При сбросе фильтров сохраняем параметр page, если он есть
-    const currentPage = router.query.page ? `?page=${router.query.page}` : '';
-    window.location.href = `/search${currentPage}`;
+    // Сохраняем только параметр type (аренда/продажа), если он есть
+    const typeParam = router.query.type ? `?type=${router.query.type}` : '';
+    window.location.href = `/search${typeParam}`;
   }
 
   return (
@@ -182,7 +180,9 @@ export default function Search() {
             <select name="country" id="country" value={filter.country} onChange={handleFilterChange}>
               <option value="">{t("search.filters.allCountries")}</option>
               {filterValues.countries?.map((country, index) => (
-                <option key={`${country.en}-${index}`} value={country.en}>{country.ru}</option>
+                <option key={`${country.en}-${index}`} value={country.en}>
+                  {(router.locale && country[router.locale as keyof typeof country]) || country.en}
+                </option>
               ))}
             </select>
           </div>
@@ -197,7 +197,9 @@ export default function Search() {
             >
               <option value="">{t("search.filters.allCities")}</option>
               {filterValues.cities?.map((city, index) => (
-                <option key={`${city.en}-${index}`} value={city.en}>{city.ru}</option>
+                <option key={`${city.en}-${index}`} value={city.en}>
+                  {(router.locale && city[router.locale as keyof typeof city]) || city.en}
+                </option>
               ))}
             </select>
           </div>
@@ -212,7 +214,9 @@ export default function Search() {
             >
               <option value="">{t("search.filters.allTypes")}</option>
               {filterValues.propertyType?.map((type, index) => (
-                <option key={`${type.en}-${index}`} value={type.en}>{type.ru}</option>
+                <option key={`${type.en}-${index}`} value={type.en}>
+                  {(router.locale && type[router.locale as keyof typeof type]) || type.en}
+                </option>
               ))}
             </select>
           </div>
