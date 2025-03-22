@@ -17,21 +17,8 @@ function Items({ currentItems }) {
             </div>
             <div className={styles.adCardDescription}>
               <h2>{ad.title.en}</h2>
-              <p> {ad.location.country}, {ad.location.city}, {ad.location.district} </p>
-              <p> {ad.price}$ </p>
-              <a href={`/ads/${ad.id}`}>подробнее</a>
-            </div>
-          </div>
-        ))}
-        {currentItems?.map(ad => (
-          <div className={styles.adCard} key={ad.id}>
-            <div className={styles.adCardImage}>
-              <CustomSlider ad={ad}/>
-            </div>
-            <div className={styles.adCardDescription}>
-              <h2>{ad.title.en}</h2>
-              <p> {ad.location.country}, {ad.location.city}, {ad.location.district} </p>
-              <p> {ad.price}$ </p>
+              <p> {ad.location.country.en}, {ad.location.city.en}, {ad.location.district.en} </p>
+              <p> {ad.price.usd}$ </p>
               <Link href={`/ads/${ad.id}`}>подробнее</Link>
             </div>
           </div>

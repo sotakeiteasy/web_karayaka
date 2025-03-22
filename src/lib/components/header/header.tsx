@@ -5,7 +5,6 @@ import { useTranslation } from 'next-i18next';
 import Icon from '@mdi/react';
 import { mdiTriangleSmallDown } from '@mdi/js';
 
-
 export default function Header() {
     const { t } = useTranslation('common');
 
@@ -13,8 +12,8 @@ export default function Header() {
         <header className={styles.header}>
             <nav className={styles.nav}>
                 <Link className={styles.logo} href="/">{t('header.home')}</Link>
-                <Link href="/search">{t('header.rent')}</Link>
-                <Link href="/search">{t('header.buy')}</Link>
+                <Link href="/search?type=rent">{t('header.rent')}</Link>
+                <Link href="/search?type=sale">{t('header.buy')}</Link>
                 <Link href="/about-us">{t('header.aboutUs')}</Link>
                 <Link href="/custom-offers">{t('header.customOffers')}</Link>
                 <Link href="/blog">{t('header.blog')}</Link>
@@ -23,7 +22,7 @@ export default function Header() {
                 <button className={styles.button}>
                      ENG 
                      <Icon path={mdiTriangleSmallDown} size={1} />  
-                     </button>
+                </button>
                 <button className={styles.button}> 
                     USD 
                     <Icon path={mdiTriangleSmallDown} size={1} />
