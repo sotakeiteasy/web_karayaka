@@ -7,6 +7,12 @@
     "customOffers": "Custom Offers",
     "blog": "Blog"
   },
+  "home": {
+    "rentInTurkey": "Rent in Turkey",
+    "buyInTurkey": "Buy in Turkey",
+    "seeAll": "See all",
+    "articles": "Latest Articles"
+  },
   "blog": {
     "header": "Blog"
   },

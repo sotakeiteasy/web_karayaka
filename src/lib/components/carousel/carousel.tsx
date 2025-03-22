@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import Slider from "react-slick";
 import styles from './carousel.module.scss';
+import Link from "next/link";
 
 import Image from "next/image";
 import imageExamlpe from "@assets/images/turkey-view.jpg";
@@ -31,7 +32,8 @@ const PrevArrow = (props: any) => {
   );
 };
 
-export default function SimpleSlider() {
+export default function SimpleSlider({ type, country, locale }: { type: string, country: string, locale: string }) {
+    const filteredAds = ads.filter(ad => (ad.type === type && ad.location.country.en === country))
     const settings = {
       dots: false,
       infinite: true,
@@ -44,20 +46,22 @@ export default function SimpleSlider() {
     return (
       <div className={styles.sliderWrapper}>
         <Slider {...settings}>
-        {ads.map(card => (
-            <div className={styles.slide}>
-                <div className={styles.adCard}>
+        {filteredAds.map(card => (
+            <div key={card.id} className={styles.slide}>
+              <div className={styles.adCard}>
+                <Link href={`/ads/${card.id}`} locale={locale}>
                     <Image
                         className={styles.cardImage}
                         src={imageExamlpe}
                         alt="imageExample"
                     />
                     <div className={styles.cardDescription}>
-                        <p>{card.title.ru}</p>
-                        <p>{card.location.city}</p>
-                        <p>{card.price}</p>
+                        <p>{card.title[locale]}</p>
+                        <p>{card.location.city[locale]}</p>
+                        {/* <p>{card.price.rub}</p> */}
                     </div>
-                </div>
+                </Link>
+              </div>
             </div>
         ))}
         </Slider>

@@ -4,12 +4,12 @@ import Head from "next/head"
 import styles from "./id.module.scss"
 import Image from "next/image";
 
-export default function AdPage({adData}) {
+export default function AdPage({adData, locale}) {
 
     return (
         <>
             <Head>
-                <title>{adData.title.en}</title>
+                <title>{adData.title[locale]}</title>
             </Head>
             <div className={styles.main}>
                 <div className={styles.mainImage}>
@@ -22,7 +22,7 @@ export default function AdPage({adData}) {
                 </div>
                 <div className={styles.info}>
                     <div className={styles.description}>
-                       { adData.description.en}
+                       { adData.description[locale] }
                     </div>
                     <div className={styles.tags}>
                         {adData.features.map(f => (
@@ -65,7 +65,8 @@ export async function getStaticProps({ params, locale }) {
   return {
     props: {
           ...(await serverSideTranslations(locale, ['common'])),
-          adData
+          adData,
+          locale
     },
   };
 }

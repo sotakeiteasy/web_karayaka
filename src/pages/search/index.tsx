@@ -123,7 +123,7 @@ export default function Search() {
       if (appliedFilter.address) query.address = appliedFilter.address;
       
       // Обновляем URL без перезагрузки страницы
-      router.push({ pathname: router.pathname, query }, undefined, { shallow: true });
+      router.replace({ pathname: router.pathname, query }, undefined, { shallow: true });
     }
   }, [appliedFilter, sortOption, router.isReady]);
 

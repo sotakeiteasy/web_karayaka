@@ -7,6 +7,12 @@
     "customOffers": "Для вас",
     "blog": "Блог"
   },
+  "home": {
+    "rentInTurkey": "Аренда в Турции",
+    "buyInTurkey": "Покупка в Турции",
+    "seeAll": "Смотреть все",
+    "articles": "Последние статьи"
+  },
   "blog": {
     "header": "Блог"
   },
