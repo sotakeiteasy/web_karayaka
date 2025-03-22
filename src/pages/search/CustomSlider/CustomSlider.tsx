@@ -37,41 +37,6 @@ export default function CustomSlider({ ad }) {
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,
       beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
-  
-      appendDots: dots => (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            width: "100%",
-            position: "absolute",
-            bottom: "10px",
-            margin: "0",
-          }}
-        >
-          <ul 
-            style={{
-            display: "flex",
-            listStyle: "none",
-            padding: "0",
-            margin: "0",
-            }}
-          > 
-          {`${currentSlide + 1} / ${ad?.images?.length}`}
-  
-          </ul>
-        </div>
-      ),
-      customPaging: i => (
-        <div
-          style={{
-            width: "30px",
-          }}
-        >
-          {i + 1}
-        </div>
-      ),
-  
     };
   
     return (
