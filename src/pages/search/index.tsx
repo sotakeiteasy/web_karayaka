@@ -49,6 +49,7 @@ export default function Search() {
     } 
   }
 
+  // Объединенный useEffect для загрузки начальных фильтров из URL
   useEffect(() => {
     if (router.isReady) {
       // Создаем фильтр из URL параметров
@@ -88,6 +89,7 @@ export default function Search() {
     }
   }, [router.isReady, type, country, city, propertyType, minPrice, maxPrice, minArea, maxArea, bedrooms, floor, parking, balcony, furnished]);
 
+  // Объединенный useEffect для фильтрации и обновления URL
   useEffect(() => {
     if (router.isReady) {
       // 1. Фильтруем и сортируем объявления
@@ -97,6 +99,11 @@ export default function Search() {
 
       // 2. Формируем URL параметры
       const query: Record<string, string> = {};
+      
+      // Сохраняем номер текущей страницы, если он есть
+      if (router.query.page) {
+        query.page = router.query.page as string;
+      }
       
       // Добавляем только значимые параметры в URL
       if (appliedFilter.type) query.type = appliedFilter.type;
@@ -152,12 +159,11 @@ export default function Search() {
     setFilteredAds(sortedAds)
   }
 
+  // Обновленная функция сброса фильтров
   const resetFilters = () => {
-    setFilter({});
-    setAppliedFilter({});
-    setSearchText('');
-    
-    window.location.href = '/search';
+    // При сбросе фильтров сохраняем параметр page, если он есть
+    const currentPage = router.query.page ? `?page=${router.query.page}` : '';
+    window.location.href = `/search${currentPage}`;
   }
 
   return (
@@ -172,9 +178,9 @@ export default function Search() {
           
           {/* Существующие фильтры */}
           <div className={styles.filter}>
-            <label htmlFor="country">Страна</label>
+            <label htmlFor="country">{t("search.filters.country")}</label>
             <select name="country" id="country" value={filter.country} onChange={handleFilterChange}>
-              <option value="">Все страны</option>
+              <option value="">{t("search.filters.allCountries")}</option>
               {filterValues.countries?.map((country, index) => (
                 <option key={`${country.en}-${index}`} value={country.en}>{country.ru}</option>
               ))}
@@ -182,14 +188,14 @@ export default function Search() {
           </div>
 
           <div className={styles.filter}>
-            <label htmlFor="city">Город</label>
+            <label htmlFor="city">{t("search.filters.city")}</label>
             <select 
               id="city" 
               name="city" 
               value={filter.city} 
               onChange={handleFilterChange}
             >
-              <option value="">Все города</option>
+              <option value="">{t("search.filters.allCities")}</option>
               {filterValues.cities?.map((city, index) => (
                 <option key={`${city.en}-${index}`} value={city.en}>{city.ru}</option>
               ))}
@@ -197,14 +203,14 @@ export default function Search() {
           </div>
 
           <div className={styles.filter}>
-            <label htmlFor="district">Тип жилья</label>
+            <label htmlFor="district">{t("search.filters.propertyType")}</label>
             <select 
               id="district" 
               name="propertyType" 
               value={filter.propertyType} 
               onChange={handleFilterChange}
             >
-              <option value="">Все типы</option>
+              <option value="">{t("search.filters.allTypes")}</option>
               {filterValues.propertyType?.map((type, index) => (
                 <option key={`${type.en}-${index}`} value={type.en}>{type.ru}</option>
               ))}
@@ -228,7 +234,7 @@ export default function Search() {
           {/* Новые фильтры для числовых значений */}
           <div className={styles.filterRow}>
             <div className={styles.filter}>
-              <label htmlFor="minPrice">Цена от</label>
+              <label htmlFor="minPrice">{t("search.filters.priceFrom")}</label>
               <input 
                 type="text" 
                 id="minPrice" 
@@ -243,7 +249,7 @@ export default function Search() {
               />
             </div>
             <div className={styles.filter}>
-              <label htmlFor="maxPrice">до</label>
+              <label htmlFor="maxPrice">{t("search.filters.priceTo")}</label>
               <input 
                 type="text" 
                 id="maxPrice" 
@@ -261,7 +267,7 @@ export default function Search() {
 
           <div className={styles.filterRow}>
             <div className={styles.filter}>
-              <label htmlFor="minArea">Площадь от</label>
+              <label htmlFor="minArea">{t("search.filters.areaFrom")}</label>
               <input 
                 type="text" 
                 id="minArea" 
@@ -276,7 +282,7 @@ export default function Search() {
               />
             </div>
             <div className={styles.filter}>
-              <label htmlFor="maxArea">до</label>
+              <label htmlFor="maxArea">{t("search.filters.areaTo")}</label>
               <input 
                 type="text" 
                 id="maxArea" 
@@ -293,7 +299,7 @@ export default function Search() {
           </div>
 
           <div className={styles.filter}>
-                <label htmlFor="bedrooms">Количество спален</label>
+                <label htmlFor="bedrooms">{t("search.filters.bedrooms")}</label>
                 <select 
                   id="bedrooms" 
                   name="bedrooms" 
@@ -305,7 +311,7 @@ export default function Search() {
                     }
                   } as any)}
                 >
-                <option value="">Любое</option>
+                <option value="">{t("search.filters.any")}</option>
                 <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -314,7 +320,7 @@ export default function Search() {
           </div>
 
           <div className={styles.filter}>
-            <label htmlFor="floor">Этаж</label>
+            <label htmlFor="floor">{t("search.filters.floor")}</label>
             <select 
               id="floor" 
               name="floor" 
@@ -326,7 +332,7 @@ export default function Search() {
                 }
               } as any)}
             >
-              <option value="">Любой</option>
+              <option value="">{t("search.filters.anyFloor")}</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -348,7 +354,7 @@ export default function Search() {
                   setFilter(newFilter);
                 }}
               />
-              <label htmlFor="parking">Парковка</label>
+              <label htmlFor="parking">{t("search.filters.parking")}</label>
             </div>
             
             <div className={styles.checkbox}>
@@ -363,7 +369,7 @@ export default function Search() {
                   setFilter(newFilter);
                 }}
               />
-              <label htmlFor="balcony">Балкон</label>
+              <label htmlFor="balcony">{t("search.filters.balcony")}</label>
             </div>
             
             <div className={styles.checkbox}>
@@ -378,13 +384,13 @@ export default function Search() {
                   setFilter(newFilter);
                 }}
               />
-              <label htmlFor="furnished">Мебель</label>
+              <label htmlFor="furnished">{t("search.filters.furnished")}</label>
             </div>
           </div>
 
           <div className={styles.filterActions}>
             <button className={styles.applyButton} onClick={applyFilters}>
-              Применить фильтры
+              {t("search.filters.apply")}
             </button>
           </div>
         </div>
@@ -397,9 +403,9 @@ export default function Search() {
                 type="text" 
                 value={searchText}
                 onChange={handleSearchChange}
-                placeholder='Search by address'
+                placeholder={t("search.filters.searchPlaceholder")}
               />
-              <button onClick={applyFilters}>Search</button>
+              <button onClick={applyFilters}>{t("search.filters.searchButton")}</button>
             </div>
 
             <div className={styles.addPanel}>
@@ -408,16 +414,16 @@ export default function Search() {
               </div>
 
               <select name="sort" id="sort" value = {sortOption} onChange = {handleSortChange}>
-                <option value="price-cheap">Price (Cheap Ones First)</option>
-                <option value="price-expensive">Price (Expensive Ones First)</option>
-                <option value="area-small">Area (Small Ones First)</option>
-                <option value="area-large">Area (Large Ones First)</option>
+                <option value="price-cheap">{t("search.sorting.cheapFirst")}</option>
+                <option value="price-expensive">{t("search.sorting.expensiveFirst")}</option>
+                <option value="area-small">{t("search.sorting.smallFirst")}</option>
+                <option value="area-large">{t("search.sorting.largeFirst")}</option>
               </select>
 
               
             </div>
             <button onClick={resetFilters} className={styles.resetButton}>
-                Reset Filters
+                {t("search.filters.reset")}
             </button>
           </div>
           <PaginatedAds itemsPerPage={1} ads={filteredAds}/>

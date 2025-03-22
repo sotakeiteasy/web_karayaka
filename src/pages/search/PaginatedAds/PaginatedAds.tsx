@@ -7,7 +7,7 @@ import styles from './PaginatedAds.module.scss';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-function Items({ currentItems }) {
+function Items({ currentItems, locale }) {
   return (
     <div className={styles.adsList}>
         {currentItems?.map(ad => (
@@ -19,7 +19,12 @@ function Items({ currentItems }) {
               <h2>{ad.title.en}</h2>
               <p> {ad.location.country.en}, {ad.location.city.en}, {ad.location.district.en} </p>
               <p> {ad.price.usd}$ </p>
-              <Link href={`/ads/${ad.id}`}>подробнее</Link>
+              <Link 
+                href={`/ads/${ad.id}`}
+                locale={locale}
+              >
+                подробнее
+              </Link>
             </div>
           </div>
         ))} 
@@ -45,7 +50,17 @@ export default function PaginatedAds ({itemsPerPage, ads}) {
   const pageCount = Math.ceil(ads.length / itemsPerPage);
 
   const handlePageClick = (event) => {
-    router.push(`/search?page=${event.selected + 1}`);
+    // Получаем текущие параметры запроса
+    const currentQuery = { ...router.query };
+    
+    // Обновляем только номер страницы
+    currentQuery.page = (event.selected + 1).toString();
+    
+    // Сохраняем все фильтры и переходим на новую страницу
+    router.push({
+      pathname: router.pathname,
+      query: currentQuery
+    });
   };
 
   // const handlePageClick = (event) => {
@@ -55,7 +70,7 @@ export default function PaginatedAds ({itemsPerPage, ads}) {
 
   return (
     <>
-      <Items currentItems={currentAds} />
+      <Items currentItems={currentAds} locale={router.locale} />
       <ReactPaginate
         breakLabel="..."
         nextLabel="Next"

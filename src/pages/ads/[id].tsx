@@ -36,8 +36,22 @@ export default function AdPage({adData}) {
     )
 }
 
-export function getStaticPaths() {
-    const paths = getAllAds();
+export function getStaticPaths({ locales }) {
+    const ads = getAllAds();
+    
+    // Создаем пути для каждой локали
+    const paths = [];
+    
+    // Для каждого объявления создаем путь для каждой локали
+    ads.forEach(ad => {
+        locales.forEach(locale => {
+            paths.push({
+                params: { id: ad.params.id },
+                locale
+            });
+        });
+    });
+    
     return {
         paths,
         fallback: false

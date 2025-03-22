@@ -17,6 +17,35 @@
     "header": "Предложение для вас"
   },
   "search": {
-    "header": "Поиск"
+    "header": "Поиск",
+    "filters": {
+      "country": "Страна",
+      "allCountries": "Все страны",
+      "city": "Город",
+      "allCities": "Все города",
+      "propertyType": "Тип жилья",
+      "allTypes": "Все типы",
+      "priceFrom": "Цена от",
+      "priceTo": "до",
+      "areaFrom": "Площадь от",
+      "areaTo": "до",
+      "bedrooms": "Количество спален",
+      "any": "Любое",
+      "floor": "Этаж",
+      "anyFloor": "Любой",
+      "parking": "Парковка",
+      "balcony": "Балкон",
+      "furnished": "Мебель",
+      "apply": "Применить фильтры",
+      "reset": "Сбросить фильтры",
+      "searchPlaceholder": "Поиск по адресу",
+      "searchButton": "Поиск"
+    },
+    "sorting": {
+      "cheapFirst": "Цена (сначала дешевле)",
+      "expensiveFirst": "Цена (сначала дороже)",
+      "smallFirst": "Площадь (сначала меньше)",
+      "largeFirst": "Площадь (сначала больше)"
+    }
   }
 }
