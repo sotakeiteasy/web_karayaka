@@ -34,15 +34,6 @@
                 border-radius: 4px;
                 font-size: 13px;
             }
-
-            input[type="number"] {
-                -moz-appearance: textfield;
-                &::-webkit-outer-spin-button,
-                &::-webkit-inner-spin-button {
-                    -webkit-appearance: none;
-                    margin: 0;
-                }
-            }
         }
 
         .filterRow {
@@ -134,7 +125,8 @@
 }
 
 .resetButton {
-    padding: 8px 15px;
+    align-self: flex-end;
+    padding: 4px 15px;
     background-color: #f8f9fa;
     color: #212529;
     border: 1px solid #dee2e6;
