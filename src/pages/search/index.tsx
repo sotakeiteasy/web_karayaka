@@ -157,7 +157,6 @@ export default function Search() {
     setFilteredAds(sortedAds)
   }
 
-  // Обновленная функция сброса фильтров
   const resetFilters = () => {
     // Сохраняем только параметр type (аренда/продажа), если он есть
     const typeParam = router.query.type ? `?type=${router.query.type}` : '';

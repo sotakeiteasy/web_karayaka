@@ -1,0 +1,51 @@
+.form{
+    display: flex;
+    gap: 40px;
+    padding: 30px;
+    margin: 40px;
+    box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205);
+    border-radius: 15px;
+        form{
+            width: 50%;
+            input{
+                border-radius: 8px;
+                border: 2px solid #002F6C;
+                font-size: 1.2rem;
+                padding: 2px 5px;
+                font-family: inherit;
+            }
+        }
+    
+
+    legend{
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+    .formRow:first-of-type{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        div{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    .formRow{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+
+    textarea{
+        resize: none;
+        width: 50%;
+        border: 2px solid #002F6C;
+        border-radius: 8px;
+        padding: 10px 15px;
+        font-family: inherit;
+    }
+
+}

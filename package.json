@@ -9,13 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@mdi/js": "^7.4.47",
     "@mdi/react": "^1.6.1",
     "@types/react-slick": "^0.23.13",
     "date-fns": "^4.1.0",
     "gray-matter": "^4.0.3",
     "i18next": "^24.2.2",
-    "next": "15.2.1",
+    "next": "^15.2.3",
     "next-i18next": "^15.4.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

@@ -9,6 +9,7 @@ import { useTranslation } from 'next-i18next';
 import Image from 'next/image'
 import imageView from '@assets/images/turkey-view.jpg'
 import SimpleSlider from '@components/carousel/carousel'
+import ContactUs from '@components/form/form';
 
 import { getPostData, getAllPostIds, getSortedPostsData } from "@/lib/blog";
 // import videoView from '/videos/video-views.mp4'
@@ -102,6 +103,8 @@ export default function Home({allBlogData, locale}) {
               </div>  
             ))}
         </div>
+        <ContactUs />
+
       </main>
     </>
   );
