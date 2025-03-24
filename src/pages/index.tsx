@@ -4,10 +4,13 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.scss";
 
 import Link from "next/link";
+import { useTranslation } from 'next-i18next';
 
 import Image from 'next/image'
 import imageView from '@assets/images/turkey-view.jpg'
 import SimpleSlider from '@components/carousel/carousel'
+
+import { getPostData, getAllPostIds, getSortedPostsData } from "@/lib/blog";
 // import videoView from '/videos/video-views.mp4'
 
 // const geistSans = Geist({
@@ -21,7 +24,9 @@ import SimpleSlider from '@components/carousel/carousel'
 // });
 
 
-export default function Home() {
+export default function Home({allBlogData, locale}) {
+  const { t } = useTranslation('common');
+
   return (
     <>
       <Head>
@@ -55,48 +60,61 @@ export default function Home() {
           />
         </div>
         <div className={styles.carouselBlock}>
-            <p className={styles.blockTitle}>Some city</p>
+            <p className={styles.blockTitle}>{t('home.rentInTurkey')}</p>
             <div className={styles.carousel}>
-              <SimpleSlider/>
+              <SimpleSlider type='rent' country='Turkey' locale={locale}/>
             </div>
-            <button className={styles.blockButton}>See all</button>
+            <button className={styles.blockButton}><Link href="/search?type=rent" locale={locale}>{t('home.seeAll')}</Link></button>
         </div>
         <div className={styles.carouselBlock}>
-        </div>
-        <div className={styles.carouselBlock}>
-              
-        </div>
+            <p className={styles.blockTitle}>{t('home.buyInTurkey')}</p>
+            <div className={styles.carousel}>
+              <SimpleSlider type='sale' country='Turkey' locale={locale}/>
+            </div>
+            <button className={styles.blockButton}><Link href="/search?type=sale" locale={locale}>{t('home.seeAll')}</Link></button>
+        </div>  
         <div className={styles.articleBlock}>
-            <p className={styles.blockTitle}>Some papers</p> 
-            <div className={styles.articleLink}>
-              <Image
-                className={styles.articleImage}
-                src={imageView}
-              />  
-              <div className={styles.articleDescription}>
-                <p className={styles.articleTitle}>
-                  articleTitle
-                </p>
-                <p className={styles.articleText}> 
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                  Magni quo porro repellendus numquam aliquid eos iure, reiciendis doloribus. Earum, reprehenderit saepe?
-                  Laboriosam quam porro minus at excepturi consequatur sit ducimus.
-                </p>
-              </div>
-            </div>      
-            <div className={styles.articleLink}></div>    
+            <p className={styles.blockTitle}>{t('home.articles')}</p> 
+
+            {allBlogData.map(article => (
+              <div key={article.id} className={styles.articleLink}>
+                <Link
+                  href={`/blog/${article.id}`}
+                  locale={locale}
+                >
+                  <Image
+                    className={styles.articleImage}
+                    src={imageView}
+                    alt="image"
+                  />  
+                  <div className={styles.articleDescription}>
+                    <p className={styles.articleTitle}>
+                      {article.title}
+                    </p>
+                    {article.contentHtml && (
+                      <div 
+                        dangerouslySetInnerHTML={{ __html: article.contentHtml }} 
+                        className={styles.articleText}
+                      />
+                    )}
+                  </div>
+                </Link>
+              </div>  
+            ))}
         </div>
       </main>
-        <img src="@assets/images/turkey-view.png" alt="" />
     </>
   );
 }
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export async function getStaticProps({ locale }) {
+  const allBlogData = await getSortedPostsData();
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
+      allBlogData, 
+      locale,
     },
   };
 }

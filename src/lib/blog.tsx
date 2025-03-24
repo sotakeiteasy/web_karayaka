@@ -10,12 +10,13 @@ interface PostData {
   id: string;
   title: string;
   date: string;
+  contentHtml?: string;
 }
 
-export function getSortedPostsData(): PostData[] {
+export async function getSortedPostsData(): Promise<PostData[]> {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
-  const allPostsData = fileNames.map((fileName) => {
+  const allPostsDataPromises = fileNames.map(async (fileName) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, '');
  
@@ -25,13 +26,23 @@ export function getSortedPostsData(): PostData[] {
  
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents);
+    
+    // Преобразуем markdown контент в HTML
+    const processedContent = await remark()
+      .use(html)
+      .process(matterResult.content);
+    const contentHtml = processedContent.toString();
  
     // Combine the data with the id
     return {
       id,
+      contentHtml,
       ...(matterResult.data as Omit<PostData, 'id'>),
     } as PostData;
   });
+
+  // Дожидаемся завершения всех обработок
+  const allPostsData = await Promise.all(allPostsDataPromises);
 
   // Sort posts by date
   return allPostsData.sort((a, b) => {

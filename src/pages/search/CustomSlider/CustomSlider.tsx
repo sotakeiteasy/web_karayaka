@@ -1,4 +1,3 @@
-import {useState} from 'react';
 import Slider from 'react-slick';
 import Image from 'next/image';
 import styles from './CustomSlider.module.scss';
@@ -9,8 +8,6 @@ import { mdiChevronLeft } from '@mdi/js';
 import 'slick-carousel/slick/slick.css';
 
 export default function CustomSlider({ ad }) {
-    const [currentSlide, setCurrentSlide] = useState(0);
-  
     function SampleNextArrow(props) {
       const { onClick } = props;
       return (
@@ -30,48 +27,12 @@ export default function CustomSlider({ ad }) {
     }
   
     const settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
       nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />,
-      beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
-  
-      appendDots: dots => (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            width: "100%",
-            position: "absolute",
-            bottom: "10px",
-            margin: "0",
-          }}
-        >
-          <ul 
-            style={{
-            display: "flex",
-            listStyle: "none",
-            padding: "0",
-            margin: "0",
-            }}
-          > 
-          {`${currentSlide + 1} / ${ad?.images?.length}`}
-  
-          </ul>
-        </div>
-      ),
-      customPaging: i => (
-        <div
-          style={{
-            width: "30px",
-          }}
-        >
-          {i + 1}
-        </div>
-      ),
-  
+      prevArrow: <SamplePrevArrow />
     };
   
     return (

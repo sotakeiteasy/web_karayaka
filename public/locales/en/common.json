@@ -7,6 +7,12 @@
     "customOffers": "Custom Offers",
     "blog": "Blog"
   },
+  "home": {
+    "rentInTurkey": "Rent in Turkey",
+    "buyInTurkey": "Buy in Turkey",
+    "seeAll": "See all",
+    "articles": "Latest Articles"
+  },
   "blog": {
     "header": "Blog"
   },
@@ -17,6 +23,35 @@
     "header": "Offer for you"
   },
   "search": {
-    "header": "Search"
+    "header": "Search",
+    "filters": {
+      "country": "Country",
+      "allCountries": "All countries",
+      "city": "City",
+      "allCities": "All cities",
+      "propertyType": "Property type",
+      "allTypes": "All types",
+      "priceFrom": "Price from",
+      "priceTo": "to",
+      "areaFrom": "Area from",
+      "areaTo": "to",
+      "bedrooms": "Bedrooms",
+      "any": "Any",
+      "floor": "Floor",
+      "anyFloor": "Any",
+      "parking": "Parking",
+      "balcony": "Balcony",
+      "furnished": "Furnished",
+      "apply": "Apply filters",
+      "reset": "Reset filters",
+      "searchPlaceholder": "Search by address",
+      "searchButton": "Search"
+    },
+    "sorting": {
+      "cheapFirst": "Price (cheap first)",
+      "expensiveFirst": "Price (expensive first)",
+      "smallFirst": "Area (small first)",
+      "largeFirst": "Area (large first)"
+    }
   }
 }

@@ -4,12 +4,12 @@ import Head from "next/head"
 import styles from "./id.module.scss"
 import Image from "next/image";
 
-export default function AdPage({postData}) {
+export default function AdPage({adData, locale}) {
 
     return (
         <>
             <Head>
-                <title>{postData.title.en}</title>
+                <title>{adData.title[locale]}</title>
             </Head>
             <div className={styles.main}>
                 <div className={styles.mainImage}>
@@ -22,10 +22,10 @@ export default function AdPage({postData}) {
                 </div>
                 <div className={styles.info}>
                     <div className={styles.description}>
-                       { postData.description.en}
+                       { adData.description[locale] }
                     </div>
                     <div className={styles.tags}>
-                        {postData.features.map(f => (
+                        {adData.features.map(f => (
                             <div className={styles.tag} key={f}>{f}</div>
                         ))}
                     </div>
@@ -36,8 +36,22 @@ export default function AdPage({postData}) {
     )
 }
 
-export function getStaticPaths() {
-    const paths = getAllAds();
+export function getStaticPaths({ locales }) {
+    const ads = getAllAds();
+    
+    // Создаем пути для каждой локали
+    const paths = [];
+    
+    // Для каждого объявления создаем путь для каждой локали
+    ads.forEach(ad => {
+        locales.forEach(locale => {
+            paths.push({
+                params: { id: ad.params.id },
+                locale
+            });
+        });
+    });
+    
     return {
         paths,
         fallback: false
@@ -47,11 +61,12 @@ export function getStaticPaths() {
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export async function getStaticProps({ params, locale }) {
-    const postData = getAdById(params.id)
+    const adData = getAdById(params.id)
   return {
     props: {
           ...(await serverSideTranslations(locale, ['common'])),
-        postData
+          adData,
+          locale
     },
   };
 }
