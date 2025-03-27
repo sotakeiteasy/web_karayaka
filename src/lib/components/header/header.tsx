@@ -36,7 +36,7 @@ export default function Header() {
                 <Link href="/search?type=sale">{t('header.buy')}</Link>
                 <Link href="/about-us">{t('header.aboutUs')}</Link>
                 <Link href="/custom-offers">{t('header.customOffers')}</Link>
-                <Link href="/blog">{t('header.blog')}</Link>
+                {locale === "ru" && <Link href="/blog">{t('header.blog')}</Link>}
             </nav>
             <div className={styles.buttons}>
                 <div 

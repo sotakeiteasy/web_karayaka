@@ -19,13 +19,23 @@ export async function getStaticPaths() {
     const paths = getAllPostIds();
     return {
         paths,
-        fallback: false
+        fallback: true
     }
 }
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export async function getStaticProps( { params, locale }) {
+    if (locale !== 'ru') {
+        return {
+          redirect: {
+            destination: `/${locale}`,
+            permanent: false,
+          },
+        }
+      }
+
     const postData = await getPostData(params.id);
+
     return {
         props: {
             ...(await serverSideTranslations(locale, ['common'])),

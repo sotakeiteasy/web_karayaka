@@ -19,9 +19,6 @@ export default function Blog( {allBlogData}) {
               </li>
             ))}
           </ul>
-          <h2>
-              <Link href="/">Back to home</Link>
-          </h2> 
         </>
     )
 }
@@ -29,6 +26,15 @@ export default function Blog( {allBlogData}) {
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export async function getStaticProps({ locale }) {
   const allBlogData = await getSortedPostsData();   // for blog
+
+  if (locale !== 'ru') {
+    return {
+      redirect: {
+        destination: `/${locale}`,
+        permanent: false,
+      },
+    }
+  }
 
   return {
     props: {
