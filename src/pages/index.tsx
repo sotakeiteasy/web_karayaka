@@ -1,6 +1,5 @@
 import Head from "next/head";
 // import Image from "next/image";
-// import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.scss";
 
 import Link from "next/link";
@@ -11,18 +10,9 @@ import imageView from '@assets/images/turkey-view.jpg'
 import SimpleSlider from '@components/carousel/carousel'
 import ContactUs from '@components/form/form';
 
-import { getPostData, getAllPostIds, getSortedPostsData } from "@/lib/blog";
+import { getSortedPostsData } from "@/lib/blog";
 // import videoView from '/videos/video-views.mp4'
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 
 export default function Home({allBlogData, locale}) {
@@ -54,11 +44,26 @@ export default function Home({allBlogData, locale}) {
             loop
             autoPlay
             muted
-            preload="auto"   
-            // style={{
-            //   objectFit: 'cover',
-            // }}
+            preload="auto"  
+            height={700} 
+            width={1600}
+            style={{
+              objectFit: 'cover',
+            }}
           />
+          <p className={styles.previewText}>Hello, world</p>
+          <div className={styles.searchBlock}>
+            <label htmlFor="search"></label>
+            <input 
+              id="search" 
+              type="text" 
+              placeholder="Address or keywords" 
+              aria-label="Поиск"
+              autoComplete="off"
+              spellCheck="false"
+              />
+              <button>Search</button>
+          </div>
         </div>
         <div className={styles.carouselBlock}>
             <p className={styles.blockTitle}>{t('home.rentInTurkey')}</p>
