@@ -28,7 +28,7 @@ export default function Blog( {allBlogData}) {
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export async function getStaticProps({ locale }) {
-  const allBlogData = getSortedPostsData();   // for blog
+  const allBlogData = await getSortedPostsData();   // for blog
 
   return {
     props: {

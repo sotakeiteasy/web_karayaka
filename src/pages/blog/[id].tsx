@@ -25,7 +25,6 @@ export async function getStaticPaths() {
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export async function getStaticProps( { params, locale }) {
-    // Fetch necessary data for the blog post using params.id
     const postData = await getPostData(params.id);
     return {
         props: {
