@@ -109,8 +109,12 @@ export default function Home({allBlogData, locale}) {
             </div>  
           ))}
         </div>
-        <ContactUs />
-
+        <div className={styles.contactBlock}>
+          <div className={styles.formBlock} ></div>
+          <ContactUs />
+          <div className={styles.mapBlock}></div>
+        </div>
+        
       </main>
     </>
   );

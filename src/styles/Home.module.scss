@@ -16,6 +16,7 @@
         }
 
         .previewText {
+            user-select: none;
             font-size: 8rem;
             color: white;
             position: absolute;
@@ -105,7 +106,7 @@
 
             display: flex;
             height: 400px;
-            width: 900px;
+            width: 950px;
             margin: 20px 0;
             border-radius: 5px;
             overflow: hidden;
@@ -135,7 +136,7 @@
                 content: "";
                 position: absolute;
                 width: 100%;
-                border-bottom: 1px solid $primary-color;
+                border-bottom: 1px solid black;
                 bottom: 0;
                 left: 0;
 
@@ -156,6 +157,22 @@
             }
         }
     }
+
+    .contactBlock {
+        width: 1000px;
+        display: flex;
+        height: fit-content;
+        margin-bottom: 100px;
+
+        .formBlock {
+            // width: 60%;
+        }
+
+        .mapBlock {
+            flex: 1 0;
+            outline: 1px solid red;
+        }
+    }
 }
 
 
@@ -165,7 +182,7 @@
     text-transform:uppercase;
     align-items: center;
     padding: 30px 0;
-    color: #002F6C;
+    color: $primary-color;
     font-weight: 100;
 }
 
@@ -174,6 +191,6 @@
     flex: 1 0 auto;
 
     margin-left: 40px;
-    border-bottom: 1px solid black; 
+    border-bottom: 1px solid $primary-color; 
     display: block;
 }
