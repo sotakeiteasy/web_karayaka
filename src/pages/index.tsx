@@ -13,12 +13,31 @@ import ContactUs from '@components/form/form';
 import { getSortedPostsData } from "@/lib/blog";
 import { useState } from "react";
 // import videoView from '/videos/video-views.mp4'
+import { useRouter } from "next/router";
 
 
 
 export default function Home({allBlogData, locale}) {
   const { t } = useTranslation('common');
-  const [activeToggleButton, setActiveToggleButton] = useState(false)
+  const [isRent, setIsRent] = useState(false)
+  const [input, setInput] = useState('')
+  const router = useRouter()
+
+  
+  const search = (query: string) => {
+    if (!query) {
+      console.error("Query is empty");
+      return;
+    }
+  
+    console.log("Raw query:", query);
+    const encodedQuery = encodeURIComponent(query);
+    console.log("Encoded query:", encodedQuery);
+
+    // const encodedQuery = encodeURIComponent(query);
+    router.push(`/search?type=${isRent ? "sale" : 'rent'}&address=${encodedQuery}`)
+  }
+
   return (
     <>
       <Head>
@@ -62,15 +81,17 @@ export default function Home({allBlogData, locale}) {
               aria-label="Поиск"
               autoComplete="off"
               spellCheck="false"
+              value={input}
+              onChange={((e) => setInput(e.target.value))}
               />
               <button 
-                className={`${styles.toggleButton} ${activeToggleButton ? styles.toggleButtonActive : ""}`} 
-                onClick={() => setActiveToggleButton(!activeToggleButton)}
+                className={`${styles.toggleButton} ${isRent ? styles.toggleButtonActive : ""}`} 
+                onClick={() => setIsRent(!isRent)}
               >
                   <span>Rent</span>
                   <span>Buy</span>
               </button>
-              <button className={styles.searchButton}>Search</button>
+              <button className={styles.searchButton} onClick={() => search(input)}>Search</button>
           </div>
         </div>
         <div className={styles.carouselBlock}>

@@ -3,9 +3,9 @@ import type { AppProps } from "next/app";
 import { appWithTranslation } from 'next-i18next'
 
 import Header from "@components/header/header";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
-const plusJakartaSans = Plus_Jakarta_Sans({
+const montserrat = Montserrat({
   variable: "--font-geist-sans",
   subsets: ["latin", "cyrillic-ext"],
 });
@@ -13,7 +13,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={plusJakartaSans.className}>
+    <main className={montserrat.className}>
       <Header/>
       <Component {...pageProps} />
     </main>
