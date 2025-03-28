@@ -1,40 +1,66 @@
 .form{
     display: flex;
-    width: 550px;
+    flex-direction: column;
+    width: 50%;
     padding: 30px;
-    margin: 40px 0;
-    box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205);
-    border-radius: 15px;
 
-    p {
-        padding-bottom: 20px;
-    }
-
-    form{
-        input{
-            border-radius: 8px;
-            border: 2px solid #002F6C;
-            font-size: 1.2rem;
-            padding: 2px 5px;
-            font-family: inherit;
+    input:-webkit-autofill {
+        font-family: inherit;
+        border: 2px solid #002F6C;
+        border-radius: 8px;
+        caret-color: black; 
+        color: black;
+        background: white;
+        -webkit-font-feature-settings: off;
+        -webkit-text-fill-color: black; 
+        -webkit-background-clip: text; 
+        box-shadow: 0 0 0 50px var(var(--black-color)) inset; 
         }
-    }
-    
 
     legend{
         font-size: 2rem;
         margin-bottom: 20px;
         text-transform: uppercase;
     }
+    p{
+        margin-bottom: 25px;
+    }
+    label{
+        user-select: none;
+        text-wrap: nowrap;
+        width: fit-content;
+        align-self: start;
+        font-size: 0.8rem;
+        padding-left: .5em;
+        padding-right: .5em;
+        position: absolute;
+        transform: translate(.5rem, -45%);
+        z-index: 1;
+        background-color: white;
+        text-align: center;
+        }
+
+    input, textarea{
+        border-radius: 8px;
+        border: 2px solid #002F6C;
+        padding: 8px 5px;
+        font-family: inherit;
+    }
+
     .formRow:first-of-type{
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         flex-wrap: wrap;
         gap: 10px;
 
         div{
             display: flex;
             flex-direction: column;
+            flex-grow: 1;
+            input{
+                width: 100%;
+            }
         }
     }
     .formRow{
@@ -45,11 +71,22 @@
 
     textarea{
         resize: none;
-        width: 50%;
-        border: 2px solid #002F6C;
-        border-radius: 8px;
+        height: 200px;
         padding: 10px 15px;
         font-family: inherit;
+        margin-bottom: 25px;
     }
 
+
+    .formBtn{
+    align-self: flex-end;
+    width: 160px;
+    border-radius: 10px;
+    background-color: #002F6C;
+    color: white;
+    border: transparent;
+    padding: 10px 15px;
+    box-shadow: 0 6px 3px 0 rgba(0, 0, 0, 0.205);
+    cursor: pointer;
+    }
 }
