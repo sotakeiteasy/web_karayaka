@@ -11,13 +11,14 @@ import SimpleSlider from '@components/carousel/carousel'
 import ContactUs from '@components/form/form';
 
 import { getSortedPostsData } from "@/lib/blog";
+import { useState } from "react";
 // import videoView from '/videos/video-views.mp4'
 
 
 
 export default function Home({allBlogData, locale}) {
   const { t } = useTranslation('common');
-
+  const [activeToggleButton, setActiveToggleButton] = useState(false)
   return (
     <>
       <Head>
@@ -62,7 +63,14 @@ export default function Home({allBlogData, locale}) {
               autoComplete="off"
               spellCheck="false"
               />
-              <button>Search</button>
+              <button 
+                className={`${styles.toggleButton} ${activeToggleButton ? styles.toggleButtonActive : ""}`} 
+                onClick={() => setActiveToggleButton(!activeToggleButton)}
+              >
+                  <span>Rent</span>
+                  <span>Buy</span>
+              </button>
+              <button className={styles.searchButton}>Search</button>
           </div>
         </div>
         <div className={styles.carouselBlock}>
@@ -110,9 +118,12 @@ export default function Home({allBlogData, locale}) {
           ))}
         </div>
         <div className={styles.contactBlock}>
-          <div className={styles.formBlock} ></div>
-          <ContactUs />
-          <div className={styles.mapBlock}></div>
+          {/* <div className={styles.formBlock} > */}
+            <ContactUs />
+          {/* </div> */}
+          <div className={styles.mapBlock}>
+            Here will be map with agency address, maybe
+          </div>
         </div>
         
       </main>
