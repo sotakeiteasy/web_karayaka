@@ -11,7 +11,7 @@ import { Filter } from '@/lib/types/filter';
 
 import PaginatedAds from './PaginatedAds/PaginatedAds';
 
-export default function Search() {
+export default function Search({locale}: {locale: string}) {
   const router = useRouter();
   const { type, country, city, propertyType, minPrice, maxPrice, minArea, maxArea, bedrooms, floor, parking, balcony, furnished } = router.query;
   
@@ -31,7 +31,7 @@ export default function Search() {
     propertyType: [],
     features: []
   })
-  const [filterTags, setFilterTags] = useState<string[]>([])
+  // const [filterTags, setFilterTags] = useState<string[]>([])
 
   const [sortOption, setSortOption] = useState('price-cheap')
   const sortAds = (option: string, adsToSort: Ad[]) => {
@@ -160,7 +160,7 @@ export default function Search() {
   const resetFilters = () => {
     // Сохраняем только параметр type (аренда/продажа), если он есть
     const typeParam = router.query.type ? `?type=${router.query.type}` : '';
-    window.location.href = `/search${typeParam}`;
+    window.location.href = `/${locale}/search${typeParam}`;
   }
 
   return (
@@ -408,28 +408,27 @@ export default function Search() {
                 onChange={handleSearchChange}
                 placeholder={t("search.filters.searchPlaceholder")}
               />
-              <button onClick={applyFilters}>{t("search.filters.searchButton")}</button>
+              <button className={styles.searchButton} onClick={applyFilters}>{t("search.filters.searchButton")}</button>
             </div>
 
             <div className={styles.addPanel}>
-              <div className={styles.filterTags}>
+              {/* <div className={styles.filterTags}>
                 {filterTags.map(tag => <div>{tag.charAt(0).toUpperCase() + tag.slice(1)}</div>)}
-              </div>
+              </div> */}
+              {Object.keys(appliedFilter).length > 1 && <button onClick={resetFilters} className={styles.resetButton}>
+                {t("search.filters.reset")}
+              </button>}
 
-              <select name="sort" id="sort" value = {sortOption} onChange = {handleSortChange}>
+              <select className={styles.sortButton} name="sort" id="sort" value = {sortOption} onChange = {handleSortChange}>
                 <option value="price-cheap">{t("search.sorting.cheapFirst")}</option>
                 <option value="price-expensive">{t("search.sorting.expensiveFirst")}</option>
                 <option value="area-small">{t("search.sorting.smallFirst")}</option>
                 <option value="area-large">{t("search.sorting.largeFirst")}</option>
               </select>
-
-              
             </div>
-            <button onClick={resetFilters} className={styles.resetButton}>
-                {t("search.filters.reset")}
-            </button>
+            
           </div>
-          <PaginatedAds itemsPerPage={1} ads={filteredAds}/>
+          <PaginatedAds itemsPerPage={3} ads={filteredAds}/>
         </div>
 
       </div>
@@ -442,6 +441,7 @@ export async function getStaticProps({ locale, params }: { locale: string, param
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
+      locale
     },
   };
 }

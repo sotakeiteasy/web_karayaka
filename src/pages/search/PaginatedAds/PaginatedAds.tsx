@@ -79,8 +79,12 @@ export default function PaginatedAds ({itemsPerPage, ads}) {
         marginPagesDisplayed={1}
         pageCount={pageCount}
         previousLabel="Previous"
+        // previousLabel={null}
+        // nextLabel={null}
         renderOnZeroPageCount={null}
         className={styles.paginate}
+        activeClassName={styles.activePage}
+        disabledClassName={styles.hidden}
       />
     </>
   );

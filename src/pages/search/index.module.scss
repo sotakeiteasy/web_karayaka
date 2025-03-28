@@ -1,3 +1,5 @@
+@use "@styles/variables" as *;
+
 .main {
     display: flex;
     justify-content: center;
@@ -5,13 +7,15 @@
     margin: 0 auto;
     padding: 0 20px;
 
-    * {
-        outline: 1px dashed red; /* Временно помогает увидеть границы всех элементов */
-    }
+    
     
     .filterBox {
+        height: fit-content;
+        margin: 20px 0;
+        background-color: $primary-color;
+        color: $white-text;
         width: 300px;
-        padding: 15px;
+        padding: 25px 15px;
         border-radius: 8px;
         margin-bottom: 15px;
         margin-right: 20px;
@@ -28,9 +32,12 @@
             }
 
             input, select {
+                background-color: inherit;
+                color: inherit;
+
                 width: 100%;
                 padding: 6px 10px;
-                border: 1px solid #ddd;
+                border: 1px solid white;
                 border-radius: 4px;
                 font-size: 13px;
             }
@@ -62,10 +69,34 @@
                     width: auto;
                 }
             }
+            
+        }
+
+        .filterActions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            width: 100%;
+        
+            .applyButton {
+                width: 50%;
+                flex: 1;
+                padding: 8px 15px;
+                background-color: $white-text;
+                color: $primary-color;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                
+                &:hover {
+                    background-color: #0069d9;
+                }
+            }
         }
     }
 
     .searchBlock {
+        max-width: 700px;
         flex: 1;
         padding: 20px;
 
@@ -84,6 +115,20 @@
                 
                 input {
                     flex-grow: 1;
+                    outline: none;
+                    border: 2px solid $primary-color;
+                    border-radius: 8px;
+                    padding: 5px 10px;
+                }
+
+                .searchButton {
+                    background-color: $primary-color;
+                    color: $white-text;
+                    border: none;
+                    padding: 5px 25px;
+                    border-radius: 8px;
+                    cursor: pointer;
+
                 }
             }
 
@@ -92,49 +137,33 @@
                 justify-content: space-between;
                 padding: 10px 0;
 
-                .filterTags {
-                    display: flex;
-                    gap: 20px;
-                    flex-wrap: wrap;
+                // .filterTags {
+                //     display: flex;
+                //     gap: 20px;
+                //     flex-wrap: wrap;
+                // }
+
+                .resetButton {
+                    align-self: left;
+                    padding: 4px 15px;
+                    background-color: #f8f9fa;
+                    color: #212529;
+                    border: 1px solid #dee2e6;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 13px;
+                    
+                    &:hover {
+                        background-color: #e2e6ea;
+                    }
+                }
+
+                .sortButton {
+                    margin-left: auto;
                 }
             }
         }
     }
 }
 
-.filterActions {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-    width: 100%;
-}
 
-.applyButton {
-    flex: 1;
-    padding: 8px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 13px;
-    
-    &:hover {
-        background-color: #0069d9;
-    }
-}
-
-.resetButton {
-    align-self: flex-end;
-    padding: 4px 15px;
-    background-color: #f8f9fa;
-    color: #212529;
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 13px;
-    
-    &:hover {
-        background-color: #e2e6ea;
-    }
-}
