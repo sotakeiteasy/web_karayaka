@@ -13,6 +13,7 @@ import PaginatedAds from './PaginatedAds/PaginatedAds';
 
 export default function Search({locale}: {locale: string}) {
   const router = useRouter();
+  
   const { type, country, city, propertyType, minPrice, maxPrice, minArea, maxArea, bedrooms, floor, parking, balcony, furnished } = router.query;
   
   const [searchText, setSearchText] = useState('');

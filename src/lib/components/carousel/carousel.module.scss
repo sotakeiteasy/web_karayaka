@@ -10,28 +10,29 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: white;
   border-radius: 50%;
+  opacity: .7;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   z-index: 1;
   
   &:hover {
-    background: #f0f0f0;
+    opacity: .8;;
   }
 }
 
 .prevArrow {
-  left: 15px;
+  left: 20px;
 }
 
 .nextArrow {
-  right: 15px;
+  right: 20px;
 } 
 
 .adCard {

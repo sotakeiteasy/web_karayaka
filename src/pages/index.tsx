@@ -11,12 +11,32 @@ import SimpleSlider from '@components/carousel/carousel'
 import ContactUs from '@components/form/form';
 
 import { getSortedPostsData } from "@/lib/blog";
+import { useState } from "react";
 // import videoView from '/videos/video-views.mp4'
+import { useRouter } from "next/router";
 
 
 
 export default function Home({allBlogData, locale}) {
   const { t } = useTranslation('common');
+  const [isRent, setIsRent] = useState(false)
+  const [input, setInput] = useState('')
+  const router = useRouter()
+
+  
+  const search = (query: string) => {
+    if (!query) {
+      console.error("Query is empty");
+      return;
+    }
+  
+    console.log("Raw query:", query);
+    const encodedQuery = encodeURIComponent(query);
+    console.log("Encoded query:", encodedQuery);
+
+    // const encodedQuery = encodeURIComponent(query);
+    router.push(`/search?type=${isRent ? "sale" : 'rent'}&address=${encodedQuery}`)
+  }
 
   return (
     <>
@@ -61,8 +81,17 @@ export default function Home({allBlogData, locale}) {
               aria-label="Поиск"
               autoComplete="off"
               spellCheck="false"
+              value={input}
+              onChange={((e) => setInput(e.target.value))}
               />
-              <button>Search</button>
+              <button 
+                className={`${styles.toggleButton} ${isRent ? styles.toggleButtonActive : ""}`} 
+                onClick={() => setIsRent(!isRent)}
+              >
+                  <span>Rent</span>
+                  <span>Buy</span>
+              </button>
+              <button className={styles.searchButton} onClick={() => search(input)}>Search</button>
           </div>
         </div>
         <div className={styles.carouselBlock}>
@@ -109,8 +138,15 @@ export default function Home({allBlogData, locale}) {
             </div>  
           ))}
         </div>
-        <ContactUs />
-
+        <div className={styles.contactBlock}>
+          {/* <div className={styles.formBlock} > */}
+            <ContactUs />
+          {/* </div> */}
+          <div className={styles.mapBlock}>
+            Here will be map with agency address, maybe
+          </div>
+        </div>
+        
       </main>
     </>
   );
