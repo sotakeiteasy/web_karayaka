@@ -13,10 +13,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={plusJakartaSans.className}>
+    <div className={plusJakartaSans.className}>
       <Header/>
       <Component {...pageProps} />
-    </main>
+    </div>
   );
 }
 

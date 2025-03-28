@@ -1,3 +1,125 @@
-.description {
-  color: red;
+.main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .sloganBlock{
+    width: 100%;
+    height: 300px;
+    position: relative;
+    margin-bottom: 70px;
+    .slogan{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 50px;
+      left: 70px;
+       p{
+        text-transform: uppercase;
+        color: white;
+        font-size: 2.5rem;
+        }
+    }
+  }
+
+    header{
+      width: 900px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+      border-radius: 15px; 
+      box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205);  
+      margin-bottom: 60px;
+      h1{
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+    }
+    .banner{
+      position: relative;
+      width: 100%;
+      height: 300px;
+      margin-bottom: 60px,
+    }
+
+    .stats{
+      width: 900px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+
+      margin-bottom: 60px;
+      section{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+        color: #002F6C;
+        text-transform: uppercase;
+        border-radius: 15px; 
+        box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205); 
+        h2{
+          font-size: 4rem;
+          font-weight: 400;
+        } 
+        p{
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .infoBlock{
+      width: 900px;
+      display: flex;
+      justify-content: center;
+      justify-content: space-between;
+      gap: 30px;
+      margin-left: 40px;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      .faq{
+          padding: 20px;
+          display: flex;
+          flex-direction: column;
+          width: 45%;
+          background-color: #002F6C;
+          border-radius: 15px;   
+          color: white;
+
+              h2{
+                  font-size: 2.5rem;
+                  font-weight: 400;
+                  margin-bottom: 20px;
+              }
+              
+              button{
+                  color: white;
+                  border: 2px solid #011731;
+                  border-radius: 15px;
+                  background-color: #012047;
+                  margin-bottom: 10px;
+                  padding: 5px 8px;
+                  text-align: left;
+                  cursor: pointer;
+              }
+      }
+      
+      .answerBlock{
+          display: flex;
+          flex-direction: column;
+          padding: 20px;
+          width: 55%;  
+          border-radius: 15px; 
+          box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205); 
+          h2{
+            margin-bottom: 15px;
+          }
+      }
+
+}
 }
