@@ -10,12 +10,9 @@
         border-radius: 15px;
         max-width: 1000px;
         max-height: 800px;
-        
-
-            img{
+            .formImg{
+                position: relative;
                 width: 50%;
-                object-fit: cover;
-                border-radius: 0px 15px 15px 0px;
             }
 
         
