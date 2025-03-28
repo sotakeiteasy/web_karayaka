@@ -13,10 +13,10 @@ const montserrat = Montserrat({
 
 function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={montserrat.className}>
+    <div className={montserrat.className}>
       <Header/>
       <Component {...pageProps} />
-    </main>
+    </div>
   );
 }
 
