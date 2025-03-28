@@ -1,10 +1,13 @@
 import styles from "./index.module.scss"
+import Icon from '@mdi/react';
+import { mdiChevronRight } from '@mdi/js';
 import { useTranslation } from "next-i18next";
 import Image from 'next/image';
 import { useState } from "react";
 
 export default function AboutUs() {
     const { t } = useTranslation('common')
+
 
     const questionsFAQ = {
       location: "Where are you located?",
@@ -22,12 +25,15 @@ export default function AboutUs() {
       area: "5) Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ex ducimus, nisi sit ratione ab quia eos sunt adipisci autem! Eos pariatur temporibus veniam ipsum ea aut porro quas amet?",
       personnel: "6) Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos ex ducimus, nisi sit ratione ab quia eos sunt adipisci autem! Eos pariatur temporibus veniam ipsum ea aut porro quas amet?",
     }
+    const [activeKey, setActiveKey] = useState('location');
     const [answer, setAnswer] = useState(answersFAQ.location)
     const [question, setQuestion] = useState(questionsFAQ.location)
-    function toggleAnswers (answer){
-      setAnswer(answersFAQ[answer])
-      setQuestion(questionsFAQ[answer])
+    function toggleAnswers(key) {
+      setAnswer(answersFAQ[key]);
+      setQuestion(questionsFAQ[key]);
+      setActiveKey(key); // Store the current active key
     }
+
     return (
     <>
       <main className={styles.main}>
@@ -41,6 +47,7 @@ export default function AboutUs() {
             objectFit: 'cover',
           }}
           loading = 'eager'
+          draggable='false'
         />
 
         <div className={styles.slogan}>
@@ -68,6 +75,7 @@ export default function AboutUs() {
             objectFit: 'cover'
           }}
           loading = 'eager'
+          draggable='false'
         />
         </div>
 
@@ -91,12 +99,28 @@ export default function AboutUs() {
         <div className={styles.infoBlock}>
             <section className={styles.faq}>
               <h2>FAQ</h2>
-              <button onClick={() => toggleAnswers("location")}>Where are you located?</button>
-              <button onClick={() => toggleAnswers("period")}>How long does the typical home buying process take from offer to closing?</button>
-              <button onClick={() => toggleAnswers("tour")}>Can I schedule a virtual tour if I'm unable to visit in person?</button>
-              <button onClick={() => toggleAnswers("contact")}>How can I contact your team if I have questions about a listing?</button>
-              <button onClick={() => toggleAnswers("area")}>What areas do you serve for property rentals and sales?</button>
-              <button onClick={() => toggleAnswers("personnel")}>Are your agents familiar with all neighborhoods in the area?</button>
+              
+                  
+                  {Object.keys(questionsFAQ).map((key) => (
+                    <div className={styles.faqRow}>
+                    <Icon 
+                     path={mdiChevronRight} 
+                     size={1.5}
+                     style={{
+                      opacity:0
+                    }}
+                     key={key}
+                    className={activeKey === key ? styles.activeIcon : ''} 
+                    />
+                    <button
+                      key={key}
+                      className={activeKey === key ? styles.activeButton : ''} 
+                      onClick={() => toggleAnswers(key)}
+                    >
+                      {questionsFAQ[key]}
+                    </button>
+                    </div>
+                  ))}   
             </section>
 
              <section className={styles.answerBlock}>
