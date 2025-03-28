@@ -90,6 +90,7 @@
           background-color: #002F6C;
           border-radius: 15px;   
           color: white;
+          box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205); 
 
               h2{
                   font-size: 2.5rem;
@@ -118,6 +119,9 @@
           box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205); 
           h2{
             margin-bottom: 15px;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #002F6C;
           }
       }
 
