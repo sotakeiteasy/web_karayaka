@@ -65,30 +65,29 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        outline: 2px solid red;
         height: 550px;
         margin: 50px 0;
-
         
-        .blockTitle {
-            align-self: self-start;
-            padding-bottom: 50px;
-        }
-
         .carousel {
-                outline: 2px solid green;
-                height: 400px;
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .blockButton {
+            will-change: auto;
+            border: 2px solid $primary-color ;
+            border-radius: 10px;
+            padding: 5px 20px;
             background-color: white;
             margin-top: 30px;
             cursor: pointer;
+        }
+
+        .blockButton:hover {
+            transform: translateY(2px);
+            transition: all .2s ease;
+            // background-color: rgba($primary-color, .1);
         }
     }
 
@@ -96,22 +95,19 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 2px solid red;
         height: 1000px;
         width: 1000px;
         margin: 50px 0;
-
-        .blockTitle {
-            align-self: self-start;
-        }
+        // box-shadow: $shadow;
 
         .articleLink{
+            box-shadow: $shadow;
+
             display: flex;
-            border: 2px solid red;
             height: 400px;
-            width: 800px;
+            width: 900px;
             margin: 20px 0;
-            border-radius: 20px;
+            border-radius: 5px;
             overflow: hidden;
 
             a {
@@ -129,16 +125,27 @@
             }
 
             .articleTitle {
-                font-size: 1rem;
+                position: relative;
+                font-size: 1.1rem;
+                font-weight: 400;
                 padding-bottom: 10px;
             }
 
+            .articleTitle::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                border-bottom: 1px solid $primary-color;
+                bottom: 0;
+                left: 0;
+
+            }
+
             .articleDescription {
-                padding: 25px;
+                padding: 25px 35px;
                 
                 .articleText {
-                    font-size: 0.9rem;
-                    line-height: 1.5;
+                    font-size: .9rem;
                     overflow: hidden;
                     display: -webkit-box;
                     -webkit-line-clamp: 12;
@@ -149,4 +156,24 @@
             }
         }
     }
+}
+
+
+.header {
+    display: flex;
+    width: 100%;
+    text-transform:uppercase;
+    align-items: center;
+    padding: 30px 0;
+    color: #002F6C;
+    font-weight: 100;
+}
+
+.header:after{
+    content: "";
+    flex: 1 0 auto;
+
+    margin-left: 40px;
+    border-bottom: 1px solid black; 
+    display: block;
 }

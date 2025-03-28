@@ -36,45 +36,35 @@ export const ContactUs = () => {
   };
 
   return (
-    // <form ref={form} onSubmit={sendEmail}>
-    //   <label>Name</label>
-    //   <input type="text" name="user_name" />
-    //   <label>Email</label>
-    //   <input type="email" name="user_email" />
-    //   <label>Message</label>
-    //   <textarea name="message" />
-    //   <input type="submit" value="Send" />
-    // </form>
     <div className={styles.form}>
         <form ref={form} onSubmit={sendEmail}>
             <legend>Your message</legend>
+            <p>
+                accusamus deleniti libero, ducimus perspiciatis odit soluta dolorum voluptate temporibus, 
+                optio commodi blanditiis necessitatibus in voluptatibus dicta doloremque reiciendis iure? Deserunt.
+            </p>
 
             <div className={styles.formRow}>
                 <div>
-                    <label for="first_name">First Name</label>
+                    <label htmlFor="first_name">First Name</label>
                     <input type="text" id="first_name" name="first_name" required/>
                 </div>
 
                 <div>
-                    <label for="last_name">Last Name</label>
+                    <label htmlFor="last_name">Last Name</label>
                     <input type="text" id="last_name" name="last_name" required/>
                 </div>
             </div>
 
             <div className={styles.formRow}>
-                <label for="phone_number">Phone Number</label>
+                <label htmlFor="phone_number">Phone Number</label>
                 <input type="tel" id="phone_number" name="phone_number" required/>
             </div>
 
             <div className={styles.formRow}>
-                <label for="email">Email</label>
+                <label htmlFor="email">Email</label>
                 <input type="email" id="email" name="email" required/>
             </div>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat, 
-                accusamus deleniti libero, ducimus perspiciatis odit soluta dolorum voluptate temporibus, 
-                optio commodi blanditiis necessitatibus in voluptatibus dicta doloremque reiciendis iure? Deserunt.
-            </p>
             <textarea name="message" id="message"></textarea>
             <input type="submit" value="Send" />
         </form>

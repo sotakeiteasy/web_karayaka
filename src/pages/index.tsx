@@ -66,47 +66,48 @@ export default function Home({allBlogData, locale}) {
           </div>
         </div>
         <div className={styles.carouselBlock}>
-            <p className={styles.blockTitle}>{t('home.rentInTurkey')}</p>
+            <h1 className={styles.header}>{t('home.rentInTurkey')}</h1>
             <div className={styles.carousel}>
               <SimpleSlider type='rent' country='Turkey' locale={locale}/>
             </div>
             <button className={styles.blockButton}><Link href="/search?type=rent" locale={locale}>{t('home.seeAll')}</Link></button>
         </div>
         <div className={styles.carouselBlock}>
-            <p className={styles.blockTitle}>{t('home.buyInTurkey')}</p>
+            <h1 className={styles.header}>
+              {t('home.buyInTurkey')}
+            </h1>
             <div className={styles.carousel}>
               <SimpleSlider type='sale' country='Turkey' locale={locale}/>
             </div>
             <button className={styles.blockButton}><Link href="/search?type=sale" locale={locale}>{t('home.seeAll')}</Link></button>
         </div>  
         <div className={styles.articleBlock}>
-            <p className={styles.blockTitle}>{t('home.articles')}</p> 
-
-            {allBlogData.map(article => (
-              <div key={article.id} className={styles.articleLink}>
-                <Link
-                  href={`/blog/${article.id}`}
-                  locale={locale}
-                >
-                  <Image
-                    className={styles.articleImage}
-                    src={imageView}
-                    alt="image"
-                  />  
-                  <div className={styles.articleDescription}>
-                    <p className={styles.articleTitle}>
-                      {article.title}
-                    </p>
-                    {article.contentHtml && (
-                      <div 
-                        dangerouslySetInnerHTML={{ __html: article.contentHtml }} 
-                        className={styles.articleText}
-                      />
-                    )}
-                  </div>
-                </Link>
-              </div>  
-            ))}
+          <h1 className={styles.header}>{t('home.articles')}</h1> 
+          {allBlogData.map(article => (
+            <div key={article.id} className={styles.articleLink}>
+              <Link
+                href={`/blog/${article.id}`}
+                locale={locale}
+              >
+                <Image
+                  className={styles.articleImage}
+                  src={imageView}
+                  alt="image"
+                />  
+                <div className={styles.articleDescription}>
+                  <h2 className={styles.articleTitle}>
+                    {article.title}
+                  </h2>
+                  {article.contentHtml && (
+                    <div
+                      dangerouslySetInnerHTML={{ __html: article.contentHtml }} 
+                      className={styles.articleText}
+                    />
+                  )}
+                </div>
+              </Link>
+            </div>  
+          ))}
         </div>
         <ContactUs />
 
