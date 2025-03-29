@@ -18,7 +18,7 @@ function Items({ currentItems, locale }) {
           <div className={styles.adCard} key={ad.id}>
 
               <div className={styles.adCardImage}>
-                <CustomSlider ad={ad}/>
+                <CustomSlider ad={ad} locale={locale}/>
               </div>
               <Link 
                 href={`/ads/${ad.id}`}
