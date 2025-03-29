@@ -1,17 +1,19 @@
 import { getAllPostIds, getPostData } from "../../lib/blog";
 import Date from '@components/date/date'
-
+import styles from './id.module.scss';
 export default function Post({ postData }) {
     return (
-        <div>
-            {postData.title}
+    <main className={styles.main}>
+        <section className={styles.article}>
+            <h1>{postData.title}</h1>
             <br />
-            {postData.id}
+            {/* {postData.id} */}
             <br />
             <Date dateString={postData.date} />
             <br />
-            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-        </div>
+            <p dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </section>
+    </main>
     )
 }
 

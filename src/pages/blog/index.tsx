@@ -1,24 +1,45 @@
 import Link from 'next/link'
 import styles from './index.module.scss'
 import { useTranslation } from 'next-i18next';
-
+import Image from 'next/image';
 import { getSortedPostsData } from '../../lib/blog';
-import Date from '@components/date/date';
 
 export default function Blog( {allBlogData}) {
     const { t } = useTranslation('common')
     return (
         <>
-          <h1>{t('blog.header')}</h1>
-          <ul>
-            {allBlogData.map(({ id, date, title }) => (
-              <li key={id}>
-                <Link href={`./blog/${id}`}>{title}</Link>
-                <br />
-                <Date dateString={date} />
-              </li>
-            ))}
-          </ul>
+        <main className={styles.main}> 
+            {allBlogData.map(({ id, title, contentHtml}) => (
+              <div>
+                <Link 
+                  href={`./blog/${id}`}
+                  className={styles.articleCard}
+                >
+                      <div className={styles.articleImage}>
+                        <Image
+                          src="/images/exampleImage.jpg"
+                          fill={true}
+                          alt=" "
+                          style={{
+                            objectFit: "cover",
+                            borderRadius: "15px 0px 0px 15px",
+                          }}
+                          loading="eager"
+                        />
+                      </div>
+                      <section className={styles.articlePreview}>
+                        <h2 href={`./blog/articles/${id}`} className={styles.articleTitle}>{title}</h2>
+                        {contentHtml && (
+                          <div
+                            dangerouslySetInnerHTML={{ __html: contentHtml }} 
+                            className={styles.articleText}
+                          />
+                           )}
+                        </section>
+                  </Link>
+              </div>
+            ))}  
+          </main>
         </>
     )
 }

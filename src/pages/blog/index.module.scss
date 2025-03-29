@@ -1,0 +1,50 @@
+@use "@styles/variables" as *;
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
+
+    .articleCard{
+        display: flex;
+        width: 1000px;
+        height: 500px;
+        border-radius: 15px;
+        box-shadow: $shadow;
+        margin-bottom: 40px;
+
+        .articleImage{
+            position: relative;
+            width: 60%;
+            height: 100%;
+            border-radius: 15px;
+        }
+
+        .articlePreview{
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+
+            .articleTitle{
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                font-weight: 400;
+                padding-bottom: 10px;
+                border-bottom: 1px solid $dark-text;
+                margin-bottom: 15px;
+            }
+
+            .articleText{
+                overflow: hidden;
+                display: -webkit-box;
+                font-size: 0.9rem;
+                -webkit-line-clamp: 12;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                margin-top: 10px;
+            }
+        }
+    }
+}
