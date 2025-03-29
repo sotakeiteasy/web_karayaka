@@ -1,0 +1,29 @@
+@use "@styles/variables" as *;
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+
+    .article{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 1100px;
+        padding: 40px;
+        box-shadow: $shadow;
+        border-radius: 15px;
+        h1{
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+        time{
+            align-self: flex-start;
+            text-align: left;
+            color: $primary-color;
+            font-weight: 600;
+        }
+    }
+}

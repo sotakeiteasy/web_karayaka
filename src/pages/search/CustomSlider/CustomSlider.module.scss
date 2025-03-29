@@ -15,6 +15,10 @@
     z-index: 1;
 }
 
+.prevArrow:hover, .nextArrow:hover {
+    opacity: .6;
+}
+
 .prevArrow {
     left: 10px;
 }

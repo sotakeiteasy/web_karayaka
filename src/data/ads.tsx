@@ -46,7 +46,7 @@ export const ads: Ad[] = [
     parking: true,
     balcony: true,
     furnished: true,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '2',
@@ -95,7 +95,7 @@ export const ads: Ad[] = [
     parking: true,
     balcony: true,
     furnished: true,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '3',
@@ -152,7 +152,7 @@ export const ads: Ad[] = [
     parking: false,
     balcony: false,
     furnished: true,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '4',
@@ -201,7 +201,7 @@ export const ads: Ad[] = [
     parking: true,
     balcony: true,
     furnished: true,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '5',
@@ -250,7 +250,7 @@ export const ads: Ad[] = [
     parking: false,
     balcony: true,
     furnished: true,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '6',
@@ -299,7 +299,7 @@ export const ads: Ad[] = [
     parking: false,
     balcony: true,
     furnished: true,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '6',
@@ -348,7 +348,7 @@ export const ads: Ad[] = [
     parking: true,
     balcony: true,
     furnished: true,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '7',
@@ -397,7 +397,7 @@ export const ads: Ad[] = [
     parking: true,
     balcony: true,
     furnished: true,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '8',
@@ -446,7 +446,7 @@ export const ads: Ad[] = [
     parking: false,
     balcony: true,
     furnished: true,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '9',
@@ -495,7 +495,7 @@ export const ads: Ad[] = [
     parking: true,
     balcony: false,
     furnished: false,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '10',
@@ -544,7 +544,7 @@ export const ads: Ad[] = [
     parking: true,
     balcony: true,
     furnished: true,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '11',
@@ -593,7 +593,7 @@ export const ads: Ad[] = [
     parking: false,
     balcony: false,
     furnished: false,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '12',
@@ -642,7 +642,7 @@ export const ads: Ad[] = [
     parking: true,
     balcony: true,
     furnished: true,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '13',
@@ -691,7 +691,7 @@ export const ads: Ad[] = [
     parking: false,
     balcony: true,
     furnished: true,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '14',
@@ -740,7 +740,7 @@ export const ads: Ad[] = [
     parking: true,
     balcony: true,
     furnished: true,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   },
   {
     id: '15',
@@ -789,6 +789,6 @@ export const ads: Ad[] = [
     parking: true,
     balcony: true,
     furnished: true,
-    images: ['/images/exampleImage.jpg', '/images/exampleImage.jpg'],
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
   }
 ];
