@@ -1,3 +1,4 @@
+@use "@styles/variables" as *;
 .main{
   display: flex;
   flex-direction: column;
@@ -15,22 +16,23 @@
       top: 50px;
       left: 70px;
        p{
+        user-select: none;
         text-transform: uppercase;
-        color: white;
+        color: $white-text;
         font-size: 2.5rem;
         }
     }
   }
 
     header{
-      width: 900px;
+      width: 1000px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 25px;
       border-radius: 15px; 
-      box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205);  
+      box-shadow: $shadow;  
       margin-bottom: 60px;
       h1{
         text-transform: uppercase;
@@ -46,7 +48,7 @@
     }
 
     .stats{
-      width: 900px;
+      width: 1000px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -59,10 +61,10 @@
         justify-content: center;
         align-items: center;
         padding: 40px 20px;
-        color: #002F6C;
+        color: $primary-color;
         text-transform: uppercase;
         border-radius: 15px; 
-        box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205); 
+        box-shadow: $shadow; 
         h2{
           font-size: 4rem;
           font-weight: 400;
@@ -74,7 +76,7 @@
     }
 
     .infoBlock{
-      width: 900px;
+      width: 1000px;
       display: flex;
       justify-content: center;
       justify-content: space-between;
@@ -89,10 +91,10 @@
           flex-direction: column;
           gap: 10px;
           width: 50%;
-          background-color: #002F6C;
+          background-color: $primary-color;
           border-radius: 15px;   
-          color: white;
-          box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205); 
+          color: $white-text;
+          box-shadow: $shadow; 
 
               h2{
                   padding-left: 50px;
@@ -112,8 +114,8 @@
                 button{
 
                   width: 95%;
-                    color: white;
-                    border: 2px solid #011731;
+                    color: $white-text;
+                    border: 2px solid $dark-text;
                     border-radius: 15px;
                     background-color: #012047;
                     // margin-bottom: 10px;
@@ -122,7 +124,7 @@
                     cursor: pointer;
 
                     &.activeButton{
-                      outline: 2px solid white;
+                      outline: 2px solid $white-text;
                       // &.activeButton::before{
                         
                       //   content: "> "
@@ -139,12 +141,12 @@
           padding: 20px;
           width: 55%;  
           border-radius: 15px; 
-          box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205); 
+          box-shadow: $shadow; 
           h2{
             margin-bottom: 15px;
             font-size: 1.6rem;
             font-weight: 500;
-            color: #002F6C;
+            color: $primary-color;
           }
       }
 
