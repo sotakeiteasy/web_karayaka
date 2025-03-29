@@ -13,7 +13,6 @@ export default function CustomOffers() {
 // import exampleImage from "/"
   const { t } = useTranslation("common")
     return (
-        <>
       <main className={styles.main}>  
         <div className={styles.formContainer}>
           <ContactUs />
@@ -56,7 +55,6 @@ export default function CustomOffers() {
               </div>
         </address>
       </main>
-        </>
     )
 }
 

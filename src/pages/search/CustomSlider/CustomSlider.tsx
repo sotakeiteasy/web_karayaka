@@ -7,12 +7,12 @@ import { mdiChevronRight } from '@mdi/js';
 import { mdiChevronLeft } from '@mdi/js';
 import 'slick-carousel/slick/slick.css';
 
-export default function CustomSlider({ ad }) {
+export default function CustomSlider({ ad, locale }) {
     function SampleNextArrow(props) {
       const { onClick } = props;
       return (
         <div className={styles.nextArrow} onClick={onClick}>
-          <Icon path={mdiChevronRight} size={1} />   
+          <Icon path={mdiChevronRight} size={1.4} />   
         </div>
        );
     }
@@ -21,7 +21,7 @@ export default function CustomSlider({ ad }) {
       const { onClick } = props;
       return (
         <div className={styles.prevArrow} onClick={onClick}>
-          <Icon path={mdiChevronLeft} size={1} />   
+          <Icon path={mdiChevronLeft} size={1.4} />   
         </div>
        );
     }
@@ -37,18 +37,15 @@ export default function CustomSlider({ ad }) {
   
     return (
       <Slider {...settings}>
+        {ad?.images.map((image, index) => (
           <Image
-            src={ad?.images[0]}
-            alt={ad?.title.en}
+            key={index}
+            src={image}
+            alt={ad?.title[locale]}
             width={300}
-            height={200}
+            height={300}
           />
-          <Image
-            src={ad?.images[1]}
-            alt={ad?.title.en}
-            width={300}
-            height={200}
-          />
+        ))}
       </Slider>
     )
   }
