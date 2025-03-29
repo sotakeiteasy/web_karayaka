@@ -12,7 +12,7 @@ export default function CustomSlider({ ad }) {
       const { onClick } = props;
       return (
         <div className={styles.nextArrow} onClick={onClick}>
-          <Icon path={mdiChevronRight} size={1} />   
+          <Icon path={mdiChevronRight} size={1.4} />   
         </div>
        );
     }
@@ -21,7 +21,7 @@ export default function CustomSlider({ ad }) {
       const { onClick } = props;
       return (
         <div className={styles.prevArrow} onClick={onClick}>
-          <Icon path={mdiChevronLeft} size={1} />   
+          <Icon path={mdiChevronLeft} size={1.4} />   
         </div>
        );
     }
