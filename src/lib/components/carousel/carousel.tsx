@@ -18,7 +18,7 @@ const NextArrow = (props: any) => {
   const { onClick } = props;
   return (
     <div className={styles.nextArrow} onClick={onClick}>
-        <Icon path={mdiChevronRight} size={1} />
+        <Icon path={mdiChevronRight} size={1.4} />
     </div>
   );
 };
@@ -27,7 +27,7 @@ const PrevArrow = (props: any) => {
   const { onClick } = props;
   return (
     <div className={styles.prevArrow} onClick={onClick}>
-      <Icon path={mdiChevronLeft} size={1} />
+      <Icon path={mdiChevronLeft} size={1.4} />
     </div>
   );
 };

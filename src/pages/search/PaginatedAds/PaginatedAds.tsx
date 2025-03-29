@@ -7,25 +7,43 @@ import styles from './PaginatedAds.module.scss';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
+import Icon from '@mdi/react';
+import { mdiMapMarkerOutline } from '@mdi/js';
+import { mdiBedQueenOutline } from '@mdi/js';
+
 function Items({ currentItems, locale }) {
   return (
     <div className={styles.adsList}>
         {currentItems?.map(ad => (
           <div className={styles.adCard} key={ad.id}>
-            <div className={styles.adCardImage}>
-              <CustomSlider ad={ad}/>
-            </div>
-            <div className={styles.adCardDescription}>
-              <h2>{ad.title.en}</h2>
-              <p> {ad.location.country.en}, {ad.location.city.en}, {ad.location.district.en} </p>
-              <p> {ad.price.usd}$ </p>
+
+              <div className={styles.adCardImage}>
+                <CustomSlider ad={ad} locale={locale}/>
+              </div>
               <Link 
                 href={`/ads/${ad.id}`}
                 locale={locale}
               >
-                подробнее
-              </Link>
-            </div>
+              <div className={styles.adCardDescription}>
+                <div className={styles.upDescription}>
+                  <h2 className={styles.cardTitle}>{ad.title[locale]}</h2>
+                  <p>
+                    <Icon path={mdiMapMarkerOutline} size={.8} /> 
+                    {ad.location.country[locale]}, {ad.location.city[locale]}, {ad.location.district[locale]} 
+                  </p>
+                </div>
+                <div> {ad.description[locale]} </div>
+                <div className={styles.bottomDescription}>
+                  <p className={styles.cardPrice}><strong> {ad.price.usd}$ </strong></p>
+                  <p>
+                                      {/* <p><strong> {ad.price.usd}$ </strong></p> */}
+                    <span>{ad.rooms}<Icon path={mdiBedQueenOutline} size={1} /></span>
+                    <span>{ad.area}m<sup>2</sup></span> 
+                  </p>
+                </div>
+              </div>
+            </Link>
+
           </div>
         ))} 
     </div>

@@ -11,8 +11,12 @@ import { Filter } from '@/lib/types/filter';
 
 import PaginatedAds from './PaginatedAds/PaginatedAds';
 
+import Select from 'react-select'
+
+
 export default function Search({locale}: {locale: string}) {
   const router = useRouter();
+  
   const { type, country, city, propertyType, minPrice, maxPrice, minArea, maxArea, bedrooms, floor, parking, balcony, furnished } = router.query;
   
   const [searchText, setSearchText] = useState('');
@@ -163,6 +167,59 @@ export default function Search({locale}: {locale: string}) {
     window.location.href = `/${locale}/search${typeParam}`;
   }
 
+  const cityOptions = [
+    { value: "", label: t("search.filters.allCities") },
+    ...filterValues.cities.map((city) => ({
+      value: city.en,
+      label: city[locale],
+    })),
+  ];
+
+  const countryOptions = [
+    { value: "", label: t("search.filters.allCountries") },
+    ...filterValues.countries.map((country) => ({
+      value: country.en,
+      label: country[locale],
+    })),
+  ];
+
+  const propertyTypeOptions = [
+    { value: "", label: t("search.filters.propertyType") },
+    ...filterValues.propertyType.map((propertyType) => ({
+      value: propertyType.en,
+      label: propertyType[locale],
+    })),
+  ];
+
+  const bedroomOptions = [
+    { value: "", label: t("search.filters.any") },
+    { value: "1", label: "1" }, 
+    { value: "2", label: "2" },
+    { value: "3", label: "3" },
+    { value: "4", label: "4+" }
+  ];
+
+  const FloorOptions = [
+    { value: "", label: t("search.filters.any") },
+    { value: "1", label: "1" }, 
+    { value: "2", label: "2" },
+    { value: "3", label: "3" },
+    { value: "4", label: "4+" }
+  ];
+
+  const SortOptions = [
+    { value: "price-cheap", label: t("search.sorting.cheapFirst") },
+    { value: "price-expensive", label: t("search.sorting.expensiveFirst") }, 
+    { value: "area-small", label: t("search.sorting.smallFirst") },
+    { value: "area-large", label: t("search.sorting.largeFirst") }
+  ];
+
+  const filters = [
+    { key: "parking", label: t("search.filters.parking") },
+    { key: "balcony", label: t("search.filters.balcony") },
+    { key: "furnished", label: t("search.filters.furnished") },
+  ];
+
   return (
     <>
       <Head>
@@ -176,49 +233,62 @@ export default function Search({locale}: {locale: string}) {
           {/* Существующие фильтры */}
           <div className={styles.filter}>
             <label htmlFor="country">{t("search.filters.country")}</label>
-            <select name="country" id="country" value={filter.country} onChange={handleFilterChange}>
-              <option value="">{t("search.filters.allCountries")}</option>
-              {filterValues.countries?.map((country, index) => (
-                <option key={`${country.en}-${index}`} value={country.en}>
-                  {(router.locale && country[router.locale as keyof typeof country]) || country.en}
-                </option>
-              ))}
-            </select>
+            <Select
+              id="country"
+              name="country"
+              value={countryOptions.find(option => option.value === (filter.country ?? ""))}
+              onChange={(selectedOption) =>
+                handleFilterChange({
+                  target: { name: "country", value: selectedOption?.value || "" }
+                })
+              }
+              options={countryOptions}
+              isSearchable
+              classNamePrefix="react-select"
+
+            />
           </div>
 
+          
           <div className={styles.filter}>
             <label htmlFor="city">{t("search.filters.city")}</label>
-            <select 
-              id="city" 
-              name="city" 
-              value={filter.city} 
-              onChange={handleFilterChange}
-            >
-              <option value="">{t("search.filters.allCities")}</option>
-              {filterValues.cities?.map((city, index) => (
-                <option key={`${city.en}-${index}`} value={city.en}>
-                  {(router.locale && city[router.locale as keyof typeof city]) || city.en}
-                </option>
-              ))}
-            </select>
+            <Select
+              id="city"
+              name="city"
+              value={cityOptions.find(option => option.value === (filter.city ?? ""))}
+              onChange={(selectedOption) =>
+                handleFilterChange({
+                  target: { name: "city", value: selectedOption?.value || "" }
+                })
+              }
+              options={cityOptions}
+              // placeholder={t("search.filters.allCities")}
+              isSearchable
+              classNamePrefix="react-select"
+
+            />
           </div>
 
           <div className={styles.filter}>
             <label htmlFor="district">{t("search.filters.propertyType")}</label>
-            <select 
-              id="district" 
-              name="propertyType" 
-              value={filter.propertyType} 
-              onChange={handleFilterChange}
-            >
-              <option value="">{t("search.filters.allTypes")}</option>
-              {filterValues.propertyType?.map((type, index) => (
-                <option key={`${type.en}-${index}`} value={type.en}>
-                  {(router.locale && type[router.locale as keyof typeof type]) || type.en}
-                </option>
-              ))}
-            </select>
+            <Select
+              id="propertyType"
+              name="propertyType"
+              value={propertyTypeOptions.find(option => option.value === (filter.propertyType ?? ""))}
+              onChange={(selectedOption) =>
+                handleFilterChange({
+                  target: { name: "propertyType", value: selectedOption?.value || "" }
+                })
+              }
+              options={propertyTypeOptions}
+              isSearchable
+              classNamePrefix="react-select"
+
+            />
           </div>
+
+          {/* <Select options={options} /> */}
+          
 
           {/* <div className={styles.filter}>
             <label htmlFor="type">Тип</label>
@@ -302,50 +372,63 @@ export default function Search({locale}: {locale: string}) {
           </div>
 
           <div className={styles.filter}>
-                <label htmlFor="bedrooms">{t("search.filters.bedrooms")}</label>
-                <select 
-                  id="bedrooms" 
-                  name="bedrooms" 
-                  value={filter.bedrooms || ''} 
-                  onChange={(e) => handleFilterChange({
-                    target: {
-                      name: e.target.name,
-                      value: e.target.value ? Number(e.target.value) : undefined
-                    }
-                  } as any)}
-                >
-                <option value="">{t("search.filters.any")}</option>
-                <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4+</option>
-            </select>
+            <label htmlFor="bedrooms">{t("search.filters.bedrooms")}</label>
+
+            <Select
+              id="bedrooms"
+              name="bedrooms"
+              value={bedroomOptions.find(option => 
+                option.value === (filter.bedrooms ? String(filter.bedrooms) : '')
+              )}
+              onChange={(selectedOption) => 
+                handleFilterChange({
+                  target: {
+                    name: "bedrooms",
+                    value: selectedOption?.value ? Number(selectedOption.value) : undefined
+                  }
+                } as any)
+              }
+              options={bedroomOptions}
+              isSearchable={false}
+              classNamePrefix="react-select"
+
+            />
           </div>
 
           <div className={styles.filter}>
             <label htmlFor="floor">{t("search.filters.floor")}</label>
-            <select 
-              id="floor" 
-              name="floor" 
-              value={filter.floor || ''} 
-              onChange={(e) => handleFilterChange({
-                target: {
-                  name: e.target.name,
-                  value: e.target.value ? Number(e.target.value) : undefined
-                }
-              } as any)}
-            >
-              <option value="">{t("search.filters.anyFloor")}</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4+</option>
-            </select>
+            <Select
+              id="floor"
+              name="floor"
+              value={FloorOptions.find(option => 
+                option.value === (filter.floor ? String(filter.floor) : '')
+              )}
+              onChange={(selectedOption) => 
+                handleFilterChange({
+                  target: {
+                    name: "floor",
+                    value: selectedOption?.value ? Number(selectedOption.value) : undefined
+                  }
+                } as any)
+              }
+              options={FloorOptions}
+              isSearchable={false}
+              classNamePrefix="react-select"
+            />
           </div>
 
           {/* Фильтры для булевых значений */}
           <div className={styles.checkboxGroup}>
-            <div className={styles.checkbox}>
+          {filters.map(({ key, label }) => (
+            <button
+              key={key}
+              className={`${styles.filterButton} ${filter[key] ? styles.active : ""}`}
+              onClick={() => setFilter((prev) => ({ ...prev, [key]: !prev[key] }))}
+            >
+              {label}
+            </button>
+          ))}
+            {/* <div className={styles.checkbox}>
               <input 
                 type="checkbox" 
                 id="parking" 
@@ -388,7 +471,7 @@ export default function Search({locale}: {locale: string}) {
                 }}
               />
               <label htmlFor="furnished">{t("search.filters.furnished")}</label>
-            </div>
+            </div> */}
           </div>
 
           <div className={styles.filterActions}>
@@ -419,12 +502,25 @@ export default function Search({locale}: {locale: string}) {
                 {t("search.filters.reset")}
               </button>}
 
-              <select className={styles.sortButton} name="sort" id="sort" value = {sortOption} onChange = {handleSortChange}>
-                <option value="price-cheap">{t("search.sorting.cheapFirst")}</option>
-                <option value="price-expensive">{t("search.sorting.expensiveFirst")}</option>
-                <option value="area-small">{t("search.sorting.smallFirst")}</option>
-                <option value="area-large">{t("search.sorting.largeFirst")}</option>
-              </select>
+
+
+              <Select
+                className={styles.sortButton}
+                id="sort"
+                name="sort"
+                value={SortOptions.find(option => option.value === sortOption)}
+                onChange={(selectedOption) => 
+                  handleSortChange({
+                    target: {
+                      name: "sort",
+                      value: selectedOption?.value || "price-cheap"
+                    }
+                  })
+                }
+                options={SortOptions}
+                isSearchable={false}
+                classNamePrefix="react-select" 
+              />
             </div>
             
           </div>
