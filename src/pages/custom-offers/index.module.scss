@@ -1,23 +1,54 @@
+@use "@styles/variables" as *;
 .main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     .formContainer{
         display: flex;
         gap: 40px;
         margin: 40px;
-        box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205);
+        box-shadow: $shadow;
         border-radius: 15px;
-        max-width: 1000px;
-        max-height: 800px;
-        
-
-            img{
+        width: 1100px;
+        height: 800px;
+        margin-bottom: 60px;
+            .formImg{
+                position: relative;
                 width: 50%;
-                object-fit: cover;
-                border-radius: 0px 15px 15px 0px;
             }
+    }
 
-        
+    .contacts{
+        width: 550px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-shadow: $shadow;
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 25px;
+        color: $primary-color;
+        .contactsTraditional, .contactsSocial{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .telegramIcon{
+                width: 33px;
+                height: 33px;
+            }
+            div{
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                gap: 10px;
+                svg{
+                    cursor: pointer;
+                }
+                a{
+                    font-style: normal;
+                }
+            }
+        }
     }
 }

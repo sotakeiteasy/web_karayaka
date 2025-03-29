@@ -7,7 +7,6 @@ import { getSortedPostsData } from '../../lib/blog';
 export default function Blog( {allBlogData}) {
     const { t } = useTranslation('common')
     return (
-        <>
         <main className={styles.main}> 
             {allBlogData.map(({ id, title, contentHtml}) => (
               <div>
@@ -40,7 +39,6 @@ export default function Blog( {allBlogData}) {
               </div>
             ))}  
           </main>
-        </>
     )
 }
 
