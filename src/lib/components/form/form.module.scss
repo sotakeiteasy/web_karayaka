@@ -1,3 +1,4 @@
+@use "@styles/variables" as *;
 .form{
     display: flex;
     flex-direction: column;
@@ -6,15 +7,14 @@
 
     input:-webkit-autofill {
         font-family: inherit;
-        border: 2px solid #002F6C;
+        border: 2px solid $primary-color;
         border-radius: 8px;
-        caret-color: black; 
-        color: black;
-        background: white;
+        caret-color: $dark-text; 
+        color: $dark-text;
+        background: $white-text;
         -webkit-font-feature-settings: off;
-        -webkit-text-fill-color: black; 
+        -webkit-text-fill-color: $dark-text; 
         -webkit-background-clip: text; 
-        box-shadow: 0 0 0 50px var(var(--black-color)) inset; 
         }
 
     legend{
@@ -36,7 +36,7 @@
         position: absolute;
         transform: translate(.5rem, -45%);
         z-index: 1;
-        background-color: white;
+        background-color: $white-text;
         text-align: center;
         }
         .buttonsLabel{
@@ -50,7 +50,7 @@
 
     input, textarea{
         border-radius: 8px;
-        border: 2px solid #002F6C;
+        border: 2px solid $primary-color;
         padding: 8px 5px;
         font-family: inherit;
     }
@@ -106,12 +106,12 @@
 
                 input[type="button"]{
                     padding: 8px 16px;
-                    background-color: white;
+                    background-color: $white-text;
                     cursor: pointer;
                 }
                 input[type="button"].selected{
-                    background-color: #002F6C;
-                    color: white;
+                    background-color: $primary-color;
+                    color: $white-text;
                 }
                 }
             }
@@ -129,8 +129,8 @@
     align-self: flex-end;
     width: 160px;
     border-radius: 10px;
-    background-color: #002F6C;
-    color: white;
+    background-color: $primary-color;
+    color: $white-text;
     border: transparent;
     padding: 10px 15px;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.205);

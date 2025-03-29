@@ -9,7 +9,7 @@ export default function Blog( {allBlogData}) {
     const { t } = useTranslation('common')
     return (
         <>
-          <h1>{t('blog.header')}</h1>
+          {/* <h1>{t('blog.header')}</h1> */}
           <ul>
             {allBlogData.map(({ id, date, title }) => (
               <li key={id}>

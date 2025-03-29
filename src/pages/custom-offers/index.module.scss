@@ -1,3 +1,4 @@
+@use "@styles/variables" as *;
 .main{
     display: flex;
     flex-direction: column;
@@ -7,7 +8,7 @@
         display: flex;
         gap: 40px;
         margin: 40px;
-        box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205);
+        box-shadow: $shadow;
         border-radius: 15px;
         width: 1100px;
         height: 800px;
@@ -23,11 +24,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        box-shadow: 1px 3px 7px 1px rgba(0, 0, 0, 0.205);
+        box-shadow: $shadow;
         padding: 30px;
         border-radius: 15px;
         margin-bottom: 25px;
-        color: #002F6C;
+        color: $primary-color;
         .contactsTraditional, .contactsSocial{
             display: flex;
             flex-direction: column;
