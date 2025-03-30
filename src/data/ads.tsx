@@ -1,3 +1,4 @@
+import { Ad } from "@/lib/types/ad";
 export const ads: Ad[] = [
   {
     id: '1',
