@@ -1,7 +1,7 @@
 import { getAllPostIds, getPostData } from "../../lib/blog";
 import Date from '@components/date/date'
 import styles from './id.module.scss';
-export default function Post({ postData }) {
+export default function Post({ postData }: {postData: any}) {
     return (
     <main className={styles.main}>
         <section className={styles.article}>
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
 }
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-export async function getStaticProps( { params, locale }) {
+export async function getStaticProps( { params, locale }: {params:any, locale: string}) {
     // if (locale !== 'ru') {
     //     return {
     //       redirect: {

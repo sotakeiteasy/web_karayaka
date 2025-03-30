@@ -6,9 +6,10 @@ import Icon from '@mdi/react';
 import { mdiChevronRight } from '@mdi/js';
 import { mdiChevronLeft } from '@mdi/js';
 import 'slick-carousel/slick/slick.css';
+import { Ad } from '@/lib/types/ad';
 
-export default function CustomSlider({ ad, locale, height = 300, width = 300}) {
-    function SampleNextArrow(props) {
+export default function CustomSlider({ ad, locale, height = 300, width = 300}: { ad: Ad, locale: "tr" | "en" | "ru", height: number, width: number}) {
+    function SampleNextArrow(props: any) {
       const { onClick } = props;
       return (
         <div className={styles.nextArrow} onClick={onClick}>
@@ -17,7 +18,7 @@ export default function CustomSlider({ ad, locale, height = 300, width = 300}) {
        );
     }
   
-    function SamplePrevArrow(props) {
+    function SamplePrevArrow(props: any) {
       const { onClick } = props;
       return (
         <div className={styles.prevArrow} onClick={onClick}>
@@ -41,7 +42,7 @@ export default function CustomSlider({ ad, locale, height = 300, width = 300}) {
           <Image
             key={index}
             src={image}
-            alt={ad?.title[locale]}
+            alt={ad?.title[locale]|| ''}
             width={width}
             height={height}
             priority

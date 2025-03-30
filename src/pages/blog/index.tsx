@@ -4,11 +4,11 @@ import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { getSortedPostsData } from '../../lib/blog';
 
-export default function Blog( {allBlogData}) {
+export default function Blog( {allBlogData}: {allBlogData: any}) {
     const { t } = useTranslation('common')
     return (
         <main className={styles.main}> 
-            {allBlogData.map(({ id, title, contentHtml}) => (
+            {allBlogData.map(({ id, title, contentHtml}: { id: any, title: any, contentHtml: any}) => (
               <div key={id}>
                 <Link 
                   href={`./blog/${id}`}
@@ -27,7 +27,9 @@ export default function Blog( {allBlogData}) {
                         />
                       </div>
                       <section className={styles.articlePreview}>
-                        <h2 href={`./blog/articles/${id}`} className={styles.articleTitle}>{title}</h2>
+                        <a href={`./blog/articles/${id}`}>
+                          <h2  className={styles.articleTitle}>{title}</h2>
+                        </a>
                         {contentHtml && (
                           <div
                             dangerouslySetInnerHTML={{ __html: contentHtml }} 
@@ -43,7 +45,7 @@ export default function Blog( {allBlogData}) {
 }
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale }: {locale: string}) {
   const allBlogData = await getSortedPostsData();   // for blog
 
   // if (locale !== 'ru') {

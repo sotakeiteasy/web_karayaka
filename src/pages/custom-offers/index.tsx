@@ -34,11 +34,15 @@ export default function CustomOffers() {
            <address className={styles.contacts}>
               <div className={styles.contactsTraditional}>
                 <div>
-                  <Icon path={mdiPhone} size={1.5} href="tel:+392099545949"/>
+                  <a href="tel:+392099545949">
+                    <Icon path={mdiPhone} size={1.5}/>
+                  </a>
                   <a href="tel:+392099545949">+39 209-954‑59-49</a>
                 </div>
                 <div>
-                  <Icon path={mdiEmail} size={1.5} href="mailto:karayaka@gmail.com"/>
+                  <a href="mailto:karayaka@gmail.com">
+                    <Icon path={mdiEmail} size={1.5}/>
+                  </a>
                   <a href="mailto:karayaka@gmail.com">karayaka@gmail.com</a>
                 </div>
               </div>
@@ -48,7 +52,9 @@ export default function CustomOffers() {
                   <a href="#">Telegram</a>
                 </div>
                 <div>
-                  <Icon path={mdiWhatsapp} size={1.5} href="#"/>
+                  <a href="#">
+                    <Icon path={mdiWhatsapp} size={1.5}/>
+                  </a>
                   <a href="#">Whatsapp</a>
                 </div>
               </div>
@@ -58,7 +64,7 @@ export default function CustomOffers() {
 }
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale }: {locale: string}) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),

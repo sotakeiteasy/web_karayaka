@@ -11,15 +11,16 @@ import Icon from '@mdi/react';
 import { mdiMapMarkerOutline } from '@mdi/js';
 import { mdiBedQueenOutline } from '@mdi/js';
 import { mdiStairs } from '@mdi/js';
+import { Ad } from '@/lib/types/ad';
 
-function Items({ currentItems, locale }) {
+function Items({ currentItems, locale }: { currentItems: any, locale: "tr" | "en" | "ru" }) {
 
   return (
     <div className={styles.adsList}>
-        {currentItems?.map(ad => (
+        {currentItems?.map((ad: Ad )=> (
           <div className={styles.adCard} key={ad.id}>
                 <div className={styles.adCardImage}>
-                  <CustomSlider ad={ad} locale={locale}/>
+                  <CustomSlider ad={ad} locale={locale} height={300} width={300}/>
                 </div>
                 <Link 
                   href={`/ads/${ad.id}`}
@@ -52,22 +53,23 @@ function Items({ currentItems, locale }) {
   
 
 
-export default function PaginatedAds ({itemsPerPage, ads}) {
+export default function PaginatedAds ({itemsPerPage, ads}: {itemsPerPage: number, ads: any}) {
   const router = useRouter();
-  const { page = 1 } = router.query;
+  // const { page = 1 } = router.query;
+  const pageNumber = Number(router.query.page) || 1;
 
   const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
-    const offset = (page - 1) * itemsPerPage;
+    const offset = (pageNumber - 1) * itemsPerPage;
     setItemOffset(offset);
-  }, [page, itemsPerPage]);
+  }, [pageNumber, itemsPerPage]);
 
   const endOffset = itemOffset + itemsPerPage;
   const currentAds = ads.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(ads.length / itemsPerPage);
 
-  const handlePageClick = (event) => {
+  const handlePageClick = (event: any) => {
     // Получаем текущие параметры запроса
     const currentQuery = { ...router.query };
     
@@ -88,7 +90,7 @@ export default function PaginatedAds ({itemsPerPage, ads}) {
 
   return (
     <>
-      <Items currentItems={currentAds} locale={router.locale} />
+      <Items currentItems={currentAds} locale={(router.locale) as "tr" | "en" | "ru"} />
       <ReactPaginate
         breakLabel="..."
         nextLabel="Next"

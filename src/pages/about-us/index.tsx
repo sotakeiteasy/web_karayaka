@@ -8,6 +8,7 @@ import { useState } from "react";
 export default function AboutUs() {
     const { t } = useTranslation('common')
 
+    type FAQKey = keyof typeof questionsFAQ;
 
     const questionsFAQ = {
       location: "Where are you located?",
@@ -28,7 +29,7 @@ export default function AboutUs() {
     const [activeKey, setActiveKey] = useState('location');
     const [answer, setAnswer] = useState(answersFAQ.location)
     const [question, setQuestion] = useState(questionsFAQ.location)
-    function toggleAnswers(key) {
+    function toggleAnswers(key: FAQKey) {
       setAnswer(answersFAQ[key]);
       setQuestion(questionsFAQ[key]);
       setActiveKey(key); // Store the current active key
@@ -101,26 +102,30 @@ export default function AboutUs() {
               <h2>FAQ</h2>
               
                   
-                  {Object.keys(questionsFAQ).map((key) => (
-                    <div className={styles.faqRow} key={key}>
-                    <Icon 
-                     path={mdiChevronRight} 
-                     size={1.5}
-                     style={{
-                      opacity:0
-                    }}
-                     key={key}
-                    className={activeKey === key ? styles.activeIcon : ''} 
-                    />
-                    <button
-                      key={key}
-                      className={activeKey === key ? styles.activeButton : ''} 
-                      onClick={() => toggleAnswers(key)}
-                    >
-                      {questionsFAQ[key]}
-                    </button>
+                  {Object.keys(questionsFAQ).map((key) => {
+                    const typedKey = key as FAQKey;
+
+                    return (
+                    <div className={styles.faqRow} key={typedKey}>
+                      <Icon 
+                      path={mdiChevronRight} 
+                      size={1.5}
+                      style={{
+                        opacity:0
+                      }}
+                      key={typedKey}
+                      className={activeKey === typedKey ? styles.activeIcon : ''} 
+                      />
+                      <button
+                        key={typedKey}
+                        className={activeKey === typedKey ? styles.activeButton : ''} 
+                        onClick={() => toggleAnswers(typedKey)}
+                      >
+                        {questionsFAQ[typedKey]}
+                      </button>
                     </div>
-                  ))}   
+                  )
+                })}
             </section>
 
              <section className={styles.answerBlock}>
@@ -136,7 +141,7 @@ export default function AboutUs() {
 }
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale }: {locale: string}) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),

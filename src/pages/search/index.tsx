@@ -175,7 +175,7 @@ export default function Search({locale}: {locale: string}) {
     { value: "", label: t("search.filters.allCities") },
     ...filterValues.cities.map((city) => ({
       value: city.en,
-      label: city[locale],
+      label: city[locale as keyof typeof city],
     })),
   ];
 
@@ -183,7 +183,7 @@ export default function Search({locale}: {locale: string}) {
     { value: "", label: t("search.filters.allCountries") },
     ...filterValues.countries.map((country) => ({
       value: country.en,
-      label: country[locale],
+      label: country[locale as keyof typeof country],
     })),
   ];
 
@@ -191,7 +191,7 @@ export default function Search({locale}: {locale: string}) {
     { value: "", label: t("search.filters.propertyType") },
     ...filterValues.propertyType.map((propertyType) => ({
       value: propertyType.en,
-      label: propertyType[locale],
+      label: propertyType[locale as keyof typeof propertyType],
     })),
   ];
 
@@ -245,7 +245,7 @@ export default function Search({locale}: {locale: string}) {
                 onChange={(selectedOption) =>
                   handleFilterChange({
                     target: { name: "country", value: selectedOption?.value || "" }
-                  })
+                  } as any)
                 }
                 options={countryOptions}
                 isSearchable
@@ -265,7 +265,7 @@ export default function Search({locale}: {locale: string}) {
                 onChange={(selectedOption) =>
                   handleFilterChange({
                     target: { name: "city", value: selectedOption?.value || "" }
-                  })
+                  } as any)
                 }
                 options={cityOptions}
                 isSearchable
@@ -284,7 +284,7 @@ export default function Search({locale}: {locale: string}) {
                 onChange={(selectedOption) =>
                   handleFilterChange({
                     target: { name: "propertyType", value: selectedOption?.value || "" }
-                  })
+                  } as any)
                 }
                 options={propertyTypeOptions}
                 isSearchable
@@ -431,8 +431,8 @@ export default function Search({locale}: {locale: string}) {
           {filters.map(({ key, label }) => (
             <button
               key={key}
-              className={`${styles.filterButton} ${filter[key] ? styles.active : ""}`}
-              onClick={() => setFilter((prev) => ({ ...prev, [key]: !prev[key] }))}
+              className={`${styles.filterButton} ${filter[key as keyof typeof filter] ? styles.active : ""}`}
+              onClick={() => setFilter((prev) => ({ ...prev, [key]: !prev[key   as keyof typeof filter] }))}
             >
               {label}
             </button>
@@ -525,7 +525,7 @@ export default function Search({locale}: {locale: string}) {
                         name: "sort",
                         value: selectedOption?.value || "price-cheap"
                       }
-                    })
+                    } as any)
                   }
                   options={SortOptions}
                   isSearchable={false}

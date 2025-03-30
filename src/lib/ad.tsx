@@ -93,7 +93,9 @@ export function filterAds(filters: Filter, currencyType: 'rub' | 'usd' | 'try' =
         const balconyMatch = filters.balcony === undefined || ad.balcony === filters.balcony;
         const furnishedMatch = filters.furnished === undefined || ad.furnished === filters.furnished;
         
-        return countryMatch && cityMatch && districtMatch && typeMatch && 
+        return countryMatch && cityMatch 
+        // && districtMatch 
+        && typeMatch && 
                minPriceMatch && maxPriceMatch && bedroomsMatch && 
                minAreaMatch && maxAreaMatch && featuresMatch && 
                floorMatch && parkingMatch && balconyMatch && 
@@ -127,7 +129,7 @@ export function getUniqueFilterValues() {
         // Добавляем типы жилья с проверкой уникальности по en
         propertyTypesMap.set(ad.propertyType, {
             en: ad.propertyType,
-            ru: propertyTypeTranslations[ad.propertyType]?.ru || ad.propertyType
+            ru: propertyTypeTranslations[ad.propertyType as keyof typeof propertyTypeTranslations]?.ru || ad.propertyType
         });
         
         // Добавляем особенности

@@ -25,22 +25,22 @@ import 'slick-carousel/slick/slick.css';
 import { useState, useRef } from "react";
 import ContactUs from "@/lib/components/form/form";
 
-export default function AdPage({adData, locale}) {
+export default function AdPage({adData, locale}: {adData: Ad, locale: string}) {
 
     return (
         <>
             <Head>
-                <title>{adData.title[locale]}</title>
+                <title>{adData.title[locale as 'ru' | 'en' | 'tr']}</title>
             </Head>
             <div className={styles.main}>
                 <div className={styles.titleInfo}>
                     <div className={styles.rightTitleInfo}>
                         <p>
-                            {adData.title[locale]}
+                            {adData.title[locale as 'ru' | 'en' | 'tr']}
                         </p>
                         <p>
                             <Icon path={mdiMapMarkerOutline} size={1} /> 
-                            {adData.location.country[locale]}, {adData.location.city[locale]}, {adData.location.district[locale]} 
+                            {adData.location.country[locale as 'ru' | 'en' | 'tr']}, {adData.location.city[locale as 'ru' | 'en' | 'tr']}, {adData.location.district[locale as 'ru' | 'en' | 'tr']} 
                         </p>
                     </div>
                     <div className={styles.leftTitleInfo}>
@@ -160,7 +160,7 @@ export default function AdPage({adData, locale}) {
                     </div>
                 </div>
                 <div className={styles.description}>
-                    { adData.description[locale] }
+                    { adData.description[locale as 'ru' | 'en' | 'tr'] }
                 </div>
                 <ContactUs />
             </div>
@@ -168,11 +168,11 @@ export default function AdPage({adData, locale}) {
     )
 }
 
-function CustomSlider({ ad, locale}) {
+function CustomSlider({ ad, locale}: {ad: Ad, locale: string}) {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const sliderRef = useRef(null);
+    const sliderRef = useRef<Slider | null>(null);
 
-    function SampleNextArrow(props) {
+    function SampleNextArrow(props: any) {
       const { onClick } = props;
       return (
         <div className={styles.nextArrow} onClick={onClick}>
@@ -181,7 +181,7 @@ function CustomSlider({ ad, locale}) {
        );
     }
   
-    function SamplePrevArrow(props) {
+    function SamplePrevArrow(props: any) {
       const { onClick } = props;
       return (
         <div className={styles.prevArrow} onClick={onClick}>
@@ -197,7 +197,7 @@ function CustomSlider({ ad, locale}) {
       slidesToScroll: 1,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,
-      beforeChange: (oldIndex, newIndex) => setCurrentIndex(newIndex) // Синхронизация индексов
+      beforeChange: (oldIndex: any, newIndex: any) => setCurrentIndex(newIndex) // Синхронизация индексов
 
     };
   
@@ -226,7 +226,7 @@ function CustomSlider({ ad, locale}) {
               <div key={index}>
                 <Image
                   src={image}
-                  alt={ad?.title[locale]}
+                  alt={ad?.title[locale as 'ru' | 'en' | 'tr']}
                   width={650}
                   height={400}
                 />
@@ -237,15 +237,15 @@ function CustomSlider({ ad, locale}) {
       );
   }
 
-export function getStaticPaths({ locales }) {
+export function getStaticPaths({ locales }: {locales: any} ) {
     const ads = getAllAds();
     
     // Создаем пути для каждой локали
-    const paths = [];
+    const paths: any[] = [];
     
     // Для каждого объявления создаем путь для каждой локали
     ads.forEach(ad => {
-        locales.forEach(locale => {
+        locales.forEach((locale: string) => {
             paths.push({
                 params: { id: ad.params.id },
                 locale
@@ -261,7 +261,8 @@ export function getStaticPaths({ locales }) {
 
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-export async function getStaticProps({ params, locale }) {
+import { Ad } from "@/lib/types/ad";
+export async function getStaticProps({ params, locale }: {params: any, locale: string}) {
     const adData = getAdById(params.id)
   return {
     props: {

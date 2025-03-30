@@ -32,12 +32,11 @@ const PrevArrow = (props: any) => {
   );
 };
 
-export default function SimpleSlider({ type, country, locale }: { type: string, country: string, locale: string }) {
+export default function SimpleSlider({ type, country, locale }: { type: string, country: string, locale: 'ru' | 'en' | 'tr'  }) {
     const filteredAds = ads.filter(ad => (ad.type === type && ad.location.country.en === country))
     const settings = {
       dots: false,
       infinite: true,
-      speed: 500,
       slidesToShow: 3,
       slidesToScroll: 1,
       nextArrow: <NextArrow />,

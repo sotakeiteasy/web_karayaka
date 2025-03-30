@@ -16,7 +16,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 
 
-export default function Home({allBlogData, locale}) {
+export default function Home({allBlogData, locale}: {allBlogData: any, locale: string}) {
   const { t } = useTranslation('common');
   const [isRent, setIsRent] = useState(false)
   const [input, setInput] = useState('')
@@ -120,7 +120,7 @@ export default function Home({allBlogData, locale}) {
         <div className={styles.carouselBlock}>
             <h1 className={styles.header}>{t('home.rent')}</h1>
             <div className={styles.carousel}>
-              <SimpleSlider type='rent' country={locale === 'en' ? 'Russia' : 'Turkey'} locale={locale}/>
+              <SimpleSlider type='rent' country={locale === 'en' ? 'Russia' : 'Turkey'} locale={locale as "tr" | "en" | "ru"}/>
             </div>
             <button className={styles.blockButton}><Link href="/search?type=rent" locale={locale}>{t('home.seeAll')}</Link></button>
         </div>
@@ -129,13 +129,13 @@ export default function Home({allBlogData, locale}) {
               {t('home.buy')}
             </h1>
             <div className={styles.carousel}>
-              <SimpleSlider type='sale' country={locale === 'en' ? 'Russia' : 'Turkey'} locale={locale}/>
+              <SimpleSlider type='sale' country={locale === 'en' ? 'Russia' : 'Turkey'} locale={locale as "tr" | "en" | "ru"}/>
             </div>
             <button className={styles.blockButton}><Link href="/search?type=sale" locale={locale}>{t('home.seeAll')}</Link></button>
         </div>  
         <div className={styles.articleBlock}>
           <h1 className={styles.header}>{t('home.articles')}</h1> 
-          {allBlogData.map(article => (
+          {allBlogData.map((article: any) => (
             <div key={article.id} className={styles.articleLink}>
               <Link
                 href={`/blog/${article.id}`}
@@ -176,7 +176,7 @@ export default function Home({allBlogData, locale}) {
 }
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale }: {locale: string}) {
   const allBlogData = await getSortedPostsData();
   return {
     props: {
