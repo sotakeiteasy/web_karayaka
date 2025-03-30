@@ -7,11 +7,6 @@ const nextConfig = {
   images: {
     domains: ['via.placeholder.com'],
   },
-  // transpilePackages: [
-  //   '@ant-design/icons',
-  //   '@ant-design/icons-svg',
-  //   'antd'
-  // ],
 }
 
 module.exports = nextConfig 

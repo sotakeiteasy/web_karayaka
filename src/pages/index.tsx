@@ -16,7 +16,6 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 
 
-
 export default function Home({allBlogData, locale}) {
   const { t } = useTranslation('common');
   const [isRent, setIsRent] = useState(false)
@@ -26,15 +25,11 @@ export default function Home({allBlogData, locale}) {
   
   const search = (query: string) => {
     if (!query) {
-      console.error("Query is empty");
       return;
     }
   
-    console.log("Raw query:", query);
     const encodedQuery = encodeURIComponent(query);
-    console.log("Encoded query:", encodedQuery);
-
-    // const encodedQuery = encodeURIComponent(query);
+    
     router.push(`/search?type=${isRent ? "sale" : 'rent'}&address=${encodedQuery}`)
   }
 

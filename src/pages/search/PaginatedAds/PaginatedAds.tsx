@@ -10,40 +10,40 @@ import Link from 'next/link';
 import Icon from '@mdi/react';
 import { mdiMapMarkerOutline } from '@mdi/js';
 import { mdiBedQueenOutline } from '@mdi/js';
+import { mdiStairs } from '@mdi/js';
 
 function Items({ currentItems, locale }) {
+
   return (
     <div className={styles.adsList}>
         {currentItems?.map(ad => (
           <div className={styles.adCard} key={ad.id}>
-
-              <div className={styles.adCardImage}>
-                <CustomSlider ad={ad} locale={locale}/>
-              </div>
-              <Link 
-                href={`/ads/${ad.id}`}
-                locale={locale}
-              >
-              <div className={styles.adCardDescription}>
-                <div className={styles.upDescription}>
-                  <h2 className={styles.cardTitle}>{ad.title[locale]}</h2>
-                  <p>
-                    <Icon path={mdiMapMarkerOutline} size={.8} /> 
-                    {ad.location.country[locale]}, {ad.location.city[locale]}, {ad.location.district[locale]} 
-                  </p>
+                <div className={styles.adCardImage}>
+                  <CustomSlider ad={ad} locale={locale}/>
                 </div>
-                <div> {ad.description[locale]} </div>
-                <div className={styles.bottomDescription}>
-                  <p className={styles.cardPrice}><strong> {ad.price.usd}$ </strong></p>
-                  <p>
-                                      {/* <p><strong> {ad.price.usd}$ </strong></p> */}
-                    <span>{ad.rooms}<Icon path={mdiBedQueenOutline} size={1} /></span>
-                    <span>{ad.area}m<sup>2</sup></span> 
-                  </p>
-                </div>
-              </div>
-            </Link>
-
+                <Link 
+                  href={`/ads/${ad.id}`}
+                  locale={locale}
+                >
+                  <div className={styles.adCardDescription}>
+                    <div className={styles.upDescription}>
+                      <h2 className={styles.cardTitle}>{ad.title[locale]}</h2>
+                      <p>
+                        <Icon path={mdiMapMarkerOutline} size={.8} /> 
+                        {ad.location.country[locale]}, {ad.location.city[locale]}, {ad.location.district[locale]} 
+                      </p>
+                    </div>
+                    <div> {ad.description[locale]} </div>
+                    <div className={styles.bottomDescription}>
+                      <p className={styles.cardPrice}><strong> {ad.price.usd}$ </strong></p>
+                      <p>
+                        {/* <span>{ad.floor}<Icon path={mdiStairs} size={1} /></span> */}
+                        <span>{ad.rooms}<Icon path={mdiBedQueenOutline} size={1} /></span>
+                        <span>{ad.area}m<sup>2</sup></span> 
+                      </p>
+                    </div>
+                  </div>
+                </Link>
           </div>
         ))} 
     </div>

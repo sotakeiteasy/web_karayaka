@@ -22,10 +22,7 @@ import { mdiChevronRight } from '@mdi/js';
 import { mdiChevronLeft } from '@mdi/js';
 import 'slick-carousel/slick/slick.css';
 
-import { useState, useRef, ReactNode } from "react";
-import { TreeDataNode } from 'antd'; 
-
-
+import { useState, useRef } from "react";
 import ContactUs from "@/lib/components/form/form";
 
 export default function AdPage({adData, locale}) {

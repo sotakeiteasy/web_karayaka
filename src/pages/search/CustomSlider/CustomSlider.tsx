@@ -42,8 +42,9 @@ export default function CustomSlider({ ad, locale, height = 300, width = 300}) {
             key={index}
             src={image}
             alt={ad?.title[locale]}
-            width={height}
+            width={width}
             height={height}
+            priority
           />
         ))}
       </Slider>

@@ -36,14 +36,18 @@
 } 
 
 .adCard {
-  // display: block !important;
-  // width: 300px;
+
   height: 400px;
   margin: 10px 10px;
   border-radius: 20px;
   box-shadow: $shadow;
 
   .cardImage {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+
     object-fit: cover;
     height: 80%;
     border-radius: 20px 20px 0 0;

@@ -41,7 +41,12 @@ export default function SimpleSlider({ type, country, locale }: { type: string, 
       slidesToShow: 3,
       slidesToScroll: 1,
       nextArrow: <NextArrow />,
-      prevArrow: <PrevArrow />
+      prevArrow: <PrevArrow />,
+      autoplay: true,
+      speed: 3000,
+      autoplaySpeed: 2000,
+      cssEase: "ease-in-out",
+      // pauseOnHover: true
     };
     return (
       <div className={styles.sliderWrapper}>
