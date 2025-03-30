@@ -53,7 +53,7 @@ function Items({ currentItems, locale }: { currentItems: any, locale: "tr" | "en
   
 
 
-export default function PaginatedAds ({itemsPerPage, ads}: {itemsPerPage: number, ads: any}) {
+export default function PaginatedAds ({itemsPerPage, ads = []}: {itemsPerPage: number, ads?: any[]}) {
   const router = useRouter();
   // const { page = 1 } = router.query;
   const pageNumber = Number(router.query.page) || 1;
@@ -66,8 +66,8 @@ export default function PaginatedAds ({itemsPerPage, ads}: {itemsPerPage: number
   }, [pageNumber, itemsPerPage]);
 
   const endOffset = itemOffset + itemsPerPage;
-  const currentAds = ads.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(ads.length / itemsPerPage);
+  const currentAds = Array.isArray(ads) ? ads.slice(itemOffset, endOffset) : [];
+  const pageCount = Array.isArray(ads) ? Math.ceil(ads.length / itemsPerPage) : 0;
 
   const handlePageClick = (event: any) => {
     // Получаем текущие параметры запроса
