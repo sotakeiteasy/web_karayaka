@@ -9,7 +9,7 @@ export default function Blog( {allBlogData}) {
     return (
         <main className={styles.main}> 
             {allBlogData.map(({ id, title, contentHtml}) => (
-              <div>
+              <div key={id}>
                 <Link 
                   href={`./blog/${id}`}
                   className={styles.articleCard}

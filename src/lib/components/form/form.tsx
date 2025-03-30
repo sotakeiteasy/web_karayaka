@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
 import styles from './form.module.scss';
 import { useState } from 'react';
@@ -8,13 +8,13 @@ const  TEMPLATE_ID = "template_karayaka" ;
 const  PUBLIC_KEY = "Yq2DEqGgQI4ibTmyj" ; 
 
 export const ContactUs = () => {
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
 
   useEffect(()=> {
     emailjs.init(PUBLIC_KEY); // Гарантируем, что инициализация происходит только в браузере
   }, [])
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if(!form.current) {
     console.log("Form reference is null.");
@@ -49,16 +49,15 @@ export const ContactUs = () => {
   return (
         <form className={styles.form} ref={form} onSubmit={sendEmail}>
         <legend>Your message</legend>
-                <p>Share your contact details and property wishes. We'll get back to you with recommendations.</p>
-
+                <p>Share your contact details and property wishes. We&aposll get back to you with recommendations.</p>
                 <div className={styles.formRow}>
                   <div>
-                    <label for="name">Name</label>
+                    <label htmlFor="name">Name</label>
                     <input type="text" id="name" name="name" required/>
                   </div>
 
                   <div>
-                    <label for="surname">Surname</label>
+                    <label htmlFor="surname">Surname</label>
                     <input type="text" id="surname" name="surname"/>
                   </div>
                 </div>
@@ -66,7 +65,7 @@ export const ContactUs = () => {
                 <div className={styles.formDetails}>
                   <div className={styles.leftDetails}>
                     <div className={styles.formLocation}>
-                      <label for="location" className={styles.buttonsLabel}>Where are you looking?</label>
+                      <label htmlFor="location" className={styles.buttonsLabel}>Where are you looking?</label>
                         <div>
                           <input 
                               type="button" 
@@ -88,7 +87,7 @@ export const ContactUs = () => {
                     </div>
 
                     <div className={styles.formPurpose}>
-                      <label for="purpose" className={styles.buttonsLabel}>Purpose</label>
+                      <label htmlFor="purpose" className={styles.buttonsLabel}>Purpose</label>
                         <div>
                           <input 
                               type="button" 
@@ -113,29 +112,29 @@ export const ContactUs = () => {
 
                   <div className={styles.rightDetails}>
                       <div className={styles.formRow}>
-                        <label for="city">City</label>
+                        <label htmlFor="city">City</label>
                         <input type="text" id="city" name="city"/>
                       </div>
 
                       <div className={styles.formRow}>
-                        <label for="district">District</label>
+                        <label htmlFor="district">District</label>
                         <input type="text" id="district" name="district"/>
                       </div>
 
                       <div className={styles.formRow}>
-                        <label for="budget">Budget</label>
+                        <label htmlFor="budget">Budget</label>
                         <input type="text" id="budget" name="budget"/>
                       </div>
                   </div>
                 </div>
 
                 <div className={styles.formRow}>
-                  <label for="phone_number">Phone Number</label>
+                  <label htmlFor="phone_number">Phone Number</label>
                   <input type="tel" id="phone_number" name="phone_number" required/>
                 </div>
 
                 <div className={styles.formRow}>
-                  <label for="email">Email</label>
+                  <label htmlFor="email">Email</label>
                   <input type="email" id="email" name="email" required/>
                 </div>
                 <textarea aria-label='Your message' placeholder="Describe what you're looking for: number of rooms, floor, must-have features. The more details you provide, the better we can help you find your perfect match!" name="message" id="message"></textarea>

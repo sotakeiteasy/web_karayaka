@@ -102,7 +102,7 @@ export default function AboutUs() {
               
                   
                   {Object.keys(questionsFAQ).map((key) => (
-                    <div className={styles.faqRow}>
+                    <div className={styles.faqRow} key={key}>
                     <Icon 
                      path={mdiChevronRight} 
                      size={1.5}

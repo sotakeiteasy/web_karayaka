@@ -35,9 +35,9 @@ export function filterAds(filters: Filter, currencyType: 'rub' | 'usd' | 'try' =
         })();
         
         // Проверка района по всем доступным языкам
-        const districtMatch = !filters.district || Object.values(ad.location.district).some(
-            value => value && value.toLowerCase().includes(filters.district!.toLowerCase())
-        );
+        // const districtMatch = !filters.district || Object.values(ad.location.district).some(
+        //     value => value && value.toLowerCase().includes(filters.district!.toLowerCase())
+        // );
         
         // Расширенный поиск по тексту (заголовок, описание, адрес)
         const textSearchMatch = !filters.address || (() => {
