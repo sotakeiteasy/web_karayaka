@@ -11,7 +11,12 @@
     "rent": "Rent in Moscow",
     "buy": "Buy in Moscow",
     "seeAll": "See all",
-    "articles": "Latest Articles"
+    "articles": "Latest Articles",
+    "rentBtn": "Rent",
+    "buyBtn": "Buy",
+    "hero": "Жилье в Турции",
+    "searchBtn": "Search",
+    "searchPlaceholder": "Adress, keywords"
   },
   "blog": {
     "header": "Blog"

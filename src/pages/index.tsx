@@ -54,39 +54,67 @@ export default function Home({allBlogData, locale}) {
             }}
             priority 
           /> */}
-          <video className={styles.video}
-            src='/videos/video-views.mp4'
-            loop
-            autoPlay
-            muted
-            preload="auto"  
-            height={700} 
-            width={1600}
-            style={{
+          {locale === 'ru' ? (
+            <video className={styles.video}
+              src='/videos/videoAI.mp4'
+              loop
+              autoPlay
+              muted
+              preload="auto"  
+              height={700} 
+              width={1600}
+              style={{
               objectFit: 'cover',
-            }}
-          />
-          <p className={styles.previewText}>Hello, world</p>
+              }}
+            />
+          ) : (
+            <Image 
+              src='/images/moscow3.jpg'
+              alt='views of turkey'
+              sizes="100vw"
+              // width={100}
+              // height={100}
+              quality={100}
+              fill
+              style={{
+                objectFit: 'cover',
+              }}
+              priority 
+            /> 
+          )
+        }
+          
+          {/* <p className={styles.previewText}>{t('home.hero')}</p> */}
           <div className={styles.searchBlock}>
             <label htmlFor="search"></label>
             <input 
               id="search" 
               type="text" 
-              placeholder="Address or keywords" 
-              aria-label="Поиск"
+              placeholder={t('home.searchPlaceholder')}
+              aria-label="search"
               autoComplete="off"
               spellCheck="false"
               value={input}
               onChange={((e) => setInput(e.target.value))}
               />
-              <button 
-                className={`${styles.toggleButton} ${isRent ? styles.toggleButtonActive : ""}`} 
-                onClick={() => setIsRent(!isRent)}
-              >
-                  <span>Rent</span>
-                  <span>Buy</span>
-              </button>
-              <button className={styles.searchButton} onClick={() => search(input)}>Search</button>
+              {locale === 'ru' ? (
+                <button 
+                  className={`${styles.toggleButton} ${styles.toggleButtonRu} ${isRent ? styles.toggleButtonActiveRu : ""}`} 
+                  onClick={() => setIsRent(!isRent)}
+                >
+                  <span>{t('home.rentBtn')}</span>
+                  <span>{t('home.buyBtn')}</span>
+                </button>
+              ) : (
+                <button 
+                  className={`${styles.toggleButton} ${isRent ? styles.toggleButtonActive : ""}`} 
+                  onClick={() => setIsRent(!isRent)}
+                >
+                  <span>{t('home.rentBtn')}</span>
+                  <span>{t('home.buyBtn')}</span>
+                </button>
+              )}
+              <button className={styles.searchButton} onClick={() => search(input)}>{t('home.searchBtn')}</button>
           </div>
         </div>
         <div className={styles.carouselBlock}>

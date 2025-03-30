@@ -5,6 +5,9 @@
     align-items: center;
 
     .mainImageContainer {
+        width: 100%; 
+        max-width: 1600px;
+        height: 700px; 
         position: relative;
         display: flex;
         justify-content: center;
@@ -44,8 +47,8 @@
 
             input::placeholder {
                 color: rgb(218, 218, 218); 
-                opacity: .6; 
-                font-weight: lighter;
+                opacity: .9; 
+                font-weight: 300;
               }
 
             input:focus {
@@ -62,19 +65,24 @@
                 padding: 10px 15px;
                 border-radius: 10px;
                 color: white;
-                background-color: transparent;
+                background-color: rgba(0, 0, 0, 0.2);
 
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
 
-                &:not(.toggleButtonActive) span:nth-of-type(2) {
-                    opacity: 0.8; 
+                &Ru {
+                    width: 210px;
+                    gap: 15px
                 }
 
-                &.toggleButtonActive span:nth-of-type(1) {
-                    opacity: 0.8; 
-                }
+                // &:not(.toggleButtonActive) span:nth-of-type(2) {
+                //     opacity: 0.9; 
+                // }
+
+                // &.toggleButtonActive span:nth-of-type(1) {
+                //     opacity: 0.9; 
+                // }
 
                 &::after {
                     content: "";
@@ -91,11 +99,21 @@
                     margin: 3px;
 
                 }
+
+                &Ru::after {
+                    width: 48%;
+                }
                 
-                &.toggleButtonActive::after {
+                &.toggleButtonActive::after,  {
                     width: 45%;
                     content: "";
-                    transform: translateX(115%);
+                    transform: translateX(113%);
+                }
+
+                &.toggleButtonActiveRu::after {
+                    width: 50%;
+                        content: "";
+                        transform: translateX(94%);
                 }
   
                 span {

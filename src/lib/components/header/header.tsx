@@ -30,13 +30,13 @@ export default function Header() {
 
     return (
         <header className={styles.header} onClick={closeAllMenus}>
-            <nav className={styles.nav}>
+            <nav className={`${styles.nav} ${styles.fill}`}>
                 <Link className={styles.logo} href="/">{t('header.home')}</Link>
-                <Link href="/search?type=rent">{t('header.rent')}</Link>
-                <Link href="/search?type=sale">{t('header.buy')}</Link>
-                <Link href="/about-us">{t('header.aboutUs')}</Link>
-                <Link href="/custom-offers">{t('header.customOffers')}</Link>
-                {locale === "ru" && <Link href="/blog">{t('header.blog')}</Link>}
+                <Link className={styles.navLink} href="/search?type=rent">{t('header.rent')}</Link>
+                <Link className={styles.navLink} href="/search?type=sale">{t('header.buy')}</Link>
+                <Link className={styles.navLink} href="/about-us">{t('header.aboutUs')}</Link>
+                <Link className={styles.navLink} href="/custom-offers">{t('header.customOffers')}</Link>
+                {locale === "ru" && <Link className={styles.navLink} href="/blog">{t('header.blog')}</Link>}
             </nav>
             <div className={styles.buttons}>
                 <div 

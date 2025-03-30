@@ -11,7 +11,12 @@
     "rent": "Аренда в Турции",
     "buy": "Покупка в Турции",
     "seeAll": "Смотреть все",
-    "articles": "Последние статьи"
+    "articles": "Последние статьи",
+    "rentBtn": "Аренда",
+    "buyBtn": "Покупка",
+    "hero": "House in Turkey",
+    "searchBtn": "Поиск",
+    "searchPlaceholder": "Адрес, ключевые слова"
   },
   "blog": {
     "header": "Блог"
