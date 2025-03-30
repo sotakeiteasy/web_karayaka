@@ -790,5 +790,233 @@ export const ads: Ad[] = [
     balcony: true,
     furnished: true,
     images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
-  }
+  }, 
+  {
+    id: '16',
+    title: {
+      ru: 'Квартира для аренды в центре Москвы',
+      en: 'Apartment for rent in Moscow city center',
+      tr: 'Moskova şehir merkezinde kiralık daire',
+    },
+    description: {
+      ru: 'Стильная квартира в центре города с отличной транспортной доступностью. Рядом метро и парки.',
+      en: 'Stylish apartment in the city center with excellent transport accessibility. Near metro and parks.',
+      tr: 'Şehir merkezinde şık daire, mükemmel ulaşım olanakları. Metro ve parklara yakın.',
+    },
+    price: {
+      rub: 120000,
+      usd: 1500,
+      try: 30000,
+    },
+    location: {
+      country: {
+        ru: 'Россия',
+        en: 'Russia',
+        tr: 'Rusya',
+      },
+      city: {
+        ru: 'Москва',
+        en: 'Moscow',
+        tr: 'Moskova',
+      },
+      district: {
+        ru: 'Тверской',
+        en: 'Tverskoy',
+        tr: 'Tverskoy',
+      },
+      address: {
+        street: {
+          ru: 'Тверская ул.',
+          en: 'Tverskaya St.',
+          tr: 'Tverskaya Cad.',
+        },
+        houseNumber: '15',
+      },
+      coordinates: {
+        lat: 55.7602,
+        lng: 37.6186,
+      },
+    },
+    type: 'rent',
+    propertyType: 'apartment',
+    features: [],
+    area: 80,
+    rooms: 3,
+    floor: 7,
+    parking: false,
+    balcony: false,
+    furnished: true,
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
+  },
+  {
+    id: '17',
+    title: {
+      ru: 'Квартира для аренды в центре Москвы',
+      en: 'Apartment for rent in Moscow city center',
+      tr: 'Moskova şehir merkezinde kiralık daire',
+    },
+    description: {
+      ru: 'Стильная квартира в центре города с отличной транспортной доступностью. Рядом метро и парки.',
+      en: 'Stylish apartment in the city center with excellent transport accessibility. Near metro and parks.',
+      tr: 'Şehir merkezinde şık daire, mükemmel ulaşım olanakları. Metro ve parklara yakın.',
+    },
+    price: {
+      rub: 120000,
+      usd: 1500,
+      try: 30000,
+    },
+    location: {
+      country: {
+        ru: 'Россия',
+        en: 'Russia',
+        tr: 'Rusya',
+      },
+      city: {
+        ru: 'Москва',
+        en: 'Moscow',
+        tr: 'Moskova',
+      },
+      district: {
+        ru: 'Тверской',
+        en: 'Tverskoy',
+        tr: 'Tverskoy',
+      },
+      address: {
+        street: {
+          ru: 'Тверская ул.',
+          en: 'Tverskaya St.',
+          tr: 'Tverskaya Cad.',
+        },
+        houseNumber: '15',
+      },
+      coordinates: {
+        lat: 55.7602,
+        lng: 37.6186,
+      },
+    },
+    type: 'sale',
+    propertyType: 'apartment',
+    features: [],
+    area: 80,
+    rooms: 3,
+    floor: 7,
+    parking: false,
+    balcony: false,
+    furnished: true,
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
+  },
+  {
+    id: '18',
+    title: {
+      ru: 'Квартира для аренды в центре Москвы',
+      en: 'Apartment for rent in Moscow city center',
+      tr: 'Moskova şehir merkezinde kiralık daire',
+    },
+    description: {
+      ru: 'Стильная квартира в центре города с отличной транспортной доступностью. Рядом метро и парки.',
+      en: 'Stylish apartment in the city center with excellent transport accessibility. Near metro and parks.',
+      tr: 'Şehir merkezinde şık daire, mükemmel ulaşım olanakları. Metro ve parklara yakın.',
+    },
+    price: {
+      rub: 120000,
+      usd: 1500,
+      try: 30000,
+    },
+    location: {
+      country: {
+        ru: 'Россия',
+        en: 'Russia',
+        tr: 'Rusya',
+      },
+      city: {
+        ru: 'Москва',
+        en: 'Moscow',
+        tr: 'Moskova',
+      },
+      district: {
+        ru: 'Тверской',
+        en: 'Tverskoy',
+        tr: 'Tverskoy',
+      },
+      address: {
+        street: {
+          ru: 'Тверская ул.',
+          en: 'Tverskaya St.',
+          tr: 'Tverskaya Cad.',
+        },
+        houseNumber: '15',
+      },
+      coordinates: {
+        lat: 55.7602,
+        lng: 37.6186,
+      },
+    },
+    type: 'sale',
+    propertyType: 'apartment',
+    features: [],
+    area: 80,
+    rooms: 3,
+    floor: 7,
+    parking: false,
+    balcony: false,
+    furnished: true,
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
+  },
+  {
+    id: '19',
+    title: {
+      ru: 'Квартира для аренды в центре Москвы',
+      en: 'Apartment for rent in Moscow city center',
+      tr: 'Moskova şehir merkezinde kiralık daire',
+    },
+    description: {
+      ru: 'Стильная квартира в центре города с отличной транспортной доступностью. Рядом метро и парки.',
+      en: 'Stylish apartment in the city center with excellent transport accessibility. Near metro and parks.',
+      tr: 'Şehir merkezinde şık daire, mükemmel ulaşım olanakları. Metro ve parklara yakın.',
+    },
+    price: {
+      rub: 120000,
+      usd: 1500,
+      try: 30000,
+    },
+    location: {
+      country: {
+        ru: 'Россия',
+        en: 'Russia',
+        tr: 'Rusya',
+      },
+      city: {
+        ru: 'Москва',
+        en: 'Moscow',
+        tr: 'Moskova',
+      },
+      district: {
+        ru: 'Тверской',
+        en: 'Tverskoy',
+        tr: 'Tverskoy',
+      },
+      address: {
+        street: {
+          ru: 'Тверская ул.',
+          en: 'Tverskaya St.',
+          tr: 'Tverskaya Cad.',
+        },
+        houseNumber: '15',
+      },
+      coordinates: {
+        lat: 55.7602,
+        lng: 37.6186,
+      },
+    },
+    type: 'sale',
+    propertyType: 'apartment',
+    features: [],
+    area: 80,
+    rooms: 3,
+    floor: 7,
+    parking: false,
+    balcony: false,
+    furnished: true,
+    images: ['/images/exampleImage.jpg', '/images/exampleImage2.jpg'],
+  },
 ];

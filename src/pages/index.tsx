@@ -29,7 +29,7 @@ export default function Home({allBlogData, locale}) {
     }
   
     const encodedQuery = encodeURIComponent(query);
-    
+
     router.push(`/search?type=${isRent ? "sale" : 'rent'}&address=${encodedQuery}`)
   }
 
@@ -90,18 +90,18 @@ export default function Home({allBlogData, locale}) {
           </div>
         </div>
         <div className={styles.carouselBlock}>
-            <h1 className={styles.header}>{t('home.rentInTurkey')}</h1>
+            <h1 className={styles.header}>{t('home.rent')}</h1>
             <div className={styles.carousel}>
-              <SimpleSlider type='rent' country='Turkey' locale={locale}/>
+              <SimpleSlider type='rent' country={locale === 'en' ? 'Russia' : 'Turkey'} locale={locale}/>
             </div>
             <button className={styles.blockButton}><Link href="/search?type=rent" locale={locale}>{t('home.seeAll')}</Link></button>
         </div>
         <div className={styles.carouselBlock}>
             <h1 className={styles.header}>
-              {t('home.buyInTurkey')}
+              {t('home.buy')}
             </h1>
             <div className={styles.carousel}>
-              <SimpleSlider type='sale' country='Turkey' locale={locale}/>
+              <SimpleSlider type='sale' country={locale === 'en' ? 'Russia' : 'Turkey'} locale={locale}/>
             </div>
             <button className={styles.blockButton}><Link href="/search?type=sale" locale={locale}>{t('home.seeAll')}</Link></button>
         </div>  

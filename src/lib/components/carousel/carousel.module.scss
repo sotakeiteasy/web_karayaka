@@ -58,6 +58,9 @@
     padding: 10px 20px;
 
     p {
+      max-height: 25px;
+      // padding-bottom: 10px;
+
       // text-wrap: nowrap;
       overflow: hidden;
     }

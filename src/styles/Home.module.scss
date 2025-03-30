@@ -135,13 +135,17 @@
         }
 
         .blockButton {
-            will-change: auto;
+            display: flex;
             border: 2px solid $primary-color ;
             border-radius: 10px;
-            padding: 5px 20px;
             background-color: white;
             margin-top: 30px;
             cursor: pointer;
+            padding: 0;
+
+            a {
+                padding: 5px 25px;
+            }
         }
 
         .blockButton:hover {

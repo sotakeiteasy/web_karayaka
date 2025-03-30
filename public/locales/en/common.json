@@ -8,8 +8,8 @@
     "blog": "Blog"
   },
   "home": {
-    "rentInTurkey": "Rent in Turkey",
-    "buyInTurkey": "Buy in Turkey",
+    "rent": "Rent in Moscow",
+    "buy": "Buy in Moscow",
     "seeAll": "See all",
     "articles": "Latest Articles"
   },
