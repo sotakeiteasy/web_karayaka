@@ -20,12 +20,8 @@ export default function Header() {
         setIsLanguageMenuOpen(false);
     };
     
-    // Простой способ закрыть меню при клике где угодно
     const closeAllMenus = () => {
-        // Таймаут нужен, чтобы клик на кнопке успел обработаться перед закрытием
-        setTimeout(() => {
-            setIsLanguageMenuOpen(false);
-        }, 100);
+        setIsLanguageMenuOpen(false);
     };
 
     return (
@@ -36,19 +32,26 @@ export default function Header() {
                 <Link className={styles.navLink} href="/search?type=sale">{t('header.buy')}</Link>
                 <Link className={styles.navLink} href="/about-us">{t('header.aboutUs')}</Link>
                 <Link className={styles.navLink} href="/custom-offers">{t('header.customOffers')}</Link>
-                {locale === "ru" && <Link className={styles.navLink} href="/blog">{t('header.blog')}</Link>}
-            </nav>
+                {/* {locale === "ru" &&  */}
+                <Link className={styles.navLink} href="/blog">{t('header.blog')}</Link>
+            
+            </nav>         
             <div className={styles.buttons}>
                 <div 
                     className={styles.dropdown} 
-                    onClick={(e) => e.stopPropagation()} // Останавливаем всплытие события
+                    onClick={(e) => e.stopPropagation()}
                 >
                     <button 
                         className={styles.button} 
                         onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
                     >
-                        {locale === 'en' ? 'ENG' : 'РУС'}
-                        <Icon path={mdiTriangleSmallDown} size={1} />  
+                        {locale === 'en' ? 'English' : 'Русский'}
+                        <Icon path={mdiTriangleSmallDown} 
+                            size={1} 
+                            style={{ 
+                                transform: isLanguageMenuOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                                transition: 'transform 0.5s ease'
+                            }}/>  
                     </button>
                     {isLanguageMenuOpen && (
                         <div className={styles.dropdownMenu}>
@@ -62,7 +65,7 @@ export default function Header() {
                                 className={`${styles.menuItem} ${locale === 'ru' ? styles.active : ''}`} 
                                 onClick={() => changeLanguage('ru')}
                             >
-                                Русский
+                                Русcкий
                             </button>
                         </div>
                     )}

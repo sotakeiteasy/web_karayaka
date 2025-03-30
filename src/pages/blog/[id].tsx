@@ -27,14 +27,14 @@ export async function getStaticPaths() {
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export async function getStaticProps( { params, locale }) {
-    if (locale !== 'ru') {
-        return {
-          redirect: {
-            destination: `/${locale}`,
-            permanent: false,
-          },
-        }
-      }
+    // if (locale !== 'ru') {
+    //     return {
+    //       redirect: {
+    //         destination: `/${locale}`,
+    //         permanent: false,
+    //       },
+    //     }
+    //   }
 
     const postData = await getPostData(params.id);
 

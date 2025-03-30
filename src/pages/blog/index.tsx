@@ -46,14 +46,14 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export async function getStaticProps({ locale }) {
   const allBlogData = await getSortedPostsData();   // for blog
 
-  if (locale !== 'ru') {
-    return {
-      redirect: {
-        destination: `/${locale}`,
-        permanent: false,
-      },
-    }
-  }
+  // if (locale !== 'ru') {
+  //   return {
+  //     redirect: {
+  //       destination: `/${locale}`,
+  //       permanent: false,
+  //     },
+  //   }
+  // }
 
   return {
     props: {
