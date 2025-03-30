@@ -537,7 +537,7 @@ export const ads: Ad[] = [
       },
     },
     type: 'rent',
-    propertyType: 'house',
+    propertyType: 'apartment',
     features: ['garden', 'quiet_area', 'family_friendly'],
     area: 180,
     rooms: 4,
