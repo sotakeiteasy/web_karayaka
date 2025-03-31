@@ -28,7 +28,7 @@ function Items({ currentItems, locale }: { currentItems: any, locale: "tr" | "en
                 >
                   <div className={styles.adCardDescription}>
                     <div className={styles.upDescription}>
-                      <h2 className={styles.cardTitle}>{ad.title[locale]}</h2>
+                      <h2 className={styles.cardTitle}></h2>
                       <p>
                         <Icon path={mdiMapMarkerOutline} size={.8} /> 
                         {ad.location.country[locale]}, {ad.location.city[locale]}, {ad.location.district[locale]} 

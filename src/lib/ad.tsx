@@ -133,7 +133,7 @@ export function getUniqueFilterValues() {
         });
         
         // Добавляем особенности
-        ad.features.forEach(feature => features.add(feature));
+        // ad.features.forEach(feature => features.add(feature));
     });
 
     return {
