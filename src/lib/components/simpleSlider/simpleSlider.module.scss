@@ -28,21 +28,67 @@
       -webkit-font-smoothing: subpixel-antialiased;
   
       object-fit: cover;
-      height: 80%;
+      height: 75%;
       border-radius: 20px 20px 0 0;
     }
   
     .cardDescription {
+      height: 25%;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
       font-size: .9rem;
-      padding: 10px 20px;
-  
-      p {
-        max-height: 25px;
-        // padding-bottom: 10px;
-  
-        // text-wrap: nowrap;
-        overflow: hidden;
+      padding: 15px 20px;
+
+      .leftDesc, 
+      .rightDesc {
+        display: flex;
+        flex-direction: column;
+        // justify-content: space-between;
+        gap: 10px;
+
+        .iconRow {
+
+          display: flex;
+          padding-top: 5px;
+          align-items: center;
+
+
+          .iconSpan {
+            display: flex;
+            padding-left: 10px;
+            align-items: center;
+            gap: 3px;
+
+            span {
+              display: flex;
+              align-items: center;
+            }
+
+          }
+            svg {
+              margin-left: -2px;
+            }
+        }
       }
+      
+      .leftDesc {
+        align-items: start;
+
+        .title {
+          font-size: 1.2rem;
+        }
+
+      }
+      .rightDesc {
+        align-items: end;
+
+        .price {
+          font-size: 1.2rem;
+        }
+      }
+
+      
     }
   }
 

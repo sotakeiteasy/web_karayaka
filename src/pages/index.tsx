@@ -7,12 +7,11 @@ import { useTranslation } from 'next-i18next';
 
 import Image from 'next/image'
 import imageView from '@assets/images/turkey-view.jpg'
-import SimpleSlider from '@components/carousel/carousel'
+import SimpleSlider from '@components/simpleSlider/simpleSlider'
 import ContactUs from '@components/form/form';
 
 import { getSortedPostsData } from "@/lib/blog";
 import { useState } from "react";
-// import videoView from '/videos/video-views.mp4'
 import { useRouter } from "next/router";
 
 
@@ -129,8 +128,11 @@ export default function Home({allBlogData, locale}: {allBlogData: any, locale: s
               <button className={styles.searchButton} onClick={() => search(input)}>{t('home.searchBtn')}</button>
           </div>
         </div>
+
         <SimpleSlider type='rent' country={locale === 'en' ? 'Russia' : 'Turkey'} locale={locale as "tr" | "en" | "ru"}/>
+
         <SimpleSlider type='sale' country={locale === 'en' ? 'Russia' : 'Turkey'} locale={locale as "tr" | "en" | "ru"}/>
+
         <div className={styles.articleBlock}>
           <h1 className={styles.header}>{t('home.articles')}</h1> 
           {allBlogData.slice(0, 2).map(({ id, title, excerpt }: { id: string, title: string, excerpt: string }) => (

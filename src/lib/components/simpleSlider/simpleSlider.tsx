@@ -2,15 +2,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import Slider from "react-slick";
-import styles from './carousel.module.scss';
+import styles from './simpleSlider.module.scss';
 import Link from "next/link";
 import { useTranslation } from 'next-i18next';
 
 import Image from "next/image";
-import imageExamlpe from "@assets/images/turkey-view.jpg";
 import Icon from '@mdi/react';
 import { mdiChevronRight } from '@mdi/js';
 import { mdiChevronLeft } from '@mdi/js';
+import { mdiMapMarkerOutline } from '@mdi/js';
+import { mdiBedQueenOutline } from '@mdi/js';
+import { mdiArrowExpand } from '@mdi/js';
 
 import { ads } from "@/data/ads";
 
@@ -62,7 +64,9 @@ export default function SimpleSlider({ type, country, locale }: { type: string, 
     if (filteredAds.length < 3) {
       return null;
     }
-
+    const formatNumber = (num: number): string => {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    };
     return (
       <div className={styles.carouselBlock}>
         <h1 className={styles.header}>{type === 'rent' ? t('home.rent') : t('home.buy')}</h1>
@@ -74,14 +78,42 @@ export default function SimpleSlider({ type, country, locale }: { type: string, 
                   <div className={styles.adCard}>
                     <Link href={`/ads/${card.id}`} locale={locale}>
                         <Image
+                            width={400}
+                            height={200}
                             className={styles.cardImage}
-                            src={imageExamlpe}
+                            src={card.images[0]}
                             alt="imageExample"
                         />
                         <div className={styles.cardDescription}>
-                            <p>{propertyTypeTranslations[card.propertyType][locale]}</p>
-                            <p>{(cityTranslations)[card.location.city]?.[locale]}</p>                       
-                            {/* <p>{card.price.rub}</p> */}
+                            <div className={styles.leftDesc}>
+                              <p className={styles.title}>{propertyTypeTranslations[card.propertyType][locale]}</p>
+                              <p className={styles.iconRow}>
+                              <Icon path={mdiMapMarkerOutline} size={.8} /> 
+                                {[cityTranslations[card.location.city][locale],
+                                districtTranslations[card.location.district]?.[locale] || '']
+                                .filter(Boolean)
+                                .join(', ')}   
+                                </p>
+                            </div>    
+                            <div className={styles.rightDesc}>
+                              <p className={styles.price}>
+                                {card.price.try !== undefined && card.price.try !== null ? 
+                                  `${new Intl.NumberFormat('ru-RU').format(card.price.try)} ₺` : 
+                                  (card.price.rub !== undefined && card.price.rub !== null ? 
+                                  `${new Intl.NumberFormat('ru-RU').format(card.price.rub)} ₽` : 
+                              '')}
+                              </p >
+                              
+                              
+                              <p className={styles.iconRow}>
+                                <span className={styles.iconSpan}> <Icon path={mdiBedQueenOutline} size={.9} /> {card.rooms} </span>
+                                {/* <span className={styles.iconSpan}> 
+                                  <Icon path={mdiArrowExpand} size={.8} /> 
+                                  <span>{card.area}{locale === 'ru' ? 'м' : 'm'}<sup>2</sup></span>
+                                </span> */}
+                              </p>
+                            </div>               
+                            
                         </div>
                     </Link>
                   </div>
