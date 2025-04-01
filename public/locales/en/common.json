@@ -57,23 +57,5 @@
       "smallFirst": "Area (small first)",
       "largeFirst": "Area (large first)"
     }
-  },
-  "ad": {
-    "property": {
-      "area": "Area",
-      "bedrooms": "Bedrooms",
-      "floor": "Floor",
-      "type": "Type",
-      "listing": "Listing",
-      "buildingAge": "Building age",
-      "condition": "Condition",
-      "openParking": "Open parking",
-      "closedParking": "Closed parking",
-      "totalFloors": "Total floors",
-      "bathrooms": "Bathrooms",
-      "contact": "Contact",
-      "forSale": "For Sale",
-      "forRent": "For Rent"
-    }
   }
 }

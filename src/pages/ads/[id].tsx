@@ -29,7 +29,6 @@ import ContactUs from "@/lib/components/form/form";
 import { Ad } from "@/lib/types/ad";
 import { countryTranslations, cityTranslations, districtTranslations } from "@/lib/translations/locationTypes";
 import { propertyTypeTranslations } from "@/lib/translations/propertyTypes";
-import { useTranslation } from 'next-i18next';
 
 export default function AdPage({ad, locale}: {ad: Ad, locale: 'ru' | 'en'}) {
   const { t } = useTranslation('common');
@@ -117,7 +116,7 @@ export default function AdPage({ad, locale}: {ad: Ad, locale: 'ru' | 'en'}) {
                             <p> 
                                 <span>
                                     <Icon path={mdiArrowExpand} size={1} />
-                                    {t('ad.property.area')}
+                                    Range
                                 </span>
                                 <span>
                                     {ad.area} {locale === 'ru' ? 'м' : 'm'}<sup>2</sup>

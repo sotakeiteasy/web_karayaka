@@ -4,7 +4,7 @@
     "rent": "Аренда",
     "buy": "Покупка",
     "aboutUs": "О нас",
-    "customOffers": "Индивидуальные предложения",
+    "customOffers": "Для вас",
     "blog": "Блог"
   },
   "home": {
@@ -12,9 +12,9 @@
     "buy": "Покупка в Турции",
     "seeAll": "Смотреть все",
     "articles": "Последние статьи",
-    "rentBtn": "Снять",
-    "buyBtn": "Купить",
-    "hero": "Housing in Turkey",
+    "rentBtn": "Аренда",
+    "buyBtn": "Покупка",
+    "hero": "House in Turkey",
     "searchBtn": "Поиск",
     "searchPlaceholder": "Адрес, ключевые слова"
   },
@@ -25,7 +25,7 @@
     "header": "О нас"
   },
   "custom-offers": {
-    "header": "Для вас"
+    "header": "Предложение для вас"
   },
   "search": {
     "header": "Поиск",
@@ -34,7 +34,7 @@
       "allCountries": "Все страны",
       "city": "Город",
       "allCities": "Все города",
-      "propertyType": "Тип недвижимости",
+      "propertyType": "Тип жилья",
       "allTypes": "Все типы",
       "priceFrom": "Цена от",
       "priceTo": "до",
