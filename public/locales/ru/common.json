@@ -40,10 +40,9 @@
       "priceTo": "до",
       "areaFrom": "Площадь от",
       "areaTo": "до",
-      "bedrooms": "Количество спален",
-      "any": "Любое",
+      "bedrooms": "Кол-во комнат",
+      "any": "Любой",
       "floor": "Этаж",
-      "anyFloor": "Любой",
       "parking": "Парковка",
       "openParking": "Открытая",
       "closedParking": "Закрытая",
@@ -53,10 +52,28 @@
       "searchButton": "Поиск"
     },
     "sorting": {
-      "cheapFirst": "Цена (сначала дешевле)",
-      "expensiveFirst": "Цена (сначала дороже)",
-      "smallFirst": "Площадь (сначала меньше)",
-      "largeFirst": "Площадь (сначала больше)"
+      "cheapFirst": "Цена (сначала дешевые)",
+      "expensiveFirst": "Цена (сначала дорогие)",
+      "smallFirst": "Площадь (сначала маленькие)",
+      "largeFirst": "Площадь (сначала большие)"
+    }
+  },
+  "ad": {
+    "property": {
+      "area": "Площадь",
+      "bedrooms": "Спальни",
+      "floor": "Этаж",
+      "type": "Тип",
+      "listing": "Тип листинга",
+      "buildingAge": "Возраст здания",
+      "condition": "Состояние",
+      "openParking": "Открытая парковка",
+      "closedParking": "Закрытая парковка",
+      "totalFloors": "Этажей в доме",
+      "bathrooms": "ванные комнаты",
+      "contact": "Контакт",
+      "forSale": "Продажа",
+      "forRent": "Аренда"
     }
   }
 }

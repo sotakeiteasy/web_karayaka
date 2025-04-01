@@ -22,8 +22,10 @@ import {
 
 import { propertyTypeTranslations } from '@/lib/translations/propertyTypes';
 
-function Items({ currentItems, locale }: { currentItems: any, locale: "tr" | "en" | "ru" }) {
-
+function Items({ currentItems, locale }: { currentItems: any, locale: "en" | "ru" }) {
+  const formatNumber = (num: number): string => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  };
   return (
     <div className={styles.adsList}>
         {currentItems?.map((ad: Ad )=> (
@@ -40,22 +42,22 @@ function Items({ currentItems, locale }: { currentItems: any, locale: "tr" | "en
                       <h2 className={styles.cardTitle}>
                         {(() => {
                           const forSale = locale === 'ru' ? 'на продажу' 
-                            : locale === 'tr' ? 'satılık' 
+                            // : locale === 'tr' ? 'satılık' 
                             : 'for sale';
                           const forRent = locale === 'ru' ? 'в аренду' 
-                            : locale === 'tr' ? 'kiralık' 
+                            // : locale === 'tr' ? 'kiralık' 
                             : 'for rent';
                           const typeStatus = ad.type === 'sale' ? forSale : forRent;
-
+                          const meters = locale === 'ru' ? 'м' : 'm';
                           switch(ad.propertyType) {
                             case 'apartment':
-                              return `${ad.rooms} ${locale === 'ru' ? 'комн.' : locale === 'tr' ? 'odalı' : 'room'} ${propertyTypeTranslations[ad.propertyType][locale]} ${typeStatus}`;
+                              return `${ad.rooms} ${locale === 'ru' ? 'комн.' :'room'} ${propertyTypeTranslations[ad.propertyType][locale]}`;
                             case 'villa':
-                              return `${propertyTypeTranslations[ad.propertyType][locale]}, ${ad.area}m² ${typeStatus}`;
+                              return `${propertyTypeTranslations[ad.propertyType][locale]}`;
                             case 'commercial':
-                              return `${propertyTypeTranslations[ad.propertyType][locale]}, ${ad.area}m² ${typeStatus}`;
+                              return `${propertyTypeTranslations[ad.propertyType][locale]}`;
                             case 'land':
-                              return `${propertyTypeTranslations[ad.propertyType][locale]}, ${ad.area}m² ${typeStatus}`;
+                              return `${propertyTypeTranslations[ad.propertyType][locale]}`;
                             default:
                               return propertyTypeTranslations[ad.propertyType][locale];
                           }
@@ -68,11 +70,17 @@ function Items({ currentItems, locale }: { currentItems: any, locale: "tr" | "en
                     </div>
                     <div className={styles.middleDescription}> {ad.description[locale]} </div>
                     <div className={styles.bottomDescription}>
-                      <p className={styles.cardPrice}><strong> {ad.price.try}$ </strong></p>
+                      <p className={styles.cardPrice}><strong> 
+                        {ad.price.try !== undefined && ad.price.try !== null ? 
+                      `${new Intl.NumberFormat('ru-RU').format(ad.price.try)} ₺` : 
+                      (ad.price.rub !== undefined && ad.price.rub !== null ? 
+                        `${new Intl.NumberFormat('ru-RU').format(ad.price.rub)} ₽` : 
+                        '')} 
+                        </strong></p>
                       <p>
-                        {/* <span>{ad.floor}<Icon path={mdiStairs} size={1} /></span> */}
-                        <span>{ad.rooms}<Icon path={mdiBedQueenOutline} size={1} /></span>
-                        <span>{ad.area}m<sup>2</sup></span> 
+                        {ad.floor && <span>{ad.floor || ''}/{ad.floorInHouse|| ''}<Icon path={mdiStairs} size={1} /></span>}
+                        {ad.rooms && <span>{ad.rooms}<Icon path={mdiBedQueenOutline} size={1} /></span>}
+                        {ad.area && <span>{ad.area} {locale === 'ru' ? 'м' : 'm'}<sup>2</sup></span>} 
                       </p>
                     </div>
                   </div>
@@ -122,7 +130,7 @@ export default function PaginatedAds ({itemsPerPage, ads = []}: {itemsPerPage: n
 
   return (
     <>
-      <Items currentItems={currentAds} locale={(router.locale) as "tr" | "en" | "ru"} />
+      <Items currentItems={currentAds} locale={(router.locale) as "en" | "ru"} />
       <ReactPaginate
         breakLabel="..."
         nextLabel="Next"
