@@ -18,7 +18,8 @@
 
             p:first-of-type {
                 text-transform: uppercase;
-                font-size: 1.5rem;
+                font-size: 1.7rem;
+                font-weight: 500;
             }
 
             p {
@@ -32,7 +33,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 2.2rem;
+            font-weight: 500;
         }
         
     }
@@ -40,7 +42,7 @@
     .infoAndImage {
         display: flex;
         justify-content: center;
-        align-items: center;
+        // align-items: center;
         width: 1000px;
         height: 400px;
         margin-bottom: 50px;
@@ -49,6 +51,9 @@
 
         .info{
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            // justify-content: center;
             border-radius: 15px;
             width: 40%;
             box-shadow: $shadow;
@@ -60,13 +65,11 @@
                     display: flex;
                     justify-content: space-between;
                     min-height: 34px;
-                    padding: 5px 0;
+                    padding: 7px 0;
                     border-bottom: 1px solid $primary-color;
-
                     span:nth-of-type(2){
                         gap: 0;
                     }
-
                     span {
                         display: flex;
                         gap: 5px;
@@ -78,10 +81,12 @@
                 display: flex;
                 justify-content: space-between;
                 text-align: left;
-                margin: 0 5px;
+                margin: 0 5px 10px 5px;
+                height: 30%;
 
                 div {
-                    margin: 10px 0;
+                    
+                    padding: 10px 0;
 
                     width: 50%;
                     // padding: 10px 0;
@@ -140,14 +145,17 @@
         padding: 20px;
         box-shadow: $shadow;
         border-radius: 15px;
-            margin-bottom: 100px;
+        margin-bottom: 100px;
     }
 
     .form {
-        width: 1000px;
+        border-radius: 15px;
+       box-shadow: $shadow;
+        width: 700px;
         flex: 1 0 auto;
         display: flex;
         justify-content: center;
+        margin: 100px 0px;
 
         form {
             width: 600px;

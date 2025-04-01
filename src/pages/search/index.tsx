@@ -209,7 +209,7 @@ export default function Search({locale}: {locale: string}) {
   ];
 
   const propertyTypeOptions = [
-    { value: "", label: t("search.filters.propertyType") },
+    { value: "", label: t("search.filters.any") },
     ...filterValues.propertyType.map((propertyType) => ({
       value: propertyType.en,
       label: propertyType[locale as keyof typeof propertyType],
@@ -472,9 +472,6 @@ export default function Search({locale}: {locale: string}) {
             </div>
 
             <div className={styles.addPanel}>
-              {/* <div className={styles.filterTags}>
-                {filterTags.map(tag => <div>{tag.charAt(0).toUpperCase() + tag.slice(1)}</div>)}
-              </div> */}
               {Object.keys(appliedFilter).length > 1 && <button onClick={resetFilters} className={styles.resetButton}>
                 {t("search.filters.reset")}
               </button>}
@@ -501,7 +498,7 @@ export default function Search({locale}: {locale: string}) {
             </div>
             
           </div>
-          <PaginatedAds itemsPerPage={3} ads={filteredAds}/>
+          <PaginatedAds itemsPerPage={8} ads={filteredAds}/>
         </div>
 
       </div>

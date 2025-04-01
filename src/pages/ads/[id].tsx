@@ -16,6 +16,7 @@ import { mdiStairs } from '@mdi/js';
 import { mdiHomeCityOutline } from '@mdi/js';
 import { mdiKeyChain } from '@mdi/js';
 import { mdiCheckbook } from '@mdi/js';
+import { mdiCalendarMonth } from '@mdi/js';
 
 import Slider from 'react-slick';
 
@@ -30,32 +31,83 @@ import { countryTranslations, cityTranslations, districtTranslations } from "@/l
 import { propertyTypeTranslations } from "@/lib/translations/propertyTypes";
 import { useTranslation } from 'next-i18next';
 
-export default function AdPage({adData, locale}: {adData: Ad, locale: 'ru' | 'en' | 'tr';}) {
+export default function AdPage({ad, locale}: {ad: Ad, locale: 'ru' | 'en'}) {
   const { t } = useTranslation('common');
-  console.log('Disctrict:', countryTranslations[adData.location.district]);
+  const formatNumber = (num: number): string => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+  };
+  // console.log('Disctrict:', countryTranslations[ad.location.district]);
 
     return (
         <>
             <Head>
-                <title>{`${adData.rooms} ${propertyTypeTranslations[adData.propertyType][locale]} - ${adData.area}m²`}</title>
+                <title>{(() => {
+                  switch(ad.propertyType) {
+                  case 'apartment':
+                    return `${ad.rooms} ${locale === 'ru' ? 'комн.' : 'room'} ${propertyTypeTranslations[ad.propertyType][locale]}`;
+                  case 'villa':
+                    return `${propertyTypeTranslations[ad.propertyType][locale]}, ${ad.area}m²`;
+                  case 'commercial':
+                    return `${propertyTypeTranslations[ad.propertyType][locale]}, ${ad.area}m²`;
+                  case 'land':
+                    return `${propertyTypeTranslations[ad.propertyType][locale]}, ${ad.area}m²`;
+                  default:
+                    return propertyTypeTranslations[ad.propertyType][locale];
+                }
+              })()}
+              </title>
             </Head>
             <div className={styles.main}>
                 <div className={styles.titleInfo}>
                     <div className={styles.rightTitleInfo}>
                         <p>
-                            {`${adData.rooms} ${propertyTypeTranslations[adData.propertyType][locale]} - ${adData.area}m²`}
+                          {(() => {
+                            const forSale = locale === 'ru' ? 'Продаётся' : 'for sale';
+                            const forRent = locale === 'ru' ? 'Сдаётся' : 'for rent';
+                            const typeStatus = ad.type === 'sale' ? forSale : forRent;
+                            
+                            let propertyInfo = '';
+                            
+                            switch(ad.propertyType) {
+                              case 'apartment':
+                                propertyInfo = `${ad.rooms} ${locale === 'ru' ? 'комн.' : 'room'} ${propertyTypeTranslations[ad.propertyType][locale]}`;
+                                break;
+                              case 'villa':
+                                propertyInfo = `${propertyTypeTranslations[ad.propertyType][locale]} ${ad.area} ${locale === 'ru' ? 'м' : 'm'}²`;
+                                break;
+                              case 'commercial':
+                                propertyInfo = `${propertyTypeTranslations[ad.propertyType][locale]} ${ad.area} ${locale === 'ru' ? 'м' : 'm'}²`;
+                                break;
+                              case 'land':
+                                propertyInfo = `${propertyTypeTranslations[ad.propertyType][locale]} ${ad.area} ${locale === 'ru' ? 'м' : 'm'}²`;
+                                break;
+                              default:
+                                propertyInfo = propertyTypeTranslations[ad.propertyType][locale];
+                            }
+                            
+                            if (locale === 'ru') {
+                              return `${typeStatus} ${propertyInfo}`;
+                            } 
+                            else {
+                              return `${propertyInfo} ${typeStatus}`;
+                            }
+                          })()}
                         </p>
                         <p>
                             <Icon path={mdiMapMarkerOutline} size={1} /> 
-                            {[countryTranslations[adData.location.country][locale], 
-                            cityTranslations[adData.location.city][locale],
-                            districtTranslations[adData.location.district]?.[locale] || '']
+                            {[countryTranslations[ad.location.country][locale], 
+                            cityTranslations[ad.location.city][locale],
+                            districtTranslations[ad.location.district]?.[locale] || '']
                             .filter(Boolean)
                             .join(', ')} 
                         </p>
                     </div>
                     <div className={styles.leftTitleInfo}>
-                        {adData.price.try}$
+                    {ad.price.try !== undefined && ad.price.try !== null ? 
+                      `${new Intl.NumberFormat('ru-RU').format(ad.price.try)} ₺` : 
+                      (ad.price.rub !== undefined && ad.price.rub !== null ? 
+                        `${new Intl.NumberFormat('ru-RU').format(ad.price.rub)} ₽` : 
+                        '')}
                     </div>
                     
                 </div>
@@ -68,76 +120,87 @@ export default function AdPage({adData, locale}: {adData: Ad, locale: 'ru' | 'en
                                     {t('ad.property.area')}
                                 </span>
                                 <span>
-                                    {adData.area} m<sup>2</sup>
+                                    {ad.area} {locale === 'ru' ? 'м' : 'm'}<sup>2</sup>
                                 </span>
                             </p>
-                            <p> 
+                            {ad.rooms && <p> 
                                 <span> <Icon path={mdiBedQueenOutline} size={1} />{t('ad.property.bedrooms')}</span> 
-                                {adData.rooms} 
-                            </p>
-                            <p> 
+                                {ad.rooms} 
+                            </p>}
+                            {ad.floor && <p> 
                                 <span><Icon path={mdiStairs} size={1} />{t('ad.property.floor')}</span>
-                                {adData.floor || ''}/{adData.floorInHouse|| ''} 
-                            </p>
+                                {ad.floor || ''}/{ad.floorInHouse|| ''} 
+                            </p>}
                             <p> 
                                 <span><Icon path={mdiHomeCityOutline} size={1} />{t('ad.property.type')}</span>
-                                {propertyTypeTranslations[adData.propertyType][locale]}
+                                {propertyTypeTranslations[ad.propertyType][locale]}
                             </p>
                             <p>
-                                <span><Icon path={mdiKeyChain} size={1} />{t('ad.property.listing')}</span> 
-                                {adData.type === 'sale' ? 
+                                <span><Icon path={mdiCheckbook} size={1} />{t('ad.property.listing')}</span> 
+                                {ad.type === 'sale' ? 
                                   t('ad.property.forSale') : t('ad.property.forRent')} 
                             </p>
-                            <p> 
-                              <span><Icon path={mdiCheckbook} size={1} />{t('ad.property.buildingAge')}</span>
-                              {adData.age}
-                            </p>
+                            {ad.age && <p> 
+                              <span><Icon path={mdiCalendarMonth} size={1} />{t('ad.property.buildingAge')}</span>
+                              {ad.age}
+                            </p>}
                             <p>  
-                              <span><Icon path={mdiCheckbook} size={1} />{t('ad.property.condition')}</span>
-                              {adData.situation}
-                            </p>
-                                          
-                                          
+                              <span><Icon path={mdiKeyChain} size={1} />{t('ad.property.condition')}</span>
+                              {(() => {
+                                switch(ad.situation) {
+                                  case 'tenanted':
+                                    return locale === 'ru' ? 'В аренде' : 'Tenanted';
+                                  case "owner":
+                                    return locale === 'ru' ? 'В собственности' : 'Owner';
+                                  case "empty":
+                                    return locale === 'ru' ? 'Пустое' : 'Empty';
+                                  case "free":
+                                    return locale === 'ru' ? 'Свободное' : 'Free';
+                                  default:
+                                    return '';
+                                }
+                              })()}
+                            </p>              
                         </div>
                         <div className={styles.infoBottom}>
                             <div className={styles.infoBottomLeft}>
                                 <ul>
-                                    <li>
+                                    {ad.parking === 'closed' && <li>
                                         <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                                        {adData.parking === 'closed' && t('ad.property.closedParking')} 
-                                    </li>
-                                    <li>
+                                        {ad.parking === 'closed' && t('ad.property.closedParking')} 
+                                    </li>}
+                                    {ad.parking === 'open' && <li>
                                         <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                                        {adData.parking === 'open' && t('ad.property.openParking')} 
-                                    </li>
-                                    <li>
+                                        {ad.parking === 'open' && t('ad.property.openParking')} 
+                                    </li>}
+                                    {ad.bathroom ? ad.bathroom > 1 && <li>
                                         <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                                        {t('ad.property.bathrooms')}: {adData.bathroom}
-                                    </li>
+                                        {ad.bathroom} {t('ad.property.bathrooms')} 
+                                    </li> : ''}
                                 </ul>
                             </div>
                             <div className={styles.infoBottomRight}>
-                                <ul>
-                                    <li>
+                                {/* <ul>
+                                    {<li>
                                         <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                                    </li>
-                                    <li>
+                                    </li>}
+                                    {<li>
                                         <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                                    </li>
-                                    <li>
+                                    </li>}
+                                    {<li>
                                         <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                                    </li>
-                                </ul>
+                                    </li>}
+                                </ul> */}
                             </div>
                         </div>
                     </div>
                     <div className={styles.mainImage}>
-                        <CustomSlider ad={adData} locale={locale}/>
+                        <CustomSlider ad={ad} locale={locale}/>
                     </div>
                 </div>
-                <div className={styles.description}>
-                    {adData.description[locale === 'tr' ? 'en' : locale] || adData.description.ru || ''}
-                </div>
+                {ad.description[locale] && <div className={styles.description}>
+                    {ad.description[locale]}
+                </div>}
                 <div className={styles.form}>
                   <ContactUs />
                 </div>
@@ -240,11 +303,11 @@ export function getStaticPaths({ locales }: {locales: any} ) {
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export async function getStaticProps({ params, locale }: {params: any, locale: string}) {
-    const adData = getAdById(params.id)
+    const ad = getAdById(params.id)
   return {
     props: {
           ...(await serverSideTranslations(locale, ['common'])),
-          adData,
+          ad,
           locale
     },
   };
