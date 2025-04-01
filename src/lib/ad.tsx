@@ -11,17 +11,30 @@ export function getAdById(id: string): Ad | undefined {
     return ads.find(ad => ad.id === id);
 }
 
-export function filterAds(filters: Filter, currencyType: 'rub' | 'usd' | 'try' = 'usd'): Ad[] {
+export function filterAds(filters: Filter, currencyType: 'rub' | 'try' = 'try'): Ad[] {
+    // Импортируем переводы из файлов переводов
+    const { countryTranslations, cityTranslations, districtTranslations } = require('./translations/locationTypes');
+
     return ads.filter(ad => {
-        // Проверка страны по всем доступным языкам
-        const countryMatch = !filters.country || Object.values(ad.location.country).some(
-            value => value && value.toLowerCase().includes(filters.country!.toLowerCase())
-        );
+        // Проверка страны
+        const countryMatch = !filters.country || (() => {
+            // Используем переводы для проверки соответствия
+            const countryTranslation = countryTranslations[ad.location.country];
+            return countryTranslation && 
+                  Object.values(countryTranslation as Record<string, string>).some(value => 
+                      value && value.toLowerCase().includes(filters.country!.toLowerCase())
+                  );
+        })();
         
-        // Проверка города по всем доступным языкам
-        const cityMatch = !filters.city || Object.values(ad.location.city).some(
-            value => value && value.toLowerCase().includes(filters.city!.toLowerCase())
-        );
+        // Проверка города
+        const cityMatch = !filters.city || (() => {
+            // Используем переводы для проверки соответствия
+            const cityTranslation = cityTranslations[ad.location.city];
+            return cityTranslation && 
+                  Object.values(cityTranslation as Record<string, string>).some(value => 
+                      value && value.toLowerCase().includes(filters.city!.toLowerCase())
+                  );
+        })();
         
         // Проверка типа жилья с учетом локализации
         const propertyTypeMatch = !filters.propertyType || (() => {
@@ -34,106 +47,98 @@ export function filterAds(filters: Filter, currencyType: 'rub' | 'usd' | 'try' =
             return propertyTypeKey === ad.propertyType;
         })();
         
-        // Проверка района по всем доступным языкам
-        // const districtMatch = !filters.district || Object.values(ad.location.district).some(
-        //     value => value && value.toLowerCase().includes(filters.district!.toLowerCase())
-        // );
-        
         // Расширенный поиск по тексту (заголовок, описание, адрес)
         const textSearchMatch = !filters.address || (() => {
             const searchText = filters.address!.toLowerCase();
             
-            // Поиск в заголовке на всех языках
-            const titleMatch = Object.values(ad.title).some(
-                value => value && value.toLowerCase().includes(searchText)
-            );
-            
-            // Поиск в описании на всех языках
+            // Поиск в описании
             const descriptionMatch = Object.values(ad.description).some(
                 value => value && value.toLowerCase().includes(searchText)
             );
             
-            // Поиск в адресе на всех языках
+            // Поиск в адресе
             const addressMatch = (
-                // Поиск в названии улицы
-                (ad.location.address?.street && Object.values(ad.location.address.street).some(
+                // Поиск в названии страны через переводы
+                (countryTranslations[ad.location.country] && 
+                 Object.values(countryTranslations[ad.location.country] as Record<string, string>).some(
                     value => value && value.toLowerCase().includes(searchText)
                 )) ||
-                // Поиск в названии страны
-                Object.values(ad.location.country).some(
+                // Поиск в названии города через переводы
+                (cityTranslations[ad.location.city] && 
+                 Object.values(cityTranslations[ad.location.city] as Record<string, string>).some(
                     value => value && value.toLowerCase().includes(searchText)
-                ) ||
-                // Поиск в названии города
-                Object.values(ad.location.city).some(
+                )) ||
+                // Поиск в названии района через переводы
+                (ad.location.district && districtTranslations[ad.location.district] && 
+                 Object.values(districtTranslations[ad.location.district] as Record<string, string>).some(
                     value => value && value.toLowerCase().includes(searchText)
-                ) ||
-                // Поиск в названии района
-                Object.values(ad.location.district).some(
-                    value => value && value.toLowerCase().includes(searchText)
-                ) ||
-                // Поиск в номере дома
-                (ad.location.address?.houseNumber && 
-                    ad.location.address.houseNumber.toLowerCase().includes(searchText))
+                ))
             );
             
-            return titleMatch || descriptionMatch || addressMatch;
+            return descriptionMatch || addressMatch;
         })();
         
         // Остальные проверки
         const typeMatch = !filters.type || ad.type === filters.type;
-        const minPriceMatch = !filters.minPrice || ad.price[currencyType] >= filters.minPrice;
-        const maxPriceMatch = !filters.maxPrice || ad.price[currencyType] <= filters.maxPrice;
-        const bedroomsMatch = !filters.bedrooms || ad.rooms === filters.bedrooms;
+        
+        // Проверяем, что значение цены существует, иначе используем 0
+        const adPrice = ad.price[currencyType] || 0;
+        const minPriceMatch = !filters.minPrice || adPrice >= filters.minPrice;
+        const maxPriceMatch = !filters.maxPrice || adPrice <= filters.maxPrice;
+        
+        const bedroomsMatch = !filters.bedrooms || ad.rooms === filters.bedrooms.toString();
         const minAreaMatch = !filters.minArea || ad.area >= filters.minArea;
         const maxAreaMatch = !filters.maxArea || ad.area <= filters.maxArea;
-        const featuresMatch = !filters.features || !filters.features.length || 
-            filters.features.every(feature => ad.features.includes(feature));
+        const featuresMatch = !filters.features || !filters.features.length;
         const floorMatch = !filters.floor || ad.floor === filters.floor;
-        const parkingMatch = filters.parking === undefined || ad.parking === filters.parking;
-        const balconyMatch = filters.balcony === undefined || ad.balcony === filters.balcony;
-        const furnishedMatch = filters.furnished === undefined || ad.furnished === filters.furnished;
         
-        return countryMatch && cityMatch 
-        // && districtMatch 
-        && typeMatch && 
+        // Обновленная логика для проверки парковки
+        // Если ни один тип парковки не выбран, показываем все
+        const openParking = filters.open === true;
+        const closedParking = filters.closed === true;
+        
+        // Если выбран только закрытый тип, показываем только закрытые
+        // Если выбран только открытый тип, показываем только открытые
+        // Если выбраны оба или не выбрано ничего, показываем все
+        const parkingMatch = 
+            (!openParking && !closedParking) || // Ничего не выбрано - показываем всё
+            (openParking && ad.parking === 'open') || // Выбрана открытая - показываем открытую
+            (closedParking && ad.parking === 'closed'); // Выбрана закрытая - показываем закрытую
+        
+        return countryMatch && cityMatch && typeMatch && 
                minPriceMatch && maxPriceMatch && bedroomsMatch && 
                minAreaMatch && maxAreaMatch && featuresMatch && 
-               floorMatch && parkingMatch && balconyMatch && 
-               furnishedMatch && textSearchMatch && propertyTypeMatch;
+               floorMatch && parkingMatch && textSearchMatch && propertyTypeMatch;
     });
 }
 
 export function getUniqueFilterValues() {
-    const countriesMap = new Map<string, { en: string, ru: string }>();
-    const citiesMap = new Map<string, { en: string, ru: string }>();
-    const propertyTypesMap = new Map<string, { en: string, ru: string }>();
+    const countriesMap = new Map<string, { en: string, ru: string, tr: string }>();
+    const citiesMap = new Map<string, { en: string, ru: string, tr: string }>();
+    const propertyTypesMap = new Map<string, { en: string, ru: string, tr: string }>();
     const features = new Set<string>();
 
+    // Импортируем переводы из файлов переводов
+    const { countryTranslations, cityTranslations } = require('./translations/locationTypes');
+
     ads.forEach(ad => {
-        // Добавляем страны с проверкой уникальности по en
-        if (ad.location.country.en) {
-            countriesMap.set(ad.location.country.en, {
-                en: ad.location.country.en,
-                ru: ad.location.country.ru
-            });
+        // Добавляем страны, используя данные из переводов
+        if (ad.location.country && countryTranslations[ad.location.country]) {
+            const country = ad.location.country;
+            countriesMap.set(country, countryTranslations[country]);
         }
         
-        // Добавляем города с проверкой уникальности по en
-        if (ad.location.city.en) {
-            citiesMap.set(ad.location.city.en, {
-                en: ad.location.city.en,
-                ru: ad.location.city.ru
-            });
+        // Добавляем города, используя данные из переводов
+        if (ad.location.city && cityTranslations[ad.location.city]) {
+            const city = ad.location.city;
+            citiesMap.set(city, cityTranslations[city]);
         }
         
-        // Добавляем типы жилья с проверкой уникальности по en
-        propertyTypesMap.set(ad.propertyType, {
-            en: ad.propertyType,
-            ru: propertyTypeTranslations[ad.propertyType as keyof typeof propertyTypeTranslations]?.ru || ad.propertyType
-        });
+        // Добавляем типы жилья с использованием существующих переводов
+        propertyTypesMap.set(ad.propertyType, propertyTypeTranslations[ad.propertyType]);
         
         // Добавляем особенности
-        // ad.features.forEach(feature => features.add(feature));
+        // ad.features?.forEach(feature => features.add(feature));
     });
 
     return {

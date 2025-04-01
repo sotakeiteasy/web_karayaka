@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import Head from "next/head"
 import { useRouter } from 'next/router';
 
-import { useState, useEffect, ChangeEvent } from 'react';
+import { useState, useEffect, ChangeEvent, useMemo } from 'react';
 import { filterAds, getUniqueFilterValues } from '@/lib/ad';
 import { Ad } from '@/lib/types/ad';
 import { Filter } from '@/lib/types/filter';
@@ -25,9 +25,9 @@ export default function Search({locale}: {locale: string}) {
   const [filter, setFilter] = useState<Filter>({})
   const [appliedFilter, setAppliedFilter] = useState<Filter>({})
   const [filterValues, setFilterValues] = useState<{
-    countries: { en: string, ru: string }[],
-    cities: { en: string, ru: string }[],
-    propertyType: { en: string, ru: string }[],
+    countries: { en: string, ru: string, tr: string }[],
+    cities: { en: string, ru: string, tr: string }[],
+    propertyType: { en: string, ru: string, tr: string }[],
     features: string[]
   }>({
     countries: [],
@@ -41,9 +41,9 @@ export default function Search({locale}: {locale: string}) {
   const sortAds = (option: string, adsToSort: Ad[]) => {
     switch (option) {
       case 'price-cheap':
-        return [...adsToSort].sort((a, b) => a.price.usd - b.price.usd);
+        return [...adsToSort].sort((a, b) => (a.price.try || 0) - (b.price.try || 0));
       case 'price-expensive':
-        return [...adsToSort].sort((a, b) => b.price.usd - a.price.usd);
+        return [...adsToSort].sort((a, b) => (b.price.try || 0) - (a.price.try || 0));
       case 'area-small':
         return [...adsToSort].sort((a, b) => a.area - b.area);
       case 'area-large':
@@ -74,20 +74,19 @@ export default function Search({locale}: {locale: string}) {
       if (maxPrice) initialFilter.maxPrice = Number(maxPrice);
       if (minArea) initialFilter.minArea = Number(minArea);
       if (maxArea) initialFilter.maxArea = Number(maxArea);
-      if (bedrooms) initialFilter.bedrooms = Number(bedrooms);
+      // if (bedrooms) initialFilter.bedrooms = Number(bedrooms);
       if (floor) initialFilter.floor = Number(floor);
       
-      // Булевы параметры
-      if (parking === 'true') initialFilter.parking = true;
-      if (balcony === 'true') initialFilter.balcony = true;
-      if (furnished === 'true') initialFilter.furnished = true;
+      // Булевы параметры для парковки
+      if (parking === 'open') initialFilter.open = true;
+      if (parking === 'closed') initialFilter.closed = true;
       
       // Устанавливаем оба состояния фильтров
       setFilter(initialFilter);
       setAppliedFilter(initialFilter);
       
       // Загружаем отфильтрованные объявления
-      const ads = filterAds(initialFilter);
+      const ads = filterAds(initialFilter, 'try');
       const sortedAds = sortAds('price-cheap', ads);
       setFilteredAds(sortedAds);
 
@@ -95,13 +94,13 @@ export default function Search({locale}: {locale: string}) {
       const values = getUniqueFilterValues();
       setFilterValues(values);
     }
-  }, [router.isReady, type, country, city, propertyType, minPrice, maxPrice, minArea, maxArea, bedrooms, floor, parking, balcony, furnished, address]);
+  }, [router.isReady, type, country, city, propertyType, minPrice, maxPrice, minArea, maxArea, bedrooms, floor, parking, address]);
 
   // Объединенный useEffect для фильтрации и обновления URL
   useEffect(() => {
     if (router.isReady) {
       // 1. Фильтруем и сортируем объявления
-      const ads = filterAds(appliedFilter);
+      const ads = filterAds(appliedFilter, 'try');
       const sortedAds = sortAds(sortOption, ads);
       setFilteredAds(sortedAds);
 
@@ -121,12 +120,13 @@ export default function Search({locale}: {locale: string}) {
       if (appliedFilter.maxPrice) query.maxPrice = appliedFilter.maxPrice.toString();
       if (appliedFilter.minArea) query.minArea = appliedFilter.minArea.toString();
       if (appliedFilter.maxArea) query.maxArea = appliedFilter.maxArea.toString();
-      if (appliedFilter.bedrooms) query.bedrooms = appliedFilter.bedrooms.toString();
+      // if (appliedFilter.bedrooms) query.bedrooms = appliedFilter.bedrooms.toString();
       if (appliedFilter.floor) query.floor = appliedFilter.floor.toString();
       
-      if (appliedFilter.parking) query.parking = 'true';
-      if (appliedFilter.balcony) query.balcony = 'true';
-      if (appliedFilter.furnished) query.furnished = 'true';
+      // Параметры парковки
+      if (appliedFilter.open && !appliedFilter.closed) query.parking = 'open';
+      if (appliedFilter.closed && !appliedFilter.open) query.parking = 'closed';
+      if (appliedFilter.open && appliedFilter.closed) query.parking = 'both';
       
       if (appliedFilter.address) query.address = appliedFilter.address;
       
@@ -171,9 +171,30 @@ export default function Search({locale}: {locale: string}) {
     window.location.href = `/${locale}/search${typeParam}`;
   }
 
+  // Фильтруем города в зависимости от выбранной страны
+  const filteredCities = useMemo(() => {
+    // Если страна не выбрана, показываем все города
+    if (!filter.country) {
+      return filterValues.cities;
+    }
+    
+    // Если выбрана Россия, показываем только Москву
+    if (filter.country === 'Russia') {
+      return filterValues.cities.filter(city => city.en === 'Moscow');
+    }
+    
+    // Если выбрана Турция, показываем все города кроме Москвы
+    if (filter.country === 'Turkey') {
+      return filterValues.cities.filter(city => city.en !== 'Moscow');
+    }
+    
+    // В остальных случаях показываем все города
+    return filterValues.cities;
+  }, [filter.country, filterValues.cities]);
+
   const cityOptions = [
     { value: "", label: t("search.filters.allCities") },
-    ...filterValues.cities.map((city) => ({
+    ...filteredCities.map((city) => ({
       value: city.en,
       label: city[locale as keyof typeof city],
     })),
@@ -195,13 +216,13 @@ export default function Search({locale}: {locale: string}) {
     })),
   ];
 
-  const bedroomOptions = [
-    { value: "", label: t("search.filters.any") },
-    { value: "1", label: "1" }, 
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
-    { value: "4", label: "4+" }
-  ];
+  // const bedroomOptions = [
+  //   { value: "", label: t("search.filters.any") },
+  //   { value: "1", label: "1" }, 
+  //   { value: "2", label: "2" },
+  //   { value: "3", label: "3" },
+  //   { value: "4", label: "4+" }
+  // ];
 
   const FloorOptions = [
     { value: "", label: t("search.filters.any") },
@@ -219,9 +240,11 @@ export default function Search({locale}: {locale: string}) {
   ];
 
   const filters = [
-    { key: "parking", label: t("search.filters.parking") },
-    { key: "balcony", label: t("search.filters.balcony") },
-    { key: "furnished", label: t("search.filters.furnished") },
+    { key: "closed", label: t("search.filters.openParking") },
+    { key: "open", label: t("search.filters.closedParking") },
+
+    // { key: "balcony", label: t("search.filters.balcony") },
+    // { key: "furnished", label: t("search.filters.furnished") },
   ];
 
   return (
@@ -295,20 +318,6 @@ export default function Search({locale}: {locale: string}) {
 
           {/* <Select options={options} /> */}
           
-
-          {/* <div className={styles.filter}>
-            <label htmlFor="type">Тип</label>
-            <select 
-              id="type" 
-              name="type" 
-              value={filter.type} 
-              onChange={handleFilterChange}
-            >
-              <option value="">Все типы</option>
-              <option value="sale">Продажа</option>
-              <option value="rent">Аренда</option>
-            </select>
-          </div> */}
           
           {/* Новые фильтры для числовых значений */}
           <div className={styles.filterRow}>
@@ -377,7 +386,7 @@ export default function Search({locale}: {locale: string}) {
             </div>
           </div>
 
-          <div className={styles.filter}>
+          {/* <div className={styles.filter}>
             <label htmlFor="bedrooms">{t("search.filters.bedrooms")}</label>
 
             <ClientOnly>
@@ -400,7 +409,7 @@ export default function Search({locale}: {locale: string}) {
                 classNamePrefix="react-select"
               />
             </ClientOnly>
-          </div>
+          </div> */}
 
           <div className={styles.filter}>
             <label htmlFor="floor">{t("search.filters.floor")}</label>
@@ -428,59 +437,18 @@ export default function Search({locale}: {locale: string}) {
 
           {/* Фильтры для булевых значений */}
           <div className={styles.checkboxGroup}>
-          {filters.map(({ key, label }) => (
-            <button
-              key={key}
-              className={`${styles.filterButton} ${filter[key as keyof typeof filter] ? styles.active : ""}`}
-              onClick={() => setFilter((prev) => ({ ...prev, [key]: !prev[key   as keyof typeof filter] }))}
-            >
-              {label}
-            </button>
-          ))}
-            {/* <div className={styles.checkbox}>
-              <input 
-                type="checkbox" 
-                id="parking" 
-                name="parking" 
-                checked={filter.parking || false}
-                onChange={(e) => {
-                  const newFilter = { ...filter };
-                  newFilter.parking = e.target.checked;
-                  setFilter(newFilter);
-                }}
-              />
-              <label htmlFor="parking">{t("search.filters.parking")}</label>
+            <p>{t("search.filters.parking")}</p>
+            <div>
+              {filters.map(({ key, label }) => (
+                <button
+                  key={key}
+                  className={`${styles.filterButton} ${filter[key as keyof typeof filter] ? styles.active : ""}`}
+                  onClick={() => setFilter((prev) => ({ ...prev, [key]: !prev[key   as keyof typeof filter] }))}
+                >
+                  {label}
+                </button>
+              ))}
             </div>
-            
-            <div className={styles.checkbox}>
-              <input 
-                type="checkbox" 
-                id="balcony" 
-                name="balcony" 
-                checked={filter.balcony || false}
-                onChange={(e) => {
-                  const newFilter = { ...filter };
-                  newFilter.balcony = e.target.checked;
-                  setFilter(newFilter);
-                }}
-              />
-              <label htmlFor="balcony">{t("search.filters.balcony")}</label>
-            </div>
-            
-            <div className={styles.checkbox}>
-              <input 
-                type="checkbox" 
-                id="furnished" 
-                name="furnished" 
-                checked={filter.furnished || false}
-                onChange={(e) => {
-                  const newFilter = { ...filter };
-                  newFilter.furnished = e.target.checked;
-                  setFilter(newFilter);
-                }}
-              />
-              <label htmlFor="furnished">{t("search.filters.furnished")}</label>
-            </div> */}
           </div>
 
           <div className={styles.filterActions}>
@@ -510,8 +478,6 @@ export default function Search({locale}: {locale: string}) {
               {Object.keys(appliedFilter).length > 1 && <button onClick={resetFilters} className={styles.resetButton}>
                 {t("search.filters.reset")}
               </button>}
-
-
 
               <ClientOnly>
                 <Select

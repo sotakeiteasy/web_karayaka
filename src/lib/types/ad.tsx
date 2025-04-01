@@ -59,7 +59,7 @@
 
 export interface Ad {
     id: string;
-    adMyId: string | null,
+    // adMyId: string | null,
     man: string | null,
     number: string | null,
     info: string | null,
@@ -72,18 +72,9 @@ export interface Ad {
         try?: number | null; 
     };
     location: {
-        country: {
-            ru: string;
-            en?: string;
-        };
-        city: {
-            ru: string;
-            en?: string;
-        };
-        district: {
-            ru: string;
-            en?: string;
-        };
+        country: string;
+        city: string;
+        district: string;
     };
     type: 'sale' | 'rent';
     propertyType: 'apartment' | 'villa' | 'commercial' | 'land';

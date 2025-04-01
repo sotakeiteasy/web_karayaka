@@ -4,7 +4,7 @@
     "rent": "Аренда",
     "buy": "Покупка",
     "aboutUs": "О нас",
-    "customOffers": "Для вас",
+    "customOffers": "Индивидуальные предложения",
     "blog": "Блог"
   },
   "home": {
@@ -12,9 +12,9 @@
     "buy": "Покупка в Турции",
     "seeAll": "Смотреть все",
     "articles": "Последние статьи",
-    "rentBtn": "Аренда",
-    "buyBtn": "Покупка",
-    "hero": "House in Turkey",
+    "rentBtn": "Снять",
+    "buyBtn": "Купить",
+    "hero": "Housing in Turkey",
     "searchBtn": "Поиск",
     "searchPlaceholder": "Адрес, ключевые слова"
   },
@@ -25,7 +25,7 @@
     "header": "О нас"
   },
   "custom-offers": {
-    "header": "Предложение для вас"
+    "header": "Для вас"
   },
   "search": {
     "header": "Поиск",
@@ -34,29 +34,47 @@
       "allCountries": "Все страны",
       "city": "Город",
       "allCities": "Все города",
-      "propertyType": "Тип жилья",
+      "propertyType": "Тип недвижимости",
       "allTypes": "Все типы",
       "priceFrom": "Цена от",
       "priceTo": "до",
       "areaFrom": "Площадь от",
       "areaTo": "до",
-      "bedrooms": "Количество спален",
+      "bedrooms": "Кол-во комнат",
       "any": "Любое",
       "floor": "Этаж",
       "anyFloor": "Любой",
       "parking": "Парковка",
-      "balcony": "Балкон",
-      "furnished": "Мебель",
+      "openParking": "Открытая",
+      "closedParking": "Закрытая",
       "apply": "Применить фильтры",
       "reset": "Сбросить фильтры",
       "searchPlaceholder": "Поиск по адресу",
       "searchButton": "Поиск"
     },
     "sorting": {
-      "cheapFirst": "Цена (сначала дешевле)",
-      "expensiveFirst": "Цена (сначала дороже)",
-      "smallFirst": "Площадь (сначала меньше)",
-      "largeFirst": "Площадь (сначала больше)"
+      "cheapFirst": "Цена (сначала дешевые)",
+      "expensiveFirst": "Цена (сначала дорогие)",
+      "smallFirst": "Площадь (сначала маленькие)",
+      "largeFirst": "Площадь (сначала большие)"
+    }
+  },
+  "ad": {
+    "property": {
+      "area": "Площадь",
+      "bedrooms": "Спальни",
+      "floor": "Этаж",
+      "type": "Тип",
+      "listing": "Тип листинга",
+      "buildingAge": "Возраст здания",
+      "condition": "Состояние",
+      "openParking": "Открытая парковка",
+      "closedParking": "Закрытая парковка",
+      "totalFloors": "Этажей в доме",
+      "bathrooms": "Ванных комнат",
+      "contact": "Контакт",
+      "forSale": "Продажа",
+      "forRent": "Аренда"
     }
   }
 }

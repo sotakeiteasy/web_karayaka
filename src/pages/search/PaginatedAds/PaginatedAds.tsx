@@ -13,7 +13,16 @@ import { mdiBedQueenOutline } from '@mdi/js';
 import { mdiStairs } from '@mdi/js';
 import { Ad } from '@/lib/types/ad';
 
-function Items({ currentItems, locale }: { currentItems: any, locale: "tr" | "en" | "ru" }) {
+import { 
+  countryTranslations, 
+  cityTranslations, 
+  districtTranslations, 
+  City
+} from '@/lib/translations/locationTypes';
+
+import { propertyTypeTranslations } from '@/lib/translations/propertyTypes';
+
+function Items({ currentItems, locale }: { currentItems: any, locale: "en" | "ru" }) {
 
   return (
     <div className={styles.adsList}>
@@ -28,15 +37,42 @@ function Items({ currentItems, locale }: { currentItems: any, locale: "tr" | "en
                 >
                   <div className={styles.adCardDescription}>
                     <div className={styles.upDescription}>
-                      <h2 className={styles.cardTitle}></h2>
+                      <h2 className={styles.cardTitle}>
+                        {(() => {
+                          const forSale = locale === 'ru' ? 'на продажу' 
+                            : locale === 'tr' ? 'satılık' 
+                            : 'for sale';
+                          const forRent = locale === 'ru' ? 'в аренду' 
+                            : locale === 'tr' ? 'kiralık' 
+                            : 'for rent';
+                          const typeStatus = ad.type === 'sale' ? forSale : forRent;
+
+                          switch(ad.propertyType) {
+                            case 'apartment':
+                              return `${ad.rooms} ${locale === 'ru' ? 'комн.' : locale === 'tr' ? 'odalı' : 'room'} ${propertyTypeTranslations[ad.propertyType][locale]} ${typeStatus}`;
+                            case 'villa':
+                              return `${propertyTypeTranslations[ad.propertyType][locale]}, ${ad.area}m² ${typeStatus}`;
+                            case 'commercial':
+                              return `${propertyTypeTranslations[ad.propertyType][locale]}, ${ad.area}m² ${typeStatus}`;
+                            case 'land':
+                              return `${propertyTypeTranslations[ad.propertyType][locale]}, ${ad.area}m² ${typeStatus}`;
+                            default:
+                              return propertyTypeTranslations[ad.propertyType][locale];
+                          }
+                        })()}
+                      </h2>
                       <p>
                         <Icon path={mdiMapMarkerOutline} size={.8} /> 
-                        {ad.location.country[locale]}, {ad.location.city[locale]}, {ad.location.district[locale]} 
+                        {[countryTranslations[ad.location.country][locale], 
+                            cityTranslations[ad.location.city][locale],
+                            districtTranslations[ad.location.district]?.[locale] || '']
+                            .filter(Boolean)
+                            .join(', ')}  
                       </p>
                     </div>
-                    <div> {ad.description[locale]} </div>
+                    <div className={styles.middleDescription}> {ad.description[locale]} </div>
                     <div className={styles.bottomDescription}>
-                      <p className={styles.cardPrice}><strong> {ad.price.usd}$ </strong></p>
+                      <p className={styles.cardPrice}><strong> {ad.price.try}$ </strong></p>
                       <p>
                         {/* <span>{ad.floor}<Icon path={mdiStairs} size={1} /></span> */}
                         <span>{ad.rooms}<Icon path={mdiBedQueenOutline} size={1} /></span>

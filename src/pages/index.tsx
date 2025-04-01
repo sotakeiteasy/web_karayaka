@@ -56,7 +56,7 @@ export default function Home({allBlogData, locale}: {allBlogData: any, locale: s
           /> */}
           {locale === 'ru' ? (
             <video className={styles.video}
-              src='/videos/videoAI.mp4'
+              src='/videos/turkey-video.mp4'
               loop
               autoPlay
               muted
@@ -68,19 +68,31 @@ export default function Home({allBlogData, locale}: {allBlogData: any, locale: s
               }}
             />
           ) : (
-            <Image 
-              src='/images/moscow3.jpg'
-              alt='views of turkey'
-              sizes="100vw"
-              // width={100}
-              // height={100}
-              quality={100}
-              fill
+            <video className={styles.video}
+              src='/videos/moscow-video.mp4'
+              loop
+              autoPlay
+              muted
+              preload="auto"  
+              height={700} 
+              width={1600}
               style={{
-                objectFit: 'cover',
+              objectFit: 'cover',
               }}
-              priority 
-            /> 
+            />
+            // <Image 
+            //   src='/images/moscow3.jpg'
+            //   alt='views of turkey'
+            //   sizes="100vw"
+            //   // width={100}
+            //   // height={100}
+            //   quality={100}
+            //   fill
+            //   style={{
+            //     objectFit: 'cover',
+            //   }}
+            //   priority 
+            // /> 
           )
         }
           
@@ -117,22 +129,8 @@ export default function Home({allBlogData, locale}: {allBlogData: any, locale: s
               <button className={styles.searchButton} onClick={() => search(input)}>{t('home.searchBtn')}</button>
           </div>
         </div>
-        <div className={styles.carouselBlock}>
-            <h1 className={styles.header}>{t('home.rent')}</h1>
-            <div className={styles.carousel}>
-              <SimpleSlider type='rent' country={locale === 'en' ? 'Russia' : 'Turkey'} locale={locale as "tr" | "en" | "ru"}/>
-            </div>
-            <button className={styles.blockButton}><Link href="/search?type=rent" locale={locale}>{t('home.seeAll')}</Link></button>
-        </div>
-        <div className={styles.carouselBlock}>
-            <h1 className={styles.header}>
-              {t('home.buy')}
-            </h1>
-            <div className={styles.carousel}>
-              <SimpleSlider type='sale' country={locale === 'en' ? 'Russia' : 'Turkey'} locale={locale as "tr" | "en" | "ru"}/>
-            </div>
-            <button className={styles.blockButton}><Link href="/search?type=sale" locale={locale}>{t('home.seeAll')}</Link></button>
-        </div>  
+        <SimpleSlider type='rent' country={locale === 'en' ? 'Russia' : 'Turkey'} locale={locale as "tr" | "en" | "ru"}/>
+        <SimpleSlider type='sale' country={locale === 'en' ? 'Russia' : 'Turkey'} locale={locale as "tr" | "en" | "ru"}/>
         <div className={styles.articleBlock}>
           <h1 className={styles.header}>{t('home.articles')}</h1> 
           {allBlogData.map((article: any) => (

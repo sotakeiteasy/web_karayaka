@@ -10,8 +10,7 @@ export interface Filter {
   maxArea?: number;
   features?: string[];
   floor?: number;
-  parking?: boolean;
-  balcony?: boolean;
-  furnished?: boolean;
+  open?: boolean;
+  closed?: boolean;
   address?: string;
 }

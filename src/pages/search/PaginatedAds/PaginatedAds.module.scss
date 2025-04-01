@@ -50,6 +50,7 @@
                 align-items: center;
                 margin-left: -4px;
                 gap: 5px;
+               
             }
 
 
@@ -59,11 +60,20 @@
                 gap: 5px   
             }
 
+            .middleDescription {
+                font-size: .9rem;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+            }
+
             .upDescription {        
                 .cardTitle{
                     font-size: 1.2rem;
                     line-height: 1.2;
-                    text-transform: capitalize;
+                    // text-transform: capitalize;
                 }
             }
 

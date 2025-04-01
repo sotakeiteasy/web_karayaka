@@ -15,6 +15,7 @@ import { mdiArrowExpand } from '@mdi/js';
 import { mdiStairs } from '@mdi/js';
 import { mdiHomeCityOutline } from '@mdi/js';
 import { mdiKeyChain } from '@mdi/js';
+import { mdiCheckbook } from '@mdi/js';
 
 import Slider from 'react-slick';
 
@@ -24,27 +25,37 @@ import 'slick-carousel/slick/slick.css';
 
 import { useState, useRef } from "react";
 import ContactUs from "@/lib/components/form/form";
+import { Ad } from "@/lib/types/ad";
+import { countryTranslations, cityTranslations, districtTranslations } from "@/lib/translations/locationTypes";
+import { propertyTypeTranslations } from "@/lib/translations/propertyTypes";
+import { useTranslation } from 'next-i18next';
 
-export default function AdPage({adData, locale}: {adData: Ad, locale: string}) {
+export default function AdPage({adData, locale}: {adData: Ad, locale: 'ru' | 'en' | 'tr';}) {
+  const { t } = useTranslation('common');
+  console.log('Disctrict:', countryTranslations[adData.location.district]);
 
     return (
         <>
             <Head>
-                <title>{adData.title[locale as 'ru' | 'en' | 'tr']}</title>
+                <title>{`${adData.rooms} ${propertyTypeTranslations[adData.propertyType][locale]} - ${adData.area}m²`}</title>
             </Head>
             <div className={styles.main}>
                 <div className={styles.titleInfo}>
                     <div className={styles.rightTitleInfo}>
                         <p>
-                            {adData.title[locale as 'ru' | 'en' | 'tr']}
+                            {`${adData.rooms} ${propertyTypeTranslations[adData.propertyType][locale]} - ${adData.area}m²`}
                         </p>
                         <p>
                             <Icon path={mdiMapMarkerOutline} size={1} /> 
-                            {adData.location.country[locale as 'ru' | 'en' | 'tr']}, {adData.location.city[locale as 'ru' | 'en' | 'tr']}, {adData.location.district[locale as 'ru' | 'en' | 'tr']} 
+                            {[countryTranslations[adData.location.country][locale], 
+                            cityTranslations[adData.location.city][locale],
+                            districtTranslations[adData.location.district]?.[locale] || '']
+                            .filter(Boolean)
+                            .join(', ')} 
                         </p>
                     </div>
                     <div className={styles.leftTitleInfo}>
-                        {adData.price.rub}
+                        {adData.price.try}$
                     </div>
                     
                 </div>
@@ -54,115 +65,82 @@ export default function AdPage({adData, locale}: {adData: Ad, locale: string}) {
                             <p> 
                                 <span>
                                     <Icon path={mdiArrowExpand} size={1} />
-                                    Range
+                                    {t('ad.property.area')}
                                 </span>
                                 <span>
                                     {adData.area} m<sup>2</sup>
                                 </span>
                             </p>
                             <p> 
-                                <span> <Icon path={mdiBedQueenOutline} size={1} />Bedrooms</span> 
+                                <span> <Icon path={mdiBedQueenOutline} size={1} />{t('ad.property.bedrooms')}</span> 
                                 {adData.rooms} 
                             </p>
                             <p> 
-                                <span><Icon path={mdiStairs} size={1} />Stair</span>
-                                {adData.floor} 
+                                <span><Icon path={mdiStairs} size={1} />{t('ad.property.floor')}</span>
+                                {adData.floor || ''}/{adData.floorInHouse|| ''} 
                             </p>
                             <p> 
-                                <span><Icon path={mdiHomeCityOutline} size={1} />Type</span>
-                                {adData.propertyType}
+                                <span><Icon path={mdiHomeCityOutline} size={1} />{t('ad.property.type')}</span>
+                                {propertyTypeTranslations[adData.propertyType][locale]}
                             </p>
                             <p>
-                                <span><Icon path={mdiKeyChain} size={1} />Listing</span> 
-                                {adData.type} 
+                                <span><Icon path={mdiKeyChain} size={1} />{t('ad.property.listing')}</span> 
+                                {adData.type === 'sale' ? 
+                                  t('ad.property.forSale') : t('ad.property.forRent')} 
                             </p>
-                            <p>  </p>
-                            <p>  </p>
+                            <p> 
+                              <span><Icon path={mdiCheckbook} size={1} />{t('ad.property.buildingAge')}</span>
+                              {adData.age}
+                            </p>
+                            <p>  
+                              <span><Icon path={mdiCheckbook} size={1} />{t('ad.property.condition')}</span>
+                              {adData.situation}
+                            </p>
+                                          
+                                          
                         </div>
                         <div className={styles.infoBottom}>
                             <div className={styles.infoBottomLeft}>
                                 <ul>
                                     <li>
-                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.3} />
-                                        {adData.parking && 'parking'} 
+                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
+                                        {adData.parking === 'closed' && t('ad.property.closedParking')} 
                                     </li>
                                     <li>
-                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.3} />
-                                        {adData.balcony && 'balcony'} 
+                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
+                                        {adData.parking === 'open' && t('ad.property.openParking')} 
                                     </li>
                                     <li>
-                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.3} />
-                                        {adData.furnished && 'furnished'} 
-                                    </li>
-                                    <li>
-                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.3} />
-                                         
+                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
+                                        {t('ad.property.bathrooms')}: {adData.bathroom}
                                     </li>
                                 </ul>
                             </div>
                             <div className={styles.infoBottomRight}>
                                 <ul>
                                     <li>
-                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.3} />
+                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
                                     </li>
                                     <li>
-                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.3} />
+                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
                                     </li>
                                     <li>
-                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.3} />
-                                    </li>
-                                    <li>
-                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.3} />
+                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
                                     </li>
                                 </ul>
                             </div>
                         </div>
-
-                        
-                        {/* <div className={styles.tags}>
-                            {adData.features.map(f => (
-                                <div className={styles.tag} key={f}>{f}</div>
-                            ))}
-                        </div> */}
                     </div>
                     <div className={styles.mainImage}>
-                    {/* <Image.PreviewGroup
-                        preview={{
-                        onChange: (current, prev) => console.log(`current index: ${current}, prev index: ${prev}`),
-                        }}
-                    >
-                        <Image
-                        src="/images/exampleImage.jpg"
-                        alt="sometext"
-                        width={500}
-                        height={400}
-                        // preview={true} 
-                        />
-                        <Image
-                        src="/images/exampleImage.jpg"
-                        alt="sometext"
-                        width={500}
-                        height={400}
-                        // preview={true} 
-                        />
-                    </Image.PreviewGroup> */}
-
-
-                        {/* <CustomSlider ad={adData} locale={locale} height={400} width={500}/> */}
                         <CustomSlider ad={adData} locale={locale}/>
-
-                        {/* <Image
-                            src="/images/exampleImage.jpg"
-                            alt="sometext"
-                            width={500}
-                            height={400}
-                        /> */}
                     </div>
                 </div>
                 <div className={styles.description}>
-                    { adData.description[locale as 'ru' | 'en' | 'tr'] }
+                    {adData.description[locale === 'tr' ? 'en' : locale] || adData.description.ru || ''}
                 </div>
-                <ContactUs />
+                <div className={styles.form}>
+                  <ContactUs />
+                </div>
             </div>
         </>
     )
@@ -226,7 +204,7 @@ function CustomSlider({ ad, locale}: {ad: Ad, locale: string}) {
               <div key={index}>
                 <Image
                   src={image}
-                  alt={ad?.title[locale as 'ru' | 'en' | 'tr']}
+                  alt={''}
                   width={650}
                   height={400}
                 />
@@ -261,7 +239,6 @@ export function getStaticPaths({ locales }: {locales: any} ) {
 
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { Ad } from "@/lib/types/ad";
 export async function getStaticProps({ params, locale }: {params: any, locale: string}) {
     const adData = getAdById(params.id)
   return {
