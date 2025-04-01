@@ -28,10 +28,8 @@ import ContactUs from "@/lib/components/form/form";
 import { Ad } from "@/lib/types/ad";
 import { countryTranslations, cityTranslations, districtTranslations } from "@/lib/translations/locationTypes";
 import { propertyTypeTranslations } from "@/lib/translations/propertyTypes";
-import { useTranslation } from 'next-i18next';
 
 export default function AdPage({adData, locale}: {adData: Ad, locale: 'ru' | 'en' | 'tr';}) {
-  const { t } = useTranslation('common');
   console.log('Disctrict:', countryTranslations[adData.location.district]);
 
     return (
@@ -65,36 +63,42 @@ export default function AdPage({adData, locale}: {adData: Ad, locale: 'ru' | 'en
                             <p> 
                                 <span>
                                     <Icon path={mdiArrowExpand} size={1} />
-                                    {t('ad.property.area')}
+                                    Range
                                 </span>
                                 <span>
                                     {adData.area} m<sup>2</sup>
                                 </span>
                             </p>
                             <p> 
-                                <span> <Icon path={mdiBedQueenOutline} size={1} />{t('ad.property.bedrooms')}</span> 
+                                <span> <Icon path={mdiBedQueenOutline} size={1} />Bedrooms</span> 
                                 {adData.rooms} 
                             </p>
                             <p> 
-                                <span><Icon path={mdiStairs} size={1} />{t('ad.property.floor')}</span>
+                                <span><Icon path={mdiStairs} size={1} />Stair</span>
                                 {adData.floor || ''}/{adData.floorInHouse|| ''} 
                             </p>
                             <p> 
-                                <span><Icon path={mdiHomeCityOutline} size={1} />{t('ad.property.type')}</span>
+                                <span><Icon path={mdiHomeCityOutline} size={1} />Type</span>
                                 {propertyTypeTranslations[adData.propertyType][locale]}
                             </p>
                             <p>
-                                <span><Icon path={mdiKeyChain} size={1} />{t('ad.property.listing')}</span> 
+                                <span><Icon path={mdiKeyChain} size={1} />Listing</span> 
                                 {adData.type === 'sale' ? 
-                                  t('ad.property.forSale') : t('ad.property.forRent')} 
+                                  (locale === 'ru' ? 'Продажа' : locale === 'tr' ? 'Satılık' : 'For Sale') : 
+                                  (locale === 'ru' ? 'Аренда' : locale === 'tr' ? 'Kiralık' : 'For Rent')} 
                             </p>
                             <p> 
-                              <span><Icon path={mdiCheckbook} size={1} />{t('ad.property.buildingAge')}</span>
-                              {adData.age}
+                              <span><Icon path={mdiCheckbook} size={1} />{locale === 'ru' ? `Возраст здания ` : 
+                                          locale === 'tr' ? `Bina yaşı:` : 
+                                          `Building age`} </span>
+                                          {adData.age}
+                                        
                             </p>
                             <p>  
-                              <span><Icon path={mdiCheckbook} size={1} />{t('ad.property.condition')}</span>
-                              {adData.situation}
+                              <span><Icon path={mdiCheckbook} size={1} />{locale === 'ru' ? `Состояние ` : 
+                                          locale === 'tr' ? `Durum: ` : 
+                                          `Condition`}</span>
+                                          {adData.situation}
                             </p>
                                           
                                           
@@ -104,15 +108,17 @@ export default function AdPage({adData, locale}: {adData: Ad, locale: 'ru' | 'en
                                 <ul>
                                     <li>
                                         <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                                        {adData.parking === 'closed' && t('ad.property.closedParking')} 
+                                        {adData.parking === 'closed' &&
+                                          (locale === 'ru' ? 'Закрытая парковка' : locale === 'tr' ? 'Kapalı otopark' : 'Closed parking')} 
                                     </li>
                                     <li>
                                         <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                                        {adData.parking === 'open' && t('ad.property.openParking')} 
+                                        {adData.parking === 'open' &&
+                                        (locale === 'ru' ? 'Открытая парковка' : locale === 'tr' ? 'Açık otopark' : 'Open parking')} 
+
                                     </li>
                                     <li>
                                         <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                                        {t('ad.property.bathrooms')}: {adData.bathroom}
                                     </li>
                                 </ul>
                             </div>

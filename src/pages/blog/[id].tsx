@@ -1,10 +1,18 @@
 import { getAllPostIds, getPostData } from "../../lib/blog";
 import Date from '@components/date/date'
 import styles from './id.module.scss';
-export default function Post({ postData }: {postData: any}) {   
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+
+export default function Post({ postData }: {postData: any}) {
+    const router = useRouter();
+    
     if (!postData) {
         return <div>Loading...</div>;
     }
+
+    // Доступные локали для переключения
+    const locales = ['ru', 'en'];
 
     return (
     <main className={styles.main}>
@@ -15,7 +23,20 @@ export default function Post({ postData }: {postData: any}) {
             <br />
             <Date dateString={postData.date} />
             <br />
-            <p dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+            <div className={styles.languageSwitcher}>
+              {locales.map(locale => (
+                <Link
+                  key={locale}
+                  href={router.asPath}
+                  locale={locale}
+                  className={locale === router.locale ? styles.activeLocale : ''}
+                >
+                  {locale.toUpperCase()}
+                </Link>
+              ))}
+            </div>
+            <br />
+            <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </section>
     </main>
     )
@@ -41,7 +62,7 @@ export async function getStaticProps( { params, locale }: {params:any, locale: s
     //   }
 
     try {
-        const postData = await getPostData(params.id);
+        const postData = await getPostData(params.id, locale);
         
         // Проверка наличия данных, используя только определенные свойства
         if (!postData || !postData.contentHtml) {

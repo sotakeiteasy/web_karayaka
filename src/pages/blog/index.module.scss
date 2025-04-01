@@ -44,6 +44,18 @@
                 -webkit-box-orient: vertical;
                 text-overflow: ellipsis;
                 margin-top: 10px;
+                
+                /* Стили для правильного отображения абзацев */
+                p {
+                    margin-bottom: 1em;
+                    line-height: 1.6;
+                }
+                
+                /* Базовые отступы для элементов */
+                h1, h2, h3, h4, h5, h6, ul, ol, pre, blockquote {
+                    margin-top: 1em;
+                    margin-bottom: 0.5em;
+                }
             }
         }
     }

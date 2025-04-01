@@ -25,5 +25,70 @@
             color: $primary-color;
             font-weight: 600;
         }
+
+        /* Стили для правильного отображения Markdown-контента */
+        p {
+            margin-bottom: 1em;
+            line-height: 1.6;
+        }
+
+        /* Добавляем отступы между всеми блочными элементами */
+        h1, h2, h3, h4, h5, h6, ul, ol, blockquote {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        /* Стили для списков */
+        ul, ol {
+            padding-left: 2em;
+            margin-bottom: 1em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        /* Стили для блоков кода */
+        pre {
+            background-color: #f5f5f5;
+            padding: 1em;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1em 0;
+        }
+
+        /* Стили для цитат */
+        blockquote {
+            border-left: 4px solid $primary-color;
+            padding-left: 1em;
+            font-style: italic;
+            margin-left: 0;
+        }
+
+        .languageSwitcher {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            
+            a {
+                padding: 5px 10px;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    background-color: #f5f5f5;
+                }
+            }
+            
+            .activeLocale {
+                font-weight: bold;
+                background-color: $primary-color;
+                color: white;
+                
+                &:hover {
+                    background-color: darken($primary-color, 10%);
+                }
+            }
+        }
     }
 }

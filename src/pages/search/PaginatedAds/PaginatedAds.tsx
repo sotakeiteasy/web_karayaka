@@ -22,7 +22,7 @@ import {
 
 import { propertyTypeTranslations } from '@/lib/translations/propertyTypes';
 
-function Items({ currentItems, locale }: { currentItems: any, locale: "en" | "ru" }) {
+function Items({ currentItems, locale }: { currentItems: any, locale: "tr" | "en" | "ru" }) {
 
   return (
     <div className={styles.adsList}>
@@ -63,11 +63,7 @@ function Items({ currentItems, locale }: { currentItems: any, locale: "en" | "ru
                       </h2>
                       <p>
                         <Icon path={mdiMapMarkerOutline} size={.8} /> 
-                        {[countryTranslations[ad.location.country][locale], 
-                            cityTranslations[ad.location.city][locale],
-                            districtTranslations[ad.location.district]?.[locale] || '']
-                            .filter(Boolean)
-                            .join(', ')}  
+                        {(countryTranslations)[ad.location.country]?.[locale]}, {(cityTranslations)[ad.location.city]?.[locale]}, {(districtTranslations)[ad.location.district]?.[locale]} 
                       </p>
                     </div>
                     <div className={styles.middleDescription}> {ad.description[locale]} </div>

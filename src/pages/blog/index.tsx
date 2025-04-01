@@ -3,50 +3,51 @@ import styles from './index.module.scss'
 import { useTranslation } from 'next-i18next';
 import Image from 'next/image';
 import { getSortedPostsData } from '../../lib/blog';
+import { useRouter } from 'next/router';
 
-export default function Blog( {allBlogData}: {allBlogData: any}) {
-    const { t } = useTranslation('common')
+export default function Blog({ allBlogData }: { allBlogData: any }) {
+    const { t } = useTranslation('common');
+    const router = useRouter();
+
     return (
         <main className={styles.main}> 
-            {allBlogData.map(({ id, title, contentHtml}: { id: any, title: any, contentHtml: any}) => (
+            {allBlogData.map(({ id, title, excerpt }: { id: string, title: string, excerpt: string }) => (
               <div key={id}>
                 <Link 
-                  href={`./blog/${id}`}
+                  href={`/blog/${id}`} 
+                  locale={router.locale}
                   className={styles.articleCard}
                 >
-                      <div className={styles.articleImage}>
-                        <Image
-                          src="/images/exampleImage.jpg"
-                          fill={true}
-                          alt=" "
-                          style={{
-                            objectFit: "cover",
-                            borderRadius: "15px 0px 0px 15px",
-                          }}
-                          loading="eager"
-                        />
+                  <div className={styles.articleImage}>
+                    <Image
+                      src="/images/exampleImage.jpg"
+                      fill={true}
+                      alt=" "
+                      style={{
+                        objectFit: "cover",
+                        borderRadius: "15px 0px 0px 15px",
+                      }}
+                      loading="eager"
+                    />
+                  </div>
+                  <section className={styles.articlePreview}>
+                    <h2 className={styles.articleTitle}>{title}</h2>
+                    {excerpt && (
+                      <div className={styles.articleText}>
+                        <p>{excerpt}</p>
                       </div>
-                      <section className={styles.articlePreview}>
-                        <a href={`./blog/articles/${id}`}>
-                          <h2  className={styles.articleTitle}>{title}</h2>
-                        </a>
-                        {contentHtml && (
-                          <div
-                            dangerouslySetInnerHTML={{ __html: contentHtml }} 
-                            className={styles.articleText}
-                          />
-                           )}
-                        </section>
-                  </Link>
+                    )}
+                  </section>
+                </Link>
               </div>
             ))}  
-          </main>
+        </main>
     )
 }
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 export async function getStaticProps({ locale }: {locale: string}) {
-  const allBlogData = await getSortedPostsData();   // for blog
+  const allBlogData = await getSortedPostsData(locale);   // Передаем локаль
 
   // if (locale !== 'ru') {
   //   return {
@@ -60,7 +61,7 @@ export async function getStaticProps({ locale }: {locale: string}) {
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
-      allBlogData                             // for blog
+      allBlogData
     },
   };
 }
