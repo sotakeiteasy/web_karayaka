@@ -84,7 +84,8 @@
       "expensiveFirst": "Цена (сначала дорогие)",
       "smallFirst": "Площадь (сначала маленькие)",
       "largeFirst": "Площадь (сначала большие)"
-    }
+    },
+    "noResults": "Нет результатов по заданным критериям"
   },
   "ad": {
     "property": {
@@ -100,9 +101,13 @@
       "closedParking": "Закрытая парковка",
       "totalFloors": "Этажей в доме",
       "bathrooms": "ванные комнаты",
-      "contact": "Контакт",
       "forSale": "Продажа",
       "forRent": "Аренда",
+      "forSaleStatus": "на продажу",
+      "forRentStatus": "в аренду",
+      "titleForSale": "Продаётся",
+      "titleForRent": "Сдаётся",
+      "room": "комн.",
       "situation": {
         "tenanted": "В аренде",
         "owner": "В собственности",
@@ -160,5 +165,9 @@
     "allRightsReserved": "ООО Караяка. Все права защищены",
     "privacyPolicy": "Политика конфиденциальности",
     "termsOfService": "Условия использования"
+  },
+  "pagination": {
+    "next": "Далее",
+    "previous": "Назад"
   }
 }

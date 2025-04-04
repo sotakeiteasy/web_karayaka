@@ -84,7 +84,8 @@
       "expensiveFirst": "Price (expensive first)",
       "smallFirst": "Area (small first)",
       "largeFirst": "Area (large first)"
-    }
+    },
+    "noResults": "No results found for your search criteria"
   },
   "form": {
     "title": "Contact us",
@@ -136,6 +137,10 @@
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
   },
+  "pagination": {
+    "next": "Next",
+    "previous": "Previous"
+  },
   "ad": {
     "property": {
       "area": "Area",
@@ -151,6 +156,11 @@
       "bathrooms": "bathrooms",
       "forSale": "For sale",
       "forRent": "For rent",
+      "forSaleStatus": "for sale",
+      "forRentStatus": "for rent",
+      "titleForSale": "for sale",
+      "titleForRent": "for rent",
+      "room": "room",
       "situation": {
         "tenanted": "Tenanted",
         "owner": "Owner",

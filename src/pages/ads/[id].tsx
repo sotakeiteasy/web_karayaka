@@ -46,21 +46,15 @@ export default function AdPage({
           {(() => {
             switch (ad.propertyType) {
               case "apartment":
-                return `${ad.rooms} ${locale === "ru" ? "комн." : "room"} ${
+                return `${ad.rooms} ${t("ad.property.room")} ${
                   propertyTypeTranslations[ad.propertyType][locale]
                 }`;
               case "villa":
-                return `${propertyTypeTranslations[ad.propertyType][locale]}, ${
-                  ad.area
-                }m²`;
               case "commercial":
-                return `${propertyTypeTranslations[ad.propertyType][locale]}, ${
-                  ad.area
-                }m²`;
               case "land":
                 return `${propertyTypeTranslations[ad.propertyType][locale]}, ${
                   ad.area
-                }m²`;
+                }${t("ad.property.squareMeters")}²`;
               default:
                 return propertyTypeTranslations[ad.propertyType][locale];
             }
@@ -72,36 +66,23 @@ export default function AdPage({
           <div className={styles.rightTitleInfo}>
             <p>
               {(() => {
-                const forSale = locale === "ru" ? "Продаётся" : "for sale";
-                const forRent = locale === "ru" ? "Сдаётся" : "for rent";
-                const typeStatus = ad.type === "sale" ? forSale : forRent;
+                const typeStatus = ad.type === "sale" 
+                  ? t("ad.property.titleForSale") 
+                  : t("ad.property.titleForRent");
 
                 let propertyInfo = "";
 
                 switch (ad.propertyType) {
                   case "apartment":
-                    propertyInfo = `${ad.rooms} ${
-                      locale === "ru" ? "комн." : "room"
-                    } ${propertyTypeTranslations[ad.propertyType][locale]}`;
+                    propertyInfo = `${ad.rooms} ${t("ad.property.room")} ${propertyTypeTranslations[ad.propertyType][locale]}`;
                     break;
                   case "villa":
-                    propertyInfo = `${
-                      propertyTypeTranslations[ad.propertyType][locale]
-                    } ${ad.area} ${locale === "ru" ? "м" : "m"}²`;
-                    break;
                   case "commercial":
-                    propertyInfo = `${
-                      propertyTypeTranslations[ad.propertyType][locale]
-                    } ${ad.area} ${locale === "ru" ? "м" : "m"}²`;
-                    break;
                   case "land":
-                    propertyInfo = `${
-                      propertyTypeTranslations[ad.propertyType][locale]
-                    } ${ad.area} ${locale === "ru" ? "м" : "m"}²`;
+                    propertyInfo = `${propertyTypeTranslations[ad.propertyType][locale]} ${ad.area}${t("ad.property.squareMeters")}²`;
                     break;
                   default:
-                    propertyInfo =
-                      propertyTypeTranslations[ad.propertyType][locale];
+                    propertyInfo = propertyTypeTranslations[ad.propertyType][locale];
                 }
 
                 if (locale === "ru") {
@@ -205,8 +186,7 @@ export default function AdPage({
                         path={mdiCircleSmall}
                         size={1.5}
                       />
-                      {ad.parking === "closed" &&
-                        t("ad.property.closedParking")}
+                      {t("ad.property.closedParking")}
                     </li>
                   )}
                   {ad.parking === "open" && (
@@ -216,7 +196,7 @@ export default function AdPage({
                         path={mdiCircleSmall}
                         size={1.5}
                       />
-                      {ad.parking === "open" && t("ad.property.openParking")}
+                      {t("ad.property.openParking")}
                     </li>
                   )}
                   {ad.bathroom
