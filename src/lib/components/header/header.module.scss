@@ -1,143 +1,165 @@
 @use "@styles/variables" as *;
 
 .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80px;
+  background-color: $primary-color;
+  color: $white-text;
+
+  .logo {
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 80px;
-    background-color: $primary-color;
-    color: $white-text;
+    gap: 10px;
+    margin-right: 100px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+  }
 
-    .logo {
-        margin-right: 100px;
-        font-size: 1.3rem;
-        text-transform: uppercase;
+  .nav {
+    display: flex;
+    // gap: 40px;
+
+    a {
+      padding: 0 30px;
+      // margin:
+      height: 45px;
+      line-height: 45px;
+      position: relative;
     }
 
-    .nav {
-        display: flex;
-        // gap: 40px;
-
-         a {
-            padding: 0 30px;
-            // margin:
-            height: 45px;
-            line-height: 45px;
-            position: relative;
-          }
-          
-          a.navLink::before,
-          a.navLink::after {
-            position: absolute;
-            width: 45px;
-            height: 1px;
-            background: #fff;
-            content: '';
-            opacity: 0.2;
-            -webkit-transition: all 0.3s;
-            -moz-transition: all 0.3s;
-            transition: all 0.3s;
-            pointer-events: none;
-          }
-          
-          a::before {
-            top: 0;
-            left: 0;
-            -webkit-transform: rotate(90deg);
-            -moz-transform: rotate(90deg);
-            transform: rotate(90deg);
-            -webkit-transform-origin: 0 0;
-            -moz-transform-origin: 0 0;
-            transform-origin: 0 0;
-          }
-          
-          a::after {
-            right: 0;
-            bottom: 0;
-            -webkit-transform: rotate(90deg);
-            -moz-transform: rotate(90deg);
-            transform: rotate(90deg);
-            -webkit-transform-origin: 100% 0;
-            -moz-transform-origin: 100% 0;
-            transform-origin: 100% 0;
-          }
-          
-          a:hover::before,
-          a:hover::after,
-          a:focus::before,
-          a:focus::after {
-            opacity: 1;
-          }
-          
-          a:hover::before,
-          a:focus::before {
-            left: 50%;
-            -webkit-transform: rotate(0deg) translateX(-50%);
-            -moz-transform: rotate(0deg) translateX(-50%);
-            transform: rotate(0deg) translateX(-50%);
-          }
-          
-          a:hover::after,
-          a:focus::after {
-            right: 50%;
-            -webkit-transform: rotate(0deg) translateX(50%);
-            -moz-transform: rotate(0deg) translateX(50%);
-            transform: rotate(0deg) translateX(50%);
-          }
+    a.navLink::before,
+    a.navLink::after {
+      position: absolute;
+      width: 45px;
+      height: 1px;
+      background: #fff;
+      content: "";
+      opacity: 0.2;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+      pointer-events: none;
     }
 
-    .buttons {
-        font-weight: 300;
-
-        margin-left: 100px;
-        display: flex;
-        gap: 10px;
-
-        .button {
-            border: none;
-            background-color: inherit;
-            color: inherit;
-            cursor: pointer;
-            display: flex;
-        }
+    a::before {
+      top: 0;
+      left: 0;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      transform: rotate(90deg);
+      -webkit-transform-origin: 0 0;
+      -moz-transform-origin: 0 0;
+      transform-origin: 0 0;
     }
+
+    a::after {
+      right: 0;
+      bottom: 0;
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      transform: rotate(90deg);
+      -webkit-transform-origin: 100% 0;
+      -moz-transform-origin: 100% 0;
+      transform-origin: 100% 0;
+    }
+
+    a:hover::before,
+    a:hover::after,
+    a:focus::before,
+    a:focus::after {
+      opacity: 1;
+    }
+
+    a:hover::before,
+    a:focus::before {
+      left: 50%;
+      -webkit-transform: rotate(0deg) translateX(-50%);
+      -moz-transform: rotate(0deg) translateX(-50%);
+      transform: rotate(0deg) translateX(-50%);
+    }
+
+    a:hover::after,
+    a:focus::after {
+      right: 50%;
+      -webkit-transform: rotate(0deg) translateX(50%);
+      -moz-transform: rotate(0deg) translateX(50%);
+      transform: rotate(0deg) translateX(50%);
+    }
+
+    a.active::before,
+    a.active::after {
+      opacity: 1;
+    }
+
+    a.active::before {
+      left: 50%;
+      -webkit-transform: rotate(0deg) translateX(-50%);
+      -moz-transform: rotate(0deg) translateX(-50%);
+      transform: rotate(0deg) translateX(-50%);
+    }
+
+    a.active::after {
+      right: 50%;
+      -webkit-transform: rotate(0deg) translateX(50%);
+      -moz-transform: rotate(0deg) translateX(50%);
+      transform: rotate(0deg) translateX(50%);
+    }
+  }
+
+  .buttons {
+    font-weight: 300;
+
+    margin-left: 100px;
+    display: flex;
+    gap: 10px;
+
+    .button {
+      border: none;
+      background-color: inherit;
+      color: inherit;
+      cursor: pointer;
+      display: flex;
+    }
+  }
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
-    font-weight: 400;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
 }
 
 .dropdownMenu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    z-index: 1000;
-    margin-top: 5px;
-    min-width: 100px;
-    background-color: white;
-    border-radius: 4px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  margin-top: 5px;
+  min-width: 100px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .menuItem {
-    display: block;
-    width: 100%;
-    padding: 10px 15px;
-    text-align: left;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    
-    &:hover {
-        background-color: #f5f5f5;
-    }
-    
-    &.active {
-        font-weight: bold;
-        background-color: #f0f0f0;
-    }
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  &.active {
+    font-weight: bold;
+    background-color: #f0f0f0;
+  }
 }

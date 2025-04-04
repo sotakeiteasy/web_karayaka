@@ -1,131 +1,190 @@
 @use "@styles/variables" as *;
-.form{
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 30px;
+
+  .thankYouMessage {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 600px;
 
-    input:-webkit-autofill {
-        font-family: inherit;
-        border: 2px solid $primary-color;
-        border-radius: 8px;
-        caret-color: $dark-text; 
-        color: $dark-text;
-        background: $white-text;
-        -webkit-font-feature-settings: off;
-        -webkit-text-fill-color: $dark-text; 
-        -webkit-background-clip: text; 
-        }
-
-    legend{
-        font-size: 2rem;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-    }
-    p{
-        margin-bottom: 25px;
-    }
-    label{
-        user-select: none;
-        text-wrap: nowrap;
-        width: fit-content;
-        align-self: start;
-        font-size: 0.8rem;
-        padding-left: .5em;
-        padding-right: .5em;
-        position: absolute;
-        transform: translate(.5rem, -45%);
-        z-index: 1;
-        background-color: $white-text;
-        text-align: center;
-        }
-        .buttonsLabel{
-        display: flex;
-        padding: 0px;  
-        padding-bottom: 5px;
-        position:static;
-        transform: none;
-        background-color: none;
-        }
-
-    input, textarea{
-        border-radius: 8px;
-        border: 2px solid $primary-color;
-        padding: 8px 5px;
-        font-family: inherit;
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
     }
 
-    .formRow:first-of-type{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 10px;
-
-        div{
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            .input{
-                width: 100%;
-            }
-        }
+    p {
+      font-size: 1.2rem;
+      color: $dark-text;
     }
-    .formRow{
+  }
+
+  input:-webkit-autofill {
+    font-family: inherit;
+    border: 2px solid $primary-color;
+    border-radius: 8px;
+    caret-color: $dark-text;
+    color: $dark-text;
+    background: $white-text;
+    -webkit-font-feature-settings: off;
+    -webkit-text-fill-color: $dark-text;
+    -webkit-background-clip: text;
+  }
+
+  .legend {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .description {
+    margin-bottom: 25px;
+  }
+
+  .errorMessage {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    // margin-bottom: 5px;
+    font-weight: 500;
+    min-height: 1.2rem;
+  }
+
+  .errorPlaceholder {
+    min-height: 1.2rem;
+    margin-top: 5px;
+    // margin-bottom: 5px;
+  }
+
+  input.error,
+  textarea.error {
+    border-color: #e74c3c;
+  }
+
+  .label {
+    user-select: none;
+    text-wrap: nowrap;
+    width: fit-content;
+    align-self: start;
+    font-size: 0.8rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    position: absolute;
+    transform: translate(0.5rem, -45%);
+    z-index: 1;
+    background-color: $white-text;
+    text-align: center;
+  }
+  .buttonsLabel {
+    font-size: 0.8rem;
+    display: flex;
+    padding: 0px;
+    padding-bottom: 2px;
+    position: static;
+    transform: none;
+  }
+
+  input,
+  textarea {
+    border-radius: 8px;
+    border: 2px solid $primary-color;
+    padding: 8px 5px;
+    font-family: inherit;
+    transition: border-color 0.3s;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+  }
+
+  .formRow:first-of-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    // gap: 15px;
+
+    div {
+      width: 48%;
+      display: flex;
+      flex-direction: column;
+      // flex-grow: 1;
+      .input {
+        width: 100%;
+      }
+    }
+  }
+  .formRow {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    resize: none;
+    height: 200px;
+    padding: 10px 15px;
+    font-family: inherit;
+    margin-bottom: 25px;
+  }
+
+  .formDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    width: 100%;
+
+    .leftDetails {
+      width: 48%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 15px;
+
+      .formLocation,
+      .formPurpose {
         display: flex;
         flex-direction: column;
-        margin-bottom: 15px;
-    }
+        border: none;
 
-    textarea{
-        resize: none;
-        height: 200px;
-        padding: 10px 15px;
-        font-family: inherit;
-        margin-bottom: 25px;
-    }
+        div {
+          display: flex;
+          gap: 15px;
+          margin-bottom: 20px;
 
-    .formDetails{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 5px;
-        .leftDetails{
-            display: flex;
-            flex-direction: column;
-            flex-basis: 50%;
-            justify-content: space-between;
-            .formLocation, .formPurpose{
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 15px;
-                div{
-                display: flex;
-                gap: 15px;
-
-                input[type="button"]{
-                    padding: 8px 16px;
-                    background-color: $white-text;
-                    cursor: pointer;
-                }
-                input[type="button"].selected{
-                    background-color: $primary-color;
-                    color: $white-text;
-                }
-                }
-            }
+          input[type="button"] {
+            padding: 8px 16px;
+            background-color: $white-text;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+          }
+          input[type="button"].selected {
+            background-color: $primary-color;
+            color: $white-text;
+          }
         }
-        .rightDetails{
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            input{
-                width: 100%;
-            }
-        }
+      }
     }
-    .formBtn{
+    .rightDetails {
+      width: 48%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      input {
+        width: 100%;
+      }
+    }
+  }
+  .formBtn {
     align-self: flex-end;
     width: 160px;
     border-radius: 10px;
@@ -135,5 +194,10 @@
     padding: 10px 15px;
     box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.205);
     cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $primary-color;
     }
+  }
 }

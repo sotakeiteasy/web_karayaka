@@ -1,0 +1,169 @@
+@use "@styles/variables" as *;
+
+.footer {
+  background-color: color-mix(in srgb, $primary-color, black 50%);
+  color: $white-text;
+  padding: 50px 0 20px;
+  margin-top: 60px;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.footerSection {
+  flex: 1;
+  min-width: 250px;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 40px;
+      height: 2px;
+      background-color: $white-text;
+    }
+  }
+}
+
+.logoSection {
+  margin-bottom: 30px;
+
+  .logoText {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    max-width: 70%;
+  }
+}
+
+.address {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 85%;
+
+  p {
+    margin-top: 15px;
+    text-transform: uppercase;
+  }
+}
+
+.footerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  a {
+    color: $white-text;
+    text-decoration: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: rgba($white-text, 0.7);
+      padding-left: 5px;
+    }
+  }
+}
+
+.contactInfo {
+  margin-bottom: 20px;
+
+  p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+.socialLinks {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba($white-text, 0.1);
+    border-radius: 50%;
+    color: $white-text;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $white-text;
+      color: $primary-color;
+    }
+  }
+
+  .socialIcon {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.bottomFooter {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 20px 20px 0;
+  border-top: 1px solid rgba($white-text, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 0.85rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.copyright {
+  opacity: 0.7;
+}
+
+.legalLinks {
+  display: flex;
+  gap: 20px;
+
+  a {
+    color: $white-text;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

@@ -1,149 +1,34 @@
 ---
-title: "Türkiye'de İhtiyaç Nedeniyle Tahliye Davası: Rus Vatandaşları İçin Kısa ve Anlaşılır Rehber"
+title: "Türkiye'de Kiracıların Hak ve Yükümlülükleri (2025 Güncel Bilgiler)"
 date: "2025-03-31"
 ---
 
-İhtiyaç nedeniyle tahliye davası, bir mülk sahibinin kiracıyı tahliye
-ettirmek için açabileceği yasal bir davadır. **Bu dava iki şekilde
-açılabilir:**
+Türkiye\'de kiracılar ve ev sahipleri arasındaki ilişkiler, 6098 sayılı Türk Borçlar Kanunu (TBK) ile düzenlenmektedir. 2025 yılı itibarıyla, kiracılar ve ev sahiplerinin hak ve yükümlülüklerine dair önemli noktalar aşağıda belirtilmiştir:
 
-1.  **Ev sahibinin veya yakınlarının konut veya işyeri ihtiyacı
-    > nedeniyle (TBK 350. madde).**
+## 1. Kira Sözleşmesi ve Süresi
 
-2.  **Mülkü yeni satın alan kişinin ihtiyacı nedeniyle (TBK 351.
-    > madde).**
+- **Sözleşmenin Süresi ve Yenilenmesi:** Konut ve çatılı iş yeri kiraları genellikle **1 yıllık** sözleşmelerle yapılır. Sözleşme ister 1 yıllık, ister daha kısa süreli yapılmış olsun süresi dolduğunda, kiracı çıkmak istemezse ve ev sahibi haklı bir gerekçeyle tahliye talebinde bulunmazsa, sözleşme aynı koşullarla bir yıl uzar. Ev sahibi, kiracıyı ancak 10 yıllık uzama süresi dolduğunda tahliye edebilir. Örneğin, 6 aylık kira sözleşmesinin sonunda kiracı sözleşmeyi sona erdirdiğini ev sahibine bildirmemişse sözleşme bitiş tarihinden itibaren 1 yıl daha (yalnızca kira bedeli TÜFE oranında zamlanmış olarak) aynı şartlarda yenilenmiş sayılır.
+- **Yeniden Sözleşme Yapılması Gerekliliği:** Kira süresi dolduğunda, yeni bir sözleşme imzalanması gerekmez. Mevcut sözleşme aynı şartlarla devam eder. Ev sahibi, yeni bir sözleşme imzalatmak isterse ve kiracı bunu kabul etmezse, eski sözleşme geçerliliğini korur. Kiracı, sözleşme süresi bitmeden en az 15 gün önce tahliye edeceğini bildirmezse, kira sözleşmesi kendiliğinden 1 yıl daha uzar.
 
-Bu davada, **ihtiyacın gerçek, samimi ve zorunlu olması gerekmektedir.**
-Geçici, henüz doğmamış veya uzun süre sonra ortaya çıkabilecek bir
-ihtiyaç, tahliye sebebi olarak kabul edilmez.
+## 2. Kira Artış Oranı
 
-**1. Hangi Durumlarda Tahliye Davası Açılabilir?**
+- **Konut Kiraları:** 1 Temmuz 2024 tarihinde sona eren geçici düzenleme ile kira artış oranı %25 ile sınırlandırılmıştı. 2025 yılı itibarıyla, kira artışları tekrar **TÜFE** oranlarına göre belirlenmektedir. Örneğin, **2025 Ocak ayı için TÜFE oranı %58,51** olarak açıklanmıştır. Bu durumda, ev sahibi, mevcut kira bedeline en fazla %58,51 oranında zam yapabilir.
+- **İş Yeri Kiraları:** İş yeri kiralarında da yıllık kira artışı, **TÜFE** oranına göre belirlenir. 2025 yılı itibarıyla, iş yeri kira artışları da TÜFE oranlarına göre yapılmaktadır.
 
-**a) Ev Sahibi Kendi İhtiyacı İçin Tahliye Davası Açabilir mi?**
+## 3. Aidat ve Diğer Giderler
 
-Evet. Ev sahibi, **kendisinin, eşinin, çocuklarının, anne-babasının veya
-bakmakla yükümlü olduğu kişilerin** konut veya işyeri ihtiyacı varsa
-tahliye davası açabilir.
+- **Aidat Ödemeleri:** Aidat ödemesi genellikle kiracı tarafından yapılır. Ancak aidat içindeki \"demirbaş yenileme\" gibi büyük giderler mal sahibine aittir. Kiracı, apartman yönetimi tarafından belirlenen aidatları düzenli ödemekle yükümlüdür.
 
--   Eğer mülk **yeniden inşa edilecek veya büyük bir tadilat
-    > gerektiriyorsa**, tahliye edilebilir.
+## 4. Evde Tadilat ve Onarım Yapılması
 
-    > Belirli süreli kira sözleşmelerinde **süre sonunda**, belirsiz
-    > süreli sözleşmelerde **fesih bildirimi sonrası bir ay içinde**
-    > tahliye davası açılabilir.
+- **Kiracının Yapabileceği Tadilatlar:** Kiracı, evde büyük çaplı tadilatları ev sahibinin yazılı izni olmadan yapamaz. Evde meydana gelen küçük bakım ve onarımlar kiracının sorumluluğundadır. Örneğin, musluk değişimi, boya-badana gibi işlemler kiracı tarafından yapılabilir.
+- **Ev Sahibi Sorumluluğundaki Tadilatlar:** Kiralananın kullanılabilir durumda tutulması için gerekli olan büyük onarımlar ev sahibinin sorumluluğundadır. Kiracı, bu tür durumları ev sahibine bildirmeli ve onarımın yapılmasını talep etmelidir.
 
-**b) Yeni Malikin (Yeni Ev Sahibinin) Tahliye Hakkı Var mı?**
+## 5. Evin Satılması Durumunda Kiracının Durumu
 
-Evet. Bir mülkü yeni satın alan kişi, **kendisinin veya ailesinin
-ihtiyacı varsa**, şu şartlarla tahliye davası açabilir:
+- **Yeni Malikin Hakları:** Ev sahibi evi satarsa, yeni malik eski kira sözleşmesini devralmak zorundadır. Ancak yeni malik, **kendi ihtiyacı** için kullanmak isterse, **6 ay içinde tahliye davası açabilir**.
+- **Kiracının Hakları:** Kiracı, yeni malikin ihtiyacı nedeniyle tahliye talebiyle karşılaşırsa, yasal haklarını kullanarak savunma yapabilir ve gerekirse tazminat talep edebilir. Tazminatın kapsamı ve miktarı somut olaya göre değişmektedir.
 
--   **Edinme tarihinden itibaren 1 ay içinde** kiracıya yazılı bildirim
-    > yapılmalıdır.
+## Sonuç
 
-    > Bildirim yapıldıktan **6 ay sonra tahliye davası açılabilir.**
-
-    > Eğer sözleşme süresi dolduğunda tahliye davası açılacaksa,
-    > **sözleşme bitiminden itibaren 1 ay içinde dava açılmalıdır.**
-
-**2. İhtiyaç Nedeniyle Tahliye Davasında Dikkate Alınan Faktörler**
-
-Tahliye davasının başarılı olabilmesi için ihtiyacın:
-
--   **Gerçek olması** (yani, mal sahibinin veya ailesinin gerçekten bu
-    > mülke ihtiyacı olması),
-
-    > **Samimi olması** (yalnızca kiracıyı çıkarmak için uydurulmuş bir
-    > sebep olmaması),
-
-    > **Zorunlu olması** (mülk sahibinin başka bir alternatifinin
-    > olmaması) gerekir.
-
-Ayrıca, mahkeme **kiracının durumunu, mevcut kira piyasasını ve mülk
-sahibinin niyetini** inceler.
-
-**3. İşyeri İhtiyacı Nedeniyle Tahliye Davası**
-
--   İş yeri ihtiyacına dayalı tahliye davasında, iş yeri ihtiyacının
-    > gerçekten zorunlu olup olmadığı değerlendirilir.
-
-    > Eğer mülk sahibi **halen başka bir iş yerinde faaliyet
-    > gösteriyorsa**, mahkeme yeni mülkün eski iş yerine kıyasla daha
-    > uygun olup olmadığını inceler.
-
-    > **Kiracı tahliye edilse bile, mal sahibi işyerini hemen
-    > kullanmazsa veya başkasına kiralarsa, kötü niyetli kabul
-    > edilebilir ve tazminat ödemek zorunda kalabilir.**
-
-**4. Tüzel Kişiler (Şirketler) Tahliye Davası Açabilir mi?**
-
--   **Gerçek kişiler (bireyler), şirketin ihtiyacını gerekçe göstererek
-    > tahliye davası açamaz.**
-
-    > Ancak **şirketin kendisi**, faaliyetleri için bir mülkü
-    > kullanacaksa tahliye talep edebilir.
-
-    > **Şirketin faaliyet konusu ile ilgili olması gereklidir.**
-    > Örneğin, gıda sektöründe olmayan bir şirket, fırın açmak için bir
-    > dükkanın tahliyesini talep edemez.
-
-**5. Tahliye Davasında Süreler**
-
-  --------------------------- -------------------------------------------
-                              
-
-                              
-
-                              
-
-                              
-  --------------------------- -------------------------------------------
-
--   **Belirli süreli kira sözleşmelerinde**, ev sahibi tahliye davası
-    > açmak için **önceden ihtarname göndermek zorunda değildir.**
-
-    > **Belirsiz süreli sözleşmelerde**, **fesih bildirimi yapılmadan
-    > tahliye davası açılamaz.**
-
-**6. Tahliye Davası Açılmadan Önce Kiracıya Bildirim Yapılmalı mı?**
-
-Eğer mülk sahibi **tahliye davası açmak istiyorsa,** öncesinde kiracıya
-**yazılı bir bildirim göndermesi gereklidir.**
-
--   **Yeni malik ise, mülkü aldıktan sonra 1 ay içinde bildirim
-    > yapmalıdır.**
-
-    > **Kiracının bu bildirimi almasına rağmen çıkmaması durumunda
-    > tahliye davası açılabilir.**
-
-**7. Tahliye Davasında Kararın Uygulanması**
-
--   Mahkeme, **tahliye kararı verdikten sonra kiracının evi veya iş
-    > yerini boşaltması için belirli bir süre tanır.**
-
-    > Kiracı mahkeme kararına uymazsa, **icra yoluyla tahliye
-    > edilebilir.**
-
-    > Eğer mal sahibi **tahliye edilen mülkü 3 yıl boyunca başka birine
-    > kiraya verirse**, kiracı **tazminat davası açabilir.**
-
-**Sonuç**
-
-Türkiye'de ihtiyaç nedeniyle tahliye davası açmak, hem ev sahipleri hem
-de kiracılar için önemli bir hukuki süreçtir.
-
--   **Ev sahipleri**, **kendi veya yakınlarının ihtiyacı varsa** tahliye
-    > davası açabilir.
-
-    > **Yeni malik, mülkü satın aldıktan sonra kiracıyı çıkarmak
-    > istiyorsa,** yazılı bildirim yapmalı ve en az **6 ay
-    > beklemelidir.**
-
-    > **Mahkeme, ihtiyacın gerçek olup olmadığını detaylı bir şekilde
-    > inceler.**
-
-    > **Kiracı tahliye edilse bile, ev sahibi mülkü 3 yıl boyunca başka
-    > birine kiraya verirse, eski kiracı tazminat talep edebilir.**
-
-Türkiye'de kira hukuku konusunda profesyonel destek almak, **tahliye
-sürecinin doğru şekilde yürütülmesini sağlar ve tarafların haklarını
-korur.**
+2025 yılı itibarıyla, Türkiye\'de kiracıların hakları ve yükümlülükleri, güncel yasal düzenlemeler çerçevesinde şekillenmektedir. Kiracılar, kira sözleşmesi süresince ancak kanunda yazılı şartların olması halinde tahliye talebinde bulunabilir, yasal sınırların üzerinde kira artışlarına maruz kalamaz ve ev satılsa bile belirli sürelerle kiralanan evde yaşamaya devam edebilir.

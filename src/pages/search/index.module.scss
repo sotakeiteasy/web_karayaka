@@ -1,212 +1,203 @@
 @use "@styles/variables" as *;
 
 .main {
-    display: flex;
-    justify-self: center;
-    justify-content: center;
-    max-width: 1200px;
-    // margin: 0 auto;
-    padding: 20px 20px;
+  display: flex;
+  justify-self: center;
+  justify-content: center;
+  max-width: 1200px;
+  // margin: 0 auto;
+  padding: 20px 20px;
 
-    
-    
-    .filterBox {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        font-size: 1rem;
-        height: fit-content;
-        min-height: 610px;
-        margin: 20px 0;
+  .filterBox {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 1rem;
+    height: fit-content;
+    min-height: 610px;
+    margin: 20px 0;
+    background-color: $white-text;
+    color: $primary-color;
+    border: 3px solid $primary-color;
+    // background-color: $primary-color;
+    // color: $white-text;
+    width: 300px;
+    padding: 25px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    margin-right: 20px;
+
+    .filter {
+      margin-bottom: 10px;
+      width: 100%;
+
+      label {
+        display: block;
+        margin-bottom: 3px;
+        font-weight: 600;
+        font-size: 13px;
+      }
+
+      input,
+      select {
         background-color: $white-text;
         color: $primary-color;
-        border: 3px solid $primary-color;
-        // background-color: $primary-color;
-        // color: $white-text;
-        width: 300px;
-        padding: 25px 15px;
-        border-radius: 8px;
-        margin-bottom: 15px;
-        margin-right: 20px;
+        border: 2px solid $primary-color;
+        // background-color: inherit;
+        // color: inherit;
 
-        .filter {
-            margin-bottom: 10px;
-            width: 100%;
-
-            label {
-                display: block;
-                margin-bottom: 3px;
-                font-weight: 600;
-                font-size: 13px;
-            }
-
-            input, select {
-                background-color: $white-text;
-                color: $primary-color;
-                border: 2px solid $primary-color;
-                // background-color: inherit;
-                // color: inherit;
-
-                width: 100%;
-                padding: 6px 10px;
-                // border: 1px solid white;
-                border-radius: 4px;
-            }
-        }
-
-        .filterRow {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 10px;
-
-            .filter {
-                flex: 1;
-                margin-bottom: 0;
-            }
-        }
-
-        .checkboxGroup {
-            font-size: 13px;
-            font-weight: 500;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            // margin: 20px 0;
-                p{
-                    margin-bottom: -5px;
-                    font-weight: 600;
-                    color: $primary-color;
-                }
-            div {
-                display: flex;
-                gap: 20px;
-                
-                .filterButton {
-                    font-size: 0.9rem;
-                    flex: 1;
-                    padding: 5px 10px;
-                    border: 2px solid $primary-color;
-                    border-radius: 5px;
-                    background-color: $white-text;
-                    cursor: pointer;
-                    width: 80px;
-                    color: $secondary-color;
-    
-                    &.active {
-                        background-color: $primary-color;
-                        color: $white-text;
-    
-                    }
-                }
-                
-            }
-
-           
-            
-        }
-
-        .filterActions {
-            display: flex;
-            gap: 10px;
-            margin-top: 40px;
-            width: 100%;
-        
-            .applyButton {
-                width: 50%;
-                flex: 1;
-                padding: 8px 15px;
-                background-color: $primary-color;
-                color: $white-text;
-                // background-color: $white-text;
-                // color: $primary-color;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 1.1rem;
-                
-                &:hover {
-                    // background-color: $light-gray-color;
-                    background-color: $secondary-color;
-                    // outline: 3px solid $secondary-color;
-                    // color: $white-text;
-                    // border: 2px solid $white-text;
-                }
-            }
-        }
+        width: 100%;
+        padding: 6px 10px;
+        // border: 1px solid white;
+        border-radius: 4px;
+      }
     }
 
-    .searchBlock {
-        width: 700px;
+    .filterRow {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 10px;
+
+      .filter {
         flex: 1;
-        padding: 20px;
-
-        .controlPanel {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: left;
-            gap: 10px;
-            margin-bottom: 10px;
-
-            .searchPanel {
-                display: flex;
-                flex-grow: 1;
-                justify-content: space-between;
-                gap: 20px;
-                
-                input {
-                    flex-grow: 1;
-                    outline: none;
-                    border: 2px solid $primary-color;
-                    border-radius: 8px;
-                    padding: 5px 10px;
-                }
-
-                .searchButton {
-                    background-color: $primary-color;
-                    color: $white-text;
-                    border: none;
-                    padding: 5px 25px;
-                    border-radius: 8px;
-                    cursor: pointer;
-
-                }
-            }
-
-            .addPanel {
-                display: flex;
-                justify-content: space-between;
-                padding: 10px 0;
-
-                // flex: 1;
-
-                // .filterTags {
-                //     display: flex;
-                //     gap: 20px;
-                //     flex-wrap: wrap;
-                // }
-
-                
-                .resetButton {
-                    
-                    align-self: left;
-                    padding: 4px 15px;
-                    background-color: #f8f9fa;
-                    color: #212529;
-                    border: 1px solid #dee2e6;
-                    border-radius: 4px;
-                    cursor: pointer;
-                    font-size: 16px;
-                    
-                    &:hover {
-                        background-color: #e2e6ea;
-                    }
-                }
-            
-            div {
-                margin-left: auto;
-            }
-         }
-        }
+        margin-bottom: 0;
+      }
     }
+
+    .checkboxGroup {
+      font-size: 13px;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      // margin: 20px 0;
+      p {
+        margin-bottom: -5px;
+        font-weight: 600;
+        color: $primary-color;
+      }
+      div {
+        display: flex;
+        gap: 20px;
+
+        .filterButton {
+          font-size: 0.9rem;
+          flex: 1;
+          padding: 5px 10px;
+          border: 2px solid $primary-color;
+          border-radius: 5px;
+          background-color: $white-text;
+          cursor: pointer;
+          width: 80px;
+          color: $secondary-color;
+
+          &.active {
+            background-color: $primary-color;
+            color: $white-text;
+          }
+        }
+      }
+    }
+
+    .filterActions {
+      display: flex;
+      gap: 10px;
+      margin-top: 40px;
+      width: 100%;
+
+      .applyButton {
+        width: 50%;
+        flex: 1;
+        padding: 8px 15px;
+        background-color: $primary-color;
+        color: $white-text;
+        // background-color: $white-text;
+        // color: $primary-color;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1.1rem;
+
+        &:hover {
+          // background-color: $light-gray-color;
+          background-color: $secondary-color;
+          // outline: 3px solid $secondary-color;
+          // color: $white-text;
+          // border: 2px solid $white-text;
+        }
+      }
+    }
+  }
+
+  .searchBlock {
+    width: 700px;
+    flex: 1;
+    padding: 20px;
+
+    .controlPanel {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: self-start;
+      gap: 10px;
+      margin-bottom: 10px;
+
+      .searchPanel {
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-between;
+        gap: 20px;
+
+        input {
+          flex-grow: 1;
+          outline: none;
+          border: 2px solid $primary-color;
+          border-radius: 8px;
+          padding: 5px 10px;
+        }
+
+        .searchButton {
+          background-color: $primary-color;
+          color: $white-text;
+          border: none;
+          padding: 5px 25px;
+          border-radius: 8px;
+          cursor: pointer;
+        }
+      }
+
+      .addPanel {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+
+        // flex: 1;
+
+        // .filterTags {
+        //     display: flex;
+        //     gap: 20px;
+        //     flex-wrap: wrap;
+        // }
+
+        .resetButton {
+          align-self: left;
+          padding: 4px 15px;
+          background-color: #f8f9fa;
+          color: #212529;
+          border: 1px solid #dee2e6;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+
+          &:hover {
+            background-color: #e2e6ea;
+          }
+        }
+
+        div {
+          margin-left: auto;
+        }
+      }
+    }
+  }
 }

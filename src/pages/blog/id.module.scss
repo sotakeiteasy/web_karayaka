@@ -1,94 +1,132 @@
 @use "@styles/variables" as *;
-.main{
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+
+  .article {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
-
-    .article{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 1100px;
-        padding: 40px;
-        box-shadow: $shadow;
-        border-radius: 15px;
-        h1{
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-        time{
-            align-self: flex-start;
-            text-align: left;
-            color: $primary-color;
-            font-weight: 600;
-        }
-
-        /* Стили для правильного отображения Markdown-контента */
-        p {
-            margin-bottom: 1em;
-            line-height: 1.6;
-        }
-
-        /* Добавляем отступы между всеми блочными элементами */
-        h1, h2, h3, h4, h5, h6, ul, ol, blockquote {
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-        }
-
-        /* Стили для списков */
-        ul, ol {
-            padding-left: 2em;
-            margin-bottom: 1em;
-        }
-
-        li {
-            margin-bottom: 0.5em;
-        }
-
-        /* Стили для блоков кода */
-        pre {
-            background-color: #f5f5f5;
-            padding: 1em;
-            border-radius: 5px;
-            overflow-x: auto;
-            margin: 1em 0;
-        }
-
-        /* Стили для цитат */
-        blockquote {
-            border-left: 4px solid $primary-color;
-            padding-left: 1em;
-            font-style: italic;
-            margin-left: 0;
-        }
-
-        .languageSwitcher {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            
-            a {
-                padding: 5px 10px;
-                border-radius: 5px;
-                transition: all 0.3s ease;
-                
-                &:hover {
-                    background-color: #f5f5f5;
-                }
-            }
-            
-            .activeLocale {
-                font-weight: bold;
-                background-color: $primary-color;
-                color: white;
-                
-                &:hover {
-                    background-color: darken($primary-color, 10%);
-                }
-            }
-        }
+    width: 1100px;
+    padding: 40px;
+    box-shadow: $shadow;
+    border-radius: 15px;
+    h1 {
+      text-transform: uppercase;
+      font-weight: 500;
     }
+    time {
+      align-self: flex-start;
+      text-align: left;
+      color: $primary-color;
+      font-weight: 600;
+    }
+
+    /* Стили для правильного отображения Markdown-контента */
+    p {
+      margin-bottom: 1em;
+      line-height: 1.6;
+    }
+
+    /* Добавляем отступы между всеми блочными элементами */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    ul,
+    ol,
+    blockquote {
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
+    }
+
+    /* Стили для списков */
+    ul,
+    ol {
+      padding-left: 2em;
+      margin-bottom: 1em;
+    }
+
+    li {
+      margin-bottom: 0.5em;
+    }
+
+    /* Стили для блоков кода */
+    pre {
+      background-color: #f5f5f5;
+      padding: 1em;
+      border-radius: 5px;
+      overflow-x: auto;
+      margin: 1em 0;
+    }
+
+    /* Стили для цитат */
+    blockquote {
+      border-left: 4px solid $primary-color;
+      padding-left: 1em;
+      font-style: italic;
+      margin-left: 0;
+    }
+
+    /* Стили для таблиц */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1.5em 0;
+      overflow-x: auto;
+      display: block;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+
+    .languageSwitcher {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+
+      a {
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #f5f5f5;
+        }
+      }
+
+      .activeLocale {
+        font-weight: bold;
+        background-color: $primary-color;
+        color: white;
+
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
 }

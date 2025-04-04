@@ -1,9 +1,9 @@
-import React, { useRef, useEffect, FormEvent } from 'react';
-import emailjs from '@emailjs/browser';
-import styles from './form.module.scss';
-import { useState } from 'react';
-
-import { useForm, SubmitHandler } from "react-hook-form"
+import React, { useEffect } from "react";
+import emailjs from "@emailjs/browser";
+import styles from "./form.module.scss";
+import { useState } from "react";
+import { useTranslation } from "next-i18next";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 type Inputs = {
   name: string;
@@ -18,18 +18,22 @@ type Inputs = {
   message?: string;
 };
 
-const  SERVICE_ID = "service_karayaka" ; 
-const  TEMPLATE_ID = "template_karayaka" ; 
-const  PUBLIC_KEY = "Yq2DEqGgQI4ibTmyj" ; 
+type LocationKey = "Russia" | "Turkey";
+type PurposeKey = "Buy" | "Rent";
+
+const SERVICE_ID = "service_karayaka";
+const TEMPLATE_ID = "template_karayaka";
+const PUBLIC_KEY = "Yq2DEqGgQI4ibTmyj";
 
 export const ContactUs = () => {
+  const { t } = useTranslation("common");
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const {
     register,
     handleSubmit,
+    setValue,
+    reset,
     watch,
-    setValue, // for location
-    // getValues, // for location
-    reset, 
     formState: { errors },
   } = useForm<Inputs>({
     defaultValues: {
@@ -42,9 +46,13 @@ export const ContactUs = () => {
       budget: "",
       phone_number: "",
       email: "",
-      message: ""
+      message: "",
     },
-  })
+    mode: "onBlur", // Валидация при потере фокуса
+  });
+
+  const watchEmail = watch("email");
+  const watchPhone = watch("phone_number");
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const templateParams = {
@@ -60,186 +68,281 @@ export const ContactUs = () => {
       message: data.message || "",
     };
 
-    console.log("Form Data:", templateParams);
-    if(!templateParams) {
-      console.log("Form reference is null.");
-      return;
-    }
-
-    emailjs
-      .send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
-      .then(
-        () => {
-          console.log('SUCCESS!');
-          reset();
-        },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY).then(
+      () => {
+        reset();
+        setIsSubmitted(true);
+      },
+      (error) => {
+        console.error("Failed to send form:", error.text);
+      }
+    );
   };
 
-  // console.log(watch("location")) // watch input value by passing the name of it
-  console.log(watch("purpose")) // watch input value by passing the name of it
+  useEffect(() => {
+    emailjs.init(PUBLIC_KEY);
+  }, []);
 
-  // console.log(watch("surname")) // watch input value by passing the name of it
-
-
-
-  const form = useRef<HTMLFormElement | null>(null);
-
-  useEffect(()=> {
-    emailjs.init(PUBLIC_KEY); 
-  }, [])
-
-  const [purposes, setPurposes] = useState<Record<string, boolean>>({
+  const [purposes, setPurposes] = useState<Record<PurposeKey, boolean>>({
     Buy: false,
-    Rent: false
+    Rent: false,
   });
 
-  const [locations, setLocations] = useState<Record<string, boolean>>({
+  const [locations, setLocations] = useState<Record<LocationKey, boolean>>({
     Russia: false,
     Turkey: false,
   });
 
-  const toggleLocation = (country: "Russia" | "Turkey") => {
+  const toggleLocation = (country: LocationKey) => {
     setLocations((prev) => {
       const updated = { ...prev, [country]: !prev[country] };
-      const selectedLocations = Object.keys(updated).filter((key) => updated[key]); 
+      const selectedLocations = Object.keys(updated).filter(
+        (key) => updated[key as LocationKey]
+      ) as string[];
       setValue("location", selectedLocations);
       return updated;
     });
   };
 
-  const togglePurpose = (country: "Buy" | "Rent") => {
+  const togglePurpose = (type: PurposeKey) => {
     setPurposes((prev) => {
-      const updated = { ...prev, [country]: !prev[country] };
-      const selectedLocations = Object.keys(updated).filter((key) => updated[key]); 
-      setValue("purpose", selectedLocations);
+      const updated = { ...prev, [type]: !prev[type] };
+      const selectedTypes = Object.keys(updated).filter(
+        (key) => updated[key as PurposeKey]
+      ) as string[];
+      setValue("purpose", selectedTypes);
       return updated;
     });
   };
 
+  const validateContactInfo = (
+    value: string,
+    fieldName: "email" | "phone_number"
+  ) => {
+    if (value && value.trim()) return true;
+
+    const otherField = fieldName === "email" ? watchPhone : watchEmail;
+
+    if (otherField && otherField.trim()) {
+      return true;
+    }
+
+    return fieldName === "email"
+      ? t("form.errors.contactRequired")
+      : t("form.errors.contactRequired");
+  };
+
   return (
-        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-        <legend>Your message</legend>
-                <p>
-                  Share your contact details and property wishes. 
-                  We&aposll get back to you with recommendations.
-                </p>
-                <div className={styles.formRow}>
-                  <div>
-                    <label htmlFor="name">Name</label>
-                    <input 
-                      type="text"
-                      id="name" 
-                      {...register("name", { required: "Name is required", maxLength: 20 })}
-                    />
-                    {errors.name && <p>{errors.name.message}</p>}
-                  </div>
+    <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+      {isSubmitted ? (
+        <div className={styles.thankYouMessage}>
+          <h2>{t("form.thankYou.title")}</h2>
+          <p>{t("form.thankYou.message")}</p>
+        </div>
+      ) : (
+        <>
+          <legend className={styles.legend}>{t("form.title")}</legend>
+          <p className={styles.description}>{t("form.description")}</p>
+          <div className={styles.formRow}>
+            <div>
+              <label htmlFor="name" className={styles.label}>
+                {t("form.name")}
+              </label>
+              <input
+                type="text"
+                id="name"
+                className={errors.name ? styles.error : ""}
+                {...register("name", {
+                  required: t("form.errors.nameRequired"),
+                  maxLength: 20,
+                })}
+              />
+              {errors.name && (
+                <p className={styles.errorMessage}>{errors.name.message}</p>
+              )}
+              {!errors.name && <div className={styles.errorPlaceholder}></div>}
+            </div>
 
-                  <div>
-                    <label htmlFor="surname">Surname</label>
-                    <input type="text" id="surname" {...register("surname", { maxLength: 20 })} />
-                  </div>
+            <div>
+              <label htmlFor="surname" className={styles.label}>
+                {t("form.surname")}
+              </label>
+              <input
+                type="text"
+                id="surname"
+                {...register("surname", { maxLength: 20 })}
+              />
+              <div className={styles.errorPlaceholder}></div>
+            </div>
+          </div>
+
+          <div className={styles.formDetails}>
+            <div className={styles.leftDetails}>
+              <fieldset className={styles.formLocation}>
+                <legend className={styles.buttonsLabel}>
+                  {t("form.location.label")}
+                </legend>
+                <div>
+                  <input
+                    type="button"
+                    id="location-russia"
+                    name="location"
+                    value={t("form.location.russia")}
+                    className={
+                      locations.Russia
+                        ? `${styles.input} ${styles.selected}`
+                        : styles.input
+                    }
+                    onClick={() => toggleLocation("Russia")}
+                  />
+                  <input
+                    type="button"
+                    id="location-turkey"
+                    name="location"
+                    value={t("form.location.turkey")}
+                    className={
+                      locations.Turkey
+                        ? `${styles.input} ${styles.selected}`
+                        : styles.input
+                    }
+                    onClick={() => toggleLocation("Turkey")}
+                  />
                 </div>
+              </fieldset>
 
-                <div className={styles.formDetails}>
-                  <div className={styles.leftDetails}>
-                    <div className={styles.formLocation}>
-                      <label htmlFor="location" className={styles.buttonsLabel}>Where are you looking?</label>
-                        <div>
-                          <input 
-                              type="button" 
-                              id="location-russia" 
-                              name='location'
-                              value="Russia"
-                              className={locations.Russia ? `${styles.input} ${styles.selected}` : styles.input}
-                              // onClick={() => setLocations(prev => ({...prev, Russia: !prev.Russia}))}
-                              onClick={() => toggleLocation("Russia")}
-
-                              // {...register("location")}
-                            />
-                          <input 
-                            type="button" 
-                            id="location-turkey" 
-                            name='location'
-                            value="Turkey"
-                            className={locations.Turkey ? `${styles.input} ${styles.selected}` : styles.input}
-                            // onClick={() => setLocations(prev => ({...prev, Turkey: !prev.Turkey}))}
-                            onClick={() => toggleLocation("Turkey")}
-
-                            // {...register("location")}
-                          />
-                        </div>
-                    </div>
-
-                    <div className={styles.formPurpose}>
-                      <label htmlFor="purpose" className={styles.buttonsLabel}>Purpose</label>
-                        <div>
-                          <input 
-                              type="button" 
-                              id="purpose-buy" 
-                              name='purpose'
-                              value="Buy" 
-                              className={purposes.Buy ? `${styles.input} ${styles.selected}` : styles.input}
-                              // onClick={() => setPurposes(prev => ({...prev, Buy: !prev.Buy}))}
-                              onClick={() => togglePurpose("Buy")}
-
-                              // {...register("purpose")}
-
-                          />
-
-                          <input 
-                              type="button" 
-                              id="purpose-rent"
-                              name='purpose'
-                              value="Rent"
-                              className={purposes.Rent ? `${styles.input} ${styles.selected}` : styles.input}
-                              // onClick={() => setPurposes(prev => ({...prev, Rent: !prev.Rent}))}
-                              onClick={() => togglePurpose("Rent")}
-
-                              // {...register("purpose")}
-                          />
-                        </div>
-                    </div>
-                  </div>
-
-                  <div className={styles.rightDetails}>
-                      <div className={styles.formRow}>
-                        <label htmlFor="city">City</label>
-                        <input type="text" id="city" {...register("city", { maxLength: 15 })}/>
-                      </div>
-
-                      <div className={styles.formRow}>
-                        <label htmlFor="district">District</label>
-                        <input type="text" id="district" {...register("district", { maxLength: 15 })}/>
-                      </div>
-
-                      <div className={styles.formRow}>
-                        <label htmlFor="budget">Budget</label>
-                        <input type="text" id="budget" {...register("budget", { maxLength: 15 })}/>
-                      </div>
-                  </div>
+              <fieldset className={styles.formPurpose}>
+                <legend className={styles.buttonsLabel}>
+                  {t("form.purpose.label")}
+                </legend>
+                <div>
+                  <input
+                    type="button"
+                    id="purpose-buy"
+                    name="purpose"
+                    value={t("form.purpose.buy")}
+                    className={
+                      purposes.Buy
+                        ? `${styles.input} ${styles.selected}`
+                        : styles.input
+                    }
+                    onClick={() => togglePurpose("Buy")}
+                  />
+                  <input
+                    type="button"
+                    id="purpose-rent"
+                    name="purpose"
+                    value={t("form.purpose.rent")}
+                    className={
+                      purposes.Rent
+                        ? `${styles.input} ${styles.selected}`
+                        : styles.input
+                    }
+                    onClick={() => togglePurpose("Rent")}
+                  />
                 </div>
+              </fieldset>
+            </div>
 
-                <div className={styles.formRow}>
-                  <label htmlFor="phone_number">Phone Number</label>
-                  <input type="tel" id="phone_number" {...register("phone_number", { required: "Phone number is required", pattern: { value: /^\+?[0-9]{7,15}$/, message: "Invalid phone number" } })} />
-                </div>
+            <div className={styles.rightDetails}>
+              <div className={styles.formRow}>
+                <label htmlFor="city" className={styles.label}>
+                  {t("form.city")}
+                </label>
+                <input
+                  type="text"
+                  id="city"
+                  {...register("city", { maxLength: 15 })}
+                />
+              </div>
 
-                <div className={styles.formRow}>
-                  <label htmlFor="email">Email</label>
-                  <input type="email" id="email" {...register("email", { required: "Email is required", pattern: { value: /^[^@\s]+@[^@\s]+\.[^@\s]+$/, message: "Invalid email address" } })}/>
-                </div>
-                <textarea 
-                  aria-label='Your message' 
-                  placeholder="Describe what you're looking for: number of rooms, floor, must-have features. The more details you provide, the better we can help you find your perfect match!" 
-                  {...register("message")}
-                  id="message">
-                </textarea>
-            <input className={styles.formBtn} type="submit" value="Send" />
-        </form>
+              <div className={styles.formRow}>
+                <label htmlFor="district" className={styles.label}>
+                  {t("form.district")}
+                </label>
+                <input
+                  type="text"
+                  id="district"
+                  {...register("district", { maxLength: 15 })}
+                />
+              </div>
+
+              <div className={styles.formRow}>
+                <label htmlFor="budget" className={styles.label}>
+                  {t("form.budget")}
+                </label>
+                <input
+                  type="text"
+                  id="budget"
+                  {...register("budget", { maxLength: 15 })}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.formRow}>
+            <label htmlFor="phone_number" className={styles.label}>
+              {t("form.phone")}
+            </label>
+            <input
+              type="tel"
+              id="phone_number"
+              className={errors.phone_number ? styles.error : ""}
+              {...register("phone_number", {
+                validate: (value) => validateContactInfo(value, "phone_number"),
+                pattern: {
+                  value: /^\+?[0-9]{7,15}$/,
+                  message: t("form.errors.phoneInvalid"),
+                },
+              })}
+            />
+            {errors.phone_number && (
+              <p className={styles.errorMessage}>
+                {errors.phone_number.message}
+              </p>
+            )}
+            {!errors.phone_number && (
+              <div className={styles.errorPlaceholder}></div>
+            )}
+          </div>
+
+          <div className={styles.formRow}>
+            <label htmlFor="email" className={styles.label}>
+              {t("form.email")}
+            </label>
+            <input
+              type="email"
+              id="email"
+              autoComplete="email"
+              className={errors.email ? styles.error : ""}
+              {...register("email", {
+                validate: (value) => validateContactInfo(value, "email"),
+                pattern: {
+                  value: /^[^@\s]+@[^@\s]+\.[^@\s]+$/,
+                  message: t("form.errors.emailInvalid"),
+                },
+              })}
+            />
+            {errors.email && (
+              <p className={styles.errorMessage}>{errors.email.message}</p>
+            )}
+            {!errors.email && <div className={styles.errorPlaceholder}></div>}
+          </div>
+
+          <textarea
+            aria-label={t("form.message.label")}
+            placeholder={t("form.message.placeholder")}
+            {...register("message")}
+            id="message"
+          />
+
+          <input
+            className={styles.formBtn}
+            type="submit"
+            value={t("form.submit")}
+          />
+        </>
+      )}
+    </form>
   );
 };
 

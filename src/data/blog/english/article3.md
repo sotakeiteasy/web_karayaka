@@ -1,79 +1,88 @@
 ---
-title: "Kira Sözleşmesinde Kefalet: Kefil Olacakların Bilmesi Gerekenler"
+title: "Türkiye'de İhtiyaç Nedeniyle Tahliye Davası: Rus Vatandaşları İçin Kısa ve Anlaşılır Rehber"
 date: "2025-03-31"
 ---
 
-Kira sözleşmeleri, hem kiracı hem de ev sahibi açısından çeşitli
-yükümlülükler içeren hukuki belgelerdir. Kiracının kira borcunu
-ödeyememesi ihtimaline karşı, ev sahipleri genellikle bir kefil talep
-eder. Kefalet, kiracının kira borcunu yerine getirememesi durumunda,
-kefilin borcu üstlenmesini sağlayan hukuki bir güvencedir. Ancak,
-kefalet sözleşmesiyle ilgili bilinmesi gereken birçok önemli husus
-vardır.
+İhtiyaç nedeniyle tahliye davası, bir mülk sahibinin kiracıyı tahliye ettirmek için açabileceği yasal bir davadır. **Bu dava iki şekilde açılabilir:**
 
-**Kefalet Sözleşmesi Nedir?**
+1.  Ev sahibinin veya yakınlarının konut veya işyeri ihtiyacı nedeniyle (TBK 350. madde).
+2.  Mülkü yeni satın alan kişinin ihtiyacı nedeniyle (TBK 351. madde).
 
-Kefalet sözleşmesi, kefilin, borçlunun (kiracının) borcunu ödememesi
-halinde bu borcu üstleneceğini taahhüt ettiği sözleşmedir. Türk Borçlar
-Kanunu\'na (TBK) göre kefalet sözleşmesinin geçerli olabilmesi için
-**yazılı şekilde yapılması** zorunludur. Kefilin, borcun miktarını ve
-kapsamını açıkça belirttiği bir sözleşme imzalaması gerekir. Aksi
-takdirde kefalet sözleşmesi geçersiz sayılır.
+Bu davada, **ihtiyacın gerçek, samimi ve zorunlu olması gerekmektedir.** Geçici, henüz doğmamış veya uzun süre sonra ortaya çıkabilecek bir ihtiyaç, tahliye sebebi olarak kabul edilmez.
 
-**Kira Sözleşmesinde Kefilin Sorumluluğu**
+## 1. Hangi Durumlarda Tahliye Davası Açılabilir?
 
-Kefalet sözleşmesinde kefilin sorumluluğunun kapsamı, sözleşmenin türüne
-göre değişiklik gösterebilir. Kefil olmayı kabul eden kişi, aşağıdaki
-sorumlulukları üstlenir:
+### a) Ev Sahibi Kendi İhtiyacı İçin Tahliye Davası Açabilir mi?
 
-1.  **Müteselsil Kefalet**: Kefil, kiracı borcunu ödemediği takdirde
-    > doğrudan borçtan sorumlu tutulur. Ev sahibi, kiracıdan alacağını
-    > tahsil edemeden doğrudan kefile başvurabilir.
+Evet. Ev sahibi, **kendisinin, eşinin, çocuklarının, anne-babasının veya bakmakla yükümlü olduğu kişilerin** konut veya işyeri ihtiyacı varsa tahliye davası açabilir.
 
-2.  **Adi Kefalet**: Kefil, ancak kiracı borcunu ödeyemezse ve borcun
-    > tahsil edilemeyeceği kesinleşirse ödeme yükümlülüğü altına girer.
-    > Ev sahibi önce kiracıya başvurmalı ve tahsil edemezse kefilden
-    > ödeme talep edebilir.
+- Eğer mülk **yeniden inşa edilecek veya büyük bir tadilat gerektiriyorsa**, tahliye edilebilir.
+- Belirli süreli kira sözleşmelerinde **süre sonunda**, belirsiz süreli sözleşmelerde **fesih bildirimi sonrası bir ay içinde** tahliye davası açılabilir.
 
-3.  **Süreli ve Süresiz Kefalet**: Kefalet belirli bir süre için
-    > verilmişse, kira sözleşmesi sona erdiğinde kefalet de sona erer.
-    > Ancak, süresiz kefalet durumunda, kefil borcun devam ettiği süre
-    > boyunca sorumluluk taşır.
+### b) Yeni Malikin (Yeni Ev Sahibinin) Tahliye Hakkı Var mı?
 
-**Kefaletin Geçerlilik Şartları**
+Evet. Bir mülkü yeni satın alan kişi, **kendisinin veya ailesinin ihtiyacı varsa**, şu şartlarla tahliye davası açabilir:
 
-Kira sözleşmesine kefil olacak kişilerin dikkat etmesi gereken bazı
-hukuki zorunluluklar vardır:
+- **Edinme tarihinden itibaren 1 ay içinde** kiracıya yazılı bildirim yapılmalıdır.
+- Bildirim yapıldıktan **6 ay sonra tahliye davası açılabilir.**
+- Eğer sözleşme süresi dolduğunda tahliye davası açılacaksa, **sözleşme bitiminden itibaren 1 ay içinde dava açılmalıdır.**
 
--   Kefalet sözleşmesi **kesinlikle yazılı olarak düzenlenmelidir**.
+## 2. İhtiyaç Nedeniyle Tahliye Davasında Dikkate Alınan Faktörler
 
-    > Kefilin sorumlu olacağı tutar ve şartlar açıkça belirtilmelidir.
+Tahliye davasının başarılı olabilmesi için ihtiyacın:
 
-    > Kefilin eşinin rızası alınmalıdır. Türk Borçlar Kanunu'nun 584.
-    > maddesi gereğince, **evli bir kişinin kefil olabilmesi için eşinin
-    > yazılı onayı gerekmektedir**. Aksi takdirde kefalet geçersiz
-    > sayılabilir.
+- **Gerçek olması** (yani, mal sahibinin veya ailesinin gerçekten bu mülke ihtiyacı olması),
+- **Samimi olması** (yalnızca kiracıyı çıkarmak için uydurulmuş bir sebep olmaması),
+- **Zorunlu olması** (mülk sahibinin başka bir alternatifinin olmaması) gerekir.
 
-    > Kefalet süresinin kira sözleşmesi süresiyle uyumlu olması gerekir.
+Ayrıca, mahkeme **kiracının durumunu, mevcut kira piyasasını ve mülk sahibinin niyetini** inceler.
 
-**Kefaletin Sona Ermesi**
+## 3. İşyeri İhtiyacı Nedeniyle Tahliye Davası
 
-Kefalet, belirli durumlarda sona erebilir:
+- İş yeri ihtiyacına dayalı tahliye davasında, iş yeri ihtiyacının gerçekten zorunlu olup olmadığı değerlendirilir.
+- Eğer mülk sahibi **halen başka bir iş yerinde faaliyet gösteriyorsa**, mahkeme yeni mülkün eski iş yerine kıyasla daha uygun olup olmadığını inceler.
+- Kiracı tahliye edilse bile, mal sahibi işyerini hemen kullanmazsa veya başkasına kiralarsa, kötü niyetli kabul edilebilir ve tazminat ödemek zorunda kalabilir.
 
-1.  **Kira sözleşmesi sona erdiğinde**: Kefalet süresi kira sözleşmesi
-    > süresiyle sınırlı ise, kira süresi bitince kefalet de sona erer.
+## 4. Tüzel Kişiler (Şirketler) Tahliye Davası Açabilir mi?
 
-2.  **Borç ödendiğinde**: Kiracı tüm borçlarını öderse, kefilin
-    > sorumluluğu da ortadan kalkar.
+- Gerçek kişiler (bireyler), şirketin ihtiyacını gerekçe göstererek tahliye davası açamaz.
+- Ancak **şirketin kendisi**, faaliyetleri için bir mülkü kullanacaksa tahliye talep edebilir.
+- **Şirketin faaliyet konusu ile ilgili olması gereklidir.** Örneğin, gıda sektöründe olmayan bir şirket, fırın açmak için bir dükkanın tahliyesini talep edemez.
 
-3.  **Kefil ile borçlu (kiracı) arasındaki anlaşma**: Kefil, belirli
-    > şartlar altında borçtan kurtulma talebinde bulunabilir.
+## 5. Tahliye Davasında Süreler
 
-**Sonuç**
+---
 
-Kira sözleşmesine kefil olmak, ciddi mali ve hukuki yükümlülükler
-doğurur. Kefil olacak kişilerin sözleşmenin içeriğini dikkatle
-incelemesi, sorumluluklarını net bir şekilde anlaması ve özellikle eşin
-rızası gibi yasal zorunluluklara dikkat etmesi büyük önem taşır. Kefalet
-sözleşmeleri, hem kiracı hem de kefil açısından ileride doğabilecek
-hukuki ihtilafları önlemek için dikkatle hazırlanmalıdır.
+Durum Tahliye Süresi
+Ev sahibi kendi ihtiyacı için tahliye davası açmak istiyorsa Kira süresi bitiminden itibaren **1 ay içinde**
+Yeni malik (mülkü satın alan kişi) tahliye davası açacaksa Mülkü edindikten sonra **1 ay içinde** kiracıya yazılı bildirim yapmalı, **6 ay sonra dava açabilir.**
+Kiracıya önceden yazılı ihtar (uyarı) gönderilmişse **Uzayan bir kira yılı sonuna kadar** dava açılabilir.
+
+---
+
+- **Belirli süreli kira sözleşmelerinde**, ev sahibi tahliye davası açmak için **önceden ihtarname göndermek zorunda değildir.**
+- **Belirsiz süreli sözleşmelerde**, **fesih bildirimi yapılmadan tahliye davası açılamaz.**
+
+## 6. Tahliye Davası Açılmadan Önce Kiracıya Bildirim Yapılmalı mı?
+
+Eğer mülk sahibi **tahliye davası açmak istiyorsa,** öncesinde kiracıya **yazılı bir bildirim göndermesi gereklidir.**
+
+- Yeni malik ise, mülkü aldıktan sonra 1 ay içinde bildirim yapmalıdır.
+- Kiracının bu bildirimi almasına rağmen çıkmaması durumunda tahliye davası açılabilir.
+
+## 7. Tahliye Davasında Kararın Uygulanması
+
+- Mahkeme, **tahliye kararı verdikten sonra kiracının evi veya iş yerini boşaltması için belirli bir süre tanır.**
+- Kiracı mahkeme kararına uymazsa, **icra yoluyla tahliye edilebilir.**
+- Eğer mal sahibi **tahliye edilen mülkü 3 yıl boyunca başka birine kiraya verirse**, kiracı **tazminat davası açabilir.**
+
+## Sonuç
+
+Türkiye'de ihtiyaç nedeniyle tahliye davası açmak, hem ev sahipleri hem de kiracılar için önemli bir hukuki süreçtir.
+
+- **Ev sahipleri**, **kendi veya yakınlarının ihtiyacı varsa** tahliye davası açabilir.
+- **Yeni malik, mülkü satın aldıktan sonra kiracıyı çıkarmak istiyorsa,** yazılı bildirim yapmalı ve en az **6 ay beklemelidir.**
+- Mahkeme, ihtiyacın gerçek olup olmadığını detaylı bir şekilde inceler.
+- Kiracı tahliye edilse bile, ev sahibi mülkü 3 yıl boyunca başka birine kiraya verirse, eski kiracı tazminat talep edebilir.
+
+Türkiye'de kira hukuku konusunda profesyonel destek almak, **tahliye sürecinin doğru şekilde yürütülmesini sağlar ve tarafların haklarını korur.**
