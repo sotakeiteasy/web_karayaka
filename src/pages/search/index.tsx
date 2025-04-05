@@ -26,7 +26,23 @@ const Select = dynamic(() => import("react-select"), {
   ssr: false,
 });
 
-export default function Search() {
+// Добавляем интерфейс для метатегов
+interface SearchPageProps {
+  metaTags: {
+    ru: {
+      title: string;
+      description: string;
+      keywords: string;
+    };
+    en: {
+      title: string;
+      description: string;
+      keywords: string;
+    };
+  };
+}
+
+export default function Search({ metaTags }: SearchPageProps) {
   const router = useRouter();
   const {
     type,
@@ -44,8 +60,8 @@ export default function Search() {
 
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
-  // Текущий язык из next-export-i18n
-  const locale = (query?.lang as string) || "ru";
+  const lang = (query?.lang as string) || "ru";
+  const meta = metaTags[lang as keyof typeof metaTags] || metaTags.ru;
 
   const [searchText, setSearchText] = useState("");
   const [filteredAds, setFilteredAds] = useState<Ad[]>([]);
@@ -229,7 +245,7 @@ export default function Search() {
   const resetFilters = () => {
     // Сохраняем только параметр type (аренда/продажа), если он есть
     const typeParam = router.query.type ? `?type=${router.query.type}` : "";
-    const langParam = locale ? (typeParam ? `&lang=${locale}` : `?lang=${locale}`) : "";
+    const langParam = lang ? (typeParam ? `&lang=${lang}` : `?lang=${lang}`) : "";
     window.location.href = `/search${typeParam}${langParam}`;
   };
 
@@ -249,7 +265,7 @@ export default function Search() {
     { value: "", label: t("search.filters.allCities") },
     ...filteredCities.map((city) => ({
       value: city.en,
-      label: city[locale as keyof typeof city],
+      label: city[lang as keyof typeof city],
     })),
   ];
 
@@ -257,7 +273,7 @@ export default function Search() {
     { value: "", label: t("search.filters.allCountries") },
     ...filterValues.countries.map((country) => ({
       value: country.en,
-      label: country[locale as keyof typeof country],
+      label: country[lang as keyof typeof country],
     })),
   ];
 
@@ -265,7 +281,7 @@ export default function Search() {
     { value: "", label: t("search.filters.any") },
     ...filterValues.propertyType.map((propertyType) => ({
       value: propertyType.en,
-      label: propertyType[locale as keyof typeof propertyType],
+      label: propertyType[lang as keyof typeof propertyType],
     })),
   ];
 
@@ -292,25 +308,26 @@ export default function Search() {
   return (
     <>
       <Head>
-        <title>{t('search.meta.title')}</title>
-        <meta name="description" content={t('search.meta.description')} />
-        <meta name="keywords" content={t('search.meta.keywords')} />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
         
         {/* Yandex метаданные */}
-        <meta name="yandex:display_title" content={t('search.meta.title')} />
+        <meta name="yandex-verification" content="48e2a3db9fca6f0e" />
+        <meta name="yandex:display_title" content={meta.title} />
         
         {/* Open Graph для VK и других соцсетей */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/search" />
-        <meta property="og:title" content={t('search.meta.title')} />
-        <meta property="og:description" content={t('search.meta.description')} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
         <meta property="og:image" content="https://karayaka.ru/og-image.png" />
         <meta property="og:image:alt" content="Karayaka Property Search" />
         <meta property="og:site_name" content="Karayaka" />
-        <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
+        <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
         
         {/* VK Open Graph */}
         <meta property="vk:image" content="https://karayaka.ru/og-image.png" />
@@ -581,4 +598,26 @@ export default function Search() {
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  // Предварительно загружаем переводы для мета-тегов
+  const metaTags = {
+    ru: {
+      title: "Поиск недвижимости - Karayaka | Недвижимость в Турции и России",
+      description: "Поиск и подбор недвижимости в Турции и России. Удобные фильтры, большая база предложений, актуальные цены.",
+      keywords: "поиск недвижимости, аренда, покупка, недвижимость в Турции, недвижимость в России, квартиры, дома"
+    },
+    en: {
+      title: "Property Search - Karayaka | Real Estate in Turkey and Russia",
+      description: "Search and find real estate in Turkey and Russia. Convenient filters, large database of offers, current prices.",
+      keywords: "property search, rent, buy, real estate in Turkey, real estate in Russia, apartments, houses"
+    }
+  };
+
+  return {
+    props: {
+      metaTags
+    }
+  };
 }

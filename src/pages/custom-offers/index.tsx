@@ -9,10 +9,26 @@ import { mdiPhone, mdiEmail, mdiWhatsapp } from "@mdi/js";
 import { ContactUs, CustomOffersSchema } from "@/lib/components";
 import { getImageUrl } from "@/lib/utils";
 
-export default function CustomOffers() {
+interface CustomOffersProps {
+  metaTags: {
+    ru: {
+      title: string;
+      description: string;
+      keywords: string;
+    };
+    en: {
+      title: string;
+      description: string;
+      keywords: string;
+    };
+  };
+}
+
+export default function CustomOffers({ metaTags }: CustomOffersProps) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
   const locale = (query?.lang as string) || "ru";
+  const meta = metaTags[locale as keyof typeof metaTags] || metaTags.ru;
 
   const contactInfo = {
     phone: "+39 209-954‑59-49",
@@ -24,22 +40,22 @@ export default function CustomOffers() {
   return (
     <>
       <Head>
-        <title>{t('custom-offers.meta.title')}</title>
-        <meta name="description" content={t('custom-offers.meta.description')} />
-        <meta name="keywords" content={t('custom-offers.meta.keywords')} />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
         
         {/* Yandex метаданные */}
         <meta name="yandex-verification" content="48e2a3db9fca6f0e" />
-        <meta name="yandex:display_title" content={t('custom-offers.meta.title')} />
+        <meta name="yandex:display_title" content={meta.title} />
         
         {/* Open Graph для VK и других соцсетей */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/custom-offers" />
-        <meta property="og:title" content={t('custom-offers.meta.title')} />
-        <meta property="og:description" content={t('custom-offers.meta.description')} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
         <meta property="og:image" content="https://karayaka.ru/og-image.png" />
         <meta property="og:image:alt" content="Karayaka Custom Offers" />
         <meta property="og:site_name" content="Karayaka" />
@@ -51,7 +67,7 @@ export default function CustomOffers() {
 
       <CustomOffersSchema
         url="https://karayaka.ru/custom-offers"
-        description={t('custom-offers.meta.description')}
+        description={meta.description}
         contacts={contactInfo}
       />
 
@@ -125,4 +141,26 @@ export default function CustomOffers() {
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  // Предварительно загружаем переводы для мета-тегов
+  const metaTags = {
+    ru: {
+      title: "Индивидуальные предложения - Karayaka | Подбор недвижимости под ваши требования",
+      description: "Индивидуальный подбор недвижимости в Турции и России под конкретные требования. Заполните форму и получите персональные предложения.",
+      keywords: "индивидуальный подбор недвижимости, персональные предложения, недвижимость в Турции, недвижимость в России, помощь в поиске недвижимости"
+    },
+    en: {
+      title: "Custom Offers - Karayaka | Personalized Real Estate Solutions",
+      description: "Personalized real estate selection in Turkey and Russia tailored to your specific requirements. Fill out the form and receive custom property offers.",
+      keywords: "personalized real estate selection, custom property offers, real estate in Turkey, real estate in Russia, property search assistance"
+    }
+  };
+
+  return {
+    props: {
+      metaTags
+    }
+  };
 }

@@ -11,13 +11,30 @@ interface PostParams {
   id: string;
 }
 
-export default function Post({ postData }: { postData: LocalizedPostData }) {
+interface PostProps {
+  postData: LocalizedPostData;
+  baseTags: {
+    ru: {
+      title: string; // Будет дополнено заголовком статьи
+      description: string; // Будет дополнено кратким содержанием статьи
+      keywords: string;
+    };
+    en: {
+      title: string;
+      description: string;
+      keywords: string;
+    };
+  };
+}
+
+export default function Post({ postData, baseTags }: PostProps) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
 
   // Use string type assertion to ensure lang is a string
   const lang = (query?.lang as string) || "ru";
   const localizedPostData = postData[lang] || postData["ru"] || postData["en"];
+  const baseMeta = baseTags[lang as keyof typeof baseTags] || baseTags.ru;
 
   if (!localizedPostData) {
     return <div>Loading...</div>;
@@ -26,23 +43,32 @@ export default function Post({ postData }: { postData: LocalizedPostData }) {
   const pageUrl = `https://karayaka.ru/blog/${localizedPostData.id}`;
   const imageUrl = getImageUrl(`/images/${localizedPostData.id}.jpg`);
 
+  // Формируем мета-информацию на основе базовых тегов и данных статьи
+  const meta = {
+    title: `${localizedPostData.title} - ${baseMeta.title}`,
+    description: localizedPostData.excerpt || baseMeta.description,
+    keywords: baseMeta.keywords
+  };
+
   return (
     <>
       <Head>
-        <title>{localizedPostData.title}</title>
-        <meta name="description" content={localizedPostData.excerpt || ''} />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
         
         {/* Yandex метаданные */}
-        <meta name="yandex:display_title" content={localizedPostData.title} />
+        <meta name="yandex-verification" content="48e2a3db9fca6f0e" />
+        <meta name="yandex:display_title" content={meta.title} />
         
         {/* Open Graph для VK и других соцсетей */}
         <meta property="og:type" content="article" />
         <meta property="og:url" content={pageUrl} />
-        <meta property="og:title" content={localizedPostData.title} />
-        <meta property="og:description" content={localizedPostData.excerpt || ''} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:image:alt" content={localizedPostData.title} />
         <meta property="og:site_name" content="Karayaka" />
@@ -76,7 +102,7 @@ export default function Post({ postData }: { postData: LocalizedPostData }) {
             </div>
             <div className={lang === "en" ? styles.activeLocale : ""}>
               <LanguageSwitcher lang="en">
-                TR
+                EN
               </LanguageSwitcher>
             </div>
           </div>
@@ -101,9 +127,25 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: { params: PostParams }) {
   try {
     const postData = await getPostData(params.id);
+    
+    // Базовые мета-теги для страницы блога
+    const baseTags = {
+      ru: {
+        title: "Блог Karayaka",
+        description: "Статьи и новости о недвижимости в Турции и России",
+        keywords: "блог о недвижимости, статьи о недвижимости, недвижимость в Турции, недвижимость в России"
+      },
+      en: {
+        title: "Karayaka Blog",
+        description: "Articles and news about real estate in Turkey and Russia",
+        keywords: "real estate blog, real estate articles, property in Turkey, property in Russia"
+      }
+    };
+    
     return {
       props: {
         postData,
+        baseTags
       },
     };
   } catch (error) {

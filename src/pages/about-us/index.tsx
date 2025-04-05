@@ -11,10 +11,26 @@ import { mdiChevronRight } from "@mdi/js";
 import { getImageUrl } from "@/lib/utils";
 import { OrganizationSchema, FAQPageSchema } from "@/lib/components";
 
-export default function AboutUs() {
+interface AboutUsProps {
+  metaTags: {
+    ru: {
+      title: string;
+      description: string;
+      keywords: string;
+    };
+    en: {
+      title: string;
+      description: string;
+      keywords: string;
+    };
+  };
+}
+
+export default function AboutUs({ metaTags }: AboutUsProps) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
   const lang = (query?.lang as string) || "ru";
+  const meta = metaTags[lang as keyof typeof metaTags] || metaTags.ru;
 
   type FAQKey =
     | "location"
@@ -57,21 +73,22 @@ export default function AboutUs() {
   return (
     <>
       <Head>
-        <title>{t("aboutUs.meta.title")}</title>
-        <meta name="description" content={t("aboutUs.meta.description")} />
-        <meta name="keywords" content={t("aboutUs.meta.keywords")} />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
         
         {/* Yandex метаданные */}
-        <meta name="yandex:display_title" content={t("aboutUs.meta.title")} />
+        <meta name="yandex-verification" content="48e2a3db9fca6f0e" />
+        <meta name="yandex:display_title" content={meta.title} />
         
         {/* Open Graph для VK и других соцсетей */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/about-us" />
-        <meta property="og:title" content={t("aboutUs.meta.title")} />
-        <meta property="og:description" content={t("aboutUs.meta.description")} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
         <meta property="og:image" content="https://karayaka.ru/og-image.png" />
         <meta property="og:image:alt" content="Karayaka About Us" />
         <meta property="og:site_name" content="Karayaka" />
@@ -182,4 +199,26 @@ export default function AboutUs() {
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  // Предварительно загружаем переводы для мета-тегов
+  const metaTags = {
+    ru: {
+      title: "О нас - Karayaka | Агентство недвижимости в Турции и России",
+      description: "Karayaka - агентство недвижимости, специализирующееся на объектах в Турции и России. Индивидуальный подход к каждому клиенту и комплексное сопровождение сделок.",
+      keywords: "агентство недвижимости, о нас, недвижимость в Турции, недвижимость в России, купить недвижимость"
+    },
+    en: {
+      title: "About Us - Karayaka | Real Estate Agency in Turkey and Russia",
+      description: "Karayaka is a boutique real estate agency specializing in properties in Turkey and Russia. Personalized approach and comprehensive support for every client.",
+      keywords: "real estate agency, about us, Turkey real estate, Russia real estate, buy property"
+    }
+  };
+
+  return {
+    props: {
+      metaTags
+    }
+  };
 }
