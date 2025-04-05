@@ -19,16 +19,32 @@ interface BlogData {
   [key: string]: BlogPost[];
 }
 
+interface HomePageProps {
+  allBlogData: BlogData;
+  metaTags: {
+    ru: {
+      title: string;
+      description: string;
+      keywords: string;
+    };
+    en: {
+      title: string;
+      description: string;
+      keywords: string;
+    };
+  };
+}
+
 export default function Home({
   allBlogData,
-}: {
-  allBlogData: BlogData;
-}) {
+  metaTags
+}: HomePageProps) {
   const router = useRouter();
 
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
   const lang = (query?.lang as "ru" || "en") || "ru";
+  const meta = metaTags[lang as keyof typeof metaTags] || metaTags.ru;
 
   const posts = allBlogData[lang] || [];
   const [isBuy, setIsBuy] = useState(false);
@@ -46,22 +62,22 @@ export default function Home({
   return (
     <>
       <Head>
-        <title>{t("home.meta.title")}</title>
-        <meta name="description" content={t("home.meta.description")} />
-        <meta name="keywords" content={t("home.meta.keywords")} />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description} />
+        <meta name="keywords" content={meta.keywords} />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
         
         {/* Yandex метаданные */}
         <meta name="yandex-verification" content="48e2a3db9fca6f0e" />
-        <meta name="yandex:display_title" content={t("home.meta.title")} />
+        <meta name="yandex:display_title" content={meta.title} />
         
         {/* Open Graph для VK и других соцсетей */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/" />
-        <meta property="og:title" content={t("home.meta.title")} />
-        <meta property="og:description" content={t("home.meta.description")} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description} />
         <meta property="og:image" content="https://karayaka.ru/og-image.jpg" />
         <meta property="og:image:alt" content="Karayaka" />
         <meta property="og:image:type" content="image/jpeg" />
@@ -76,7 +92,7 @@ export default function Home({
 
       <OrganizationSchema
         name="Karayaka"
-        description={t("home.meta.description")}
+        description={meta.description}
         logo="https://karayaka.ru/logo.png"
         url="https://karayaka.ru"
       />
@@ -200,9 +216,24 @@ export async function getStaticProps() {
     allBlogData[lang] = await getSortedPostsData(lang);
   }
 
+  // Предварительно загружаем переводы для мета-тегов
+  const metaTags = {
+    ru: {
+      title: "Karayaka - Недвижимость в Турции и России",
+      description: "Профессиональная помощь в покупке и продаже недвижимости в Турции и России. Эксклюзивные предложения, индивидуальный подход.",
+      keywords: "недвижимость, Турция, Россия, покупка недвижимости, продажа недвижимости, агентство недвижимости"
+    },
+    en: {
+      title: "Karayaka - Real Estate in Turkey and Russia",
+      description: "Professional assistance in buying and selling real estate in Turkey and Russia. Exclusive offers, individual approach.",
+      keywords: "real estate, Turkey, Russia, property purchase, property sale, real estate agency"
+    }
+  };
+
   return {
     props: {
       allBlogData,
+      metaTags
     },
   };
 }
