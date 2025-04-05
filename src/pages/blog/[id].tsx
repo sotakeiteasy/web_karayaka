@@ -76,7 +76,7 @@ export default function Post({ postData }: { postData: LocalizedPostData }) {
             </div>
             <div className={lang === "en" ? styles.activeLocale : ""}>
               <LanguageSwitcher lang="en">
-                EN
+                TR
               </LanguageSwitcher>
             </div>
           </div>
