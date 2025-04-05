@@ -50,6 +50,8 @@
           display: flex;
           padding-top: 5px;
           align-items: center;
+          text-wrap: nowrap;
+
 
           .iconSpan {
             display: flex;
@@ -70,6 +72,7 @@
 
       .leftDesc {
         align-items: start;
+        text-wrap: nowrap;
 
         .title {
           font-size: 1.2rem;
@@ -80,6 +83,7 @@
 
         .price {
           font-size: 1.2rem;
+          text-wrap: nowrap;
         }
       }
     }

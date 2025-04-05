@@ -3,11 +3,9 @@ import { useTranslation, LanguageSwitcher } from "next-export-i18n";
 import { useLanguageQuery } from "next-export-i18n";
 import Head from "next/head";
 
-import { Date } from "@/lib/components";
-import { LocalizedPostData } from "@/lib/utils";
+import { Date, BlogPostSchema } from "@/lib/components";
+import { LocalizedPostData, getImageUrl } from "@/lib/utils";
 import { getAllPostIds, getPostData } from "@/lib/utils/blogServer";
-import { BlogPostSchema } from "@/lib/components/SEO/JsonLd";
-import { getImageUrl } from "@/lib/utils/imageHelper";
 
 interface PostParams {
   id: string;

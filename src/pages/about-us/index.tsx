@@ -8,8 +8,8 @@ import { useLanguageQuery } from "next-export-i18n";
 import Icon from "@mdi/react";
 import { mdiChevronRight } from "@mdi/js";
 
-import { getImageUrl } from "@/lib/utils/imageHelper";
-import { OrganizationSchema, FAQPageSchema } from "@/lib/components/SEO/JsonLd";
+import { getImageUrl } from "@/lib/utils";
+import { OrganizationSchema, FAQPageSchema } from "@/lib/components";
 
 export default function AboutUs() {
   const { t } = useTranslation();
@@ -104,6 +104,7 @@ export default function AboutUs() {
             }}
             loading="eager"
             draggable="false"
+            priority
           />
 
           <div className={styles.slogan}>

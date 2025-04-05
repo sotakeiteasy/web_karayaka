@@ -9,3 +9,5 @@ export {
     ContactUs,
     Header,
 }
+
+export * from "./SEO/JsonLd";

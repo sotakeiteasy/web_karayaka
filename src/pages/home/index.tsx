@@ -7,10 +7,9 @@ import { useLanguageQuery } from "next-export-i18n";
 
 import styles from "./index.module.scss";
 import SimpleSlider from "./simpleSlider/simpleSlider";
-import { ContactUs } from "@/lib/components";
-import { OrganizationSchema } from "@/lib/components/SEO/JsonLd";
+import { ContactUs, OrganizationSchema } from "@/lib/components";
 
-// Используем типы из клиентского файла, но функции из серверного
+// типы из клиентского файла, но функции из серверного
 import { PostData } from "@/lib/utils/blogClient";
 import { getSortedPostsData } from "@/lib/utils/blogServer";
 import { getImageUrl } from "@/lib/utils/imageHelper";
@@ -19,8 +18,6 @@ type BlogPost = PostData;
 interface BlogData {
   [key: string]: BlogPost[];
 }
-
-type SupportedLanguage = "ru" | "en";
 
 export default function Home({
   allBlogData,
@@ -31,7 +28,7 @@ export default function Home({
 
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
-  const lang = (query?.lang as string) || "ru";
+  const lang = (query?.lang as "ru" || "en") || "ru";
 
   const posts = allBlogData[lang] || [];
   const [isBuy, setIsBuy] = useState(false);
@@ -42,7 +39,7 @@ export default function Home({
 
     const encodedQuery = encodeURIComponent(searchQuery.trim());
     router.push(
-      `/search?type=${isBuy ? "sale" : "rent"}&address=${encodedQuery}`
+      `/search?type=${isBuy ? "sale" : "rent"}&address=${encodedQuery}&lang=${lang}`
     );
   };
 
@@ -151,13 +148,13 @@ export default function Home({
 
         <SimpleSlider
           type="rent"
-          country={lang === "en" ? "Russia" : "Turkey"}
+          country={lang === "ru" ? "Russia" : "Turkey"}
           locale={lang}
         />
 
         <SimpleSlider
           type="sale"
-          country={lang === "en" ? "Russia" : "Turkey"}
+          country={lang === "ru" ? "Russia" : "Turkey"}
           locale={lang}
         />
 

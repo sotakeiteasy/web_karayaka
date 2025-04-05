@@ -2,9 +2,8 @@ import { useTranslation, LinkWithLocale } from "next-export-i18n";
 import { useLanguageQuery } from "next-export-i18n";
 import Image from "next/image";
 import styles from "./index.module.scss";
-// Используем типы из клиентского файла, но функции получения данных из серверного
-import { PostData } from "@/lib/utils";
-import { getImageUrl } from "@/lib/utils";
+
+import { PostData, getImageUrl } from "@/lib/utils";
 import { getSortedPostsData } from "@/lib/utils/blogServer";
 
 export default function Blog({ allBlogData }: { allBlogData: { [key: string]: PostData[] } }) {
@@ -14,7 +13,6 @@ export default function Blog({ allBlogData }: { allBlogData: { [key: string]: Po
   const lang = (query?.lang as string) || "ru";
   const posts = allBlogData[lang] || allBlogData["ru"] || [];
 
-  // Если посты не загрузились, показываем сообщение
   if (!posts || !posts.length) {
     return <div>{t("blog.noPosts")}</div>;
   }

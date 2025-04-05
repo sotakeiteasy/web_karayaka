@@ -19,6 +19,7 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === "production",
   },
   poweredByHeader: false,
+  
 };
 
 module.exports = nextConfig;

@@ -6,9 +6,8 @@ import { useTranslation, useLanguageQuery } from "next-export-i18n";
 import Icon from "@mdi/react";
 import { mdiPhone, mdiEmail, mdiWhatsapp } from "@mdi/js";
 
-import { ContactUs } from "@/lib/components";
+import { ContactUs, CustomOffersSchema } from "@/lib/components";
 import { getImageUrl } from "@/lib/utils";
-import { CustomOffersSchema } from "@/lib/components/SEO/JsonLd";
 
 export default function CustomOffers() {
   const { t } = useTranslation();

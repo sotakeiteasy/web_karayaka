@@ -1,9 +1,8 @@
 import React from "react";
-import Link from "next/link";
-import { useTranslation } from "next-export-i18n";
+import { useTranslation, LinkWithLocale } from "next-export-i18n";
 import styles from "./footer.module.scss";
 import Icon from "@mdi/react";
-import { mdiFacebook, mdiInstagram, mdiSendCircle, mdiWhatsapp } from "@mdi/js";
+import { mdiSendCircle, mdiWhatsapp } from "@mdi/js";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -29,24 +28,24 @@ export default function Footer() {
         <div className={styles.footerSection}>
           <h3>{t("footer.navigation")}</h3>
           <nav className={styles.footerNav}>
-            <Link href="/">
+            <LinkWithLocale href="/">
               <span>{t("footer.home")}</span>
-            </Link>
-            <Link href="search/?type=rent">
+            </LinkWithLocale>
+            <LinkWithLocale href="search/?type=rent">
               <span>{t("header.rent")}</span>
-            </Link>
-            <Link href="search/?type=sale">
+            </LinkWithLocale>
+            <LinkWithLocale href="search/?type=sale">
               <span>{t("header.buy")}</span>
-            </Link>
-            <Link href="/about-us">
+            </LinkWithLocale>
+            <LinkWithLocale href="/about-us">
               <span>{t("header.aboutUs")}</span>
-            </Link>
-            <Link href="/custom-offers">
+            </LinkWithLocale>
+            <LinkWithLocale href="/custom-offers">
               <span>{t("header.customOffers")}</span>
-            </Link>
-            <Link href="/blog">
+            </LinkWithLocale>
+            <LinkWithLocale href="/blog">
               <span>{t("header.blog")}</span>
-            </Link>
+            </LinkWithLocale>
           </nav>
         </div>
 
@@ -86,9 +85,9 @@ export default function Footer() {
           © {currentYear} {t("footer.allRightsReserved")}
         </p>
         <div className={styles.legalLinks}>
-          <Link href="https://www.privacypolicies.com/live/e54ec666-247c-4bdd-acea-6c07b6ca4738" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.privacypolicies.com/live/e54ec666-247c-4bdd-acea-6c07b6ca4738" target="_blank" rel="noopener noreferrer">
             <span>{t("footer.privacyPolicy")}</span>
-          </Link>
+          </a>
           {/* <Link href="/terms-of-service">
             <span>{t('footer.termsOfService')}</span>
           </Link> */}
