@@ -3,8 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import Slider from "react-slick";
 import styles from "./simpleSlider.module.scss";
-import Link from "next/link";
-import { useTranslation } from "next-i18next";
+import { useTranslation, LinkWithLocale } from "next-export-i18n";
 
 import Image from "next/image";
 import Icon from "@mdi/react";
@@ -42,13 +41,13 @@ interface SimpleSliderProps {
   country: string;
   locale: "ru" | "en";
 }
-
 export default function SimpleSlider({
   type,
   country,
   locale,
 }: SimpleSliderProps) {
-  const { t } = useTranslation("common");
+
+  const { t } = useTranslation();
 
   const filteredAds = ads.filter(
     (ad) => ad.type === type && ad.location.country === country
@@ -84,7 +83,7 @@ export default function SimpleSlider({
             {filteredAds.map((card) => (
               <div key={card.id} className={styles.slide}>
                 <div className={styles.adCard}>
-                  <Link href={`/ads/${card.id}`} locale={locale}>
+                  <LinkWithLocale href={`/ads/${card.id}`}>
                     <Image
                       width={400}
                       height={200}
@@ -135,7 +134,7 @@ export default function SimpleSlider({
                         </p>
                       </div>
                     </div>
-                  </Link>
+                  </LinkWithLocale>
                 </div>
               </div>
             ))}
@@ -143,9 +142,9 @@ export default function SimpleSlider({
         </div>
       </div>
       <button className={styles.blockButton}>
-        <Link href={`/search?type=${type}&country=${country}`} locale={locale}>
+        <LinkWithLocale href={`/search?type=${type}&country=${country}`}>
           {t("home.seeAll")}
-        </Link>
+        </LinkWithLocale>
       </button>
     </div>
   );

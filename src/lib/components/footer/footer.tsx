@@ -1,22 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-export-i18n";
 import styles from "./footer.module.scss";
 import Icon from "@mdi/react";
 import { mdiFacebook, mdiInstagram, mdiSendCircle, mdiWhatsapp } from "@mdi/js";
 
 export default function Footer() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
-
-  // const navLinks = [
-  //   { href: '/search?type=rent', text: t('header.rent'), active: router.pathname.startsWith('/search') && router.query.type === 'rent' },
-  //   { href: '/search?type=sale', text: t('header.buy'), active: router.pathname.startsWith('/search') && router.query.type === 'sale' },
-  //   { href: '/about-us', text: t('header.aboutUs'), active: router.pathname.startsWith('/about-us') },
-  //   { href: '/custom-offers', text: t('header.customOffers'), active: router.pathname.startsWith('/custom-offers') },
-  //   { href: '/blog', text: t('header.blog'), active: router.pathname.startsWith('/blog') }
-  // ];
-
+  
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>

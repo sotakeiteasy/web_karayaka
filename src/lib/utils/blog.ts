@@ -19,6 +19,10 @@ interface PostData {
   excerpt?: string;
 }
 
+interface LocalizedPostData {
+  [key: string]: PostData | undefined;
+}
+
 // Простая функция для создания текстового превью из HTML
 function createExcerpt(htmlContent: string, maxLength: number = 300): string {
   // Удаляем HTML-теги и получаем только текст
@@ -33,13 +37,11 @@ function createExcerpt(htmlContent: string, maxLength: number = 300): string {
     : textContent;
 }
 
-export async function getSortedPostsData(
-  locale: string = "ru"
-): Promise<PostData[]> {
+export async function getSortedPostsData(locale: string = "ru"): Promise<PostData[]> {
   const postsDirectory = getBlogDirectory(locale);
 
   try {
-    const fileNames = fs.readdirSync(postsDirectory);
+    const fileNames = fs.readdirSync(postsDirectory).filter(file => file.endsWith('.md'));
     const allPostsDataPromises = fileNames.map(async (fileName) => {
       const id = fileName.replace(/\.md$/, "");
       const fullPath = path.join(postsDirectory, fileName);
@@ -69,30 +71,29 @@ export async function getSortedPostsData(
   }
 }
 
-export function getAllPostIds(locales: string[] = ["ru", "en"]) {
-  const paths: Array<{ params: { id: string }; locale: string }> = [];
+export function getAllPostIds() {
+  const paths: Array<{ params: { id: string } }> = [];
+  const languages = ["ru", "en"];
 
-  locales.forEach((locale) => {
+  languages.forEach((locale) => {
     const postsDirectory = getBlogDirectory(locale);
-
     try {
-      const fileNames = fs.readdirSync(postsDirectory);
+      const fileNames = fs.readdirSync(postsDirectory).filter(file => file.endsWith('.md'));
       fileNames.forEach((fileName) => {
         const id = fileName.replace(/\.md$/, "");
         paths.push({
           params: { id },
-          locale,
         });
       });
     } catch (error) {
-      console.log(`No blog posts for locale ${locale}`);
+      console.log(`No blog posts found for locale ${locale}`);
     }
   });
 
   return paths;
 }
 
-export async function getPostData(id: string, locale: string = "ru") {
+export async function getPostDataStatic(id: string, locale: string = "ru"): Promise<PostData> {
   const postsDirectory = getBlogDirectory(locale);
   const fullPath = path.join(postsDirectory, `${id}.md`);
 
@@ -110,11 +111,38 @@ export async function getPostData(id: string, locale: string = "ru") {
       id,
       contentHtml,
       ...matterResult.data,
-    };
+    } as PostData;
   } catch (error) {
-    if (locale !== "ru") {
-      return getPostData(id, "ru");
+    console.error(`Error reading post ${id} for locale ${locale}:`, error);
+    if (locale !== "ru" && locale !== "en") {
+      return getPostDataStatic(id, "ru");
     }
+    throw error;
+  }
+}
+
+// New function that combines both language versions of a post
+export async function getPostData(id: string): Promise<LocalizedPostData> {
+  try {
+    const languages = ["ru", "en"];
+    const postData: LocalizedPostData = {};
+
+    for (const lang of languages) {
+      try {
+        postData[lang] = await getPostDataStatic(id, lang);
+      } catch (error) {
+        console.error(`Cannot load post ${id} for language ${lang}:`, error);
+      }
+    }
+
+    // If no language version is available, throw an error
+    if (!postData["ru"] && !postData["en"]) {
+      throw new Error(`Post ${id} not found in any language`);
+    }
+
+    return postData;
+  } catch (error) {
+    console.error(`Error getting post data for ${id}:`, error);
     throw error;
   }
 }

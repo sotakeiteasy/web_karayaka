@@ -27,17 +27,23 @@ import {
   districtTranslations,
 } from "@/lib/translations/locationTypes";
 import { propertyTypeTranslations } from "@/lib/translations/propertyTypes";
-import { useTranslation } from "next-i18next";
+import { useTranslation, useLanguageQuery } from "next-export-i18n";
 import { getImageUrl } from "@/lib/utils/imageHelper";
 
-export default function AdPage({
-  ad,
-  locale,
-}: {
-  ad: Ad;
-  locale: "ru" | "en";
-}) {
-  const { t } = useTranslation("common");
+type SupportedLanguage = "ru" | "en" | "tr";
+
+export default function AdPage({ ad }: { ad: Ad }) {
+  const { t } = useTranslation();
+  const [query] = useLanguageQuery();
+  
+  // Type assertion to handle language selection properly
+  const rawLang = (query?.lang as string) || "ru";
+  const lang = (rawLang === "ru" || rawLang === "en" || rawLang === "tr") 
+    ? rawLang as SupportedLanguage 
+    : "ru" as SupportedLanguage;
+
+  // Ensure we have a valid language for description access - defaulting to Russian
+  const descriptionLang = (lang === "ru" || lang === "en") ? lang : "ru";
 
   return (
     <>
@@ -47,16 +53,16 @@ export default function AdPage({
             switch (ad.propertyType) {
               case "apartment":
                 return `${ad.rooms} ${t("ad.property.room")} ${
-                  propertyTypeTranslations[ad.propertyType][locale]
+                  propertyTypeTranslations[ad.propertyType][lang]
                 }`;
               case "villa":
               case "commercial":
               case "land":
-                return `${propertyTypeTranslations[ad.propertyType][locale]}, ${
+                return `${propertyTypeTranslations[ad.propertyType][lang]}, ${
                   ad.area
                 }${t("ad.property.squareMeters")}²`;
               default:
-                return propertyTypeTranslations[ad.propertyType][locale];
+                return propertyTypeTranslations[ad.propertyType][lang];
             }
           })()}
         </title>
@@ -74,18 +80,18 @@ export default function AdPage({
 
                 switch (ad.propertyType) {
                   case "apartment":
-                    propertyInfo = `${ad.rooms} ${t("ad.property.room")} ${propertyTypeTranslations[ad.propertyType][locale]}`;
+                    propertyInfo = `${ad.rooms} ${t("ad.property.room")} ${propertyTypeTranslations[ad.propertyType][lang]}`;
                     break;
                   case "villa":
                   case "commercial":
                   case "land":
-                    propertyInfo = `${propertyTypeTranslations[ad.propertyType][locale]} ${ad.area}${t("ad.property.squareMeters")}²`;
+                    propertyInfo = `${propertyTypeTranslations[ad.propertyType][lang]} ${ad.area}${t("ad.property.squareMeters")}²`;
                     break;
                   default:
-                    propertyInfo = propertyTypeTranslations[ad.propertyType][locale];
+                    propertyInfo = propertyTypeTranslations[ad.propertyType][lang];
                 }
 
-                if (locale === "ru") {
+                if (lang === "ru") {
                   return `${typeStatus} ${propertyInfo}`;
                 } else {
                   return `${propertyInfo} ${typeStatus}`;
@@ -95,9 +101,9 @@ export default function AdPage({
             <p>
               <Icon path={mdiMapMarkerOutline} size={1} />
               {[
-                countryTranslations[ad.location.country][locale],
-                cityTranslations[ad.location.city][locale],
-                districtTranslations[ad.location.district]?.[locale] || "",
+                countryTranslations[ad.location.country][lang],
+                cityTranslations[ad.location.city][lang],
+                districtTranslations[ad.location.district]?.[lang] || "",
               ]
                 .filter(Boolean)
                 .join(", ")}
@@ -148,7 +154,7 @@ export default function AdPage({
                   <Icon path={mdiHomeCityOutline} size={1} />
                   {t("ad.property.type")}
                 </span>
-                {propertyTypeTranslations[ad.propertyType][locale]}
+                {propertyTypeTranslations[ad.propertyType][lang]}
               </p>
               <p>
                 <span>
@@ -232,8 +238,8 @@ export default function AdPage({
             <CustomSlider ad={ad} />
           </div>
         </div>
-        {ad.description[locale] && (
-          <div className={styles.description}>{ad.description[locale]}</div>
+        {ad.description[descriptionLang] && (
+          <div className={styles.description}>{ad.description[descriptionLang]}</div>
         )}
         <div className={styles.form}>
           <ContactUs />
@@ -319,21 +325,13 @@ function CustomSlider({ ad }: { ad: Ad }) {
   );
 }
 
-export function getStaticPaths({ locales }: { locales: any }) {
+export function getStaticPaths() {
   const ads = getAllAds();
 
-  // Создаем пути для каждой локали
-  const paths: any[] = [];
-
-  // Для каждого объявления создаем путь для каждой локали
-  ads.forEach((ad) => {
-    locales.forEach((locale: string) => {
-      paths.push({
-        params: { id: ad.params.id },
-        locale,
-      });
-    });
-  });
+  // Create paths for each ad
+  const paths = ads.map((ad) => ({
+    params: { id: ad.params.id },
+  }));
 
   return {
     paths,
@@ -341,20 +339,12 @@ export function getStaticPaths({ locales }: { locales: any }) {
   };
 }
 
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-export async function getStaticProps({
-  params,
-  locale,
-}: {
-  params: any;
-  locale: string;
-}) {
+export async function getStaticProps({ params }: { params: { id: string } }) {
   const ad = getAdById(params.id);
+  
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
       ad,
-      locale,
     },
   };
 }

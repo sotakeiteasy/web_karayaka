@@ -1,26 +1,25 @@
 import styles from "./header.module.scss";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
+import { useTranslation, LinkWithLocale, LanguageSwitcher} from "next-export-i18n";
+import { useLanguageQuery } from "next-export-i18n";
 import Icon from "@mdi/react";
 import { mdiTriangleSmallDown } from "@mdi/js";
 import { useState, useEffect, useRef } from "react";
 
 export default function Header() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
   const router = useRouter();
-  const { locale, pathname, asPath, query } = router;
+  const [query] = useLanguageQuery();
+  // Получаем язык из next-export-i18n вместо router.locale
+  const currentLang = (query?.lang as string) || "ru";
 
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const langMenuRef = useRef<HTMLDivElement>(null);
 
-  // Функция переключения языка
-  const changeLanguage = (newLocale: string) => {
-    router.push({ pathname, query }, asPath, { locale: newLocale });
+  const changeLanguage = () => {
     setIsLanguageMenuOpen(false);
   };
 
-  // Закрытие меню при клике вне его области
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -30,11 +29,8 @@ export default function Header() {
         setIsLanguageMenuOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const navLinks = [
@@ -70,17 +66,20 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} ${styles.fill}`}>
-        <Link className={styles.logo} href="/">
-          {t("header.home")}
-        </Link>
+        <div className={styles.logo}>
+          <LinkWithLocale href="/">
+            {t("header.home")}
+          </LinkWithLocale>
+        </div>
         {navLinks.map((link, index) => (
-          <Link
-            key={index}
+          <div 
+            key={index} 
             className={`${styles.navLink} ${link.active ? styles.active : ""}`}
-            href={link.href}
           >
-            {link.text}
-          </Link>
+            <LinkWithLocale href={link.href}>
+              {link.text}
+            </LinkWithLocale>
+          </div>
         ))}
       </nav>
       <div className={styles.buttons}>
@@ -93,7 +92,7 @@ export default function Header() {
             className={styles.button}
             onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}
           >
-            {locale === "en" ? "English" : "Русский"}
+            {currentLang === "en" ? "English" : "Русский"}
             <Icon
               path={mdiTriangleSmallDown}
               size={1}
@@ -107,22 +106,26 @@ export default function Header() {
           </button>
           {isLanguageMenuOpen && (
             <div className={styles.dropdownMenu}>
-              <button
-                className={`${styles.menuItem} ${
-                  locale === "en" ? styles.active : ""
-                }`}
-                onClick={() => changeLanguage("en")}
-              >
-                English
-              </button>
-              <button
-                className={`${styles.menuItem} ${
-                  locale === "ru" ? styles.active : ""
-                }`}
-                onClick={() => changeLanguage("ru")}
-              >
-                Русский
-              </button>
+              <LanguageSwitcher lang="en">
+                <button
+                  className={`${styles.menuItem} ${
+                    currentLang === "en" ? styles.active : ""
+                  }`}
+                  onClick={changeLanguage}
+                >
+                  English
+                </button>
+              </LanguageSwitcher>
+              <LanguageSwitcher lang="ru">
+                <button
+                  className={`${styles.menuItem} ${
+                    currentLang === "ru" ? styles.active : ""
+                  }`}
+                  onClick={changeLanguage}
+                >
+                  Русский
+                </button>
+              </LanguageSwitcher>
             </div>
           )}
         </div>

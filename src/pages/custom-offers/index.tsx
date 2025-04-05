@@ -1,17 +1,15 @@
 import styles from "./index.module.scss";
-import Link from "next/link";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-export-i18n";
 import ContactUs from "@components/form/form";
 import Image from "next/image";
 import Icon from "@mdi/react";
 import { mdiPhone } from "@mdi/js";
 import { mdiEmail } from "@mdi/js";
 import { mdiWhatsapp } from "@mdi/js";
-import { mdiSendCircle } from "@mdi/js";
 import { getImageUrl } from "@/lib/utils/imageHelper";
 
 export default function CustomOffers() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
   return (
     <main className={styles.main}>
       <div className={styles.formContainer}>
@@ -81,13 +79,4 @@ export default function CustomOffers() {
       </address>
     </main>
   );
-}
-
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-export async function getStaticProps({ locale }: { locale: string }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
-  };
 }

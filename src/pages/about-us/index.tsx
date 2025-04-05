@@ -1,13 +1,13 @@
 import styles from "./index.module.scss";
 import Icon from "@mdi/react";
 import { mdiChevronRight } from "@mdi/js";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-export-i18n";
 import Image from "next/image";
 import { useState } from "react";
 import { getImageUrl } from "@/lib/utils/imageHelper";
 
 export default function AboutUs() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
 
   type FAQKey =
     | "location"
@@ -131,13 +131,4 @@ export default function AboutUs() {
       </main>
     </>
   );
-}
-
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-export async function getStaticProps({ locale }: { locale: string }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-    },
-  };
 }

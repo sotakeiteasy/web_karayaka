@@ -1,40 +1,60 @@
-import { getAllPostIds, getPostData } from "../../lib/utils/blog";
+import { useTranslation, LinkWithLocale, LanguageSwitcher } from "next-export-i18n";
+import { useLanguageQuery } from "next-export-i18n";
 import Date from "@components/date/date";
 import styles from "./id.module.scss";
-import { useRouter } from "next/router";
-import Link from "next/link";
+import { getAllPostIds, getPostData } from "../../lib/utils/blog";
 
-export default function Post({ postData }: { postData: any }) {
-  const router = useRouter();
+interface PostData {
+  id: string;
+  title: string;
+  date: string;
+  contentHtml?: string;
+  excerpt?: string;
+}
 
-  if (!postData) {
+interface LocalizedPostData {
+  [key: string]: PostData | undefined;
+}
+
+interface PostParams {
+  id: string;
+}
+
+export default function Post({ postData }: { postData: LocalizedPostData }) {
+  const { t } = useTranslation();
+  const [query] = useLanguageQuery();
+
+  // Use string type assertion to ensure lang is a string
+  const lang = (query?.lang as string) || "ru";
+  const localizedPostData = postData[lang] || postData["ru"] || postData["en"];
+
+  if (!localizedPostData) {
     return <div>Loading...</div>;
   }
-
-  // Доступные локали для переключения
-  const locales = ["ru", "en"];
 
   return (
     <main className={styles.main}>
       <section className={styles.article}>
-        <h1>{postData.title}</h1>
+        <h1>{localizedPostData.title}</h1>
         <br />
-        <Date dateString={postData.date} />
+        <Date dateString={localizedPostData.date} />
         <br />
         <div className={styles.languageSwitcher}>
-          {locales.map((locale) => (
-            <Link
-              key={locale}
-              href={router.asPath}
-              locale={locale}
-              className={locale === router.locale ? styles.activeLocale : ""}
-            >
-              {(locale === "ru" ? "ru" : "tr").toUpperCase()}
-            </Link>
-          ))}
+          <div className={lang === "ru" ? styles.activeLocale : ""}>
+            <LanguageSwitcher lang="ru">
+              RU
+            </LanguageSwitcher>
+          </div>
+          <div className={lang === "en" ? styles.activeLocale : ""}>
+            <LanguageSwitcher lang="en">
+              EN
+            </LanguageSwitcher>
+          </div>
         </div>
         <br />
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        {localizedPostData.contentHtml && (
+          <div dangerouslySetInnerHTML={{ __html: localizedPostData.contentHtml }} />
+        )}
       </section>
     </main>
   );
@@ -42,32 +62,20 @@ export default function Post({ postData }: { postData: any }) {
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
+  console.log("Generated paths:", paths);
   return {
     paths,
-    fallback: true,
+    fallback: false,
   };
 }
 
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-export async function getStaticProps({
-  params,
-  locale,
-}: {
-  params: any;
-  locale: string;
-}) {
+export async function getStaticProps({ params }: { params: PostParams }) {
   try {
-    const postData = await getPostData(params.id, locale);
-
-    if (!postData || !postData.contentHtml) {
-      return {
-        notFound: true,
-      };
-    }
+    const postData = await getPostData(params.id);
+    console.log(`Data for post ${params.id}:`, postData);
 
     return {
       props: {
-        ...(await serverSideTranslations(locale, ["common"])),
         postData,
       },
     };

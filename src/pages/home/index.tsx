@@ -1,10 +1,8 @@
 import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import Image from "next/image";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation, LinkWithLocale } from "next-export-i18n";
 
 import styles from "./index.module.scss";
 import SimpleSlider from "./simpleSlider/simpleSlider";
@@ -16,21 +14,31 @@ import { getImageUrl } from "@/lib/utils/imageHelper";
 interface BlogPost {
   id: string;
   title: string;
-  excerpt: string;
+  excerpt?: string;
   date: string;
+  contentHtml?: string;
 }
+
+interface BlogData {
+  [key: string]: BlogPost[];
+}
+
+type SupportedLanguage = "ru" | "en";
 
 export default function Home({
   allBlogData,
-  locale,
 }: {
-  allBlogData: BlogPost[];
-  locale: "en" | "ru";
+  allBlogData: BlogData;
 }) {
-  const { t } = useTranslation("common");
+  const router = useRouter();
+
+  const { t } = useTranslation();
+  const queryLang = router.query.lang as string | undefined;
+  const lang = (queryLang === "en" ? "en" : "ru") as SupportedLanguage;
+
+  const posts = allBlogData[lang] || [];
   const [isBuy, setIsBuy] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const router = useRouter();
 
   const handleSearch = () => {
     if (!searchQuery.trim()) return;
@@ -51,7 +59,7 @@ export default function Home({
       </Head>
       <main className={styles.main}>
         <div className={styles.mainImageContainer}>
-          {locale === "ru" ? (
+          {lang === "ru" ? (
             <video
               className={styles.video}
               src={getImageUrl("/videos/new.webm")}
@@ -87,7 +95,7 @@ export default function Home({
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSearch()}
             />
-            {locale === "ru" ? (
+            {lang === "ru" ? (
               <button
                 className={`${styles.toggleButton} ${styles.toggleButtonRu} ${
                   isBuy ? styles.toggleButtonActiveRu : ""
@@ -116,21 +124,21 @@ export default function Home({
 
         <SimpleSlider
           type="rent"
-          country={locale === "en" ? "Russia" : "Turkey"}
-          locale={locale}
+          country={lang === "en" ? "Russia" : "Turkey"}
+          locale={lang}
         />
 
         <SimpleSlider
           type="sale"
-          country={locale === "en" ? "Russia" : "Turkey"}
-          locale={locale}
+          country={lang === "en" ? "Russia" : "Turkey"}
+          locale={lang}
         />
 
         <div className={styles.articleBlock}>
           <h1 className={styles.header}>{t("home.articles")}</h1>
-          {allBlogData.slice(0, 2).map(({ id, title, excerpt }) => (
+          {posts.slice(0, 2).map(({ id, title, excerpt }: BlogPost) => (
             <div key={id} className={styles.articleLink}>
-              <Link href={`/blog/${id}`} locale={locale}>
+              <LinkWithLocale href={`/blog/${id}`}>
                 <Image
                   className={styles.articleImage}
                   src={getImageUrl(`/images/${id}.jpg`)}
@@ -147,7 +155,7 @@ export default function Home({
                     </div>
                   )}
                 </div>
-              </Link>
+              </LinkWithLocale>
             </div>
           ))}
         </div>
@@ -160,13 +168,17 @@ export default function Home({
   );
 }
 
-export async function getStaticProps({ locale }: { locale: "en" | "ru" }) {
-  const allBlogData = await getSortedPostsData(locale);
+export async function getStaticProps() {
+  const languages = ["en", "ru"];
+  const allBlogData: BlogData = {};
+
+  for (const lang of languages) {
+    allBlogData[lang] = await getSortedPostsData(lang);
+  }
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
       allBlogData,
-      locale,
     },
   };
 }

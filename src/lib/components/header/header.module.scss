@@ -21,7 +21,7 @@
     display: flex;
     // gap: 40px;
 
-    a {
+    .navLink {
       padding: 0 30px;
       // margin:
       height: 45px;
@@ -29,8 +29,8 @@
       position: relative;
     }
 
-    a.navLink::before,
-    a.navLink::after {
+    .navLink::before,
+    .navLink::after {
       position: absolute;
       width: 45px;
       height: 1px;
@@ -43,7 +43,7 @@
       pointer-events: none;
     }
 
-    a::before {
+    .navLink::before {
       top: 0;
       left: 0;
       -webkit-transform: rotate(90deg);
@@ -54,7 +54,7 @@
       transform-origin: 0 0;
     }
 
-    a::after {
+    .navLink::after {
       right: 0;
       bottom: 0;
       -webkit-transform: rotate(90deg);
@@ -65,42 +65,42 @@
       transform-origin: 100% 0;
     }
 
-    a:hover::before,
-    a:hover::after,
-    a:focus::before,
-    a:focus::after {
+    .navLink:hover::before,
+    .navLink:hover::after,
+    .navLink:focus::before,
+    .navLink:focus::after {
       opacity: 1;
     }
 
-    a:hover::before,
-    a:focus::before {
+    .navLink:hover::before,
+    .navLink:focus::before {
       left: 50%;
       -webkit-transform: rotate(0deg) translateX(-50%);
       -moz-transform: rotate(0deg) translateX(-50%);
       transform: rotate(0deg) translateX(-50%);
     }
 
-    a:hover::after,
-    a:focus::after {
+    .navLink:hover::after,
+    .navLink:focus::after {
       right: 50%;
       -webkit-transform: rotate(0deg) translateX(50%);
       -moz-transform: rotate(0deg) translateX(50%);
       transform: rotate(0deg) translateX(50%);
     }
 
-    a.active::before,
-    a.active::after {
+    .navLink.active::before,
+    .navLink.active::after {
       opacity: 1;
     }
 
-    a.active::before {
+    .navLink.active::before {
       left: 50%;
       -webkit-transform: rotate(0deg) translateX(-50%);
       -moz-transform: rotate(0deg) translateX(-50%);
       transform: rotate(0deg) translateX(-50%);
     }
 
-    a.active::after {
+    .navLink.active::after {
       right: 50%;
       -webkit-transform: rotate(0deg) translateX(50%);
       -moz-transform: rotate(0deg) translateX(50%);

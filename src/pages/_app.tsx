@@ -1,8 +1,5 @@
 import "@styles/globals.scss";
 import type { AppProps } from "next/app";
-import { appWithTranslation } from "next-i18next";
-import nextI18NextConfig from "../../next-i18next.config";
-
 import Header from "@components/header/header";
 import Footer from "@components/footer/footer";
 import { Montserrat } from "next/font/google";
@@ -22,4 +19,4 @@ function App({ Component, pageProps }: AppProps) {
   );
 }
 
-export default appWithTranslation(App, nextI18NextConfig);
+export default App;

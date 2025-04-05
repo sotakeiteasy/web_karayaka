@@ -14,6 +14,11 @@
     box-shadow: $shadow;
     margin-bottom: 40px;
 
+    
+    a {
+      display: flex;
+    }
+
     .articleImage {
       position: relative;
       width: 60%;

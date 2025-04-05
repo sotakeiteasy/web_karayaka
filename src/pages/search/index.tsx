@@ -1,17 +1,35 @@
 import styles from "./index.module.scss";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-export-i18n";
+import { useLanguageQuery } from "next-export-i18n";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState, useEffect, ChangeEvent, useMemo } from "react";
 import { filterAds, getUniqueFilterValues } from "@/lib/utils/ad";
 import { Ad } from "@/lib/types/ad";
 import { Filter } from "@/lib/types/filter";
-import Select from "react-select";
+import dynamic from "next/dynamic";
 import PaginatedAds from "./PaginatedAds/PaginatedAds";
-import ClientOnly from "@/lib/components/clientOnly/ClientOnly";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-export default function Search({ locale }: { locale: string }) {
+// Типы для Select
+interface SelectOption {
+  value: string;
+  label: string;
+}
+
+// Интерфейс для объекта события фильтра
+interface FilterChangeEvent {
+  target: {
+    name: string;
+    value: string | number | undefined;
+  };
+}
+
+// Динамически импортируем React Select с отключенным SSR
+const Select = dynamic(() => import("react-select"), {
+  ssr: false,
+});
+
+export default function Search() {
   const router = useRouter();
   const {
     type,
@@ -27,7 +45,11 @@ export default function Search({ locale }: { locale: string }) {
     address,
   } = router.query;
 
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
+  const [query] = useLanguageQuery();
+  // Текущий язык из next-export-i18n
+  const locale = (query?.lang as string) || "ru";
+
   const [searchText, setSearchText] = useState("");
   const [filteredAds, setFilteredAds] = useState<Ad[]>([]);
   const [filter, setFilter] = useState<Filter>({});
@@ -177,9 +199,7 @@ export default function Search({ locale }: { locale: string }) {
     setSearchText(e.target.value);
   };
 
-  const handleFilterChange = (
-    e: ChangeEvent<HTMLSelectElement | HTMLInputElement>
-  ) => {
+  const handleFilterChange = (e: FilterChangeEvent) => {
     const { name, value } = e.target;
     setFilter((prev) => ({ ...prev, [name]: value }));
   };
@@ -205,14 +225,15 @@ export default function Search({ locale }: { locale: string }) {
     setAppliedFilter(updatedFilter);
   };
 
-  const handleSortChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setSortOption(e.target.value);
+  const handleSortChange = (e: FilterChangeEvent) => {
+    setSortOption(e.target.value as string);
   };
 
   const resetFilters = () => {
     // Сохраняем только параметр type (аренда/продажа), если он есть
     const typeParam = router.query.type ? `?type=${router.query.type}` : "";
-    window.location.href = `/${locale}/search${typeParam}`;
+    const langParam = locale ? (typeParam ? `&lang=${locale}` : `?lang=${locale}`) : "";
+    window.location.href = `/search${typeParam}${langParam}`;
   };
 
   // Фильтруем города в зависимости от выбранной страны
@@ -279,82 +300,79 @@ export default function Search({ locale }: { locale: string }) {
       <div className={styles.main}>
         <div className={styles.filterBox}>
           <div className={styles.filter}>
-            <ClientOnly>
-              <label htmlFor="country-input">
-                {t("search.filters.country")}
-              </label>
-              <Select
-                id="country"
-                inputId="country-input"
-                name="country"
-                value={countryOptions.find(
-                  (option) => option.value === (filter.country ?? "")
-                )}
-                onChange={(selectedOption) =>
-                  handleFilterChange({
-                    target: {
-                      name: "country",
-                      value: selectedOption?.value || "",
-                    },
-                  } as any)
-                }
-                options={countryOptions}
-                isSearchable
-                classNamePrefix="react-select"
-              />
-            </ClientOnly>
+            <label htmlFor="country-input">
+              {t("search.filters.country")}
+            </label>
+            <Select
+              id="country"
+              inputId="country-input"
+              name="country"
+              value={countryOptions.find(
+                (option) => option.value === (filter.country ?? "")
+              )}
+              onChange={(newValue) => {
+                const selectedOption = newValue as SelectOption;
+                handleFilterChange({
+                  target: {
+                    name: "country",
+                    value: selectedOption?.value || "",
+                  },
+                });
+              }}
+              options={countryOptions}
+              isSearchable
+              classNamePrefix="react-select"
+            />
           </div>
 
           <div className={styles.filter}>
-            <ClientOnly>
-              <label htmlFor="city-input">{t("search.filters.city")}</label>
-              <Select
-                id="city"
-                inputId="city-input"
-                name="city"
-                value={cityOptions.find(
-                  (option) => option.value === (filter.city ?? "")
-                )}
-                onChange={(selectedOption) =>
-                  handleFilterChange({
-                    target: {
-                      name: "city",
-                      value: selectedOption?.value || "",
-                    },
-                  } as any)
-                }
-                options={cityOptions}
-                isSearchable
-                classNamePrefix="react-select"
-              />
-            </ClientOnly>
+            <label htmlFor="city-input">{t("search.filters.city")}</label>
+            <Select
+              id="city"
+              inputId="city-input"
+              name="city"
+              value={cityOptions.find(
+                (option) => option.value === (filter.city ?? "")
+              )}
+              onChange={(newValue) => {
+                const selectedOption = newValue as SelectOption;
+                handleFilterChange({
+                  target: {
+                    name: "city",
+                    value: selectedOption?.value || "",
+                  },
+                });
+              }}
+              options={cityOptions}
+              isSearchable
+              classNamePrefix="react-select"
+            />
           </div>
 
           <div className={styles.filter}>
-            <ClientOnly>
-              <label htmlFor="propertyType-input">
-                {t("search.filters.propertyType")}
-              </label>
-              <Select
-                inputId="propertyType-input"
-                id="propertyType"
-                name="propertyType"
-                value={propertyTypeOptions.find(
-                  (option) => option.value === (filter.propertyType ?? "")
-                )}
-                onChange={(selectedOption) =>
-                  handleFilterChange({
-                    target: {
-                      name: "propertyType",
-                      value: selectedOption?.value || "",
-                    },
-                  } as any)
-                }
-                options={propertyTypeOptions}
-                isSearchable
-                classNamePrefix="react-select"
-              />
-            </ClientOnly>
+            <label htmlFor="propertyType-input">
+              {t("search.filters.propertyType")}
+            </label>
+            <Select
+              inputId="propertyType-input"
+              id="propertyType"
+              name="propertyType"
+              value={propertyTypeOptions.find(
+                (option) => option.value === (filter.propertyType ?? "")
+              )}
+              onChange={(newValue) => {
+                const selectedOption = newValue as SelectOption;
+                handleFilterChange({
+                  target: {
+                    name: "propertyType",
+                    value: selectedOption?.value || "",
+                  },
+                });
+              }}
+              options={propertyTypeOptions}
+              isSearchable
+              classNamePrefix="react-select"
+            />
           </div>
 
           <div className={styles.filterRow}>
@@ -373,7 +391,7 @@ export default function Search({ locale }: { locale: string }) {
                         ? Number(e.target.value)
                         : undefined,
                     },
-                  } as any)
+                  })
                 }
               />
             </div>
@@ -392,7 +410,7 @@ export default function Search({ locale }: { locale: string }) {
                         ? Number(e.target.value)
                         : undefined,
                     },
-                  } as any)
+                  })
                 }
               />
             </div>
@@ -414,7 +432,7 @@ export default function Search({ locale }: { locale: string }) {
                         ? Number(e.target.value)
                         : undefined,
                     },
-                  } as any)
+                  })
                 }
               />
             </div>
@@ -433,38 +451,37 @@ export default function Search({ locale }: { locale: string }) {
                         ? Number(e.target.value)
                         : undefined,
                     },
-                  } as any)
+                  })
                 }
               />
             </div>
           </div>
 
           <div className={styles.filter}>
-            <ClientOnly>
-              <label htmlFor="floor-input">{t("search.filters.floor")}</label>
-              <Select
-                inputId="floor-input"
-                id="floor"
-                name="floor"
-                value={FloorOptions.find(
-                  (option) =>
-                    option.value === (filter.floor ? String(filter.floor) : "")
-                )}
-                onChange={(selectedOption) =>
-                  handleFilterChange({
-                    target: {
-                      name: "floor",
-                      value: selectedOption?.value
-                        ? Number(selectedOption.value)
-                        : undefined,
-                    },
-                  } as any)
-                }
-                options={FloorOptions}
-                isSearchable={false}
-                classNamePrefix="react-select"
-              />
-            </ClientOnly>
+            <label htmlFor="floor-input">{t("search.filters.floor")}</label>
+            <Select
+              inputId="floor-input"
+              id="floor"
+              name="floor"
+              value={FloorOptions.find(
+                (option) =>
+                  option.value === (filter.floor ? String(filter.floor) : "")
+              )}
+              onChange={(newValue) => {
+                const selectedOption = newValue as SelectOption;
+                handleFilterChange({
+                  target: {
+                    name: "floor",
+                    value: selectedOption?.value
+                      ? Number(selectedOption.value)
+                      : undefined,
+                  },
+                });
+              }}
+              options={FloorOptions}
+              isSearchable={false}
+              classNamePrefix="react-select"
+            />
           </div>
 
           <div className={styles.checkboxGroup}>
@@ -519,27 +536,26 @@ export default function Search({ locale }: { locale: string }) {
                 </button>
               )}
 
-              <ClientOnly>
-                <Select
-                  className={styles.sortButton}
-                  id="sort"
-                  name="sort"
-                  value={SortOptions.find(
-                    (option) => option.value === sortOption
-                  )}
-                  onChange={(selectedOption) =>
-                    handleSortChange({
-                      target: {
-                        name: "sort",
-                        value: selectedOption?.value || "price-cheap",
-                      },
-                    } as any)
-                  }
-                  options={SortOptions}
-                  isSearchable={false}
-                  classNamePrefix="react-select"
-                />
-              </ClientOnly>
+              <Select
+                className={styles.sortButton}
+                id="sort"
+                name="sort"
+                value={SortOptions.find(
+                  (option) => option.value === sortOption
+                )}
+                onChange={(newValue) => {
+                  const selectedOption = newValue as SelectOption;
+                  handleSortChange({
+                    target: {
+                      name: "sort",
+                      value: selectedOption?.value || "price-cheap",
+                    },
+                  });
+                }}
+                options={SortOptions}
+                isSearchable={false}
+                classNamePrefix="react-select"
+              />
             </div>
           </div>
           <PaginatedAds itemsPerPage={8} ads={filteredAds} />
@@ -547,18 +563,4 @@ export default function Search({ locale }: { locale: string }) {
       </div>
     </>
   );
-}
-
-export async function getStaticProps({
-  locale,
-}: {
-  locale: string;
-  params?: any;
-}) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ["common"])),
-      locale,
-    },
-  };
 }

@@ -107,8 +107,9 @@
       display: flex;
       gap: 15px;
       margin-bottom: 20px;
+      cursor: pointer;
 
-      a {
+      div {
         padding: 5px 10px;
         border-radius: 5px;
         transition: all 0.3s ease;

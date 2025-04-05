@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "./form.module.scss";
 import { useState } from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation } from "next-export-i18n";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type Inputs = {
@@ -26,7 +26,7 @@ const TEMPLATE_ID = "template_karayaka";
 const PUBLIC_KEY = "Yq2DEqGgQI4ibTmyj";
 
 export const ContactUs = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const {
     register,

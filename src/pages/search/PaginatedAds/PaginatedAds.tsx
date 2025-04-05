@@ -1,8 +1,7 @@
 import ReactPaginate from "react-paginate";
 import { useState, useEffect } from "react";
-import { useTranslation } from "next-i18next";
+import { useTranslation, LinkWithLocale, useLanguageQuery } from "next-export-i18n";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import Icon from "@mdi/react";
 import { mdiMapMarkerOutline, mdiBedQueenOutline, mdiStairs } from "@mdi/js";
 
@@ -18,11 +17,11 @@ import { propertyTypeTranslations } from "@/lib/translations/propertyTypes";
 
 interface ItemsProps {
   currentItems: Ad[];
-  locale: "en" | "ru";
+  locale: "ru" | "en";
 }
 
 function Items({ currentItems, locale }: ItemsProps) {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
 
   if (!currentItems || currentItems.length === 0) {
     return <div className={styles.noResults}>{t("search.noResults")}</div>;
@@ -35,7 +34,7 @@ function Items({ currentItems, locale }: ItemsProps) {
           <div className={styles.adCardImage}>
             <CustomSlider ad={ad} locale={locale} height={300} width={300} />
           </div>
-          <Link href={`/ads/${ad.id}`} locale={locale}>
+          <LinkWithLocale href={`/ads/${ad.id}`}>
             <div className={styles.adCardDescription}>
               <div className={styles.upDescription}>
                 <h2 className={styles.cardTitle}>
@@ -97,7 +96,7 @@ function Items({ currentItems, locale }: ItemsProps) {
                 </p>
               </div>
             </div>
-          </Link>
+          </LinkWithLocale>
         </div>
       ))}
     </div>
@@ -114,7 +113,10 @@ export default function PaginatedAds({
   ads = [],
 }: PaginatedAdsProps) {
   const router = useRouter();
-  const { t } = useTranslation("common");
+  const { t } = useTranslation();
+  const [query] = useLanguageQuery();
+
+  const lang = (query?.lang as "ru" | "en") || "ru";
   const pageNumber = Number(router.query.page) || 1;
   const [itemOffset, setItemOffset] = useState(0);
 
@@ -143,7 +145,7 @@ export default function PaginatedAds({
     <>
       <Items 
         currentItems={currentAds} 
-        locale={router.locale as "en" | "ru"} 
+        locale={lang} 
       />
       {pageCount > 1 && (
         <ReactPaginate
