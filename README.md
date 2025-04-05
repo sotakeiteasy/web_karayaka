@@ -1,66 +1,53 @@
 # Karayaka Real Estate
 
-A multilingual real estate platform for Karayaka, a small real estate agency operating in Turkey and Russia.
+Real estate website for a Turkish-Russian agency built with Next.js, focusing on property listings and multilingual content.
 
 ## About
 
-Karayaka Real Estate is a website designed to showcase properties available for rent and sale in Turkey and Russia. The platform serves as the online presence for Karayaka real estate agency, allowing potential clients to:
+**Features:**
+- Property listings with filtering (location, type, price, etc.)
+- Detailed property pages with specifications and images
+- Multilingual support (Russian/English)
+- Blog section with industry articles
+- Contact forms for custom requests
+- Responsive design for all devices
+- SEO optimization
 
-- Browse available properties by location, type, and price range
-- View detailed information about each property including specifications, images, and location details
-- Read informative articles about the real estate market in the blog section
-- Contact the agency for custom property requests or inquiries
-- Access all content in multiple languages (Russian and English)
+## Stack
 
-The site caters primarily to clients looking to invest in or rent properties in Turkey and Russia, with a focus on providing comprehensive information to aid in their decision-making process.
-
-## Tech Stack
-
-- Next.js
+**Core:**
+- Next.js (static export)
 - TypeScript
-- SCSS Modules
-- next-i18next for internationalization
-- Ant Design components
-- React Select
-- React Slick for carousels
-- React Hook Form
+- SCSS Modules 
+
+**UI Components:**
+- React Select for filterable dropdowns
+- React Slick for image carousels
+- React Hook Form for validation
 - Material Design Icons
-- Markdown for blog content
 
-## Setup & Development
+**Data & Content:**
+- Markdown for blog posts (Separated server/client code for static export compatibility )
+- JSON data for property listings
 
-### Prerequisites
+**Functionality:**
+- next-export-i18n for internationalization (static export compatible)
+- Client-side data filtering
+- Yandex.Metrika for analytics
 
-- Node.js (v14+)
-- npm or yarn
+## Development
 
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/web_karayaka.git
-   cd web_karayaka
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-4. Open [http://localhost:3000](http://localhost:3000) to view the application
-
-### Building for Production
-
+### Setup
 ```bash
-npm run build
-npm run start
+# Clone repository
+git clone https://github.com/yourusername/web_karayaka.git
+cd web_karayaka
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-## Internationalization
-
-The application supports both Russian and English languages. Language can be changed by navigating to the corresponding URL path (/ru/... or /en/...).
+Open [http://localhost:3000](http://localhost:3000) to view the application
