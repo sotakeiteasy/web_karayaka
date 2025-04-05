@@ -102,7 +102,7 @@ export default function Post({ postData, baseTags }: PostProps) {
             </div>
             <div className={lang === "en" ? styles.activeLocale : ""}>
               <LanguageSwitcher lang="en">
-                EN
+                TR
               </LanguageSwitcher>
             </div>
           </div>

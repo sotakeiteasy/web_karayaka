@@ -78,16 +78,13 @@ export default function Home({
         <meta property="og:url" content="https://karayaka.ru/" />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
-        <meta property="og:image" content="https://karayaka.ru/og-image.jpg" />
+        <meta property="og:image" content="https://karayaka.ru/og-image.png" />
         <meta property="og:image:alt" content="Karayaka" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content="ru_RU" />
-        
-        {/* VK Open Graph */}
-        <meta property="vk:image" content="https://karayaka.ru/og-image.jpg" />
       </Head>
 
       <OrganizationSchema
