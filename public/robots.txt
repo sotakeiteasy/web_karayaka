@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /search?
+Disallow: /*/simpleSlider/
+Disallow: /*/CustomSlider/
+Disallow: /*/PaginatedAds/
+
+# Host
+Host: https://karayaka.ru
+
+# Sitemaps
+Sitemap: https://karayaka.ru/sitemap.xml

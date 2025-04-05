@@ -8,15 +8,14 @@ import { useLanguageQuery } from "next-export-i18n";
 import styles from "./index.module.scss";
 import SimpleSlider from "./simpleSlider/simpleSlider";
 import { ContactUs } from "@/lib/components";
+import { OrganizationSchema } from "@/lib/components/SEO/JsonLd";
 
 // Используем типы из клиентского файла, но функции из серверного
 import { PostData } from "@/lib/utils/blogClient";
 import { getSortedPostsData } from "@/lib/utils/blogServer";
 import { getImageUrl } from "@/lib/utils/imageHelper";
 
-// Определяем alias типа для совместимости
 type BlogPost = PostData;
-
 interface BlogData {
   [key: string]: BlogPost[];
 }
@@ -31,8 +30,8 @@ export default function Home({
   const router = useRouter();
 
   const { t } = useTranslation();
-  const queryLang = router.query.lang as string | undefined;
-  const lang = (queryLang === "en" ? "en" : "ru") as SupportedLanguage;
+  const [query] = useLanguageQuery();
+  const lang = (query?.lang as string) || "ru";
 
   const posts = allBlogData[lang] || [];
   const [isBuy, setIsBuy] = useState(false);
@@ -50,11 +49,41 @@ export default function Home({
   return (
     <>
       <Head>
-        <title>Karayaka</title>
-        <meta name="description" content="Real estate in Turkey and Russia" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>{t("home.meta.title")}</title>
+        <meta name="description" content={t("home.meta.description")} />
+        <meta name="keywords" content={t("home.meta.keywords")} />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="utf-8" />
+        
+        {/* Yandex метаданные */}
+        <meta name="yandex-verification" content="48e2a3db9fca6f0e" />
+        <meta name="yandex:display_title" content={t("home.meta.title")} />
+        
+        {/* Open Graph для VK и других соцсетей */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://karayaka.ru/" />
+        <meta property="og:title" content={t("home.meta.title")} />
+        <meta property="og:description" content={t("home.meta.description")} />
+        <meta property="og:image" content="https://karayaka.ru/og-image.jpg" />
+        <meta property="og:image:alt" content="Karayaka" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Karayaka" />
+        <meta property="og:locale" content="ru_RU" />
+        
+        {/* VK Open Graph */}
+        <meta property="vk:image" content="https://karayaka.ru/og-image.jpg" />
       </Head>
+
+      <OrganizationSchema
+        name="Karayaka"
+        description={t("home.meta.description")}
+        logo="https://karayaka.ru/logo.png"
+        url="https://karayaka.ru"
+      />
+
       <main className={styles.main}>
         <div className={styles.mainImageContainer}>
           {lang === "ru" ? (

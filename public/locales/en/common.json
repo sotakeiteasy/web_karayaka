@@ -16,7 +16,12 @@
     "buyBtn": "Buy",
     "hero": "Жилье в Турции",
     "searchBtn": "Search",
-    "searchPlaceholder": "Adress, keywords"
+    "searchPlaceholder": "Adress, keywords",
+    "meta": {
+      "title": "Karayaka - Real Estate in Turkey and Russia",
+      "description": "Professional assistance in buying and selling real estate in Turkey and Russia. Exclusive offers, individual approach.",
+      "keywords": "real estate, Turkey, Russia, property purchase, property sale, real estate agency"
+    }
   },
   "blog": {
     "header": "Blog"
@@ -24,6 +29,11 @@
   "aboutUs": {
     "header": "About us",
     "description": "We are a boutique real estate agency specializing in helping clients find their perfect home in Turkey and Russia. With personalized attention and deep local knowledge, we guide you through every step of your property journey. We focus on understanding your unique requirements and preferences, connecting you with properties that truly match your vision. Our services include comprehensive property viewings, assistance with negotiations, and guidance through the legal aspects of purchasing in foreign markets. We pride ourselves on transparent communication and building genuine relationships with our clients, ensuring a comfortable and informed buying experience from start to finish.",
+    "meta": {
+      "title": "About Us - Karayaka | Real Estate Agency in Turkey and Russia",
+      "description": "Karayaka is a boutique real estate agency specializing in properties in Turkey and Russia. Personalized approach and comprehensive support for every client.",
+      "keywords": "real estate agency, about us, Turkey real estate, Russia real estate, buy property"
+    },
     "stats": {
       "forSale": "100+",
       "forSaleLabel": "Apartments for sale",
@@ -53,10 +63,20 @@
     }
   },
   "custom-offers": {
-    "header": "Offer for you"
+    "header": "Offer for you",
+    "meta": {
+      "title": "Custom Offers - Karayaka | Personalized Real Estate Solutions",
+      "description": "Personalized real estate selection in Turkey and Russia tailored to your specific requirements. Fill out the form and receive custom property offers.",
+      "keywords": "personalized real estate selection, custom property offers, real estate in Turkey, real estate in Russia, property search assistance"
+    }
   },
   "search": {
     "header": "Search",
+    "meta": {
+      "title": "Property Search - Karayaka | Real Estate in Turkey and Russia",
+      "description": "Search and find real estate in Turkey and Russia. Convenient filters, large database of offers, current prices.",
+      "keywords": "property search, rent, buy, real estate in Turkey, real estate in Russia, apartments, houses"
+    },
     "filters": {
       "country": "Country",
       "allCountries": "All countries",

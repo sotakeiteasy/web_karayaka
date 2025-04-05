@@ -62,7 +62,7 @@ export default function Footer() {
           </div>
           <div className={styles.socialLinks}>
             <a
-              href="https://telegram.org"
+              href="https://t.me/karayaka_real"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Telegram"
@@ -70,7 +70,7 @@ export default function Footer() {
               <Icon path={mdiSendCircle} size={1} rotate={-30} />
             </a>
             <a
-              href="https://whatsapp.com"
+              href="https://wa.me/74951234567"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
@@ -86,7 +86,7 @@ export default function Footer() {
           © {currentYear} {t("footer.allRightsReserved")}
         </p>
         <div className={styles.legalLinks}>
-          <Link href="https://www.privacypolicies.com/live/e54ec666-247c-4bdd-acea-6c07b6ca4738">
+          <Link href="https://www.privacypolicies.com/live/e54ec666-247c-4bdd-acea-6c07b6ca4738" target="_blank" rel="noopener noreferrer">
             <span>{t("footer.privacyPolicy")}</span>
           </Link>
           {/* <Link href="/terms-of-service">

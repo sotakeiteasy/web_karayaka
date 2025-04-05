@@ -2,14 +2,19 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 import { useTranslation } from "next-export-i18n";
 import { useState } from "react";
+import Head from "next/head";
+import { useLanguageQuery } from "next-export-i18n";
 
 import Icon from "@mdi/react";
 import { mdiChevronRight } from "@mdi/js";
 
 import { getImageUrl } from "@/lib/utils/imageHelper";
+import { OrganizationSchema, FAQPageSchema } from "@/lib/components/SEO/JsonLd";
 
 export default function AboutUs() {
   const { t } = useTranslation();
+  const [query] = useLanguageQuery();
+  const lang = (query?.lang as string) || "ru";
 
   type FAQKey =
     | "location"
@@ -43,8 +48,51 @@ export default function AboutUs() {
     setActiveKey(key);
   }
 
+  // Создаем массив вопросов-ответов для JSON-LD схемы
+  const faqItems = Object.keys(questionsFAQ).map((key) => ({
+    question: questionsFAQ[key as FAQKey],
+    answer: answersFAQ[key as FAQKey],
+  }));
+
   return (
     <>
+      <Head>
+        <title>{t("aboutUs.meta.title")}</title>
+        <meta name="description" content={t("aboutUs.meta.description")} />
+        <meta name="keywords" content={t("aboutUs.meta.keywords")} />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="utf-8" />
+        
+        {/* Yandex метаданные */}
+        <meta name="yandex:display_title" content={t("aboutUs.meta.title")} />
+        
+        {/* Open Graph для VK и других соцсетей */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://karayaka.ru/about-us" />
+        <meta property="og:title" content={t("aboutUs.meta.title")} />
+        <meta property="og:description" content={t("aboutUs.meta.description")} />
+        <meta property="og:image" content="https://karayaka.ru/og-image.png" />
+        <meta property="og:image:alt" content="Karayaka About Us" />
+        <meta property="og:site_name" content="Karayaka" />
+        <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
+        
+        {/* VK Open Graph */}
+        <meta property="vk:image" content="https://karayaka.ru/og-image.png" />
+      </Head>
+
+      <OrganizationSchema
+        name="Karayaka"
+        description={t("aboutUs.meta.description")}
+        logo="https://karayaka.ru/logo.png"
+        url="https://karayaka.ru/about-us"
+      />
+
+      <FAQPageSchema
+        questions={faqItems}
+        pageUrl="https://karayaka.ru/about-us"
+      />
+
       <main className={styles.main}>
         <div className={styles.sloganBlock}>
           <Image

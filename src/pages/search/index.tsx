@@ -292,9 +292,30 @@ export default function Search() {
   return (
     <>
       <Head>
-        <title>Ads</title>
+        <title>{t('search.meta.title')}</title>
+        <meta name="description" content={t('search.meta.description')} />
+        <meta name="keywords" content={t('search.meta.keywords')} />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="utf-8" />
+        
+        {/* Yandex метаданные */}
+        <meta name="yandex:display_title" content={t('search.meta.title')} />
+        
+        {/* Open Graph для VK и других соцсетей */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://karayaka.ru/search" />
+        <meta property="og:title" content={t('search.meta.title')} />
+        <meta property="og:description" content={t('search.meta.description')} />
+        <meta property="og:image" content="https://karayaka.ru/og-image.png" />
+        <meta property="og:image:alt" content="Karayaka Property Search" />
+        <meta property="og:site_name" content="Karayaka" />
+        <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
+        
+        {/* VK Open Graph */}
+        <meta property="vk:image" content="https://karayaka.ru/og-image.png" />
       </Head>
-      <div className={styles.main}>
+      <main className={styles.main}>
         <div className={styles.filterBox}>
           <div className={styles.filter}>
             <label htmlFor="country-input">
@@ -557,7 +578,7 @@ export default function Search() {
           </div>
           <PaginatedAds itemsPerPage={8} ads={filteredAds} />
         </div>
-      </div>
+      </main>
     </>
   );
 }

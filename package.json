@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss}\""
@@ -22,6 +23,7 @@
     "next": "^15.2.4",
     "next-export-i18n": "^2.4.3",
     "next-i18next": "^15.4.2",
+    "next-sitemap": "^4.2.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.55.0",
