@@ -1,22 +1,19 @@
 import styles from "./index.module.scss";
-import { useTranslation } from "next-export-i18n";
-import { useLanguageQuery } from "next-export-i18n";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+import { useTranslation, useLanguageQuery } from "next-export-i18n";
 import { useRouter } from "next/router";
 import { useState, useEffect, ChangeEvent, useMemo } from "react";
-import { filterAds, getUniqueFilterValues } from "@/lib/utils/ad";
-import { Ad } from "@/lib/types/ad";
-import { Filter } from "@/lib/types/filter";
-import dynamic from "next/dynamic";
-import PaginatedAds from "./PaginatedAds/PaginatedAds";
 
-// Типы для Select
+import PaginatedAds from "./PaginatedAds/PaginatedAds";
+import { filterAds, getUniqueFilterValues } from "@/lib/utils";
+import { Ad, Filter } from "@/lib/types";
+
 interface SelectOption {
   value: string;
   label: string;
 }
 
-// Интерфейс для объекта события фильтра
 interface FilterChangeEvent {
   target: {
     name: string;

@@ -3,22 +3,19 @@ import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import Slider from "react-slick";
 import styles from "./simpleSlider.module.scss";
+import Image from "next/image";
 import { useTranslation, LinkWithLocale } from "next-export-i18n";
 
-import Image from "next/image";
 import Icon from "@mdi/react";
-import { mdiChevronRight } from "@mdi/js";
-import { mdiChevronLeft } from "@mdi/js";
-import { mdiMapMarkerOutline } from "@mdi/js";
-import { mdiBedQueenOutline } from "@mdi/js";
+import { mdiChevronRight, mdiChevronLeft, mdiMapMarkerOutline, mdiBedQueenOutline } from "@mdi/js";
 
-import { ads } from "@/data/ads";
-import { getImageUrl } from "@/lib/utils/imageHelper";
-import { propertyTypeTranslations } from "@/lib/translations/propertyTypes";
-import {
+import { ads } from "@/data/ads/ads";
+import { getImageUrl } from "@/lib/utils";
+import { 
   cityTranslations,
   districtTranslations,
-} from "@/lib/translations/locationTypes";
+  propertyTypeTranslations 
+} from "@/lib/translations";
 
 const NextArrow = ({ onClick }: { onClick?: () => void }) => {
   return (

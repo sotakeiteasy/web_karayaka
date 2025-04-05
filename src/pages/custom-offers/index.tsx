@@ -1,15 +1,13 @@
 import styles from "./index.module.scss";
-import { useTranslation } from "next-export-i18n";
-import ContactUs from "@components/form/form";
 import Image from "next/image";
+
 import Icon from "@mdi/react";
-import { mdiPhone } from "@mdi/js";
-import { mdiEmail } from "@mdi/js";
-import { mdiWhatsapp } from "@mdi/js";
-import { getImageUrl } from "@/lib/utils/imageHelper";
+import { mdiPhone, mdiEmail, mdiWhatsapp } from "@mdi/js";
+
+import { ContactUs } from "@/lib/components";
+import { getImageUrl } from "@/lib/utils";
 
 export default function CustomOffers() {
-  const { t } = useTranslation();
   return (
     <main className={styles.main}>
       <div className={styles.formContainer}>

@@ -1,25 +1,19 @@
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 import styles from "./CustomSlider.module.scss";
 
 import Icon from "@mdi/react";
-import { mdiChevronRight } from "@mdi/js";
-import { mdiChevronLeft } from "@mdi/js";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { Ad } from "@/lib/types/ad";
-import { getImageUrl } from "@/lib/utils/imageHelper";
+import { mdiChevronRight, mdiChevronLeft } from "@mdi/js";
+
+import { Ad } from "@/lib/types";
+import { getImageUrl } from "@/lib/utils";
 
 export default function CustomSlider({
-  ad,
-  locale,
-  height = 300,
-  width = 300,
+  ad
 }: {
-  ad: Ad;
-  locale: "en" | "ru";
-  height: number;
-  width: number;
+  ad: Ad
 }) {
   function SampleNextArrow(props: any) {
     const { onClick } = props;

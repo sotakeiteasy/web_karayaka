@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import emailjs from "@emailjs/browser";
-import styles from "./form.module.scss";
+import styles from "./contactUs.module.scss";
 import { useState } from "react";
 import { useTranslation } from "next-export-i18n";
 import { useForm, SubmitHandler } from "react-hook-form";

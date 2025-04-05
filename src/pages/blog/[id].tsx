@@ -1,20 +1,10 @@
-import { useTranslation, LinkWithLocale, LanguageSwitcher } from "next-export-i18n";
-import { useLanguageQuery } from "next-export-i18n";
-import Date from "@components/date/date";
 import styles from "./id.module.scss";
-import { getAllPostIds, getPostData } from "../../lib/utils/blog";
+import { useTranslation, LanguageSwitcher } from "next-export-i18n";
+import { useLanguageQuery } from "next-export-i18n";
 
-interface PostData {
-  id: string;
-  title: string;
-  date: string;
-  contentHtml?: string;
-  excerpt?: string;
-}
-
-interface LocalizedPostData {
-  [key: string]: PostData | undefined;
-}
+import { Date } from "@/lib/components";
+import { LocalizedPostData } from "@/lib/utils";
+import { getAllPostIds, getPostData } from "@/lib/utils/blogServer";
 
 interface PostParams {
   id: string;
@@ -62,7 +52,6 @@ export default function Post({ postData }: { postData: LocalizedPostData }) {
 
 export async function getStaticPaths() {
   const paths = getAllPostIds();
-  console.log("Generated paths:", paths);
   return {
     paths,
     fallback: false,
@@ -72,8 +61,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: { params: PostParams }) {
   try {
     const postData = await getPostData(params.id);
-    console.log(`Data for post ${params.id}:`, postData);
-
     return {
       props: {
         postData,

@@ -1,19 +1,20 @@
+import styles from "./PaginatedAds.module.scss";
 import ReactPaginate from "react-paginate";
 import { useState, useEffect } from "react";
 import { useTranslation, LinkWithLocale, useLanguageQuery } from "next-export-i18n";
 import { useRouter } from "next/router";
+
 import Icon from "@mdi/react";
 import { mdiMapMarkerOutline, mdiBedQueenOutline, mdiStairs } from "@mdi/js";
 
 import CustomSlider from "../CustomSlider/CustomSlider";
-import styles from "./PaginatedAds.module.scss";
-import { Ad } from "@/lib/types/ad";
+import { Ad } from "@/lib/types";
 import {
   countryTranslations,
   cityTranslations,
   districtTranslations,
-} from "@/lib/translations/locationTypes";
-import { propertyTypeTranslations } from "@/lib/translations/propertyTypes";
+  propertyTypeTranslations
+} from "@/lib/translations";
 
 interface ItemsProps {
   currentItems: Ad[];
@@ -32,7 +33,7 @@ function Items({ currentItems, locale }: ItemsProps) {
       {currentItems.map((ad: Ad) => (
         <div className={styles.adCard} key={ad.id}>
           <div className={styles.adCardImage}>
-            <CustomSlider ad={ad} locale={locale} height={300} width={300} />
+            <CustomSlider ad={ad}/>
           </div>
           <LinkWithLocale href={`/ads/${ad.id}`}>
             <div className={styles.adCardDescription}>

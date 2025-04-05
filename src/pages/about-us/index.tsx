@@ -1,9 +1,11 @@
 import styles from "./index.module.scss";
+import Image from "next/image";
+import { useTranslation } from "next-export-i18n";
+import { useState } from "react";
+
 import Icon from "@mdi/react";
 import { mdiChevronRight } from "@mdi/js";
-import { useTranslation } from "next-export-i18n";
-import Image from "next/image";
-import { useState } from "react";
+
 import { getImageUrl } from "@/lib/utils/imageHelper";
 
 export default function AboutUs() {

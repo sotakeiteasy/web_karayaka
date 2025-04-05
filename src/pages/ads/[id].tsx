@@ -1,36 +1,35 @@
 import Head from "next/head";
 import styles from "./id.module.scss";
-import { useState, useRef } from "react";
 import Image from "antd/lib/image";
-
-import Icon from "@mdi/react";
-import { mdiMapMarkerOutline } from "@mdi/js";
-import { mdiCircleSmall } from "@mdi/js";
-import { mdiBedQueenOutline } from "@mdi/js";
-import { mdiArrowExpand } from "@mdi/js";
-import { mdiStairs } from "@mdi/js";
-import { mdiHomeCityOutline } from "@mdi/js";
-import { mdiKeyChain } from "@mdi/js";
-import { mdiCheckbook } from "@mdi/js";
-import { mdiCalendarMonth } from "@mdi/js";
-import { mdiChevronRight } from "@mdi/js";
-import { mdiChevronLeft } from "@mdi/js";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import { getAllAds, getAdById } from "@/lib/utils/ad";
-import ContactUs from "@/lib/components/form/form";
-import { Ad } from "@/lib/types/ad";
+import "slick-carousel/slick/slick-theme.css";
+import { useState, useRef } from "react";
+import { useTranslation, useLanguageQuery } from "next-export-i18n";
+
+import Icon from "@mdi/react";
+import { 
+  mdiMapMarkerOutline, 
+  mdiCircleSmall, 
+  mdiBedQueenOutline, 
+  mdiArrowExpand, mdiStairs, 
+  mdiHomeCityOutline, 
+  mdiKeyChain, 
+  mdiCheckbook, 
+  mdiCalendarMonth,
+  mdiChevronRight,
+  mdiChevronLeft
+} from "@mdi/js";
+
+import { getAllAds, getAdById, getImageUrl } from "@/lib/utils";
+import { ContactUs } from "@/lib/components";
+import { Ad } from "@/lib/types";
 import {
   countryTranslations,
   cityTranslations,
   districtTranslations,
-} from "@/lib/translations/locationTypes";
-import { propertyTypeTranslations } from "@/lib/translations/propertyTypes";
-import { useTranslation, useLanguageQuery } from "next-export-i18n";
-import { getImageUrl } from "@/lib/utils/imageHelper";
-
-type SupportedLanguage = "ru" | "en" | "tr";
+  propertyTypeTranslations
+} from "@/lib/translations";
 
 export default function AdPage({ ad }: { ad: Ad }) {
   const { t } = useTranslation();
@@ -38,9 +37,9 @@ export default function AdPage({ ad }: { ad: Ad }) {
   
   // Type assertion to handle language selection properly
   const rawLang = (query?.lang as string) || "ru";
-  const lang = (rawLang === "ru" || rawLang === "en" || rawLang === "tr") 
-    ? rawLang as SupportedLanguage 
-    : "ru" as SupportedLanguage;
+  const lang = (rawLang === "ru" || rawLang === "en") 
+    ? rawLang as "ru" | "en" 
+    : "ru" as "ru" | "en";
 
   // Ensure we have a valid language for description access - defaulting to Russian
   const descriptionLang = (lang === "ru" || lang === "en") ? lang : "ru";

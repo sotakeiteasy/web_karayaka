@@ -3,21 +3,19 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useTranslation, LinkWithLocale } from "next-export-i18n";
+import { useLanguageQuery } from "next-export-i18n";
 
 import styles from "./index.module.scss";
 import SimpleSlider from "./simpleSlider/simpleSlider";
-import ContactUs from "@components/form/form";
+import { ContactUs } from "@/lib/components";
 
-import { getSortedPostsData } from "@/lib/utils/blog";
+// Используем типы из клиентского файла, но функции из серверного
+import { PostData } from "@/lib/utils/blogClient";
+import { getSortedPostsData } from "@/lib/utils/blogServer";
 import { getImageUrl } from "@/lib/utils/imageHelper";
 
-interface BlogPost {
-  id: string;
-  title: string;
-  excerpt?: string;
-  date: string;
-  contentHtml?: string;
-}
+// Определяем alias типа для совместимости
+type BlogPost = PostData;
 
 interface BlogData {
   [key: string]: BlogPost[];

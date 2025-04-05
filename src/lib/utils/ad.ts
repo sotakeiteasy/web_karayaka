@@ -1,5 +1,5 @@
 import { Ad } from "@/lib/types/ad";
-import { ads } from "@/data/ads";
+import { ads } from "@/data/ads/ads";
 import { Filter } from "@/lib/types/filter";
 import { propertyTypeTranslations } from "@/lib/translations/propertyTypes";
 import {
