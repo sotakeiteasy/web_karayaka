@@ -40,7 +40,7 @@ function App({ Component, pageProps }: AppProps) {
       </noscript>
       {/* /Yandex.Metrika counter */}
       
-      <Header />
+      {/* <Header /> */}
       <Component {...pageProps} />
       <Footer />
     </div>
