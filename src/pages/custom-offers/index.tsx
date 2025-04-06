@@ -34,7 +34,7 @@ export default function CustomOffers({ metaTags }: CustomOffersProps) {
     phone: "+7 919 107 9917",
     email: "info@karayaka.ru",
     telegram: "https://t.me/yselimmm",
-    whatsapp: "+905320671890"
+    whatsapp: "https://wa.me/905320671890"
   };
 
   return (
@@ -125,10 +125,10 @@ export default function CustomOffers({ metaTags }: CustomOffersProps) {
               <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer">Telegram</a>
             </div>
             <div>
-              <a href={`https://wa.me/${contactInfo.whatsapp.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer">
+              <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer">
                 <Icon path={mdiWhatsapp} size={1.5} />
               </a>
-              <a href={`https://wa.me/${contactInfo.whatsapp.replace(/[^0-9]/g, '')}`} target="_blank" rel="noopener noreferrer">Whatsapp</a>
+              <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer">Whatsapp</a>
             </div>
           </div>
         </address>

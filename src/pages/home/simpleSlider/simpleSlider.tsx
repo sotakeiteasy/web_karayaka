@@ -57,18 +57,46 @@ export default function SimpleSlider({
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     autoplay: true,
-    speed: 3000,
+    speed: 2000,
     autoplaySpeed: 2000,
     cssEase: "ease-in-out",
     // pauseOnHover: true
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          speed: 200,
+          autoplay: false,
+          cssEase: "linear",
+        }
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          speed: 200,
+          autoplay: false,
+          cssEase: "linear",
+
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          speed: 200,
+          autoplay: false,
+          cssEase: "linear",
+        }
+      }
+    ]
   };
 
   if (filteredAds.length < 3) {
     return null;
   }
-  const formatNumber = (num: number): string => {
-    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-  };
+
   return (
     <div className={styles.carouselBlock}>
       <h1 className={styles.header}>

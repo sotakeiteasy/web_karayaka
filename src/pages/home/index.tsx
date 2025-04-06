@@ -128,30 +128,32 @@ export default function Home({
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSearch()}
             />
-            {lang === "ru" ? (
-              <button
-                className={`${styles.toggleButton} ${styles.toggleButtonRu} ${
-                  isBuy ? styles.toggleButtonActiveRu : ""
-                }`}
-                onClick={() => setIsBuy(!isBuy)}
-              >
-                <span>{t("home.rentBtn")}</span>
-                <span>{t("home.buyBtn")}</span>
+            <div>
+              {lang === "ru" ? (
+                <button
+                  className={`${styles.toggleButton} ${styles.toggleButtonRu} ${
+                    isBuy ? styles.toggleButtonActiveRu : ""
+                  }`}
+                  onClick={() => setIsBuy(!isBuy)}
+                >
+                  <span>{t("home.rentBtn")}</span>
+                  <span>{t("home.buyBtn")}</span>
+                </button>
+              ) : (
+                <button
+                  className={`${styles.toggleButton} ${
+                    isBuy ? styles.toggleButtonActive : ""
+                  }`}
+                  onClick={() => setIsBuy(!isBuy)}
+                >
+                  <span>{t("home.rentBtn")}</span>
+                  <span>{t("home.buyBtn")}</span>
+                </button>
+              )}
+              <button className={styles.searchButton} onClick={handleSearch}>
+                {t("home.searchBtn")}
               </button>
-            ) : (
-              <button
-                className={`${styles.toggleButton} ${
-                  isBuy ? styles.toggleButtonActive : ""
-                }`}
-                onClick={() => setIsBuy(!isBuy)}
-              >
-                <span>{t("home.rentBtn")}</span>
-                <span>{t("home.buyBtn")}</span>
-              </button>
-            )}
-            <button className={styles.searchButton} onClick={handleSearch}>
-              {t("home.searchBtn")}
-            </button>
+            </div>
           </div>
         </div>
 
@@ -172,14 +174,15 @@ export default function Home({
           {posts.slice(0, 2).map(({ id, title, excerpt }: BlogPost) => (
             <div key={id} className={styles.articleLink}>
               <LinkWithLocale href={`/blog/${id}`}>
-                <Image
-                  className={styles.articleImage}
-                  src={getImageUrl(`/images/${id}.jpg`)}
-                  width={500}
-                  height={500}
-                  alt={title}
-                  draggable="false"
-                />
+              <div className={styles.articleImage}>
+                  <Image
+                    src={getImageUrl(`/images/${id}.jpg`)}
+                    fill={true}
+                    alt={title}
+                    draggable="false"
+                    style={{ objectFit: "cover" }}
+                  />
+                </div>
                 <div className={styles.articleDescription}>
                   <h2 className={styles.articleTitle}>{title}</h2>
                   {excerpt && (

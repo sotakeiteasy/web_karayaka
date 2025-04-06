@@ -1,5 +1,24 @@
 @use "@styles/variables" as *;
 
+// Оверлей для затемнения фона
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 900; // Должен быть меньше, чем у меню, но больше чем у остального контента
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -8,104 +27,132 @@
   background-color: $primary-color;
   color: $white-text;
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-right: 100px;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-  }
-
   .nav {
     display: flex;
+    align-items: center;
     // gap: 40px;
-
-    .navLink {
-      padding: 0 30px;
-      // margin:
-      height: 45px;
-      line-height: 45px;
-      position: relative;
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-right: 100px;
+      font-size: 1.3rem;
+      text-transform: uppercase;
     }
 
-    .navLink::before,
-    .navLink::after {
-      position: absolute;
-      width: 45px;
-      height: 1px;
-      background: #fff;
-      content: "";
-      opacity: 0.2;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      transition: all 0.3s;
-      pointer-events: none;
+    .burgerButton {
+      display: none; /* Скрыта на десктопе */
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 26px;
+      cursor: pointer;
+      z-index: 10;
+  
+      span {
+        height: 3px;
+        width: 100%;
+        background-color: $white-text;
+        border-radius: 10px;
+      }
     }
 
-    .navLink::before {
-      top: 0;
-      left: 0;
-      -webkit-transform: rotate(90deg);
-      -moz-transform: rotate(90deg);
-      transform: rotate(90deg);
-      -webkit-transform-origin: 0 0;
-      -moz-transform-origin: 0 0;
-      transform-origin: 0 0;
+    .navLinksContainer {
+      display: flex;
+
+      // Скрываем мобильные элементы на десктопе
+      .title, .mobileLangSwitcher, .contacts {
+        display: none;
+      }
+
+      .navLink {
+        padding: 0 30px;
+        // margin:
+        height: 45px;
+        line-height: 45px;
+        position: relative;
+      }
+  
+      .navLink::before,
+      .navLink::after {
+        position: absolute;
+        width: 45px;
+        height: 1px;
+        background: #fff;
+        content: "";
+        opacity: 0.2;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        pointer-events: none;
+      }
+  
+      .navLink::before {
+        top: 0;
+        left: 0;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        transform: rotate(90deg);
+        -webkit-transform-origin: 0 0;
+        -moz-transform-origin: 0 0;
+        transform-origin: 0 0;
+      }
+  
+      .navLink::after {
+        right: 0;
+        bottom: 0;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        transform: rotate(90deg);
+        -webkit-transform-origin: 100% 0;
+        -moz-transform-origin: 100% 0;
+        transform-origin: 100% 0;
+      }
+  
+      .navLink:hover::before,
+      .navLink:hover::after,
+      .navLink:focus::before,
+      .navLink:focus::after {
+        opacity: 1;
+      }
+  
+      .navLink:hover::before,
+      .navLink:focus::before {
+        left: 50%;
+        -webkit-transform: rotate(0deg) translateX(-50%);
+        -moz-transform: rotate(0deg) translateX(-50%);
+        transform: rotate(0deg) translateX(-50%);
+      }
+  
+      .navLink:hover::after,
+      .navLink:focus::after {
+        right: 50%;
+        -webkit-transform: rotate(0deg) translateX(50%);
+        -moz-transform: rotate(0deg) translateX(50%);
+        transform: rotate(0deg) translateX(50%);
+      }
+  
+      .navLink.active::before,
+      .navLink.active::after {
+        opacity: 1;
+      }
+  
+      .navLink.active::before {
+        left: 50%;
+        -webkit-transform: rotate(0deg) translateX(-50%);
+        -moz-transform: rotate(0deg) translateX(-50%);
+        transform: rotate(0deg) translateX(-50%);
+      }
+  
+      .navLink.active::after {
+        right: 50%;
+        -webkit-transform: rotate(0deg) translateX(50%);
+        -moz-transform: rotate(0deg) translateX(50%);
+        transform: rotate(0deg) translateX(50%);
+      }
     }
 
-    .navLink::after {
-      right: 0;
-      bottom: 0;
-      -webkit-transform: rotate(90deg);
-      -moz-transform: rotate(90deg);
-      transform: rotate(90deg);
-      -webkit-transform-origin: 100% 0;
-      -moz-transform-origin: 100% 0;
-      transform-origin: 100% 0;
-    }
-
-    .navLink:hover::before,
-    .navLink:hover::after,
-    .navLink:focus::before,
-    .navLink:focus::after {
-      opacity: 1;
-    }
-
-    .navLink:hover::before,
-    .navLink:focus::before {
-      left: 50%;
-      -webkit-transform: rotate(0deg) translateX(-50%);
-      -moz-transform: rotate(0deg) translateX(-50%);
-      transform: rotate(0deg) translateX(-50%);
-    }
-
-    .navLink:hover::after,
-    .navLink:focus::after {
-      right: 50%;
-      -webkit-transform: rotate(0deg) translateX(50%);
-      -moz-transform: rotate(0deg) translateX(50%);
-      transform: rotate(0deg) translateX(50%);
-    }
-
-    .navLink.active::before,
-    .navLink.active::after {
-      opacity: 1;
-    }
-
-    .navLink.active::before {
-      left: 50%;
-      -webkit-transform: rotate(0deg) translateX(-50%);
-      -moz-transform: rotate(0deg) translateX(-50%);
-      transform: rotate(0deg) translateX(-50%);
-    }
-
-    .navLink.active::after {
-      right: 50%;
-      -webkit-transform: rotate(0deg) translateX(50%);
-      -moz-transform: rotate(0deg) translateX(50%);
-      transform: rotate(0deg) translateX(50%);
-    }
   }
 
   .buttons {
@@ -162,4 +209,178 @@
     font-weight: bold;
     background-color: #f0f0f0;
   }
+}
+
+
+
+@media (max-width: 1280px) {
+  .nav {
+    .logo {
+      margin-right: 50px !important;
+      font-size: 1.5rem;
+    }
+    .navLink {
+      padding: 0 20px !important;
+      font-size: 1rem;
+    }
+   }
+
+   .buttons {
+    margin-left: 50px !important;
+    gap: 5px;
+
+    .button {
+      padding: 10px 15px;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    min-height: 60px !important;
+  }
+  .nav {
+    width: 100% !important;
+    justify-content: space-between !important;
+    margin: 0 40px;
+
+
+    .burgerButton {
+      display: flex !important;
+    }
+
+    .navLinksContainer {
+      position: absolute;
+      top: 0; 
+      left: 0;
+      width: 80%;
+      z-index: 1000;
+      background: $primary-color;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      height: 100vh;
+      flex-direction: column;
+      transform: translateX(-100%); 
+      transition: transform 0.3s ease;
+
+      .title {
+        margin: 30px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        button {
+          color: $white-text;
+          border: none;
+          background-color: transparent;
+          font-size: 2rem;
+        }
+
+
+        .logo {
+  
+        }
+      }
+      
+
+      .navLink {
+        height: auto !important;
+        font-size: 1.2rem;
+        border-bottom: 1px solid  rgba(255, 255, 255, 0.2);
+        padding: 3px 40px 4px 40px !important;
+
+        &::after {
+          display: none;
+        } 
+        &::before {
+          display: none;
+        }
+
+        &.active {
+          font-weight: 600;
+        }
+      }
+
+      .langDivider {
+        height: 1px;
+        background-color: $white-text;
+        width: 100%;
+      }
+      .mobileLangSwitcher {
+        display: flex;
+        flex-direction: column;
+        margin: 25px 0;
+
+        .mobileLangButton {
+          font-size: 1.2rem !important;
+
+          margin: 5px 30px;
+          background: none;
+          border: none;
+          color: $white-text;
+          text-align: left;
+          padding: 10px 10px;
+          font-size: 1rem;
+          cursor: pointer;
+          width: fit-content;
+
+          &.active {
+            font-weight: 400;
+            border: 1px solid $white-text;
+            border-radius: 10px;
+          }
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      .contacts {
+        display: flex;
+        align-items: center;
+        margin: 30px 40px;
+        margin-top: auto;
+        gap: 50px;
+
+        a {
+          svg {
+            width: 45px;
+            height: 45px;
+            fill: $white-text;
+          }
+        }
+        
+      }
+      
+    }
+    
+    .navLinksContainer.open {
+      transform: translateX(0); 
+
+      
+     
+    } 
+   }
+   
+   .buttons {
+    display: none !important;
+
+
+    .button {
+      padding: 10px 15px;
+      font-size: 1rem;
+    }
+  }
+
+  // Показываем мобильные элементы на мобильных устройствах
+  .title, .mobileLangSwitcher, .contacts {
+    display: flex !important;
+  }
+}
+
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
