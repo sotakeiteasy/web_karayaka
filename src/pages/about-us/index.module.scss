@@ -131,10 +131,6 @@
 
           &.activeButton {
             outline: 2px solid $white-text;
-            // &.activeButton::before{
-
-            //   content: "> "
-            // }
           }
         }
       }
@@ -152,6 +148,129 @@
         font-size: 1.6rem;
         font-weight: 500;
         color: $primary-color;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1280px){
+  .main {
+    .sloganBlock {
+      width: 100%;
+      margin-bottom: 60px;
+      .slogan {
+        top: 30px;
+        left: 100px;
+      }
+    }
+  
+    header {
+      width: 80%;
+      margin-bottom: 50px;
+    }
+    .banner {
+      margin-bottom: 50px;
+    }
+    .stats {
+      width: 80%;
+      margin-bottom: 50px;
+      section {
+        width: 30%;
+  
+        h2 {
+          font-size: 4rem;
+        }
+        p {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  
+    .infoBlock {
+      width: 80%;
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-bottom: 20px;
+  
+      .faq {
+        padding: 20px 40px 30px 0px;
+        gap: 10px;
+        width: 60%;
+          }
+  
+      .answerBlock {
+        width: 40%;
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: 900px){
+  .main {
+    .sloganBlock {
+      width: 100%;
+      margin-bottom: 40px;
+      height: 300px;
+      .slogan {
+        top: 30px;
+        left: 50px;
+        p {
+          font-size: 2.5rem;
+        }
+      }
+    }
+  
+    header {
+      width: 90%;
+      padding: 20px;
+      margin-bottom: 50px;
+      h1 {
+        margin-bottom: 10px;
+        font-size: 2rem;
+      }
+    }
+    .banner {
+      height: 300px;
+      margin-bottom: 50px;
+    }
+  
+    .stats {
+      width: 90%;
+      margin-bottom: 50px;
+      section {
+        padding: 10px 20px;
+        min-height: 150px;
+  
+        h2 {
+          font-weight: 500;
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  
+    .infoBlock {
+      flex-direction: column;
+      width: 90%;
+      margin-left: 40px;
+      margin-right: 40px;
+      margin-bottom: 20px;
+  
+      .faq {
+        flex-direction: column;
+        width: 100%;
+        h2 {
+          font-size: 2rem;
+        }
+      }
+  
+      .answerBlock {
+        width: 100%;
       }
     }
   }

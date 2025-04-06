@@ -131,3 +131,53 @@
     }
   }
 }
+
+@media (max-width: 1280px){
+  .main {
+    margin-top: 40px;
+    .article {
+      width: 90%;
+      padding: 30px;
+  }
+}
+}
+
+@media (max-width: 900px){
+  .main {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    .article {
+      width: 80%;
+      padding: 30px;
+      /* Стили для правильного отображения Markdown-контента */
+      p {
+        margin-bottom: .5em !important;
+        line-height: 1.5;
+      }
+  
+      /* Добавляем отступы между всеми блочными элементами */
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      ul,
+      ol,
+      blockquote {
+        margin-top: .8em !important;
+        margin-bottom: 0.3em;
+      }
+
+      .languageSwitcher {
+        gap: 10px;
+        margin-bottom: 0px;
+  
+        div {
+          padding: 10px 15px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}

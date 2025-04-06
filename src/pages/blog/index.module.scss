@@ -17,7 +17,7 @@
     
     a {
       display: flex;
-    }
+    
 
     .articleImage {
       position: relative;
@@ -73,4 +73,75 @@
       }
     }
   }
+  }
 }
+
+@media (max-width: 1280px) {
+  .main{
+      margin-top: 45px;
+      div {
+        display: flex;
+      }
+  
+      .articleCard{
+          width: 90%;
+  
+          .articleImage{
+              width: 50%;
+          }
+  
+          .articlePreview{
+              width: 50%;
+              padding: 25px;
+  
+              .articleTitle{
+                  font-size: 1.2rem;
+              }
+              .articleText{
+                  -webkit-line-clamp: 7;
+                  line-clamp: 7;
+              }
+          }
+       }
+      }
+    }
+  
+  
+  
+    @media (max-width: 900px) {
+      .main{
+          justify-content: center;
+          margin-top: 25px;
+          .articleCard{
+              width: 80%;
+              a{
+                flex-direction: column;
+
+              .articleImage{
+                  width: 100%;
+                  img{
+                      border-radius: 15px 15px 0px 0px !important;
+                  }
+              }
+      
+              .articlePreview{
+                  width: 100%;
+                  padding: 15px;
+      
+                  .articleTitle{
+                      font-size: 1.1rem;
+                      padding-bottom: 5px;
+                      margin-bottom: 0px;
+                      border: 0;
+                  }
+      
+                  .articleText{
+                      display: none;
+                  }
+              }
+           }
+          }
+          }
+    }
+  
+  
