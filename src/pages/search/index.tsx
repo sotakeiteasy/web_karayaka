@@ -60,8 +60,8 @@ export default function Search({ metaTags }: SearchPageProps) {
 
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
-  const lang = (query?.lang as string) || "ru";
-  const meta = metaTags[lang as keyof typeof metaTags] || metaTags.ru;
+  const lang = (query?.lang as 'ru' | 'en') || "ru";
+  const meta = metaTags[lang];
 
   const [searchText, setSearchText] = useState("");
   const [filteredAds, setFilteredAds] = useState<Ad[]>([]);
@@ -315,22 +315,16 @@ export default function Search({ metaTags }: SearchPageProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
         
-        {/* Yandex метаданные */}
-        <meta name="yandex-verification" content="48e2a3db9fca6f0e" />
-        <meta name="yandex:display_title" content={meta.title} />
-        
-        {/* Open Graph для VK и других соцсетей */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/search" />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:image" content="https://karayaka.ru/og-image.png" />
         <meta property="og:image:alt" content="Karayaka Property Search" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
-        
-        {/* VK Open Graph */}
-        <meta property="vk:image" content="https://karayaka.ru/og-image.png" />
       </Head>
       <main className={styles.main}>
         <div className={styles.filterBox}>
@@ -601,10 +595,9 @@ export default function Search({ metaTags }: SearchPageProps) {
 }
 
 export async function getStaticProps() {
-  // Предварительно загружаем переводы для мета-тегов
   const metaTags = {
     ru: {
-      title: "Поиск недвижимости - Karayaka | Недвижимость в Турции и России",
+      title: "Поиск недвижимости - Караяка | Недвижимость в Турции и России",
       description: "Поиск и подбор недвижимости в Турции и России. Удобные фильтры, большая база предложений, актуальные цены.",
       keywords: "поиск недвижимости, аренда, покупка, недвижимость в Турции, недвижимость в России, квартиры, дома"
     },

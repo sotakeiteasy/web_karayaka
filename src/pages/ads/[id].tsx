@@ -31,40 +31,55 @@ import {
   propertyTypeTranslations
 } from "@/lib/translations";
 
-export default function AdPage({ ad }: { ad: Ad }) {
+export default function AdPage({ ad, metaTags }: { ad: Ad, metaTags: any }) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
+  const lang = (query?.lang as 'ru' | 'en') || "ru";
   
-  // Type assertion to handle language selection properly
-  const rawLang = (query?.lang as string) || "ru";
-  const lang = (rawLang === "ru" || rawLang === "en") 
-    ? rawLang as "ru" | "en" 
-    : "ru" as "ru" | "en";
-
-  // Ensure we have a valid language for description access - defaulting to Russian
-  const descriptionLang = (lang === "ru" || lang === "en") ? lang : "ru";
+  const meta = metaTags[lang];
+  
+  const propertyTitle = (() => {
+    switch (ad.propertyType) {
+      case "apartment":
+        return `${ad.rooms} ${t("ad.property.room")} ${
+          propertyTypeTranslations[ad.propertyType][lang]
+        }`;
+      case "villa":
+      case "commercial":
+      case "land":
+        return `${propertyTypeTranslations[ad.propertyType][lang]}, ${
+          ad.area
+        }${t("ad.property.squareMeters")}²`;
+      default:
+        return propertyTypeTranslations[ad.propertyType][lang];
+    }
+  })();
+  
+  const location = [
+    countryTranslations[ad.location.country][lang],
+    cityTranslations[ad.location.city][lang],
+  ].filter(Boolean).join(", ");
 
   return (
     <>
       <Head>
-        <title>
-          {(() => {
-            switch (ad.propertyType) {
-              case "apartment":
-                return `${ad.rooms} ${t("ad.property.room")} ${
-                  propertyTypeTranslations[ad.propertyType][lang]
-                }`;
-              case "villa":
-              case "commercial":
-              case "land":
-                return `${propertyTypeTranslations[ad.propertyType][lang]}, ${
-                  ad.area
-                }${t("ad.property.squareMeters")}²`;
-              default:
-                return propertyTypeTranslations[ad.propertyType][lang];
-            }
-          })()}
-        </title>
+        <title>{propertyTitle}</title>
+        <meta name="description" content={meta.description.replace("{location}", location)} />
+        <meta name="keywords" content={meta.keywords} />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="utf-8" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://karayaka.ru/ads/${ad.id}`} />
+        <meta property="og:title" content={propertyTitle} />
+        <meta property="og:description" content={meta.description.replace("{location}", location)} />
+        <meta property="og:image" content={ad.images.length > 0 ? getImageUrl(ad.images[0]) : "https://karayaka.ru/og-image.png"} />
+        <meta property="og:image:alt" content={propertyTitle} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Karayaka" />
+        <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
       </Head>
       <div className={styles.main}>
         <div className={styles.titleInfo}>
@@ -220,16 +235,13 @@ export default function AdPage({ ad }: { ad: Ad }) {
               </div>
               <div className={styles.infoBottomRight}>
                 {/* <ul>
-                                    {<li>
-                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                                    </li>}
-                                    {<li>
-                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                                    </li>}
-                                    {<li>
-                                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                                    </li>}
-                                </ul> */}
+                    {<li>
+                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
+                    </li>}
+                    {<li>
+                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
+                    </li>}
+                </ul> */}
               </div>
             </div>
           </div>
@@ -237,8 +249,8 @@ export default function AdPage({ ad }: { ad: Ad }) {
             <CustomSlider ad={ad} />
           </div>
         </div>
-        {ad.description[descriptionLang] && (
-          <div className={styles.description}>{ad.description[descriptionLang]}</div>
+        {ad.description[lang] && (
+          <div className={styles.description}>{ad.description[lang]}</div>
         )}
         <div className={styles.form}>
           <ContactUs />
@@ -341,9 +353,22 @@ export function getStaticPaths() {
 export async function getStaticProps({ params }: { params: { id: string } }) {
   const ad = getAdById(params.id);
   
+  // Meta tags for property pages
+  const metaTags = {
+    ru: {
+      description: "Подробная информация о недвижимости в {location}. Актуальные цены, фотографии, детальное описание.",
+      keywords: "недвижимость, купить, аренда, квартира, вилла, дом, Турция, Россия"
+    },
+    en: {
+      description: "Detailed information about real estate in {location}. Current prices, photos, and comprehensive description.",
+      keywords: "real estate, buy, rent, apartment, villa, house, Turkey, Russia"
+    }
+  };
+  
   return {
     props: {
       ad,
+      metaTags
     },
   };
 }

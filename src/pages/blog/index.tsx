@@ -27,9 +27,9 @@ export default function Blog({ allBlogData, metaTags }: BlogPageProps) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
 
-  const lang = (query?.lang as string) || "ru";
-  const meta = metaTags[lang as keyof typeof metaTags] || metaTags.ru;
-  const posts = allBlogData[lang] || allBlogData["ru"] || [];
+  const lang = (query?.lang as 'ru' | 'en') || "ru";
+  const meta = metaTags[lang];
+  const posts = allBlogData[lang];
 
   if (!posts || !posts.length) {
     return <div>{t("blog.noPosts")}</div>;
@@ -45,22 +45,16 @@ export default function Blog({ allBlogData, metaTags }: BlogPageProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
         
-        {/* Yandex метаданные */}
-        <meta name="yandex-verification" content="48e2a3db9fca6f0e" />
-        <meta name="yandex:display_title" content={meta.title} />
-        
-        {/* Open Graph для VK и других соцсетей */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/blog" />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:image" content="https://karayaka.ru/og-image.png" />
         <meta property="og:image:alt" content="Karayaka Blog" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
-        
-        {/* VK Open Graph */}
-        <meta property="vk:image" content="https://karayaka.ru/og-image.png" />
       </Head>
 
       <main className={styles.main}>
@@ -103,13 +97,12 @@ export async function getStaticProps() {
 
   for (const lang of languages) {
     allBlogData[lang] = await getSortedPostsData(lang);
-    console.log(`Posts for ${lang}:`, allBlogData[lang]);
   }
 
   // Предварительно загружаем переводы для мета-тегов
   const metaTags = {
     ru: {
-      title: "Блог - Karayaka | Статьи о недвижимости в Турции и России",
+      title: "Блог - Караяка | Статьи о недвижимости в Турции и России",
       description: "Полезные статьи и информация о недвижимости и инвестициях в Турции и России. Советы экспертов, анализ рынка, правовые аспекты.",
       keywords: "блог о недвижимости, недвижимость в Турции, недвижимость в России, инвестиции в недвижимость"
     },

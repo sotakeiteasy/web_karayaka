@@ -27,14 +27,14 @@ interface CustomOffersProps {
 export default function CustomOffers({ metaTags }: CustomOffersProps) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
-  const locale = (query?.lang as string) || "ru";
-  const meta = metaTags[locale as keyof typeof metaTags] || metaTags.ru;
+  const locale = (query?.lang as 'ru' | 'en') || "ru";
+  const meta = metaTags[locale];
 
   const contactInfo = {
-    phone: "+39 209-954‑59-49",
-    email: "karayaka@gmail.com",
-    telegram: "https://t.me/karayaka_real",
-    whatsapp: "+39 209-954‑59-49"
+    phone: "+7 919 107 9917",
+    email: "info@karayaka.ru",
+    telegram: "https://t.me/yselimmm",
+    whatsapp: "+905320671890"
   };
 
   return (
@@ -47,22 +47,16 @@ export default function CustomOffers({ metaTags }: CustomOffersProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
         
-        {/* Yandex метаданные */}
-        <meta name="yandex-verification" content="48e2a3db9fca6f0e" />
-        <meta name="yandex:display_title" content={meta.title} />
-        
-        {/* Open Graph для VK и других соцсетей */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/custom-offers" />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:image" content="https://karayaka.ru/og-image.png" />
         <meta property="og:image:alt" content="Karayaka Custom Offers" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
-        
-        {/* VK Open Graph */}
-        <meta property="vk:image" content="https://karayaka.ru/og-image.png" />
       </Head>
 
       <CustomOffersSchema
@@ -147,7 +141,7 @@ export async function getStaticProps() {
   // Предварительно загружаем переводы для мета-тегов
   const metaTags = {
     ru: {
-      title: "Индивидуальные предложения - Karayaka | Подбор недвижимости под ваши требования",
+      title: "Индивидуальные предложения - Караяка | Подбор недвижимости под ваши требования",
       description: "Индивидуальный подбор недвижимости в Турции и России под конкретные требования. Заполните форму и получите персональные предложения.",
       keywords: "индивидуальный подбор недвижимости, персональные предложения, недвижимость в Турции, недвижимость в России, помощь в поиске недвижимости"
     },

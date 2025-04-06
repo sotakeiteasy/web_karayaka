@@ -15,8 +15,8 @@ interface PostProps {
   postData: LocalizedPostData;
   baseTags: {
     ru: {
-      title: string; // Будет дополнено заголовком статьи
-      description: string; // Будет дополнено кратким содержанием статьи
+      title: string;
+      description: string; 
       keywords: string;
     };
     en: {
@@ -31,10 +31,9 @@ export default function Post({ postData, baseTags }: PostProps) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
 
-  // Use string type assertion to ensure lang is a string
-  const lang = (query?.lang as string) || "ru";
-  const localizedPostData = postData[lang] || postData["ru"] || postData["en"];
-  const baseMeta = baseTags[lang as keyof typeof baseTags] || baseTags.ru;
+  const lang = (query?.lang as 'ru' | 'en') || "ru";
+  const localizedPostData = postData[lang];
+  const baseMeta = baseTags[lang];
 
   if (!localizedPostData) {
     return <div>Loading...</div>;
@@ -43,7 +42,6 @@ export default function Post({ postData, baseTags }: PostProps) {
   const pageUrl = `https://karayaka.ru/blog/${localizedPostData.id}`;
   const imageUrl = getImageUrl(`/images/${localizedPostData.id}.jpg`);
 
-  // Формируем мета-информацию на основе базовых тегов и данных статьи
   const meta = {
     title: `${localizedPostData.title} - ${baseMeta.title}`,
     description: localizedPostData.excerpt || baseMeta.description,
@@ -60,23 +58,17 @@ export default function Post({ postData, baseTags }: PostProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
         
-        {/* Yandex метаданные */}
-        <meta name="yandex-verification" content="48e2a3db9fca6f0e" />
-        <meta name="yandex:display_title" content={meta.title} />
-        
-        {/* Open Graph для VK и других соцсетей */}
         <meta property="og:type" content="article" />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:image:alt" content={localizedPostData.title} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
         <meta property="article:published_time" content={localizedPostData.date} />
-        
-        {/* VK Open Graph */}
-        <meta property="vk:image" content={imageUrl} />
       </Head>
 
       <BlogPostSchema
@@ -131,7 +123,7 @@ export async function getStaticProps({ params }: { params: PostParams }) {
     // Базовые мета-теги для страницы блога
     const baseTags = {
       ru: {
-        title: "Блог Karayaka",
+        title: "Блог Караяка",
         description: "Статьи и новости о недвижимости в Турции и России",
         keywords: "блог о недвижимости, статьи о недвижимости, недвижимость в Турции, недвижимость в России"
       },

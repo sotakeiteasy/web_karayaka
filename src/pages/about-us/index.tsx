@@ -29,8 +29,8 @@ interface AboutUsProps {
 export default function AboutUs({ metaTags }: AboutUsProps) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
-  const lang = (query?.lang as string) || "ru";
-  const meta = metaTags[lang as keyof typeof metaTags] || metaTags.ru;
+  const lang = (query?.lang as 'ru' | 'en') || "ru";
+  const meta = metaTags[lang];
 
   type FAQKey =
     | "location"
@@ -64,7 +64,6 @@ export default function AboutUs({ metaTags }: AboutUsProps) {
     setActiveKey(key);
   }
 
-  // Создаем массив вопросов-ответов для JSON-LD схемы
   const faqItems = Object.keys(questionsFAQ).map((key) => ({
     question: questionsFAQ[key as FAQKey],
     answer: answersFAQ[key as FAQKey],
@@ -79,23 +78,17 @@ export default function AboutUs({ metaTags }: AboutUsProps) {
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
-        
-        {/* Yandex метаданные */}
-        <meta name="yandex-verification" content="48e2a3db9fca6f0e" />
-        <meta name="yandex:display_title" content={meta.title} />
-        
-        {/* Open Graph для VK и других соцсетей */}
+
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/about-us" />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:image" content="https://karayaka.ru/og-image.png" />
         <meta property="og:image:alt" content="Karayaka About Us" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
-        
-        {/* VK Open Graph */}
-        <meta property="vk:image" content="https://karayaka.ru/og-image.png" />
       </Head>
 
       <OrganizationSchema
@@ -202,11 +195,10 @@ export default function AboutUs({ metaTags }: AboutUsProps) {
 }
 
 export async function getStaticProps() {
-  // Предварительно загружаем переводы для мета-тегов
   const metaTags = {
     ru: {
-      title: "О нас - Karayaka | Агентство недвижимости в Турции и России",
-      description: "Karayaka - агентство недвижимости, специализирующееся на объектах в Турции и России. Индивидуальный подход к каждому клиенту и комплексное сопровождение сделок.",
+      title: "О нас - Караяка | Агентство недвижимости в Турции и России",
+      description: "Караяка - агентство недвижимости, специализирующееся на объектах в Турции и России. Индивидуальный подход к каждому клиенту и комплексное сопровождение сделок.",
       keywords: "агентство недвижимости, о нас, недвижимость в Турции, недвижимость в России, купить недвижимость"
     },
     en: {

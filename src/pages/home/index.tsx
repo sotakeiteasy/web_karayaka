@@ -43,10 +43,10 @@ export default function Home({
 
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
-  const lang = (query?.lang as "ru" || "en") || "ru";
-  const meta = metaTags[lang as keyof typeof metaTags] || metaTags.ru;
-
-  const posts = allBlogData[lang] || [];
+  const lang = (query?.lang as "ru" | "en") || "ru";
+  const meta = metaTags[lang];
+  const posts = allBlogData[lang];
+  
   const [isBuy, setIsBuy] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -69,18 +69,14 @@ export default function Home({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
         
-        {/* Yandex метаданные */}
         <meta name="yandex-verification" content="48e2a3db9fca6f0e" />
-        <meta name="yandex:display_title" content={meta.title} />
         
-        {/* Open Graph для VK и других соцсетей */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/" />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:image" content="https://karayaka.ru/og-image.png" />
         <meta property="og:image:alt" content="Karayaka" />
-        <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
@@ -161,13 +157,13 @@ export default function Home({
 
         <SimpleSlider
           type="rent"
-          country={lang === "ru" ? "Russia" : "Turkey"}
+          country={lang === "en" ? "Russia" : "Turkey"}
           locale={lang}
         />
 
         <SimpleSlider
           type="sale"
-          country={lang === "ru" ? "Russia" : "Turkey"}
+          country={lang === "en" ? "Russia" : "Turkey"}
           locale={lang}
         />
 
@@ -213,10 +209,9 @@ export async function getStaticProps() {
     allBlogData[lang] = await getSortedPostsData(lang);
   }
 
-  // Предварительно загружаем переводы для мета-тегов
   const metaTags = {
     ru: {
-      title: "Karayaka - Недвижимость в Турции и России",
+      title: "Караяка - Недвижимость в Турции и России",
       description: "Профессиональная помощь в покупке и продаже недвижимости в Турции и России. Эксклюзивные предложения, индивидуальный подход.",
       keywords: "недвижимость, Турция, Россия, покупка недвижимости, продажа недвижимости, агентство недвижимости"
     },
