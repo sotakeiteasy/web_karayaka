@@ -49,7 +49,48 @@
         a {
           font-style: normal;
         }
+
       }
     }
+    .contactsSocial > div:first-of-type > a:last-child{
+      margin-left: 3px;
+    }
+  }
+}
+
+@media (max-width: 1280px){
+  .formContainer {
+    gap: 40px;
+    margin: 40px;
+    width: 80% !important;
+    height: fit-content !important;
+    margin-bottom: 60px;
+    .formImg {
+      width: 30%;
+    }
+  }
+}
+
+@media (max-width: 900px){
+  .formContainer {
+    gap: 40px;
+    margin: 40px;
+    width: 90% !important;
+    height: fit-content !important;
+    margin-bottom: 60px;
+    .formImg {
+      display: none;
+    }
+
+    
+  }
+
+  .contacts{
+    width: 90% !important;
+    flex-wrap: wrap;
+    gap: 20px;
+    // .customOffers{
+    //   flex-direction: column;
+    // }
   }
 }
