@@ -318,7 +318,7 @@
   }
 
   .searchBlock {
-    width: 100%;
+    width: 100% !important;
     padding: 0;
 
     .controlPanel {
@@ -332,7 +332,6 @@
 
 
         .searchButton {
-          display: none;
           width: 200px;
           align-self: self-end;
         }
@@ -341,6 +340,11 @@
       .addPanel {
         gap: 20px;
         flex-direction: column;
+
+        .resetButton {
+          width: 200px;
+          align-self: self-end;
+        }
       }
 
       
@@ -350,4 +354,22 @@
   }
 
   
+}
+
+@media (max-width: 400px) {
+
+  .main {
+    max-width: 100% !important;
+  }
+
+  .filterBox {
+    margin-top: 0px !important;
+    width: 350px !important;
+  }
+
+  .searchBlock {
+    .controlPanel {
+      width: 350px !important;
+    }
+  }
 }

@@ -161,6 +161,7 @@ export default function PaginatedAds({
           className={styles.paginate}
           activeClassName={styles.activePage}
           disabledClassName={styles.hidden}
+          pageClassName={"page-item"}
         />
       )}
     </>

@@ -2,6 +2,7 @@
 .adsList {
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   .adCard {
     position: relative;
@@ -153,6 +154,17 @@
 
 @media (max-width: 800px) {
 
+  .paginate {
+    width: 100%;
+  }
+
+  
+  .paginate li[class*="next"],
+  .paginate li[class*="previous"] {
+    display: none !important;
+  }
+
+
   .adsList {
     align-items: center;
   }
@@ -165,7 +177,8 @@
 
     .adCardImage {
       width: 100% !important;
-    }
+      height: 250px !important;
+    } 
     
     a {
       width: 100% !important;
