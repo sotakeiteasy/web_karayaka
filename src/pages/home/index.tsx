@@ -96,9 +96,9 @@ export default function Home({
             <video
               className={styles.video}
               src={
-                // getImageUrl(
-                "full.webm"
-              // )
+                getImageUrl(
+                "/videos/new.webm"
+              )
             }
               loop
               autoPlay
