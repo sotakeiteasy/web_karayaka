@@ -69,7 +69,7 @@ export default function Home({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
         
-        <meta name="yandex-verification" content="48e2a3db9fca6f0e" />
+        <meta name="yandex-verification" content="ffb9d830ad53b65c" />
         
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/" />

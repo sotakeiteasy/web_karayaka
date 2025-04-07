@@ -1,0 +1,37 @@
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Разрешить символы в URL
+  Options -MultiViews
+  
+  # Обработка специально проблемных URL
+  RewriteCond %{REQUEST_URI} ^/blog/?$ [NC]
+  RewriteRule ^ blog.html [L]
+  
+  RewriteCond %{REQUEST_URI} ^/search/?$ [NC]
+  RewriteRule ^ search.html [L,QSA]
+  
+  # Если файл или директория существует, используем их
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+  
+  # Для URL с путями без расширения, пробуем добавить .html
+  RewriteCond %{REQUEST_URI} !\.html$
+  RewriteRule ^(.*)$ $1.html [L,QSA]
+
+  # Если файл .html не существует, перенаправляем на индексную страницу
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^ index.html [L,QSA]
+</IfModule>
+
+# Дополнительные заголовки для предотвращения кеширования
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
