@@ -27,7 +27,7 @@ export const cityTranslations: Record<
     en: "Antalya",
     tr: "Antalya",
   },
-  İstanbul: {
+  Istanbul: {
     ru: "Стамбул",
     en: "Istanbul",
     tr: "İstanbul",
@@ -51,22 +51,22 @@ export const districtTranslations: Record<
     en: "Alanya",
     tr: "Alanya",
   },
-  Ataşehir: {
+  Atasehir: {
     ru: "Аташехир",
     en: "Atasehir",
     tr: "Ataşehir",
   },
-  Bahçelievler: {
+  Bahcelievler: {
     ru: "Бахчелиэвлер",
     en: "Bahcelievler",
     tr: "Bahçelievler",
   },
-  Bakırköy: {
+  Bakirkoy: {
     ru: "Бакыркёй",
     en: "Bakirkoy",
     tr: "Bakırköy",
   },
-  Beşiktaş: {
+  Besiktas: {
     ru: "Бешикташ",
     en: "Besiktas",
     tr: "Beşiktaş",
@@ -81,12 +81,12 @@ export const districtTranslations: Record<
     en: "Brusnika",
     tr: "Brusnika",
   },
-  Kadıköy: {
+  Kadikoy: {
     ru: "Кадыкёй",
     en: "Kadikoy",
     tr: "Kadıköy",
   },
-  Kaş: {
+  Kas: {
     ru: "Каш",
     en: "Kas",
     tr: "Kaş",
@@ -101,12 +101,12 @@ export const districtTranslations: Record<
     en: "Maltepe",
     tr: "Maltepe",
   },
-  Muratpaşa: {
+  Muratpasa: {
     ru: "Муратпаша",
     en: "Muratpasa",
     tr: "Muratpaşa",
   },
-  Sarıyer: {
+  Sariyer: {
     ru: "Сарыер",
     en: "Sariyer",
     tr: "Sarıyer",
