@@ -17,7 +17,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "rent",
     propertyType: "apartment",
@@ -30,12 +30,12 @@ export const ads: Ad[] = [
     floorInHouse: 8,
     parking: "open",
     images: [
-      "/images/Rent/Antalya/Muratpaşa/01/Balcony.jpg",
-      "/images/Rent/Antalya/Muratpaşa/01/Bathroom.jpg",
-      "/images/Rent/Antalya/Muratpaşa/01/Kitchen.jpg",
-      "/images/Rent/Antalya/Muratpaşa/01/LivingRoom.jpg",
-      "/images/Rent/Antalya/Muratpaşa/01/Room2.jpg",
-      "/images/Rent/Antalya/Muratpaşa/01/Room3.jpg",
+      "/images/Rent/Antalya/Muratpasa/01/Balcony.jpg",
+      "/images/Rent/Antalya/Muratpasa/01/Bathroom.jpg",
+      "/images/Rent/Antalya/Muratpasa/01/Kitchen.jpg",
+      "/images/Rent/Antalya/Muratpasa/01/LivingRoom.jpg",
+      "/images/Rent/Antalya/Muratpasa/01/Room2.jpg",
+      "/images/Rent/Antalya/Muratpasa/01/Room3.jpg",
     ],
   },
   {
@@ -55,7 +55,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "rent",
     propertyType: "apartment",
@@ -68,11 +68,11 @@ export const ads: Ad[] = [
     floorInHouse: 5,
     parking: "closed",
     images: [
-      "/images/Rent/Antalya/Muratpaşa/02/Bathroom.jpg",
-      "/images/Rent/Antalya/Muratpaşa/02/Kitchen.jpg",
-      "/images/Rent/Antalya/Muratpaşa/02/LivingRoom.jpg",
-      "/images/Rent/Antalya/Muratpaşa/02/Room2.jpg",
-      "/images/Rent/Antalya/Muratpaşa/02/Room3.jpg",
+      "/images/Rent/Antalya/Muratpasa/02/Bathroom.jpg",
+      "/images/Rent/Antalya/Muratpasa/02/Kitchen.jpg",
+      "/images/Rent/Antalya/Muratpasa/02/LivingRoom.jpg",
+      "/images/Rent/Antalya/Muratpasa/02/Room2.jpg",
+      "/images/Rent/Antalya/Muratpasa/02/Room3.jpg",
     ],
   },
   {
@@ -92,7 +92,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "rent",
     propertyType: "apartment",
@@ -105,10 +105,10 @@ export const ads: Ad[] = [
     floorInHouse: 5,
     parking: "closed",
     images: [
-      "/images/Rent/Antalya/Muratpaşa/03/Balcony.jpg",
-      "/images/Rent/Antalya/Muratpaşa/03/Kitchen.jpg",
-      "/images/Rent/Antalya/Muratpaşa/03/LivingRoom.jpg",
-      "/images/Rent/Antalya/Muratpaşa/03/Pool.jpg",
+      "/images/Rent/Antalya/Muratpasa/03/Balcony.jpg",
+      "/images/Rent/Antalya/Muratpasa/03/Kitchen.jpg",
+      "/images/Rent/Antalya/Muratpasa/03/LivingRoom.jpg",
+      "/images/Rent/Antalya/Muratpasa/03/Pool.jpg",
     ],
   },
   {
@@ -128,7 +128,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "rent",
     propertyType: "apartment",
@@ -141,10 +141,10 @@ export const ads: Ad[] = [
     floorInHouse: 3,
     parking: "open",
     images: [
-      "/images/Rent/Antalya/Muratpaşa/04/Balcony.jpg",
-      "/images/Rent/Antalya/Muratpaşa/04/Bathroom.jpg",
-      "/images/Rent/Antalya/Muratpaşa/04/Kitchen2.jpg",
-      "/images/Rent/Antalya/Muratpaşa/04/LivingRoom.jpg",
+      "/images/Rent/Antalya/Muratpasa/04/Balcony.jpg",
+      "/images/Rent/Antalya/Muratpasa/04/Bathroom.jpg",
+      "/images/Rent/Antalya/Muratpasa/04/Kitchen2.jpg",
+      "/images/Rent/Antalya/Muratpasa/04/LivingRoom.jpg",
     ],
   },
   {
@@ -164,7 +164,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "rent",
     propertyType: "apartment",
@@ -177,10 +177,10 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Rent/Antalya/Muratpaşa/05/Bathroom.jpg",
-      "/images/Rent/Antalya/Muratpaşa/05/Room.jpg",
-      "/images/Rent/Antalya/Muratpaşa/05/Room2.jpg",
-      "/images/Rent/Antalya/Muratpaşa/05/Room3.jpg",
+      "/images/Rent/Antalya/Muratpasa/05/Bathroom.jpg",
+      "/images/Rent/Antalya/Muratpasa/05/Room.jpg",
+      "/images/Rent/Antalya/Muratpasa/05/Room2.jpg",
+      "/images/Rent/Antalya/Muratpasa/05/Room3.jpg",
     ],
   },
   {
@@ -199,8 +199,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "rent",
     propertyType: "apartment",
@@ -213,10 +213,10 @@ export const ads: Ad[] = [
     floorInHouse: 8,
     parking: "closed",
     images: [
-      "/images/Rent/İstanbul/Kadıköy/01/Bathroom.jpg",
-      "/images/Rent/İstanbul/Kadıköy/01/Kitchen.jpg",
-      "/images/Rent/İstanbul/Kadıköy/01/LivingRoom.jpg",
-      "/images/Rent/İstanbul/Kadıköy/01/Room2.jpg",
+      "/images/Rent/Istanbul/Kadikoy/01/Bathroom.jpg",
+      "/images/Rent/Istanbul/Kadikoy/01/Kitchen.jpg",
+      "/images/Rent/Istanbul/Kadikoy/01/LivingRoom.jpg",
+      "/images/Rent/Istanbul/Kadikoy/01/Room2.jpg",
     ],
   },
   {
@@ -235,8 +235,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "rent",
     propertyType: "apartment",
@@ -249,11 +249,11 @@ export const ads: Ad[] = [
     floorInHouse: 7,
     parking: "closed",
     images: [
-      "/images/Rent/İstanbul/Kadıköy/02/Bathroom.jpg",
-      "/images/Rent/İstanbul/Kadıköy/02/Kitchen.jpg",
-      "/images/Rent/İstanbul/Kadıköy/02/LivingRoom.jpg",
-      "/images/Rent/İstanbul/Kadıköy/02/Room2.jpg",
-      "/images/Rent/İstanbul/Kadıköy/02/Room3.jpg",
+      "/images/Rent/Istanbul/Kadikoy/02/Bathroom.jpg",
+      "/images/Rent/Istanbul/Kadikoy/02/Kitchen.jpg",
+      "/images/Rent/Istanbul/Kadikoy/02/LivingRoom.jpg",
+      "/images/Rent/Istanbul/Kadikoy/02/Room2.jpg",
+      "/images/Rent/Istanbul/Kadikoy/02/Room3.jpg",
     ],
   },
   {
@@ -272,8 +272,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "rent",
     propertyType: "apartment",
@@ -286,11 +286,11 @@ export const ads: Ad[] = [
     floorInHouse: 27,
     parking: "closed",
     images: [
-      "/images/Rent/İstanbul/Kadıköy/03/Bathroom.jpg",
-      "/images/Rent/İstanbul/Kadıköy/03/Kitchen.jpg",
-      "/images/Rent/İstanbul/Kadıköy/03/LivingRoom.jpg",
-      "/images/Rent/İstanbul/Kadıköy/03/Room2.jpg",
-      "/images/Rent/İstanbul/Kadıköy/03/Room3.jpg",
+      "/images/Rent/Istanbul/Kadikoy/03/Bathroom.jpg",
+      "/images/Rent/Istanbul/Kadikoy/03/Kitchen.jpg",
+      "/images/Rent/Istanbul/Kadikoy/03/LivingRoom.jpg",
+      "/images/Rent/Istanbul/Kadikoy/03/Room2.jpg",
+      "/images/Rent/Istanbul/Kadikoy/03/Room3.jpg",
     ],
   },
   {
@@ -309,8 +309,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "rent",
     propertyType: "apartment",
@@ -323,10 +323,10 @@ export const ads: Ad[] = [
     floorInHouse: 30,
     parking: "closed",
     images: [
-      "/images/Rent/İstanbul/Kadıköy/04/Bathroom.jpg",
-      "/images/Rent/İstanbul/Kadıköy/04/Kitchen.jpg",
-      "/images/Rent/İstanbul/Kadıköy/04/LivingRoom.jpg",
-      "/images/Rent/İstanbul/Kadıköy/04/Room2.jpg",
+      "/images/Rent/Istanbul/Kadikoy/04/Bathroom.jpg",
+      "/images/Rent/Istanbul/Kadikoy/04/Kitchen.jpg",
+      "/images/Rent/Istanbul/Kadikoy/04/LivingRoom.jpg",
+      "/images/Rent/Istanbul/Kadikoy/04/Room2.jpg",
     ],
   },
   {
@@ -345,8 +345,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "rent",
     propertyType: "apartment",
@@ -359,11 +359,11 @@ export const ads: Ad[] = [
     floorInHouse: 11,
     parking: "closed",
     images: [
-      "/images/Rent/İstanbul/Kadıköy/05/bathroom.jpg",
-      "/images/Rent/İstanbul/Kadıköy/05/Kitchen.jpg",
-      "/images/Rent/İstanbul/Kadıköy/05/Room.jpg",
-      "/images/Rent/İstanbul/Kadıköy/05/Room2.jpg",
-      "/images/Rent/İstanbul/Kadıköy/05/Room3.jpg",
+      "/images/Rent/Istanbul/Kadikoy/05/bathroom.jpg",
+      "/images/Rent/Istanbul/Kadikoy/05/Kitchen.jpg",
+      "/images/Rent/Istanbul/Kadikoy/05/Room.jpg",
+      "/images/Rent/Istanbul/Kadikoy/05/Room2.jpg",
+      "/images/Rent/Istanbul/Kadikoy/05/Room3.jpg",
     ],
   },
   {
@@ -936,7 +936,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -949,10 +949,10 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/01/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/01/Outside.jpg",
-      "/images/Sell/Antalya/Kaş/01/Pool.jpg",
-      "/images/Sell/Antalya/Kaş/01/Room2.jpg",
+      "/images/Sell/Antalya/Kas/01/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/01/Outside.jpg",
+      "/images/Sell/Antalya/Kas/01/Pool.jpg",
+      "/images/Sell/Antalya/Kas/01/Room2.jpg",
     ],
   },
   {
@@ -972,7 +972,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -985,11 +985,11 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/02/Bathroom.jpg",
-      "/images/Sell/Antalya/Kaş/02/Kitchen.jpg",
-      "/images/Sell/Antalya/Kaş/02/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/02/Pool.jpg",
-      "/images/Sell/Antalya/Kaş/02/View.jpg",
+      "/images/Sell/Antalya/Kas/02/Bathroom.jpg",
+      "/images/Sell/Antalya/Kas/02/Kitchen.jpg",
+      "/images/Sell/Antalya/Kas/02/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/02/Pool.jpg",
+      "/images/Sell/Antalya/Kas/02/View.jpg",
     ],
   },
   {
@@ -1009,7 +1009,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1022,11 +1022,11 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/03/Bathroom.jpg",
-      "/images/Sell/Antalya/Kaş/03/Kitchen.jpg",
-      "/images/Sell/Antalya/Kaş/03/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/03/Pool.jpg",
-      "/images/Sell/Antalya/Kaş/03/Room2.jpg",
+      "/images/Sell/Antalya/Kas/03/Bathroom.jpg",
+      "/images/Sell/Antalya/Kas/03/Kitchen.jpg",
+      "/images/Sell/Antalya/Kas/03/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/03/Pool.jpg",
+      "/images/Sell/Antalya/Kas/03/Room2.jpg",
     ],
   },
   {
@@ -1046,7 +1046,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1059,11 +1059,11 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/04/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/04/Outside.jpg",
-      "/images/Sell/Antalya/Kaş/04/Pool.jpg",
-      "/images/Sell/Antalya/Kaş/04/Pool2.jpg",
-      "/images/Sell/Antalya/Kaş/04/Room2.jpg",
+      "/images/Sell/Antalya/Kas/04/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/04/Outside.jpg",
+      "/images/Sell/Antalya/Kas/04/Pool.jpg",
+      "/images/Sell/Antalya/Kas/04/Pool2.jpg",
+      "/images/Sell/Antalya/Kas/04/Room2.jpg",
     ],
   },
   {
@@ -1083,7 +1083,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1096,11 +1096,11 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "closed",
     images: [
-      "/images/Sell/Antalya/Kaş/05/Bathroom.jpg",
-      "/images/Sell/Antalya/Kaş/05/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/05/Outside.jpg",
-      "/images/Sell/Antalya/Kaş/05/Room2.jpg",
-      "/images/Sell/Antalya/Kaş/05/View.jpg",
+      "/images/Sell/Antalya/Kas/05/Bathroom.jpg",
+      "/images/Sell/Antalya/Kas/05/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/05/Outside.jpg",
+      "/images/Sell/Antalya/Kas/05/Room2.jpg",
+      "/images/Sell/Antalya/Kas/05/View.jpg",
     ],
   },
   {
@@ -1120,7 +1120,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1133,11 +1133,11 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "closed",
     images: [
-      "/images/Sell/Antalya/Kaş/06/Bathroom.jpg",
-      "/images/Sell/Antalya/Kaş/06/Kitchen.jpg",
-      "/images/Sell/Antalya/Kaş/06/Kitchen2.jpg",
-      "/images/Sell/Antalya/Kaş/06/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/06/Outside.jpg",
+      "/images/Sell/Antalya/Kas/06/Bathroom.jpg",
+      "/images/Sell/Antalya/Kas/06/Kitchen.jpg",
+      "/images/Sell/Antalya/Kas/06/Kitchen2.jpg",
+      "/images/Sell/Antalya/Kas/06/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/06/Outside.jpg",
     ],
   },
   {
@@ -1157,7 +1157,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1170,12 +1170,12 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/07/Bathroom.jpg",
-      "/images/Sell/Antalya/Kaş/07/Kitchen.jpg",
-      "/images/Sell/Antalya/Kaş/07/Living.Room.jpg",
-      "/images/Sell/Antalya/Kaş/07/Pool.jpg",
-      "/images/Sell/Antalya/Kaş/07/Room2.jpg",
-      "/images/Sell/Antalya/Kaş/07/View.jpg",
+      "/images/Sell/Antalya/Kas/07/Bathroom.jpg",
+      "/images/Sell/Antalya/Kas/07/Kitchen.jpg",
+      "/images/Sell/Antalya/Kas/07/Living.Room.jpg",
+      "/images/Sell/Antalya/Kas/07/Pool.jpg",
+      "/images/Sell/Antalya/Kas/07/Room2.jpg",
+      "/images/Sell/Antalya/Kas/07/View.jpg",
     ],
   },
   {
@@ -1195,7 +1195,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1208,11 +1208,11 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/08/Kitchen.jpg",
-      "/images/Sell/Antalya/Kaş/08/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/08/Outside.jpg",
-      "/images/Sell/Antalya/Kaş/08/Pool.jpg",
-      "/images/Sell/Antalya/Kaş/08/Room2.jpg",
+      "/images/Sell/Antalya/Kas/08/Kitchen.jpg",
+      "/images/Sell/Antalya/Kas/08/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/08/Outside.jpg",
+      "/images/Sell/Antalya/Kas/08/Pool.jpg",
+      "/images/Sell/Antalya/Kas/08/Room2.jpg",
     ],
   },
   {
@@ -1232,7 +1232,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1245,10 +1245,10 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/09/Kitchen.jpg",
-      "/images/Sell/Antalya/Kaş/09/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/09/Outside.jpg",
-      "/images/Sell/Antalya/Kaş/09/Room2.jpg",
+      "/images/Sell/Antalya/Kas/09/Kitchen.jpg",
+      "/images/Sell/Antalya/Kas/09/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/09/Outside.jpg",
+      "/images/Sell/Antalya/Kas/09/Room2.jpg",
     ],
   },
   {
@@ -1268,7 +1268,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1281,10 +1281,10 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/10/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/10/Pool.jpg",
-      "/images/Sell/Antalya/Kaş/10/Room2.jpg",
-      "/images/Sell/Antalya/Kaş/10/Stairs.jpg",
+      "/images/Sell/Antalya/Kas/10/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/10/Pool.jpg",
+      "/images/Sell/Antalya/Kas/10/Room2.jpg",
+      "/images/Sell/Antalya/Kas/10/Stairs.jpg",
     ],
   },
   {
@@ -1304,7 +1304,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "apartment",
@@ -1317,11 +1317,11 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "closed",
     images: [
-      "/images/Sell/Antalya/Kaş/11/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/11/Outside.jpg",
-      "/images/Sell/Antalya/Kaş/11/Room2.jpg",
-      "/images/Sell/Antalya/Kaş/11/Stairs.jpg",
-      "/images/Sell/Antalya/Kaş/11/View.jpg",
+      "/images/Sell/Antalya/Kas/11/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/11/Outside.jpg",
+      "/images/Sell/Antalya/Kas/11/Room2.jpg",
+      "/images/Sell/Antalya/Kas/11/Stairs.jpg",
+      "/images/Sell/Antalya/Kas/11/View.jpg",
     ],
   },
   {
@@ -1341,7 +1341,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1354,10 +1354,10 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/12/Bathroom.jpg",
-      "/images/Sell/Antalya/Kaş/12/Kitchen.jpg",
-      "/images/Sell/Antalya/Kaş/12/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/12/Pool.jpg",
+      "/images/Sell/Antalya/Kas/12/Bathroom.jpg",
+      "/images/Sell/Antalya/Kas/12/Kitchen.jpg",
+      "/images/Sell/Antalya/Kas/12/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/12/Pool.jpg",
     ],
   },
   {
@@ -1377,7 +1377,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1390,11 +1390,11 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/13/Garden.jpg",
-      "/images/Sell/Antalya/Kaş/13/Kitchen.jpg",
-      "/images/Sell/Antalya/Kaş/13/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/13/Outside.jpg",
-      "/images/Sell/Antalya/Kaş/13/Upstairs.jpg",
+      "/images/Sell/Antalya/Kas/13/Garden.jpg",
+      "/images/Sell/Antalya/Kas/13/Kitchen.jpg",
+      "/images/Sell/Antalya/Kas/13/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/13/Outside.jpg",
+      "/images/Sell/Antalya/Kas/13/Upstairs.jpg",
     ],
   },
   {
@@ -1414,7 +1414,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1427,13 +1427,13 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/14/Bathroom.jpg",
-      "/images/Sell/Antalya/Kaş/14/Kitchen.jpg",
-      "/images/Sell/Antalya/Kaş/14/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/14/Outside.jpg",
-      "/images/Sell/Antalya/Kaş/14/Pool.jpg",
-      "/images/Sell/Antalya/Kaş/14/Room2.jpg",
-      "/images/Sell/Antalya/Kaş/14/Room3.jpg",
+      "/images/Sell/Antalya/Kas/14/Bathroom.jpg",
+      "/images/Sell/Antalya/Kas/14/Kitchen.jpg",
+      "/images/Sell/Antalya/Kas/14/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/14/Outside.jpg",
+      "/images/Sell/Antalya/Kas/14/Pool.jpg",
+      "/images/Sell/Antalya/Kas/14/Room2.jpg",
+      "/images/Sell/Antalya/Kas/14/Room3.jpg",
     ],
   },
   {
@@ -1453,7 +1453,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "apartment",
@@ -1466,9 +1466,9 @@ export const ads: Ad[] = [
     floorInHouse: 2,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/15/Garden.jpg",
-      "/images/Sell/Antalya/Kaş/15/Kitchen.jpg",
-      "/images/Sell/Antalya/Kaş/15/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/15/Garden.jpg",
+      "/images/Sell/Antalya/Kas/15/Kitchen.jpg",
+      "/images/Sell/Antalya/Kas/15/LivingRoom.jpg",
     ],
   },
   {
@@ -1488,7 +1488,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1501,10 +1501,10 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/16/Garden.jpg",
-      "/images/Sell/Antalya/Kaş/16/Kitchen.jpg",
-      "/images/Sell/Antalya/Kaş/16/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/16/Outside.jpg",
+      "/images/Sell/Antalya/Kas/16/Garden.jpg",
+      "/images/Sell/Antalya/Kas/16/Kitchen.jpg",
+      "/images/Sell/Antalya/Kas/16/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/16/Outside.jpg",
     ],
   },
   {
@@ -1524,7 +1524,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1537,10 +1537,10 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/17/Garden.jpg",
-      "/images/Sell/Antalya/Kaş/17/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/17/Pool.jpg",
-      "/images/Sell/Antalya/Kaş/17/Room2.jpg",
+      "/images/Sell/Antalya/Kas/17/Garden.jpg",
+      "/images/Sell/Antalya/Kas/17/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/17/Pool.jpg",
+      "/images/Sell/Antalya/Kas/17/Room2.jpg",
     ],
   },
   {
@@ -1560,7 +1560,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "apartment",
@@ -1573,10 +1573,10 @@ export const ads: Ad[] = [
     floorInHouse: 3,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/18/Balcony.jpg",
-      "/images/Sell/Antalya/Kaş/18/Bathroom.jpg",
-      "/images/Sell/Antalya/Kaş/18/Kitchen.jpg",
-      "/images/Sell/Antalya/Kaş/18/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/18/Balcony.jpg",
+      "/images/Sell/Antalya/Kas/18/Bathroom.jpg",
+      "/images/Sell/Antalya/Kas/18/Kitchen.jpg",
+      "/images/Sell/Antalya/Kas/18/LivingRoom.jpg",
     ],
   },
   {
@@ -1596,7 +1596,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1609,11 +1609,11 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/19/Kitchen.jpg",
-      "/images/Sell/Antalya/Kaş/19/LivingRoom.jpg",
-      "/images/Sell/Antalya/Kaş/19/Outside.jpg",
-      "/images/Sell/Antalya/Kaş/19/Pool.jpg",
-      "/images/Sell/Antalya/Kaş/19/Room2.jpg",
+      "/images/Sell/Antalya/Kas/19/Kitchen.jpg",
+      "/images/Sell/Antalya/Kas/19/LivingRoom.jpg",
+      "/images/Sell/Antalya/Kas/19/Outside.jpg",
+      "/images/Sell/Antalya/Kas/19/Pool.jpg",
+      "/images/Sell/Antalya/Kas/19/Room2.jpg",
     ],
   },
   {
@@ -1633,7 +1633,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Kaş",
+      district: "Kas",
     },
     type: "sale",
     propertyType: "villa",
@@ -1646,11 +1646,11 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Kaş/20/Balcony.jpg",
-      "/images/Sell/Antalya/Kaş/20/Bathroom.jpg",
-      "/images/Sell/Antalya/Kaş/20/Kitchen.jpg",
-      "/images/Sell/Antalya/Kaş/20/Outside.jpg",
-      "/images/Sell/Antalya/Kaş/20/Room2.jpg",
+      "/images/Sell/Antalya/Kas/20/Balcony.jpg",
+      "/images/Sell/Antalya/Kas/20/Bathroom.jpg",
+      "/images/Sell/Antalya/Kas/20/Kitchen.jpg",
+      "/images/Sell/Antalya/Kas/20/Outside.jpg",
+      "/images/Sell/Antalya/Kas/20/Room2.jpg",
     ],
   },
   {
@@ -1670,7 +1670,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "apartment",
@@ -1683,10 +1683,10 @@ export const ads: Ad[] = [
     floorInHouse: 7,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/01/Kitchen.jpg",
-      "/images/Sell/Antalya/Muratpaşa/01/LivingRoom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/01/LivingRoom2.jpg",
-      "/images/Sell/Antalya/Muratpaşa/01/Room2.jpg",
+      "/images/Sell/Antalya/Muratpasa/01/Kitchen.jpg",
+      "/images/Sell/Antalya/Muratpasa/01/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/01/LivingRoom2.jpg",
+      "/images/Sell/Antalya/Muratpasa/01/Room2.jpg",
     ],
   },
   {
@@ -1706,7 +1706,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "apartment",
@@ -1719,11 +1719,11 @@ export const ads: Ad[] = [
     floorInHouse: 3,
     parking: "closed",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/02/Bathroom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/02/Kitchen.jpg",
-      "/images/Sell/Antalya/Muratpaşa/02/LivingRoom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/02/Room2.jpg",
-      "/images/Sell/Antalya/Muratpaşa/02/ViewPool.jpg",
+      "/images/Sell/Antalya/Muratpasa/02/Bathroom.jpg",
+      "/images/Sell/Antalya/Muratpasa/02/Kitchen.jpg",
+      "/images/Sell/Antalya/Muratpasa/02/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/02/Room2.jpg",
+      "/images/Sell/Antalya/Muratpasa/02/ViewPool.jpg",
     ],
   },
   {
@@ -1743,7 +1743,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "apartment",
@@ -1756,12 +1756,12 @@ export const ads: Ad[] = [
     floorInHouse: 3,
     parking: "closed",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/03/Balcony.jpg",
-      "/images/Sell/Antalya/Muratpaşa/03/Bathroom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/03/Gym.jpg",
-      "/images/Sell/Antalya/Muratpaşa/03/Kitchen.jpg",
-      "/images/Sell/Antalya/Muratpaşa/03/LivingRoom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/03/Pool.jpg",
+      "/images/Sell/Antalya/Muratpasa/03/Balcony.jpg",
+      "/images/Sell/Antalya/Muratpasa/03/Bathroom.jpg",
+      "/images/Sell/Antalya/Muratpasa/03/Gym.jpg",
+      "/images/Sell/Antalya/Muratpasa/03/Kitchen.jpg",
+      "/images/Sell/Antalya/Muratpasa/03/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/03/Pool.jpg",
     ],
   },
   {
@@ -1781,7 +1781,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "apartment",
@@ -1794,11 +1794,11 @@ export const ads: Ad[] = [
     floorInHouse: 2,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/04/Bathroom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/04/Kitchen.jpg",
-      "/images/Sell/Antalya/Muratpaşa/04/LivingRoom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/04/LivingRoom2.jpg",
-      "/images/Sell/Antalya/Muratpaşa/04/Room2.jpg",
+      "/images/Sell/Antalya/Muratpasa/04/Bathroom.jpg",
+      "/images/Sell/Antalya/Muratpasa/04/Kitchen.jpg",
+      "/images/Sell/Antalya/Muratpasa/04/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/04/LivingRoom2.jpg",
+      "/images/Sell/Antalya/Muratpasa/04/Room2.jpg",
     ],
   },
   {
@@ -1818,7 +1818,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "apartment",
@@ -1831,10 +1831,10 @@ export const ads: Ad[] = [
     floorInHouse: 8,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/05/Bathroom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/05/LivingRoom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/05/Pool.jpg",
-      "/images/Sell/Antalya/Muratpaşa/05/Room2.jpg",
+      "/images/Sell/Antalya/Muratpasa/05/Bathroom.jpg",
+      "/images/Sell/Antalya/Muratpasa/05/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/05/Pool.jpg",
+      "/images/Sell/Antalya/Muratpasa/05/Room2.jpg",
     ],
   },
   {
@@ -1854,7 +1854,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "apartment",
@@ -1867,10 +1867,10 @@ export const ads: Ad[] = [
     floorInHouse: 5,
     parking: "closed",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/06/Bathroom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/06/Hol.jpg",
-      "/images/Sell/Antalya/Muratpaşa/06/LivingRoom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/06/Room2.jpg",
+      "/images/Sell/Antalya/Muratpasa/06/Bathroom.jpg",
+      "/images/Sell/Antalya/Muratpasa/06/Hol.jpg",
+      "/images/Sell/Antalya/Muratpasa/06/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/06/Room2.jpg",
     ],
   },
   {
@@ -1890,7 +1890,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "apartment",
@@ -1903,11 +1903,11 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/07/Kitchen.jpg",
-      "/images/Sell/Antalya/Muratpaşa/07/LivingRoom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/07/Outside.jpg",
-      "/images/Sell/Antalya/Muratpaşa/07/Stairs.jpg",
-      "/images/Sell/Antalya/Muratpaşa/07/View.jpg",
+      "/images/Sell/Antalya/Muratpasa/07/Kitchen.jpg",
+      "/images/Sell/Antalya/Muratpasa/07/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/07/Outside.jpg",
+      "/images/Sell/Antalya/Muratpasa/07/Stairs.jpg",
+      "/images/Sell/Antalya/Muratpasa/07/View.jpg",
     ],
   },
   {
@@ -1927,7 +1927,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "apartment",
@@ -1940,10 +1940,10 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/08/Balcony.jpg",
-      "/images/Sell/Antalya/Muratpaşa/08/Bathroom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/08/Kitchen.jpg",
-      "/images/Sell/Antalya/Muratpaşa/08/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/08/Balcony.jpg",
+      "/images/Sell/Antalya/Muratpasa/08/Bathroom.jpg",
+      "/images/Sell/Antalya/Muratpasa/08/Kitchen.jpg",
+      "/images/Sell/Antalya/Muratpasa/08/LivingRoom.jpg",
     ],
   },
   {
@@ -1963,7 +1963,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "villa",
@@ -1976,11 +1976,11 @@ export const ads: Ad[] = [
     floorInHouse: 10,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/09/Bathroom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/09/Kitchen.jpg",
-      "/images/Sell/Antalya/Muratpaşa/09/LivingRoom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/09/Outside.jpg",
-      "/images/Sell/Antalya/Muratpaşa/09/Room2.jpg",
+      "/images/Sell/Antalya/Muratpasa/09/Bathroom.jpg",
+      "/images/Sell/Antalya/Muratpasa/09/Kitchen.jpg",
+      "/images/Sell/Antalya/Muratpasa/09/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/09/Outside.jpg",
+      "/images/Sell/Antalya/Muratpasa/09/Room2.jpg",
     ],
   },
   {
@@ -2000,7 +2000,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "villa",
@@ -2013,11 +2013,11 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/10/Bathroom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/10/Holl.jpg",
-      "/images/Sell/Antalya/Muratpaşa/10/Kitchen.jpg",
-      "/images/Sell/Antalya/Muratpaşa/10/LivingRoom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/10/Outside.jpg",
+      "/images/Sell/Antalya/Muratpasa/10/Bathroom.jpg",
+      "/images/Sell/Antalya/Muratpasa/10/Holl.jpg",
+      "/images/Sell/Antalya/Muratpasa/10/Kitchen.jpg",
+      "/images/Sell/Antalya/Muratpasa/10/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/10/Outside.jpg",
     ],
   },
   {
@@ -2037,7 +2037,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2050,11 +2050,11 @@ export const ads: Ad[] = [
     floorInHouse: 6,
     parking: "closed",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/11/Balcony.jpg",
-      "/images/Sell/Antalya/Muratpaşa/11/Bathroom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/11/Kitchen.jpg",
-      "/images/Sell/Antalya/Muratpaşa/11/LivingRoom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/11/Room2.jpg",
+      "/images/Sell/Antalya/Muratpasa/11/Balcony.jpg",
+      "/images/Sell/Antalya/Muratpasa/11/Bathroom.jpg",
+      "/images/Sell/Antalya/Muratpasa/11/Kitchen.jpg",
+      "/images/Sell/Antalya/Muratpasa/11/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/11/Room2.jpg",
     ],
   },
   {
@@ -2074,7 +2074,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2087,10 +2087,10 @@ export const ads: Ad[] = [
     floorInHouse: 3,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/12/Bathroom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/12/Kitchen.jpg",
-      "/images/Sell/Antalya/Muratpaşa/12/LivingRoom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/12/Room2.jpg",
+      "/images/Sell/Antalya/Muratpasa/12/Bathroom.jpg",
+      "/images/Sell/Antalya/Muratpasa/12/Kitchen.jpg",
+      "/images/Sell/Antalya/Muratpasa/12/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/12/Room2.jpg",
     ],
   },
   {
@@ -2110,7 +2110,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2123,10 +2123,10 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/13/Balcony.jpg",
-      "/images/Sell/Antalya/Muratpaşa/13/Bathroom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/13/Kitchen.jpg",
-      "/images/Sell/Antalya/Muratpaşa/13/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/13/Balcony.jpg",
+      "/images/Sell/Antalya/Muratpasa/13/Bathroom.jpg",
+      "/images/Sell/Antalya/Muratpasa/13/Kitchen.jpg",
+      "/images/Sell/Antalya/Muratpasa/13/LivingRoom.jpg",
     ],
   },
   {
@@ -2146,7 +2146,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2159,10 +2159,10 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/14/Balcony.jpg",
-      "/images/Sell/Antalya/Muratpaşa/14/Bathroom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/14/Kitchen.jpg",
-      "/images/Sell/Antalya/Muratpaşa/14/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/14/Balcony.jpg",
+      "/images/Sell/Antalya/Muratpasa/14/Bathroom.jpg",
+      "/images/Sell/Antalya/Muratpasa/14/Kitchen.jpg",
+      "/images/Sell/Antalya/Muratpasa/14/LivingRoom.jpg",
     ],
   },
   {
@@ -2182,7 +2182,7 @@ export const ads: Ad[] = [
       country: "Turkey",
 
       city: "Antalya",
-      district: "Muratpaşa",
+      district: "Muratpasa",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2195,11 +2195,11 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "open",
     images: [
-      "/images/Sell/Antalya/Muratpaşa/15/Balcony.jpg",
-      "/images/Sell/Antalya/Muratpaşa/15/Balcony2.jpg",
-      "/images/Sell/Antalya/Muratpaşa/15/Bathroom.jpg",
-      "/images/Sell/Antalya/Muratpaşa/15/Kitchen.jpg",
-      "/images/Sell/Antalya/Muratpaşa/15/LivingRoom.jpg",
+      "/images/Sell/Antalya/Muratpasa/15/Balcony.jpg",
+      "/images/Sell/Antalya/Muratpasa/15/Balcony2.jpg",
+      "/images/Sell/Antalya/Muratpasa/15/Bathroom.jpg",
+      "/images/Sell/Antalya/Muratpasa/15/Kitchen.jpg",
+      "/images/Sell/Antalya/Muratpasa/15/LivingRoom.jpg",
     ],
   },
   {
@@ -2218,8 +2218,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Ataşehir",
+      city: "Istanbul",
+      district: "Atasehir",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2232,12 +2232,12 @@ export const ads: Ad[] = [
     floorInHouse: 30,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Ataşehir/01/Bathroom.jpg",
-      "/images/Sell/İstanbul/Ataşehir/01/Hol.jpg",
-      "/images/Sell/İstanbul/Ataşehir/01/Kitchen.jpg",
-      "/images/Sell/İstanbul/Ataşehir/01/LivingRoom(1).jpg",
-      "/images/Sell/İstanbul/Ataşehir/01/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Ataşehir/01/View.jpg",
+      "/images/Sell/Istanbul/Atasehir/01/Bathroom.jpg",
+      "/images/Sell/Istanbul/Atasehir/01/Hol.jpg",
+      "/images/Sell/Istanbul/Atasehir/01/Kitchen.jpg",
+      "/images/Sell/Istanbul/Atasehir/01/LivingRoom(1).jpg",
+      "/images/Sell/Istanbul/Atasehir/01/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Atasehir/01/View.jpg",
     ],
   },
   {
@@ -2256,8 +2256,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Ataşehir",
+      city: "Istanbul",
+      district: "Atasehir",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2270,13 +2270,13 @@ export const ads: Ad[] = [
     floorInHouse: 6,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Ataşehir/02/Bathroom.jpg",
-      "/images/Sell/İstanbul/Ataşehir/02/Bedroom.jpg",
-      "/images/Sell/İstanbul/Ataşehir/02/Holl.jpg",
-      "/images/Sell/İstanbul/Ataşehir/02/Holl2.jpg",
-      "/images/Sell/İstanbul/Ataşehir/02/Kitchen.jpg",
-      "/images/Sell/İstanbul/Ataşehir/02/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Ataşehir/02/LivingRoom2.jpg",
+      "/images/Sell/Istanbul/Atasehir/02/Bathroom.jpg",
+      "/images/Sell/Istanbul/Atasehir/02/Bedroom.jpg",
+      "/images/Sell/Istanbul/Atasehir/02/Holl.jpg",
+      "/images/Sell/Istanbul/Atasehir/02/Holl2.jpg",
+      "/images/Sell/Istanbul/Atasehir/02/Kitchen.jpg",
+      "/images/Sell/Istanbul/Atasehir/02/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Atasehir/02/LivingRoom2.jpg",
     ],
   },
   {
@@ -2295,8 +2295,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Ataşehir",
+      city: "Istanbul",
+      district: "Atasehir",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2309,14 +2309,14 @@ export const ads: Ad[] = [
     floorInHouse: 7,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Ataşehir/03/Bathroom.jpg",
-      "/images/Sell/İstanbul/Ataşehir/03/Bedroom.jpg",
-      "/images/Sell/İstanbul/Ataşehir/03/Holl.jpg",
-      "/images/Sell/İstanbul/Ataşehir/03/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Ataşehir/03/Outside.jpg",
-      "/images/Sell/İstanbul/Ataşehir/03/Terrace.jpg",
-      "/images/Sell/İstanbul/Ataşehir/03/UpperRoom.jpg",
-      "/images/Sell/İstanbul/Ataşehir/03/View.jpg",
+      "/images/Sell/Istanbul/Atasehir/03/Bathroom.jpg",
+      "/images/Sell/Istanbul/Atasehir/03/Bedroom.jpg",
+      "/images/Sell/Istanbul/Atasehir/03/Holl.jpg",
+      "/images/Sell/Istanbul/Atasehir/03/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Atasehir/03/Outside.jpg",
+      "/images/Sell/Istanbul/Atasehir/03/Terrace.jpg",
+      "/images/Sell/Istanbul/Atasehir/03/UpperRoom.jpg",
+      "/images/Sell/Istanbul/Atasehir/03/View.jpg",
     ],
   },
   {
@@ -2335,8 +2335,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Ataşehir",
+      city: "Istanbul",
+      district: "Atasehir",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2349,11 +2349,11 @@ export const ads: Ad[] = [
     floorInHouse: 30,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Ataşehir/04/Bathroom.jpg",
-      "/images/Sell/İstanbul/Ataşehir/04/Gym.jpg",
-      "/images/Sell/İstanbul/Ataşehir/04/Pool.jpg",
-      "/images/Sell/İstanbul/Ataşehir/04/Room.jpg",
-      "/images/Sell/İstanbul/Ataşehir/04/Room2.jpg",
+      "/images/Sell/Istanbul/Atasehir/04/Bathroom.jpg",
+      "/images/Sell/Istanbul/Atasehir/04/Gym.jpg",
+      "/images/Sell/Istanbul/Atasehir/04/Pool.jpg",
+      "/images/Sell/Istanbul/Atasehir/04/Room.jpg",
+      "/images/Sell/Istanbul/Atasehir/04/Room2.jpg",
     ],
   },
   {
@@ -2372,8 +2372,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Ataşehir",
+      city: "Istanbul",
+      district: "Atasehir",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2386,11 +2386,11 @@ export const ads: Ad[] = [
     floorInHouse: 12,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Ataşehir/05/Bathroom.jpg",
-      "/images/Sell/İstanbul/Ataşehir/05/Bedroom.jpg",
-      "/images/Sell/İstanbul/Ataşehir/05/Kitchen.jpg",
-      "/images/Sell/İstanbul/Ataşehir/05/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Ataşehir/05/Outdoor.jpg",
+      "/images/Sell/Istanbul/Atasehir/05/Bathroom.jpg",
+      "/images/Sell/Istanbul/Atasehir/05/Bedroom.jpg",
+      "/images/Sell/Istanbul/Atasehir/05/Kitchen.jpg",
+      "/images/Sell/Istanbul/Atasehir/05/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Atasehir/05/Outdoor.jpg",
     ],
   },
   {
@@ -2409,8 +2409,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Bahçelievler",
+      city: "Istanbul",
+      district: "Bahcelievler",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2423,11 +2423,11 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Bahçelievler/01/Bathroom.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/01/Holl.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/01/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/01/LivingRoom2.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/01/Upstairs.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/01/Bathroom.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/01/Holl.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/01/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/01/LivingRoom2.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/01/Upstairs.jpg",
     ],
   },
   {
@@ -2446,8 +2446,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Bahçelievler",
+      city: "Istanbul",
+      district: "Bahcelievler",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2460,11 +2460,11 @@ export const ads: Ad[] = [
     floorInHouse: 20,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Bahçelievler/02/Bathroom.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/02/Bedroom.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/02/Garden.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/02/Kitchen.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/02/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/02/Bathroom.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/02/Bedroom.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/02/Garden.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/02/Kitchen.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/02/LivingRoom.jpg",
     ],
   },
   {
@@ -2483,8 +2483,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Bahçelievler",
+      city: "Istanbul",
+      district: "Bahcelievler",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2497,10 +2497,10 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Bahçelievler/03/Bathroom.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/03/Kitchen.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/03/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/03/Outside.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/03/Bathroom.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/03/Kitchen.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/03/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/03/Outside.jpg",
     ],
   },
   {
@@ -2519,8 +2519,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Bahçelievler",
+      city: "Istanbul",
+      district: "Bahcelievler",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2533,10 +2533,10 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Bahçelievler/04/Garden.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/04/Kitchen.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/04/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/04/Room2.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/04/Garden.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/04/Kitchen.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/04/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/04/Room2.jpg",
     ],
   },
   {
@@ -2555,8 +2555,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Bahçelievler",
+      city: "Istanbul",
+      district: "Bahcelievler",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2569,11 +2569,11 @@ export const ads: Ad[] = [
     floorInHouse: 5,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Bahçelievler/05/Balcony.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/05/Bathroom.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/05/Kitchen.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/05/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Bahçelievler/05/Room2.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/05/Balcony.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/05/Bathroom.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/05/Kitchen.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/05/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Bahcelievler/05/Room2.jpg",
     ],
   },
   {
@@ -2592,8 +2592,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Bakırköy",
+      city: "Istanbul",
+      district: "Bakirkoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2606,11 +2606,11 @@ export const ads: Ad[] = [
     floorInHouse: 3,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Bakırköy/01/Bathroom.jpg",
-      "/images/Sell/İstanbul/Bakırköy/01/Holl.jpg",
-      "/images/Sell/İstanbul/Bakırköy/01/Kitchen.jpg",
-      "/images/Sell/İstanbul/Bakırköy/01/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Bakırköy/01/Outside.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/01/Bathroom.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/01/Holl.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/01/Kitchen.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/01/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/01/Outside.jpg",
     ],
   },
   {
@@ -2629,8 +2629,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Bakırköy",
+      city: "Istanbul",
+      district: "Bakirkoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2643,10 +2643,10 @@ export const ads: Ad[] = [
     floorInHouse: 15,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Bakırköy/02/Balcony.jpg",
-      "/images/Sell/İstanbul/Bakırköy/02/Bathroom.jpg",
-      "/images/Sell/İstanbul/Bakırköy/02/Kitchen.jpg",
-      "/images/Sell/İstanbul/Bakırköy/02/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/02/Balcony.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/02/Bathroom.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/02/Kitchen.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/02/LivingRoom.jpg",
     ],
   },
   {
@@ -2665,8 +2665,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Bakırköy",
+      city: "Istanbul",
+      district: "Bakirkoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2679,10 +2679,10 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "open",
     images: [
-      "/images/Sell/İstanbul/Bakırköy/03/Bathroom.jpg",
-      "/images/Sell/İstanbul/Bakırköy/03/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Bakırköy/03/LivingRoom2.jpg",
-      "/images/Sell/İstanbul/Bakırköy/03/Room2.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/03/Bathroom.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/03/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/03/LivingRoom2.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/03/Room2.jpg",
     ],
   },
   {
@@ -2701,8 +2701,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Bakırköy",
+      city: "Istanbul",
+      district: "Bakirkoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2715,10 +2715,10 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "open",
     images: [
-      "/images/Sell/İstanbul/Bakırköy/04/Bathroom.jpg",
-      "/images/Sell/İstanbul/Bakırköy/04/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Bakırköy/04/LivingRoom2.jpg",
-      "/images/Sell/İstanbul/Bakırköy/04/Room2.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/04/Bathroom.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/04/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/04/LivingRoom2.jpg",
+      "/images/Sell/Istanbul/Bakirkoy/04/Room2.jpg",
     ],
   },
   {
@@ -2737,8 +2737,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Beşiktaş",
+      city: "Istanbul",
+      district: "Besiktas",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2751,13 +2751,13 @@ export const ads: Ad[] = [
     floorInHouse: 7,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Beşiktaş/01/Bathroom.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/01/Bigroom1.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/01/Bigroom2.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/01/Holl.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/01/Kitchen.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/01/Outside.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/01/SmallRoom.jpg",
+      "/images/Sell/Istanbul/Besiktas/01/Bathroom.jpg",
+      "/images/Sell/Istanbul/Besiktas/01/Bigroom1.jpg",
+      "/images/Sell/Istanbul/Besiktas/01/Bigroom2.jpg",
+      "/images/Sell/Istanbul/Besiktas/01/Holl.jpg",
+      "/images/Sell/Istanbul/Besiktas/01/Kitchen.jpg",
+      "/images/Sell/Istanbul/Besiktas/01/Outside.jpg",
+      "/images/Sell/Istanbul/Besiktas/01/SmallRoom.jpg",
     ],
   },
   {
@@ -2776,8 +2776,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Beşiktaş",
+      city: "Istanbul",
+      district: "Besiktas",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2790,12 +2790,12 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Beşiktaş/02/Holl.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/02/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/02/LivingRoom2.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/02/Outdoor.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/02/Outdoor2.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/02/Room2.jpg",
+      "/images/Sell/Istanbul/Besiktas/02/Holl.jpg",
+      "/images/Sell/Istanbul/Besiktas/02/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Besiktas/02/LivingRoom2.jpg",
+      "/images/Sell/Istanbul/Besiktas/02/Outdoor.jpg",
+      "/images/Sell/Istanbul/Besiktas/02/Outdoor2.jpg",
+      "/images/Sell/Istanbul/Besiktas/02/Room2.jpg",
     ],
   },
   {
@@ -2814,8 +2814,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Beşiktaş",
+      city: "Istanbul",
+      district: "Besiktas",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2828,13 +2828,13 @@ export const ads: Ad[] = [
     floorInHouse: 5,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Beşiktaş/03/Bathroom.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/03/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/03/LivingRoom2.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/03/Outside.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/03/Room2.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/03/Room3.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/03/View.jpg",
+      "/images/Sell/Istanbul/Besiktas/03/Bathroom.jpg",
+      "/images/Sell/Istanbul/Besiktas/03/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Besiktas/03/LivingRoom2.jpg",
+      "/images/Sell/Istanbul/Besiktas/03/Outside.jpg",
+      "/images/Sell/Istanbul/Besiktas/03/Room2.jpg",
+      "/images/Sell/Istanbul/Besiktas/03/Room3.jpg",
+      "/images/Sell/Istanbul/Besiktas/03/View.jpg",
     ],
   },
   {
@@ -2853,8 +2853,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Beşiktaş",
+      city: "Istanbul",
+      district: "Besiktas",
     },
     type: "sale",
     propertyType: "apartment",
@@ -2867,11 +2867,11 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Beşiktaş/04/Bathroom.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/04/Kitchen.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/04/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/04/Room2.jpg",
-      "/images/Sell/İstanbul/Beşiktaş/04/Room3.jpg",
+      "/images/Sell/Istanbul/Besiktas/04/Bathroom.jpg",
+      "/images/Sell/Istanbul/Besiktas/04/Kitchen.jpg",
+      "/images/Sell/Istanbul/Besiktas/04/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Besiktas/04/Room2.jpg",
+      "/images/Sell/Istanbul/Besiktas/04/Room3.jpg",
     ],
   },
   {
@@ -2890,7 +2890,7 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
+      city: "Istanbul",
       district: "Beykoz",
     },
     type: "sale",
@@ -2904,10 +2904,10 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/İstanbul/Beykoz/01/In.jpg",
-      "/images/Sell/İstanbul/Beykoz/01/Out.jpg",
-      "/images/Sell/İstanbul/Beykoz/01/Out2.jpg",
-      "/images/Sell/İstanbul/Beykoz/01/Out3.jpg",
+      "/images/Sell/Istanbul/Beykoz/01/In.jpg",
+      "/images/Sell/Istanbul/Beykoz/01/Out.jpg",
+      "/images/Sell/Istanbul/Beykoz/01/Out2.jpg",
+      "/images/Sell/Istanbul/Beykoz/01/Out3.jpg",
     ],
   },
   {
@@ -2926,7 +2926,7 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
+      city: "Istanbul",
       district: "Beykoz",
     },
     type: "sale",
@@ -2940,12 +2940,12 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/İstanbul/Beykoz/02/Bathroom.jpg",
-      "/images/Sell/İstanbul/Beykoz/02/Bedroom.jpg",
-      "/images/Sell/İstanbul/Beykoz/02/Garden.jpg",
-      "/images/Sell/İstanbul/Beykoz/02/Kithchen.jpg",
-      "/images/Sell/İstanbul/Beykoz/02/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Beykoz/02/Room2.jpg",
+      "/images/Sell/Istanbul/Beykoz/02/Bathroom.jpg",
+      "/images/Sell/Istanbul/Beykoz/02/Bedroom.jpg",
+      "/images/Sell/Istanbul/Beykoz/02/Garden.jpg",
+      "/images/Sell/Istanbul/Beykoz/02/Kithchen.jpg",
+      "/images/Sell/Istanbul/Beykoz/02/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Beykoz/02/Room2.jpg",
     ],
   },
   {
@@ -2964,7 +2964,7 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
+      city: "Istanbul",
       district: "Beykoz",
     },
     type: "sale",
@@ -2978,13 +2978,13 @@ export const ads: Ad[] = [
     floorInHouse: 5,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Beykoz/03/Kitchen.jpg",
-      "/images/Sell/İstanbul/Beykoz/03/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Beykoz/03/Outside.jpg",
-      "/images/Sell/İstanbul/Beykoz/03/Room2.jpg",
-      "/images/Sell/İstanbul/Beykoz/03/Upstairs.jpg",
-      "/images/Sell/İstanbul/Beykoz/03/View(1).jpg",
-      "/images/Sell/İstanbul/Beykoz/03/View.jpg",
+      "/images/Sell/Istanbul/Beykoz/03/Kitchen.jpg",
+      "/images/Sell/Istanbul/Beykoz/03/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Beykoz/03/Outside.jpg",
+      "/images/Sell/Istanbul/Beykoz/03/Room2.jpg",
+      "/images/Sell/Istanbul/Beykoz/03/Upstairs.jpg",
+      "/images/Sell/Istanbul/Beykoz/03/View(1).jpg",
+      "/images/Sell/Istanbul/Beykoz/03/View.jpg",
     ],
   },
   {
@@ -3003,7 +3003,7 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
+      city: "Istanbul",
       district: "Beykoz",
     },
     type: "sale",
@@ -3017,11 +3017,11 @@ export const ads: Ad[] = [
     floorInHouse: null,
     parking: "open",
     images: [
-      "/images/Sell/İstanbul/Beykoz/04/Kitchen.jpg",
-      "/images/Sell/İstanbul/Beykoz/04/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Beykoz/04/Outside.jpg",
-      "/images/Sell/İstanbul/Beykoz/04/Outside2.jpg",
-      "/images/Sell/İstanbul/Beykoz/04/Pool.jpg",
+      "/images/Sell/Istanbul/Beykoz/04/Kitchen.jpg",
+      "/images/Sell/Istanbul/Beykoz/04/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Beykoz/04/Outside.jpg",
+      "/images/Sell/Istanbul/Beykoz/04/Outside2.jpg",
+      "/images/Sell/Istanbul/Beykoz/04/Pool.jpg",
     ],
   },
   {
@@ -3040,8 +3040,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3054,12 +3054,12 @@ export const ads: Ad[] = [
     floorInHouse: 13,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/01/Bathroom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/01/Kitchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/01/LivingRoom1.jpg",
-      "/images/Sell/İstanbul/Kadıköy/01/LivingRoom2.jpg",
-      "/images/Sell/İstanbul/Kadıköy/01/Room2.jpg",
-      "/images/Sell/İstanbul/Kadıköy/01/View.jpg",
+      "/images/Sell/Istanbul/Kadikoy/01/Bathroom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/01/Kitchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/01/LivingRoom1.jpg",
+      "/images/Sell/Istanbul/Kadikoy/01/LivingRoom2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/01/Room2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/01/View.jpg",
     ],
   },
   {
@@ -3078,8 +3078,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3092,13 +3092,13 @@ export const ads: Ad[] = [
     floorInHouse: 9,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/02/Holl.jpg",
-      "/images/Sell/İstanbul/Kadıköy/02/Holl2.jpg",
-      "/images/Sell/İstanbul/Kadıköy/02/Kitchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/02/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/02/Ourdoor2.jpg",
-      "/images/Sell/İstanbul/Kadıköy/02/Outside.jpg",
-      "/images/Sell/İstanbul/Kadıköy/02/Plan.jpg",
+      "/images/Sell/Istanbul/Kadikoy/02/Holl.jpg",
+      "/images/Sell/Istanbul/Kadikoy/02/Holl2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/02/Kitchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/02/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/02/Ourdoor2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/02/Outside.jpg",
+      "/images/Sell/Istanbul/Kadikoy/02/Plan.jpg",
     ],
   },
   {
@@ -3117,8 +3117,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3131,11 +3131,11 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/03/Bathroom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/03/Bathroom2.jpg",
-      "/images/Sell/İstanbul/Kadıköy/03/Holl.jpg",
-      "/images/Sell/İstanbul/Kadıköy/03/Kitchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/03/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/03/Bathroom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/03/Bathroom2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/03/Holl.jpg",
+      "/images/Sell/Istanbul/Kadikoy/03/Kitchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/03/LivingRoom.jpg",
     ],
   },
   {
@@ -3154,8 +3154,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3168,14 +3168,14 @@ export const ads: Ad[] = [
     floorInHouse: 8,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/04/Balcony.jpg",
-      "/images/Sell/İstanbul/Kadıköy/04/Bathroom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/04/Bathroom2.jpg",
-      "/images/Sell/İstanbul/Kadıköy/04/Kitchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/04/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/04/Outside.jpg",
-      "/images/Sell/İstanbul/Kadıköy/04/Room2.jpg",
-      "/images/Sell/İstanbul/Kadıköy/04/Room3.jpg",
+      "/images/Sell/Istanbul/Kadikoy/04/Balcony.jpg",
+      "/images/Sell/Istanbul/Kadikoy/04/Bathroom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/04/Bathroom2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/04/Kitchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/04/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/04/Outside.jpg",
+      "/images/Sell/Istanbul/Kadikoy/04/Room2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/04/Room3.jpg",
     ],
   },
   {
@@ -3194,8 +3194,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3208,11 +3208,11 @@ export const ads: Ad[] = [
     floorInHouse: 8,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/05/Balcony.jpg",
-      "/images/Sell/İstanbul/Kadıköy/05/Bathroom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/05/Kitchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/05/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/05/LivingRoom2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/05/Balcony.jpg",
+      "/images/Sell/Istanbul/Kadikoy/05/Bathroom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/05/Kitchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/05/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/05/LivingRoom2.jpg",
     ],
   },
   {
@@ -3231,8 +3231,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3245,11 +3245,11 @@ export const ads: Ad[] = [
     floorInHouse: 14,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/06/Holl.jpg",
-      "/images/Sell/İstanbul/Kadıköy/06/Kİtchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/06/Room.jpg",
-      "/images/Sell/İstanbul/Kadıköy/06/Room2.jpg",
-      "/images/Sell/İstanbul/Kadıköy/06/Room3.jpg",
+      "/images/Sell/Istanbul/Kadikoy/06/Holl.jpg",
+      "/images/Sell/Istanbul/Kadikoy/06/Kİtchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/06/Room.jpg",
+      "/images/Sell/Istanbul/Kadikoy/06/Room2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/06/Room3.jpg",
     ],
   },
   {
@@ -3268,8 +3268,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3282,11 +3282,11 @@ export const ads: Ad[] = [
     floorInHouse: 15,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/07/Bathroom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/07/Bathroom2.jpg",
-      "/images/Sell/İstanbul/Kadıköy/07/Kitchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/07/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/07/Room2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/07/Bathroom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/07/Bathroom2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/07/Kitchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/07/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/07/Room2.jpg",
     ],
   },
   {
@@ -3305,8 +3305,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3319,12 +3319,12 @@ export const ads: Ad[] = [
     floorInHouse: 10,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/08/Bathromm.jpg",
-      "/images/Sell/İstanbul/Kadıköy/08/Garden.jpg",
-      "/images/Sell/İstanbul/Kadıköy/08/Holl.jpg",
-      "/images/Sell/İstanbul/Kadıköy/08/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/08/LivingRoom2.jpg",
-      "/images/Sell/İstanbul/Kadıköy/08/Outside.jpg",
+      "/images/Sell/Istanbul/Kadikoy/08/Bathromm.jpg",
+      "/images/Sell/Istanbul/Kadikoy/08/Garden.jpg",
+      "/images/Sell/Istanbul/Kadikoy/08/Holl.jpg",
+      "/images/Sell/Istanbul/Kadikoy/08/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/08/LivingRoom2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/08/Outside.jpg",
     ],
   },
   {
@@ -3343,8 +3343,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3357,11 +3357,11 @@ export const ads: Ad[] = [
     floorInHouse: 12,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/09/Bathroom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/09/Holl.jpg",
-      "/images/Sell/İstanbul/Kadıköy/09/Kitchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/09/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/09/Room2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/09/Bathroom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/09/Holl.jpg",
+      "/images/Sell/Istanbul/Kadikoy/09/Kitchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/09/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/09/Room2.jpg",
     ],
   },
   {
@@ -3380,8 +3380,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3394,10 +3394,10 @@ export const ads: Ad[] = [
     floorInHouse: 12,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/10/Bathroom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/10/Holl.jpg",
-      "/images/Sell/İstanbul/Kadıköy/10/Kitchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/10/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/10/Bathroom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/10/Holl.jpg",
+      "/images/Sell/Istanbul/Kadikoy/10/Kitchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/10/LivingRoom.jpg",
     ],
   },
   {
@@ -3416,8 +3416,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3430,13 +3430,13 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "open",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/11/Bathroom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/11/Holl.jpg",
-      "/images/Sell/İstanbul/Kadıköy/11/Kitchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/11/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/11/Room2.jpg",
-      "/images/Sell/İstanbul/Kadıköy/11/Terrace.jpg",
-      "/images/Sell/İstanbul/Kadıköy/11/Upstairs.jpg",
+      "/images/Sell/Istanbul/Kadikoy/11/Bathroom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/11/Holl.jpg",
+      "/images/Sell/Istanbul/Kadikoy/11/Kitchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/11/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/11/Room2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/11/Terrace.jpg",
+      "/images/Sell/Istanbul/Kadikoy/11/Upstairs.jpg",
     ],
   },
   {
@@ -3455,8 +3455,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3469,10 +3469,10 @@ export const ads: Ad[] = [
     floorInHouse: 11,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/12/Bathroom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/12/Kitchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/12/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/12/Room2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/12/Bathroom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/12/Kitchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/12/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/12/Room2.jpg",
     ],
   },
   {
@@ -3491,8 +3491,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3505,11 +3505,11 @@ export const ads: Ad[] = [
     floorInHouse: 11,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/13/Bathroom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/13/Kitchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/13/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/13/Outside.jpg",
-      "/images/Sell/İstanbul/Kadıköy/13/Room2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/13/Bathroom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/13/Kitchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/13/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/13/Outside.jpg",
+      "/images/Sell/Istanbul/Kadikoy/13/Room2.jpg",
     ],
   },
   {
@@ -3528,8 +3528,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3542,10 +3542,10 @@ export const ads: Ad[] = [
     floorInHouse: 15,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/14/Bathroom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/14/Kitchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/14/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/14/Room2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/14/Bathroom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/14/Kitchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/14/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/14/Room2.jpg",
     ],
   },
   {
@@ -3564,8 +3564,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3578,14 +3578,14 @@ export const ads: Ad[] = [
     floorInHouse: 8,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/15/Bathroom (1).jpg",
-      "/images/Sell/İstanbul/Kadıköy/15/Bathroom(1).jpg",
-      "/images/Sell/İstanbul/Kadıköy/15/Bathroom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/15/Holl.jpg",
-      "/images/Sell/İstanbul/Kadıköy/15/Kitchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/15/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/15/Outdoor.jpg",
-      "/images/Sell/İstanbul/Kadıköy/15/Room2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/15/Bathroom (1).jpg",
+      "/images/Sell/Istanbul/Kadikoy/15/Bathroom(1).jpg",
+      "/images/Sell/Istanbul/Kadikoy/15/Bathroom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/15/Holl.jpg",
+      "/images/Sell/Istanbul/Kadikoy/15/Kitchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/15/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/15/Outdoor.jpg",
+      "/images/Sell/Istanbul/Kadikoy/15/Room2.jpg",
     ],
   },
   {
@@ -3604,8 +3604,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Kadıköy",
+      city: "Istanbul",
+      district: "Kadikoy",
     },
     type: "sale",
     propertyType: "apartment",
@@ -3618,11 +3618,11 @@ export const ads: Ad[] = [
     floorInHouse: 24,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Kadıköy/16/Bathroom.jpg",
-      "/images/Sell/İstanbul/Kadıköy/16/Kitchen.jpg",
-      "/images/Sell/İstanbul/Kadıköy/16/LivingRoom1.jpg",
-      "/images/Sell/İstanbul/Kadıköy/16/LivingRoom2.jpg",
-      "/images/Sell/İstanbul/Kadıköy/16/Room2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/16/Bathroom.jpg",
+      "/images/Sell/Istanbul/Kadikoy/16/Kitchen.jpg",
+      "/images/Sell/Istanbul/Kadikoy/16/LivingRoom1.jpg",
+      "/images/Sell/Istanbul/Kadikoy/16/LivingRoom2.jpg",
+      "/images/Sell/Istanbul/Kadikoy/16/Room2.jpg",
     ],
   },
   {
@@ -3641,7 +3641,7 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
+      city: "Istanbul",
       district: "Maltepe",
     },
     type: "sale",
@@ -3655,10 +3655,10 @@ export const ads: Ad[] = [
     floorInHouse: 28,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Maltepe/01/Bathroom.jpg",
-      "/images/Sell/İstanbul/Maltepe/01/Kitchen.jpg",
-      "/images/Sell/İstanbul/Maltepe/01/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Maltepe/01/Room2.jpg",
+      "/images/Sell/Istanbul/Maltepe/01/Bathroom.jpg",
+      "/images/Sell/Istanbul/Maltepe/01/Kitchen.jpg",
+      "/images/Sell/Istanbul/Maltepe/01/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Maltepe/01/Room2.jpg",
     ],
   },
   {
@@ -3677,7 +3677,7 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
+      city: "Istanbul",
       district: "Maltepe",
     },
     type: "sale",
@@ -3691,11 +3691,11 @@ export const ads: Ad[] = [
     floorInHouse: 5,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Maltepe/02/Barthroom2.jpg",
-      "/images/Sell/İstanbul/Maltepe/02/Bathroom.jpg",
-      "/images/Sell/İstanbul/Maltepe/02/Kitchen.jpg",
-      "/images/Sell/İstanbul/Maltepe/02/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Maltepe/02/Room2.jpg",
+      "/images/Sell/Istanbul/Maltepe/02/Barthroom2.jpg",
+      "/images/Sell/Istanbul/Maltepe/02/Bathroom.jpg",
+      "/images/Sell/Istanbul/Maltepe/02/Kitchen.jpg",
+      "/images/Sell/Istanbul/Maltepe/02/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Maltepe/02/Room2.jpg",
     ],
   },
   {
@@ -3714,7 +3714,7 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
+      city: "Istanbul",
       district: "Maltepe",
     },
     type: "sale",
@@ -3728,10 +3728,10 @@ export const ads: Ad[] = [
     floorInHouse: 5,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Maltepe/03/Bathroom.jpg",
-      "/images/Sell/İstanbul/Maltepe/03/Holl.jpg",
-      "/images/Sell/İstanbul/Maltepe/03/Kitchen.jpg",
-      "/images/Sell/İstanbul/Maltepe/03/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Maltepe/03/Bathroom.jpg",
+      "/images/Sell/Istanbul/Maltepe/03/Holl.jpg",
+      "/images/Sell/Istanbul/Maltepe/03/Kitchen.jpg",
+      "/images/Sell/Istanbul/Maltepe/03/LivingRoom.jpg",
     ],
   },
   {
@@ -3750,7 +3750,7 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
+      city: "Istanbul",
       district: "Maltepe",
     },
     type: "sale",
@@ -3764,10 +3764,10 @@ export const ads: Ad[] = [
     floorInHouse: 26,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Maltepe/04/Balcony.jpg",
-      "/images/Sell/İstanbul/Maltepe/04/Bathroom.jpg",
-      "/images/Sell/İstanbul/Maltepe/04/Holl.jpg",
-      "/images/Sell/İstanbul/Maltepe/04/Kitchen.jpg",
+      "/images/Sell/Istanbul/Maltepe/04/Balcony.jpg",
+      "/images/Sell/Istanbul/Maltepe/04/Bathroom.jpg",
+      "/images/Sell/Istanbul/Maltepe/04/Holl.jpg",
+      "/images/Sell/Istanbul/Maltepe/04/Kitchen.jpg",
     ],
   },
   {
@@ -3786,7 +3786,7 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
+      city: "Istanbul",
       district: "Maltepe",
     },
     type: "sale",
@@ -3800,10 +3800,10 @@ export const ads: Ad[] = [
     floorInHouse: 24,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Maltepe/05/Bathroom.jpg",
-      "/images/Sell/İstanbul/Maltepe/05/Kitchen.jpg",
-      "/images/Sell/İstanbul/Maltepe/05/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Maltepe/05/LivingRoom2.jpg",
+      "/images/Sell/Istanbul/Maltepe/05/Bathroom.jpg",
+      "/images/Sell/Istanbul/Maltepe/05/Kitchen.jpg",
+      "/images/Sell/Istanbul/Maltepe/05/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Maltepe/05/LivingRoom2.jpg",
     ],
   },
   {
@@ -3822,7 +3822,7 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
+      city: "Istanbul",
       district: "Maltepe",
     },
     type: "sale",
@@ -3836,10 +3836,10 @@ export const ads: Ad[] = [
     floorInHouse: 7,
     parking: "open",
     images: [
-      "/images/Sell/İstanbul/Maltepe/06/Bathroom.jpg",
-      "/images/Sell/İstanbul/Maltepe/06/Kitchen.jpg",
-      "/images/Sell/İstanbul/Maltepe/06/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Maltepe/06/Room2.jpg",
+      "/images/Sell/Istanbul/Maltepe/06/Bathroom.jpg",
+      "/images/Sell/Istanbul/Maltepe/06/Kitchen.jpg",
+      "/images/Sell/Istanbul/Maltepe/06/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Maltepe/06/Room2.jpg",
     ],
   },
   {
@@ -3858,7 +3858,7 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
+      city: "Istanbul",
       district: "Maltepe",
     },
     type: "sale",
@@ -3872,10 +3872,10 @@ export const ads: Ad[] = [
     floorInHouse: 5,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Maltepe/07/Bathroom.jpg",
-      "/images/Sell/İstanbul/Maltepe/07/Holl.jpg",
-      "/images/Sell/İstanbul/Maltepe/07/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Maltepe/07/View.jpg",
+      "/images/Sell/Istanbul/Maltepe/07/Bathroom.jpg",
+      "/images/Sell/Istanbul/Maltepe/07/Holl.jpg",
+      "/images/Sell/Istanbul/Maltepe/07/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Maltepe/07/View.jpg",
     ],
   },
   {
@@ -3894,7 +3894,7 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
+      city: "Istanbul",
       district: "Maltepe",
     },
     type: "sale",
@@ -3908,12 +3908,12 @@ export const ads: Ad[] = [
     floorInHouse: 4,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Maltepe/08/Balcony.jpg",
-      "/images/Sell/İstanbul/Maltepe/08/Bathroom.jpg",
-      "/images/Sell/İstanbul/Maltepe/08/Holl.jpg",
-      "/images/Sell/İstanbul/Maltepe/08/Kitchen.jpg",
-      "/images/Sell/İstanbul/Maltepe/08/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Maltepe/08/Room2.jpg",
+      "/images/Sell/Istanbul/Maltepe/08/Balcony.jpg",
+      "/images/Sell/Istanbul/Maltepe/08/Bathroom.jpg",
+      "/images/Sell/Istanbul/Maltepe/08/Holl.jpg",
+      "/images/Sell/Istanbul/Maltepe/08/Kitchen.jpg",
+      "/images/Sell/Istanbul/Maltepe/08/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Maltepe/08/Room2.jpg",
     ],
   },
   {
@@ -3932,7 +3932,7 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
+      city: "Istanbul",
       district: "Maltepe",
     },
     type: "sale",
@@ -3946,11 +3946,11 @@ export const ads: Ad[] = [
     floorInHouse: 5,
     parking: "open",
     images: [
-      "/images/Sell/İstanbul/Maltepe/09/Balcony.jpg",
-      "/images/Sell/İstanbul/Maltepe/09/Holl.jpg",
-      "/images/Sell/İstanbul/Maltepe/09/Kitchen.jpg",
-      "/images/Sell/İstanbul/Maltepe/09/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Maltepe/09/Room2.jpg",
+      "/images/Sell/Istanbul/Maltepe/09/Balcony.jpg",
+      "/images/Sell/Istanbul/Maltepe/09/Holl.jpg",
+      "/images/Sell/Istanbul/Maltepe/09/Kitchen.jpg",
+      "/images/Sell/Istanbul/Maltepe/09/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Maltepe/09/Room2.jpg",
     ],
   },
   {
@@ -3969,7 +3969,7 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
+      city: "Istanbul",
       district: "Maltepe",
     },
     type: "sale",
@@ -3983,10 +3983,10 @@ export const ads: Ad[] = [
     floorInHouse: 14,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Maltepe/10/Bathroom.jpg",
-      "/images/Sell/İstanbul/Maltepe/10/Kitchen.jpg",
-      "/images/Sell/İstanbul/Maltepe/10/livingRoom.jpg",
-      "/images/Sell/İstanbul/Maltepe/10/View.jpg",
+      "/images/Sell/Istanbul/Maltepe/10/Bathroom.jpg",
+      "/images/Sell/Istanbul/Maltepe/10/Kitchen.jpg",
+      "/images/Sell/Istanbul/Maltepe/10/livingRoom.jpg",
+      "/images/Sell/Istanbul/Maltepe/10/View.jpg",
     ],
   },
   {
@@ -4005,8 +4005,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Sarıyer",
+      city: "Istanbul",
+      district: "Sariyer",
     },
     type: "sale",
     propertyType: "apartment",
@@ -4019,11 +4019,11 @@ export const ads: Ad[] = [
     floorInHouse: 3,
     parking: "open",
     images: [
-      "/images/Sell/İstanbul/Sarıyer/01/Garden.jpg",
-      "/images/Sell/İstanbul/Sarıyer/01/Kitchen.jpg",
-      "/images/Sell/İstanbul/Sarıyer/01/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Sarıyer/01/Room2.jpg",
-      "/images/Sell/İstanbul/Sarıyer/01/Stairs.jpg",
+      "/images/Sell/Istanbul/Sariyer/01/Garden.jpg",
+      "/images/Sell/Istanbul/Sariyer/01/Kitchen.jpg",
+      "/images/Sell/Istanbul/Sariyer/01/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Sariyer/01/Room2.jpg",
+      "/images/Sell/Istanbul/Sariyer/01/Stairs.jpg",
     ],
   },
   {
@@ -4042,8 +4042,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Sarıyer",
+      city: "Istanbul",
+      district: "Sariyer",
     },
     type: "sale",
     propertyType: "apartment",
@@ -4056,11 +4056,11 @@ export const ads: Ad[] = [
     floorInHouse: 6,
     parking: "open",
     images: [
-      "/images/Sell/İstanbul/Sarıyer/02/Bathroom.jpg",
-      "/images/Sell/İstanbul/Sarıyer/02/Kitchen.jpg",
-      "/images/Sell/İstanbul/Sarıyer/02/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Sarıyer/02/Outside.jpg",
-      "/images/Sell/İstanbul/Sarıyer/02/Room2.jpg",
+      "/images/Sell/Istanbul/Sariyer/02/Bathroom.jpg",
+      "/images/Sell/Istanbul/Sariyer/02/Kitchen.jpg",
+      "/images/Sell/Istanbul/Sariyer/02/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Sariyer/02/Outside.jpg",
+      "/images/Sell/Istanbul/Sariyer/02/Room2.jpg",
     ],
   },
   {
@@ -4079,8 +4079,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Sarıyer",
+      city: "Istanbul",
+      district: "Sariyer",
     },
     type: "sale",
     propertyType: "apartment",
@@ -4093,11 +4093,11 @@ export const ads: Ad[] = [
     floorInHouse: 3,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Sarıyer/03/Bathroom.jpg",
-      "/images/Sell/İstanbul/Sarıyer/03/Kitchen.jpg",
-      "/images/Sell/İstanbul/Sarıyer/03/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Sarıyer/03/Room2.jpg",
-      "/images/Sell/İstanbul/Sarıyer/03/Room3.jpg",
+      "/images/Sell/Istanbul/Sariyer/03/Bathroom.jpg",
+      "/images/Sell/Istanbul/Sariyer/03/Kitchen.jpg",
+      "/images/Sell/Istanbul/Sariyer/03/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Sariyer/03/Room2.jpg",
+      "/images/Sell/Istanbul/Sariyer/03/Room3.jpg",
     ],
   },
   {
@@ -4116,8 +4116,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Sarıyer",
+      city: "Istanbul",
+      district: "Sariyer",
     },
     type: "sale",
     propertyType: "apartment",
@@ -4130,10 +4130,10 @@ export const ads: Ad[] = [
     floorInHouse: 30,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Sarıyer/04/Bathroom1.jpg",
-      "/images/Sell/İstanbul/Sarıyer/04/Bathroom2.jpg",
-      "/images/Sell/İstanbul/Sarıyer/04/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Sarıyer/04/Room2.jpg",
+      "/images/Sell/Istanbul/Sariyer/04/Bathroom1.jpg",
+      "/images/Sell/Istanbul/Sariyer/04/Bathroom2.jpg",
+      "/images/Sell/Istanbul/Sariyer/04/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Sariyer/04/Room2.jpg",
     ],
   },
   {
@@ -4152,8 +4152,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Sarıyer",
+      city: "Istanbul",
+      district: "Sariyer",
     },
     type: "sale",
     propertyType: "apartment",
@@ -4166,9 +4166,9 @@ export const ads: Ad[] = [
     floorInHouse: 15,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Sarıyer/05/Balcony.jpg",
-      "/images/Sell/İstanbul/Sarıyer/05/Bathroom.jpg",
-      "/images/Sell/İstanbul/Sarıyer/05/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Sariyer/05/Balcony.jpg",
+      "/images/Sell/Istanbul/Sariyer/05/Bathroom.jpg",
+      "/images/Sell/Istanbul/Sariyer/05/LivingRoom.jpg",
     ],
   },
   {
@@ -4187,8 +4187,8 @@ export const ads: Ad[] = [
     location: {
       country: "Turkey",
 
-      city: "İstanbul",
-      district: "Sarıyer",
+      city: "Istanbul",
+      district: "Sariyer",
     },
     type: "sale",
     propertyType: "apartment",
@@ -4201,12 +4201,12 @@ export const ads: Ad[] = [
     floorInHouse: 8,
     parking: "closed",
     images: [
-      "/images/Sell/İstanbul/Sarıyer/06/Bathroom.jpg",
-      "/images/Sell/İstanbul/Sarıyer/06/Kitchen.jpg",
-      "/images/Sell/İstanbul/Sarıyer/06/LivingRoom(1).jpg",
-      "/images/Sell/İstanbul/Sarıyer/06/LivingRoom.jpg",
-      "/images/Sell/İstanbul/Sarıyer/06/Room2(1).jpg",
-      "/images/Sell/İstanbul/Sarıyer/06/Room2.jpg",
+      "/images/Sell/Istanbul/Sariyer/06/Bathroom.jpg",
+      "/images/Sell/Istanbul/Sariyer/06/Kitchen.jpg",
+      "/images/Sell/Istanbul/Sariyer/06/LivingRoom(1).jpg",
+      "/images/Sell/Istanbul/Sariyer/06/LivingRoom.jpg",
+      "/images/Sell/Istanbul/Sariyer/06/Room2(1).jpg",
+      "/images/Sell/Istanbul/Sariyer/06/Room2.jpg",
     ],
   },
   {
