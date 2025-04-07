@@ -109,7 +109,8 @@
       margin-bottom: 20px;
       cursor: pointer;
 
-      div {
+      button {
+        border: none;
         padding: 5px 10px;
         border-radius: 5px;
         transition: all 0.3s ease;
@@ -144,11 +145,13 @@
 
 @media (max-width: 900px){
   .main {
-    margin-top: 20px;
+    margin-top: 0px;
     font-size: 0.9rem;
     .article {
-      width: 80%;
-      padding: 30px;
+      box-shadow: none;
+
+      width: 100%;
+      padding: 15px;
       /* Стили для правильного отображения Markdown-контента */
       p {
         margin-bottom: .5em !important;
@@ -170,10 +173,10 @@
       }
 
       .languageSwitcher {
-        gap: 10px;
+        gap: 30px;
         margin-bottom: 0px;
   
-        div {
+        button {
           padding: 10px 15px;
           border-radius: 5px;
         }

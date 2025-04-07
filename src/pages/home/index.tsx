@@ -95,7 +95,11 @@ export default function Home({
           {lang === "ru" ? (
             <video
               className={styles.video}
-              src={getImageUrl("/videos/new.webm")}
+              src={
+                // getImageUrl(
+                "full.webm"
+              // )
+            }
               loop
               autoPlay
               muted

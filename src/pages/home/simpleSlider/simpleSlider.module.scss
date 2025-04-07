@@ -162,7 +162,7 @@
   display: block;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1050px) {
   .sliderWrapper {
     width: 900px;
     position: relative;
@@ -203,7 +203,6 @@
 
     .adCard {
       .cardDescription {
-        padding: 10px 10px;
 
         .leftDesc {
           .title {
@@ -221,6 +220,14 @@
 }
 
 @media (max-width: 600px) {
+
+  .header {
+    padding: 20px 0;
+
+    &:after {
+      display: none !important;
+    }
+  }
   .sliderWrapper {
     width: 400px;
     position: relative;

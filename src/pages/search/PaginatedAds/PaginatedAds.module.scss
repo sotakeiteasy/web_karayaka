@@ -150,3 +150,25 @@
 .hidden {
   display: none;
 }
+
+@media (max-width: 800px) {
+
+  .adsList {
+    align-items: center;
+  }
+
+  .adCard {
+    flex-direction: column !important;
+    height: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+
+    .adCardImage {
+      width: 100% !important;
+    }
+    
+    a {
+      width: 100% !important;
+    }
+  }
+}

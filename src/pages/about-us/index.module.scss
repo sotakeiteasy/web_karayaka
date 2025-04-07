@@ -211,27 +211,24 @@
 @media (max-width: 900px){
   .main {
     .sloganBlock {
-      width: 100%;
-      margin-bottom: 40px;
-      height: 300px;
+      margin-bottom: 10px;
       .slogan {
         top: 30px;
-        left: 50px;
-        p {
-          font-size: 2.5rem;
-        }
+        left: 20px;
       }
     }
   
     header {
-      width: 90%;
+      width: 100%;
+      box-shadow: none;
       padding: 20px;
-      margin-bottom: 50px;
+      margin-bottom: 10px;
+
       h1 {
         margin-bottom: 10px;
-        font-size: 2rem;
       }
     }
+
     .banner {
       height: 300px;
       margin-bottom: 50px;
@@ -256,12 +253,14 @@
   
     .infoBlock {
       flex-direction: column;
-      width: 90%;
+      width: 100%;
       margin-left: 40px;
       margin-right: 40px;
       margin-bottom: 20px;
   
       .faq {
+        border-radius: 0;
+
         flex-direction: column;
         width: 100%;
         h2 {
@@ -270,8 +269,24 @@
       }
   
       .answerBlock {
+        border-radius: 0;
+        box-shadow: none;
+
         width: 100%;
       }
     }
   }
+}
+
+@media (max-width: 600px) {
+  .stats {
+    flex-direction: column;
+
+    section {
+      margin: 10px 20px !important;
+      width: 70% !important;
+      min-height: 90% !important;
+    }
+  }
+
 }

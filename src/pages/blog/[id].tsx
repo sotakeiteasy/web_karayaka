@@ -87,16 +87,16 @@ export default function Post({ postData, baseTags }: PostProps) {
           <Date dateString={localizedPostData.date} />
           <br />
           <div className={styles.languageSwitcher}>
-            <div className={lang === "ru" ? styles.activeLocale : ""}>
+            <button className={lang === "ru" ? styles.activeLocale : ""}>
               <LanguageSwitcher lang="ru">
                 RU
               </LanguageSwitcher>
-            </div>
-            <div className={lang === "en" ? styles.activeLocale : ""}>
+            </button>
+            <button className={lang === "en" ? styles.activeLocale : ""}>
               <LanguageSwitcher lang="en">
                 TR
               </LanguageSwitcher>
-            </div>
+            </button>
           </div>
           <br />
           {localizedPostData.contentHtml && (

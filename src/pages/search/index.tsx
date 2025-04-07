@@ -404,6 +404,33 @@ export default function Search({ metaTags }: SearchPageProps) {
             />
           </div>
 
+
+          <div className={styles.filter}>
+            <label htmlFor="floor-input">{t("search.filters.floor")}</label>
+            <Select
+              inputId="floor-input"
+              id="floor"
+              name="floor"
+              value={FloorOptions.find(
+                (option) =>
+                  option.value === (filter.floor ? String(filter.floor) : "")
+              )}
+              onChange={(newValue) => {
+                const selectedOption = newValue as SelectOption;
+                handleFilterChange({
+                  target: {
+                    name: "floor",
+                    value: selectedOption?.value
+                      ? Number(selectedOption.value)
+                      : undefined,
+                  },
+                });
+              }}
+              options={FloorOptions}
+              classNamePrefix="react-select"
+            />
+          </div>
+
           <div className={styles.filterRow}>
             <div className={styles.filter}>
               <label htmlFor="minPrice">{t("search.filters.priceFrom")}</label>
@@ -484,33 +511,6 @@ export default function Search({ metaTags }: SearchPageProps) {
                 }
               />
             </div>
-          </div>
-
-          <div className={styles.filter}>
-            <label htmlFor="floor-input">{t("search.filters.floor")}</label>
-            <Select
-              inputId="floor-input"
-              id="floor"
-              name="floor"
-              value={FloorOptions.find(
-                (option) =>
-                  option.value === (filter.floor ? String(filter.floor) : "")
-              )}
-              onChange={(newValue) => {
-                const selectedOption = newValue as SelectOption;
-                handleFilterChange({
-                  target: {
-                    name: "floor",
-                    value: selectedOption?.value
-                      ? Number(selectedOption.value)
-                      : undefined,
-                  },
-                });
-              }}
-              options={FloorOptions}
-              isSearchable={false}
-              classNamePrefix="react-select"
-            />
           </div>
 
           <div className={styles.checkboxGroup}>

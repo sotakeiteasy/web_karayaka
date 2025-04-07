@@ -63,7 +63,7 @@ export default function SimpleSlider({
     // pauseOnHover: true
     responsive: [
       {
-        breakpoint: 1280,
+        breakpoint: 1050,
         settings: {
           slidesToShow: 3,
           speed: 200,

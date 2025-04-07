@@ -43,7 +43,7 @@ export default function CustomSlider({
   };
 
   return (
-    <div style={{ width: "360px" }}>
+    <div>
       <Slider {...settings}>
         {ad?.images.map((image, index) => (
           <Image
