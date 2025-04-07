@@ -53,10 +53,10 @@ export default function Footer() {
           <h3>{t("footer.contactUs")}</h3>
           <div className={styles.contactInfo}>
             <p>
-              <strong>Email:</strong> info@karayaka.com
+              <strong>Email:</strong> info@karayaka.ru
             </p>
             <p>
-              <strong>{t("footer.phone")}:</strong> +7 (495) 123-45-67
+              <strong>{t("footer.phone")}:</strong> +7 919 107 9917
             </p>
           </div>
           <div className={styles.socialLinks}>
