@@ -56,7 +56,7 @@ function Items({ currentItems, locale }: ItemsProps) {
                   {[
                     countryTranslations[ad.location.country][locale],
                     cityTranslations[ad.location.city][locale],
-                    districtTranslations[ad.location.district]?.[locale] || "",
+                    ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
                   ]
                     .filter(Boolean)
                     .join(", ")}

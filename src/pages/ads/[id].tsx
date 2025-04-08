@@ -117,7 +117,7 @@ export default function AdPage({ ad, metaTags }: { ad: Ad, metaTags: any }) {
               {[
                 countryTranslations[ad.location.country][lang],
                 cityTranslations[ad.location.city][lang],
-                districtTranslations[ad.location.district]?.[lang] || "",
+                ad.location.district ? districtTranslations[ad.location.district]?.[lang] : null,
               ]
                 .filter(Boolean)
                 .join(", ")}
