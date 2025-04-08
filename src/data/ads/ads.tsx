@@ -4225,7 +4225,7 @@ export const ads: Ad[] = [
     location: {
       country: "Russia",
       city: "Moscow",
-      district: "Brusnika",
+      district: null,
     },
     type: "sale",
     propertyType: "apartment",
@@ -4258,7 +4258,7 @@ export const ads: Ad[] = [
     location: {
       country: "Russia",
       city: "Moscow",
-      district: "Brusnika",
+      district: null,
     },
     type: "sale",
     propertyType: "apartment",
@@ -4291,7 +4291,7 @@ export const ads: Ad[] = [
     location: {
       country: "Russia",
       city: "Moscow",
-      district: "Brusnika",
+      district: null,
     },
     type: "sale",
     propertyType: "apartment",
@@ -4324,7 +4324,7 @@ export const ads: Ad[] = [
     location: {
       country: "Russia",
       city: "Moscow",
-      district: "Level",
+      district: null,
     },
     type: "sale",
     propertyType: "apartment",
@@ -4357,7 +4357,7 @@ export const ads: Ad[] = [
     location: {
       country: "Russia",
       city: "Moscow",
-      district: "Level",
+      district: null,
     },
     type: "sale",
     propertyType: "apartment",
@@ -4390,7 +4390,7 @@ export const ads: Ad[] = [
     location: {
       country: "Russia",
       city: "Moscow",
-      district: "Level",
+      district: null,
     },
     type: "sale",
     propertyType: "apartment",

@@ -33,56 +33,47 @@
     .cardDescription {
       height: 25%;
       display: flex;
+      flex-direction: column;
       justify-content: space-between;
-      align-items: baseline;
       font-size: 0.9rem;
-      padding: 15px 20px;
+      padding: 15px 15px;
 
-      .leftDesc,
-      .rightDesc {
+      .topRow,
+      .bottomRow {
         display: flex;
-        flex-direction: column;
-        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
 
-        .iconRow {
+      .iconRow {
+        display: flex;
+        padding-top: 5px;
+        align-items: center;
+
+        .iconSpan {
           display: flex;
-          padding-top: 5px;
+          padding-left: 10px;
           align-items: center;
-          text-wrap: nowrap;
+          gap: 3px;
 
-
-          .iconSpan {
+          span {
             display: flex;
-            padding-left: 10px;
             align-items: center;
-            gap: 3px;
-
-            span {
-              display: flex;
-              align-items: center;
-            }
           }
-          svg {
-            margin-left: -2px;
-          }
+        }
+        svg {
+          margin-left: -2px;
         }
       }
 
-      .leftDesc {
-        align-items: start;
+      .title {
+        font-size: 1.2rem;
+      }
+
+      .price {
+        font-size: 1.2rem;
         text-wrap: nowrap;
-
-        .title {
-          font-size: 1.2rem;
-        }
-      }
-      .rightDesc {
-        align-items: end;
-
-        .price {
-          font-size: 1.2rem;
-          text-wrap: nowrap;
-        }
       }
     }
   }
@@ -174,16 +165,12 @@
 
     .adCard {
       .cardDescription {
-        padding: 10px 10px;
+        .iconRow {
+          line-height: 1.2;
 
-        .leftDesc {
-          .title {
-            font-size: 1.1rem;
-          }
-        }
-        .rightDesc {
-          .price {
-            font-size: 1.1rem;
+          svg {
+            width: 1.5rem !important;
+            height: auto;
           }
         }
       }
@@ -203,16 +190,11 @@
 
     .adCard {
       .cardDescription {
-
-        .leftDesc {
-          .title {
-            font-size: 1.1rem;
-          }
+        .title {
+          font-size: 1.1rem;
         }
-        .rightDesc {
-          .price {
-            font-size: 1.1rem;
-          }
+        .price {
+          font-size: 1.1rem;
         }
       }
     }
@@ -239,24 +221,20 @@
 
     .adCard {
       .cardDescription {
-        padding: 10px 20px;
+        padding: 15px 20px;
 
-        .leftDesc {
-          .title {
-            font-size: 1.2rem;
-          }
-          .iconRow {
-            font-size: 1.1rem;
-          }
+        .title {
+          font-size: 1.2rem;
         }
-        .rightDesc {
-          .price {
-            font-size: 1.2rem;
-          }
-
-          .iconRow {
-            font-size: 1.1rem;
-          }
+        .iconRow {
+          font-size: 1rem;
+        }
+        .price {
+          font-size: 1.2rem;
+        }
+        .iconRow {
+          line-height: 1.2;
+          font-size: 1.1rem;
         }
       }
     }

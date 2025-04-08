@@ -1,6 +1,7 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from "react";
+import { useState, useEffect, useMemo } from "react";
 import Slider from "react-slick";
 import styles from "./simpleSlider.module.scss";
 import Image from "next/image";
@@ -16,6 +17,7 @@ import {
   districtTranslations,
   propertyTypeTranslations 
 } from "@/lib/translations";
+import { Ad } from "@/lib/types";
 
 const NextArrow = ({ onClick }: { onClick?: () => void }) => {
   return (
@@ -33,6 +35,20 @@ const PrevArrow = ({ onClick }: { onClick?: () => void }) => {
   );
 };
 
+
+
+
+const shuffleAds = (ads: Ad[]): Ad[] => {
+  const copy = [...ads];
+
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+
+  return copy
+}
+
 interface SimpleSliderProps {
   type: "sale" | "rent";
   country: string;
@@ -45,10 +61,26 @@ export default function SimpleSlider({
 }: SimpleSliderProps) {
 
   const { t } = useTranslation();
-
-  const filteredAds = ads.filter(
-    (ad) => ad.type === type && ad.location.country === country
+  const filteredAds = useMemo(() => 
+    ads.filter((ad) => ad.type === type && ad.location.country === country),
+    [type, country]
   );
+  const [shuffledAds, setShuffledAds] = useState<Ad[]>(filteredAds);
+
+  
+  useEffect(() => {
+    if (filteredAds.length >= 3) {
+      setShuffledAds(shuffleAds(filteredAds));
+    }
+    console.log('sdfsdf')
+  }, [filteredAds])
+
+  
+  if (filteredAds.length < 3) {
+    return null;
+  }
+
+ 
   const settings = {
     dots: false,
     infinite: true,
@@ -93,10 +125,6 @@ export default function SimpleSlider({
     ]
   };
 
-  if (filteredAds.length < 3) {
-    return null;
-  }
-
   return (
     <div className={styles.carouselBlock}>
       <h1 className={styles.header}>
@@ -105,7 +133,7 @@ export default function SimpleSlider({
       <div className={styles.carousel}>
         <div className={styles.sliderWrapper}>
           <Slider {...settings}>
-            {filteredAds.map((card) => (
+            {shuffledAds.map((card) => (
               <div key={card.id} className={styles.slide}>
                 <div className={styles.adCard}>
                   <LinkWithLocale href={`/ads/${card.id}`}>
@@ -119,23 +147,10 @@ export default function SimpleSlider({
                       } in ${cityTranslations[card.location.city][locale]}`}
                     />
                     <div className={styles.cardDescription}>
-                      <div className={styles.leftDesc}>
+                      <div className={styles.topRow}>
                         <p className={styles.title}>
                           {propertyTypeTranslations[card.propertyType][locale]}
                         </p>
-                        <p className={styles.iconRow}>
-                          <Icon path={mdiMapMarkerOutline} size={0.8} />
-                          {[
-                            cityTranslations[card.location.city][locale],
-                            districtTranslations[card.location.district]?.[
-                              locale
-                            ] || "",
-                          ]
-                            .filter(Boolean)
-                            .join(", ")}
-                        </p>
-                      </div>
-                      <div className={styles.rightDesc}>
                         <p className={styles.price}>
                           {card.price.try !== undefined &&
                           card.price.try !== null
@@ -149,7 +164,17 @@ export default function SimpleSlider({
                               )} ₽`
                             : ""}
                         </p>
-
+                      </div>
+                      <div className={styles.bottomRow}>
+                        <p className={styles.iconRow}>
+                          <Icon path={mdiMapMarkerOutline} size={0.8} />
+                          {[
+                            cityTranslations[card.location.city][locale],
+                            card.location.district ? districtTranslations[card.location.district]?.[locale] : null,
+                          ]
+                            .filter(Boolean)
+                            .join(", ")}
+                        </p>
                         <p className={styles.iconRow}>
                           <span className={styles.iconSpan}>
                             {" "}

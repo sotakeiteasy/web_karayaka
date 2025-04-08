@@ -162,13 +162,13 @@ export default function Home({
         </div>
 
         <SimpleSlider
-          type="rent"
+          type="sale"
           country={lang === "en" ? "Russia" : "Turkey"}
           locale={lang}
         />
-
+        
         <SimpleSlider
-          type="sale"
+          type="rent"
           country={lang === "en" ? "Russia" : "Turkey"}
           locale={lang}
         />

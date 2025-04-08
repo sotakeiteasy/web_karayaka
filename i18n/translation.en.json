@@ -10,13 +10,13 @@
       "blog": "Blog"
     },
     "home": {
-      "rent": "Rent in Turkey",
-      "buy": "Buy in Turkey",
+      "rent": "Rent in Russia",
+      "buy": "Buy in Russia",
       "seeAll": "See All",
       "articles": "Latest Articles",
       "rentBtn": "Rent",
       "buyBtn": "Buy",
-      "hero": "House in Turkey",
+      "hero": "House in Russia",
       "searchBtn": "Search",
       "searchPlaceholder": "Address, keywords"
     },

@@ -12,9 +12,9 @@ export interface Ad {
     try?: number | null;
   };
   location: {
-    country: string;
+    country: 'Turkey' | 'Russia';
     city: string;
-    district: string;
+    district: string | null;
   };
   type: "sale" | "rent";
   propertyType: "apartment" | "villa" | "commercial" | "land";
