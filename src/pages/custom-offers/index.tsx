@@ -7,6 +7,8 @@ import Icon from "@mdi/react";
 import { mdiPhone, mdiEmail, mdiWhatsapp } from "@mdi/js";
 
 import { ContactUs, CustomOffersSchema } from "@/lib/components";
+import { contactInfo } from '@/lib/constants/contactInfo';
+
 import { getImageUrl } from "@/lib/utils";
 
 interface CustomOffersProps {
@@ -29,13 +31,6 @@ export default function CustomOffers({ metaTags }: CustomOffersProps) {
   const [query] = useLanguageQuery();
   const locale = (query?.lang as 'ru' | 'en') || "ru";
   const meta = metaTags[locale];
-
-  const contactInfo = {
-    phone: "+7 919 107 9917",
-    email: "info@karayaka.ru",
-    telegram: "https://t.me/yselimmm",
-    whatsapp: "https://wa.me/905320671890"
-  };
 
   return (
     <>

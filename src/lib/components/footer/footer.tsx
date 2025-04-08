@@ -3,6 +3,8 @@ import { useTranslation, LinkWithLocale } from "next-export-i18n";
 import styles from "./footer.module.scss";
 import Icon from "@mdi/react";
 import { mdiSendCircle, mdiWhatsapp } from "@mdi/js";
+import { contactInfo } from '@/lib/constants/contactInfo';
+
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -53,14 +55,14 @@ export default function Footer() {
           <h3>{t("footer.contactUs")}</h3>
           <div className={styles.contactInfo}>
             <p>
-              <strong>Email:</strong> info@karayaka.ru
+              <strong>Email:</strong> {contactInfo.email}
             </p>
             <p>
-              <strong>{t("footer.phone")}:</strong> +7 919 107 9917
+              <strong>{t("footer.phone")}:</strong> {contactInfo.phone}
             </p>
           </div>
           <div className={styles.socialLinks}>
-          <a href={'https://t.me/yselimmm'} target="_blank" rel="noopener noreferrer">
+          <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer">
           <svg
                   className={styles.telegramIcon}
                   fill="white"
@@ -81,7 +83,7 @@ export default function Footer() {
                 </svg>
               </a>
             <a
-              href="https://wa.me/+905320671890"
+              href={contactInfo.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"

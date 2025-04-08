@@ -6,6 +6,8 @@ import { useLanguageQuery } from "next-export-i18n";
 import Icon from "@mdi/react";
 import { mdiTriangleSmallDown, mdiWhatsapp, mdiClose } from "@mdi/js";
 import { useState, useEffect, useRef } from "react";
+import { contactInfo } from '@/lib/constants/contactInfo';
+
 
 export default function Header() {
   const { t } = useTranslation();
@@ -145,10 +147,10 @@ export default function Header() {
               </LanguageSwitcher>
             </div>
             <div className={styles.contacts}>
-            <a href={'https://wa.me/905320671890'} target="_blank" rel="noopener noreferrer">
+            <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer">
                 <Icon path={mdiWhatsapp} size={2} />
               </a>
-              <a href={'https://t.me/yselimmm'} target="_blank" rel="noopener noreferrer">
+              <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer">
                 <svg
                   className={styles.telegramIcon}
                   fill="#002F6C"
