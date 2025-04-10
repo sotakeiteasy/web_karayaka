@@ -8,7 +8,9 @@ module.exports = {
       '*/CustomSlider/*',
       '*/PaginatedAds/*',
       '/home',
-      '/search'
+      '/search',
+      '/video/*',
+      '/images/*'
     ],
     robotsTxtOptions: {
       policies: [
@@ -23,7 +25,9 @@ module.exports = {
             '/*/simpleSlider/',
             '/*/CustomSlider/',
             '/*/PaginatedAds/',
-            '/home'
+            '/home',
+            '/video/',
+            '/images/'
           ]
         }
       ]

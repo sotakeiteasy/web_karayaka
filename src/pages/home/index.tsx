@@ -92,20 +92,22 @@ export default function Home({
         <div className={styles.mainImageContainer}>
           {lang === "ru" ? (
             <video
-              className={styles.video}
-              src={
-                getImageUrl(
-                "/videos/new.webm"
-              )
-            }
-              loop
-              autoPlay
-              muted
-              preload="auto"
-              height={680}
-              width={1600}
-              style={{ objectFit: "cover" }}
-            />
+            className={styles.video}
+            loop
+            autoPlay
+            muted
+            preload="auto"
+            height={680}
+            width={1600}
+            style={{ objectFit: "cover" }}
+            playsInline
+            webkit-playsinline="true"
+            controls={false}
+          >
+            <source src={getImageUrl("/videos/new.webm")} type="video/webm" />
+            {/* Fallback source - MP4 for iOS */}
+            <source src={getImageUrl("/videos/new.mp4")} type="video/mp4" />
+          </video>
           ) : (
             <Image
               src={getImageUrl("/images/moscow3.jpg")}
