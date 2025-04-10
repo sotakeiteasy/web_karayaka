@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation, LinkWithLocale } from "next-export-i18n";
 import styles from "./footer.module.scss";
 import Icon from "@mdi/react";
-import { mdiSendCircle, mdiWhatsapp } from "@mdi/js";
+import { mdiWhatsapp } from "@mdi/js";
 import { contactInfo } from '@/lib/constants/contactInfo';
 
 
@@ -45,7 +45,7 @@ export default function Footer() {
             <LinkWithLocale href="/custom-offers">
               <span>{t("header.customOffers")}</span>
             </LinkWithLocale>
-            <LinkWithLocale href="/blog">
+            <LinkWithLocale href="/blog/">
               <span>{t("header.blog")}</span>
             </LinkWithLocale>
           </nav>

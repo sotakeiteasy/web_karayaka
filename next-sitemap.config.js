@@ -6,18 +6,24 @@ module.exports = {
     exclude: [
       '*/simpleSlider/*',
       '*/CustomSlider/*',
-      '*/PaginatedAds/*'
+      '*/PaginatedAds/*',
+      '/home',
+      '/search'
     ],
     robotsTxtOptions: {
       policies: [
         {
           userAgent: '*',
-          allow: '/',
+          allow: [
+            '/',
+            '/search?type=',
+          ],
           disallow: [
-            '/search?',
+            '/search',
             '/*/simpleSlider/',
             '/*/CustomSlider/',
-            '/*/PaginatedAds/'
+            '/*/PaginatedAds/',
+            '/home'
           ]
         }
       ]

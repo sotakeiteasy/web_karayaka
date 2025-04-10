@@ -701,7 +701,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Al10(1)",
+    id: "Al10",
     man: "Julien",
     number: "+905058089724",
     info: "1231710513",
@@ -920,7 +920,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş1",
+    id: "Ks1",
     man: "Emre- 1236679942",
     number: null,
     info: null,
@@ -956,7 +956,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş2",
+    id: "Ks2",
     man: "Ümit",
     number: "+905558534229",
     info: "1236657696",
@@ -993,7 +993,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş3",
+    id: "Ks3",
     man: "Mehmet",
     number: "+905373906173",
     info: "1236279761",
@@ -1030,7 +1030,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş4",
+    id: "Ks4",
     man: "Pelin",
     number: "+905364940069",
     info: "1236189404",
@@ -1067,7 +1067,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş5",
+    id: "Ks5",
     man: "Hüseyin",
     number: "+905324118763",
     info: "1234308631",
@@ -1104,7 +1104,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş6",
+    id: "Ks6",
     man: "Serkan",
     number: "+905425609215",
     info: "1146297446",
@@ -1141,7 +1141,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş7",
+    id: "Ks7",
     man: "Nurşen- 843824579",
     number: null,
     info: null,
@@ -1179,7 +1179,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş8",
+    id: "Ks8",
     man: "İrfan ",
     number: "+905444112886",
     info: "1235676859",
@@ -1216,7 +1216,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş9",
+    id: "Ks9",
     man: "Ruslan ",
     number: "+905313538915",
     info: "1206511592",
@@ -1252,7 +1252,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş10",
+    id: "Ks10",
     man: "Baver ",
     number: "+905448308182",
     info: "1129645826",
@@ -1288,7 +1288,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş11",
+    id: "Ks11",
     man: "Oya -1206130758",
     number: null,
     info: null,
@@ -1325,7 +1325,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş12",
+    id: "Ks12",
     man: "Erhan",
     number: "+905543700633",
     info: "1235134620",
@@ -1361,7 +1361,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş13",
+    id: "Ks13",
     man: "Hande ",
     number: "+905364057820",
     info: "1175542471",
@@ -1398,7 +1398,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş14",
+    id: "Ks14",
     man: "Özer ",
     number: "+905362980274",
     info: "1132880935",
@@ -1437,7 +1437,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş15",
+    id: "Ks15",
     man: "Ramazan ",
     number: "+905056733786",
     info: "1212087158",
@@ -1472,7 +1472,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş16",
+    id: "Ks16",
     man: "Ziya ",
     number: "+905428335154",
     info: "1196893989",
@@ -1508,7 +1508,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş17",
+    id: "Ks17",
     man: "Latife ",
     number: "+905353963180",
     info: "1215498197",
@@ -1544,7 +1544,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş18",
+    id: "Ks18",
     man: "Filiz ",
     number: "+905332084672",
     info: "1220920516",
@@ -1580,7 +1580,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş19",
+    id: "Ks19",
     man: "Ahmet Semih ",
     number: "+905324507916",
     info: "1202641537",
@@ -1617,7 +1617,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Kş20",
+    id: "Ks20",
     man: "Yasemin - 1235503607",
     number: null,
     info: null,
@@ -2203,7 +2203,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "At1(1)",
+    id: "At1",
     man: "Ahmet ",
     number: "+905388323088",
     info: "1217885468",
@@ -2949,7 +2949,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Bo3(1)",
+    id: "Bo3",
     man: "Oğuzkağan",
     number: "+905331338150",
     info: "1215118985",
@@ -2988,7 +2988,7 @@ export const ads: Ad[] = [
     ],
   },
   {
-    id: "Bo4(1)",
+    id: "Bo4",
     man: "Gülnur",
     number: "+905455563610",
     info: "938356852",

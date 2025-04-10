@@ -1,10 +1,12 @@
 # *
 User-agent: *
 Allow: /
-Disallow: /search?
+Allow: /search?type=
+Disallow: /search
 Disallow: /*/simpleSlider/
 Disallow: /*/CustomSlider/
 Disallow: /*/PaginatedAds/
+Disallow: /home
 
 # Host
 Host: https://karayaka.ru
