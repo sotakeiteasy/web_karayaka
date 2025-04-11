@@ -25,6 +25,6 @@ export interface Ad {
   situation: "tenanted" | "owner" | "empty" | "free";
   floor: number | null;
   floorInHouse: number | null;
-  parking: "open" | "closed" | null;
+  parking: "open" | "closed" | 'both' | null;
   images: string[];
 }

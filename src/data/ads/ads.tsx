@@ -4407,4 +4407,110 @@ export const ads: Ad[] = [
       "/images/Sell/Moscow/Level/03/Plan2.png",
     ],
   },
+
+  {
+    "id": "Ma11",
+    "man": "Yavuz",
+    "number": "+905320671890",
+    "info": null,
+    "description": {
+      "en": "Spacious 2+1 Apartment Within a Residential Complex\n📍 Location Highlights:\nClose to Süreyyapaşa Hospital and Marmara University Hospital\n    • Walking distance to schools, bus, and minibus stops\n    • Surrounded by greenery, well-ventilated, and rich in oxygen\n    • 🏠 Apartment Features:\n2+1 layout with a total area of 85 m²\n    • Open-plan American kitchen with built-in appliances\n    • Stylish Hilton-style bathroom\n    • Double-glazed PVC windows with shutters\n    • Spacious and functional balcony\n    • 🏢 Complex Amenities:\n24/7 security\n    • Children's playground\n    • Open and closed parking spaces\n📌 This cozy and bright apartment, located in an excellent area, is waiting for its new owners. A perfect choice for a comfortable lifestyle!",
+      "ru": "Просторная квартира 2+1 в жилом комплексе\n📍 Преимущества расположения:\nРядом с больницей Сюрейяпаша и университетской больницей Мармара\n    • В пешей доступности от школ, автобусных и маршрутных остановок\n    • Зелёная, проветриваемая местность с высоким уровнем кислорода\n    • 🏠 Особенности квартиры:\nПланировка 2+1, общая площадь — 85 м²\n    • Американская кухня с встроенной техникой\n    • Стильная ванная комната Hilton\n    • Окна с двойным остеклением (пластиковые рамы) и роллетами\n    • Просторный и удобный балкон\n    • 🏢 Инфраструктура жилого комплекса:\nКруглосуточная охрана\n    • Детская игровая площадка\n    • Открытая и закрытая парковка\n📌 Эта уютная и светлая квартира в отличном месте ждёт своих новых владельцев. Отличный вариант для комфортной жизни!"
+    },
+    "price": {
+      "rub": null,
+      "try": 5000000
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Istanbul",
+      "district": "Maltepe"
+    },
+    "type": "sale",
+    "propertyType": "apartment",
+    "area": 85,
+    "rooms": "2+1",
+    "bathroom": 1,
+    "age": "6-10",
+    "situation": "owner",
+    "floor": 3,
+    "floorInHouse": 11,
+    "parking": 'both',
+    "images": [
+      "/images/Sell/Istanbul/Maltepe/11/IMG_8123.jpg",
+      "/images/Sell/Istanbul/Maltepe/11/IMG_8124.jpg",
+      "/images/Sell/Istanbul/Maltepe/11/IMG_8118.jpg",
+      "/images/Sell/Istanbul/Maltepe/11/IMG_8119.jpg",
+      "/images/Sell/Istanbul/Maltepe/11/IMG_8120.jpg",
+      "/images/Sell/Istanbul/Maltepe/11/IMG_8121.jpg",
+      "/images/Sell/Istanbul/Maltepe/11/IMG_8122.jpg"
+    ]
+  },
+  {
+    "id": "SaY1",
+    "man": "Yavuz",
+    "number": "+905320671890",
+    "info": null,
+    "description": {
+      "en": "Investment Land in Birlik Neighborhood, Kaynarca, Sakarya\n    • Status: Zoned for construction (with development permits)\n    • Parcel Division: Can be divided into 48 shares, and project is done, just waiting for execution.\n    • Subdivision (ifraz) process is applicable\n    • Return on Investment: Potential for 50–60% profit within approximately 6 months",
+      "ru": "Инвестиционный участок в районе Бирлик, Кайнарджа, Сакарья\nСтатус: Земля с разрешением на строительство (имеются градостроительные условия)\nРазделение участка: Возможность деления на 48 долей, проект уже готов — осталось только реализовать.\nПроцедура разделения (ифраз): Применима\nДоходность инвестиций: Потенциальная прибыль 50–60% в течение примерно 6 месяцев"
+    },
+    "price": {
+      "rub": null,
+      "try": 45000000
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Sakarya",
+      "district": "Kocaali"
+    },
+    "type": "sale",
+    "propertyType": "land",
+    "area": 27430,
+    "rooms": null,
+    "bathroom": null,
+    "age": null,
+    "situation": "owner",
+    "floor": null,
+    "floorInHouse": null,
+    "parking": null,
+    "images": [
+      "/images/Sell/Sakarya/Kocaali/1/Tapu.jpg"
+    ]
+  }, 
+
+  
+  {
+    "id": "SaY2",
+    "man": "Yavuz",
+    "number": "+905320671890",
+    "info": null,
+    "description": {
+      "en": "Investment Land in Birlik Neighborhood, Kaynarca, Sakarya\n    • Status: Zoned for construction (with development permits)\n    • Parcel Division: Can be divided into 48 shares, and project is done, just waiting for execution.\n    • Subdivision (ifraz) process is applicable\n    • Return on Investment: Potential for 50–60% profit within approximately 6 months",
+      "ru": "Инвестиционный участок в районе Бирлик, Кайнарджа, Сакарья\nСтатус: Земля с разрешением на строительство (имеются градостроительные условия)\nРазделение участка: Возможность деления на 48 долей, проект уже готов — осталось только реализовать.\nПроцедура разделения (ифраз): Применима\nДоходность инвестиций: Потенциальная прибыль 50–60% в течение примерно 6 месяцев"
+    },
+    "price": {
+      "rub": null,
+      "try": 45000000
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Sakarya",
+      "district": "Kaynarca"
+    },
+    "type": "sale",
+    "propertyType": "land",
+    "area": 27430,
+    "rooms": null,
+    "bathroom": null,
+    "age": null,
+    "situation": "owner",
+    "floor": null,
+    "floorInHouse": null,
+    "parking": null,
+    "images": [
+      "/images/Sell/Sakarya/Kaynarca/2/Proje.jpg",
+      "/images/Sell/Sakarya/Kaynarca/2/Tapu.jpg"
+    ]
+  }
 ];

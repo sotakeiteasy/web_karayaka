@@ -89,10 +89,12 @@ export function filterAds(
     // Parking logic
     const openParking = filters.open === true;
     const closedParking = filters.closed === true;
+
     const parkingMatch =
       (!openParking && !closedParking) || // Nothing selected - show all
-      (openParking && ad.parking === "open") || // Open selected - show open
-      (closedParking && ad.parking === "closed"); // Closed selected - show closed
+      (openParking && !closedParking && (ad.parking === "open" || ad.parking === "both")) || // Only open selected
+      (!openParking && closedParking && (ad.parking === "closed" || ad.parking === "both")) || // Only closed selected
+      (openParking && closedParking && ad.parking === "both"); // Both selected - show only properties with both
 
     return (
       countryMatch &&

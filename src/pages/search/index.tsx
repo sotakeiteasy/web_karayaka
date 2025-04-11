@@ -131,6 +131,7 @@ export default function Search({ metaTags }: SearchPageProps) {
       // Булевы параметры для парковки
       if (parking === "open") initialFilter.open = true;
       if (parking === "closed") initialFilter.closed = true;
+      if (parking === "both") initialFilter.closed = true, initialFilter.open = true;
 
       // Устанавливаем оба состояния фильтров
       setFilter(initialFilter);
@@ -301,8 +302,8 @@ export default function Search({ metaTags }: SearchPageProps) {
   ];
 
   const filters = [
-    { key: "closed", label: t("search.filters.openParking") },
-    { key: "open", label: t("search.filters.closedParking") },
+    { key: "closed", label: t("search.filters.closedParking") },
+    { key: "open", label: t("search.filters.openParking") },
   ];
 
   return (

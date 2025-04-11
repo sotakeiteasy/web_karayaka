@@ -37,6 +37,12 @@ export const cityTranslations: Record<
     en: "Moscow",
     tr: "Moskova",
   },
+  Sakarya: {
+    "ru": "Сакарья",
+    "en": "Sakarya",
+    "tr": "Sakarya"
+  }
+
 };
 
 export type City = keyof typeof cityTranslations;
@@ -111,6 +117,12 @@ export const districtTranslations: Record<
     en: "Sariyer",
     tr: "Sarıyer",
   },
+  Kaynarca: {
+    "ru": "Кайнарджа",
+    "en": "Kaynarca",
+    "tr": "Kaynarca"
+  },
+
 };
 
 export type District = keyof typeof districtTranslations;
