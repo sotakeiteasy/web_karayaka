@@ -94,7 +94,7 @@ export default function Post({ postData, baseTags }: PostProps) {
             </button>
             <button className={lang === "en" ? styles.activeLocale : ""}>
               <LanguageSwitcher lang="en">
-                TR
+                EN
               </LanguageSwitcher>
             </button>
           </div>

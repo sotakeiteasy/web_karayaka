@@ -1,34 +1,64 @@
 ---
-title: "Türkiye'de Kiracıların Hak ve Yükümlülükleri (2025 Güncel Bilgiler)"
+title: "Tenant Rights and Obligations in Turkey (Updated for 2025)"
 date: "2025-03-31"
 ---
 
-Türkiye\'de kiracılar ve ev sahipleri arasındaki ilişkiler, 6098 sayılı Türk Borçlar Kanunu (TBK) ile düzenlenmektedir. 2025 yılı itibarıyla, kiracılar ve ev sahiplerinin hak ve yükümlülüklerine dair önemli noktalar aşağıda belirtilmiştir:
+In Turkey, the relationship between tenants and landlords is governed by the Turkish Code of Obligations No. 6098. As of 2025, the key rights and responsibilities of tenants and landlords are outlined below:
 
-## 1. Kira Sözleşmesi ve Süresi
+## 1. Rental Agreement and Duration
 
-- **Sözleşmenin Süresi ve Yenilenmesi:** Konut ve çatılı iş yeri kiraları genellikle **1 yıllık** sözleşmelerle yapılır. Sözleşme ister 1 yıllık, ister daha kısa süreli yapılmış olsun süresi dolduğunda, kiracı çıkmak istemezse ve ev sahibi haklı bir gerekçeyle tahliye talebinde bulunmazsa, sözleşme aynı koşullarla bir yıl uzar. Ev sahibi, kiracıyı ancak 10 yıllık uzama süresi dolduğunda tahliye edebilir. Örneğin, 6 aylık kira sözleşmesinin sonunda kiracı sözleşmeyi sona erdirdiğini ev sahibine bildirmemişse sözleşme bitiş tarihinden itibaren 1 yıl daha (yalnızca kira bedeli TÜFE oranında zamlanmış olarak) aynı şartlarda yenilenmiş sayılır.
-- **Yeniden Sözleşme Yapılması Gerekliliği:** Kira süresi dolduğunda, yeni bir sözleşme imzalanması gerekmez. Mevcut sözleşme aynı şartlarla devam eder. Ev sahibi, yeni bir sözleşme imzalatmak isterse ve kiracı bunu kabul etmezse, eski sözleşme geçerliliğini korur. Kiracı, sözleşme süresi bitmeden en az 15 gün önce tahliye edeceğini bildirmezse, kira sözleşmesi kendiliğinden 1 yıl daha uzar.
+### Contract Duration and Renewal
+- Residential and commercial lease agreements are typically made for a period of one year.
+- Regardless of whether the agreement is for one year or a shorter term, if the tenant does not vacate the property and the landlord does not request eviction for a valid legal reason, the contract is automatically renewed under the same conditions for another year.
+- The landlord can only evict the tenant without legal cause after 10 years of automatic renewals.
 
-## 2. Kira Artış Oranı
+For example, if a tenant has a 6-month lease and does not inform the landlord about vacating, the contract will be automatically extended for another one year (with only a rental increase based on the CPI rate).
 
-- **Konut Kiraları:** 1 Temmuz 2024 tarihinde sona eren geçici düzenleme ile kira artış oranı %25 ile sınırlandırılmıştı. 2025 yılı itibarıyla, kira artışları tekrar **TÜFE** oranlarına göre belirlenmektedir. Örneğin, **2025 Ocak ayı için TÜFE oranı %58,51** olarak açıklanmıştır. Bu durumda, ev sahibi, mevcut kira bedeline en fazla %58,51 oranında zam yapabilir.
-- **İş Yeri Kiraları:** İş yeri kiralarında da yıllık kira artışı, **TÜFE** oranına göre belirlenir. 2025 yılı itibarıyla, iş yeri kira artışları da TÜFE oranlarına göre yapılmaktadır.
+### No Need for a New Agreement
+- Once the lease expires, it is not necessary to sign a new contract. The existing contract continues under the same conditions.
+- If the landlord insists on signing a new agreement and the tenant refuses, the original contract remains valid.
+- If the tenant does not notify the landlord at least 15 days before the end of the contract that they will vacate, the lease will automatically extend for another year.
 
-## 3. Aidat ve Diğer Giderler
+## 2. Rental Price Increases
 
-- **Aidat Ödemeleri:** Aidat ödemesi genellikle kiracı tarafından yapılır. Ancak aidat içindeki \"demirbaş yenileme\" gibi büyük giderler mal sahibine aittir. Kiracı, apartman yönetimi tarafından belirlenen aidatları düzenli ödemekle yükümlüdür.
+### Residential Leases
+- A temporary cap on rent increases at 25% ended on July 1, 2024.
+- As of 2025, rental increases are determined by CPI (Consumer Price Index) rates again.
+- For example, the CPI rate for January 2025 was announced as 58.51%. Accordingly, landlords may increase the rent by up to 58.51%.
 
-## 4. Evde Tadilat ve Onarım Yapılması
+### Commercial Leases
+- For commercial properties, rental increases are also based on CPI rates as of 2025.
 
-- **Kiracının Yapabileceği Tadilatlar:** Kiracı, evde büyük çaplı tadilatları ev sahibinin yazılı izni olmadan yapamaz. Evde meydana gelen küçük bakım ve onarımlar kiracının sorumluluğundadır. Örneğin, musluk değişimi, boya-badana gibi işlemler kiracı tarafından yapılabilir.
-- **Ev Sahibi Sorumluluğundaki Tadilatlar:** Kiralananın kullanılabilir durumda tutulması için gerekli olan büyük onarımlar ev sahibinin sorumluluğundadır. Kiracı, bu tür durumları ev sahibine bildirmeli ve onarımın yapılmasını talep etmelidir.
+## 3. Maintenance Fees and Other Expenses
 
-## 5. Evin Satılması Durumunda Kiracının Durumu
+### Maintenance Fees (Aidat)
+- These are typically paid by the tenant.
+- However, major expenses like capital improvements or equipment renewal are the responsibility of the property owner.
+- The tenant must regularly pay the maintenance fees determined by the building management.
 
-- **Yeni Malikin Hakları:** Ev sahibi evi satarsa, yeni malik eski kira sözleşmesini devralmak zorundadır. Ancak yeni malik, **kendi ihtiyacı** için kullanmak isterse, **6 ay içinde tahliye davası açabilir**.
-- **Kiracının Hakları:** Kiracı, yeni malikin ihtiyacı nedeniyle tahliye talebiyle karşılaşırsa, yasal haklarını kullanarak savunma yapabilir ve gerekirse tazminat talep edebilir. Tazminatın kapsamı ve miktarı somut olaya göre değişmektedir.
+## 4. Renovations and Repairs
 
-## Sonuç
+### Renovations by the Tenant
+- Tenants may not make major renovations without the landlord's written consent.
+- Minor maintenance and repairs are the tenant's responsibility. For instance, changing a faucet or repainting the walls can be done by the tenant.
 
-2025 yılı itibarıyla, Türkiye\'de kiracıların hakları ve yükümlülükleri, güncel yasal düzenlemeler çerçevesinde şekillenmektedir. Kiracılar, kira sözleşmesi süresince ancak kanunda yazılı şartların olması halinde tahliye talebinde bulunabilir, yasal sınırların üzerinde kira artışlarına maruz kalamaz ve ev satılsa bile belirli sürelerle kiralanan evde yaşamaya devam edebilir.
+### Repairs by the Landlord
+- The landlord is responsible for major repairs required to keep the property in a habitable condition.
+- The tenant must notify the landlord and request the necessary repairs to be made.
+
+## 5. Tenant Rights if the Property is Sold
+
+### New Owner's Rights
+- If the landlord sells the property, the new owner is bound by the existing lease agreement.
+- However, if the new owner intends to use the property for personal needs, they may file an eviction lawsuit within 6 months.
+
+### Tenant's Rights
+- If the tenant is asked to vacate due to the new owner's personal use, they may defend themselves using legal rights and, if applicable, request compensation.
+- The eligibility and amount of compensation vary depending on the specific case.
+
+## Conclusion
+
+As of 2025, tenant rights and obligations in Turkey are clearly defined by current legal regulations.
+
+- Tenants cannot be evicted without a valid legal reason during the lease period, cannot face rental increases beyond the legal limit, and may continue living in the property for a certain period even if it is sold.
+- Understanding these rights and obligations is crucial for both tenants and landlords.

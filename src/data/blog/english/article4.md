@@ -1,39 +1,54 @@
 ---
-title: "Kira Sözleşmesinde Kefalet: Kefil Olacakların Bilmesi Gerekenler"
+title: "Guarantees in Rental Agreements: What Guarantors Should Know"
 date: "2025-03-31"
 ---
 
-Kira sözleşmeleri, hem kiracı hem de ev sahibi açısından çeşitli yükümlülükler içeren hukuki belgelerdir. Kiracının kira borcunu ödeyememesi ihtimaline karşı, ev sahipleri genellikle bir kefil talep eder. Kefalet, kiracının kira borcunu yerine getirememesi durumunda, kefilin borcu üstlenmesini sağlayan hukuki bir güvencedir. Ancak, kefalet sözleşmesiyle ilgili bilinmesi gereken birçok önemli husus vardır.
+Rental agreements are legal documents that create various obligations for both tenants and landlords. To protect themselves in case the tenant fails to pay rent, landlords often require a guarantor. A guarantee provides legal assurance that the guarantor will assume responsibility for the tenant's debt if the tenant fails to fulfill their rental obligations. However, there are several important aspects of guarantee agreements that need to be understood.
 
-## Kefalet Sözleşmesi Nedir?
+## What is a Guarantee Agreement?
 
-Kefalet sözleşmesi, kefilin, borçlunun (kiracının) borcunu ödememesi halinde bu borcu üstleneceğini taahhüt ettiği sözleşmedir. Türk Borçlar Kanunu\'na (TBK) göre kefalet sözleşmesinin geçerli olabilmesi için **yazılı şekilde yapılması** zorunludur. Kefilin, borcun miktarını ve kapsamını açıkça belirttiği bir sözleşme imzalaması gerekir. Aksi takdirde kefalet sözleşmesi geçersiz sayılır.
+A guarantee agreement is a legal contract in which the guarantor agrees to assume the tenant's debt if the tenant fails to pay.
 
-## Kira Sözleşmesinde Kefilin Sorumluluğu
+- According to the Turkish Code of Obligations, a guarantee agreement must be in written form to be valid.
+- The guarantor must clearly state the amount and scope of the guarantee in the signed agreement.
+- Otherwise, the guarantee will be considered invalid.
 
-Kefalet sözleşmesinde kefilin sorumluluğunun kapsamı, sözleşmenin türüne göre değişiklik gösterebilir. Kefil olmayı kabul eden kişi, aşağıdaki sorumlulukları üstlenir:
+## Guarantor's Liability in a Rental Agreement
 
-1.  **Müteselsil Kefalet**: Kefil, kiracı borcunu ödemediği takdirde doğrudan borçtan sorumlu tutulur. Ev sahibi, kiracıdan alacağını tahsil edemeden doğrudan kefile başvurabilir.
-2.  **Adi Kefalet**: Kefil, ancak kiracı borcunu ödeyemezse ve borcun tahsil edilemeyeceği kesinleşirse ödeme yükümlülüğü altına girer. Ev sahibi önce kiracıya başvurmalı ve tahsil edemezse kefilden ödeme talep edebilir.
-3.  **Süreli ve Süresiz Kefalet**: Kefalet belirli bir süre için verilmişse, kira sözleşmesi sona erdiğinde kefalet de sona erer. Ancak, süresiz kefalet durumunda, kefil borcun devam ettiği süre boyunca sorumluluk taşır.
+The extent of a guarantor's liability depends on the type of guarantee agreed upon:
 
-## Kefaletin Geçerlilik Şartları
+### Joint (Solidary) Guarantee
+- The guarantor is directly liable if the tenant fails to pay rent.
+- The landlord can demand payment from the guarantor without first pursuing the tenant.
 
-Kira sözleşmesine kefil olacak kişilerin dikkat etmesi gereken bazı hukuki zorunluluklar vardır:
+### Ordinary Guarantee
+- The guarantor is liable only if the tenant fails to pay and it becomes clear that the debt cannot be collected from the tenant.
+- In this case, the landlord must first pursue the tenant before claiming from the guarantor.
 
-- Kefalet sözleşmesi **kesinlikle yazılı olarak düzenlenmelidir**.
-- Kefilin sorumlu olacağı tutar ve şartlar açıkça belirtilmelidir.
-- Kefilin eşinin rızası alınmalıdır. Türk Borçlar Kanunu'nun 584. maddesi gereğince, **evli bir kişinin kefil olabilmesi için eşinin yazılı onayı gerekmektedir**. Aksi takdirde kefalet geçersiz sayılabilir.
-- Kefalet süresinin kira sözleşmesi süresiyle uyumlu olması gerekir.
+### Fixed-term and Open-ended Guarantee
+- If the guarantee is for a specific period, it ends when the rental contract ends.
+- If it is open-ended, the guarantor remains liable as long as the rental obligation continues.
 
-## Kefaletin Sona Ermesi
+## Conditions for a Valid Guarantee
 
-Kefalet, belirli durumlarda sona erebilir:
+Anyone intending to become a guarantor in a rental agreement must consider the following legal requirements:
 
-1.  **Kira sözleşmesi sona erdiğinde**: Kefalet süresi kira sözleşmesi süresiyle sınırlı ise, kira süresi bitince kefalet de sona erer.
-2.  **Borç ödendiğinde**: Kiracı tüm borçlarını öderse, kefilin sorumluluğu da ortadan kalkar.
-3.  **Kefil ile borçlu (kiracı) arasındaki anlaşma**: Kefil, belirli şartlar altında borçtan kurtulma talebinde bulunabilir.
+- The guarantee agreement must be in written form.
+- The amount and conditions of the guarantor's liability must be clearly stated.
+- Spousal consent is required. Under Article 584 of the Turkish Code of Obligations, a married person cannot act as a guarantor without written consent from their spouse. Without this, the guarantee may be considered invalid.
+- The duration of the guarantee must be compatible with the rental agreement.
 
-## Sonuç
+## Termination of Guarantee
 
-Kira sözleşmesine kefil olmak, ciddi mali ve hukuki yükümlülükler doğurur. Kefil olacak kişilerin sözleşmenin içeriğini dikkatle incelemesi, sorumluluklarını net bir şekilde anlaması ve özellikle eşin rızası gibi yasal zorunluluklara dikkat etmesi büyük önem taşır. Kefalet sözleşmeleri, hem kiracı hem de kefil açısından ileride doğabilecek hukuki ihtilafları önlemek için dikkatle hazırlanmalıdır.
+A guarantee can end under certain conditions:
+
+- End of Rental Agreement: If the guarantee is tied to the lease period, it ends once the lease expires.
+- Debt Payment: If the tenant pays all their debts, the guarantor's obligation is nullified.
+- Mutual Agreement: The guarantor and tenant may agree to release the guarantor from the obligation under certain conditions.
+
+## Conclusion
+
+Becoming a guarantor in a rental agreement creates serious legal and financial responsibilities.
+
+- Guarantors should carefully review the terms of the agreement, fully understand their obligations, and ensure compliance with legal requirements, especially the need for spousal consent.
+- Properly drafted guarantee agreements are essential to avoid potential legal disputes for both the tenant and the guarantor.

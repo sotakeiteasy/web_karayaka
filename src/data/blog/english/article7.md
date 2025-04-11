@@ -1,42 +1,40 @@
 ---
-title: "Tapu İptal ve Tescil Davası Nedir?"
+title: "What is a Title Cancellation and Registration Lawsuit?"
 date: "2025-03-31"
 ---
 
-## Tapu İptali ve Tescili Davası Nedir?
+A Title Cancellation and Registration Lawsuit is a legal action filed to cancel unlawfully or improperly registered title deeds and to correct the land registry in favor of the rightful owner. These lawsuits are typically initiated by individuals who claim that the land registry does not reflect the actual ownership status. No changes can be made to the land registry until the court decision becomes final.
 
-Tapu iptali ve tescili davası, hukuka aykırı veya usulsüz düzenlenmiş tapu kayıtlarının iptali ve gerçek hak sahibinin tapu kaydının düzeltilmesi için açılan bir davadır. Bu davalar, genellikle tapu kaydının gerçek hak durumuna uymadığını iddia eden kişiler tarafından açılır ve mahkeme kararı kesinleşmeden tapu kaydında değişiklik yapılamaz.
+## Who Can File a Title Cancellation and Registration Lawsuit?
 
-## Kimler Tapu İptali ve Tescil Davası Açabilir?
+Anyone whose rights have been violated due to a land registry record, whose ownership rights have been infringed upon, or who claims to be the rightful owner can file this lawsuit. The case is filed against the person registered as the owner in the land registry or their legal heirs.
 
-Tapu kaydından zarar gören, ayni hakkı ihlal edilen veya gerçek hak sahibi olduğunu iddia eden herkes bu davayı açabilir. Dava, tapu kaydında malik olarak görünene veya onun mirasçılarına karşı açılır.
+## Which Court Handles Title Cancellation and Registration Lawsuits?
 
-## Tapu İptali ve Tescil Davası Hangi Mahkemede Açılır?
+These lawsuits must be filed in the civil court of first instance located in the jurisdiction where the property is situated. This court has exclusive jurisdiction, meaning the case cannot be heard in any other court.
 
-Bu davalar, taşınmazın bulunduğu yer asliye hukuk mahkemesinde açılır ve bu mahkeme kesin yetkilidir. Taraflar, davayı başka bir mahkemede görülmesini sağlayamazlar.
+## Reasons for Filing a Title Cancellation and Registration Lawsuit
 
-## Tapu İptali ve Tescil Davası Açma Nedenleri
+- Legal Incapacity: When the person transferring the property does not have the legal capacity to do so (e.g., due to old age, mental illness, intoxication, etc.).
+- Collusion to Deprive Heirs (Muris Muvazaası): Title transfers made to deprive rightful heirs of their inheritance.
+- Abuse of Power of Attorney: When an agent misuses their authority to transfer property to themselves or others unlawfully.
+- Zoning and Planning Irregularities: Title records altered unlawfully due to zoning laws or municipal planning.
+- Family Residence Annotation (Aile Konutu Şerhi): When one spouse transfers the family residence without the other's consent.
+- Adverse Possession and Occupation: Individuals who have continuously possessed and used the property like an owner for 20 years may request title registration.
+- Transfer by Forged Power of Attorney: Title deeds transferred using a forged power of attorney can be annulled through this lawsuit.
 
-1.  **Hukuki Ehliyetsizlik:** Taşınmazın devri sırasında kişinin fiil ehliyetine sahip olmaması (yaşlılık, akıl hastalığı, sarhoşluk vb.).
-2.  **Muris Muvazaası (Mirastan Mal Kaçırma):** Mirasçıların haklarını gasp etmek amacıyla yapılan tapu devirleri.
-3.  **Vekaletin Kötüye Kullanılması:** Vekilin, vekalet yetkisini suistimal ederek taşınmazı kendine veya başkasına devretmesi.
-4.  **İmar Uygulamaları:** Tapu kayıtlarının İmar Kanunu veya uygulamalar nedeniyle hukuka aykırı olarak değiştirilmesi.
-5.  **Aile Konutu Şerhi:** Eşlerden birinin diğerinin rızası olmadan aile konutunu devretmesi.
-6.  **Kazandırıcı Zamanaşımı ve Zilyetlik:** 20 yıl boyunca malik gibi kullanan kişilerin tapu tescili talebi.
-7.  **Sahte Vekaletname ile Devir:** Sahte vekaletname ile gerçekleştirilen tapu işlemlerinin iptali.
+## Competent Court in Title Cancellation and Registration Lawsuits
 
-## Tapu İptali ve Tescil Davasında Yetkili Mahkeme
+The competent court is the civil court of first instance in the district where the property is located. The case cannot be filed in a court located in another jurisdiction.
 
-Tapu iptal ve tescil davalarında yetkili mahkeme, taşınmazın bulunduğu yer asliye hukuk mahkemesidir. Taşınmazın bulunduğu yer dışındaki bir mahkemede dava açılamaz.
+## Legal Process of a Title Cancellation and Registration Lawsuit
 
-## Tapu İptali ve Tescil Davasında Yargılama Süreci
+1. Filing of the lawsuit petition
+2. Examination of land registry records and collection of relevant documents
+3. Appointment of an expert witness by the court
+4. On-site inspection and witness testimonies
+5. Issuance and finalization of the court's decision
 
-1.  Dava dilekçesi verilir.
-2.  Tapu kayıtları incelenir ve ilgili belgeler toplanır.
-3.  Mahkeme, bilirkişi incelemesi yapar.
-4.  Keşif yapılır ve tanıklar dinlenir.
-5.  Mahkeme kararı kesinleştirilir.
+## Conclusion
 
-## Sonuç
-
-Tapu iptali ve tescil davaları, taşınmazın hukuka uygun olarak kaydedilmesini sağlamak için hayati öneme sahiptir. Davacının, iddiasını hukuki delillerle desteklemesi şaltır. Bu tür davaların başarıya ulaşması için uzman bir hukukçu desteği almak önerilir.
+Title cancellation and registration lawsuits are vital in ensuring that real estate is legally and correctly registered. The claimant must support their allegations with solid legal evidence. It is strongly recommended to seek assistance from a qualified legal expert to increase the chances of success in such cases.

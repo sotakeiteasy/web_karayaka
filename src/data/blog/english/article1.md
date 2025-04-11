@@ -1,77 +1,85 @@
 ---
-title: "Türkiye'de Kiraya Veren Ev Sahibi Olmak: 2025 Rehberi"
+title: "Title Deed Procedures for Russian Citizens in Turkey – Updated 2025 Guide"
 date: "2025-03-31"
 ---
 
-Türkiye'de ev sahipleri ve kiracılar, 6098 sayılı Türk Borçlar Kanunu ve ilgili mevzuat çerçevesinde hak ve yükümlülüklere sahiptir. Bu rehber, kiralama sürecinde tarafların sahip olduğu hukuki hakları ve olası anlaşmazlık durumlarında yapabilecekleri işlemleri detaylı bir şekilde açıklamaktadır.
+Russian citizens looking to purchase real estate in Turkey must follow specific procedures. This guide explains the property buying process step by step, helping you navigate the requirements with ease.
 
-## Ev Sahibi Hakları ve Yükümlülükleri
+## 1. Foreigners Buying Real Estate in Turkey
 
-### Ev Sahibinin Hakları
+### Legal Basis
+Russian citizens are allowed to purchase property in Turkey under Article 35 of the Turkish Land Registry Law No. 2644. However, the following restrictions apply:
+- Purchasing real estate in military or security zones is strictly prohibited.
+- A foreign individual may purchase up to 30 hectares of property in total across Turkey.
+- Foreign ownership in any district cannot exceed 10% of the total area designated by local municipalities.
 
-#### 1.1 Kira Bedelini Zamanında Alma Hakkı
+## 2. Step-by-Step Buying Process
 
-Ev sahibi, kira sözleşmesine uygun olarak kira bedelinin zamanında ve eksiksiz ödenmesini talep edebilir. Kiracı, ödemeleri geciktirdiğinde ev sahibi;
+### Step 1: Choosing the Right Property
+Russian buyers should select a property that suits their needs. This can be done through real estate agencies or by contacting owners directly.
 
-- Noter aracılığıyla **ihtarname göndererek** borcun ödenmesini talep edebilir.
-- Kira borcu ödenmezse, **icra takibi** başlatabilir.
-- İki veya daha fazla kira döneminde gecikme olduğunda tahliye davası açabilir.
+Key considerations include:
+- Development potential of the region
+- Property prices and investment returns
+- Presence of liens or encumbrances on the title
+- Taxes and additional costs
 
-#### 1.2 Depozito Talep Etme Hakkı
+### Step 2: Legal and Title Deed Check
+Before proceeding, the following should be verified at the Land Registry Office:
+- Is the seller the legal owner of the property?
+- Are there any mortgages, seizures, or restrictions on the title?
+- What is the zoning and occupancy permit status of the property? (Check with the local municipality.)
 
-Ev sahibi, kiracıdan genellikle **1-3 aylık kira bedeli** kadar depozito talep edebilir. Depozito;
+You can access this information via the General Directorate of Land Registry and Cadastre, municipalities, and the e-Government system.
 
-- Kiracının evi teslim ederken herhangi bir zarar vermediği tespit edildiğinde **eksiksiz olarak iade edilmelidir**.
-- Banka hesabında tutulabilir ve kiracının çıkışında kullanılabilir.
+### Step 3: Required Documents for Title Deed Transfer
+Russian citizens must prepare the following documents:
+- Passport (with notarized Turkish translation)
+- Turkish Tax Number (can be obtained from the Tax Office)
+- Title Deed document (proving ownership by the seller)
+- DASK (Compulsory Earthquake Insurance)
+- Biometric photos (2 photos taken within the last 6 months)
+- Property valuation report (from an authorized appraisal company)
+- Real estate tax value document from the municipality
 
-#### 1.3 Kiracıyı Tahliye Etme Hakkı
+### Step 4: Title Deed Appointment & Payment
+The title deed process is handled through the Land Registry Directorate.
 
-Ev sahibi, aşağıdaki hallerde kiracının tahliyesini talep edebilir:
+Appointment portal: https://randevu.tkgm.gov.tr
 
-- **Kira ödemelerini aksatırsa:** Noter ihtarı ile borcun ödenmesi talep edilir, borcun ödenmemesi halinde tahliye davası açılabilir.
-- **Tahliye Taahhütnamesi verilmişse:** Kiracı önceden tahliye edeceğini taahhüt etmişse, verilen tarihte tahliyesi sağlanabilir.
-- **Ev sahibinin veya bir yakınının ihtiyacı varsa:** Ev sahibi, kendisi veya birinci dereceden yakınının ihtiyacı olduğunu ispat ederek tahliye talep edebilir.
-- **Evde kapsamılı tadilat yapılacaksa:** Kiralanan büyük onarım veya yeniden inşa edilmek üzere tahliye edilebilir.
+Fees and Costs:
+| Item | Amount |
+|------|---------|
+| Title Deed Fee | 4% of the sale price |
+| Circulating Capital Fee | 1,183 TL |
+| Notary & Translation Costs | 2,000 – 5,000 TL (average) |
 
-#### 1.4 Kira Artış Hakkı
+Payment Methods: Bank transfer or cash.
 
-2025 itibariyle kira artış oranları, **Tüketici Fiyat Endeksi (TÜFE) oranı** ile sınırlandırılmıştır. Ev sahibi;
+### Step 5: Title Deed Transfer & Final Steps
+- The buyer and seller must meet at the Land Registry Directorate for the transfer.
+- Alternatively, the process can be carried out via a notarized Power of Attorney.
+- Once completed, the buyer receives the new title deed.
 
-- Yıllık kontrat yenilemelerinde, **TÜFE oranını geçmemek kaydıyla** zam yapabilir.
-- Kiracı ile **karşılıklı anlaşma olmadığı takdirde**, TÜFE'nin üstünde belirlenen zamlar mahkeme tarafından geçersiz kabul edilebilir.
+## 3. Additional Advantages for Foreigners
 
-### Ev Sahibinin Yükümlülükleri
+### Turkish Citizenship by Investment
+- You may apply for Turkish citizenship if you purchase a property worth at least $400,000 USD.
+- The process usually takes 3 to 6 months.
 
-#### 2.1 Kiralanan Evin Kullanıma Uygun Olması
+### Residence Permit
+- Property buyers are eligible to apply for a 1-year residence permit in Turkey.
 
-Ev sahibi, evi kiracıya **yaşanabilir ve hukuka uygun bir şekilde teslim etmek zorundadır**.
+## 4. Frequently Asked Questions (FAQ)
 
-- Elektrik, su ve doğal gaz gibi temel altyapı sistemlerinin çalışır durumda olması gerekmektedir.
-- Eğer ev, sözleşme dışında eksik veya bozuk durumda teslim edilirse, kiracı sözleşmeden dönebilir veya ev sahibinden onarım talep edebilir.
+### How many properties can a Russian citizen buy in Turkey?
+Up to 30 hectares in total across Turkey.
 
-#### 2.2 Büyük Bakım ve Onarımları Yapma
+### How long does the title deed process take?
+On average, 3 to 5 business days.
 
-Ev sahibinin sorumlu olduğu tamir ve bakımlar:
+### Will I automatically become a Turkish citizen after buying property?
+No, you must apply separately for citizenship.
 
-- \*\*Ana tesisat sorunları (su, elektrik, gaz boruları) \*\*
-- Bina dış cephe ve çatı tamiratları
-- Kombinin veya merkezi sistemin arızalanması
 
-Kiracının sürekli kullanımdan kaynaklı küçük tamir ve bakımları yapması beklenir (boya, ampul, priz vb.).
 
-#### 2.3 Vergi Ödemek
-
-Ev sahipleri;
-
-- **Kira Gelir Vergisi** beyan etmek zorundadır. 2025 yılında istisna sınırı 33.000 TL olarak belirlenmiştir. Daha fazla gelir elde edilmesi halinde değişik oranlarda vergi sorumluluğu doğmaktadır.
-- **Emlak Vergisi** yıllık olarak belediyelere ödenmelidir.
-- Vergi beyanı yapmamak, vergi cezasına yol açabilir ve tespit edilmesi halinde ceza uygulanabilir.
-
-## Sonuç
-
-Türkiye\'de kiracı ve ev sahibi hakları, tarafların hak ve yükümlülüklerini dengenin korunduğu bir hukuki sistemle düzenlenmektedir.
-
-- Kiracılar ödemelerini zamanında yapmak ve sözleşme kurallarına uymak zorundadır.
-- Ev sahipleri ise evin yaşanabilir koşullarda olmasını sağlamak ve vergi yükümlülüklerini yerine getirmek zorundadır.
-
-Bu konularla ilgili daha fazla bilgi ve hukuki destek almak için bize yazabilirsiniz.

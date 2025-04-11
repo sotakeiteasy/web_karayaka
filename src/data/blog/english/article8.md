@@ -1,97 +1,62 @@
 ---
-title: "Türkiye'de Rus Vatandaşları İçin Tapu İşlemleri -- 2025 Güncellenmiş Rehber"
+title: "Being a Landlord in Turkey: 2025 Guide"
 date: "2025-03-31"
 ---
 
-Türkiye'de gayrimenkul satın almak isteyen Rus vatandaşları için tapu işlemleri belirli prosedürler içermektedir. Bu rehber, Türkiye'de mülk satın alma sürecini adım adım açıklayarak işlemleri kolaylaştırmanıza yardımcı olacaktır.
+In Turkey, the rights and obligations of landlords and tenants are regulated under the Turkish Code of Obligations No. 6098 and related legislation. This guide explains in detail the legal rights of both parties during the rental process and outlines the steps that can be taken in case of disputes.
 
-## 1. Türkiye'de Yabancıların Gayrimenkul Satın Alması
+## Landlord Rights and Obligations
 
-### Hukuki Dayanak
+### 1. Landlord Rights
 
-Rus vatandaşları, 2644 sayılı Tapu Kanunu'nun 35. maddesine göre Türkiye'de mülk satın alabilir. Ancak, aşağıdaki hususlara dikkat edilmelidir:
+#### 1.1 Right to Receive Rent on Time
+A landlord has the right to demand full and timely rent payments in accordance with the rental agreement. If the tenant delays payment:
+- The landlord can issue a formal notice via a notary requesting payment.
+- If the rent is still unpaid, legal enforcement proceedings may be initiated.
+- If the tenant is late for two or more rental periods, an eviction lawsuit may be filed.
 
-- **Sınır bölgelerinde** (askeri yasak bölgeler ve güvenlik bölgeleri) taşınmaz satın almak yasaktır.
-- Bir yabancı kişi, **Türkiye genelinde en fazla 30 hektar** taşınmaz satın alabilir.
-- Belediyeler tarafından belirlenen toplam alanın **%10'undan fazlasında yabancıların taşınmaz edinimi yasaktır.**
+#### 1.2 Right to Request a Security Deposit
+Landlords may request a deposit equal to 1 to 3 months' rent. The deposit:
+- Must be refunded in full if the tenant returns the property without damage.
+- Can be held in a bank account and used upon the tenant's departure if needed.
 
-## 2. Satın Alma Süreci Adım Adım
+#### 1.3 Right to Evict the Tenant
+A landlord may seek to evict a tenant in the following situations:
+- Non-payment of rent: A formal notice is sent, and if unpaid, eviction proceedings may follow.
+- Eviction commitment: If the tenant has signed a written commitment to vacate, they can be evicted on the agreed date.
+- Personal or family need: If the landlord or a first-degree relative needs the property, they may request eviction with proof of necessity.
+- Major renovation or reconstruction: The tenant can be evicted if the property requires significant repairs or rebuilding.
 
-### Adım 1: Doğru Emlak Seçimi
+#### 1.4 Right to Increase Rent
+As of 2025, rental increases are limited to the Consumer Price Index (CPI) rate. A landlord:
+- Can increase the rent upon annual contract renewal, not exceeding the CPI rate.
+- Any increase above CPI without tenant agreement can be deemed invalid by the courts.
 
-Rus vatandaşları, ihtiyaçlarına uygun bir gayrimenkul seçmelidir. Emlak ajansları veya doğrudan satıcı ile görüşerek uygun bir bölge belirleyebilirler.
+### 2. Landlord Obligations
 
-Dikkat edilmesi gerekenler:
+#### 2.1 Delivering a Habitable Property
+The landlord must ensure the property is delivered in livable and legally compliant condition.
+- Basic infrastructure such as electricity, water, and natural gas must be operational.
+- If the property is delivered with defects outside the contract, the tenant can cancel the lease or demand repairs.
 
-- Bölgenin gelişim potansiyeli
-- Emlak fiyatları ve yatırım getirisi
-- Tapu üzerindeki ipotek veya şerh durumu
-- Vergi ve ek masraflar
+#### 2.2 Performing Major Repairs and Maintenance
+The landlord is responsible for:
+- Main utility systems (water, electricity, gas lines)
+- Building exterior and roof repairs
+- Boiler or central heating system malfunctions
 
-### Adım 2: Tapu Kaydı ve Hukuki Durum Kontrolü
+Minor maintenance due to regular use (painting, light bulbs, switches, etc.) is expected to be handled by the tenant.
 
-Tapu Sicil Müdürlüğü'nden kontrol edilmesi gerekenler:
+#### 2.3 Paying Taxes
+Landlords must:
+- Declare rental income. For 2025, the tax exemption threshold is 33,000 TL. If rental income exceeds this amount, progressive tax rates apply.
+- Pay property tax annually to the municipality.
+- Failure to declare taxes may result in penalties if detected by tax authorities.
 
-- Mülk sahibinin gerçek satıcı olup olmadığı
-- Mülk üzerinde ipotek, haciz veya şerh olup olmadığı
-- Mülkün imar ve iskan durumu (Belediyeden öğrenilebilir.)
+## Conclusion
 
-Bu bilgiler **Tapu ve Kadastro Genel Müdürlüğü, Belediyeler ve e-Devlet sisteminden** edinilebilir.
+As of 2025, tenant and landlord rights in Turkey are regulated within a balanced legal framework.
+- Tenants must pay rent on time and comply with the lease terms.
+- Landlords must provide habitable housing and fulfill their tax obligations.
 
-### Adım 3: Tapu İşlemleri İçin Gerekli Belgeler
-
-Rus vatandaşlarının tapu işlemleri için hazırlaması gereken belgeler şunlardır:
-
-1.  **Pasaport** (Noter onaylı Türkçe tercümeli)
-2.  **Vergi numarası** (Vergi dairesinden alınabilir.)
-3.  **Tapu belgesi** (Satıcının mülk sahipliğini kanıtlayan belge)
-4.  DASK (Zorunlu Deprem Sigortası)
-5.  Biyometrik fotoğraf (Son 6 ay içinde çekilmiş 2 adet)
-6.  Belediyeden alınan emlak rayiç değer belgesi
-7.  **Taşınmaz Değerleme Raporu** (Yetkili değerleme kuruluşlarından alınmalıdır.)
-
-### Adım 4: Tapu Randevusu ve Ödeme İşlemleri
-
-- Tapu işlemleri **Tapu ve Kadastro Müdürlüğü** aracılığıyla yapılır.
-- Randevu almak için: [https://randevu.tkgm.gov.tr](https://randevu.tkgm.gov.tr/)
-
-Ödenecek Harçlar ve Masraflar:
-
-| Masraf                      | Tutar                |
-| --------------------------- | -------------------- |
-| Tapu Harcı                  | Satış bedelinin %4'ü |
-| Döner Sermaye Ücreti        | 1183 TL              |
-| Noter ve Tercüme Masrafları | 2.000 - 5.000 TL     |
-
-- **Ödeme Yöntemleri:** Banka transferi veya nakit.
-
-### Adım 5: Tapu Devri ve Resmî İşlemler
-
-- Tapu devri için satıcı ve alıcı **Tapu Müdürlüğü\'nde** bir araya gelir.
-- Vekaletname ile de işlemler yürütülebilir.
-- Alıcıya yeni tapu belgesi teslim edilir.
-
-## 3. Yabancılar İçin Ek Avantajlar
-
-### Türk Vatandaşlığı Programı
-
-- En az **400.000 USD** değerinde bir mülk alırsanız, Türk vatandaşlığı için başvurabilirsiniz.
-- Süreç **ortalama 3-6 ay** sürmektedir.
-
-### İkamet İzni
-
-- Mülk satın alan yabancılar **1 yıllık oturma izni** başvurusunda bulunabilir.
-
-## 4. Sıkça Sorulan Sorular (SSS)
-
-- Rus vatandaşları Türkiye'de kaç tane mülk satın alabilir?
-
-  - En fazla **30 hektar** satın alabilirler.
-
-- Tapu işlemleri kaç gün sürer?
-
-  - Ortalama **3-5 iş günü**.
-
-- Otomatik olarak Türk vatandaşı olur muyum?
-
-  - Hayır, ayrıca başvuru yapmalısınız.
+For more detailed legal guidance or support regarding rental procedures in Turkey, feel free to contact us.

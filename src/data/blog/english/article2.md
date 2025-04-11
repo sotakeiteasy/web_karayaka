@@ -1,44 +1,52 @@
 ---
-title: "Gayrimenkul Satış Vaadi Sözleşmesi Nedir?"
+title: "What is a Preliminary Real Estate Sale Agreement?"
 date: "2025-03-31"
 ---
 
-## Gayrimenkul Satış Vaadi Sözleşmesi
+A Preliminary Real Estate Sale Agreement is a bilateral contract in which both parties agree to transfer ownership of a property at a future date under specified conditions. In other words, it is a binding commitment to execute an official real estate sale agreement before a title deed officer at a later time.
 
-Gayrimenkul (taşınmaz) satış vaadi sözleşmesi; bir taşınmazın sözleşmede kararlaştırılan koşullarla ilerideki bir zaman diliminde devrini amaçlayan ve iki tarafa da borç yükleyen sözleşmelerdendir. Bir diğer deyişle, ileride tapu memuru önünde resmi bir şekilde yapılması gereken taşınmaz satım sözleşmesi yapılmasının taahhüt edilmesidir.
+Through this agreement, the promisor (the party making the promise) commits to selling a specific property, and the promisee (the party receiving the promise) agrees to buy it. Both parties thus assume mutual obligations. The rights arising from this contract are relative rights, meaning they can only be enforced by and against the parties involved.
 
-Gayrimenkul satış vaadi sözleşmesi ile vaad eden (vaad borçlusu) belli bir taşınmazı satmayı, vaad alan da (vaad alacaklısı) bu taşınmazı satın almayı taahhüt eder. Böylece her iki taraf karşılıklı borçlanmış olurlar, bu özelliği itibari ile taşınmaz satış vaadinden doğan haklar karşılıklı iki kişi tarafından ileri sürülebilen nispi nitelikteki haklardır.
+## Can a Preliminary Sale Agreement Be Made for Property Not Owned by the Promisor?
 
-### Başkasına Ait Taşınmaz İçin Satış Vaadi Sözleşmesi Yapılabilir mi?
+Yes. Since preliminary sale agreements are considered promissory in nature, a party may promise to sell a property that they do not yet legally own. The agreement commits the promisor to transfer ownership of the property at a future date. Even if the promisor is not the legal owner at the time the contract is signed, they are obligated to transfer the property to the promisee when the time comes.
 
-Gayrimenkul satış vaadi sözleşmeleri taahhüt muamelesi olmaları nedeniyle satışı vaad eden taraf kendisine ait olmayan bir taşınmaz için de taahhütte bulunabilir. Satış vaadi sözleşmesinde belirlenen tarihte tapuda devir yapılması taahhüt edildiğinden, sözleşme hukuki niteliği itibariyle bir taahhüt işlemi olarak kabul edilir. Yani, taşınmazı satmayı vaad eden taraf, sözleşme kurulduğu esnada taşınmazın mülkiyetine sahip değilse bile, ileride söz konusu taşınmazı vaad alacaklısına devretmeyi taahhüt etmiş olur. Aksi durumda, vaad edenin sözleşmeye aykırılık sebebiyle TBK ilgili hükümleri gereği tazminat borcu doğar.
+If they fail to do so, they may be liable to pay compensation under the provisions of the Turkish Code of Obligations (TCO).
 
-## Taşınmaz Satış Vaadi Sözleşmesinin Geçerlilik Şartları
+## Validity Conditions of a Preliminary Real Estate Sale Agreement
 
-Taşınmaz mülkiyetinin devrini amaçlayan bütün sözleşmelerin geçerliliği resmi şekilde yapılmasına bağlıdır (MK md. 706). Resmi şekilde yapılmayan gayrimenkul satış sözleşmeleri geçersiz olup taraflar arasında hiçbir bağlayıcılıkları yoktur.
+According to Article 706 of the Turkish Civil Code, any agreement intending to transfer real estate ownership must be made in official form.
 
-Taşınmaz satış vaadi sözleşmesi de ileride taşınmaz mülkiyetinin tapuda devrini yapmayı taahhüt eden bir ön sözleşmedir. Taşınmaz satış vaadi sözleşmeleri, noter huzurunda resmi senet şeklinde düzenlenerek iki tarafça imzalanmalıdır (BK md. 29, Noterlik K. md. 60/3, md.89). Gayrimenkul satış vaadi sözleşmesi, noter tarafından düzenleme şeklinde değil de onaylama şeklinde yapılırsa geçersiz hale gelir.
+- If not made in this official form, the agreement is invalid and has no legal effect between the parties.
+- A preliminary real estate sale agreement is a pre-contract committing to a future transfer of ownership.
+- Such agreements must be prepared and signed in the form of a notarized official deed by both parties (TCO Article 29; Notary Law Articles 60/3 and 89).
+- If the agreement is merely approved by a notary instead of being drawn up, it will be considered invalid.
+- The price to be paid by the buyer must be clearly stated in the agreement, along with the payment terms (installments or lump sum).
+- According to zoning regulations, co-owned parcels for development purposes cannot be subject to preliminary sale agreements.
 
-Taşınmaz satış vaadi sözleşmelerinde satın almayı vaad eden tarafın ödeyeceği bedelin açıkça sözleşmede belirtilmiş olması gerekir. Ayrıca, ödeme şekline (taksit veya peşin) ilişkin açık hüküm bulunmalıdır. İmar Kanunu'na göre yapılaşma amacıyla hisselendirilmiş taşınmazlar satış vaadine konu edilemez.
+## Obligations of the Parties in a Preliminary Sale Agreement
 
-## Gayrimenkul Satış Vaadi Sözleşmesinde Tarafların Yükümlülükleri
+- The promisor (seller) is obligated to transfer the property to the buyer on the agreed date. At the time of transfer, they must be the legal owner.
+  - If they are not and cannot fulfill their obligation, they are liable to pay compensation.
+- The promisee (buyer) must pay the agreed amount in the agreed manner.
+  - They have the right to request the formal transfer of the property at the land registry.
 
-Gayrimenkul satış vaadi sözleşmelerinde, satış vaad eden taraf sözleşmede belirtilen tarihte taşınmazı devretmekle yükümlüdür. Devir aşamasında malik olması gerekir. Eğer malik değilse ve borcunu ifa edemezse tazminat ödemek zorundadır.
+## Termination of the Preliminary Real Estate Sale Agreement
 
-Taşınmazı satın almayı vaad eden taraf ise sözleşmede belirtilen bedeli ve ödeme şeklini yerine getirmekle yükümlüdür. Satış işleminin tamamlanması için tapuda devir işleminin yapılmasını talep etme hakkına sahiptir.
+A preliminary sale agreement may be terminated in the following cases:
+- Fulfillment of the contract (i.e., the transfer is completed)
+- Expiry of the statute of limitations for performance
+- Mutual termination by both parties
 
-## Gayrimenkul Satış Vaadi Sözleşmesinin Sona Ermesi
+## Statute of Limitations for Preliminary Sale Agreements
 
-Gayrimenkul satış vaadi sözleşmesi şu durumlarda sona erer:
+- There is no special statute of limitations for these agreements. According to TCO Article 146, a 10-year general limitation period applies.
+- This period starts from the date the performance becomes possible.
+- If there is a legal obstacle preventing the transfer of the property at the land registry, the statute of limitations does not begin until the obstacle is removed.
 
-- Sözleşmenin ifa edilmesi,
-- Sözleşmede belirlenen edimin ifasının zamanaşımına uğraması,
-- Sözleşmenin taraflarca feshedilmesi.
+## Annotation (Registration) of the Preliminary Sale Agreement in the Land Registry
 
-## Gayrimenkul Satış Vaadi Sözleşmelerinde Zamanaşımı
+In order for a preliminary real estate sale agreement to be enforceable against third parties, it must be annotated in the land registry (Civil Code Article 1009).
 
-Gayrimenkul satış vaadi sözleşmesi için özel bir zamanaşımı süresi bulunmamaktadır. BK md. 146 gereği 10 yıllık zamanaşımı süresi uygulanır. Zamanaşımı süresi, ifa olanağı doğduğu andan itibaren işlemeye başlar. Tapuda taşınmazın devrine engel bir durum varsa, bu engel kalkana kadar zamanaşımı süresi işlemeye başlamaz.
-
-## Taşınmaz Satış Vaadi Sözleşmesinin Tapuya Şerh Edilmesi
-
-Gayrimenkul satış vaadi sözleşmelerinin üçüncü kişilere karşı ileri sürülebilmesi için tapuya şerh edilmesi gerekir (MK md. 1009). Şerh, taşınmazın başkasına satılmasını engellemez ancak yeni malik de satış vaadi sözleşmesine uymak zorunda kalır. Tapuya şerh işlemi yapıldıktan sonra 5 yıl içinde satış işlemi tamamlanmazsa, şerhin etkisi ortadan kalkar.
+- The annotation does not prevent the property from being sold to another party, but any new owner will be bound by the terms of the agreement.
+- If the property is not transferred within 5 years from the date of annotation, the effect of the annotation expires.

@@ -4475,7 +4475,7 @@ export const ads: Ad[] = [
     "floorInHouse": null,
     "parking": null,
     "images": [
-      "/images/Sell/Sakarya/Kocaali/1/Tapu.jpg"
+      "/images/Sell/Sakarya/Kocaali/1/Tapu.png"
     ]
   }, 
 
@@ -4509,8 +4509,8 @@ export const ads: Ad[] = [
     "floorInHouse": null,
     "parking": null,
     "images": [
-      "/images/Sell/Sakarya/Kaynarca/2/Proje.jpg",
-      "/images/Sell/Sakarya/Kaynarca/2/Tapu.jpg"
+      "/images/Sell/Sakarya/Kaynarca/2/Proje.png",
+      "/images/Sell/Sakarya/Kaynarca/2/Tapu.png"
     ]
   }
 ];

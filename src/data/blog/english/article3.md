@@ -1,88 +1,84 @@
 ---
-title: "Türkiye'de İhtiyaç Nedeniyle Tahliye Davası: Rus Vatandaşları İçin Kısa ve Anlaşılır Rehber"
+title: "Eviction Lawsuit Based on Personal Need in Turkey: A Brief and Clear Guide for Russian Citizens"
 date: "2025-03-31"
 ---
 
-İhtiyaç nedeniyle tahliye davası, bir mülk sahibinin kiracıyı tahliye ettirmek için açabileceği yasal bir davadır. **Bu dava iki şekilde açılabilir:**
+An eviction lawsuit based on personal need is a legal process through which a property owner can request the eviction of a tenant. This type of lawsuit can be filed in two main situations:
 
-1.  Ev sahibinin veya yakınlarının konut veya işyeri ihtiyacı nedeniyle (TBK 350. madde).
-2.  Mülkü yeni satın alan kişinin ihtiyacı nedeniyle (TBK 351. madde).
+1. When the landlord or their close relatives need the property for residential or commercial use (Article 350 of the Turkish Code of Obligations).
+2. When a new owner who has purchased the property needs it for themselves or their family (Article 351 of the Turkish Code of Obligations).
 
-Bu davada, **ihtiyacın gerçek, samimi ve zorunlu olması gerekmektedir.** Geçici, henüz doğmamış veya uzun süre sonra ortaya çıkabilecek bir ihtiyaç, tahliye sebebi olarak kabul edilmez.
+The need must be genuine, sincere, and essential. Temporary, future, or speculative needs are not accepted as valid reasons for eviction.
 
-## 1. Hangi Durumlarda Tahliye Davası Açılabilir?
+## 1. In Which Situations Can an Eviction Lawsuit Be Filed?
 
-### a) Ev Sahibi Kendi İhtiyacı İçin Tahliye Davası Açabilir mi?
+### a) Can the Landlord File for Eviction Due to Personal Need?
+Yes. A landlord can file an eviction lawsuit if they, their spouse, children, parents, or someone they are legally obligated to support needs the property for residential or business use.
 
-Evet. Ev sahibi, **kendisinin, eşinin, çocuklarının, anne-babasının veya bakmakla yükümlü olduğu kişilerin** konut veya işyeri ihtiyacı varsa tahliye davası açabilir.
+- If the property will be renovated or reconstructed, eviction may also be possible.
+- In fixed-term leases, the lawsuit must be filed within 1 month after the end of the lease.
+- In open-ended leases, the landlord must notify termination and file the lawsuit within 1 month of the termination notice.
 
-- Eğer mülk **yeniden inşa edilecek veya büyük bir tadilat gerektiriyorsa**, tahliye edilebilir.
-- Belirli süreli kira sözleşmelerinde **süre sonunda**, belirsiz süreli sözleşmelerde **fesih bildirimi sonrası bir ay içinde** tahliye davası açılabilir.
+### b) Can a New Owner Evict the Tenant Due to Personal Need?
+Yes. A person who has newly purchased a property may request eviction if they or their family needs it, under the following conditions:
 
-### b) Yeni Malikin (Yeni Ev Sahibinin) Tahliye Hakkı Var mı?
+- A written notice must be sent to the tenant within 1 month of acquiring the property.
+- The eviction lawsuit can be filed 6 months after the notification.
+- Alternatively, the lawsuit can be filed within 1 month after the lease expires, if applicable.
 
-Evet. Bir mülkü yeni satın alan kişi, **kendisinin veya ailesinin ihtiyacı varsa**, şu şartlarla tahliye davası açabilir:
+## 2. Factors Considered in Eviction Lawsuits Based on Need
 
-- **Edinme tarihinden itibaren 1 ay içinde** kiracıya yazılı bildirim yapılmalıdır.
-- Bildirim yapıldıktan **6 ay sonra tahliye davası açılabilir.**
-- Eğer sözleşme süresi dolduğunda tahliye davası açılacaksa, **sözleşme bitiminden itibaren 1 ay içinde dava açılmalıdır.**
+To succeed in court, the need must be:
+- Genuine – the owner or their family truly needs the property
+- Sincere – not a fabricated reason to remove the tenant
+- Essential – the owner has no reasonable alternative
 
-## 2. İhtiyaç Nedeniyle Tahliye Davasında Dikkate Alınan Faktörler
+The court will also assess the tenant's situation, current rental market conditions, and the landlord's intentions.
 
-Tahliye davasının başarılı olabilmesi için ihtiyacın:
+## 3. Eviction Based on Commercial (Workplace) Need
 
-- **Gerçek olması** (yani, mal sahibinin veya ailesinin gerçekten bu mülke ihtiyacı olması),
-- **Samimi olması** (yalnızca kiracıyı çıkarmak için uydurulmuş bir sebep olmaması),
-- **Zorunlu olması** (mülk sahibinin başka bir alternatifinin olmaması) gerekir.
+In such cases, the court examines whether the business need is truly essential.
 
-Ayrıca, mahkeme **kiracının durumunu, mevcut kira piyasasını ve mülk sahibinin niyetini** inceler.
+- If the landlord already operates a business elsewhere, the court evaluates whether the new property is more suitable.
+- If the landlord does not use the property for its claimed purpose after eviction or rents it to someone else, the court may find bad faith and award compensation to the tenant.
 
-## 3. İşyeri İhtiyacı Nedeniyle Tahliye Davası
+## 4. Can Legal Entities (Companies) File Eviction Lawsuits?
 
-- İş yeri ihtiyacına dayalı tahliye davasında, iş yeri ihtiyacının gerçekten zorunlu olup olmadığı değerlendirilir.
-- Eğer mülk sahibi **halen başka bir iş yerinde faaliyet gösteriyorsa**, mahkeme yeni mülkün eski iş yerine kıyasla daha uygun olup olmadığını inceler.
-- Kiracı tahliye edilse bile, mal sahibi işyerini hemen kullanmazsa veya başkasına kiralarsa, kötü niyetli kabul edilebilir ve tazminat ödemek zorunda kalabilir.
+- Individuals cannot file eviction lawsuits citing the needs of a company.
+- However, a legal entity (company) may file for eviction if it intends to use the property for its own activities.
+- The company's activity must align with the purpose of the property (e.g., a company outside the food sector cannot evict a tenant to open a bakery).
 
-## 4. Tüzel Kişiler (Şirketler) Tahliye Davası Açabilir mi?
+## 5. Legal Deadlines in Eviction Lawsuits Based on Need
 
-- Gerçek kişiler (bireyler), şirketin ihtiyacını gerekçe göstererek tahliye davası açamaz.
-- Ancak **şirketin kendisi**, faaliyetleri için bir mülkü kullanacaksa tahliye talep edebilir.
-- **Şirketin faaliyet konusu ile ilgili olması gereklidir.** Örneğin, gıda sektöründe olmayan bir şirket, fırın açmak için bir dükkanın tahliyesini talep edemez.
+| Situation | Deadline |
+|-----------|----------|
+| Landlord's own need | Within 1 month after the lease expires |
+| New owner's need | Notify tenant within 1 month of purchase, then file suit after 6 months |
+| If prior written warning was given | Lawsuit can be filed until the end of the extended lease term |
 
-## 5. Tahliye Davasında Süreler
+- In fixed-term leases, prior notice is not mandatory.
+- In open-ended leases, a termination notice is required before filing a lawsuit.
 
----
+## 6. Is Notice Required Before Filing an Eviction Lawsuit?
 
-Durum Tahliye Süresi
-Ev sahibi kendi ihtiyacı için tahliye davası açmak istiyorsa Kira süresi bitiminden itibaren **1 ay içinde**
-Yeni malik (mülkü satın alan kişi) tahliye davası açacaksa Mülkü edindikten sonra **1 ay içinde** kiracıya yazılı bildirim yapmalı, **6 ay sonra dava açabilir.**
-Kiracıya önceden yazılı ihtar (uyarı) gönderilmişse **Uzayan bir kira yılı sonuna kadar** dava açılabilir.
+Yes, landlords must provide written notice before initiating an eviction lawsuit.
 
----
+- A new owner must notify the tenant within 1 month of acquiring the property.
+- If the tenant refuses to vacate after receiving notice, the landlord may file a lawsuit.
 
-- **Belirli süreli kira sözleşmelerinde**, ev sahibi tahliye davası açmak için **önceden ihtarname göndermek zorunda değildir.**
-- **Belirsiz süreli sözleşmelerde**, **fesih bildirimi yapılmadan tahliye davası açılamaz.**
+## 7. Enforcement of the Eviction Decision
 
-## 6. Tahliye Davası Açılmadan Önce Kiracıya Bildirim Yapılmalı mı?
+- Once the court issues an eviction order, the tenant is given a specific period to vacate.
+- If the tenant refuses, eviction may be enforced through execution proceedings.
+- If the landlord rents the property to someone else within 3 years, the former tenant may file a compensation claim.
 
-Eğer mülk sahibi **tahliye davası açmak istiyorsa,** öncesinde kiracıya **yazılı bir bildirim göndermesi gereklidir.**
+## Conclusion
 
-- Yeni malik ise, mülkü aldıktan sonra 1 ay içinde bildirim yapmalıdır.
-- Kiracının bu bildirimi almasına rağmen çıkmaması durumunda tahliye davası açılabilir.
+Filing an eviction lawsuit based on personal need is an important legal process in Turkey.
 
-## 7. Tahliye Davasında Kararın Uygulanması
+- Property owners may file such lawsuits if they or their relatives have genuine need for the property.
+- New owners must provide written notice and wait at least 6 months before filing a lawsuit.
+- Courts will carefully evaluate whether the claimed need is legitimate.
+- If the landlord rents the property to another party within 3 years after eviction, the evicted tenant may claim compensation.
 
-- Mahkeme, **tahliye kararı verdikten sonra kiracının evi veya iş yerini boşaltması için belirli bir süre tanır.**
-- Kiracı mahkeme kararına uymazsa, **icra yoluyla tahliye edilebilir.**
-- Eğer mal sahibi **tahliye edilen mülkü 3 yıl boyunca başka birine kiraya verirse**, kiracı **tazminat davası açabilir.**
-
-## Sonuç
-
-Türkiye'de ihtiyaç nedeniyle tahliye davası açmak, hem ev sahipleri hem de kiracılar için önemli bir hukuki süreçtir.
-
-- **Ev sahipleri**, **kendi veya yakınlarının ihtiyacı varsa** tahliye davası açabilir.
-- **Yeni malik, mülkü satın aldıktan sonra kiracıyı çıkarmak istiyorsa,** yazılı bildirim yapmalı ve en az **6 ay beklemelidir.**
-- Mahkeme, ihtiyacın gerçek olup olmadığını detaylı bir şekilde inceler.
-- Kiracı tahliye edilse bile, ev sahibi mülkü 3 yıl boyunca başka birine kiraya verirse, eski kiracı tazminat talep edebilir.
-
-Türkiye'de kira hukuku konusunda profesyonel destek almak, **tahliye sürecinin doğru şekilde yürütülmesini sağlar ve tarafların haklarını korur.**
+Obtaining professional legal support is highly recommended to ensure that eviction proceedings are carried out properly and to protect the rights of both parties.

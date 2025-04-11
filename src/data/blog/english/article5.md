@@ -1,61 +1,64 @@
 ---
-title: "Türkiye'de Kira Bedelinin Tespiti Davası: Rus Vatandaşları İçin Kısa ve Anlaşılır Rehber"
+title: "Rent Determination Lawsuit in Turkey: A Brief and Clear Guide for Russian Citizens"
 date: "2025-03-31"
 ---
 
-Türkiye'de kira sözleşmeleri genellikle bir yıllık olarak düzenlenir ve tarafların anlaşmazlık yaşaması halinde, kira bedelinin tespiti için mahkemeye başvurulabilir. Bu makalede, kira bedelinin tespiti davasının ne olduğu, kimlerin açabileceği, nasıl işlediği ve mahkeme kararlarının nasıl uygulandığı hakkında temel bilgiler sunulmaktadır.
+In Turkey, rental agreements are generally made on a yearly basis. In case of a dispute between the tenant and the landlord, either party may apply to the court to determine a fair rental price. This article provides essential information about what a rent determination lawsuit is, who can file it, how the process works, and how court decisions are implemented.
 
-## 1. Kira Bedelinin Tespiti Davası Nedir?
+## 1. What is a Rent Determination Lawsuit?
 
-Kira bedelinin tespiti davası, mevcut kira bedelinin piyasa koşullarına uygun olup olmadığının belirlenmesi için açılan bir davadır.
+A rent determination lawsuit is filed to assess whether the current rental price is in line with market conditions.
 
-- Kiracı, fazla ödediğini düşündüğü kira bedelinin düşürülmesini isteyebilir.
-- Ev sahibi (kiraya veren), mevcut kira bedelinin düşük kaldığını düşünüyorsa artırılması için dava açabilir.
+- A tenant may file the case if they believe the rent they pay is significantly above market value.
+- A landlord may file the case if they believe the rent is too low compared to current market conditions.
 
-## 2. Kimler Kira Tespit Davası Açabilir?
+## 2. Who Can File a Rent Determination Lawsuit?
 
-- **Kiracı:** Eğer ödediği kira bedeli piyasa değerinin çok üstündeyse, kira bedelinin düşürülmesi için dava açabilir.
-- **Ev Sahibi:** Eğer kira bedeli piyasa koşullarına göre çok düşükse, yükseltilmesi için dava açabilir.
-- **Paylı mülkiyet sahipleri:** Eğer bir mülk birden fazla kişi tarafından sahiplenilmişse, her paydaş kendi payına düşen kira bedelinin tespit edilmesini talep edebilir.
+- Tenants: May request a reduction in rent if they believe the current amount is excessively high.
+- Landlords: May request an increase if the rent is too low based on market rates.
+- Co-owners: In the case of joint ownership, each owner may request a determination for their share of the rent.
 
-## 3. Kira Tespit Davası Hangi Mahkemede Açılır?
+## 3. Which Court Handles Rent Determination Lawsuits?
 
-- Dava, genellikle **kiralanan taşınmazın bulunduğu yerdeki Sulh Hukuk Mahkemesi'nde açılır**.
-- Eğer taraflar tacir (şirket) veya kamu tüzel kişisi ise, sözleşmede belirlenen mahkemeye de başvurulabilir.
+- These lawsuits are generally filed at the Civil Court of Peace located in the district where the rented property is situated.
+- If the parties are commercial entities (companies or public institutions), the lawsuit may also be filed in the court specified in the lease agreement.
 
-## 4. Kira Tespit Davası Ne Zaman Açılabilir?
+## 4. When Can a Rent Determination Lawsuit Be Filed?
 
-- Eğer taraflar kira artış oranında anlaşamazsa, **yeni kira yılı başlamadan en az 30 gün önce** dava açılmalıdır.
-- **5 yıl veya daha uzun süredir devam eden kira sözleşmelerinde**, taraflar kira bedelinin yeniden belirlenmesi için dava açabilir.
-- Mahkeme, TÜFE (Tüketici Fiyat Endeksi), emsal kira bedelleri ve mülkün durumu gibi faktörleri göz önünde bulundurarak adil bir kira bedeli belirler.
+- If the parties cannot agree on the annual rent increase, the lawsuit must be filed at least 30 days before the start of the new rental year.
+- For rental agreements that have been in place for five years or longer, either party may apply to have the rent reassessed.
 
-## 5. Mahkeme Kararı Ne Zaman Geçerli Olur?
+The court takes into account factors such as the Consumer Price Index (CPI), comparable rental prices, and the condition of the property to determine a fair rent.
 
-- Eğer kira tespit davası **yeni kira dönemi başlamadan en az 30 gün önce açılmışsa**, belirlenen yeni kira bedeli kira yılının başından itibaren geçerli olur.
-- Eğer dava daha geç açılmışsa, yeni kira bedeli **mahkeme kararından itibaren uygulanır**.
+## 5. When Does the Court's Decision Take Effect?
 
-## 6. Kira Tespit Davasında Dikkate Alınan Kriterler
+- If the lawsuit is filed at least 30 days before the new rental period, the new rent amount applies from the beginning of that rental year.
+- If it is filed later, the new rental amount is effective from the date of the court's decision.
 
-Mahkeme, yeni kira bedelini belirlerken şunları dikkate alır:
+## 6. Criteria Considered in Rent Determination
 
-- TÜFE oranı (12 aylık ortalama enflasyon oranı)
-- Kiralanan mülkün konumu, durumu ve özellikleri
-- Benzer bölgelerdeki emsal kira bedelleri
-- Kiracının uzun süredir aynı yerde oturup oturmadığı (eski kiracı indirimi olabilir)
+When determining a new rent, the court evaluates:
+- CPI (12-month average inflation rate)
+- The location, condition, and features of the rented property
+- Comparable rental prices in similar areas
+- Whether the tenant has lived in the property for a long time (a long-term tenant may be eligible for a reduction)
 
-## 7. Dava Sonucu ve Uygulama Süreci
+## 7. Outcome and Implementation of the Lawsuit
 
-- Mahkemenin belirlediği kira bedeli **kesinleşmeden icra edilemez**, yani kararın uygulanması için davanın tamamlanması ve kesinleşmesi gerekir.
-- Yeni kira bedeli belirlendikten sonra, kiracı bu yeni tutarı ödemek zorundadır.
-- Eğer taraflar yeni kira bedeli konusunda anlaşamazsa, mahkeme kararı zorunlu olarak uygulanacaktır.
+- The court's decision cannot be enforced until it becomes finalized.
+- Once finalized, the tenant is legally required to pay the newly determined rent.
+- If the parties cannot agree on the new rent, the court's ruling will be enforced by law.
 
-## 8. Kira Bedelinin Tespiti Davasının Maliyeti
+## 8. Cost of a Rent Determination Lawsuit
 
-- Davanın açılması için mahkeme harcı ödenir ve bu tutar **mevcut kira ile mahkemenin belirlediği yeni kira bedeli arasındaki fark** üzerinden hesaplanır.
-- Dava sonucu lehine çıkan taraf, karşı taraftan avukatlık ücreti ve mahkeme masraflarını talep edebilir.
+- A court fee must be paid to file the case. This fee is calculated based on the difference between the current and the newly proposed rent.
+- The winning party may also request attorney fees and court expenses to be paid by the losing party.
 
-## Sonuç
+## Conclusion
 
-Kira bedelinin tespiti davası, hem ev sahipleri hem de kiracılar için önemli bir hukuki süreçtir. **Taraflar, kira artış oranında anlaşamazsa veya kira bedelinin piyasa şartlarına uygun olmadığını düşünüyorsa, mahkemeye başvurabilir.** Ancak bu davanın zamanlaması ve doğru şekilde açılması önemlidir. **Yeni kira döneminden önce açılmazsa, belirlenen yeni kira bedeli bir sonraki yıl uygulanabilir.**
+A rent determination lawsuit is an important legal tool for both landlords and tenants in Turkey.
 
-Türkiye'de kiralama süreçleriyle ilgili hukuki konularda profesyonel destek almak, hem kiracılar hem de ev sahipleri için en iyi çözüm olabilir.
+- If the rent increase cannot be agreed upon or if either party believes the current rent is not aligned with market conditions, a lawsuit may be filed.
+- However, timing and proper filing are critical. If the lawsuit is not initiated before the new rental year begins, the new rent may only be applicable for the following year.
+
+In Turkey, it is highly recommended that both tenants and landlords seek professional legal assistance to navigate rental disputes efficiently.
