@@ -13,11 +13,8 @@ export const countryTranslations: Record<
     en: "Russia",
     tr: "Rusya",
   },
-} as const;
+};
 
-export type Country = "Turkey" | "Russia";
-
-// Типы для городов
 export const cityTranslations: Record<
   string,
   { ru: string; en: string; tr: string }
@@ -45,9 +42,6 @@ export const cityTranslations: Record<
 
 };
 
-export type City = keyof typeof cityTranslations;
-
-// Типы для районов
 export const districtTranslations: Record<
   string,
   { ru: string; en: string; tr: string }
@@ -124,5 +118,3 @@ export const districtTranslations: Record<
   },
 
 };
-
-export type District = keyof typeof districtTranslations;

@@ -24,6 +24,4 @@ export const propertyTypeTranslations = {
     en: "Commercial Property",
     tr: "Ticari Gayrimenkul",
   },
-} as const;
-
-export type PropertyType = keyof typeof propertyTypeTranslations;
+};

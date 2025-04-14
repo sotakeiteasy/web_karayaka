@@ -20,101 +20,74 @@ export function filterAds(
   filters: Filter,
   currencyType: "rub" | "try" = "try"
 ): Ad[] {
+
+  if (Object.keys(filters).length === 0) {
+    return ads;
+  }
+
   return ads.filter((ad) => {
-    // Country match
-    const countryMatch =
-      !filters.country ||
-      hasTranslationMatch(
+    if (filters.type && ad.type !== filters.type) return false;
+    
+    const adPrice = ad.price[currencyType] || 0;
+    if (filters.minPrice && adPrice < filters.minPrice) return false;
+    if (filters.maxPrice && adPrice > filters.maxPrice) return false;
+    
+    if (filters.minArea && ad.area < filters.minArea) return false;
+    if (filters.maxArea && ad.area > filters.maxArea) return false;
+    
+    if (filters.floor) {
+      const floor = ad.floor || 0;
+      switch (filters.floor) {
+        case 1: if (floor < 0 || floor > 5) return false; break;
+        case 2: if (floor < 6 || floor > 10) return false; break;
+        case 3: if (floor < 10 || floor > 15) return false; break;
+        case 4: if (floor < 15) return false; break;
+      }
+    }
+    
+    if (filters.country && !hasTranslationMatch(
         countryTranslations[ad.location.country],
         filters.country
+      )) {
+      return false;
+    }
+    
+    if (filters.city && !hasTranslationMatch(
+        cityTranslations[ad.location.city],
+        filters.city
+      )) {
+      return false;
+    }
+    
+    if (filters.propertyType) {
+      const matchesPropertyType = Object.entries(propertyTypeTranslations).some(
+        ([key, translations]) => 
+          key === ad.propertyType && hasTranslationMatch(translations, filters.propertyType!)
       );
-
-    // City match
-    const cityMatch =
-      !filters.city ||
-      hasTranslationMatch(cityTranslations[ad.location.city], filters.city);
-
-    // Property type match
-    const propertyTypeMatch =
-      !filters.propertyType ||
-      (() => {
-        const propertyTypeKey = Object.entries(propertyTypeTranslations).find(
-          ([_, translations]) =>
-            hasTranslationMatch(translations, filters.propertyType!)
-        )?.[0];
-
-        return propertyTypeKey === ad.propertyType;
-      })();
-
-    // Address/text search match
-    const textSearchMatch =
-      !filters.address ||
-      (() => {
-        const searchText = filters.address!.toLowerCase();
-
-        // Check in description
-        const descriptionMatch = hasTranslationMatch(
-          ad.description,
-          searchText
-        );
-
-        // Check in location data
-        const addressMatch =
-          hasTranslationMatch(
-            countryTranslations[ad.location.country],
-            searchText
-          ) ||
-          hasTranslationMatch(cityTranslations[ad.location.city], searchText) ||
-          (ad.location.district &&
-            hasTranslationMatch(
-              districtTranslations[ad.location.district],
-              searchText
-            ));
-
-        return descriptionMatch || addressMatch;
-      })();
-
-    // Other filter criteria
-    const typeMatch = !filters.type || ad.type === filters.type;
-    const adPrice = ad.price[currencyType] || 0;
-    const minPriceMatch = !filters.minPrice || adPrice >= filters.minPrice;
-    const maxPriceMatch = !filters.maxPrice || adPrice <= filters.maxPrice;
-    const bedroomsMatch =
-      !filters.bedrooms || ad.rooms === filters.bedrooms.toString();
-    const minAreaMatch = !filters.minArea || ad.area >= filters.minArea;
-    const maxAreaMatch = !filters.maxArea || ad.area <= filters.maxArea;
-    const featuresMatch = !filters.features || !filters.features.length;
-    const floorMatch = !filters.floor || ad.floor === filters.floor;
-
-    // Parking logic
-    const openParking = filters.open === true;
-    const closedParking = filters.closed === true;
-
-    const parkingMatch =
-      (!openParking && !closedParking) || // Nothing selected - show all
-      (openParking && !closedParking && (ad.parking === "open" || ad.parking === "both")) || // Only open selected
-      (!openParking && closedParking && (ad.parking === "closed" || ad.parking === "both")) || // Only closed selected
-      (openParking && closedParking && ad.parking === "both"); // Both selected - show only properties with both
-
-    return (
-      countryMatch &&
-      cityMatch &&
-      typeMatch &&
-      minPriceMatch &&
-      maxPriceMatch &&
-      bedroomsMatch &&
-      minAreaMatch &&
-      maxAreaMatch &&
-      featuresMatch &&
-      floorMatch &&
-      parkingMatch &&
-      textSearchMatch &&
-      propertyTypeMatch
-    );
+      if (!matchesPropertyType) return false;
+    }
+    
+    // Поиск по тексту/адресу
+    if (filters.address) {
+      const searchText = filters.address.toLowerCase();
+      
+      const descriptionMatch = hasTranslationMatch(ad.description, searchText);
+      const countryMatch = hasTranslationMatch(countryTranslations[ad.location.country], searchText);
+      const cityMatch = hasTranslationMatch(cityTranslations[ad.location.city], searchText);
+      const districtMatch = ad.location.district && hasTranslationMatch(
+        districtTranslations[ad.location.district], 
+        searchText
+      );
+      
+      if (!descriptionMatch && !countryMatch && !cityMatch && !districtMatch) {
+        return false;
+      }
+    }
+    
+    return true;
   });
 }
 
-// Helper function to check if any value in a translation object includes search text
 function hasTranslationMatch(
   translationObj: Record<string, string | null> | undefined,
   searchText: string
@@ -130,14 +103,13 @@ function hasTranslationMatch(
 export function getUniqueFilterValues() {
   const countriesMap = new Map<
     string,
-    { en: string; ru: string; tr: string }
+    { en: string; ru: string }
   >();
-  const citiesMap = new Map<string, { en: string; ru: string; tr: string }>();
+  const citiesMap = new Map<string, { en: string; ru: string }>();
   const propertyTypesMap = new Map<
     string,
-    { en: string; ru: string; tr: string }
+    { en: string; ru: string }
   >();
-  const features = new Set<string>();
 
   ads.forEach((ad) => {
     // Add countries using data from translations
@@ -148,12 +120,10 @@ export function getUniqueFilterValues() {
       );
     }
 
-    // Add cities using data from translations
     if (ad.location.city && cityTranslations[ad.location.city]) {
       citiesMap.set(ad.location.city, cityTranslations[ad.location.city]);
     }
 
-    // Add property types using existing translations
     propertyTypesMap.set(
       ad.propertyType,
       propertyTypeTranslations[ad.propertyType]
@@ -164,6 +134,5 @@ export function getUniqueFilterValues() {
     countries: Array.from(countriesMap.values()),
     cities: Array.from(citiesMap.values()),
     propertyType: Array.from(propertyTypesMap.values()),
-    features: Array.from(features),
   };
 }

@@ -45,10 +45,10 @@ export function useFilterOptions(country: string | undefined, lang: 'ru' | 'en')
 
   const floorOptions = useMemo(() => [
     { value: "", label: t("search.filters.any") },
-    { value: "1", label: "1" },
-    { value: "2", label: "2" },
-    { value: "3", label: "3" },
-    { value: "4", label: "4+" },
+    { value: "1", label: "0-5" },
+    { value: "2", label: "6-10" },
+    { value: "3", label: "10-15" },
+    { value: "4", label: "15+" },
   ], [t]);
 
   const sortOptions = useMemo(() => [
