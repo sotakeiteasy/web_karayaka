@@ -1,9 +1,11 @@
 import "@styles/globals.scss";
 import type { AppProps } from "next/app";
-import { Header, Footer } from "@/lib/components";
+import dynamic from 'next/dynamic';
 import { Montserrat } from "next/font/google";
 import Head from "next/head";
-import Script from "next/script";
+
+const Header = dynamic(() => import('@/lib/components').then(mod => mod.Header), { ssr: false });
+const Footer = dynamic(() => import('@/lib/components').then(mod => mod.Footer), { ssr: false });
 
 const montserrat = Montserrat({
   variable: "--font-geist-sans",

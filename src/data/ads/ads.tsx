@@ -4509,8 +4509,8 @@ export const ads: Ad[] = [
     "floorInHouse": null,
     "parking": null,
     "images": [
-      "/images/Sell/Sakarya/Kaynarca/2/Proje.png",
-      "/images/Sell/Sakarya/Kaynarca/2/Tapu.png"
+      "/images/Sell/Sakarya/Kocaali/2/Proje.png",
+      "/images/Sell/Sakarya/Kocaali/2/Tapu.png"
     ]
   }
 ];
