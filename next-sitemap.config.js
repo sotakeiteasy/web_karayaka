@@ -4,10 +4,6 @@ module.exports = {
     siteUrl: 'https://karayaka.ru',
     generateRobotsTxt: true,
     exclude: [
-      '*/simpleSlider/*',
-      '*/CustomSlider/*',
-      '*/PaginatedAds/*',
-      '/home',
       '/search',
       '/video/*',
       '/images/*'
@@ -16,16 +12,8 @@ module.exports = {
       policies: [
         {
           userAgent: '*',
-          allow: [
-            '/',
-            '/search?type=',
-          ],
           disallow: [
             '/search',
-            '/*/simpleSlider/',
-            '/*/CustomSlider/',
-            '/*/PaginatedAds/',
-            '/home',
             '/video/',
             '/images/'
           ]

@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useTranslation, useLanguageQuery } from "next-export-i18n";
 import { ChangeEvent } from "react";
 
-const PaginatedAds = dynamic(() => import("./PaginatedAds/PaginatedAds"), { ssr: false  });
+const PaginatedAds = dynamic(() => import("../../lib/components/search/PaginatedAds/PaginatedAds"), { ssr: false  });
 import { SelectOption, MetaTags } from "@/lib/types";
 import { useSearchFilters, useFilterOptions } from "@/lib/utils";
 
