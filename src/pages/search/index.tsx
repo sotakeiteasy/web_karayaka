@@ -20,6 +20,7 @@ export default function Search({ metaTags }: {metaTags: MetaTags}) {
 
   const {
     filter,
+    appliedFilters,
     searchText,
     setSearchText,
     filteredAds,
@@ -216,7 +217,7 @@ export default function Search({ metaTags }: {metaTags: MetaTags}) {
             </div>
 
             <div className={styles.addPanel}>
-              {Object.keys(filter).length > 1 && (
+              {Object.keys(appliedFilters).length > 1 && (
                 <button onClick={resetFilters} className={styles.resetButton}>
                   {t("search.filters.reset")}
                 </button>

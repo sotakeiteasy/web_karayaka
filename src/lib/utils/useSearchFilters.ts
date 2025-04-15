@@ -6,9 +6,11 @@ import { filterAds } from '@/lib/utils';
 export function useSearchFilters() {
   const router = useRouter();
   const [filter, setFilter] = useState<Filter>({});
+  const [appliedFilters, setAppliedFilters] = useState({});
   const [searchText, setSearchText] = useState("");
   const [filteredAds, setFilteredAds] = useState<Ad[]>([]);
   const [sortOption, setSortOption] = useState("price-cheap");
+  
 
   const sortAds = (option: string, adsToSort: Ad[]) => {
     const sortedAds = [...adsToSort];
@@ -123,6 +125,7 @@ export function useSearchFilters() {
     });
 
     setFilter(newFilter);
+    setAppliedFilters(newFilter);
     updateResults(newFilter, sortOption);
   };
 
@@ -139,6 +142,7 @@ export function useSearchFilters() {
 
   return {
     filter,
+    appliedFilters,
     searchText,
     setSearchText,
     filteredAds,
