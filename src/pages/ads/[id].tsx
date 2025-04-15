@@ -23,7 +23,7 @@ import {
 
 import { getAllAds, getAdById, getImageUrl } from "@/lib/utils";
 import { ContactUs } from "@/lib/components";
-import { Ad } from "@/lib/types";
+import { Ad, MetaTags } from "@/lib/types";
 import {
   countryTranslations,
   cityTranslations,
@@ -31,7 +31,7 @@ import {
   propertyTypeTranslations
 } from "@/lib/translations";
 
-export default function AdPage({ ad, metaTags }: { ad: Ad, metaTags: any }) {
+export default function AdPage({ ad, metaTags }: { ad: Ad, metaTags: MetaTags }) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
   const lang = (query?.lang as 'ru' | 'en') || "ru";

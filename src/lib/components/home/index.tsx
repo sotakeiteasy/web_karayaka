@@ -2,36 +2,18 @@ import Head from "next/head";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { useTranslation, LinkWithLocale } from "next-export-i18n";
-import { useLanguageQuery } from "next-export-i18n";
+import { useTranslation, LinkWithLocale, useLanguageQuery } from "next-export-i18n";
 
 import styles from "./index.module.scss";
 import SimpleSlider from "./simpleSlider/simpleSlider";
 import { ContactUs, OrganizationSchema } from "@/lib/components";
-
-import { PostData } from "@/lib/utils/blogClient";
-import { getImageUrl } from "@/lib/utils/imageHelper";
-
-interface HomePageProps {
-  allBlogData: Record<string, PostData[]>;
-  metaTags: {
-    ru: {
-      title: string;
-      description: string;
-      keywords: string;
-    };
-    en: {
-      title: string;
-      description: string;
-      keywords: string;
-    };
-  };
-}
+import { PostData, getImageUrl } from "@/lib/utils";
+import { MetaTags } from "@/lib/types";
 
 export default function Home({
   allBlogData,
   metaTags
-}: HomePageProps) {
+}: {allBlogData: Record<string, PostData[]>, metaTags: MetaTags}) {
   const router = useRouter();
 
   const { t } = useTranslation();

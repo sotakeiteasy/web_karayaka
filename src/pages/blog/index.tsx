@@ -6,24 +6,9 @@ import styles from "./index.module.scss";
 
 import { PostData, getImageUrl } from "@/lib/utils";
 import { getSortedPostsData } from "@/lib/utils/blogServer";
+import { MetaTags } from "@/lib/types";
 
-interface BlogPageProps {
-  allBlogData: { [key: string]: PostData[] };
-  metaTags: {
-    ru: {
-      title: string;
-      description: string;
-      keywords: string;
-    };
-    en: {
-      title: string;
-      description: string;
-      keywords: string;
-    };
-  };
-}
-
-export default function Blog({ allBlogData, metaTags }: BlogPageProps) {
+export default function Blog({ allBlogData, metaTags }: { allBlogData: Record<string, PostData[]>, metaTags: MetaTags }) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
 

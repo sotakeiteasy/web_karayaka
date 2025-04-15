@@ -8,26 +8,10 @@ import { mdiPhone, mdiEmail, mdiWhatsapp } from "@mdi/js";
 
 import { ContactUs, CustomOffersSchema } from "@/lib/components";
 import { contactInfo } from '@/lib/constants/contactInfo';
-
 import { getImageUrl } from "@/lib/utils";
+import { MetaTags } from "@/lib/types";
 
-interface CustomOffersProps {
-  metaTags: {
-    ru: {
-      title: string;
-      description: string;
-      keywords: string;
-    };
-    en: {
-      title: string;
-      description: string;
-      keywords: string;
-    };
-  };
-}
-
-export default function CustomOffers({ metaTags }: CustomOffersProps) {
-  const { t } = useTranslation();
+export default function CustomOffers({ metaTags }: {metaTags: MetaTags}) {
   const [query] = useLanguageQuery();
   const locale = (query?.lang as 'ru' | 'en') || "ru";
   const meta = metaTags[locale];
@@ -133,7 +117,6 @@ export default function CustomOffers({ metaTags }: CustomOffersProps) {
 }
 
 export async function getStaticProps() {
-  // Предварительно загружаем переводы для мета-тегов
   const metaTags = {
     ru: {
       title: "Индивидуальные предложения - Караяка | Подбор недвижимости под ваши требования",

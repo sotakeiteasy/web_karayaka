@@ -1,32 +1,17 @@
 import styles from "./index.module.scss";
 import Image from "next/image";
-import { useTranslation } from "next-export-i18n";
+import { useTranslation, useLanguageQuery } from "next-export-i18n";
 import { useState } from "react";
 import Head from "next/head";
-import { useLanguageQuery } from "next-export-i18n";
 
 import Icon from "@mdi/react";
 import { mdiChevronRight } from "@mdi/js";
 
 import { getImageUrl } from "@/lib/utils";
 import { OrganizationSchema, FAQPageSchema } from "@/lib/components";
+import { MetaTags } from "@/lib/types";
 
-interface AboutUsProps {
-  metaTags: {
-    ru: {
-      title: string;
-      description: string;
-      keywords: string;
-    };
-    en: {
-      title: string;
-      description: string;
-      keywords: string;
-    };
-  };
-}
-
-export default function AboutUs({ metaTags }: AboutUsProps) {
+export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
   const lang = (query?.lang as 'ru' | 'en') || "ru";

@@ -6,34 +6,15 @@ import Head from "next/head";
 import { Date, BlogPostSchema } from "@/lib/components";
 import { LocalizedPostData, getImageUrl } from "@/lib/utils";
 import { getAllPostIds, getPostData } from "@/lib/utils/blogServer";
+import { MetaTags } from "@/lib/types";
 
-interface PostParams {
-  id: string;
-}
-
-interface PostProps {
-  postData: LocalizedPostData;
-  baseTags: {
-    ru: {
-      title: string;
-      description: string; 
-      keywords: string;
-    };
-    en: {
-      title: string;
-      description: string;
-      keywords: string;
-    };
-  };
-}
-
-export default function Post({ postData, baseTags }: PostProps) {
+export default function Post({ postData, metaTags }: {postData: LocalizedPostData, metaTags: MetaTags}) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
 
   const lang = (query?.lang as 'ru' | 'en') || "ru";
   const localizedPostData = postData[lang];
-  const baseMeta = baseTags[lang];
+  const baseMeta = metaTags[lang];
 
   if (!localizedPostData) {
     return <div>Loading...</div>;
@@ -116,12 +97,11 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }: { params: PostParams }) {
+export async function getStaticProps({ params }: { params: {id: string} }) {
   try {
     const postData = await getPostData(params.id);
     
-    // Базовые мета-теги для страницы блога
-    const baseTags = {
+    const metaTags = {
       ru: {
         title: "Блог Караяка",
         description: "Статьи и новости о недвижимости в Турции и России",
@@ -137,7 +117,7 @@ export async function getStaticProps({ params }: { params: PostParams }) {
     return {
       props: {
         postData,
-        baseTags
+        metaTags
       },
     };
   } catch (error) {
