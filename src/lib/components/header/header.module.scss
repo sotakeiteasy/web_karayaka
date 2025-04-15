@@ -1,4 +1,4 @@
-@use "@styles/variables" as *;
+@use '@styles/variables' as *;
 
 // Оверлей для затемнения фона
 .overlay {
@@ -12,7 +12,7 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-  
+
   &.active {
     opacity: 1;
     visibility: visible;
@@ -31,7 +31,7 @@
     display: flex;
     align-items: center;
     // gap: 40px;
-    
+
     .logo {
       display: flex;
       align-items: center;
@@ -41,8 +41,6 @@
       text-transform: uppercase;
     }
 
-    
-
     .burgerButton {
       display: none; /* Скрыта на десктопе */
       flex-direction: column;
@@ -50,33 +48,32 @@
       width: 30px;
       height: 20px;
       cursor: pointer;
-  
+
       span {
         height: 2px;
         width: 100%;
         background-color: $white-text;
         border-radius: 10px;
       }
-
-      
     }
 
     .burgerMenu {
       display: flex;
 
-      
-
-      .title, .mobileLangSwitcher, .contacts, .closeButton {
+      .title,
+      .mobileLangSwitcher,
+      .contacts,
+      .closeButton {
         display: none;
       }
 
-       .navLinks {
+      .navLinks {
         display: flex;
 
         .homeBurger {
           display: none;
         }
-       }
+      }
 
       .navLink {
         padding: 0 30px;
@@ -85,21 +82,21 @@
         line-height: 45px;
         position: relative;
       }
-  
+
       .navLink::before,
       .navLink::after {
         position: absolute;
         width: 45px;
         height: 1px;
         background: #fff;
-        content: "";
+        content: '';
         opacity: 0.2;
         -webkit-transition: all 0.3s;
         -moz-transition: all 0.3s;
         transition: all 0.3s;
         pointer-events: none;
       }
-  
+
       .navLink::before {
         top: 0;
         left: 0;
@@ -110,7 +107,7 @@
         -moz-transform-origin: 0 0;
         transform-origin: 0 0;
       }
-  
+
       .navLink::after {
         right: 0;
         bottom: 0;
@@ -121,14 +118,14 @@
         -moz-transform-origin: 100% 0;
         transform-origin: 100% 0;
       }
-  
+
       .navLink:hover::before,
       .navLink:hover::after,
       .navLink:focus::before,
       .navLink:focus::after {
         opacity: 1;
       }
-  
+
       .navLink:hover::before,
       .navLink:focus::before {
         left: 50%;
@@ -136,7 +133,7 @@
         -moz-transform: rotate(0deg) translateX(-50%);
         transform: rotate(0deg) translateX(-50%);
       }
-  
+
       .navLink:hover::after,
       .navLink:focus::after {
         right: 50%;
@@ -144,19 +141,19 @@
         -moz-transform: rotate(0deg) translateX(50%);
         transform: rotate(0deg) translateX(50%);
       }
-  
+
       .navLink.active::before,
       .navLink.active::after {
         opacity: 1;
       }
-  
+
       .navLink.active::before {
         left: 50%;
         -webkit-transform: rotate(0deg) translateX(-50%);
         -moz-transform: rotate(0deg) translateX(-50%);
         transform: rotate(0deg) translateX(-50%);
       }
-  
+
       .navLink.active::after {
         right: 50%;
         -webkit-transform: rotate(0deg) translateX(50%);
@@ -164,7 +161,6 @@
         transform: rotate(0deg) translateX(50%);
       }
     }
-
   }
 
   .buttons {
@@ -223,8 +219,6 @@
   }
 }
 
-
-
 @media (max-width: 1280px) {
   .nav {
     .logo {
@@ -235,9 +229,9 @@
       padding: 0 20px !important;
       font-size: 1rem;
     }
-   }
+  }
 
-   .buttons {
+  .buttons {
     margin-left: 50px !important;
     gap: 5px;
 
@@ -257,21 +251,20 @@
     justify-content: space-between !important;
     margin: 0 40px;
 
-
     .burgerButton {
       display: flex !important;
     }
-   
+
     .burgerMenu {
       position: absolute;
-      top: 0; 
+      top: 0;
       left: 0;
       width: 75%;
       z-index: 1000;
       background: $secondary-color;
       height: 100% !important;
       flex-direction: column;
-      transform: translateX(-120%); 
+      transform: translateX(-120%);
       transition: transform 0.3s ease;
 
       .navLinks {
@@ -279,7 +272,6 @@
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         height: 100%;
-
       }
       .closeButton {
         background-color: transparent;
@@ -294,7 +286,6 @@
         svg {
           fill: $white-text;
           color: $white-text;
-
         }
       }
 
@@ -311,22 +302,19 @@
           font-size: 2rem;
         }
 
-
         .logo {
-  
         }
       }
-      
 
       .navLink {
         height: auto !important;
         font-size: 1.2rem;
-        border-bottom: 1px solid  rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         padding: 3px 40px 4px 40px !important;
 
         &::after {
           display: none;
-        } 
+        }
         &::before {
           display: none;
         }
@@ -385,22 +373,16 @@
             fill: $white-text;
           }
         }
-        
       }
-      
     }
-    
+
     .burgerMenu.open {
-      transform: translateX(0); 
+      transform: translateX(0);
+    }
+  }
 
-      
-     
-    } 
-   }
-   
-   .buttons {
+  .buttons {
     display: none !important;
-
 
     .button {
       padding: 10px 15px;
@@ -409,7 +391,11 @@
   }
 
   // Показываем мобильные элементы на мобильных устройствах
-  .title, .mobileLangSwitcher, .contacts, .closeButton, .homeBurger {
+  .title,
+  .mobileLangSwitcher,
+  .contacts,
+  .closeButton,
+  .homeBurger {
     display: flex !important;
   }
 }
@@ -421,7 +407,7 @@
 // }
 
 @media (max-width: 600px) {
-  .nav{
+  .nav {
     margin: 0 15px;
   }
 }

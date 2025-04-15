@@ -19,14 +19,11 @@ export const OrganizationSchema: FC<OrganizationSchemaProps> = ({
     name,
     description,
     url,
-    logo: {
+    'logo': {
       '@type': 'ImageObject',
-      url: logo,
+      'url': logo,
     },
-    sameAs: [
-      'https://t.me/karayaka_real',
-      'https://vk.com/karayaka_real',
-    ],
+    'sameAs': ['https://t.me/karayaka_real', 'https://vk.com/karayaka_real'],
   };
 
   return (
@@ -59,27 +56,27 @@ export const BlogPostSchema: FC<BlogPostSchemaProps> = ({
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
-    mainEntityOfPage: {
+    'mainEntityOfPage': {
       '@type': 'WebPage',
       '@id': articleUrl,
     },
-    headline: title,
+    'headline': title,
     description,
-    image: imageUrl,
+    'image': imageUrl,
     datePublished,
-    dateModified: dateModified || datePublished,
-    author: {
+    'dateModified': dateModified || datePublished,
+    'author': {
       '@type': 'Person',
-      name: authorName,
+      'name': authorName,
     },
-    publisher: {
+    'publisher': {
       '@type': 'Organization',
-      name: 'Karayaka',
-      logo: {
+      'name': 'Karayaka',
+      'logo': {
         '@type': 'ImageObject',
-        url: 'https://karayaka.ru/logo.png',
-        width: 600,
-        height: 60,
+        'url': 'https://karayaka.ru/logo.png',
+        'width': 600,
+        'height': 60,
       },
     },
   };
@@ -109,15 +106,15 @@ export const FAQPageSchema: FC<FAQPageSchemaProps> = ({
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: questions.map(item => ({
+    'mainEntity': questions.map((item) => ({
       '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
+      'name': item.question,
+      'acceptedAnswer': {
         '@type': 'Answer',
-        text: item.answer,
+        'text': item.answer,
       },
     })),
-    url: pageUrl,
+    'url': pageUrl,
   };
 
   return (
@@ -148,36 +145,36 @@ export const RealEstateSearchSchema: FC<RealEstateSearchSchemaProps> = ({
     '@type': 'WebSite',
     url,
     description,
-    potentialAction: {
+    'potentialAction': {
       '@type': 'SearchAction',
-      target: {
+      'target': {
         '@type': 'EntryPoint',
-        urlTemplate: `${url}?address={search_term_string}`
+        'urlTemplate': `${url}?address={search_term_string}`,
       },
       'query-input': 'required name=search_term_string',
     },
-    about: {
+    'about': {
       '@type': 'RealEstateAgent',
-      name: 'Karayaka',
-      makesOffer: [
-        ...countryOptions.map(country => ({
+      'name': 'Karayaka',
+      'makesOffer': [
+        ...countryOptions.map((country) => ({
           '@type': 'Offer',
-          itemOffered: {
+          'itemOffered': {
             '@type': 'Service',
-            serviceType: 'Real Estate',
-            areaServed: country,
-          }
+            'serviceType': 'Real Estate',
+            'areaServed': country,
+          },
         })),
-        ...propertyTypeOptions.map(type => ({
+        ...propertyTypeOptions.map((type) => ({
           '@type': 'Offer',
-          itemOffered: {
+          'itemOffered': {
             '@type': 'Product',
-            category: type,
-          }
-        }))
+            'category': type,
+          },
+        })),
       ],
-      areaServed: cityOptions,
-    }
+      'areaServed': cityOptions,
+    },
   };
 
   return (
@@ -207,33 +204,33 @@ export const CustomOffersSchema: FC<CustomOffersSchemaProps> = ({
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Karayaka Custom Real Estate Selection',
+    'name': 'Karayaka Custom Real Estate Selection',
     url,
     description,
-    provider: {
+    'provider': {
       '@type': 'RealEstateAgent',
-      name: 'Karayaka',
-      logo: 'https://karayaka.ru/logo.png',
-      contactPoint: [
+      'name': 'Karayaka',
+      'logo': 'https://karayaka.ru/logo.png',
+      'contactPoint': [
         {
           '@type': 'ContactPoint',
-          telephone: contacts.phone,
-          contactType: 'customer service',
-          email: contacts.email,
+          'telephone': contacts.phone,
+          'contactType': 'customer service',
+          'email': contacts.email,
         },
       ],
     },
-    serviceType: 'Real Estate Consultation',
-    areaServed: ['Turkey', 'Russia'],
-    availableChannel: {
+    'serviceType': 'Real Estate Consultation',
+    'areaServed': ['Turkey', 'Russia'],
+    'availableChannel': {
       '@type': 'ServiceChannel',
-      serviceUrl: url,
-      servicePhone: contacts.phone,
-      serviceSmsNumber: contacts.whatsapp,
+      'serviceUrl': url,
+      'servicePhone': contacts.phone,
+      'serviceSmsNumber': contacts.whatsapp,
     },
-    audience: {
+    'audience': {
       '@type': 'Audience',
-      audienceType: 'Property buyers and renters',
+      'audienceType': 'Property buyers and renters',
     },
   };
 
@@ -243,4 +240,4 @@ export const CustomOffersSchema: FC<CustomOffersSchemaProps> = ({
       dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
     />
   );
-}; 
+};

@@ -1,4 +1,4 @@
-@use "@styles/variables" as *;
+@use '@styles/variables' as *;
 .main {
   display: flex;
   flex-direction: column;
@@ -49,16 +49,15 @@
         a {
           font-style: normal;
         }
-
       }
     }
-    .contactsSocial > div:first-of-type > a:last-child{
+    .contactsSocial > div:first-of-type > a:last-child {
       margin-left: 3px;
     }
   }
 }
 
-@media (max-width: 1280px){
+@media (max-width: 1280px) {
   .formContainer {
     gap: 40px;
     margin: 40px;
@@ -71,7 +70,7 @@
   }
 }
 
-@media (max-width: 900px){
+@media (max-width: 900px) {
   .formContainer {
     gap: 40px;
     margin: 40px;
@@ -81,11 +80,9 @@
     .formImg {
       display: none;
     }
-
-    
   }
 
-  .contacts{
+  .contacts {
     width: 95% !important;
     flex-wrap: wrap;
     gap: 20px;

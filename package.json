@@ -7,8 +7,9 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss}\""
+    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint src/ --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier --write --ignore-path .prettierignore \"**/*.{js,jsx,ts,tsx,mjs,json,css,scss}\""
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

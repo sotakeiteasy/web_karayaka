@@ -1,31 +1,35 @@
-import styles from "./PaginatedAds.module.scss";
-import ReactPaginate from "react-paginate";
-import { useState, useEffect } from "react";
-import { useTranslation, LinkWithLocale, useLanguageQuery } from "next-export-i18n";
-import { useRouter } from "next/router";
+import styles from './PaginatedAds.module.scss';
+import ReactPaginate from 'react-paginate';
+import { useState, useEffect } from 'react';
+import {
+  useTranslation,
+  LinkWithLocale,
+  useLanguageQuery,
+} from 'next-export-i18n';
+import { useRouter } from 'next/router';
 
-import Icon from "@mdi/react";
-import { mdiMapMarkerOutline, mdiBedQueenOutline, mdiStairs } from "@mdi/js";
+import Icon from '@mdi/react';
+import { mdiMapMarkerOutline, mdiBedQueenOutline, mdiStairs } from '@mdi/js';
 
-import CustomSlider from "../CustomSlider/CustomSlider";
-import { Ad } from "@/lib/types";
+import CustomSlider from '../CustomSlider/CustomSlider';
+import { Ad } from '@/lib/types';
 import {
   countryTranslations,
   cityTranslations,
   districtTranslations,
-  propertyTypeTranslations
-} from "@/lib/translations";
+  propertyTypeTranslations,
+} from '@/lib/translations';
 
 interface ItemsProps {
   currentItems: Ad[];
-  locale: "ru" | "en";
+  locale: 'ru' | 'en';
 }
 
 function Items({ currentItems, locale }: ItemsProps) {
   const { t } = useTranslation();
 
   if (!currentItems || currentItems.length === 0) {
-    return <div className={styles.noResults}>{t("search.noResults")}</div>;
+    return <div className={styles.noResults}>{t('search.noResults')}</div>;
   }
 
   return (
@@ -33,7 +37,7 @@ function Items({ currentItems, locale }: ItemsProps) {
       {currentItems.map((ad: Ad) => (
         <div className={styles.adCard} key={ad.id}>
           <div className={styles.adCardImage}>
-            <CustomSlider ad={ad}/>
+            <CustomSlider ad={ad} />
           </div>
           <LinkWithLocale href={`/ads/${ad.id}`}>
             <div className={styles.adCardDescription}>
@@ -41,13 +45,17 @@ function Items({ currentItems, locale }: ItemsProps) {
                 <h2 className={styles.cardTitle}>
                   {(() => {
                     switch (ad.propertyType) {
-                      case "apartment":
-                        return `${ad.rooms} ${locale === "ru" ? "комн." : "room"} ${propertyTypeTranslations[ad.propertyType][locale]}`;
-                      case "villa":
-                      case "commercial":
-                      case "land":
+                      case 'apartment':
+                        return `${ad.rooms} ${
+                          locale === 'ru' ? 'комн.' : 'room'
+                        } ${propertyTypeTranslations[ad.propertyType][locale]}`;
+                      case 'villa':
+                      case 'commercial':
+                      case 'land':
                       default:
-                        return propertyTypeTranslations[ad.propertyType][locale];
+                        return propertyTypeTranslations[ad.propertyType][
+                          locale
+                        ];
                     }
                   })()}
                 </h2>
@@ -56,10 +64,12 @@ function Items({ currentItems, locale }: ItemsProps) {
                   {[
                     countryTranslations[ad.location.country][locale],
                     cityTranslations[ad.location.city][locale],
-                    ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
+                    ad.location.district
+                      ? districtTranslations[ad.location.district]?.[locale]
+                      : null,
                   ]
                     .filter(Boolean)
-                    .join(", ")}
+                    .join(', ')}
                 </p>
               </div>
               <div className={styles.middleDescription}>
@@ -69,16 +79,20 @@ function Items({ currentItems, locale }: ItemsProps) {
                 <p className={styles.cardPrice}>
                   <strong>
                     {ad.price.try !== undefined && ad.price.try !== null
-                      ? `${new Intl.NumberFormat("ru-RU").format(ad.price.try)} ₺`
+                      ? `${new Intl.NumberFormat('ru-RU').format(
+                          ad.price.try
+                        )} ₺`
                       : ad.price.rub !== undefined && ad.price.rub !== null
-                      ? `${new Intl.NumberFormat("ru-RU").format(ad.price.rub)} ₽`
-                      : ""}
+                      ? `${new Intl.NumberFormat('ru-RU').format(
+                          ad.price.rub
+                        )} ₽`
+                      : ''}
                   </strong>
                 </p>
                 <p>
                   {ad.floor && (
                     <span>
-                      {ad.floor || ""}/{ad.floorInHouse || ""}
+                      {ad.floor || ''}/{ad.floorInHouse || ''}
                       <Icon path={mdiStairs} size={1} />
                     </span>
                   )}
@@ -90,7 +104,7 @@ function Items({ currentItems, locale }: ItemsProps) {
                   )}
                   {ad.area && (
                     <span>
-                      {ad.area} {t("ad.property.squareMeters")}
+                      {ad.area} {t('ad.property.squareMeters')}
                       <sup>2</sup>
                     </span>
                   )}
@@ -117,7 +131,7 @@ export default function PaginatedAds({
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
 
-  const lang = (query?.lang as "ru" | "en") || "ru";
+  const lang = (query?.lang as 'ru' | 'en') || 'ru';
   const pageNumber = Number(router.query.page) || 1;
   const [itemOffset, setItemOffset] = useState(0);
 
@@ -144,15 +158,12 @@ export default function PaginatedAds({
 
   return (
     <>
-      <Items 
-        currentItems={currentAds} 
-        locale={lang} 
-      />
+      <Items currentItems={currentAds} locale={lang} />
       {pageCount > 1 && (
         <ReactPaginate
           breakLabel="..."
-          nextLabel={t("pagination.next")}
-          previousLabel={t("pagination.previous")}
+          nextLabel={t('pagination.next')}
+          previousLabel={t('pagination.previous')}
           onPageChange={handlePageClick}
           pageRangeDisplayed={3}
           marginPagesDisplayed={1}
@@ -161,7 +172,7 @@ export default function PaginatedAds({
           className={styles.paginate}
           activeClassName={styles.activePage}
           disabledClassName={styles.hidden}
-          pageClassName={"page-item"}
+          pageClassName={'page-item'}
         />
       )}
     </>

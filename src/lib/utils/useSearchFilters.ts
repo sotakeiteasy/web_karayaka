@@ -7,32 +7,35 @@ export function useSearchFilters() {
   const router = useRouter();
   const [filter, setFilter] = useState<Filter>({});
   const [appliedFilters, setAppliedFilters] = useState({});
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState('');
   const [filteredAds, setFilteredAds] = useState<Ad[]>([]);
-  const [sortOption, setSortOption] = useState("price-cheap");
-  
+  const [sortOption, setSortOption] = useState('price-cheap');
 
   const sortAds = (option: string, adsToSort: Ad[]) => {
     const sortedAds = [...adsToSort];
-    
+
     const getPrice = (ad: Ad) => (ad.price.try ?? ad.price.rub)!;
-    
+
     switch (option) {
-      case "price-cheap":
+      case 'price-cheap':
         return sortedAds.sort((a, b) => getPrice(a) - getPrice(b));
-      case "price-expensive":
+      case 'price-expensive':
         return sortedAds.sort((a, b) => getPrice(b) - getPrice(a));
-      case "area-small":
+      case 'area-small':
         return sortedAds.sort((a, b) => a.area - b.area);
-      case "area-large":
+      case 'area-large':
         return sortedAds.sort((a, b) => b.area - a.area);
       default:
         return sortedAds;
     }
   };
 
-  const updateResults = (currentFilter: Filter, currentSortOption: string, skipUrlUpdate = false) => {
-    const ads = filterAds(currentFilter, "try");
+  const updateResults = (
+    currentFilter: Filter,
+    currentSortOption: string,
+    skipUrlUpdate = false
+  ) => {
+    const ads = filterAds(currentFilter, 'try');
     setFilteredAds(sortAds(currentSortOption, ads));
 
     if (!skipUrlUpdate) {
@@ -41,13 +44,18 @@ export function useSearchFilters() {
       if (currentFilter.type) query.type = currentFilter.type;
       if (currentFilter.country) query.country = currentFilter.country;
       if (currentFilter.city) query.city = currentFilter.city;
-      if (currentFilter.propertyType) query.propertyType = currentFilter.propertyType;
+      if (currentFilter.propertyType)
+        query.propertyType = currentFilter.propertyType;
       if (currentFilter.address) query.address = currentFilter.address;
-      
-      if (currentFilter.minPrice) query.minPrice = currentFilter.minPrice.toString();
-      if (currentFilter.maxPrice) query.maxPrice = currentFilter.maxPrice.toString();
-      if (currentFilter.minArea) query.minArea = currentFilter.minArea.toString();
-      if (currentFilter.maxArea) query.maxArea = currentFilter.maxArea.toString();
+
+      if (currentFilter.minPrice)
+        query.minPrice = currentFilter.minPrice.toString();
+      if (currentFilter.maxPrice)
+        query.maxPrice = currentFilter.maxPrice.toString();
+      if (currentFilter.minArea)
+        query.minArea = currentFilter.minArea.toString();
+      if (currentFilter.maxArea)
+        query.maxArea = currentFilter.maxArea.toString();
       if (currentFilter.floor) query.floor = currentFilter.floor.toString();
 
       // Сохраняем языковой параметр (чтобы сохранялся при сбросе фильтров)
@@ -63,7 +71,7 @@ export function useSearchFilters() {
 
   const initializeFiltersFromURL = () => {
     if (!router.isReady) return;
-    
+
     const {
       type,
       country,
@@ -84,7 +92,7 @@ export function useSearchFilters() {
       setSearchText(address as string);
     }
 
-    if (type) initialFilter.type = type as "sale" | "rent";
+    if (type) initialFilter.type = type as 'sale' | 'rent';
     if (country) initialFilter.country = country as string;
     if (city) initialFilter.city = city as string;
     if (propertyType) initialFilter.propertyType = propertyType as string;
@@ -104,13 +112,16 @@ export function useSearchFilters() {
     initializeFiltersFromURL();
   }, [router.isReady, router.query.type]);
 
-  const handleFilterChange = (name: string, value: string | number | undefined) => {
+  const handleFilterChange = (
+    name: string,
+    value: string | number | undefined
+  ) => {
     setFilter((prev) => ({ ...prev, [name]: value }));
   };
 
   const applyFilters = () => {
     const newFilter = { ...filter };
-    
+
     if (searchText.trim()) {
       newFilter.address = searchText.trim();
     } else if (newFilter.address) {
@@ -119,7 +130,7 @@ export function useSearchFilters() {
 
     Object.keys(newFilter).forEach((key) => {
       const k = key as keyof Filter;
-      if (newFilter[k] === "") {
+      if (newFilter[k] === '') {
         delete newFilter[k];
       }
     });
@@ -130,8 +141,12 @@ export function useSearchFilters() {
   };
 
   const resetFilters = () => {
-    const typeParam = router.query.type ? `?type=${router.query.type}` : "";
-    const langParam = router.query.lang ? (typeParam ? `&lang=${router.query.lang}` : `?lang=${router.query.lang}`) : "";
+    const typeParam = router.query.type ? `?type=${router.query.type}` : '';
+    const langParam = router.query.lang
+      ? typeParam
+        ? `&lang=${router.query.lang}`
+        : `?lang=${router.query.lang}`
+      : '';
     window.location.href = `/search${typeParam}${langParam}`;
   };
 
@@ -150,6 +165,6 @@ export function useSearchFilters() {
     handleFilterChange,
     applyFilters,
     resetFilters,
-    handleSortOptionChange
+    handleSortOptionChange,
   };
-} 
+}

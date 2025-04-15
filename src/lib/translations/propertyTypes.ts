@@ -1,27 +1,27 @@
 export const propertyTypeTranslations = {
   apartment: {
-    ru: "Квартира",
-    en: "Apartment",
-    tr: "Daire",
+    ru: 'Квартира',
+    en: 'Apartment',
+    tr: 'Daire',
   },
   house: {
-    ru: "Дом",
-    en: "House",
-    tr: "Ev",
+    ru: 'Дом',
+    en: 'House',
+    tr: 'Ev',
   },
   villa: {
-    ru: "Вилла",
-    en: "Villa",
-    tr: "Villa",
+    ru: 'Вилла',
+    en: 'Villa',
+    tr: 'Villa',
   },
   land: {
-    ru: "Участок",
-    en: "Land",
-    tr: "Arsa",
+    ru: 'Участок',
+    en: 'Land',
+    tr: 'Arsa',
   },
   commercial: {
-    ru: "Коммерческая недвижимость",
-    en: "Commercial Property",
-    tr: "Ticari Gayrimenkul",
+    ru: 'Коммерческая недвижимость',
+    en: 'Commercial Property',
+    tr: 'Ticari Gayrimenkul',
   },
 };

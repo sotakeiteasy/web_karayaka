@@ -1,4 +1,4 @@
-@use "@styles/variables" as *;
+@use '@styles/variables' as *;
 .main {
   display: flex;
   flex-direction: column;
@@ -133,17 +133,17 @@
   }
 }
 
-@media (max-width: 1280px){
+@media (max-width: 1280px) {
   .main {
     margin-top: 40px;
     .article {
       width: 90%;
       padding: 30px;
+    }
   }
 }
-}
 
-@media (max-width: 900px){
+@media (max-width: 900px) {
   .main {
     margin-top: 0px;
     font-size: 0.9rem;
@@ -154,10 +154,10 @@
       padding: 15px;
       /* Стили для правильного отображения Markdown-контента */
       p {
-        margin-bottom: .5em !important;
+        margin-bottom: 0.5em !important;
         line-height: 1.5;
       }
-  
+
       /* Добавляем отступы между всеми блочными элементами */
       h1,
       h2,
@@ -168,14 +168,14 @@
       ul,
       ol,
       blockquote {
-        margin-top: .8em !important;
+        margin-top: 0.8em !important;
         margin-bottom: 0.3em;
       }
 
       .languageSwitcher {
         gap: 30px;
         margin-bottom: 0px;
-  
+
         button {
           padding: 10px 15px;
           border-radius: 5px;

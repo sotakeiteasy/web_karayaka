@@ -1,36 +1,45 @@
-import Head from "next/head";
-import { useState } from "react";
-import { useRouter } from "next/router";
-import Image from "next/image";
-import { useTranslation, LinkWithLocale, useLanguageQuery } from "next-export-i18n";
+import Head from 'next/head';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import {
+  useTranslation,
+  LinkWithLocale,
+  useLanguageQuery,
+} from 'next-export-i18n';
 
-import styles from "./index.module.scss";
-import SimpleSlider from "./simpleSlider/simpleSlider";
-import { ContactUs, OrganizationSchema } from "@/lib/components";
-import { PostData, getImageUrl } from "@/lib/utils";
-import { MetaTags } from "@/lib/types";
+import styles from './index.module.scss';
+import SimpleSlider from './simpleSlider/simpleSlider';
+import { ContactUs, OrganizationSchema } from '@/lib/components';
+import { PostData, getImageUrl } from '@/lib/utils';
+import { MetaTags } from '@/lib/types';
 
 export default function Home({
   allBlogData,
-  metaTags
-}: {allBlogData: Record<string, PostData[]>, metaTags: MetaTags}) {
+  metaTags,
+}: {
+  allBlogData: Record<string, PostData[]>;
+  metaTags: MetaTags;
+}) {
   const router = useRouter();
 
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
-  const lang = (query?.lang as "ru" | "en") || "ru";
+  const lang = (query?.lang as 'ru' | 'en') || 'ru';
   const meta = metaTags[lang];
   const posts = allBlogData[lang];
-  
+
   const [isBuy, setIsBuy] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
     if (!searchQuery.trim()) return;
 
     const encodedQuery = encodeURIComponent(searchQuery.trim());
     router.push(
-      `/search?type=${isBuy ? "sale" : "rent"}&address=${encodedQuery}&lang=${lang}`
+      `/search?type=${
+        isBuy ? 'sale' : 'rent'
+      }&address=${encodedQuery}&lang=${lang}`
     );
   };
 
@@ -43,7 +52,7 @@ export default function Home({
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
-                
+
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/" />
         <meta property="og:title" content={meta.title} />
@@ -65,32 +74,32 @@ export default function Home({
 
       <main className={styles.main}>
         <div className={styles.mainImageContainer}>
-          {lang === "ru" ? (
+          {lang === 'ru' ? (
             <video
-            className={styles.video}
-            loop
-            autoPlay
-            muted
-            preload="auto"
-            height={680}
-            width={1600}
-            style={{ objectFit: "cover" }}
-            playsInline
-            webkit-playsinline="true"
-            controls={false}
-          >
-            <source src={getImageUrl("/videos/new.webm")} type="video/webm" />
-            {/* Fallback source - MP4 for iOS */}
-            <source src={getImageUrl("/videos/new.mp4")} type="video/mp4" />
-          </video>
+              className={styles.video}
+              loop
+              autoPlay
+              muted
+              preload="auto"
+              height={680}
+              width={1600}
+              style={{ objectFit: 'cover' }}
+              playsInline
+              webkit-playsinline="true"
+              controls={false}
+            >
+              <source src={getImageUrl('/videos/new.webm')} type="video/webm" />
+              {/* Fallback source - MP4 for iOS */}
+              <source src={getImageUrl('/videos/new.mp4')} type="video/mp4" />
+            </video>
           ) : (
             <Image
-              src={getImageUrl("/images/moscow3.jpg")}
+              src={getImageUrl('/images/moscow3.jpg')}
               alt="views of moscow"
               sizes="100vw"
               quality={100}
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: 'cover' }}
               priority
             />
           )}
@@ -99,38 +108,38 @@ export default function Home({
             <input
               id="search"
               type="text"
-              placeholder={t("home.searchPlaceholder")}
+              placeholder={t('home.searchPlaceholder')}
               aria-label="search"
               autoComplete="off"
               spellCheck="false"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+              onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
             />
             <div>
-              {lang === "ru" ? (
+              {lang === 'ru' ? (
                 <button
                   className={`${styles.toggleButton} ${styles.toggleButtonRu} ${
-                    isBuy ? styles.toggleButtonActiveRu : ""
+                    isBuy ? styles.toggleButtonActiveRu : ''
                   }`}
                   onClick={() => setIsBuy(!isBuy)}
                 >
-                  <span>{t("home.rentBtn")}</span>
-                  <span>{t("home.buyBtn")}</span>
+                  <span>{t('home.rentBtn')}</span>
+                  <span>{t('home.buyBtn')}</span>
                 </button>
               ) : (
                 <button
                   className={`${styles.toggleButton} ${
-                    isBuy ? styles.toggleButtonActive : ""
+                    isBuy ? styles.toggleButtonActive : ''
                   }`}
                   onClick={() => setIsBuy(!isBuy)}
                 >
-                  <span>{t("home.rentBtn")}</span>
-                  <span>{t("home.buyBtn")}</span>
+                  <span>{t('home.rentBtn')}</span>
+                  <span>{t('home.buyBtn')}</span>
                 </button>
               )}
               <button className={styles.searchButton} onClick={handleSearch}>
-                {t("home.searchBtn")}
+                {t('home.searchBtn')}
               </button>
             </div>
           </div>
@@ -138,28 +147,28 @@ export default function Home({
 
         <SimpleSlider
           type="sale"
-          country={lang === "en" ? "Russia" : "Turkey"}
+          country={lang === 'en' ? 'Russia' : 'Turkey'}
           locale={lang}
         />
-        
+
         <SimpleSlider
           type="rent"
-          country={lang === "en" ? "Russia" : "Turkey"}
+          country={lang === 'en' ? 'Russia' : 'Turkey'}
           locale={lang}
         />
 
         <div className={styles.articleBlock}>
-          <h1 className={styles.header}>{t("home.articles")}</h1>
+          <h1 className={styles.header}>{t('home.articles')}</h1>
           {posts.slice(0, 2).map(({ id, title, excerpt }: PostData) => (
             <div key={id} className={styles.articleLink}>
               <LinkWithLocale href={`/blog/${id}`}>
-              <div className={styles.articleImage}>
+                <div className={styles.articleImage}>
                   <Image
                     src={getImageUrl(`/images/${id}.jpg`)}
                     fill={true}
                     alt={title}
                     draggable="false"
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
                 <div className={styles.articleDescription}>
@@ -182,4 +191,3 @@ export default function Home({
     </>
   );
 }
-

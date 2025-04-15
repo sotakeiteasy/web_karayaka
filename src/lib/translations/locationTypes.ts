@@ -4,14 +4,14 @@ export const countryTranslations: Record<
   { ru: string; en: string; tr: string }
 > = {
   Turkey: {
-    ru: "Турция",
-    en: "Turkey",
-    tr: "Türkiye",
+    ru: 'Турция',
+    en: 'Turkey',
+    tr: 'Türkiye',
   },
   Russia: {
-    ru: "Россия",
-    en: "Russia",
-    tr: "Rusya",
+    ru: 'Россия',
+    en: 'Russia',
+    tr: 'Rusya',
   },
 };
 
@@ -20,26 +20,25 @@ export const cityTranslations: Record<
   { ru: string; en: string; tr: string }
 > = {
   Antalya: {
-    ru: "Анталья",
-    en: "Antalya",
-    tr: "Antalya",
+    ru: 'Анталья',
+    en: 'Antalya',
+    tr: 'Antalya',
   },
   Istanbul: {
-    ru: "Стамбул",
-    en: "Istanbul",
-    tr: "İstanbul",
+    ru: 'Стамбул',
+    en: 'Istanbul',
+    tr: 'İstanbul',
   },
   Moscow: {
-    ru: "Москва",
-    en: "Moscow",
-    tr: "Moskova",
+    ru: 'Москва',
+    en: 'Moscow',
+    tr: 'Moskova',
   },
   Sakarya: {
-    "ru": "Сакарья",
-    "en": "Sakarya",
-    "tr": "Sakarya"
-  }
-
+    ru: 'Сакарья',
+    en: 'Sakarya',
+    tr: 'Sakarya',
+  },
 };
 
 export const districtTranslations: Record<
@@ -47,74 +46,73 @@ export const districtTranslations: Record<
   { ru: string; en: string; tr: string }
 > = {
   Alanya: {
-    ru: "Алания",
-    en: "Alanya",
-    tr: "Alanya",
+    ru: 'Алания',
+    en: 'Alanya',
+    tr: 'Alanya',
   },
   Atasehir: {
-    ru: "Аташехир",
-    en: "Atasehir",
-    tr: "Ataşehir",
+    ru: 'Аташехир',
+    en: 'Atasehir',
+    tr: 'Ataşehir',
   },
   Bahcelievler: {
-    ru: "Бахчелиэвлер",
-    en: "Bahcelievler",
-    tr: "Bahçelievler",
+    ru: 'Бахчелиэвлер',
+    en: 'Bahcelievler',
+    tr: 'Bahçelievler',
   },
   Bakirkoy: {
-    ru: "Бакыркёй",
-    en: "Bakirkoy",
-    tr: "Bakırköy",
+    ru: 'Бакыркёй',
+    en: 'Bakirkoy',
+    tr: 'Bakırköy',
   },
   Besiktas: {
-    ru: "Бешикташ",
-    en: "Besiktas",
-    tr: "Beşiktaş",
+    ru: 'Бешикташ',
+    en: 'Besiktas',
+    tr: 'Beşiktaş',
   },
   Beykoz: {
-    ru: "Бейкоз",
-    en: "Beykoz",
-    tr: "Beykoz",
+    ru: 'Бейкоз',
+    en: 'Beykoz',
+    tr: 'Beykoz',
   },
   Brusnika: {
-    ru: "Брусника",
-    en: "Brusnika",
-    tr: "Brusnika",
+    ru: 'Брусника',
+    en: 'Brusnika',
+    tr: 'Brusnika',
   },
   Kadikoy: {
-    ru: "Кадыкёй",
-    en: "Kadikoy",
-    tr: "Kadıköy",
+    ru: 'Кадыкёй',
+    en: 'Kadikoy',
+    tr: 'Kadıköy',
   },
   Kas: {
-    ru: "Каш",
-    en: "Kas",
-    tr: "Kaş",
+    ru: 'Каш',
+    en: 'Kas',
+    tr: 'Kaş',
   },
   Level: {
-    ru: "Левел",
-    en: "Level",
-    tr: "Level",
+    ru: 'Левел',
+    en: 'Level',
+    tr: 'Level',
   },
   Maltepe: {
-    ru: "Малтепе",
-    en: "Maltepe",
-    tr: "Maltepe",
+    ru: 'Малтепе',
+    en: 'Maltepe',
+    tr: 'Maltepe',
   },
   Muratpasa: {
-    ru: "Муратпаша",
-    en: "Muratpasa",
-    tr: "Muratpaşa",
+    ru: 'Муратпаша',
+    en: 'Muratpasa',
+    tr: 'Muratpaşa',
   },
   Sariyer: {
-    ru: "Сарыер",
-    en: "Sariyer",
-    tr: "Sarıyer",
+    ru: 'Сарыер',
+    en: 'Sariyer',
+    tr: 'Sarıyer',
   },
   Kaynarca: {
-    "ru": "Кайнарджа",
-    "en": "Kaynarca",
-    "tr": "Kaynarca"
+    ru: 'Кайнарджа',
+    en: 'Kaynarca',
+    tr: 'Kaynarca',
   },
-
 };

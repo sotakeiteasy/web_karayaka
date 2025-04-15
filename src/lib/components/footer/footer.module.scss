@@ -1,4 +1,4 @@
-@use "@styles/variables" as *;
+@use '@styles/variables' as *;
 
 .footer {
   background-color: color-mix(in srgb, $primary-color, black 50%);
@@ -33,7 +33,7 @@
     position: relative;
 
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       bottom: -8px;

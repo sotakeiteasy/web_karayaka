@@ -16,7 +16,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@data/*": ["./data/*"],
-      "@styles/*": ["./src/styles/*"],
+      "@styles/*": ["./src/styles/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

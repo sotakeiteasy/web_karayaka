@@ -1,174 +1,173 @@
 {
-    "header": {
-      "home": "Karayaka",
-      "rent": "Rent",
-      "homeBurger": "Home",
+  "header": {
+    "home": "Karayaka",
+    "rent": "Rent",
+    "homeBurger": "Home",
 
-      "buy": "Buy",
-      "aboutUs": "About Us",
-      "customOffers": "For You",
-      "blog": "Blog"
+    "buy": "Buy",
+    "aboutUs": "About Us",
+    "customOffers": "For You",
+    "blog": "Blog"
+  },
+  "home": {
+    "rent": "Rent in Russia",
+    "buy": "Buy in Russia",
+    "seeAll": "See All",
+    "articles": "Latest Articles",
+    "rentBtn": "Rent",
+    "buyBtn": "Buy",
+    "hero": "House in Russia",
+    "searchBtn": "Search",
+    "searchPlaceholder": "Address, keywords"
+  },
+  "blog": {
+    "title": "Blog",
+    "readMore": "Read More",
+    "noPosts": "No posts available"
+  },
+  "aboutUs": {
+    "header": "About us",
+    "description": "We are a boutique real estate agency specializing in helping clients find their perfect home in Turkey and Russia. With personalized attention and deep local knowledge, we guide you through every step of your property journey. We focus on understanding your unique requirements and preferences, connecting you with properties that truly match your vision. Our services include comprehensive property viewings, assistance with negotiations, and guidance through the legal aspects of purchasing in foreign markets. We pride ourselves on transparent communication and building genuine relationships with our clients, ensuring a comfortable and informed buying experience from start to finish.",
+    "stats": {
+      "forSale": "100+",
+      "forSaleLabel": "Apartments for sale",
+      "regions": "10+",
+      "regionsLabel": "regions",
+      "forRent": "50+",
+      "forRentLabel": "Apartments for rent"
     },
-    "home": {
-      "rent": "Rent in Russia",
-      "buy": "Buy in Russia",
-      "seeAll": "See All",
-      "articles": "Latest Articles",
-      "rentBtn": "Rent",
-      "buyBtn": "Buy",
-      "hero": "House in Russia",
-      "searchBtn": "Search",
-      "searchPlaceholder": "Address, keywords"
-    },
-    "blog": {
-      "title": "Blog",
-      "readMore": "Read More",
-      "noPosts": "No posts available"
-    },
-    "aboutUs": {
-      "header": "About us",
-      "description": "We are a boutique real estate agency specializing in helping clients find their perfect home in Turkey and Russia. With personalized attention and deep local knowledge, we guide you through every step of your property journey. We focus on understanding your unique requirements and preferences, connecting you with properties that truly match your vision. Our services include comprehensive property viewings, assistance with negotiations, and guidance through the legal aspects of purchasing in foreign markets. We pride ourselves on transparent communication and building genuine relationships with our clients, ensuring a comfortable and informed buying experience from start to finish.",
-      "stats": {
-        "forSale": "100+",
-        "forSaleLabel": "Apartments for sale",
-        "regions": "10+",
-        "regionsLabel": "regions",
-        "forRent": "50+",
-        "forRentLabel": "Apartments for rent"
+    "faq": {
+      "title": "FAQ",
+      "questions": {
+        "location": "Where are you located?",
+        "period": "How long does the typical home buying process take?",
+        "tour": "Can I schedule a virtual tour if I'm unable to visit in person?",
+        "contact": "How can I contact your team if I have questions?",
+        "area": "What areas do you serve for property rentals and sales?",
+        "personnel": "Are you familiar with all neighborhoods in the area?"
       },
-      "faq": {
-        "title": "FAQ",
-        "questions": {
-          "location": "Where are you located?",
-          "period": "How long does the typical home buying process take?",
-          "tour": "Can I schedule a virtual tour if I'm unable to visit in person?",
-          "contact": "How can I contact your team if I have questions?",
-          "area": "What areas do you serve for property rentals and sales?",
-          "personnel": "Are you familiar with all neighborhoods in the area?"
-        },
-        "answers": {
-          "location": "We are based in Turkey and operate in both Turkey and Russia, offering our services to clients interested in properties in these regions.",
-          "period": "The home buying process typically takes 1-2 months from offer to closing. However, this timeline can vary depending on various factors such as property type, location, and legal requirements. We'll guide you through each step and keep you informed of the progress.",
-          "tour": "Yes, we offer virtual tours for all our properties! Using high-quality video calls, we can show you around any property you're interested in, allowing you to see every detail and ask questions in real-time. This service is particularly valuable for our international clients.",
-          "contact": "You can reach us through multiple channels: phone, email, or the contact form on our website. We aim to respond to all inquiries within 24 hours. For urgent matters, we recommend calling us directly.",
-          "area": "In Turkey, we primarily focus on coastal regions and major cities. In Russia, we concentrate on Moscow and its surrounding areas. We carefully select properties in neighborhoods that offer good value and quality of life for our clients.",
-          "personnel": "Yes, we have extensive knowledge of our operating areas. We regularly visit and research different neighborhoods to stay updated on market conditions, amenities, and community features. This allows us to provide accurate and helpful advice to our clients."
-        }
+      "answers": {
+        "location": "We are based in Turkey and operate in both Turkey and Russia, offering our services to clients interested in properties in these regions.",
+        "period": "The home buying process typically takes 1-2 months from offer to closing. However, this timeline can vary depending on various factors such as property type, location, and legal requirements. We'll guide you through each step and keep you informed of the progress.",
+        "tour": "Yes, we offer virtual tours for all our properties! Using high-quality video calls, we can show you around any property you're interested in, allowing you to see every detail and ask questions in real-time. This service is particularly valuable for our international clients.",
+        "contact": "You can reach us through multiple channels: phone, email, or the contact form on our website. We aim to respond to all inquiries within 24 hours. For urgent matters, we recommend calling us directly.",
+        "area": "In Turkey, we primarily focus on coastal regions and major cities. In Russia, we concentrate on Moscow and its surrounding areas. We carefully select properties in neighborhoods that offer good value and quality of life for our clients.",
+        "personnel": "Yes, we have extensive knowledge of our operating areas. We regularly visit and research different neighborhoods to stay updated on market conditions, amenities, and community features. This allows us to provide accurate and helpful advice to our clients."
       }
-    },
-    "custom-offers": {
-      "header": "Offer for you"
-    },
-    "search": {
-      "header": "Search",
-      "filters": {
-        "country": "Country",
-        "allCountries": "All countries",
-        "city": "City",
-        "allCities": "All cities",
-        "propertyType": "Property type",
-        "allTypes": "All types",
-        "priceFrom": "Price from",
-        "priceTo": "to",
-        "areaFrom": "Area from",
-        "areaTo": "to",
-        "bedrooms": "Bedrooms",
-        "any": "Any",
-        "floor": "Floor",
-        "apply": "Apply filters",
-        "reset": "Reset filters",
-        "searchPlaceholder": "Search by address",
-        "searchButton": "Search"
-      },
-      "sorting": {
-        "cheapFirst": "Price (cheap first)",
-        "expensiveFirst": "Price (expensive first)",
-        "smallFirst": "Area (small first)",
-        "largeFirst": "Area (large first)"
-      },
-      "noResults": "No results found for your search criteria"
-    },
-    "form": {
-      "title": "Contact us",
-      "description": "Didn't find what you're looking for? Share your contact details and property wishes. We'll get back to you with recommendations.",
-      "name": "Name",
-      "surname": "Surname",
-      "location": {
-        "label": "Where are you looking?",
-        "russia": "Russia",
-        "turkey": "Turkey"
-      },
-      "purpose": {
-        "label": "Purpose",
-        "buy": "Buy",
-        "rent": "Rent"
-      },
+    }
+  },
+  "custom-offers": {
+    "header": "Offer for you"
+  },
+  "search": {
+    "header": "Search",
+    "filters": {
+      "country": "Country",
+      "allCountries": "All countries",
       "city": "City",
-      "district": "District",
-      "budget": "Budget",
-      "phone": "Phone Number",
-      "email": "Email",
-      "message": {
-        "label": "Your message",
-        "placeholder": "Describe what you're looking for: number of rooms, floor, must-have features. The more details you provide, the better we can help you find your perfect match!"
-      },
-      "submit": "Send",
-      "thankYou": {
-        "title": "Thank you!",
-        "message": "We've received your request and will contact you soon."
-      },
-      "errors": {
-        "nameRequired": "Name is required",
-        "phoneRequired": "Phone number is required",
-        "phoneInvalid": "Invalid phone number",
-        "emailRequired": "Email is required",
-        "emailInvalid": "Invalid email address",
-        "contactRequired": "Either phone or email is required"
-      }
+      "allCities": "All cities",
+      "propertyType": "Property type",
+      "allTypes": "All types",
+      "priceFrom": "Price from",
+      "priceTo": "to",
+      "areaFrom": "Area from",
+      "areaTo": "to",
+      "bedrooms": "Bedrooms",
+      "any": "Any",
+      "floor": "Floor",
+      "apply": "Apply filters",
+      "reset": "Reset filters",
+      "searchPlaceholder": "Search by address",
+      "searchButton": "Search"
     },
-    "footer": {
-      "home": "Home page",
-      "tagline": "If it is possible, we can",
-      "officeAddress": "Address",
+    "sorting": {
+      "cheapFirst": "Price (cheap first)",
+      "expensiveFirst": "Price (expensive first)",
+      "smallFirst": "Area (small first)",
+      "largeFirst": "Area (large first)"
+    },
+    "noResults": "No results found for your search criteria"
+  },
+  "form": {
+    "title": "Contact us",
+    "description": "Didn't find what you're looking for? Share your contact details and property wishes. We'll get back to you with recommendations.",
+    "name": "Name",
+    "surname": "Surname",
+    "location": {
+      "label": "Where are you looking?",
       "russia": "Russia",
-      "navigation": "Navigation",
-      "contactUs": "Contact Us",
-      "phone": "Phone",
-      "allRightsReserved": "Karayaka LLC. All Rights Reserved",
-      "privacyPolicy": "Privacy Policy",
-      "termsOfService": "Terms of Service"
+      "turkey": "Turkey"
     },
-    "pagination": {
-      "next": "Next",
-      "previous": "Previous"
+    "purpose": {
+      "label": "Purpose",
+      "buy": "Buy",
+      "rent": "Rent"
     },
-    "ad": {
-      "property": {
-        "area": "Area",
-        "squareMeters": "m",
-        "bedrooms": "Bedrooms",
-        "floor": "Floor",
-        "type": "Type",
-        "listing": "Listing type",
-        "buildingAge": "Building age",
-        "condition": "Condition",
-        "openParking": "Open parking",
-        "closedParking": "Closed parking",
-        "bathrooms": "bathrooms",
-        "forSale": "For sale",
-        "forRent": "For rent",
-        "forSaleStatus": "for sale",
-        "forRentStatus": "for rent",
-        "titleForSale": "for sale",
-        "titleForRent": "for rent",
-        "room": "room",
-        "situation": {
-          "tenanted": "Tenanted",
-          "owner": "Owner",
-          "empty": "Empty",
-          "free": "Free"
-        }
+    "city": "City",
+    "district": "District",
+    "budget": "Budget",
+    "phone": "Phone Number",
+    "email": "Email",
+    "message": {
+      "label": "Your message",
+      "placeholder": "Describe what you're looking for: number of rooms, floor, must-have features. The more details you provide, the better we can help you find your perfect match!"
+    },
+    "submit": "Send",
+    "thankYou": {
+      "title": "Thank you!",
+      "message": "We've received your request and will contact you soon."
+    },
+    "errors": {
+      "nameRequired": "Name is required",
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Invalid phone number",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address",
+      "contactRequired": "Either phone or email is required"
+    }
+  },
+  "footer": {
+    "home": "Home page",
+    "tagline": "If it is possible, we can",
+    "officeAddress": "Address",
+    "russia": "Russia",
+    "navigation": "Navigation",
+    "contactUs": "Contact Us",
+    "phone": "Phone",
+    "allRightsReserved": "Karayaka LLC. All Rights Reserved",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "pagination": {
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "ad": {
+    "property": {
+      "area": "Area",
+      "squareMeters": "m",
+      "bedrooms": "Bedrooms",
+      "floor": "Floor",
+      "type": "Type",
+      "listing": "Listing type",
+      "buildingAge": "Building age",
+      "condition": "Condition",
+      "openParking": "Open parking",
+      "closedParking": "Closed parking",
+      "bathrooms": "bathrooms",
+      "forSale": "For sale",
+      "forRent": "For rent",
+      "forSaleStatus": "for sale",
+      "forRentStatus": "for rent",
+      "titleForSale": "for sale",
+      "titleForRent": "for rent",
+      "room": "room",
+      "situation": {
+        "tenanted": "Tenanted",
+        "owner": "Owner",
+        "empty": "Empty",
+        "free": "Free"
       }
     }
   }
-  
+}

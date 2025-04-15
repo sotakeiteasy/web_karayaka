@@ -1,4 +1,4 @@
-@use "@styles/variables" as *;
+@use '@styles/variables' as *;
 
 .main {
   display: flex;
@@ -201,7 +201,6 @@
   }
 }
 
-
 @media (max-width: 1050px) {
   .main {
     flex-direction: column;
@@ -225,15 +224,12 @@
       margin-bottom: 20px;
       flex-wrap: wrap;
       display: flex;
-     justify-content: center;
+      justify-content: center;
 
       .filter {
         height: 50px;
         width: 280px;
-
       }
-
-
 
       .filterRow {
         max-width: 280px;
@@ -255,7 +251,6 @@
         justify-content: right;
         height: 60px;
         margin-left: 40px;
-
 
         .applyButton {
           width: 280px !important;
@@ -281,7 +276,6 @@
 }
 
 @media (max-width: 800px) {
-
   .main {
     max-width: 100% !important;
   }
@@ -294,7 +288,7 @@
     .filter {
       height: 50px;
       width: 100% !important;
-      margin-left: 0  !important;
+      margin-left: 0 !important;
     }
 
     .filterRow {
@@ -308,7 +302,7 @@
     // }
 
     .filterActions {
-      margin: 0 !important; 
+      margin: 0 !important;
       width: 100% !important;
 
       .applyButton {
@@ -330,7 +324,6 @@
         flex-direction: column;
         align-self: center;
 
-
         .searchButton {
           width: 200px;
           align-self: self-end;
@@ -346,18 +339,11 @@
           align-self: self-end;
         }
       }
-
-      
-
-
     }
   }
-
-  
 }
 
 @media (max-width: 400px) {
-
   .main {
     max-width: 100% !important;
   }

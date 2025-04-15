@@ -1,4 +1,4 @@
-@use "@styles/variables" as *;
+@use '@styles/variables' as *;
 .main {
   display: flex;
   flex-direction: column;
@@ -186,7 +186,6 @@
   right: 15px;
 }
 
-
 @media (max-width: 1050px) {
   .main {
     max-width: 650px;
@@ -200,12 +199,12 @@
       margin-bottom: 0;
 
       .rightTitleInfo > p {
-          font-size: 1.6rem !important;
+        font-size: 1.6rem !important;
       }
 
       .rightTitleInfo > p + p {
         font-size: 1.3rem !important;
-    }
+      }
 
       .leftTitleInfo {
         margin-left: 5px;
@@ -224,7 +223,6 @@
 
       .info {
         width: 100%;
-        
       }
 
       .mainImage {

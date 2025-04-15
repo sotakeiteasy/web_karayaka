@@ -2,24 +2,23 @@
 
 const nextConfig = {
   reactStrictMode: true,
-  output: 'export', 
+  output: 'export',
   images: {
     unoptimized: true,
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "karayaka.ru",
-        port: "",
-        pathname: "/images/**",
-        search: "",
+        protocol: 'https',
+        hostname: 'karayaka.ru',
+        port: '',
+        pathname: '/images/**',
+        search: '',
       },
     ],
   },
   compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
+    removeConsole: process.env.NODE_ENV === 'production',
   },
   poweredByHeader: false,
-  
 };
 
 module.exports = nextConfig;

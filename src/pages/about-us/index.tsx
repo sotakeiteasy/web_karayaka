@@ -1,49 +1,49 @@
-import styles from "./index.module.scss";
-import Image from "next/image";
-import { useTranslation, useLanguageQuery } from "next-export-i18n";
-import { useState } from "react";
-import Head from "next/head";
+import styles from './index.module.scss';
+import Image from 'next/image';
+import { useTranslation, useLanguageQuery } from 'next-export-i18n';
+import { useState } from 'react';
+import Head from 'next/head';
 
-import Icon from "@mdi/react";
-import { mdiChevronRight } from "@mdi/js";
+import Icon from '@mdi/react';
+import { mdiChevronRight } from '@mdi/js';
 
-import { getImageUrl } from "@/lib/utils";
-import { OrganizationSchema, FAQPageSchema } from "@/lib/components";
-import { MetaTags } from "@/lib/types";
+import { getImageUrl } from '@/lib/utils';
+import { OrganizationSchema, FAQPageSchema } from '@/lib/components';
+import { MetaTags } from '@/lib/types';
 
 export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
-  const lang = (query?.lang as 'ru' | 'en') || "ru";
+  const lang = (query?.lang as 'ru' | 'en') || 'ru';
   const meta = metaTags[lang];
 
   type FAQKey =
-    | "location"
-    | "period"
-    | "tour"
-    | "contact"
-    | "area"
-    | "personnel";
+    | 'location'
+    | 'period'
+    | 'tour'
+    | 'contact'
+    | 'area'
+    | 'personnel';
 
   const questionsFAQ: Record<FAQKey, string> = {
-    location: t("aboutUs.faq.questions.location"),
-    period: t("aboutUs.faq.questions.period"),
-    tour: t("aboutUs.faq.questions.tour"),
-    contact: t("aboutUs.faq.questions.contact"),
-    area: t("aboutUs.faq.questions.area"),
-    personnel: t("aboutUs.faq.questions.personnel"),
+    location: t('aboutUs.faq.questions.location'),
+    period: t('aboutUs.faq.questions.period'),
+    tour: t('aboutUs.faq.questions.tour'),
+    contact: t('aboutUs.faq.questions.contact'),
+    area: t('aboutUs.faq.questions.area'),
+    personnel: t('aboutUs.faq.questions.personnel'),
   };
 
   const answersFAQ: Record<FAQKey, string> = {
-    location: t("aboutUs.faq.answers.location"),
-    period: t("aboutUs.faq.answers.period"),
-    tour: t("aboutUs.faq.answers.tour"),
-    contact: t("aboutUs.faq.answers.contact"),
-    area: t("aboutUs.faq.answers.area"),
-    personnel: t("aboutUs.faq.answers.personnel"),
+    location: t('aboutUs.faq.answers.location'),
+    period: t('aboutUs.faq.answers.period'),
+    tour: t('aboutUs.faq.answers.tour'),
+    contact: t('aboutUs.faq.answers.contact'),
+    area: t('aboutUs.faq.answers.area'),
+    personnel: t('aboutUs.faq.answers.personnel'),
   };
 
-  const [activeKey, setActiveKey] = useState<FAQKey>("location");
+  const [activeKey, setActiveKey] = useState<FAQKey>('location');
 
   function toggleAnswers(key: FAQKey) {
     setActiveKey(key);
@@ -73,12 +73,15 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
-        <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
+        <meta
+          property="og:locale"
+          content={lang === 'ru' ? 'ru_RU' : 'en_US'}
+        />
       </Head>
 
       <OrganizationSchema
         name="Karayaka"
-        description={t("aboutUs.meta.description")}
+        description={t('aboutUs.meta.description')}
         logo="https://karayaka.ru/logo.png"
         url="https://karayaka.ru/about-us"
       />
@@ -91,11 +94,11 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
       <main className={styles.main}>
         <div className={styles.sloganBlock}>
           <Image
-            src={getImageUrl("/images/line1.jpg")}
+            src={getImageUrl('/images/line1.jpg')}
             alt=""
             fill={true}
             style={{
-              objectFit: "cover",
+              objectFit: 'cover',
             }}
             loading="eager"
             draggable="false"
@@ -111,17 +114,17 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
         </div>
 
         <header>
-          <h1>{t("aboutUs.header")}</h1>
-          <p>{t("aboutUs.description")}</p>
+          <h1>{t('aboutUs.header')}</h1>
+          <p>{t('aboutUs.description')}</p>
         </header>
 
         <div className={styles.banner}>
           <Image
-            src={getImageUrl("/images/line2.jpg")}
+            src={getImageUrl('/images/line2.jpg')}
             alt=""
             fill={true}
             style={{
-              objectFit: "cover",
+              objectFit: 'cover',
             }}
             loading="eager"
             draggable="false"
@@ -130,24 +133,24 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
 
         <div className={styles.stats}>
           <section>
-            <h2>{t("aboutUs.stats.forSale")}</h2>
-            <p>{t("aboutUs.stats.forSaleLabel")}</p>
+            <h2>{t('aboutUs.stats.forSale')}</h2>
+            <p>{t('aboutUs.stats.forSaleLabel')}</p>
           </section>
 
           <section>
-            <h2>{t("aboutUs.stats.regions")}</h2>
-            <p>{t("aboutUs.stats.regionsLabel")}</p>
+            <h2>{t('aboutUs.stats.regions')}</h2>
+            <p>{t('aboutUs.stats.regionsLabel')}</p>
           </section>
 
           <section>
-            <h2>{t("aboutUs.stats.forRent")}</h2>
-            <p>{t("aboutUs.stats.forRentLabel")}</p>
+            <h2>{t('aboutUs.stats.forRent')}</h2>
+            <p>{t('aboutUs.stats.forRentLabel')}</p>
           </section>
         </div>
 
         <div className={styles.infoBlock}>
           <section className={styles.faq}>
-            <h2>{t("aboutUs.faq.title")}</h2>
+            <h2>{t('aboutUs.faq.title')}</h2>
 
             {(Object.keys(questionsFAQ) as FAQKey[]).map((key) => (
               <div className={styles.faqRow} key={key}>
@@ -157,10 +160,10 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
                   style={{
                     opacity: 0,
                   }}
-                  className={activeKey === key ? styles.activeIcon : ""}
+                  className={activeKey === key ? styles.activeIcon : ''}
                 />
                 <button
-                  className={activeKey === key ? styles.activeButton : ""}
+                  className={activeKey === key ? styles.activeButton : ''}
                   onClick={() => toggleAnswers(key)}
                 >
                   {questionsFAQ[key]}
@@ -182,20 +185,24 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
 export async function getStaticProps() {
   const metaTags = {
     ru: {
-      title: "О нас - Караяка | Агентство недвижимости в Турции и России",
-      description: "Караяка - агентство недвижимости, специализирующееся на объектах в Турции и России. Индивидуальный подход к каждому клиенту и комплексное сопровождение сделок.",
-      keywords: "агентство недвижимости, о нас, недвижимость в Турции, недвижимость в России, купить недвижимость"
+      title: 'О нас - Караяка | Агентство недвижимости в Турции и России',
+      description:
+        'Караяка - агентство недвижимости, специализирующееся на объектах в Турции и России. Индивидуальный подход к каждому клиенту и комплексное сопровождение сделок.',
+      keywords:
+        'агентство недвижимости, о нас, недвижимость в Турции, недвижимость в России, купить недвижимость',
     },
     en: {
-      title: "About Us - Karayaka | Real Estate Agency in Turkey and Russia",
-      description: "Karayaka is a boutique real estate agency specializing in properties in Turkey and Russia. Personalized approach and comprehensive support for every client.",
-      keywords: "real estate agency, about us, Turkey real estate, Russia real estate, buy property"
-    }
+      title: 'About Us - Karayaka | Real Estate Agency in Turkey and Russia',
+      description:
+        'Karayaka is a boutique real estate agency specializing in properties in Turkey and Russia. Personalized approach and comprehensive support for every client.',
+      keywords:
+        'real estate agency, about us, Turkey real estate, Russia real estate, buy property',
+    },
   };
 
   return {
     props: {
-      metaTags
-    }
+      metaTags,
+    },
   };
 }

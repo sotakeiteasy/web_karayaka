@@ -1,4 +1,3 @@
-
 var en = require("./translation.en.json");
 var ru = require("./translation.ru.json");
 

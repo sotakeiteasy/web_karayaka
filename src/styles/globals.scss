@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use './variables' as *;
 
 // /* 1. Use a more-intuitive box-sizing model */
 *,
@@ -74,7 +74,7 @@ a {
   color: inherit;
 }
 
-// react-select 
+// react-select
 .react-select__control {
   background-color: $white-text !important;
   border-radius: 5px !important;

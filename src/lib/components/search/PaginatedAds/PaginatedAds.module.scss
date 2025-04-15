@@ -1,4 +1,4 @@
-@use "@styles/variables" as *;
+@use '@styles/variables' as *;
 .adsList {
   display: flex;
   flex-direction: column;
@@ -153,17 +153,14 @@
 }
 
 @media (max-width: 800px) {
-
   .paginate {
     width: 100%;
   }
 
-  
-  .paginate li[class*="next"],
-  .paginate li[class*="previous"] {
+  .paginate li[class*='next'],
+  .paginate li[class*='previous'] {
     display: none !important;
   }
-
 
   .adsList {
     align-items: center;
@@ -178,8 +175,8 @@
     .adCardImage {
       width: 100% !important;
       height: 250px !important;
-    } 
-    
+    }
+
     a {
       width: 100% !important;
     }

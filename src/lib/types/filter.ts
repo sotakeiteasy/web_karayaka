@@ -2,7 +2,7 @@ export interface Filter {
   country?: string;
   city?: string;
   propertyType?: string;
-  type?: "sale" | "rent";
+  type?: 'sale' | 'rent';
   minPrice?: number;
   maxPrice?: number;
   minArea?: number;

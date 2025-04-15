@@ -1,4 +1,4 @@
-@use "@styles/variables" as *;
+@use '@styles/variables' as *;
 .form {
   display: flex;
   flex-direction: column;
@@ -161,13 +161,13 @@
           gap: 15px;
           margin-bottom: 20px;
 
-          input[type="button"] {
+          input[type='button'] {
             padding: 8px 16px;
             background-color: $white-text;
             cursor: pointer;
             transition: background-color 0.2s ease;
           }
-          input[type="button"].selected {
+          input[type='button'].selected {
             background-color: $primary-color;
             color: $white-text;
           }
@@ -202,26 +202,25 @@
   }
 }
 
-@media (max-width: 1280px){
+@media (max-width: 1280px) {
   .form {
     font-size: 0.9rem;
     width: 70%;
     .legend {
       font-size: 2rem;
     }
-    .formDetails{
-      .rightDetails{
-
+    .formDetails {
+      .rightDetails {
         justify-self: stretch;
       }
-    .formLocation,
-    .formPurpose {
-      padding: 5px 0px;
+      .formLocation,
+      .formPurpose {
+        padding: 5px 0px;
         div {
           gap: 10px;
           margin-bottom: 20px;
 
-          input[type="button"] {
+          input[type='button'] {
             padding: 4px 6px !important;
           }
         }
@@ -230,15 +229,15 @@
   }
 }
 
-@media (max-width: 900px){
+@media (max-width: 900px) {
   .form {
     width: 100%;
     padding: 30px;
-  
+
     .thankYouMessage {
       max-height: 200px !important;
     }
-  
+
     .formRow:first-of-type {
       gap: 15px;
       flex-direction: column;
@@ -251,23 +250,23 @@
         }
       }
     }
-  
+
     textarea {
       height: 400px !important;
     }
-  
+
     .formDetails {
       flex-direction: column;
       align-items: flex-start;
       width: 100%;
-  
+
       .leftDetails {
         .formLocation,
         .formPurpose {
           padding: 5px 0px;
           div {
             margin-bottom: 15px;
-            input[type="button"] {
+            input[type='button'] {
               padding: 8px 16px !important;
             }
           }

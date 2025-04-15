@@ -1,4 +1,4 @@
-@use "@styles/variables" as *;
+@use '@styles/variables' as *;
 
 .carouselBlock {
   display: flex;
@@ -145,7 +145,7 @@
 }
 
 .header:after {
-  content: "";
+  content: '';
   flex: 1 0 auto;
 
   margin-left: 40px;
@@ -202,7 +202,6 @@
 }
 
 @media (max-width: 600px) {
-
   .header {
     padding: 20px 0;
 

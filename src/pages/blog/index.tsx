@@ -1,23 +1,29 @@
-import { useTranslation, LinkWithLocale } from "next-export-i18n";
-import { useLanguageQuery } from "next-export-i18n";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "./index.module.scss";
+import { useTranslation, LinkWithLocale } from 'next-export-i18n';
+import { useLanguageQuery } from 'next-export-i18n';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from './index.module.scss';
 
-import { PostData, getImageUrl } from "@/lib/utils";
-import { getSortedPostsData } from "@/lib/utils/blogServer";
-import { MetaTags } from "@/lib/types";
+import { PostData, getImageUrl } from '@/lib/utils';
+import { getSortedPostsData } from '@/lib/utils/blogServer';
+import { MetaTags } from '@/lib/types';
 
-export default function Blog({ allBlogData, metaTags }: { allBlogData: Record<string, PostData[]>, metaTags: MetaTags }) {
+export default function Blog({
+  allBlogData,
+  metaTags,
+}: {
+  allBlogData: Record<string, PostData[]>;
+  metaTags: MetaTags;
+}) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
 
-  const lang = (query?.lang as 'ru' | 'en') || "ru";
+  const lang = (query?.lang as 'ru' | 'en') || 'ru';
   const meta = metaTags[lang];
   const posts = allBlogData[lang];
 
   if (!posts || !posts.length) {
-    return <div>{t("blog.noPosts")}</div>;
+    return <div>{t('blog.noPosts')}</div>;
   }
 
   return (
@@ -29,7 +35,7 @@ export default function Blog({ allBlogData, metaTags }: { allBlogData: Record<st
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
-        
+
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/blog" />
         <meta property="og:title" content={meta.title} />
@@ -39,7 +45,10 @@ export default function Blog({ allBlogData, metaTags }: { allBlogData: Record<st
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
-        <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
+        <meta
+          property="og:locale"
+          content={lang === 'ru' ? 'ru_RU' : 'en_US'}
+        />
       </Head>
 
       <main className={styles.main}>
@@ -53,8 +62,8 @@ export default function Blog({ allBlogData, metaTags }: { allBlogData: Record<st
                   alt=" "
                   sizes="100%"
                   style={{
-                    objectFit: "cover",
-                    borderRadius: "15px 0px 0px 15px",
+                    objectFit: 'cover',
+                    borderRadius: '15px 0px 0px 15px',
                   }}
                   loading="eager"
                   priority
@@ -77,7 +86,7 @@ export default function Blog({ allBlogData, metaTags }: { allBlogData: Record<st
 }
 
 export async function getStaticProps() {
-  const languages = ["en", "ru"];
+  const languages = ['en', 'ru'];
   const allBlogData: { [key: string]: PostData[] } = {};
 
   for (const lang of languages) {
@@ -87,21 +96,26 @@ export async function getStaticProps() {
   // Предварительно загружаем переводы для мета-тегов
   const metaTags = {
     ru: {
-      title: "Блог - Караяка | Статьи о недвижимости в Турции и России",
-      description: "Полезные статьи и информация о недвижимости и инвестициях в Турции и России. Советы экспертов, анализ рынка, правовые аспекты.",
-      keywords: "блог о недвижимости, недвижимость в Турции, недвижимость в России, инвестиции в недвижимость"
+      title: 'Блог - Караяка | Статьи о недвижимости в Турции и России',
+      description:
+        'Полезные статьи и информация о недвижимости и инвестициях в Турции и России. Советы экспертов, анализ рынка, правовые аспекты.',
+      keywords:
+        'блог о недвижимости, недвижимость в Турции, недвижимость в России, инвестиции в недвижимость',
     },
     en: {
-      title: "Blog - Karayaka | Articles about Real Estate in Turkey and Russia",
-      description: "Useful articles and information about real estate and investments in Turkey and Russia. Expert advice, market analysis, legal aspects.",
-      keywords: "real estate blog, real estate in Turkey, real estate in Russia, property investment"
-    }
+      title:
+        'Blog - Karayaka | Articles about Real Estate in Turkey and Russia',
+      description:
+        'Useful articles and information about real estate and investments in Turkey and Russia. Expert advice, market analysis, legal aspects.',
+      keywords:
+        'real estate blog, real estate in Turkey, real estate in Russia, property investment',
+    },
   };
 
   return {
     props: {
       allBlogData,
-      metaTags
+      metaTags,
     },
   };
 }

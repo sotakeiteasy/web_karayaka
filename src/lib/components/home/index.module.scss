@@ -1,4 +1,4 @@
-@use "@styles/variables" as *;
+@use '@styles/variables' as *;
 .main {
   display: flex;
   flex-direction: column;
@@ -70,55 +70,55 @@
           border-radius: 10px;
           color: white;
           background-color: rgba(0, 0, 0, 0.2);
-  
+
           display: flex;
           align-items: center;
           justify-content: space-between;
-  
+
           &Ru {
             width: 210px;
             gap: 15px;
           }
-  
+
           // &:not(.toggleButtonActive) span:nth-of-type(2) {
           //     opacity: 0.9;
           // }
-  
+
           // &.toggleButtonActive span:nth-of-type(1) {
           //     opacity: 0.9;
           // }
-  
+
           &::after {
-            content: "";
+            content: '';
             position: absolute;
             width: 50%;
             left: 0;
             height: 89%;
             top: 0;
-  
+
             transition: all 0.2s ease;
-  
+
             background-color: $primary-color;
             border-radius: 8px;
             margin: 3px;
           }
-  
+
           &Ru::after {
             width: 48%;
           }
-  
+
           &.toggleButtonActive::after {
             width: 45%;
-            content: "";
+            content: '';
             transform: translateX(113%);
           }
-  
+
           &.toggleButtonActiveRu::after {
             width: 50%;
-            content: "";
+            content: '';
             transform: translateX(94%);
           }
-  
+
           span {
             position: relative;
             z-index: 2;
@@ -178,23 +178,21 @@
           flex-direction: column;
           width: 40%;
           padding: 25px 35px;
-  
+
           .articleTitle {
             position: relative;
             font-size: 1.1rem;
             font-weight: 400;
             padding-bottom: 10px;
-    
           }
-    
+
           .articleTitle::after {
-            content: "";
+            content: '';
             position: absolute;
             width: 100%;
             bottom: 0;
             left: 0;
             border-bottom: 1px solid black;
-    
           }
           .articleText {
             font-size: 0.9rem;
@@ -207,10 +205,6 @@
           }
         }
       }
-
-      
-
-      
     }
   }
 
@@ -237,7 +231,7 @@
 }
 
 .header:after {
-  content: "";
+  content: '';
   flex: 1 0 auto;
 
   margin-left: 40px;
@@ -245,15 +239,11 @@
   display: block;
 }
 
-
-
-
-
 @media (max-width: 1050px) {
   .main {
     .mainImageContainer {
       max-width: 1280px;
-      min-width: 100% ;
+      min-width: 100%;
       height: 500px;
 
       video {
@@ -268,12 +258,10 @@
 
       .searchBlock {
         max-width: 90%;
-        bottom: 70px
+        bottom: 70px;
       }
     }
-
-    
-  } 
+  }
 
   .articleBlock {
     width: 90% !important;
@@ -283,13 +271,12 @@
     }
 
     .articleDescription {
-      padding: 15px  !important;
+      padding: 15px !important;
       .articleTitle {
         padding: 0 !important;
-
       }
       .articleText {
-          -webkit-line-clamp: 7 !important;
+        -webkit-line-clamp: 7 !important;
       }
     }
   }
@@ -300,16 +287,11 @@
 }
 
 @media (max-width: 900px) {
-  
   .main {
-
-    
     .mainImageContainer {
       max-width: 900px;
-      min-width: 100% ;
+      min-width: 100%;
       height: 400px;
-
-      
 
       video {
         height: 400px;
@@ -330,7 +312,6 @@
       div {
         justify-content: flex-end;
         gap: 20px;
-
 
         button {
           margin-left: 0 !important;
@@ -358,7 +339,7 @@
       a {
         flex-direction: column;
 
-        .articleImage{
+        .articleImage {
           width: 100% !important;
         }
 
@@ -373,20 +354,15 @@
           }
         }
       }
-
-      
     }
-
-    
   }
 
   .contactBlock {
     width: 95% !important;
-    margin-bottom: 10px  !important;
+    margin-bottom: 10px !important;
 
     form {
       width: 100% !important;
     }
   }
-  
 }

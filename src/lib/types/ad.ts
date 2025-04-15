@@ -16,15 +16,15 @@ export interface Ad {
     city: string;
     district: string | null;
   };
-  type: "sale" | "rent";
-  propertyType: "apartment" | "villa" | "commercial" | "land";
+  type: 'sale' | 'rent';
+  propertyType: 'apartment' | 'villa' | 'commercial' | 'land';
   area: number;
   rooms: string | null;
   bathroom: number | null;
   age: string | null;
-  situation: "tenanted" | "owner" | "empty" | "free";
+  situation: 'tenanted' | 'owner' | 'empty' | 'free';
   floor: number | null;
   floorInHouse: number | null;
-  parking: "open" | "closed" | 'both' | null;
+  parking: 'open' | 'closed' | 'both' | null;
   images: string[];
 }

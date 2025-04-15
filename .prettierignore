@@ -1,0 +1,12 @@
+node_modules/
+/i18n/
+/.next/
+/out/
+public/
+
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.env*
+next-env.d.ts
+

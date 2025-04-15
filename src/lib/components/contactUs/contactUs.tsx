@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import emailjs from "@emailjs/browser";
-import styles from "./contactUs.module.scss";
-import { useState } from "react";
-import { useTranslation } from "next-export-i18n";
-import { useForm, SubmitHandler } from "react-hook-form";
+import React, { useEffect } from 'react';
+import emailjs from '@emailjs/browser';
+import styles from './contactUs.module.scss';
+import { useState } from 'react';
+import { useTranslation } from 'next-export-i18n';
+import { useForm, SubmitHandler } from 'react-hook-form';
 
 type Inputs = {
   name: string;
@@ -18,12 +18,12 @@ type Inputs = {
   message?: string;
 };
 
-type LocationKey = "Russia" | "Turkey";
-type PurposeKey = "Buy" | "Rent";
+type LocationKey = 'Russia' | 'Turkey';
+type PurposeKey = 'Buy' | 'Rent';
 
-const SERVICE_ID = "service_karayaka";
-const TEMPLATE_ID = "template_karayaka";
-const PUBLIC_KEY = "Yq2DEqGgQI4ibTmyj";
+const SERVICE_ID = 'service_karayaka';
+const TEMPLATE_ID = 'template_karayaka';
+const PUBLIC_KEY = 'Yq2DEqGgQI4ibTmyj';
 
 export const ContactUs = () => {
   const { t } = useTranslation();
@@ -37,22 +37,22 @@ export const ContactUs = () => {
     formState: { errors },
   } = useForm<Inputs>({
     defaultValues: {
-      name: "",
-      surname: "",
+      name: '',
+      surname: '',
       location: [],
       purpose: [],
-      city: "",
-      district: "",
-      budget: "",
-      phone_number: "",
-      email: "",
-      message: "",
+      city: '',
+      district: '',
+      budget: '',
+      phone_number: '',
+      email: '',
+      message: '',
     },
-    mode: "onBlur", // Валидация при потере фокуса
+    mode: 'onBlur', // Валидация при потере фокуса
   });
 
-  const watchEmail = watch("email");
-  const watchPhone = watch("phone_number");
+  const watchEmail = watch('email');
+  const watchPhone = watch('phone_number');
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const templateParams = {
@@ -60,12 +60,12 @@ export const ContactUs = () => {
       surname: data.surname,
       email: data.email,
       phone_number: data.phone_number,
-      location: data.location.join(", "),
-      purpose: data.purpose.join(", "),
-      city: data.city || "",
-      district: data.district || "",
-      budget: data.budget || "",
-      message: data.message || "",
+      location: data.location.join(', '),
+      purpose: data.purpose.join(', '),
+      city: data.city || '',
+      district: data.district || '',
+      budget: data.budget || '',
+      message: data.message || '',
     };
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY).then(
@@ -74,7 +74,7 @@ export const ContactUs = () => {
         setIsSubmitted(true);
       },
       (error) => {
-        console.error("Failed to send form:", error.text);
+        console.error('Failed to send form:', error.text);
       }
     );
   };
@@ -99,7 +99,7 @@ export const ContactUs = () => {
       const selectedLocations = Object.keys(updated).filter(
         (key) => updated[key as LocationKey]
       ) as string[];
-      setValue("location", selectedLocations);
+      setValue('location', selectedLocations);
       return updated;
     });
   };
@@ -110,50 +110,50 @@ export const ContactUs = () => {
       const selectedTypes = Object.keys(updated).filter(
         (key) => updated[key as PurposeKey]
       ) as string[];
-      setValue("purpose", selectedTypes);
+      setValue('purpose', selectedTypes);
       return updated;
     });
   };
 
   const validateContactInfo = (
     value: string,
-    fieldName: "email" | "phone_number"
+    fieldName: 'email' | 'phone_number'
   ) => {
     if (value && value.trim()) return true;
 
-    const otherField = fieldName === "email" ? watchPhone : watchEmail;
+    const otherField = fieldName === 'email' ? watchPhone : watchEmail;
 
     if (otherField && otherField.trim()) {
       return true;
     }
 
-    return fieldName === "email"
-      ? t("form.errors.contactRequired")
-      : t("form.errors.contactRequired");
+    return fieldName === 'email'
+      ? t('form.errors.contactRequired')
+      : t('form.errors.contactRequired');
   };
 
   return (
     <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
       {isSubmitted ? (
         <div className={styles.thankYouMessage}>
-          <h2>{t("form.thankYou.title")}</h2>
-          <p>{t("form.thankYou.message")}</p>
+          <h2>{t('form.thankYou.title')}</h2>
+          <p>{t('form.thankYou.message')}</p>
         </div>
       ) : (
         <>
-          <legend className={styles.legend}>{t("form.title")}</legend>
-          <p className={styles.description}>{t("form.description")}</p>
+          <legend className={styles.legend}>{t('form.title')}</legend>
+          <p className={styles.description}>{t('form.description')}</p>
           <div className={styles.formRow}>
             <div>
               <label htmlFor="name" className={styles.label}>
-                {t("form.name")}
+                {t('form.name')}
               </label>
               <input
                 type="text"
                 id="name"
-                className={errors.name ? styles.error : ""}
-                {...register("name", {
-                  required: t("form.errors.nameRequired"),
+                className={errors.name ? styles.error : ''}
+                {...register('name', {
+                  required: t('form.errors.nameRequired'),
                   maxLength: 20,
                 })}
               />
@@ -165,12 +165,12 @@ export const ContactUs = () => {
 
             <div>
               <label htmlFor="surname" className={styles.label}>
-                {t("form.surname")}
+                {t('form.surname')}
               </label>
               <input
                 type="text"
                 id="surname"
-                {...register("surname", { maxLength: 20 })}
+                {...register('surname', { maxLength: 20 })}
               />
               <div className={styles.errorPlaceholder}></div>
             </div>
@@ -180,64 +180,64 @@ export const ContactUs = () => {
             <div className={styles.leftDetails}>
               <fieldset className={styles.formLocation}>
                 <legend className={styles.buttonsLabel}>
-                  {t("form.location.label")}
+                  {t('form.location.label')}
                 </legend>
                 <div>
                   <input
                     type="button"
                     id="location-russia"
                     name="location"
-                    value={t("form.location.russia")}
+                    value={t('form.location.russia')}
                     className={
                       locations.Russia
                         ? `${styles.input} ${styles.selected}`
                         : styles.input
                     }
-                    onClick={() => toggleLocation("Russia")}
+                    onClick={() => toggleLocation('Russia')}
                   />
                   <input
                     type="button"
                     id="location-turkey"
                     name="location"
-                    value={t("form.location.turkey")}
+                    value={t('form.location.turkey')}
                     className={
                       locations.Turkey
                         ? `${styles.input} ${styles.selected}`
                         : styles.input
                     }
-                    onClick={() => toggleLocation("Turkey")}
+                    onClick={() => toggleLocation('Turkey')}
                   />
                 </div>
               </fieldset>
 
               <fieldset className={styles.formPurpose}>
                 <legend className={styles.buttonsLabel}>
-                  {t("form.purpose.label")}
+                  {t('form.purpose.label')}
                 </legend>
                 <div>
                   <input
                     type="button"
                     id="purpose-buy"
                     name="purpose"
-                    value={t("form.purpose.buy")}
+                    value={t('form.purpose.buy')}
                     className={
                       purposes.Buy
                         ? `${styles.input} ${styles.selected}`
                         : styles.input
                     }
-                    onClick={() => togglePurpose("Buy")}
+                    onClick={() => togglePurpose('Buy')}
                   />
                   <input
                     type="button"
                     id="purpose-rent"
                     name="purpose"
-                    value={t("form.purpose.rent")}
+                    value={t('form.purpose.rent')}
                     className={
                       purposes.Rent
                         ? `${styles.input} ${styles.selected}`
                         : styles.input
                     }
-                    onClick={() => togglePurpose("Rent")}
+                    onClick={() => togglePurpose('Rent')}
                   />
                 </div>
               </fieldset>
@@ -246,34 +246,34 @@ export const ContactUs = () => {
             <div className={styles.rightDetails}>
               <div className={styles.formRow}>
                 <label htmlFor="city" className={styles.label}>
-                  {t("form.city")}
+                  {t('form.city')}
                 </label>
                 <input
                   type="text"
                   id="city"
-                  {...register("city", { maxLength: 15 })}
+                  {...register('city', { maxLength: 15 })}
                 />
               </div>
 
               <div className={styles.formRow}>
                 <label htmlFor="district" className={styles.label}>
-                  {t("form.district")}
+                  {t('form.district')}
                 </label>
                 <input
                   type="text"
                   id="district"
-                  {...register("district", { maxLength: 15 })}
+                  {...register('district', { maxLength: 15 })}
                 />
               </div>
 
               <div className={styles.formRow}>
                 <label htmlFor="budget" className={styles.label}>
-                  {t("form.budget")}
+                  {t('form.budget')}
                 </label>
                 <input
                   type="text"
                   id="budget"
-                  {...register("budget", { maxLength: 15 })}
+                  {...register('budget', { maxLength: 15 })}
                 />
               </div>
             </div>
@@ -281,17 +281,17 @@ export const ContactUs = () => {
 
           <div className={styles.formRow}>
             <label htmlFor="phone_number" className={styles.label}>
-              {t("form.phone")}
+              {t('form.phone')}
             </label>
             <input
               type="tel"
               id="phone_number"
-              className={errors.phone_number ? styles.error : ""}
-              {...register("phone_number", {
-                validate: (value) => validateContactInfo(value, "phone_number"),
+              className={errors.phone_number ? styles.error : ''}
+              {...register('phone_number', {
+                validate: (value) => validateContactInfo(value, 'phone_number'),
                 pattern: {
                   value: /^\+?[0-9]{7,15}$/,
-                  message: t("form.errors.phoneInvalid"),
+                  message: t('form.errors.phoneInvalid'),
                 },
               })}
             />
@@ -307,18 +307,18 @@ export const ContactUs = () => {
 
           <div className={styles.formRow}>
             <label htmlFor="email" className={styles.label}>
-              {t("form.email")}
+              {t('form.email')}
             </label>
             <input
               type="email"
               id="email"
               autoComplete="email"
-              className={errors.email ? styles.error : ""}
-              {...register("email", {
-                validate: (value) => validateContactInfo(value, "email"),
+              className={errors.email ? styles.error : ''}
+              {...register('email', {
+                validate: (value) => validateContactInfo(value, 'email'),
                 pattern: {
                   value: /^[^@\s]+@[^@\s]+\.[^@\s]+$/,
-                  message: t("form.errors.emailInvalid"),
+                  message: t('form.errors.emailInvalid'),
                 },
               })}
             />
@@ -329,16 +329,16 @@ export const ContactUs = () => {
           </div>
 
           <textarea
-            aria-label={t("form.message.label")}
-            placeholder={t("form.message.placeholder")}
-            {...register("message")}
+            aria-label={t('form.message.label')}
+            placeholder={t('form.message.placeholder')}
+            {...register('message')}
             id="message"
           />
 
           <input
             className={styles.formBtn}
             type="submit"
-            value={t("form.submit")}
+            value={t('form.submit')}
           />
         </>
       )}
