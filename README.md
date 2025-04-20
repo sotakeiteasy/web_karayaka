@@ -1,6 +1,6 @@
 # Karayaka Real Estate
 
-Website of Turkish-Russian real estate agency Karayaka.
+Website of Turkish-Russian real estate agency.
 
 🔗 [karayaka.ru](https://karayaka.ru/)
 
@@ -11,7 +11,7 @@ Website of Turkish-Russian real estate agency Karayaka.
 ```
 └── Home
 └── Search
-    └── Property page
+    └── Property Ad
 └── About us
 └── Custom offers
 └── Blog
@@ -21,7 +21,7 @@ Website of Turkish-Russian real estate agency Karayaka.
 ### Features
 
 - Client-side data filtering for listings
-- Multilingual support (Russian/English)
+- Multilingual support (Ru/En)
 - Markdown articles pre-rendered at build time with getStaticProps for static export compatibility.
 - Custom contact form with validation
 - Responsive layout across mobile and desktop.
