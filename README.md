@@ -1,43 +1,44 @@
 # Karayaka Real Estate
 
-Real estate website for a Turkish-Russian agency built with Next.js, focusing on property listings and multilingual content.
+Website of Turkish-Russian real estate agency Karayaka.
+
+🔗 [karayaka.ru](https://karayaka.ru/)
 
 ## About
 
-**Features:**
-- Property listings with filtering (location, type, price, etc.)
-- Detailed property pages with specifications and images
+### Pages
+
+```
+└── Home
+└── Search
+    └── Property page
+└── About us
+└── Custom offers
+└── Blog
+    └── Article
+```
+
+### Features
+
+- Client-side data filtering for listings
 - Multilingual support (Russian/English)
-- Blog section with industry articles
-- Contact forms for custom requests
-- Responsive design for all devices
-- SEO optimization
+- Markdown articles pre-rendered at build time with getStaticProps for static export compatibility.
+- Custom contact form with validation
+- Responsive layout across mobile and desktop.
+- SEO (metatags, open graph, JSON-scheme, search-engine verification)
+- Yandex.Metrika for analytics
 
 ## Stack
 
-**Core:**
-- Next.js (static export)
-- TypeScript
-- SCSS Modules 
+- **Framework**: Next.js (static export), TypeScript
+- **Styling**: SCSS Modules
+- **UI Components**: React Select (filterable dropdowns), React Slick (image sliders), Material Design Icons
+- **Forms**: React Hook Form (validation), email.js (send email)
+- **Data**: Markdown (blog), JSON (listings)
+- **Internalization**: next-export-i18n (static export compatible)
 
-**UI Components:**
-- React Select for filterable dropdowns
-- React Slick for image carousels
-- React Hook Form for validation
-- Material Design Icons
+## Setup
 
-**Data & Content:**
-- Markdown for blog posts (Separated server/client code for static export compatibility )
-- JSON data for property listings
-
-**Functionality:**
-- next-export-i18n for internationalization (static export compatible)
-- Client-side data filtering
-- Yandex.Metrika for analytics
-
-## Development
-
-### Setup
 ```bash
 # Clone repository
 git clone https://github.com/yourusername/web_karayaka.git
@@ -51,3 +52,7 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to view the application
+
+---
+
+© sotakeiteasy. For review only. Any use or distribution without permission is not allowed.
