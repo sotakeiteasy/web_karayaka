@@ -8,8 +8,8 @@ export function useFilterOptions(
 ) {
   const { t } = useTranslation();
 
+  // useMemo have a sense, because we call getUniqieFilterValues only once
   const filterValues = useMemo(() => getUniqueFilterValues(), []);
-
   const filteredCities = useMemo(() => {
     if (!country) return filterValues.cities;
 
@@ -21,60 +21,47 @@ export function useFilterOptions(
 
     return filterValues.cities;
   }, [country, filterValues.cities]);
+  
+  // below useMemo doesn't so efficient, because parent component re-renders too often 
+  // and UseMemo is slower than simple object
+  const floorOptions = [
+    { value: '', label: t('search.filters.any') },
+    { value: '1', label: '0-5' },
+    { value: '2', label: '6-10' },
+    { value: '3', label: '10-15' },
+    { value: '4', label: '15+' },
+  ]
 
-  const cityOptions = useMemo(
-    () => [
+  const sortOptions = [
+    { value: 'price-cheap', label: t('search.sorting.cheapFirst') },
+    { value: 'price-expensive', label: t('search.sorting.expensiveFirst') },
+    { value: 'area-small', label: t('search.sorting.smallFirst') },
+    { value: 'area-large', label: t('search.sorting.largeFirst') },
+  ]
+
+  const cityOptions = [
       { value: '', label: t('search.filters.allCities') },
       ...filteredCities.map((city) => ({
         value: city.en,
-        label: city[lang as keyof typeof city],
+        label: city[lang],
       })),
-    ],
-    [filteredCities, t, lang]
-  );
+    ]
 
-  const countryOptions = useMemo(
-    () => [
+  const countryOptions = [
       { value: '', label: t('search.filters.allCountries') },
       ...filterValues.countries.map((country) => ({
         value: country.en,
-        label: country[lang as keyof typeof country],
+        label: country[lang],
       })),
-    ],
-    [filterValues.countries, t, lang]
-  );
+    ]
 
-  const propertyTypeOptions = useMemo(
-    () => [
+  const propertyTypeOptions = [
       { value: '', label: t('search.filters.any') },
       ...filterValues.propertyType.map((propertyType) => ({
         value: propertyType.en,
-        label: propertyType[lang as keyof typeof propertyType],
+        label: propertyType[lang],
       })),
-    ],
-    [filterValues.propertyType, t, lang]
-  );
-
-  const floorOptions = useMemo(
-    () => [
-      { value: '', label: t('search.filters.any') },
-      { value: '1', label: '0-5' },
-      { value: '2', label: '6-10' },
-      { value: '3', label: '10-15' },
-      { value: '4', label: '15+' },
-    ],
-    [t]
-  );
-
-  const sortOptions = useMemo(
-    () => [
-      { value: 'price-cheap', label: t('search.sorting.cheapFirst') },
-      { value: 'price-expensive', label: t('search.sorting.expensiveFirst') },
-      { value: 'area-small', label: t('search.sorting.smallFirst') },
-      { value: 'area-large', label: t('search.sorting.largeFirst') },
-    ],
-    [t]
-  );
+    ]
 
   return {
     cityOptions,
