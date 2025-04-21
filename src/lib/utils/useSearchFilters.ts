@@ -13,7 +13,6 @@ export function useSearchFilters() {
 
   const sortAds = (option: string, adsToSort: Ad[]) => {
     const sortedAds = [...adsToSort];
-
     const getPrice = (ad: Ad) => (ad.price.try ?? ad.price.rub)!;
 
     switch (option) {
@@ -47,6 +46,7 @@ export function useSearchFilters() {
       if (currentFilter.propertyType)
         query.propertyType = currentFilter.propertyType;
       if (currentFilter.address) query.address = currentFilter.address;
+      if (currentFilter.floor) query.floor = currentFilter.floor.toString();
 
       if (currentFilter.minPrice)
         query.minPrice = currentFilter.minPrice.toString();
@@ -56,47 +56,32 @@ export function useSearchFilters() {
         query.minArea = currentFilter.minArea.toString();
       if (currentFilter.maxArea)
         query.maxArea = currentFilter.maxArea.toString();
-      if (currentFilter.floor) query.floor = currentFilter.floor.toString();
 
       // Сохраняем языковой параметр (чтобы сохранялся при сбросе фильтров)
       if (router.query.lang) {
         query.lang = router.query.lang as string;
       }
 
-      router.replace({ pathname: router.pathname, query }, undefined, {
-        shallow: true,
-      });
+      router.replace({ pathname: router.pathname, query }, undefined);
     }
   };
 
   const initializeFiltersFromURL = () => {
     if (!router.isReady) return;
-
-    const {
-      type,
-      country,
-      city,
-      propertyType,
-      minPrice,
-      maxPrice,
-      minArea,
-      maxArea,
-      floor,
-      address,
-    } = router.query;
-
+    
     const initialFilter: Filter = {};
 
+    const { type, country, city, propertyType, floor, address } = router.query;
+    if (type) initialFilter.type = type as 'sale' | 'rent';
+    if (country) initialFilter.country = country as string;
+    if (city) initialFilter.city = city as string;
+    if (propertyType) initialFilter.propertyType = propertyType as string;
     if (address) {
       initialFilter.address = address as string;
       setSearchText(address as string);
     }
 
-    if (type) initialFilter.type = type as 'sale' | 'rent';
-    if (country) initialFilter.country = country as string;
-    if (city) initialFilter.city = city as string;
-    if (propertyType) initialFilter.propertyType = propertyType as string;
-
+    const { minPrice, maxPrice, minArea, maxArea } = router.query;
     if (minPrice) initialFilter.minPrice = Number(minPrice);
     if (maxPrice) initialFilter.maxPrice = Number(maxPrice);
     if (minArea) initialFilter.minArea = Number(minArea);
@@ -104,10 +89,10 @@ export function useSearchFilters() {
     if (floor) initialFilter.floor = Number(floor);
 
     setFilter(initialFilter);
-
     updateResults(initialFilter, sortOption, true);
   };
 
+  // Update if choose another type (sell/rent)
   useEffect(() => {
     initializeFiltersFromURL();
   }, [router.isReady, router.query.type]);
@@ -135,7 +120,6 @@ export function useSearchFilters() {
       }
     });
 
-    setFilter(newFilter);
     setAppliedFilters(newFilter);
     updateResults(newFilter, sortOption);
   };

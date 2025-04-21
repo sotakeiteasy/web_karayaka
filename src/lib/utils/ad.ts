@@ -1,12 +1,11 @@
-import { Ad } from '@/lib/types/ad';
+import { Ad, Filter } from '@/lib/types';
 import { ads } from '@/data/ads/ads';
-import { Filter } from '@/lib/types/filter';
-import { propertyTypeTranslations } from '@/lib/translations/propertyTypes';
 import {
+  propertyTypeTranslations,
   countryTranslations,
   cityTranslations,
   districtTranslations,
-} from '@/lib/translations/locationTypes';
+} from '@/lib/translations';
 
 export function getAllAds() {
   return ads.map((ad) => ({ params: { id: ad.id } }));
@@ -27,7 +26,7 @@ export function filterAds(
   return ads.filter((ad) => {
     if (filters.type && ad.type !== filters.type) return false;
 
-    const adPrice = ad.price[currencyType] || 0;
+    const adPrice = ad.price[currencyType]!;
     if (filters.minPrice && adPrice < filters.minPrice) return false;
     if (filters.maxPrice && adPrice > filters.maxPrice) return false;
 
@@ -108,7 +107,7 @@ export function filterAds(
 }
 
 function hasTranslationMatch(
-  translationObj: Record<string, string | null> | undefined,
+  translationObj: Record<string, string | null>,
   searchText: string
 ): boolean {
   if (!translationObj) return false;
@@ -125,7 +124,6 @@ export function getUniqueFilterValues() {
   const propertyTypesMap = new Map<string, { en: string; ru: string }>();
 
   ads.forEach((ad) => {
-    // Add countries using data from translations
     if (ad.location.country && countryTranslations[ad.location.country]) {
       countriesMap.set(
         ad.location.country,

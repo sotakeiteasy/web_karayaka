@@ -7,10 +7,7 @@ export interface Ad {
     ru: string | null;
     en: string | null;
   };
-  price: {
-    rub?: number | null;
-    try?: number | null;
-  };
+  price: Price
   location: {
     country: 'Turkey' | 'Russia';
     city: string;
@@ -28,3 +25,12 @@ export interface Ad {
   parking: 'open' | 'closed' | 'both' | null;
   images: string[];
 }
+
+type Price = {
+  rub?: number | null;
+  try?: number | null;
+} & ({
+  rub: number;
+} | {
+  try: number;
+});
