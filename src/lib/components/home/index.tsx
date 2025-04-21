@@ -85,6 +85,7 @@ export default function Home({
               width={1600}
               style={{ objectFit: 'cover' }}
               playsInline
+              /* eslint-disable react/no-unknown-property */ 
               webkit-playsinline="true"
               controls={false}
             >
