@@ -65,6 +65,8 @@
       "allCountries": "Все страны",
       "city": "Город",
       "allCities": "Все города",
+      "district": "Район",
+      "allDistricts": "Все районы",
       "propertyType": "Тип жилья",
       "allTypes": "Все типы",
       "minPrice": "Цена от",

@@ -39,6 +39,13 @@ export function useFilterOptions(
     { value: 'area-large', label: t('search.sorting.largeFirst') },
   ];
 
+  const districtOptions = [
+    ...filterValues.district.map((district) => ({
+      value: district.en,
+      label: district[lang],
+    })),
+  ];
+
   const cityOptions = [
     { value: '', label: t('search.filters.allCities') },
     ...filteredCities.map((city) => ({
@@ -64,6 +71,7 @@ export function useFilterOptions(
   ];
 
   return {
+    districtOptions,
     cityOptions,
     countryOptions,
     propertyTypeOptions,

@@ -1,6 +1,7 @@
 export interface Filter {
   country?: string;
   city?: string;
+  district?: string[]
   propertyType?: string;
   type?: 'sale' | 'rent';
   minPrice?: number;

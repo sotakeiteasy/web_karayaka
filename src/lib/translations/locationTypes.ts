@@ -41,6 +41,7 @@ export const cityTranslations: Record<
   },
 };
 
+
 export const districtTranslations: Record<
   string,
   { ru: string; en: string; tr: string }
@@ -75,11 +76,6 @@ export const districtTranslations: Record<
     en: 'Beykoz',
     tr: 'Beykoz',
   },
-  Brusnika: {
-    ru: 'Брусника',
-    en: 'Brusnika',
-    tr: 'Brusnika',
-  },
   Kadikoy: {
     ru: 'Кадыкёй',
     en: 'Kadikoy',
@@ -89,11 +85,6 @@ export const districtTranslations: Record<
     ru: 'Каш',
     en: 'Kas',
     tr: 'Kaş',
-  },
-  Level: {
-    ru: 'Левел',
-    en: 'Level',
-    tr: 'Level',
   },
   Maltepe: {
     ru: 'Малтепе',

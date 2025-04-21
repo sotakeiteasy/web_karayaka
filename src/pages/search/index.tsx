@@ -3,7 +3,7 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { useTranslation, useLanguageQuery } from 'next-export-i18n';
 import { ChangeEvent } from 'react';
-
+import {useMemo} from 'react'
 import { PaginatedAds } from '@/lib/components';
 import { SelectOption, MetaTags } from '@/lib/types';
 import { useSearchFilters, useFilterOptions } from '@/lib/utils';
@@ -42,15 +42,30 @@ function FilterSelect({
   onChange,
   value,
   name,
-  isNumeric=false
+  label,
+  isNumeric = false,
+  isMulti = false
 }: {
     options: SelectOption[],
     onChange: Function,
-    value: string | number;
+    value: string | string[] | number;
     name: string,
+    label: string
     isNumeric?: boolean
+    isMulti?: boolean
 }) {
   const { t } = useTranslation();
+  const selectedValue = useMemo(() => {
+    if (!value && !isMulti) {
+      return null;
+    }
+    if (isMulti && Array.isArray(value)) {
+      return options.filter(option => value.includes(option.value));
+    } else if (!isMulti) {
+      return options.find(option => option.value === value);
+    }
+    return isMulti ? [] : null;
+  }, [value, options, isMulti]);
 
   return (
     <div className={styles.filter}>
@@ -58,12 +73,14 @@ function FilterSelect({
       <Select
         inputId={`${name}-input`}
         name={name}
-        value={options.find(option => option.value === value)}
+        value={selectedValue}
         onChange={(newValue) => 
           onChange(name, newValue as SelectOption, isNumeric)}
         options={options}
         isSearchable
         classNamePrefix="react-select"
+        isMulti={isMulti}
+        placeholder={t(`${label}`)}
       />
     </div>
   );
@@ -89,6 +106,7 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
   } = useSearchFilters();
 
   const {
+    districtOptions,
     cityOptions,
     countryOptions,
     propertyTypeOptions,
@@ -109,8 +127,13 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
     newValue: SelectOption | null,
     isNumeric: boolean = false
   ) => {
-    const value = newValue?.value || '';
-    handleFilterChange(name, isNumeric && value ? Number(value) : value);
+    if (Array.isArray(newValue)) {
+      const values = newValue.map((item) => item.value);
+      handleFilterChange(name, values);
+    } else {
+      const value = isNumeric ? Number(newValue?.value || '') : (newValue?.value || '');
+      handleFilterChange(name, value);
+    }
   };
 
   return (
@@ -141,24 +164,36 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
         <div className={styles.filterBox}>
           <FilterSelect
             name="country"
+            label="search.filters.allCountries"
             value={filter.country ?? ''}
             options={countryOptions}
             onChange={handleSelectChange}
           />
           <FilterSelect
             name="city"
+            label="search.filters.allCities"
             value={filter.city ?? ''}
             options={cityOptions}
             onChange={handleSelectChange}
           />
           <FilterSelect
+            name="district"
+            label="search.filters.allDistricts"
+            value={filter.district ?? ''}
+            options={districtOptions}
+            onChange={handleSelectChange}
+            isMulti={true}
+          />
+          <FilterSelect
             name="propertyType"
+            label="search.filters.any"
             value={filter.propertyType ?? ''}
             options={propertyTypeOptions}
             onChange={handleSelectChange}
           />
           <FilterSelect
             name="floor"
+            label="search.filters.any"
             value={filter.floor ?? ''}
             options={floorOptions}
             onChange={handleSelectChange}

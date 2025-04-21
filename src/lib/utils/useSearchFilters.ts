@@ -43,8 +43,8 @@ export function useSearchFilters() {
       if (currentFilter.type) query.type = currentFilter.type;
       if (currentFilter.country) query.country = currentFilter.country;
       if (currentFilter.city) query.city = currentFilter.city;
-      if (currentFilter.propertyType)
-        query.propertyType = currentFilter.propertyType;
+      if (currentFilter.district) query.district = currentFilter.district.join(',');
+      if (currentFilter.propertyType) query.propertyType = currentFilter.propertyType;
       if (currentFilter.address) query.address = currentFilter.address;
       if (currentFilter.floor) query.floor = currentFilter.floor.toString();
 
@@ -57,7 +57,7 @@ export function useSearchFilters() {
       if (currentFilter.maxArea)
         query.maxArea = currentFilter.maxArea.toString();
 
-      // Сохраняем языковой параметр (чтобы сохранялся при сбросе фильтров)
+      // Save lang after page reload
       if (router.query.lang) {
         query.lang = router.query.lang as string;
       }
@@ -72,10 +72,11 @@ export function useSearchFilters() {
     
     const initialFilter: Filter = {};
 
-    const { type, country, city, propertyType, address } = router.query;
+    const { type, country, city, district, propertyType, address } = router.query;
     if (type) initialFilter.type = type as 'sale' | 'rent';
     if (country) initialFilter.country = country as string;
     if (city) initialFilter.city = city as string;
+    if (district) initialFilter.district = (district as string).split(',');
     if (propertyType) initialFilter.propertyType = propertyType as string;
     if (address) {
       initialFilter.address = address as string;
@@ -95,7 +96,7 @@ export function useSearchFilters() {
 
   const handleFilterChange = (
     name: string,
-    value: string | number | undefined
+    value: string | number | string [] | undefined
   ) => {
     setFilter((prev) => ({ ...prev, [name]: value }));
   };

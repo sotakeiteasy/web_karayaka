@@ -15,9 +15,7 @@ export function getAdById(id: string): Ad | undefined {
   return ads.find((ad) => ad.id === id);
 }
 
-export function filterAds(
-  filters: Filter,
-): Ad[] {
+export function filterAds(filters: Filter): Ad[] {
   if (Object.keys(filters).length === 0) {
     return ads;
   }
@@ -25,12 +23,10 @@ export function filterAds(
   return ads.filter((ad) => {
     if (filters.type && ad.type !== filters.type) return false;
 
-    // Проверка по обеим валютам
     if (filters.minPrice || filters.maxPrice) {
       const adPriceRub = ad.price.rub || 0;
       const adPriceTry = ad.price.try || 0;
       
-      // Проверяем, удовлетворяет ли хотя бы одна из валют фильтру
       const passesMinPrice = !filters.minPrice || (adPriceRub >= filters.minPrice && adPriceTry >= filters.minPrice);
       const passesMaxPrice = !filters.maxPrice || (adPriceRub <= filters.maxPrice && adPriceTry <= filters.maxPrice);
       
@@ -60,10 +56,7 @@ export function filterAds(
 
     if (
       filters.country &&
-      !hasTranslationMatch(
-        countryTranslations[ad.location.country],
-        filters.country
-      )
+      !hasTranslationMatch(countryTranslations[ad.location.country], filters.country)
     ) {
       return false;
     }
@@ -75,6 +68,17 @@ export function filterAds(
       return false;
     }
 
+    if (filters.district && !ad.location.district) {
+      return false; 
+    }
+
+    if (ad.location.district && filters.district && filters.district?.length > 0) {
+      if(!filters.district.some(d =>
+        ad.location.district !== null && hasTranslationMatch(districtTranslations[ad.location.district], d))) {
+        return false;
+      }
+    }
+
     if (filters.propertyType) {
       const matchesPropertyType = Object.entries(propertyTypeTranslations).some(
         ([key, translations]) =>
@@ -84,7 +88,6 @@ export function filterAds(
       if (!matchesPropertyType) return false;
     }
 
-    // Поиск по тексту/адресу
     if (filters.address) {
       const searchText = filters.address.toLowerCase();
 
@@ -128,29 +131,24 @@ function hasTranslationMatch(
 export function getUniqueFilterValues() {
   const countriesMap = new Map<string, { en: string; ru: string }>();
   const citiesMap = new Map<string, { en: string; ru: string }>();
+  const districtMap = new Map<string, { en: string; ru: string }>();
   const propertyTypesMap = new Map<string, { en: string; ru: string }>();
 
   ads.forEach((ad) => {
-    if (ad.location.country && countryTranslations[ad.location.country]) {
-      countriesMap.set(
-        ad.location.country,
-        countryTranslations[ad.location.country]
-      );
+    countriesMap.set(ad.location.country, countryTranslations[ad.location.country]);
+    citiesMap.set(ad.location.city, cityTranslations[ad.location.city]);
+
+    if (ad.location.district && districtTranslations[ad.location.district]) {
+      districtMap.set(ad.location.district, districtTranslations[ad.location.district]);
     }
 
-    if (ad.location.city && cityTranslations[ad.location.city]) {
-      citiesMap.set(ad.location.city, cityTranslations[ad.location.city]);
-    }
-
-    propertyTypesMap.set(
-      ad.propertyType,
-      propertyTypeTranslations[ad.propertyType]
-    );
+    propertyTypesMap.set(ad.propertyType, propertyTypeTranslations[ad.propertyType]);
   });
 
   return {
     countries: Array.from(countriesMap.values()),
     cities: Array.from(citiesMap.values()),
+    district: Array.from(districtMap.values()),
     propertyType: Array.from(propertyTypesMap.values()),
   };
 }
