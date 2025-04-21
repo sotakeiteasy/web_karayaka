@@ -113,8 +113,6 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
     handleFilterChange(name, isNumeric && value ? Number(value) : value);
   };
 
-
-
   return (
     <>
       <Head>
@@ -147,21 +145,18 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
             options={countryOptions}
             onChange={handleSelectChange}
           />
-
           <FilterSelect
             name="city"
             value={filter.city ?? ''}
             options={cityOptions}
             onChange={handleSelectChange}
           />
-
           <FilterSelect
             name="propertyType"
             value={filter.propertyType ?? ''}
             options={propertyTypeOptions}
             onChange={handleSelectChange}
           />
-
           <FilterSelect
             name="floor"
             value={filter.floor ?? ''}
@@ -169,8 +164,6 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
             onChange={handleSelectChange}
             isNumeric={true}
           />
-
-
           <div className={styles.filterRow}>
             <LabelInput
               name="minPrice"
@@ -183,7 +176,6 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
               onChange={handleNumberInputChange}
             />
           </div>
-
           <div className={styles.filterRow}>
             <LabelInput
               name="minArea" 
@@ -196,7 +188,6 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
               onChange={handleNumberInputChange}
             />
           </div>
-
           <div className={styles.filterActions}>
             <button className={styles.applyButton} onClick={applyFilters}>
               {t('search.filters.apply')}

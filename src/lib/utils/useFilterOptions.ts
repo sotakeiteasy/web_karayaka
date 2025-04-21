@@ -30,38 +30,38 @@ export function useFilterOptions(
     { value: '2', label: '6-10' },
     { value: '3', label: '10-15' },
     { value: '4', label: '15+' },
-  ]
+  ];
 
   const sortOptions = [
     { value: 'price-cheap', label: t('search.sorting.cheapFirst') },
     { value: 'price-expensive', label: t('search.sorting.expensiveFirst') },
     { value: 'area-small', label: t('search.sorting.smallFirst') },
     { value: 'area-large', label: t('search.sorting.largeFirst') },
-  ]
+  ];
 
   const cityOptions = [
-      { value: '', label: t('search.filters.allCities') },
-      ...filteredCities.map((city) => ({
-        value: city.en,
-        label: city[lang],
-      })),
-    ]
+    { value: '', label: t('search.filters.allCities') },
+    ...filteredCities.map((city) => ({
+      value: city.en,
+      label: city[lang],
+    })),
+  ];
 
   const countryOptions = [
-      { value: '', label: t('search.filters.allCountries') },
-      ...filterValues.countries.map((country) => ({
-        value: country.en,
-        label: country[lang],
-      })),
-    ]
+    { value: '', label: t('search.filters.allCountries') },
+    ...filterValues.countries.map((country) => ({
+      value: country.en,
+      label: country[lang],
+    })),
+  ];
 
   const propertyTypeOptions = [
-      { value: '', label: t('search.filters.any') },
-      ...filterValues.propertyType.map((propertyType) => ({
-        value: propertyType.en,
-        label: propertyType[lang],
-      })),
-    ]
+    { value: '', label: t('search.filters.any') },
+    ...filterValues.propertyType.map((propertyType) => ({
+      value: propertyType.en,
+      label: propertyType[lang],
+    })),
+  ];
 
   return {
     cityOptions,

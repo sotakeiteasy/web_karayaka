@@ -17,7 +17,6 @@ export function getAdById(id: string): Ad | undefined {
 
 export function filterAds(
   filters: Filter,
-  currencyType: 'rub' | 'try' = 'try'
 ): Ad[] {
   if (Object.keys(filters).length === 0) {
     return ads;

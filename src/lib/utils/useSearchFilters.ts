@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { Ad, Filter } from '@/lib/types';
 import { filterAds } from '@/lib/utils';
@@ -29,12 +29,12 @@ export function useSearchFilters() {
     }
   };
 
-  const updateResults = (
+  const updateResults = useCallback((
     currentFilter: Filter,
     currentSortOption: string,
     skipUrlUpdate = false
   ) => {
-    const ads = filterAds(currentFilter, 'try');
+    const ads = filterAds(currentFilter);
     setFilteredAds(sortAds(currentSortOption, ads));
 
     if (!skipUrlUpdate) {
@@ -64,9 +64,10 @@ export function useSearchFilters() {
 
       router.replace({ pathname: router.pathname, query }, undefined);
     }
-  };
+  }, [router]);
 
-  const initializeFiltersFromURL = () => {
+  // Update if choose another type (sell/rent)
+  useEffect(() => {
     if (!router.isReady) return;
     
     const initialFilter: Filter = {};
@@ -90,12 +91,7 @@ export function useSearchFilters() {
 
     setFilter(initialFilter);
     updateResults(initialFilter, sortOption, true);
-  };
-
-  // Update if choose another type (sell/rent)
-  useEffect(() => {
-    initializeFiltersFromURL();
-  }, [router.isReady, router.query.type]);
+  }, [router.isReady, router.query, sortOption, updateResults]);
 
   const handleFilterChange = (
     name: string,
