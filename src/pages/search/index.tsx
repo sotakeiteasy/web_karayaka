@@ -4,16 +4,47 @@ import dynamic from 'next/dynamic';
 import { useTranslation, useLanguageQuery } from 'next-export-i18n';
 import { ChangeEvent } from 'react';
 
-const PaginatedAds = dynamic(
-  () => import('../../lib/components/search/PaginatedAds/PaginatedAds'),
-  { ssr: false }
-);
+import { PaginatedAds } from '@/lib/components';
 import { SelectOption, MetaTags } from '@/lib/types';
 import { useSearchFilters, useFilterOptions } from '@/lib/utils';
 
 const Select = dynamic(() => import('react-select'), {
   ssr: false,
 });
+
+function FilterSelect({
+  options,
+  onChange,
+  value,
+  name,
+  isSearchable = true
+}: {
+    options: SelectOption[],
+    onChange: any,
+    value: any
+    name: string,
+    isSearchable?: boolean
+}) {
+  const { t } = useTranslation();
+
+  return (
+    <div className={styles.filter}>
+      <label htmlFor={`${name}-input`}>{t(`search.filters.${name}`)}</label>
+      <Select
+        id={name}
+        inputId={`${name}-input`}
+        name={name}
+        value={options.find(option => option.value === value)}
+        onChange={(newValue) =>
+          onChange(name, newValue)
+        }
+        options={options}
+        isSearchable={isSearchable}
+        classNamePrefix="react-select"
+      />
+    </div>
+  );
+}
 
 export default function Search({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();
@@ -59,6 +90,8 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
     handleFilterChange(name, isNumeric && value ? Number(value) : value);
   };
 
+
+
   return (
     <>
       <Head>
@@ -85,79 +118,38 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
       </Head>
       <main className={styles.main}>
         <div className={styles.filterBox}>
-          <div className={styles.filter}>
-            <label htmlFor="country-input">{t('search.filters.country')}</label>
-            <Select
-              id="country"
-              inputId="country-input"
-              name="country"
-              value={countryOptions.find(
-                (option) => option.value === (filter.country ?? '')
-              )}
-              onChange={(newValue) =>
-                handleSelectChange('country', newValue as SelectOption)
-              }
-              options={countryOptions}
-              isSearchable
-              classNamePrefix="react-select"
-            />
-          </div>
+          <FilterSelect
+            name="country"
+            value={filter.country ?? ''}
+            options={countryOptions}
+            onChange={handleSelectChange}
+            isSearchable={true}
+          />
 
-          <div className={styles.filter}>
-            <label htmlFor="city-input">{t('search.filters.city')}</label>
-            <Select
-              id="city"
-              inputId="city-input"
-              name="city"
-              value={cityOptions.find(
-                (option) => option.value === (filter.city ?? '')
-              )}
-              onChange={(newValue) =>
-                handleSelectChange('city', newValue as SelectOption)
-              }
-              options={cityOptions}
-              isSearchable
-              classNamePrefix="react-select"
-            />
-          </div>
+          <FilterSelect
+            name="city"
+            value={filter.city ?? ''}
+            options={cityOptions}
+            onChange={handleSelectChange}
+            isSearchable={true}
+          />
 
-          <div className={styles.filter}>
-            <label htmlFor="propertyType-input">
-              {t('search.filters.propertyType')}
-            </label>
-            <Select
-              inputId="propertyType-input"
-              id="propertyType"
-              name="propertyType"
-              value={propertyTypeOptions.find(
-                (option) => option.value === (filter.propertyType ?? '')
-              )}
-              onChange={(newValue) =>
-                handleSelectChange('propertyType', newValue as SelectOption)
-              }
-              options={propertyTypeOptions}
-              isSearchable
-              classNamePrefix="react-select"
-            />
-          </div>
+          <FilterSelect
+            name="propertyType"
+            value={filter.propertyType ?? ''}
+            options={propertyTypeOptions}
+            onChange={handleSelectChange}
+            isSearchable={true}
+          />
 
-          <div className={styles.filter}>
-            <label htmlFor="floor-input">{t('search.filters.floor')}</label>
-            <Select
-              inputId="floor-input"
-              id="floor"
-              name="floor"
-              value={floorOptions.find(
-                (option) =>
-                  option.value === (filter.floor ? String(filter.floor) : '')
-              )}
-              onChange={(newValue) =>
-                handleSelectChange('floor', newValue as SelectOption, true)
-              }
-              options={floorOptions}
-              classNamePrefix="react-select"
-            />
-          </div>
+          <FilterSelect
+            name="floor"
+            value={filter.floor ?? ''}
+            options={floorOptions}
+            onChange={handleSelectChange}
+            isSearchable={true}
+          />
+
 
           <div className={styles.filterRow}>
             <div className={styles.filter}>
