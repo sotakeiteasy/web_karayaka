@@ -12,18 +12,43 @@ const Select = dynamic(() => import('react-select'), {
   ssr: false,
 });
 
+function LabelInput({ 
+  name, 
+  value, 
+  onChange 
+} : {
+  name: string, 
+  value: number | string | undefined, 
+  onChange: Function 
+}) {
+  const { t } = useTranslation();
+
+  return (
+    <div className={styles.filter}>
+      <label htmlFor={name}>{t(`search.filters.${name}`)}</label>
+      <input
+        type="text"
+        id={name}
+        name={name}
+        value={value || ''}
+        onChange={(e) => onChange(name, e.target.value)}
+      />
+    </div>
+  );
+}
+
 function FilterSelect({
   options,
   onChange,
   value,
   name,
-  isSearchable = true
+  isNumeric=false
 }: {
     options: SelectOption[],
-    onChange: any,
-    value: any
+    onChange: Function,
+    value: string | number;
     name: string,
-    isSearchable?: boolean
+    isNumeric?: boolean
 }) {
   const { t } = useTranslation();
 
@@ -31,15 +56,13 @@ function FilterSelect({
     <div className={styles.filter}>
       <label htmlFor={`${name}-input`}>{t(`search.filters.${name}`)}</label>
       <Select
-        id={name}
         inputId={`${name}-input`}
         name={name}
         value={options.find(option => option.value === value)}
-        onChange={(newValue) =>
-          onChange(name, newValue)
-        }
+        onChange={(newValue) => 
+          onChange(name, newValue as SelectOption, isNumeric)}
         options={options}
-        isSearchable={isSearchable}
+        isSearchable
         classNamePrefix="react-select"
       />
     </div>
@@ -123,7 +146,6 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
             value={filter.country ?? ''}
             options={countryOptions}
             onChange={handleSelectChange}
-            isSearchable={true}
           />
 
           <FilterSelect
@@ -131,7 +153,6 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
             value={filter.city ?? ''}
             options={cityOptions}
             onChange={handleSelectChange}
-            isSearchable={true}
           />
 
           <FilterSelect
@@ -139,7 +160,6 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
             value={filter.propertyType ?? ''}
             options={propertyTypeOptions}
             onChange={handleSelectChange}
-            isSearchable={true}
           />
 
           <FilterSelect
@@ -147,66 +167,35 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
             value={filter.floor ?? ''}
             options={floorOptions}
             onChange={handleSelectChange}
-            isSearchable={true}
+            isNumeric={true}
           />
 
 
           <div className={styles.filterRow}>
-            <div className={styles.filter}>
-              <label htmlFor="minPrice">{t('search.filters.priceFrom')}</label>
-              <input
-                type="text"
-                id="minPrice"
-                name="minPrice"
-                value={filter.minPrice || ''}
-                onChange={(e) =>
-                  handleNumberInputChange('minPrice', e.target.value)
-                }
-              />
-            </div>
-            <div className={styles.filter}>
-              <label htmlFor="maxPrice">{t('search.filters.priceTo')}</label>
-              <input
-                type="text"
-                id="maxPrice"
-                name="maxPrice"
-                value={filter.maxPrice || ''}
-                onChange={(e) =>
-                  handleNumberInputChange('maxPrice', e.target.value)
-                }
-              />
-            </div>
+            <LabelInput
+              name="minPrice"
+              value={filter.minPrice}
+              onChange={handleNumberInputChange}
+            />
+            <LabelInput
+              name="maxPrice"
+              value={filter.maxPrice}
+              onChange={handleNumberInputChange}
+            />
           </div>
 
           <div className={styles.filterRow}>
-            <div className={styles.filter}>
-              <label htmlFor="minArea">{t('search.filters.areaFrom')}</label>
-              <input
-                type="text"
-                id="minArea"
-                name="minArea"
-                value={filter.minArea || ''}
-                onChange={(e) =>
-                  handleNumberInputChange('minArea', e.target.value)
-                }
-              />
-            </div>
-            <div className={styles.filter}>
-              <label htmlFor="maxArea">{t('search.filters.areaTo')}</label>
-              <input
-                type="text"
-                id="maxArea"
-                name="maxArea"
-                value={filter.maxArea || ''}
-                onChange={(e) =>
-                  handleNumberInputChange('maxArea', e.target.value)
-                }
-              />
-            </div>
+            <LabelInput
+              name="minArea" 
+              value={filter.minArea}
+              onChange={handleNumberInputChange}
+            />
+            <LabelInput
+              name="maxArea"
+              value={filter.maxArea}
+              onChange={handleNumberInputChange}
+            />
           </div>
-
-          {/* <div className={styles.checkboxGroup}>
-          </div> */}
 
           <div className={styles.filterActions}>
             <button className={styles.applyButton} onClick={applyFilters}>

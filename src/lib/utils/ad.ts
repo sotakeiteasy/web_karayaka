@@ -26,9 +26,17 @@ export function filterAds(
   return ads.filter((ad) => {
     if (filters.type && ad.type !== filters.type) return false;
 
-    const adPrice = ad.price[currencyType]!;
-    if (filters.minPrice && adPrice < filters.minPrice) return false;
-    if (filters.maxPrice && adPrice > filters.maxPrice) return false;
+    // Проверка по обеим валютам
+    if (filters.minPrice || filters.maxPrice) {
+      const adPriceRub = ad.price.rub || 0;
+      const adPriceTry = ad.price.try || 0;
+      
+      // Проверяем, удовлетворяет ли хотя бы одна из валют фильтру
+      const passesMinPrice = !filters.minPrice || (adPriceRub >= filters.minPrice && adPriceTry >= filters.minPrice);
+      const passesMaxPrice = !filters.maxPrice || (adPriceRub <= filters.maxPrice && adPriceTry <= filters.maxPrice);
+      
+      if (!passesMinPrice || !passesMaxPrice) return false;
+    }
 
     if (filters.minArea && ad.area < filters.minArea) return false;
     if (filters.maxArea && ad.area > filters.maxArea) return false;

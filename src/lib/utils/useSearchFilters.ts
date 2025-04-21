@@ -71,7 +71,7 @@ export function useSearchFilters() {
     
     const initialFilter: Filter = {};
 
-    const { type, country, city, propertyType, floor, address } = router.query;
+    const { type, country, city, propertyType, address } = router.query;
     if (type) initialFilter.type = type as 'sale' | 'rent';
     if (country) initialFilter.country = country as string;
     if (city) initialFilter.city = city as string;
@@ -81,7 +81,7 @@ export function useSearchFilters() {
       setSearchText(address as string);
     }
 
-    const { minPrice, maxPrice, minArea, maxArea } = router.query;
+    const { minPrice, maxPrice, minArea, maxArea, floor } = router.query;
     if (minPrice) initialFilter.minPrice = Number(minPrice);
     if (maxPrice) initialFilter.maxPrice = Number(maxPrice);
     if (minArea) initialFilter.minArea = Number(minArea);

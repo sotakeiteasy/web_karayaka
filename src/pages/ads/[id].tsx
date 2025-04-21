@@ -300,7 +300,6 @@ function CustomSlider({ ad }: { ad: Ad }) {
   interface CustomArrowProps {
     className?: string | undefined;
     style?: React.CSSProperties | undefined;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onClick?: React.MouseEventHandler<any> | undefined;
     currentSlide?: number | undefined;
     slideCount?: number | undefined;
