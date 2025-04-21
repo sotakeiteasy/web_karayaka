@@ -3,10 +3,17 @@ import { LanguageSwitcher } from 'next-export-i18n';
 import { useLanguageQuery } from 'next-export-i18n';
 import Head from 'next/head';
 
-import { Date, BlogPostSchema } from '@/lib/components';
+import { BlogPostSchema } from '@/lib/components';
 import { LocalizedPostData, getImageUrl } from '@/lib/utils';
 import { getAllPostIds, getPostData } from '@/lib/utils/blogServer';
 import { MetaTags } from '@/lib/types';
+
+import { parseISO, format } from 'date-fns';
+
+function Date({ dateString }: { dateString: string }) {
+  const date = parseISO(dateString);
+  return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>;
+}
 
 export default function Post({
   postData,
