@@ -18,8 +18,8 @@
     background-color: $white-text;
     color: $primary-color;
     border: 3px solid $primary-color;
-    width: 300px;
-    padding: 25px 15px;
+    width: 350px;
+    padding: 15px;
     border-radius: 8px;
     margin-bottom: 15px;
     margin-right: 20px;
@@ -60,7 +60,7 @@
     .filterActions {
       display: flex;
       gap: 10px;
-      margin-top: 40px;
+      margin-top: 20px;
       width: 100%;
 
       .applyButton {
@@ -146,6 +146,15 @@
   }
 }
 
+.optionsContainer {
+  margin: 8px 0;
+  padding-left: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  border-left: 1px solid black;
+  box-sizing: border-box;
+}
+
 @media (max-width: 1050px) {
   .main {
     flex-direction: column;
@@ -156,7 +165,12 @@
       margin-left: 40px;
     }
 
-    .filterBox > .filter:nth-child(4) {
+    .filterBox>.filter:nth-child(3) {
+      height: 100%;
+      width: 650px;
+    }
+
+    .filterBox > .filter:nth-child(5) {
       margin-left: 40px;
     }
 
@@ -173,11 +187,11 @@
 
       .filter {
         height: 50px;
-        width: 280px;
+        width: 300px;
       }
 
       .filterRow {
-        max-width: 280px;
+        max-width: 300px;
       }
 
       .filterRow:nth-last-of-type(2) {
@@ -185,16 +199,16 @@
       }
 
       .filterActions {
-        margin: 0;
-        width: 280px;
+        margin: 0 !important;
+        width: 300px;
         display: flex;
         justify-content: right;
         height: 60px;
         margin-left: 40px;
 
         .applyButton {
-          width: 280px !important;
-          max-width: 290px;
+          width: 300px !important;
+          max-width: 300px;
           margin: 0;
           height: 35px;
           align-self: end;

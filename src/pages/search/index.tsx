@@ -3,11 +3,11 @@ import Head from 'next/head';
 import dynamic from 'next/dynamic';
 import { useTranslation, useLanguageQuery } from 'next-export-i18n';
 import { ChangeEvent } from 'react';
-import {useMemo} from 'react'
-import { PaginatedAds } from '@/lib/components';
+import { PaginatedAds, FilterSelect } from '@/lib/components';
 import { SelectOption, MetaTags } from '@/lib/types';
 import { useSearchFilters, useFilterOptions } from '@/lib/utils';
 
+// problem with static export - https://github.com/JedWatson/react-select/issues/5459
 const Select = dynamic(() => import('react-select'), {
   ssr: false,
 });
@@ -32,55 +32,6 @@ function LabelInput({
         name={name}
         value={value || ''}
         onChange={(e) => onChange(name, e.target.value)}
-      />
-    </div>
-  );
-}
-
-function FilterSelect({
-  options,
-  onChange,
-  value,
-  name,
-  label,
-  isNumeric = false,
-  isMulti = false
-}: {
-    options: SelectOption[],
-    onChange: Function,
-    value: string | string[] | number;
-    name: string,
-    label: string
-    isNumeric?: boolean
-    isMulti?: boolean
-}) {
-  const { t } = useTranslation();
-  const selectedValue = useMemo(() => {
-    if (!value && !isMulti) {
-      return null;
-    }
-    if (isMulti && Array.isArray(value)) {
-      return options.filter(option => value.includes(option.value));
-    } else if (!isMulti) {
-      return options.find(option => option.value === value);
-    }
-    return isMulti ? [] : null;
-  }, [value, options, isMulti]);
-
-  return (
-    <div className={styles.filter}>
-      <label htmlFor={`${name}-input`}>{t(`search.filters.${name}`)}</label>
-      <Select
-        inputId={`${name}-input`}
-        name={name}
-        value={selectedValue}
-        onChange={(newValue) => 
-          onChange(name, newValue as SelectOption, isNumeric)}
-        options={options}
-        isSearchable
-        classNamePrefix="react-select"
-        isMulti={isMulti}
-        placeholder={t(`${label}`)}
       />
     </div>
   );
@@ -162,20 +113,28 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
       </Head>
       <main className={styles.main}>
         <div className={styles.filterBox}>
-          <FilterSelect
-            name="country"
-            label="search.filters.allCountries"
-            value={filter.country ?? ''}
-            options={countryOptions}
-            onChange={handleSelectChange}
-          />
+          <div className={styles.filter}>
+            <FilterSelect
+              name="country"
+              label="search.filters.allCountries"
+              value={filter.country ?? ''}
+              options={countryOptions}
+              onChange={handleSelectChange}
+            />
+          </div> 
+          <div className={styles.filter}>
+
           <FilterSelect
             name="city"
             label="search.filters.allCities"
             value={filter.city ?? ''}
             options={cityOptions}
             onChange={handleSelectChange}
-          />
+            />
+                      </div> 
+
+                      <div className={styles.filter}>
+
           <FilterSelect
             name="district"
             label="search.filters.allDistricts"
@@ -183,14 +142,22 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
             options={districtOptions}
             onChange={handleSelectChange}
             isMulti={true}
-          />
+            />
+                      </div> 
+
+                        <div className={styles.filter}>
+
           <FilterSelect
             name="propertyType"
             label="search.filters.any"
             value={filter.propertyType ?? ''}
             options={propertyTypeOptions}
             onChange={handleSelectChange}
-          />
+            />
+                      </div> 
+
+                          <div className={styles.filter}>
+
           <FilterSelect
             name="floor"
             label="search.filters.any"
@@ -198,7 +165,9 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
             options={floorOptions}
             onChange={handleSelectChange}
             isNumeric={true}
-          />
+            />
+                      </div> 
+
           <div className={styles.filterRow}>
             <LabelInput
               name="minPrice"

@@ -22,10 +22,9 @@ export function useFilterOptions(
     return filterValues.cities;
   }, [country, filterValues.cities]);
   
-  // below useMemo doesn't so efficient, because parent component re-renders too often 
-  // and UseMemo is slower than simple object
+  // below useMemo doesn't so efficient, because parent component re-renders too often and UseMemo is slower than simple object
   const floorOptions = [
-    { value: '', label: t('search.filters.any') },
+    // { value: '', label: t('search.filters.any') },
     { value: '1', label: '0-5' },
     { value: '2', label: '6-10' },
     { value: '3', label: '10-15' },
@@ -47,7 +46,7 @@ export function useFilterOptions(
   ];
 
   const cityOptions = [
-    { value: '', label: t('search.filters.allCities') },
+    // { value: '', label: t('search.filters.allCities') },
     ...filteredCities.map((city) => ({
       value: city.en,
       label: city[lang],
@@ -55,7 +54,7 @@ export function useFilterOptions(
   ];
 
   const countryOptions = [
-    { value: '', label: t('search.filters.allCountries') },
+    // { value: '', label: t('search.filters.allCountries') },
     ...filterValues.countries.map((country) => ({
       value: country.en,
       label: country[lang],
@@ -63,7 +62,7 @@ export function useFilterOptions(
   ];
 
   const propertyTypeOptions = [
-    { value: '', label: t('search.filters.any') },
+    // { value: '', label: t('search.filters.any') },
     ...filterValues.propertyType.map((propertyType) => ({
       value: propertyType.en,
       label: propertyType[lang],

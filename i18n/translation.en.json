@@ -67,7 +67,7 @@
       "city": "City",
       "allCities": "All cities",
       "district": "District",
-      "allDistricts": "All districts",
+      "allDistricts": "Choose districts",
       "propertyType": "Property type",
       "allTypes": "All types",
       "minPrice": "Price from",
@@ -80,7 +80,8 @@
       "apply": "Apply filters",
       "reset": "Reset filters",
       "searchPlaceholder": "Search by address",
-      "searchButton": "Search"
+      "searchButton": "Search",
+      "noOptions": "There is no such option yet."
     },
     "sorting": {
       "cheapFirst": "Price (cheap first)",

@@ -66,7 +66,7 @@
       "city": "Город",
       "allCities": "Все города",
       "district": "Район",
-      "allDistricts": "Все районы",
+      "allDistricts": "Выбрать районы...",
       "propertyType": "Тип жилья",
       "allTypes": "Все типы",
       "minPrice": "Цена от",
@@ -79,7 +79,8 @@
       "apply": "Применить фильтры",
       "reset": "Сбросить фильтры",
       "searchPlaceholder": "Поиск по адресу",
-      "searchButton": "Поиск"
+      "searchButton": "Поиск",
+      "noOptions": "Такого варианта пока нет"
     },
     "sorting": {
       "cheapFirst": "Цена (сначала дешевые)",

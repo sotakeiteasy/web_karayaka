@@ -102,3 +102,17 @@ a {
 .react-select__option--is-focused {
   background-color: $light-gray-color !important;
 }
+
+.react-select__multi-value__remove svg{
+  margin-left: 1px;
+}
+.react-select__multi-value__remove:hover {
+    background-color: rgba(0, 31, 72, 0.2) !important;
+    color: $primary-color !important;
+}
+
+.react-select__multi-value{
+  background-color: #f0f0f0 !important;
+  // border: 1px solid $primary-color;
+  // border-radius: 4px !important;
+}
