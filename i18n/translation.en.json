@@ -12,13 +12,14 @@
   "home": {
     "rent": "Rent in Russia",
     "buy": "Buy in Russia",
-    "seeAll": "See All",
+    "seeAll": "See all",
     "articles": "Latest Articles",
     "rentBtn": "Rent",
     "buyBtn": "Buy",
     "hero": "House in Russia",
     "searchBtn": "Search",
-    "searchPlaceholder": "Address, keywords"
+    "searchPlaceholder": "Address, keywords",
+    "moreFilters": "All ads"
   },
   "blog": {
     "title": "Blog",

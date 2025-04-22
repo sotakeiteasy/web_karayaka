@@ -147,12 +147,10 @@ export default function PaginatedAds({
     : 0;
 
   const handlePageClick = (event: { selected: number }) => {
-    const currentQuery = { ...router.query };
-    currentQuery.page = (event.selected + 1).toString();
-
+    const newPage = event.selected + 1;
     router.push({
       pathname: router.pathname,
-      query: currentQuery,
+      query: { ...router.query, page: newPage.toString() },
     });
   };
 
@@ -173,6 +171,7 @@ export default function PaginatedAds({
           activeClassName={styles.activePage}
           disabledClassName={styles.hidden}
           pageClassName={'page-item'}
+          forcePage={pageNumber - 1}
         />
       )}
     </>

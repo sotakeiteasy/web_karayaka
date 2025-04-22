@@ -7,6 +7,8 @@ import {
   LinkWithLocale,
   useLanguageQuery,
 } from 'next-export-i18n';
+import Icon from '@mdi/react';
+import { mdiMagnify } from '@mdi/js';
 
 import styles from './index.module.scss';
 import SimpleSlider from './simpleSlider/simpleSlider';
@@ -29,7 +31,7 @@ export default function Home({
   const meta = metaTags[lang];
   const posts = allBlogData[lang];
 
-  const [isBuy, setIsBuy] = useState(false);
+  const [isBuy, setIsBuy] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
@@ -106,17 +108,22 @@ export default function Home({
           )}
 
           <div className={styles.searchBlock}>
-            <input
-              id="search"
-              type="text"
-              placeholder={t('home.searchPlaceholder')}
-              aria-label="search"
-              autoComplete="off"
-              spellCheck="false"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-            />
+            <div className={styles.inputContainer}>
+              <input
+                id="search"
+                type="text"
+                placeholder={t('home.searchPlaceholder')}
+                aria-label="search"
+                autoComplete="off"
+                spellCheck="false"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
+              />
+              <button className={styles.searchButton} onClick={handleSearch}>
+                <Icon path={mdiMagnify} size={1.5}/>
+              </button>
+            </div>
             <div>
               {lang === 'ru' ? (
                 <button
@@ -139,8 +146,10 @@ export default function Home({
                   <span>{t('home.buyBtn')}</span>
                 </button>
               )}
-              <button className={styles.searchButton} onClick={handleSearch}>
-                {t('home.searchBtn')}
+              <button className={styles.moreButton}>
+                <LinkWithLocale href={`/search?type=${isBuy ? 'sale' : 'rent'}&lang=${lang}`}>
+                  {t('home.seeAll')}
+                </LinkWithLocale>
               </button>
             </div>
           </div>

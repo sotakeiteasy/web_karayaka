@@ -17,7 +17,8 @@
     "buyBtn": "Покупка",
     "hero": "House in Turkey",
     "searchBtn": "Поиск",
-    "searchPlaceholder": "Адрес, ключевые слова"
+    "searchPlaceholder": "Адрес, ключевые слова",
+    "moreFilters": "Все объявления"
   },
   "blog": {
     "title": "Блог",
