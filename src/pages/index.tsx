@@ -17,15 +17,13 @@ export async function getStaticProps() {
       title: 'Караяка - Недвижимость в Турции и России',
       description:
         'Профессиональная помощь в покупке и продаже недвижимости в Турции и России. Эксклюзивные предложения, индивидуальный подход.',
-      keywords:
-        'недвижимость, Турция, Россия, покупка недвижимости, продажа недвижимости, агентство недвижимости',
+      keywords: 'недвижимость, Турция, Россия, покупка недвижимости, продажа недвижимости, агентство недвижимости',
     },
     en: {
       title: 'Karayaka - Real Estate in Turkey and Russia',
       description:
         'Professional assistance in buying and selling real estate in Turkey and Russia. Exclusive offers, individual approach.',
-      keywords:
-        'real estate, Turkey, Russia, property purchase, property sale, real estate agency',
+      keywords: 'real estate, Turkey, Russia, property purchase, property sale, real estate agency',
     },
   };
 

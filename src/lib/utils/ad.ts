@@ -26,10 +26,10 @@ export function filterAds(filters: Filter): Ad[] {
     if (filters.minPrice || filters.maxPrice) {
       const adPriceRub = ad.price.rub || 0;
       const adPriceTry = ad.price.try || 0;
-      
+
       const passesMinPrice = !filters.minPrice || (adPriceRub >= filters.minPrice && adPriceTry >= filters.minPrice);
       const passesMaxPrice = !filters.maxPrice || (adPriceRub <= filters.maxPrice && adPriceTry <= filters.maxPrice);
-      
+
       if (!passesMinPrice || !passesMaxPrice) return false;
     }
 
@@ -54,36 +54,31 @@ export function filterAds(filters: Filter): Ad[] {
       }
     }
 
-    if (
-      filters.country &&
-      !hasTranslationMatch(countryTranslations[ad.location.country], filters.country)
-    ) {
+    if (filters.country && !hasTranslationMatch(countryTranslations[ad.location.country], filters.country)) {
       return false;
     }
 
-    if (
-      filters.city &&
-      !hasTranslationMatch(cityTranslations[ad.location.city], filters.city)
-    ) {
+    if (filters.city && !hasTranslationMatch(cityTranslations[ad.location.city], filters.city)) {
       return false;
     }
 
     if (filters.district && !ad.location.district) {
-      return false; 
+      return false;
     }
 
     if (ad.location.district && filters.district && filters.district?.length > 0) {
-      if(!filters.district.some(d =>
-        ad.location.district !== null && hasTranslationMatch(districtTranslations[ad.location.district], d))) {
+      if (
+        !filters.district.some(
+          (d) => ad.location.district !== null && hasTranslationMatch(districtTranslations[ad.location.district], d)
+        )
+      ) {
         return false;
       }
     }
 
     if (filters.propertyType) {
       const matchesPropertyType = Object.entries(propertyTypeTranslations).some(
-        ([key, translations]) =>
-          key === ad.propertyType &&
-          hasTranslationMatch(translations, filters.propertyType!)
+        ([key, translations]) => key === ad.propertyType && hasTranslationMatch(translations, filters.propertyType!)
       );
       if (!matchesPropertyType) return false;
     }
@@ -92,20 +87,10 @@ export function filterAds(filters: Filter): Ad[] {
       const searchText = filters.address.toLowerCase();
 
       const descriptionMatch = hasTranslationMatch(ad.description, searchText);
-      const countryMatch = hasTranslationMatch(
-        countryTranslations[ad.location.country],
-        searchText
-      );
-      const cityMatch = hasTranslationMatch(
-        cityTranslations[ad.location.city],
-        searchText
-      );
+      const countryMatch = hasTranslationMatch(countryTranslations[ad.location.country], searchText);
+      const cityMatch = hasTranslationMatch(cityTranslations[ad.location.city], searchText);
       const districtMatch =
-        ad.location.district &&
-        hasTranslationMatch(
-          districtTranslations[ad.location.district],
-          searchText
-        );
+        ad.location.district && hasTranslationMatch(districtTranslations[ad.location.district], searchText);
 
       if (!descriptionMatch && !countryMatch && !cityMatch && !districtMatch) {
         return false;
@@ -116,16 +101,11 @@ export function filterAds(filters: Filter): Ad[] {
   });
 }
 
-function hasTranslationMatch(
-  translationObj: Record<string, string | null>,
-  searchText: string
-): boolean {
+function hasTranslationMatch(translationObj: Record<string, string | null>, searchText: string): boolean {
   if (!translationObj) return false;
 
   const normalizedSearch = searchText.toLowerCase();
-  return Object.values(translationObj).some(
-    (value) => value && value.toLowerCase().includes(normalizedSearch)
-  );
+  return Object.values(translationObj).some((value) => value && value.toLowerCase().includes(normalizedSearch));
 }
 
 export function getUniqueFilterValues() {

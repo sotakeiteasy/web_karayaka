@@ -7,7 +7,7 @@ export interface Ad {
     ru: string | null;
     en: string | null;
   };
-  price: Price
+  price: Price;
   location: {
     country: 'Turkey' | 'Russia';
     city: string;
@@ -29,8 +29,11 @@ export interface Ad {
 type Price = {
   rub?: number | null;
   try?: number | null;
-} & ({
-  rub: number;
-} | {
-  try: number;
-});
+} & (
+  | {
+      rub: number;
+    }
+  | {
+      try: number;
+    }
+);

@@ -96,9 +96,7 @@ export const ContactUs = () => {
   const toggleLocation = (country: LocationKey) => {
     setLocations((prev) => {
       const updated = { ...prev, [country]: !prev[country] };
-      const selectedLocations = Object.keys(updated).filter(
-        (key) => updated[key as LocationKey]
-      ) as string[];
+      const selectedLocations = Object.keys(updated).filter((key) => updated[key as LocationKey]) as string[];
       setValue('location', selectedLocations);
       return updated;
     });
@@ -107,18 +105,13 @@ export const ContactUs = () => {
   const togglePurpose = (type: PurposeKey) => {
     setPurposes((prev) => {
       const updated = { ...prev, [type]: !prev[type] };
-      const selectedTypes = Object.keys(updated).filter(
-        (key) => updated[key as PurposeKey]
-      ) as string[];
+      const selectedTypes = Object.keys(updated).filter((key) => updated[key as PurposeKey]) as string[];
       setValue('purpose', selectedTypes);
       return updated;
     });
   };
 
-  const validateContactInfo = (
-    value: string,
-    fieldName: 'email' | 'phone_number'
-  ) => {
+  const validateContactInfo = (value: string, fieldName: 'email' | 'phone_number') => {
     if (value && value.trim()) return true;
 
     const otherField = fieldName === 'email' ? watchPhone : watchEmail;
@@ -127,9 +120,7 @@ export const ContactUs = () => {
       return true;
     }
 
-    return fieldName === 'email'
-      ? t('form.errors.contactRequired')
-      : t('form.errors.contactRequired');
+    return fieldName === 'email' ? t('form.errors.contactRequired') : t('form.errors.contactRequired');
   };
 
   return (
@@ -157,9 +148,7 @@ export const ContactUs = () => {
                   maxLength: 20,
                 })}
               />
-              {errors.name && (
-                <p className={styles.errorMessage}>{errors.name.message}</p>
-              )}
+              {errors.name && <p className={styles.errorMessage}>{errors.name.message}</p>}
               {!errors.name && <div className={styles.errorPlaceholder}></div>}
             </div>
 
@@ -167,11 +156,7 @@ export const ContactUs = () => {
               <label htmlFor="surname" className={styles.label}>
                 {t('form.surname')}
               </label>
-              <input
-                type="text"
-                id="surname"
-                {...register('surname', { maxLength: 20 })}
-              />
+              <input type="text" id="surname" {...register('surname', { maxLength: 20 })} />
               <div className={styles.errorPlaceholder}></div>
             </div>
           </div>
@@ -179,20 +164,14 @@ export const ContactUs = () => {
           <div className={styles.formDetails}>
             <div className={styles.leftDetails}>
               <fieldset className={styles.formLocation}>
-                <legend className={styles.buttonsLabel}>
-                  {t('form.location.label')}
-                </legend>
+                <legend className={styles.buttonsLabel}>{t('form.location.label')}</legend>
                 <div>
                   <input
                     type="button"
                     id="location-russia"
                     name="location"
                     value={t('form.location.russia')}
-                    className={
-                      locations.Russia
-                        ? `${styles.input} ${styles.selected}`
-                        : styles.input
-                    }
+                    className={locations.Russia ? `${styles.input} ${styles.selected}` : styles.input}
                     onClick={() => toggleLocation('Russia')}
                   />
                   <input
@@ -200,31 +179,21 @@ export const ContactUs = () => {
                     id="location-turkey"
                     name="location"
                     value={t('form.location.turkey')}
-                    className={
-                      locations.Turkey
-                        ? `${styles.input} ${styles.selected}`
-                        : styles.input
-                    }
+                    className={locations.Turkey ? `${styles.input} ${styles.selected}` : styles.input}
                     onClick={() => toggleLocation('Turkey')}
                   />
                 </div>
               </fieldset>
 
               <fieldset className={styles.formPurpose}>
-                <legend className={styles.buttonsLabel}>
-                  {t('form.purpose.label')}
-                </legend>
+                <legend className={styles.buttonsLabel}>{t('form.purpose.label')}</legend>
                 <div>
                   <input
                     type="button"
                     id="purpose-buy"
                     name="purpose"
                     value={t('form.purpose.buy')}
-                    className={
-                      purposes.Buy
-                        ? `${styles.input} ${styles.selected}`
-                        : styles.input
-                    }
+                    className={purposes.Buy ? `${styles.input} ${styles.selected}` : styles.input}
                     onClick={() => togglePurpose('Buy')}
                   />
                   <input
@@ -232,11 +201,7 @@ export const ContactUs = () => {
                     id="purpose-rent"
                     name="purpose"
                     value={t('form.purpose.rent')}
-                    className={
-                      purposes.Rent
-                        ? `${styles.input} ${styles.selected}`
-                        : styles.input
-                    }
+                    className={purposes.Rent ? `${styles.input} ${styles.selected}` : styles.input}
                     onClick={() => togglePurpose('Rent')}
                   />
                 </div>
@@ -248,33 +213,21 @@ export const ContactUs = () => {
                 <label htmlFor="city" className={styles.label}>
                   {t('form.city')}
                 </label>
-                <input
-                  type="text"
-                  id="city"
-                  {...register('city', { maxLength: 15 })}
-                />
+                <input type="text" id="city" {...register('city', { maxLength: 15 })} />
               </div>
 
               <div className={styles.formRow}>
                 <label htmlFor="district" className={styles.label}>
                   {t('form.district')}
                 </label>
-                <input
-                  type="text"
-                  id="district"
-                  {...register('district', { maxLength: 15 })}
-                />
+                <input type="text" id="district" {...register('district', { maxLength: 15 })} />
               </div>
 
               <div className={styles.formRow}>
                 <label htmlFor="budget" className={styles.label}>
                   {t('form.budget')}
                 </label>
-                <input
-                  type="text"
-                  id="budget"
-                  {...register('budget', { maxLength: 15 })}
-                />
+                <input type="text" id="budget" {...register('budget', { maxLength: 15 })} />
               </div>
             </div>
           </div>
@@ -295,14 +248,8 @@ export const ContactUs = () => {
                 },
               })}
             />
-            {errors.phone_number && (
-              <p className={styles.errorMessage}>
-                {errors.phone_number.message}
-              </p>
-            )}
-            {!errors.phone_number && (
-              <div className={styles.errorPlaceholder}></div>
-            )}
+            {errors.phone_number && <p className={styles.errorMessage}>{errors.phone_number.message}</p>}
+            {!errors.phone_number && <div className={styles.errorPlaceholder}></div>}
           </div>
 
           <div className={styles.formRow}>
@@ -322,9 +269,7 @@ export const ContactUs = () => {
                 },
               })}
             />
-            {errors.email && (
-              <p className={styles.errorMessage}>{errors.email.message}</p>
-            )}
+            {errors.email && <p className={styles.errorMessage}>{errors.email.message}</p>}
             {!errors.email && <div className={styles.errorPlaceholder}></div>}
           </div>
 
@@ -335,11 +280,7 @@ export const ContactUs = () => {
             id="message"
           />
 
-          <input
-            className={styles.formBtn}
-            type="submit"
-            value={t('form.submit')}
-          />
+          <input className={styles.formBtn} type="submit" value={t('form.submit')} />
         </>
       )}
     </form>

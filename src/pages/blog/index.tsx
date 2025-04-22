@@ -45,10 +45,7 @@ export default function Blog({
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
-        <meta
-          property="og:locale"
-          content={lang === 'ru' ? 'ru_RU' : 'en_US'}
-        />
+        <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
       </Head>
 
       <main className={styles.main}>
@@ -99,16 +96,13 @@ export async function getStaticProps() {
       title: 'Блог - Караяка | Статьи о недвижимости в Турции и России',
       description:
         'Полезные статьи и информация о недвижимости и инвестициях в Турции и России. Советы экспертов, анализ рынка, правовые аспекты.',
-      keywords:
-        'блог о недвижимости, недвижимость в Турции, недвижимость в России, инвестиции в недвижимость',
+      keywords: 'блог о недвижимости, недвижимость в Турции, недвижимость в России, инвестиции в недвижимость',
     },
     en: {
-      title:
-        'Blog - Karayaka | Articles about Real Estate in Turkey and Russia',
+      title: 'Blog - Karayaka | Articles about Real Estate in Turkey and Russia',
       description:
         'Useful articles and information about real estate and investments in Turkey and Russia. Expert advice, market analysis, legal aspects.',
-      keywords:
-        'real estate blog, real estate in Turkey, real estate in Russia, property investment',
+      keywords: 'real estate blog, real estate in Turkey, real estate in Russia, property investment',
     },
   };
 

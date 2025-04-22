@@ -2,11 +2,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import {
-  useTranslation,
-  LinkWithLocale,
-  useLanguageQuery,
-} from 'next-export-i18n';
+import { useTranslation, LinkWithLocale, useLanguageQuery } from 'next-export-i18n';
 import Icon from '@mdi/react';
 import { mdiMagnify } from '@mdi/js';
 
@@ -38,11 +34,7 @@ export default function Home({
     if (!searchQuery.trim()) return;
 
     const encodedQuery = encodeURIComponent(searchQuery.trim());
-    router.push(
-      `/search?type=${
-        isBuy ? 'sale' : 'rent'
-      }&address=${encodedQuery}&lang=${lang}`
-    );
+    router.push(`/search?type=${isBuy ? 'sale' : 'rent'}&address=${encodedQuery}&lang=${lang}`);
   };
 
   return (
@@ -87,7 +79,7 @@ export default function Home({
               width={1600}
               style={{ objectFit: 'cover' }}
               playsInline
-              /* eslint-disable react/no-unknown-property */ 
+              /* eslint-disable react/no-unknown-property */
               webkit-playsinline="true"
               controls={false}
             >
@@ -121,7 +113,7 @@ export default function Home({
                 onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
               />
               <button className={styles.searchButton} onClick={handleSearch}>
-                <Icon path={mdiMagnify} size={1.5}/>
+                <Icon path={mdiMagnify} size={1.5} />
               </button>
             </div>
             <div>
@@ -137,9 +129,7 @@ export default function Home({
                 </button>
               ) : (
                 <button
-                  className={`${styles.toggleButton} ${
-                    isBuy ? styles.toggleButtonActive : ''
-                  }`}
+                  className={`${styles.toggleButton} ${isBuy ? styles.toggleButtonActive : ''}`}
                   onClick={() => setIsBuy(!isBuy)}
                 >
                   <span>{t('home.rentBtn')}</span>
@@ -155,17 +145,9 @@ export default function Home({
           </div>
         </div>
 
-        <SimpleSlider
-          type="sale"
-          country={lang === 'en' ? 'Russia' : 'Turkey'}
-          locale={lang}
-        />
+        <SimpleSlider type="sale" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
 
-        <SimpleSlider
-          type="rent"
-          country={lang === 'en' ? 'Russia' : 'Turkey'}
-          locale={lang}
-        />
+        <SimpleSlider type="rent" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
 
         <div className={styles.articleBlock}>
           <h1 className={styles.header}>{t('home.articles')}</h1>

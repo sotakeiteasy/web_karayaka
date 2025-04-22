@@ -51,14 +51,7 @@ export default function CustomSlider({ ad }: { ad: Ad }) {
     <div>
       <Slider {...settings}>
         {ad?.images.map((image, index) => (
-          <Image
-            key={index}
-            src={getImageUrl(image)}
-            alt={''}
-            width={400}
-            height={400}
-            priority
-          />
+          <Image key={index} src={getImageUrl(image)} alt={''} width={400} height={400} priority />
         ))}
       </Slider>
     </div>

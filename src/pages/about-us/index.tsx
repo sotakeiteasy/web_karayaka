@@ -17,13 +17,7 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
   const lang = (query?.lang as 'ru' | 'en') || 'ru';
   const meta = metaTags[lang];
 
-  type FAQKey =
-    | 'location'
-    | 'period'
-    | 'tour'
-    | 'contact'
-    | 'area'
-    | 'personnel';
+  type FAQKey = 'location' | 'period' | 'tour' | 'contact' | 'area' | 'personnel';
 
   const questionsFAQ: Record<FAQKey, string> = {
     location: t('aboutUs.faq.questions.location'),
@@ -73,10 +67,7 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
-        <meta
-          property="og:locale"
-          content={lang === 'ru' ? 'ru_RU' : 'en_US'}
-        />
+        <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
       </Head>
 
       <OrganizationSchema
@@ -86,10 +77,7 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
         url="https://karayaka.ru/about-us"
       />
 
-      <FAQPageSchema
-        questions={faqItems}
-        pageUrl="https://karayaka.ru/about-us"
-      />
+      <FAQPageSchema questions={faqItems} pageUrl="https://karayaka.ru/about-us" />
 
       <main className={styles.main}>
         <div className={styles.sloganBlock}>
@@ -162,10 +150,7 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
                   }}
                   className={activeKey === key ? styles.activeIcon : ''}
                 />
-                <button
-                  className={activeKey === key ? styles.activeButton : ''}
-                  onClick={() => toggleAnswers(key)}
-                >
+                <button className={activeKey === key ? styles.activeButton : ''} onClick={() => toggleAnswers(key)}>
                   {questionsFAQ[key]}
                 </button>
               </div>
@@ -188,15 +173,13 @@ export async function getStaticProps() {
       title: 'О нас - Караяка | Агентство недвижимости в Турции и России',
       description:
         'Караяка - агентство недвижимости, специализирующееся на объектах в Турции и России. Индивидуальный подход к каждому клиенту и комплексное сопровождение сделок.',
-      keywords:
-        'агентство недвижимости, о нас, недвижимость в Турции, недвижимость в России, купить недвижимость',
+      keywords: 'агентство недвижимости, о нас, недвижимость в Турции, недвижимость в России, купить недвижимость',
     },
     en: {
       title: 'About Us - Karayaka | Real Estate Agency in Turkey and Russia',
       description:
         'Karayaka is a boutique real estate agency specializing in properties in Turkey and Russia. Personalized approach and comprehensive support for every client.',
-      keywords:
-        'real estate agency, about us, Turkey real estate, Russia real estate, buy property',
+      keywords: 'real estate agency, about us, Turkey real estate, Russia real estate, buy property',
     },
   };
 

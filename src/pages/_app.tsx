@@ -4,14 +4,8 @@ import dynamic from 'next/dynamic';
 import { Montserrat } from 'next/font/google';
 import Head from 'next/head';
 
-const Header = dynamic(
-  () => import('@/lib/components').then((mod) => mod.Header),
-  { ssr: false }
-);
-const Footer = dynamic(
-  () => import('@/lib/components').then((mod) => mod.Footer),
-  { ssr: false }
-);
+const Header = dynamic(() => import('@/lib/components').then((mod) => mod.Header), { ssr: false });
+const Footer = dynamic(() => import('@/lib/components').then((mod) => mod.Footer), { ssr: false });
 
 const montserrat = Montserrat({
   variable: '--font-geist-sans',
@@ -42,11 +36,7 @@ function App({ Component, pageProps }: AppProps) {
       </script>
       <noscript>
         <div>
-          <img
-            src="https://mc.yandex.ru/watch/100868560"
-            style={{ position: 'absolute', left: '-9999px' }}
-            alt=""
-          />
+          <img src="https://mc.yandex.ru/watch/100868560" style={{ position: 'absolute', left: '-9999px' }} alt="" />
         </div>
       </noscript>
       {/* /Yandex.Metrika counter */}

@@ -21,30 +21,21 @@ function createExcerpt(htmlContent: string, maxLength: number = 300): string {
     .trim();
 
   // Обрезаем до нужной длины и добавляем многоточие
-  return textContent.length > maxLength
-    ? textContent.slice(0, maxLength) + '...'
-    : textContent;
+  return textContent.length > maxLength ? textContent.slice(0, maxLength) + '...' : textContent;
 }
 
-export async function getSortedPostsData(
-  locale: string = 'ru'
-): Promise<PostData[]> {
+export async function getSortedPostsData(locale: string = 'ru'): Promise<PostData[]> {
   const postsDirectory = getBlogDirectory(locale);
 
   try {
-    const fileNames = fs
-      .readdirSync(postsDirectory)
-      .filter((file) => file.endsWith('.md'));
+    const fileNames = fs.readdirSync(postsDirectory).filter((file) => file.endsWith('.md'));
     const allPostsDataPromises = fileNames.map(async (fileName) => {
       const id = fileName.replace(/\.md$/, '');
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const matterResult = matter(fileContents);
 
-      const processedContent = await remark()
-        .use(remarkGfm)
-        .use(html)
-        .process(matterResult.content);
+      const processedContent = await remark().use(remarkGfm).use(html).process(matterResult.content);
       const contentHtml = processedContent.toString();
       const excerpt = createExcerpt(contentHtml);
 
@@ -70,9 +61,7 @@ export function getAllPostIds() {
 
   languages.forEach((locale) => {
     const postsDirectory = getBlogDirectory(locale);
-    const fileNames = fs
-      .readdirSync(postsDirectory)
-      .filter((file) => file.endsWith('.md'));
+    const fileNames = fs.readdirSync(postsDirectory).filter((file) => file.endsWith('.md'));
     fileNames.forEach((fileName) => {
       const id = fileName.replace(/\.md$/, '');
       paths.push({
@@ -84,10 +73,7 @@ export function getAllPostIds() {
   return paths;
 }
 
-export async function getPostDataStatic(
-  id: string,
-  locale: string = 'ru'
-): Promise<PostData> {
+export async function getPostDataStatic(id: string, locale: string = 'ru'): Promise<PostData> {
   const postsDirectory = getBlogDirectory(locale);
   const fullPath = path.join(postsDirectory, `${id}.md`);
 
@@ -95,10 +81,7 @@ export async function getPostDataStatic(
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const matterResult = matter(fileContents);
 
-    const processedContent = await remark()
-      .use(remarkGfm)
-      .use(html)
-      .process(matterResult.content);
+    const processedContent = await remark().use(remarkGfm).use(html).process(matterResult.content);
     const contentHtml = processedContent.toString();
 
     return {

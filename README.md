@@ -41,13 +41,17 @@ Website of Turkish-Russian real estate agency.
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/web_karayaka.git
+git clone https://github.com/sotakeiteasy/web_karayaka.git
 cd web_karayaka
 
 # Install dependencies
 npm install
 
-# Start development server
+# For faster performance, build and start the production server. Recommended =)
+npm run build
+npm start
+
+# Or start development server
 npm run dev
 ```
 

@@ -29,47 +29,42 @@ export function useSearchFilters() {
     }
   };
 
-  const updateResults = useCallback((
-    currentFilter: Filter,
-    currentSortOption: string,
-    skipUrlUpdate = false
-  ) => {
-    const ads = filterAds(currentFilter);
-    setFilteredAds(sortAds(currentSortOption, ads));
+  const updateResults = useCallback(
+    (currentFilter: Filter, currentSortOption: string, skipUrlUpdate = false) => {
+      const ads = filterAds(currentFilter);
+      setFilteredAds(sortAds(currentSortOption, ads));
 
-    if (!skipUrlUpdate) {
-      const query: Record<string, string> = {};
+      if (!skipUrlUpdate) {
+        const query: Record<string, string> = {};
 
-      if (currentFilter.type) query.type = currentFilter.type;
-      if (currentFilter.country) query.country = currentFilter.country;
-      if (currentFilter.city) query.city = currentFilter.city;
-      if (currentFilter.district) query.district = currentFilter.district.join(',');
-      if (currentFilter.propertyType) query.propertyType = currentFilter.propertyType;
-      if (currentFilter.address) query.address = currentFilter.address;
-      if (currentFilter.floor) query.floor = currentFilter.floor.toString();
+        if (currentFilter.type) query.type = currentFilter.type;
+        if (currentFilter.country) query.country = currentFilter.country;
+        if (currentFilter.city) query.city = currentFilter.city;
+        if (currentFilter.district) query.district = currentFilter.district.join(',');
+        if (currentFilter.propertyType) query.propertyType = currentFilter.propertyType;
+        if (currentFilter.address) query.address = currentFilter.address;
+        if (currentFilter.floor) query.floor = currentFilter.floor.toString();
 
-      if (currentFilter.minPrice)
-        query.minPrice = currentFilter.minPrice.toString();
-      if (currentFilter.maxPrice)
-        query.maxPrice = currentFilter.maxPrice.toString();
-      if (currentFilter.minArea)
-        query.minArea = currentFilter.minArea.toString();
-      if (currentFilter.maxArea)
-        query.maxArea = currentFilter.maxArea.toString();
+        if (currentFilter.minPrice) query.minPrice = currentFilter.minPrice.toString();
+        if (currentFilter.maxPrice) query.maxPrice = currentFilter.maxPrice.toString();
+        if (currentFilter.minArea) query.minArea = currentFilter.minArea.toString();
+        if (currentFilter.maxArea) query.maxArea = currentFilter.maxArea.toString();
 
-      // Save lang after page reload
-      if (router.query.lang) {
-        query.lang = router.query.lang as string;
+        // Save lang after page reload
+        if (router.query.lang) {
+          query.lang = router.query.lang as string;
+        }
+
+        router.replace({ pathname: router.pathname, query }, undefined);
       }
-
-      router.replace({ pathname: router.pathname, query }, undefined);
-    }
-  }, [router]);
+    },
+    [router]
+  );
 
   // Update if choose another type (sell/rent)
   useEffect(() => {
     if (!router.isReady) return;
-    
+
     const initialFilter: Filter = {};
 
     const { type, country, city, district, propertyType, address } = router.query;
@@ -94,10 +89,7 @@ export function useSearchFilters() {
     updateResults(initialFilter, sortOption, true);
   }, [router.isReady, router.query, sortOption, updateResults]);
 
-  const handleFilterChange = (
-    name: string,
-    value: string | number | string [] | undefined
-  ) => {
+  const handleFilterChange = (name: string, value: string | number | string[] | undefined) => {
     setFilter((prev) => ({ ...prev, [name]: value }));
   };
 

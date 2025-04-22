@@ -31,7 +31,5 @@ export function createExcerpt(text: string, maxLength: number = 300): string {
     .trim();
 
   // Обрезаем до нужной длины
-  return plainText.length > maxLength
-    ? plainText.slice(0, maxLength) + '...'
-    : plainText;
+  return plainText.length > maxLength ? plainText.slice(0, maxLength) + '...' : plainText;
 }

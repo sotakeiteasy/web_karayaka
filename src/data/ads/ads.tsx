@@ -4237,10 +4237,7 @@ export const ads: Ad[] = [
     floor: 1,
     floorInHouse: 7,
     parking: 'closed',
-    images: [
-      '/images/Sell/Moscow/Brusnika/01/Plan1.png',
-      '/images/Sell/Moscow/Brusnika/01/Plan2.png',
-    ],
+    images: ['/images/Sell/Moscow/Brusnika/01/Plan1.png', '/images/Sell/Moscow/Brusnika/01/Plan2.png'],
   },
   {
     id: 'Br2',
@@ -4270,10 +4267,7 @@ export const ads: Ad[] = [
     floor: 6,
     floorInHouse: 7,
     parking: 'closed',
-    images: [
-      '/images/Sell/Moscow/Brusnika/02/Plan1.png',
-      '/images/Sell/Moscow/Brusnika/02/Plan2.png',
-    ],
+    images: ['/images/Sell/Moscow/Brusnika/02/Plan1.png', '/images/Sell/Moscow/Brusnika/02/Plan2.png'],
   },
   {
     id: 'Br3',
@@ -4303,10 +4297,7 @@ export const ads: Ad[] = [
     floor: 13,
     floorInHouse: 13,
     parking: 'closed',
-    images: [
-      '/images/Sell/Moscow/Brusnika/03/Plan1.png',
-      '/images/Sell/Moscow/Brusnika/03/Plan2.png',
-    ],
+    images: ['/images/Sell/Moscow/Brusnika/03/Plan1.png', '/images/Sell/Moscow/Brusnika/03/Plan2.png'],
   },
   {
     id: 'Le1',
@@ -4336,10 +4327,7 @@ export const ads: Ad[] = [
     floor: 3,
     floorInHouse: 26,
     parking: 'closed',
-    images: [
-      '/images/Sell/Moscow/Level/01/Plan1.png',
-      '/images/Sell/Moscow/Level/01/Plan2.png',
-    ],
+    images: ['/images/Sell/Moscow/Level/01/Plan1.png', '/images/Sell/Moscow/Level/01/Plan2.png'],
   },
   {
     id: 'Le2',
@@ -4369,10 +4357,7 @@ export const ads: Ad[] = [
     floor: 25,
     floorInHouse: 26,
     parking: 'closed',
-    images: [
-      '/images/Sell/Moscow/Level/02/Plan1.png',
-      '/images/Sell/Moscow/Level/02/Plan2.png',
-    ],
+    images: ['/images/Sell/Moscow/Level/02/Plan1.png', '/images/Sell/Moscow/Level/02/Plan2.png'],
   },
   {
     id: 'Le3',
@@ -4402,10 +4387,7 @@ export const ads: Ad[] = [
     floor: 25,
     floorInHouse: 25,
     parking: 'open',
-    images: [
-      '/images/Sell/Moscow/Level/03/Plan1.png',
-      '/images/Sell/Moscow/Level/03/Plan2.png',
-    ],
+    images: ['/images/Sell/Moscow/Level/03/Plan1.png', '/images/Sell/Moscow/Level/03/Plan2.png'],
   },
 
   {
@@ -4505,9 +4487,6 @@ export const ads: Ad[] = [
     floor: null,
     floorInHouse: null,
     parking: null,
-    images: [
-      '/images/Sell/Sakarya/Kocaali/2/Proje.png',
-      '/images/Sell/Sakarya/Kocaali/2/Tapu.png',
-    ],
+    images: ['/images/Sell/Sakarya/Kocaali/2/Proje.png', '/images/Sell/Sakarya/Kocaali/2/Tapu.png'],
   },
 ];

@@ -12,27 +12,21 @@ const Select = dynamic(() => import('react-select'), {
   ssr: false,
 });
 
-function LabelInput({ 
-  name, 
-  value, 
-  onChange 
-} : {
-  name: string, 
-  value: number | string | undefined, 
-  onChange: Function 
+function LabelInput({
+  name,
+  value,
+  onChange,
+}: {
+  name: string;
+  value: number | string | undefined;
+  onChange: Function;
 }) {
   const { t } = useTranslation();
 
   return (
     <div className={styles.filter}>
       <label htmlFor={name}>{t(`search.filters.${name}`)}</label>
-      <input
-        type="text"
-        id={name}
-        name={name}
-        value={value || ''}
-        onChange={(e) => onChange(name, e.target.value)}
-      />
+      <input type="text" id={name} name={name} value={value || ''} onChange={(e) => onChange(name, e.target.value)} />
     </div>
   );
 }
@@ -56,14 +50,8 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
     handleSortOptionChange,
   } = useSearchFilters();
 
-  const {
-    districtOptions,
-    cityOptions,
-    countryOptions,
-    propertyTypeOptions,
-    floorOptions,
-    sortOptions,
-  } = useFilterOptions(filter.country, lang);
+  const { districtOptions, cityOptions, countryOptions, propertyTypeOptions, floorOptions, sortOptions } =
+    useFilterOptions(filter.country, lang);
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
@@ -73,16 +61,12 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
     handleFilterChange(name, value ? Number(value) : undefined);
   };
 
-  const handleSelectChange = (
-    name: string,
-    newValue: SelectOption | null,
-    isNumeric: boolean = false
-  ) => {
+  const handleSelectChange = (name: string, newValue: SelectOption | null, isNumeric: boolean = false) => {
     if (Array.isArray(newValue)) {
       const values = newValue.map((item) => item.value);
       handleFilterChange(name, values);
     } else {
-      const value = isNumeric ? Number(newValue?.value || '') : (newValue?.value || '');
+      const value = isNumeric ? Number(newValue?.value || '') : newValue?.value || '';
       handleFilterChange(name, value);
     }
   };
@@ -106,10 +90,7 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
-        <meta
-          property="og:locale"
-          content={lang === 'ru' ? 'ru_RU' : 'en_US'}
-        />
+        <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
       </Head>
       <main className={styles.main}>
         <div className={styles.filterBox}>
@@ -121,76 +102,56 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
               options={countryOptions}
               onChange={handleSelectChange}
             />
-          </div> 
+          </div>
           <div className={styles.filter}>
-
-          <FilterSelect
-            name="city"
-            label="search.filters.allCities"
-            value={filter.city ?? ''}
-            options={cityOptions}
-            onChange={handleSelectChange}
-            />
-                      </div> 
-
-                      <div className={styles.filter}>
-
-          <FilterSelect
-            name="district"
-            label="search.filters.allDistricts"
-            value={filter.district ?? ''}
-            options={districtOptions}
-            onChange={handleSelectChange}
-            isMulti={true}
-            />
-                      </div> 
-
-                        <div className={styles.filter}>
-
-          <FilterSelect
-            name="propertyType"
-            label="search.filters.any"
-            value={filter.propertyType ?? ''}
-            options={propertyTypeOptions}
-            onChange={handleSelectChange}
-            />
-                      </div> 
-
-                          <div className={styles.filter}>
-
-          <FilterSelect
-            name="floor"
-            label="search.filters.any"
-            value={filter.floor ?? ''}
-            options={floorOptions}
-            onChange={handleSelectChange}
-            isNumeric={true}
-            />
-                      </div> 
-
-          <div className={styles.filterRow}>
-            <LabelInput
-              name="minPrice"
-              value={filter.minPrice}
-              onChange={handleNumberInputChange}
-            />
-            <LabelInput
-              name="maxPrice"
-              value={filter.maxPrice}
-              onChange={handleNumberInputChange}
+            <FilterSelect
+              name="city"
+              label="search.filters.allCities"
+              value={filter.city ?? ''}
+              options={cityOptions}
+              onChange={handleSelectChange}
             />
           </div>
+
+          <div className={styles.filter}>
+            <FilterSelect
+              name="district"
+              label="search.filters.allDistricts"
+              value={filter.district ?? ''}
+              options={districtOptions}
+              onChange={handleSelectChange}
+              isMulti={true}
+            />
+          </div>
+
+          <div className={styles.filter}>
+            <FilterSelect
+              name="propertyType"
+              label="search.filters.any"
+              value={filter.propertyType ?? ''}
+              options={propertyTypeOptions}
+              onChange={handleSelectChange}
+            />
+          </div>
+
+          <div className={styles.filter}>
+            <FilterSelect
+              name="floor"
+              label="search.filters.any"
+              value={filter.floor ?? ''}
+              options={floorOptions}
+              onChange={handleSelectChange}
+              isNumeric={true}
+            />
+          </div>
+
           <div className={styles.filterRow}>
-            <LabelInput
-              name="minArea" 
-              value={filter.minArea}
-              onChange={handleNumberInputChange}
-            />
-            <LabelInput
-              name="maxArea"
-              value={filter.maxArea}
-              onChange={handleNumberInputChange}
-            />
+            <LabelInput name="minPrice" value={filter.minPrice} onChange={handleNumberInputChange} />
+            <LabelInput name="maxPrice" value={filter.maxPrice} onChange={handleNumberInputChange} />
+          </div>
+          <div className={styles.filterRow}>
+            <LabelInput name="minArea" value={filter.minArea} onChange={handleNumberInputChange} />
+            <LabelInput name="maxArea" value={filter.maxArea} onChange={handleNumberInputChange} />
           </div>
           <div className={styles.filterActions}>
             <button className={styles.applyButton} onClick={applyFilters}>
@@ -226,9 +187,7 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
                 className={styles.sortButton}
                 id="sort"
                 name="sort"
-                value={sortOptions.find(
-                  (option) => option.value === sortOption
-                )}
+                value={sortOptions.find((option) => option.value === sortOption)}
                 onChange={(newValue) => {
                   const selectedOption = newValue as SelectOption;
                   const value = selectedOption?.value || 'price-cheap';
@@ -253,15 +212,13 @@ export async function getStaticProps() {
       title: 'Поиск недвижимости - Караяка | Недвижимость в Турции и России',
       description:
         'Поиск и подбор недвижимости в Турции и России. Удобные фильтры, большая база предложений, актуальные цены.',
-      keywords:
-        'поиск недвижимости, аренда, покупка, недвижимость в Турции, недвижимость в России, квартиры, дома',
+      keywords: 'поиск недвижимости, аренда, покупка, недвижимость в Турции, недвижимость в России, квартиры, дома',
     },
     en: {
       title: 'Property Search - Karayaka | Real Estate in Turkey and Russia',
       description:
         'Search and find real estate in Turkey and Russia. Convenient filters, large database of offers, current prices.',
-      keywords:
-        'property search, rent, buy, real estate in Turkey, real estate in Russia, apartments, houses',
+      keywords: 'property search, rent, buy, real estate in Turkey, real estate in Russia, apartments, houses',
     },
   };
 

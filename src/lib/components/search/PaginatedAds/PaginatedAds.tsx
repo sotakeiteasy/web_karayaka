@@ -1,11 +1,7 @@
 import styles from './PaginatedAds.module.scss';
 import ReactPaginate from 'react-paginate';
 import { useState, useEffect } from 'react';
-import {
-  useTranslation,
-  LinkWithLocale,
-  useLanguageQuery,
-} from 'next-export-i18n';
+import { useTranslation, LinkWithLocale, useLanguageQuery } from 'next-export-i18n';
 import { useRouter } from 'next/router';
 
 import Icon from '@mdi/react';
@@ -46,16 +42,14 @@ function Items({ currentItems, locale }: ItemsProps) {
                   {(() => {
                     switch (ad.propertyType) {
                       case 'apartment':
-                        return `${ad.rooms} ${
-                          locale === 'ru' ? 'комн.' : 'room'
-                        } ${propertyTypeTranslations[ad.propertyType][locale]}`;
+                        return `${ad.rooms} ${locale === 'ru' ? 'комн.' : 'room'} ${
+                          propertyTypeTranslations[ad.propertyType][locale]
+                        }`;
                       case 'villa':
                       case 'commercial':
                       case 'land':
                       default:
-                        return propertyTypeTranslations[ad.propertyType][
-                          locale
-                        ];
+                        return propertyTypeTranslations[ad.propertyType][locale];
                     }
                   })()}
                 </h2>
@@ -64,28 +58,20 @@ function Items({ currentItems, locale }: ItemsProps) {
                   {[
                     countryTranslations[ad.location.country][locale],
                     cityTranslations[ad.location.city][locale],
-                    ad.location.district
-                      ? districtTranslations[ad.location.district]?.[locale]
-                      : null,
+                    ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
                   ]
                     .filter(Boolean)
                     .join(', ')}
                 </p>
               </div>
-              <div className={styles.middleDescription}>
-                {ad.description[locale]}
-              </div>
+              <div className={styles.middleDescription}>{ad.description[locale]}</div>
               <div className={styles.bottomDescription}>
                 <p className={styles.cardPrice}>
                   <strong>
                     {ad.price.try !== undefined && ad.price.try !== null
-                      ? `${new Intl.NumberFormat('ru-RU').format(
-                          ad.price.try
-                        )} ₺`
+                      ? `${new Intl.NumberFormat('ru-RU').format(ad.price.try)} ₺`
                       : ad.price.rub !== undefined && ad.price.rub !== null
-                      ? `${new Intl.NumberFormat('ru-RU').format(
-                          ad.price.rub
-                        )} ₽`
+                      ? `${new Intl.NumberFormat('ru-RU').format(ad.price.rub)} ₽`
                       : ''}
                   </strong>
                 </p>
@@ -123,10 +109,7 @@ interface PaginatedAdsProps {
   ads: Ad[];
 }
 
-export default function PaginatedAds({
-  itemsPerPage,
-  ads = [],
-}: PaginatedAdsProps) {
+export default function PaginatedAds({ itemsPerPage, ads = [] }: PaginatedAdsProps) {
   const router = useRouter();
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
@@ -142,9 +125,7 @@ export default function PaginatedAds({
 
   const endOffset = itemOffset + itemsPerPage;
   const currentAds = Array.isArray(ads) ? ads.slice(itemOffset, endOffset) : [];
-  const pageCount = Array.isArray(ads)
-    ? Math.ceil(ads.length / itemsPerPage)
-    : 0;
+  const pageCount = Array.isArray(ads) ? Math.ceil(ads.length / itemsPerPage) : 0;
 
   const handlePageClick = (event: { selected: number }) => {
     const newPage = event.selected + 1;

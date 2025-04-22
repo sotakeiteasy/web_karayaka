@@ -8,20 +8,11 @@ import Image from 'next/image';
 import { useTranslation, LinkWithLocale } from 'next-export-i18n';
 
 import Icon from '@mdi/react';
-import {
-  mdiChevronRight,
-  mdiChevronLeft,
-  mdiMapMarkerOutline,
-  mdiBedQueenOutline,
-} from '@mdi/js';
+import { mdiChevronRight, mdiChevronLeft, mdiMapMarkerOutline, mdiBedQueenOutline } from '@mdi/js';
 
 import { ads } from '@/data/ads/ads';
 import { getImageUrl } from '@/lib/utils';
-import {
-  cityTranslations,
-  districtTranslations,
-  propertyTypeTranslations,
-} from '@/lib/translations';
+import { cityTranslations, districtTranslations, propertyTypeTranslations } from '@/lib/translations';
 import { Ad } from '@/lib/types';
 
 const NextArrow = ({ onClick }: { onClick?: () => void }) => {
@@ -56,15 +47,10 @@ interface SimpleSliderProps {
   country: string;
   locale: 'ru' | 'en';
 }
-export default function SimpleSlider({
-  type,
-  country,
-  locale,
-}: SimpleSliderProps) {
+export default function SimpleSlider({ type, country, locale }: SimpleSliderProps) {
   const { t } = useTranslation();
   const filteredAds = useMemo(
-    () =>
-      ads.filter((ad) => ad.type === type && ad.location.country === country),
+    () => ads.filter((ad) => ad.type === type && ad.location.country === country),
     [type, country]
   );
   const [shuffledAds, setShuffledAds] = useState<Ad[]>(filteredAds);
@@ -124,9 +110,7 @@ export default function SimpleSlider({
 
   return (
     <div className={styles.carouselBlock}>
-      <h1 className={styles.header}>
-        {type === 'rent' ? t('home.rent') : t('home.buy')}
-      </h1>
+      <h1 className={styles.header}>{type === 'rent' ? t('home.rent') : t('home.buy')}</h1>
       <div className={styles.carousel}>
         <div className={styles.sliderWrapper}>
           <Slider {...settings}>
@@ -139,26 +123,18 @@ export default function SimpleSlider({
                       height={200}
                       className={styles.cardImage}
                       src={getImageUrl(card.images[0])}
-                      alt={`${
-                        propertyTypeTranslations[card.propertyType][locale]
-                      } in ${cityTranslations[card.location.city][locale]}`}
+                      alt={`${propertyTypeTranslations[card.propertyType][locale]} in ${
+                        cityTranslations[card.location.city][locale]
+                      }`}
                     />
                     <div className={styles.cardDescription}>
                       <div className={styles.topRow}>
-                        <p className={styles.title}>
-                          {propertyTypeTranslations[card.propertyType][locale]}
-                        </p>
+                        <p className={styles.title}>{propertyTypeTranslations[card.propertyType][locale]}</p>
                         <p className={styles.price}>
-                          {card.price.try !== undefined &&
-                          card.price.try !== null
-                            ? `${new Intl.NumberFormat('ru-RU').format(
-                                card.price.try
-                              )} ₺`
-                            : card.price.rub !== undefined &&
-                              card.price.rub !== null
-                            ? `${new Intl.NumberFormat('ru-RU').format(
-                                card.price.rub
-                              )} ₽`
+                          {card.price.try !== undefined && card.price.try !== null
+                            ? `${new Intl.NumberFormat('ru-RU').format(card.price.try)} ₺`
+                            : card.price.rub !== undefined && card.price.rub !== null
+                            ? `${new Intl.NumberFormat('ru-RU').format(card.price.rub)} ₽`
                             : ''}
                         </p>
                       </div>
@@ -167,11 +143,7 @@ export default function SimpleSlider({
                           <Icon path={mdiMapMarkerOutline} size={0.8} />
                           {[
                             cityTranslations[card.location.city][locale],
-                            card.location.district
-                              ? districtTranslations[card.location.district]?.[
-                                  locale
-                                ]
-                              : null,
+                            card.location.district ? districtTranslations[card.location.district]?.[locale] : null,
                           ]
                             .filter(Boolean)
                             .join(', ')}
@@ -179,8 +151,7 @@ export default function SimpleSlider({
                         <p className={styles.iconRow}>
                           <span className={styles.iconSpan}>
                             {' '}
-                            <Icon path={mdiBedQueenOutline} size={0.9} />{' '}
-                            {card.rooms}{' '}
+                            <Icon path={mdiBedQueenOutline} size={0.9} /> {card.rooms}{' '}
                           </span>
                         </p>
                       </div>
@@ -193,9 +164,7 @@ export default function SimpleSlider({
         </div>
       </div>
       <button className={styles.blockButton}>
-        <LinkWithLocale href={`/search?type=${type}&country=${country}`}>
-          {t('home.seeAll')}
-        </LinkWithLocale>
+        <LinkWithLocale href={`/search?type=${type}&country=${country}`}>{t('home.seeAll')}</LinkWithLocale>
       </button>
     </div>
   );

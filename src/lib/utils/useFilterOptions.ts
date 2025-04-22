@@ -2,10 +2,7 @@ import { useMemo } from 'react';
 import { getUniqueFilterValues } from '@/lib/utils';
 import { useTranslation } from 'next-export-i18n';
 
-export function useFilterOptions(
-  country: string | undefined,
-  lang: 'ru' | 'en'
-) {
+export function useFilterOptions(country: string | undefined, lang: 'ru' | 'en') {
   const { t } = useTranslation();
 
   // useMemo have a sense, because we call getUniqieFilterValues only once
@@ -21,7 +18,7 @@ export function useFilterOptions(
 
     return filterValues.cities;
   }, [country, filterValues.cities]);
-  
+
   // below useMemo doesn't so efficient, because parent component re-renders too often and UseMemo is slower than simple object
   const floorOptions = [
     // { value: '', label: t('search.filters.any') },

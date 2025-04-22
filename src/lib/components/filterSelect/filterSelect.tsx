@@ -11,15 +11,15 @@ export default function FilterSelect({
   name,
   label,
   isNumeric = false,
-  isMulti = false
+  isMulti = false,
 }: {
-    options: SelectOption[],
-    onChange: Function,
-    value: string | string[] | number;
-    name: string,
-    label: string
-    isNumeric?: boolean
-    isMulti?: boolean
+  options: SelectOption[];
+  onChange: Function;
+  value: string | string[] | number;
+  name: string;
+  label: string;
+  isNumeric?: boolean;
+  isMulti?: boolean;
 }) {
   const { t } = useTranslation();
   const selectedValue = useMemo(() => {
@@ -27,9 +27,9 @@ export default function FilterSelect({
       return null;
     }
     if (isMulti && Array.isArray(value)) {
-      return options.filter(option => value.includes(option.value));
+      return options.filter((option) => value.includes(option.value));
     } else if (!isMulti) {
-      return options.find(option => option.value === value);
+      return options.find((option) => option.value === value);
     }
     return isMulti ? [] : null;
   }, [value, options, isMulti]);
@@ -37,7 +37,7 @@ export default function FilterSelect({
   const removeValue = useCallback(
     (removed) => {
       if (isMulti) {
-        const newValue = selectedValue.filter(option => option.value !== removed.value);
+        const newValue = selectedValue.filter((option) => option.value !== removed.value);
         onChange(name, newValue, isNumeric);
       } else {
         onChange(name, null, isNumeric);
@@ -46,7 +46,6 @@ export default function FilterSelect({
     [selectedValue, onChange, name, isMulti, isNumeric]
   );
 
-
   return (
     <>
       <label htmlFor={`${name}-input`}>{t(`search.filters.${name}`)}</label>
@@ -54,8 +53,7 @@ export default function FilterSelect({
         inputId={`${name}-input`}
         name={name}
         value={selectedValue}
-        onChange={(newValue) => 
-          onChange(name, newValue as SelectOption, isNumeric)}
+        onChange={(newValue) => onChange(name, newValue as SelectOption, isNumeric)}
         options={options}
         isSearchable
         classNamePrefix="react-select"
@@ -63,9 +61,8 @@ export default function FilterSelect({
         placeholder={t(`${label}`)}
         isClearable
         noOptionsMessage={() => t('search.filters.noOptions')}
-
         removeValue={removeValue}
-        components={ isMulti ? { SelectContainer } : undefined}
+        components={isMulti ? { SelectContainer } : undefined}
         controlShouldRenderValue={!isMulti}
       />
     </>
@@ -75,20 +72,20 @@ export default function FilterSelect({
 const SelectedValuesContainer = ({ getValue, ...props }: any) => {
   const { removeValue } = props.selectProps;
   const getValueLabel = (opt) =>
-    props.selectProps.formatOptionLabel
-      ? props.selectProps.formatOptionLabel(opt, "value")
-      : opt.label;
+    props.selectProps.formatOptionLabel ? props.selectProps.formatOptionLabel(opt, 'value') : opt.label;
   const getKey = (opt, index) => `${opt.value}-${index}`;
 
   return (
-    <div style={{
-            margin: '8px 0',
-            paddingLeft: '2px',
-            display: 'flex',
-            flexWrap: 'wrap',
-            borderLeft: '1px solid black',
-            boxSizing: 'border-box'
-            }} >
+    <div
+      style={{
+        margin: '8px 0',
+        paddingLeft: '2px',
+        display: 'flex',
+        flexWrap: 'wrap',
+        borderLeft: '1px solid black',
+        boxSizing: 'border-box',
+      }}
+    >
       {getValue().map((opt, index) => (
         <components.MultiValue
           key={getKey(opt, index)}
@@ -97,7 +94,7 @@ const SelectedValuesContainer = ({ getValue, ...props }: any) => {
           components={{
             Container: components.MultiValueContainer,
             Label: components.MultiValueLabel,
-            Remove: components.MultiValueRemove
+            Remove: components.MultiValueRemove,
           }}
           removeProps={{
             onClick: () => removeValue(opt),
@@ -105,7 +102,7 @@ const SelectedValuesContainer = ({ getValue, ...props }: any) => {
             onMouseDown: (e) => {
               e.preventDefault();
               e.stopPropagation();
-            }
+            },
           }}
         >
           {getValueLabel(opt)}
@@ -115,18 +112,9 @@ const SelectedValuesContainer = ({ getValue, ...props }: any) => {
   );
 };
 
-const SelectContainer = ({
-  children,
-  innerProps,
-  isFocused,
-  ...commonProps
-}: any) => {
+const SelectContainer = ({ children, innerProps, isFocused, ...commonProps }: any) => {
   return (
-    <components.SelectContainer
-      innerProps={innerProps}
-      isFocused={isFocused}
-      {...commonProps}
-    >
+    <components.SelectContainer innerProps={innerProps} isFocused={isFocused} {...commonProps}>
       {commonProps.selectProps.value.length > 0 && <SelectedValuesContainer {...commonProps} />}
       {children}
     </components.SelectContainer>

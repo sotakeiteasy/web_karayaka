@@ -15,13 +15,7 @@ function Date({ dateString }: { dateString: string }) {
   return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>;
 }
 
-export default function Post({
-  postData,
-  metaTags,
-}: {
-  postData: LocalizedPostData;
-  metaTags: MetaTags;
-}) {
+export default function Post({ postData, metaTags }: { postData: LocalizedPostData; metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
 
   const lang = (query?.lang as 'ru' | 'en') || 'ru';
@@ -60,14 +54,8 @@ export default function Post({
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
-        <meta
-          property="og:locale"
-          content={lang === 'ru' ? 'ru_RU' : 'en_US'}
-        />
-        <meta
-          property="article:published_time"
-          content={localizedPostData.date}
-        />
+        <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
+        <meta property="article:published_time" content={localizedPostData.date} />
       </Head>
 
       <BlogPostSchema
@@ -123,14 +111,12 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
       ru: {
         title: 'Блог Караяка',
         description: 'Статьи и новости о недвижимости в Турции и России',
-        keywords:
-          'блог о недвижимости, статьи о недвижимости, недвижимость в Турции, недвижимость в России',
+        keywords: 'блог о недвижимости, статьи о недвижимости, недвижимость в Турции, недвижимость в России',
       },
       en: {
         title: 'Karayaka Blog',
         description: 'Articles and news about real estate in Turkey and Russia',
-        keywords:
-          'real estate blog, real estate articles, property in Turkey, property in Russia',
+        keywords: 'real estate blog, real estate articles, property in Turkey, property in Russia',
       },
     };
 

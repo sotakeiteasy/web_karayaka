@@ -7,12 +7,7 @@ interface OrganizationSchemaProps {
   url: string;
 }
 
-export const OrganizationSchema: FC<OrganizationSchemaProps> = ({
-  name,
-  description,
-  logo,
-  url,
-}) => {
+export const OrganizationSchema: FC<OrganizationSchemaProps> = ({ name, description, logo, url }) => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -26,12 +21,7 @@ export const OrganizationSchema: FC<OrganizationSchemaProps> = ({
     'sameAs': ['https://t.me/karayaka_real', 'https://vk.com/karayaka_real'],
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 };
 
 interface BlogPostSchemaProps {
@@ -81,12 +71,7 @@ export const BlogPostSchema: FC<BlogPostSchemaProps> = ({
     },
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 };
 
 interface FAQItem {
@@ -99,10 +84,7 @@ interface FAQPageSchemaProps {
   pageUrl: string;
 }
 
-export const FAQPageSchema: FC<FAQPageSchemaProps> = ({
-  questions,
-  pageUrl,
-}) => {
+export const FAQPageSchema: FC<FAQPageSchemaProps> = ({ questions, pageUrl }) => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -117,12 +99,7 @@ export const FAQPageSchema: FC<FAQPageSchemaProps> = ({
     'url': pageUrl,
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 };
 
 interface RealEstateSearchSchemaProps {
@@ -177,12 +154,7 @@ export const RealEstateSearchSchema: FC<RealEstateSearchSchemaProps> = ({
     },
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 };
 
 interface CustomOffersSchemaProps {
@@ -196,11 +168,7 @@ interface CustomOffersSchemaProps {
   };
 }
 
-export const CustomOffersSchema: FC<CustomOffersSchemaProps> = ({
-  url,
-  description,
-  contacts,
-}) => {
+export const CustomOffersSchema: FC<CustomOffersSchemaProps> = ({ url, description, contacts }) => {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -234,10 +202,5 @@ export const CustomOffersSchema: FC<CustomOffersSchemaProps> = ({
     },
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
-  );
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 };

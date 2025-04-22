@@ -32,13 +32,7 @@ import {
   propertyTypeTranslations,
 } from '@/lib/translations';
 
-export default function AdPage({
-  ad,
-  metaTags,
-}: {
-  ad: Ad;
-  metaTags: MetaTags;
-}) {
+export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags }) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
   const lang = (query?.lang as 'ru' | 'en') || 'ru';
@@ -48,24 +42,17 @@ export default function AdPage({
   const propertyTitle = (() => {
     switch (ad.propertyType) {
       case 'apartment':
-        return `${ad.rooms} ${t('ad.property.room')} ${
-          propertyTypeTranslations[ad.propertyType][lang]
-        }`;
+        return `${ad.rooms} ${t('ad.property.room')} ${propertyTypeTranslations[ad.propertyType][lang]}`;
       case 'villa':
       case 'commercial':
       case 'land':
-        return `${propertyTypeTranslations[ad.propertyType][lang]}, ${
-          ad.area
-        }${t('ad.property.squareMeters')}²`;
+        return `${propertyTypeTranslations[ad.propertyType][lang]}, ${ad.area}${t('ad.property.squareMeters')}²`;
       default:
         return propertyTypeTranslations[ad.propertyType][lang];
     }
   })();
 
-  const location = [
-    countryTranslations[ad.location.country][lang],
-    cityTranslations[ad.location.city][lang],
-  ]
+  const location = [countryTranslations[ad.location.country][lang], cityTranslations[ad.location.city][lang]]
     .filter(Boolean)
     .join(', ');
 
@@ -73,10 +60,7 @@ export default function AdPage({
     <>
       <Head>
         <title>{propertyTitle}</title>
-        <meta
-          name="description"
-          content={meta.description.replace('{location}', location)}
-        />
+        <meta name="description" content={meta.description.replace('{location}', location)} />
         <meta name="keywords" content={meta.keywords} />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -85,36 +69,23 @@ export default function AdPage({
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://karayaka.ru/ads/${ad.id}`} />
         <meta property="og:title" content={propertyTitle} />
-        <meta
-          property="og:description"
-          content={meta.description.replace('{location}', location)}
-        />
+        <meta property="og:description" content={meta.description.replace('{location}', location)} />
         <meta
           property="og:image"
-          content={
-            ad.images.length > 0
-              ? getImageUrl(ad.images[0])
-              : 'https://karayaka.ru/og-image.png'
-          }
+          content={ad.images.length > 0 ? getImageUrl(ad.images[0]) : 'https://karayaka.ru/og-image.png'}
         />
         <meta property="og:image:alt" content={propertyTitle} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
-        <meta
-          property="og:locale"
-          content={lang === 'ru' ? 'ru_RU' : 'en_US'}
-        />
+        <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
       </Head>
       <div className={styles.main}>
         <div className={styles.titleInfo}>
           <div className={styles.rightTitleInfo}>
             <p>
               {(() => {
-                const typeStatus =
-                  ad.type === 'sale'
-                    ? t('ad.property.titleForSale')
-                    : t('ad.property.titleForRent');
+                const typeStatus = ad.type === 'sale' ? t('ad.property.titleForSale') : t('ad.property.titleForRent');
 
                 let propertyInfo = '';
 
@@ -127,13 +98,12 @@ export default function AdPage({
                   case 'villa':
                   case 'commercial':
                   case 'land':
-                    propertyInfo = `${
-                      propertyTypeTranslations[ad.propertyType][lang]
-                    } ${ad.area}${t('ad.property.squareMeters')}²`;
+                    propertyInfo = `${propertyTypeTranslations[ad.propertyType][lang]} ${ad.area}${t(
+                      'ad.property.squareMeters'
+                    )}²`;
                     break;
                   default:
-                    propertyInfo =
-                      propertyTypeTranslations[ad.propertyType][lang];
+                    propertyInfo = propertyTypeTranslations[ad.propertyType][lang];
                 }
 
                 if (lang === 'ru') {
@@ -148,9 +118,7 @@ export default function AdPage({
               {[
                 countryTranslations[ad.location.country][lang],
                 cityTranslations[ad.location.city][lang],
-                ad.location.district
-                  ? districtTranslations[ad.location.district]?.[lang]
-                  : null,
+                ad.location.district ? districtTranslations[ad.location.district]?.[lang] : null,
               ]
                 .filter(Boolean)
                 .join(', ')}
@@ -208,9 +176,7 @@ export default function AdPage({
                   <Icon path={mdiCheckbook} size={1} />
                   {t('ad.property.listing')}
                 </span>
-                {ad.type === 'sale'
-                  ? t('ad.property.forSale')
-                  : t('ad.property.forRent')}
+                {ad.type === 'sale' ? t('ad.property.forSale') : t('ad.property.forRent')}
               </p>
               {ad.age && (
                 <p>
@@ -234,32 +200,20 @@ export default function AdPage({
                 <ul>
                   {ad.parking === 'closed' && (
                     <li>
-                      <Icon
-                        className={styles.dot}
-                        path={mdiCircleSmall}
-                        size={1.5}
-                      />
+                      <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
                       {t('ad.property.closedParking')}
                     </li>
                   )}
                   {ad.parking === 'open' && (
                     <li>
-                      <Icon
-                        className={styles.dot}
-                        path={mdiCircleSmall}
-                        size={1.5}
-                      />
+                      <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
                       {t('ad.property.openParking')}
                     </li>
                   )}
                   {ad.bathroom
                     ? ad.bathroom > 1 && (
                         <li>
-                          <Icon
-                            className={styles.dot}
-                            path={mdiCircleSmall}
-                            size={1.5}
-                          />
+                          <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
                           {ad.bathroom} {t('ad.property.bathrooms')}
                         </li>
                       )
@@ -282,9 +236,7 @@ export default function AdPage({
             <CustomSlider ad={ad} />
           </div>
         </div>
-        {ad.description[lang] && (
-          <div className={styles.description}>{ad.description[lang]}</div>
-        )}
+        {ad.description[lang] && <div className={styles.description}>{ad.description[lang]}</div>}
         <div className={styles.form}>
           <ContactUs />
         </div>
@@ -330,8 +282,7 @@ function CustomSlider({ ad }: { ad: Ad }) {
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-    beforeChange: (oldIndex: number, newIndex: number) =>
-      setCurrentIndex(newIndex),
+    beforeChange: (oldIndex: number, newIndex: number) => setCurrentIndex(newIndex),
   };
 
   return (
@@ -340,19 +291,13 @@ function CustomSlider({ ad }: { ad: Ad }) {
         imageRender: (originalNode: React.ReactNode) => (
           <div>
             <img
-              src={
-                (originalNode as React.ReactElement<{ src?: string }>)?.props
-                  ?.src || ''
-              }
+              src={(originalNode as React.ReactElement<{ src?: string }>)?.props?.src || ''}
               style={{
                 maxWidth: '90vw',
                 maxHeight: '90vh',
                 objectFit: 'contain',
               }}
-              alt={
-                (originalNode as React.ReactElement<{ alt?: string }>)?.props
-                  ?.alt || 'Property image'
-              }
+              alt={(originalNode as React.ReactElement<{ alt?: string }>)?.props?.alt || 'Property image'}
             />
           </div>
         ),
@@ -367,12 +312,7 @@ function CustomSlider({ ad }: { ad: Ad }) {
       <Slider ref={sliderRef} {...settings}>
         {ad.images.map((image, index) => (
           <div key={index}>
-            <Image
-              src={getImageUrl(image)}
-              alt={`Property image ${index + 1}`}
-              width={650}
-              height={400}
-            />
+            <Image src={getImageUrl(image)} alt={`Property image ${index + 1}`} width={650} height={400} />
           </div>
         ))}
       </Slider>
@@ -400,16 +340,13 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   // Meta tags for property pages
   const metaTags = {
     ru: {
-      description:
-        'Подробная информация о недвижимости в {location}. Актуальные цены, фотографии, детальное описание.',
-      keywords:
-        'недвижимость, купить, аренда, квартира, вилла, дом, Турция, Россия',
+      description: 'Подробная информация о недвижимости в {location}. Актуальные цены, фотографии, детальное описание.',
+      keywords: 'недвижимость, купить, аренда, квартира, вилла, дом, Турция, Россия',
     },
     en: {
       description:
         'Detailed information about real estate in {location}. Current prices, photos, and comprehensive description.',
-      keywords:
-        'real estate, buy, rent, apartment, villa, house, Turkey, Russia',
+      keywords: 'real estate, buy, rent, apartment, villa, house, Turkey, Russia',
     },
   };
 

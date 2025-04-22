@@ -1,8 +1,5 @@
 // Типы для стран
-export const countryTranslations: Record<
-  string,
-  { ru: string; en: string; tr: string }
-> = {
+export const countryTranslations: Record<string, { ru: string; en: string; tr: string }> = {
   Turkey: {
     ru: 'Турция',
     en: 'Turkey',
@@ -15,10 +12,7 @@ export const countryTranslations: Record<
   },
 };
 
-export const cityTranslations: Record<
-  string,
-  { ru: string; en: string; tr: string }
-> = {
+export const cityTranslations: Record<string, { ru: string; en: string; tr: string }> = {
   Antalya: {
     ru: 'Анталья',
     en: 'Antalya',
@@ -41,11 +35,7 @@ export const cityTranslations: Record<
   },
 };
 
-
-export const districtTranslations: Record<
-  string,
-  { ru: string; en: string; tr: string }
-> = {
+export const districtTranslations: Record<string, { ru: string; en: string; tr: string }> = {
   Alanya: {
     ru: 'Алания',
     en: 'Alanya',
