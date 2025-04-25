@@ -3,6 +3,7 @@ export interface Filter {
   city?: string;
   district?: string[];
   propertyType?: string;
+  bedroom?: string[];
   type?: 'sale' | 'rent';
   minPrice?: number;
   maxPrice?: number;

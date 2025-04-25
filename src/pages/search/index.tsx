@@ -26,7 +26,7 @@ function LabelInput({
   return (
     <div className={styles.filter}>
       <label htmlFor={name}>{t(`search.filters.${name}`)}</label>
-      <input type="text" id={name} name={name} value={value || ''} onChange={(e) => onChange(name, e.target.value)} />
+      <input type="text" id={name} name={name} value={value || ''} onChange={(e) => onChange(name, e.target.value)} placeholder={t(`search.filters.point`)}/>
     </div>
   );
 }
@@ -50,7 +50,7 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
     handleSortOptionChange,
   } = useSearchFilters();
 
-  const { districtOptions, cityOptions, countryOptions, propertyTypeOptions, floorOptions, sortOptions } =
+  const { districtOptions, cityOptions, countryOptions, propertyTypeOptions, bedroomOptions, floorOptions, sortOptions } =
     useFilterOptions(filter.country, lang);
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -142,6 +142,17 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
               options={floorOptions}
               onChange={handleSelectChange}
               isNumeric={true}
+            />
+          </div>
+
+          <div className={styles.filter}>
+            <FilterSelect
+              name="bedroom"
+              label="search.filters.any2"
+              value={filter.bedroom ?? ''}
+              options={bedroomOptions}
+              onChange={handleSelectChange}
+              isMulti={true}
             />
           </div>
 

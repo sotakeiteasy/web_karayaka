@@ -66,12 +66,20 @@ export function useFilterOptions(country: string | undefined, lang: 'ru' | 'en')
     })),
   ];
 
+  const bedroomOptions = [
+    ...filterValues.bedroom.map((bedroom) => ({
+      value: bedroom.en,
+      label: bedroom[lang],
+    })),
+  ];
+
   return {
     districtOptions,
     cityOptions,
     countryOptions,
     propertyTypeOptions,
     floorOptions,
+    bedroomOptions,
     sortOptions,
   };
 }

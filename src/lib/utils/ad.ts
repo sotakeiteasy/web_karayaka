@@ -83,6 +83,14 @@ export function filterAds(filters: Filter): Ad[] {
       if (!matchesPropertyType) return false;
     }
 
+    if (filters.bedroom && filters.bedroom?.length > 0) {
+      if (!ad.rooms || !filters.bedroom.some(
+          (d) => ad.rooms !== null && hasTranslationMatch({ru: ad.rooms, en: ad.rooms}, d)
+        )) {
+        return false;
+      }
+    }
+
     if (filters.address) {
       const searchText = filters.address.toLowerCase();
 
@@ -113,6 +121,7 @@ export function getUniqueFilterValues() {
   const citiesMap = new Map<string, { en: string; ru: string }>();
   const districtMap = new Map<string, { en: string; ru: string }>();
   const propertyTypesMap = new Map<string, { en: string; ru: string }>();
+  const bedroomMap = new Map<string, { en: string; ru: string }>();
 
   ads.forEach((ad) => {
     countriesMap.set(ad.location.country, countryTranslations[ad.location.country]);
@@ -123,6 +132,9 @@ export function getUniqueFilterValues() {
     }
 
     propertyTypesMap.set(ad.propertyType, propertyTypeTranslations[ad.propertyType]);
+    if (ad.rooms) {
+      bedroomMap.set(ad.rooms, { en: ad.rooms, ru: ad.rooms});
+    }
   });
 
   return {
@@ -130,5 +142,6 @@ export function getUniqueFilterValues() {
     cities: Array.from(citiesMap.values()),
     district: Array.from(districtMap.values()),
     propertyType: Array.from(propertyTypesMap.values()),
+    bedroom: Array.from(bedroomMap.values())
   };
 }

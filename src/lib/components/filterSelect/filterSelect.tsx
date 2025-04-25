@@ -1,8 +1,16 @@
 // @ts-nocheck
-import Select, { components } from 'react-select';
+// import Select, { components } from 'react-select';
 import { SelectOption } from '@/lib/types';
 import { useMemo, useCallback } from 'react';
 import { useTranslation } from 'next-export-i18n';
+import dynamic from 'next/dynamic';
+
+const Select = dynamic(() => import('react-select'), {
+  ssr: false
+});
+
+const { components } = require('react-select');
+  
 
 export default function FilterSelect({
   options,

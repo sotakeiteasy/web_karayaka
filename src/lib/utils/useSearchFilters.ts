@@ -42,6 +42,7 @@ export function useSearchFilters() {
         if (currentFilter.city) query.city = currentFilter.city;
         if (currentFilter.district) query.district = currentFilter.district.join(',');
         if (currentFilter.propertyType) query.propertyType = currentFilter.propertyType;
+        if (currentFilter.bedroom) query.bedroom = currentFilter.bedroom.join(',');
         if (currentFilter.address) query.address = currentFilter.address;
         if (currentFilter.floor) query.floor = currentFilter.floor.toString();
 
@@ -67,15 +68,18 @@ export function useSearchFilters() {
 
     const initialFilter: Filter = {};
 
-    const { type, country, city, district, propertyType, address } = router.query;
-    if (type) initialFilter.type = type as 'sale' | 'rent';
-    if (country) initialFilter.country = country as string;
-    if (city) initialFilter.city = city as string;
-    if (district) initialFilter.district = (district as string).split(',');
-    if (propertyType) initialFilter.propertyType = propertyType as string;
+    const { type, country, city, district, propertyType, bedroom, address }: {
+      type?: 'sale' | 'rent', country?: string, city?: string, district?: string, propertyType?: string, bedroom?: string, address?: string
+    } = router.query;
+    if (type) initialFilter.type = type;
+    if (country) initialFilter.country = country;
+    if (city) initialFilter.city = city;
+    if (district) initialFilter.district = district.split(',');
+    if (propertyType) initialFilter.propertyType = propertyType;
+    if (bedroom) initialFilter.bedroom = bedroom.split(',');
     if (address) {
-      initialFilter.address = address as string;
-      setSearchText(address as string);
+      initialFilter.address = address;
+      setSearchText(address);
     }
 
     const { minPrice, maxPrice, minArea, maxArea, floor } = router.query;

@@ -75,14 +75,16 @@
       "maxPrice": "to",
       "minArea": "Area from",
       "maxArea": "to",
-      "bedrooms": "Bedrooms",
+      "bedroom": "Bedrooms",
       "any": "Any",
+      "any2": "Any",
       "floor": "Floor",
       "apply": "Apply filters",
       "reset": "Reset filters",
       "searchPlaceholder": "Search by address",
       "searchButton": "Search",
-      "noOptions": "There is no such option yet."
+      "noOptions": "There is no such option yet.",
+      "point": "..."
     },
     "sorting": {
       "cheapFirst": "Price (cheap first)",

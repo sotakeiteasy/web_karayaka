@@ -74,14 +74,16 @@
       "maxPrice": "до",
       "minArea": "Площадь от",
       "maxArea": "до",
-      "bedrooms": "Кол-во комнат",
+      "bedroom": "Кол-во комнат",
       "any": "Любой",
+      "any2": "Любое",
       "floor": "Этаж",
       "apply": "Применить фильтры",
       "reset": "Сбросить фильтры",
       "searchPlaceholder": "Поиск по адресу",
       "searchButton": "Поиск",
-      "noOptions": "Такого варианта пока нет"
+      "noOptions": "Такого варианта пока нет",
+      "point": "..."
     },
     "sorting": {
       "cheapFirst": "Цена (сначала дешевые)",
