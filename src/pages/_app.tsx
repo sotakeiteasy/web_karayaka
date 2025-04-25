@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 import { Montserrat } from 'next/font/google';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 const Header = dynamic(() => import('@/lib/components').then((mod) => mod.Header), { ssr: false });
 const Footer = dynamic(() => import('@/lib/components').then((mod) => mod.Footer), { ssr: false });
@@ -13,10 +14,19 @@ const montserrat = Montserrat({
 });
 
 function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
   return (
     <div className={montserrat.className}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Языковые альтернативы */}
+        <link rel="alternate" hrefLang="ru" href={`https://karayaka.ru${router.pathname}`} />
+        <link rel="alternate" hrefLang="en" href={`https://karayaka.ru${router.pathname}?lang=en`} />
+        
+        {/* Каноническая ссылка для страниц с ?lang=ru */}
+        {router.query.lang === 'ru' && (
+          <link rel="canonical" href={`https://karayaka.ru${router.pathname}`} />)}
       </Head>
       {/* Yandex.Metrika counter */}
       <script type="text/javascript">
