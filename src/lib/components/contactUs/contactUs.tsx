@@ -1,31 +1,16 @@
 import React, { useEffect } from 'react';
 import emailjs from '@emailjs/browser';
-import styles from './contactUs.module.scss';
+import styles from './ContactUs.module.scss';
 import { useState } from 'react';
 import { useTranslation } from 'next-export-i18n';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { Inputs, LocationKey, PurposeKey } from './types';
 
-type Inputs = {
-  name: string;
-  surname?: string;
-  location: string[];
-  purpose: string[];
-  city?: string;
-  district?: string;
-  budget?: string;
-  phone_number: string;
-  email: string;
-  message?: string;
-};
+const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID || '';
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID || '';
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_PUBLIC_KEY || '';
 
-type LocationKey = 'Russia' | 'Turkey';
-type PurposeKey = 'Buy' | 'Rent';
-
-const SERVICE_ID = 'service_karayaka';
-const TEMPLATE_ID = 'template_karayaka';
-const PUBLIC_KEY = 'Yq2DEqGgQI4ibTmyj';
-
-export const ContactUs = () => {
+export function ContactUs () {
   const { t } = useTranslation();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const {
@@ -48,7 +33,7 @@ export const ContactUs = () => {
       email: '',
       message: '',
     },
-    mode: 'onBlur', // Валидация при потере фокуса
+    mode: 'onBlur',
   });
 
   const watchEmail = watch('email');
@@ -115,12 +100,9 @@ export const ContactUs = () => {
     if (value && value.trim()) return true;
 
     const otherField = fieldName === 'email' ? watchPhone : watchEmail;
+    if (otherField && otherField.trim()) return true;
 
-    if (otherField && otherField.trim()) {
-      return true;
-    }
-
-    return fieldName === 'email' ? t('form.errors.contactRequired') : t('form.errors.contactRequired');
+    return t('form.errors.contactRequired');
   };
 
   return (
@@ -286,5 +268,3 @@ export const ContactUs = () => {
     </form>
   );
 };
-
-export default ContactUs;

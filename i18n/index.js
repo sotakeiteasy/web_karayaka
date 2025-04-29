@@ -7,7 +7,7 @@ const i18n = {
     ru,
   },
   defaultLang: "ru",
-  languageDataStore: "query" || "localStorage",
+  languageDataStore: "query",
   useBrowserDefault: true,
 };
 

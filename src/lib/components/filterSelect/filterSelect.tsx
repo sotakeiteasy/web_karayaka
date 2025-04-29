@@ -11,8 +11,7 @@ const Select = dynamic(() => import('react-select'), {
 
 const { components } = require('react-select');
   
-
-export default function FilterSelect({
+export function FilterSelect({
   options,
   onChange,
   value,

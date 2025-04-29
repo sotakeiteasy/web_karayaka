@@ -7,12 +7,12 @@ import Icon from '@mdi/react';
 import { mdiMagnify } from '@mdi/js';
 
 import styles from './index.module.scss';
-import SimpleSlider from './simpleSlider/simpleSlider';
+import SimpleSlider from './SimpleSlider/SimpleSlider';
 import { ContactUs, OrganizationSchema } from '@/lib/components';
 import { PostData, getImageUrl } from '@/lib/utils';
 import { MetaTags } from '@/lib/types';
 
-export default function Home({
+export function Home({
   allBlogData,
   metaTags,
 }: {

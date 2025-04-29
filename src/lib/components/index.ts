@@ -1,9 +1,6 @@
-import Footer from './footer/footer';
-import ContactUs from './contactUs/contactUs';
-import Header from './header/header';
-import PaginatedAds from './search/PaginatedAds/PaginatedAds';
-import FilterSelect from './filterSelect/filterSelect';
-
-export { Footer, ContactUs, Header, PaginatedAds, FilterSelect };
-
-export * from './SEO/JsonLd';
+export * from './Footer/Footer';
+export * from './ContactUs/ContactUs';
+export * from './Header/Header';
+export * from './Search/PaginatedAds/PaginatedAds';
+export * from './FilterSelect/FilterSelect';
+export * from './JsonLd/JsonLd';

@@ -3,7 +3,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import React from 'react';
 import { useState, useEffect, useMemo } from 'react';
 import Slider from 'react-slick';
-import styles from './simpleSlider.module.scss';
+import styles from './SimpleSlider.module.scss';
 import Image from 'next/image';
 import { useTranslation, LinkWithLocale } from 'next-export-i18n';
 

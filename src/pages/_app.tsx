@@ -20,11 +20,9 @@ function App({ Component, pageProps }: AppProps) {
     <div className={montserrat.className}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Языковые альтернативы */}
         <link rel="alternate" hrefLang="ru" href={`https://karayaka.ru${router.pathname}`} />
         <link rel="alternate" hrefLang="en" href={`https://karayaka.ru${router.pathname}?lang=en`} />
         
-        {/* Каноническая ссылка для страниц с ?lang=ru */}
         {router.query.lang === 'ru' && (
           <link rel="canonical" href={`https://karayaka.ru${router.pathname}`} />)}
       </Head>
