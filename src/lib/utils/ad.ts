@@ -84,9 +84,10 @@ export function filterAds(filters: Filter): Ad[] {
     }
 
     if (filters.bedroom && filters.bedroom?.length > 0) {
-      if (!ad.rooms || !filters.bedroom.some(
-          (d) => ad.rooms !== null && hasTranslationMatch({ru: ad.rooms, en: ad.rooms}, d)
-        )) {
+      if (
+        !ad.rooms ||
+        !filters.bedroom.some((d) => ad.rooms !== null && hasTranslationMatch({ ru: ad.rooms, en: ad.rooms }, d))
+      ) {
         return false;
       }
     }
@@ -125,29 +126,37 @@ export function getUniqueFilterValues() {
 
   ads.forEach((ad, index) => {
     if (!countryTranslations[ad.location.country]) {
-      throw new Error(`Translation not found for country "${ad.location.country}" in ad #${index}, ID: ${ad.id || 'unknown'}`);
+      throw new Error(
+        `Translation not found for country "${ad.location.country}" in ad #${index}, ID: ${ad.id || 'unknown'}`
+      );
     }
     countriesMap.set(ad.location.country, countryTranslations[ad.location.country]);
 
     if (!cityTranslations[ad.location.city]) {
-      throw new Error(`Translation not found for city "${ad.location.city}" in ad #${index}, ID: ${ad.id || 'unknown'}`);
+      throw new Error(
+        `Translation not found for city "${ad.location.city}" in ad #${index}, ID: ${ad.id || 'unknown'}`
+      );
     }
     citiesMap.set(ad.location.city, cityTranslations[ad.location.city]);
 
     if (ad.location.district) {
       if (!districtTranslations[ad.location.district]) {
-        throw new Error(`Translation not found for district "${ad.location.district}" in ad #${index}, ID: ${ad.id || 'unknown'}`);
+        throw new Error(
+          `Translation not found for district "${ad.location.district}" in ad #${index}, ID: ${ad.id || 'unknown'}`
+        );
       }
       districtMap.set(ad.location.district, districtTranslations[ad.location.district]);
     }
 
     if (!propertyTypeTranslations[ad.propertyType]) {
-      throw new Error(`Translation not found for property type "${ad.propertyType}" in ad #${index}, ID: ${ad.id || 'unknown'}`);
+      throw new Error(
+        `Translation not found for property type "${ad.propertyType}" in ad #${index}, ID: ${ad.id || 'unknown'}`
+      );
     }
     propertyTypesMap.set(ad.propertyType, propertyTypeTranslations[ad.propertyType]);
 
     if (ad.rooms) {
-      bedroomMap.set(ad.rooms, { en: ad.rooms, ru: ad.rooms});
+      bedroomMap.set(ad.rooms, { en: ad.rooms, ru: ad.rooms });
     }
   });
 
@@ -156,6 +165,6 @@ export function getUniqueFilterValues() {
     cities: Array.from(citiesMap.values()),
     district: Array.from(districtMap.values()),
     propertyType: Array.from(propertyTypesMap.values()),
-    bedroom: Array.from(bedroomMap.values())
+    bedroom: Array.from(bedroomMap.values()),
   };
 }

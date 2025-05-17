@@ -101,10 +101,10 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
           </div>
         </div>
 
-        <header>
+        <section className={styles.mainInfo}>
           <h1>{t('aboutUs.header')}</h1>
-          <p>{t('aboutUs.description')}</p>
-        </header>
+          <p className={styles.description}>{t('aboutUs.description')}</p>
+        </section>
 
         <div className={styles.banner}>
           <Image
@@ -119,22 +119,73 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
           />
         </div>
 
-        <div className={styles.stats}>
-          <section>
-            <h2>{t('aboutUs.stats.forSale')}</h2>
-            <p>{t('aboutUs.stats.forSaleLabel')}</p>
-          </section>
+        <section className={styles.mainInfo}>
+          <div className={styles.mainList}>
+            <h2>{t('aboutUs.servicesHeader')}</h2>
+            <ul>
+              <li>{t('aboutUs.servicesList.1')}</li>
+              <li>{t('aboutUs.servicesList.2')}</li>
+              <li>{t('aboutUs.servicesList.3')}</li>
+              <li>{t('aboutUs.servicesList.4')}</li>
+              <li>{t('aboutUs.servicesList.5')}</li>
+              <li>{t('aboutUs.servicesList.6')}</li>
+              <li>{t('aboutUs.servicesList.7')}</li>
+            </ul>
+          </div>
+        </section>
 
-          <section>
-            <h2>{t('aboutUs.stats.regions')}</h2>
-            <p>{t('aboutUs.stats.regionsLabel')}</p>
-          </section>
+        <div className={styles.statsVisuals}>
+          <div className={styles.stats}>
+            <section>
+              <h2>{t('aboutUs.stats.forSale')}</h2>
+              <p>{t('aboutUs.stats.forSaleLabel')}</p>
+            </section>
 
-          <section>
-            <h2>{t('aboutUs.stats.forRent')}</h2>
-            <p>{t('aboutUs.stats.forRentLabel')}</p>
-          </section>
+            <section>
+              <h2>{t('aboutUs.stats.regions')}</h2>
+              <p>{t('aboutUs.stats.regionsLabel')}</p>
+            </section>
+
+            <section>
+              <h2>{t('aboutUs.stats.forRent')}</h2>
+              <p>{t('aboutUs.stats.forRentLabel')}</p>
+            </section>
+          </div>
+
+          <div className={styles.videoContainer}>
+            <video
+              className={styles.video}
+              autoPlay
+              muted
+              playsInline
+              loop
+              controls={false}
+              /* eslint-disable react/no-unknown-property */
+              webkit-playsinline="true"
+            >
+              <source src={getImageUrl('/videos/About_Us.mp4')} type="video/webm" />
+            </video>
+          </div>
         </div>
+
+        <section className={styles.mainInfo}>
+          <div className={styles.mainList}>
+            <h2>{t('aboutUs.supportHeader')}</h2>
+            <ul>
+              <li>{t('aboutUs.supportList.1')}</li>
+              <li>{t('aboutUs.supportList.2')}</li>
+              <li>{t('aboutUs.supportList.3')}</li>
+              <li>{t('aboutUs.supportList.4')}</li>
+              <li>{t('aboutUs.supportList.5')}</li>
+              <li>{t('aboutUs.supportList.6')}</li>
+              <li>{t('aboutUs.supportList.7')}</li>
+            </ul>
+          </div>
+        </section>
+
+        <p className={styles.closingNote}>
+          <span>{t('aboutUs.closingNote')}</span>
+        </p>
 
         <div className={styles.infoBlock}>
           <section className={styles.faq}>

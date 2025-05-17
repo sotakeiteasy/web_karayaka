@@ -123,7 +123,7 @@ export function Header() {
                 <Icon path={mdiWhatsapp} size={2} />
               </a>
               <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer">
-                <img src='/assets/icons/TelegramIconHeader.svg' alt="Telegram" className={styles.telegramIcon}/>
+                <img src="/assets/icons/TelegramIconHeader.svg" alt="Telegram" className={styles.telegramIcon} />
               </a>
             </div>
           </div>

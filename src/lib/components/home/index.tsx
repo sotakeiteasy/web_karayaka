@@ -9,16 +9,11 @@ import { mdiMagnify } from '@mdi/js';
 import styles from './index.module.scss';
 import SimpleSlider from './SimpleSlider/SimpleSlider';
 import { ContactUs, OrganizationSchema } from '@/lib/components';
-import { PostData, getImageUrl } from '@/lib/utils';
+import { getImageUrl } from '@/lib/utils';
+import { PostData } from '@/lib/types';
 import { MetaTags } from '@/lib/types';
 
-export function Home({
-  allBlogData,
-  metaTags,
-}: {
-  allBlogData: Record<string, PostData[]>;
-  metaTags: MetaTags;
-}) {
+export function Home({ allBlogData, metaTags }: { allBlogData: Record<string, PostData[]>; metaTags: MetaTags }) {
   const router = useRouter();
 
   const { t } = useTranslation();

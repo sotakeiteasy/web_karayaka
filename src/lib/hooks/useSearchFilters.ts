@@ -2,11 +2,11 @@ import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import { Ad, Filter } from '@/lib/types';
 import { filterAds } from '@/lib/utils';
-import {FILTER_MAPPINGS} from '@/lib/constants/filterOptions';
+import { FILTER_MAPPINGS } from '@/lib/constants/filterOptions';
 
 export function useSearchFilters() {
   const router = useRouter();
-  const [filter, setFilter] = useState<Filter>({ sortOption: "price-cheap" });
+  const [filter, setFilter] = useState<Filter>({ sortOption: 'price-cheap' });
   const [appliedFilters, setAppliedFilters] = useState({});
   const [searchText, setSearchText] = useState('');
   const [filteredAds, setFilteredAds] = useState<Ad[]>([]);
@@ -68,10 +68,24 @@ export function useSearchFilters() {
   useEffect(() => {
     if (!router.isReady) return;
 
-    const initialFilter: Filter = { sortOption: "price-cheap" };
+    const initialFilter: Filter = { sortOption: 'price-cheap' };
 
-    const { type, country, city, district, propertyType, bedroom, address }: {
-      type?: 'sale' | 'rent', country?: string, city?: string, district?: string, propertyType?: string, bedroom?: string, address?: string
+    const {
+      type,
+      country,
+      city,
+      district,
+      propertyType,
+      bedroom,
+      address,
+    }: {
+      type?: 'sale' | 'rent';
+      country?: string;
+      city?: string;
+      district?: string;
+      propertyType?: string;
+      bedroom?: string;
+      address?: string;
     } = router.query;
     if (type) initialFilter.type = type;
     if (country) initialFilter.country = country;
@@ -91,12 +105,11 @@ export function useSearchFilters() {
     if (maxArea) initialFilter.maxArea = Number(maxArea);
     if (floor) initialFilter.floor = Number(floor);
 
-    const { sortOption: urlSortOption } : {sortOption?: string} = router.query;
+    const { sortOption: urlSortOption }: { sortOption?: string } = router.query;
     if (urlSortOption) initialFilter.sortOption = urlSortOption;
 
     setFilter(initialFilter);
     updateResults(initialFilter, true);
-
   }, [router.isReady, router.query, updateResults]);
 
   // const handleFilterChange = (name: string, value: string | number | string[] | undefined) => {
@@ -106,30 +119,29 @@ export function useSearchFilters() {
   //   if (name === 'sortOption') updateResults(updatedFilter);
   // };
 
-
   const handleFilterChange = (name: string, value: string | number | string[] | undefined) => {
     const updatedFilter = { ...filter, [name]: value };
-    
+
     if (name === 'country') {
       const country = value as string;
       const validCities = getValidCitiesForCountry(country);
-      
+
       if (updatedFilter.city && !validCities.includes(updatedFilter.city)) {
         delete updatedFilter.city;
         delete updatedFilter.district;
       }
     }
-    
+
     if (name === 'city') {
       const city = value as string;
-      
+
       if (updatedFilter.district && updatedFilter.district.length > 0) {
         const validDistricts = getValidDistrictsForCity(city);
-        
-        const validDistrictSelections = (updatedFilter.district as string[]).filter(
-          district => validDistricts.includes(district)
+
+        const validDistrictSelections = (updatedFilter.district as string[]).filter((district) =>
+          validDistricts.includes(district)
         );
-        
+
         if (validDistrictSelections.length === 0) {
           delete updatedFilter.district;
         } else {
@@ -137,37 +149,40 @@ export function useSearchFilters() {
         }
       }
     }
-    
+
     setFilter(updatedFilter);
-  
+
     if (name === 'sortOption') updateResults(updatedFilter);
   };
-  
+
   // Вспомогательные функции для определения валидных городов и районов
   function getValidCitiesForCountry(country: string): string[] {
     switch (country) {
-      case 'Russia': return FILTER_MAPPINGS.countries.russia;
-      case 'Turkey': return FILTER_MAPPINGS.countries.turkey;
-      default: return [];
+      case 'Russia':
+        return FILTER_MAPPINGS.countries.russia;
+      case 'Turkey':
+        return FILTER_MAPPINGS.countries.turkey;
+      default:
+        return [];
     }
   }
-  
+
   function getValidDistrictsForCity(city: string): string[] {
     const normalizedCity = city.toLowerCase();
-    
+
     switch (normalizedCity) {
-      case 'antalya': return FILTER_MAPPINGS.cities.antalya;
-      case 'istanbul': return FILTER_MAPPINGS.cities.istanbul;
-      case 'sakarya': return FILTER_MAPPINGS.cities.sakarya;
-      case 'moscow': return FILTER_MAPPINGS.cities.moscow;
-      default: return [];
+      case 'antalya':
+        return FILTER_MAPPINGS.cities.antalya;
+      case 'istanbul':
+        return FILTER_MAPPINGS.cities.istanbul;
+      case 'sakarya':
+        return FILTER_MAPPINGS.cities.sakarya;
+      case 'moscow':
+        return FILTER_MAPPINGS.cities.moscow;
+      default:
+        return [];
     }
   }
-  
-
-
-
-
 
   const applyFilters = () => {
     const newFilter = { ...filter };

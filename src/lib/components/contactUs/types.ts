@@ -9,7 +9,7 @@ export type Inputs = {
   phone_number: string;
   email: string;
   message?: string;
-}
+};
 
 export type LocationKey = 'Russia' | 'Turkey';
 

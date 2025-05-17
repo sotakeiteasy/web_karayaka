@@ -26,7 +26,14 @@ function LabelInput({
   return (
     <div className={styles.filter}>
       <label htmlFor={name}>{t(`search.filters.${name}`)}</label>
-      <input type="text" id={name} name={name} value={value || ''} onChange={(e) => onChange(name, e.target.value)} placeholder={t(`search.filters.point`)}/>
+      <input
+        type="text"
+        id={name}
+        name={name}
+        value={value || ''}
+        onChange={(e) => onChange(name, e.target.value)}
+        placeholder={t(`search.filters.point`)}
+      />
     </div>
   );
 }
@@ -48,8 +55,15 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
     resetFilters,
   } = useSearchFilters();
 
-  const { districtOptions, cityOptions, countryOptions, propertyTypeOptions, bedroomOptions, floorOptions, sortOptions } =
-    useFilterOptions(filter.country, filter.city, lang);
+  const {
+    districtOptions,
+    cityOptions,
+    countryOptions,
+    propertyTypeOptions,
+    bedroomOptions,
+    floorOptions,
+    sortOptions,
+  } = useFilterOptions(filter.country, filter.city, lang);
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
@@ -200,7 +214,7 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
                 onChange={(newValue) => {
                   const selectedOption = newValue as SelectOption;
                   const value = selectedOption?.value || 'price-cheap';
-                  handleFilterChange("sortOption", value);
+                  handleFilterChange('sortOption', value);
                 }}
                 options={sortOptions}
                 isSearchable={false}

@@ -24,7 +24,28 @@
     }
   }
 
-  header {
+  .mainInfo:first-of-type {
+    box-shadow: $shadow;
+    margin-bottom: 60px;
+    width: 1000px;
+  }
+
+  .mainInfo:last-of-type {
+    height: 600px;
+    flex-direction: row;
+    padding: 0;
+    justify-content: space-between;
+    // border-radius: 0;
+
+    .mainList {
+      padding: 25px;
+    }
+  }
+
+  .mainInfo {
+    box-shadow: $shadow;
+    margin-bottom: 0px;
+    line-height: 1.7;
     width: 1000px;
     display: flex;
     flex-direction: column;
@@ -32,14 +53,62 @@
     align-items: center;
     padding: 25px;
     border-radius: 15px;
-    box-shadow: $shadow;
-    margin-bottom: 60px;
+
+    ul {
+      line-height: 1.5;
+
+      li {
+        // display: flex;
+        margin-bottom: 10px;
+        // list-style: none;
+
+        &::marker {
+          color: $primary-color;
+        }
+      }
+    }
+
+    .mainList {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h2 {
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+    }
+
     h1 {
+      font-size: 2rem;
       text-transform: uppercase;
       font-weight: 500;
-      margin-bottom: 15px;
+    }
+
+    .description {
+      margin: 10px 0;
     }
   }
+  .closingNote {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: $primary-color;
+    color: $white-text;
+    padding: 80px 0;
+    margin: 60px 0 60px 0;
+
+    span {
+      line-height: 2;
+      display: block;
+      width: 600px;
+    }
+  }
+
   .banner {
     position: relative;
     width: 100%;
@@ -47,38 +116,55 @@
     margin-bottom: 60px;
   }
 
-  .stats {
-    width: 1000px;
+  .statsVisuals {
     display: flex;
+    margin: 60px 0;
     justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+    height: 850px;
+    width: 1000px;
 
-    margin-bottom: 60px;
-    section {
+    .stats {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      justify-items: center;
-      padding: 40px 20px;
-      color: $primary-color;
-      text-transform: uppercase;
-      border-radius: 15px;
-      box-shadow: $shadow;
-      text-wrap: wrap;
-      width: 300px;
-      min-height: 250px;
+      justify-content: space-between;
 
-      h2 {
-        font-size: 4rem;
-        font-weight: 400;
+      // margin: 60px 0;
+      section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        justify-items: center;
+        padding: 40px 20px;
+        color: $primary-color;
+        text-transform: uppercase;
+        border-radius: 15px;
+        box-shadow: $shadow;
+        text-wrap: wrap;
+        width: 400px;
+        min-height: 250px;
+
+        h2 {
+          font-size: 4rem;
+          font-weight: 400;
+        }
+        p {
+          font-size: 1.5rem;
+          text-align: center;
+        }
       }
-      p {
-        font-size: 1.5rem;
-        text-align: center;
-      }
+    }
+
+    .videoContainer {
+      display: block;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .video {
+      display: flex;
+      height: 100%;
     }
   }
 
@@ -90,7 +176,7 @@
     gap: 30px;
     margin-left: 40px;
     margin-right: 40px;
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
 
     .faq {
       padding: 20px 40px 20px 0px;
@@ -164,25 +250,31 @@
       }
     }
 
-    header {
-      width: 80%;
-      margin-bottom: 50px;
+    .mainInfo {
+      width: 80% !important;
     }
+
     .banner {
       margin-bottom: 50px;
     }
-    .stats {
-      width: 80%;
-      margin-bottom: 50px;
-      section {
-        width: 30%;
 
-        h2 {
-          font-size: 4rem;
+    .statsVisuals {
+      width: 80%;
+      .stats {
+        flex: 1 1 auto;
+        section {
+          width: 80%;
+
+          h2 {
+            font-size: 4rem;
+          }
+          p {
+            font-size: 1.4rem;
+          }
         }
-        p {
-          font-size: 1.4rem;
-        }
+      }
+      .video {
+        object-fit: cover;
       }
     }
 
@@ -215,14 +307,19 @@
       }
     }
 
-    header {
-      width: 100%;
-      box-shadow: none;
+    .mainInfo {
+      width: 100% !important;
+      box-shadow: none !important;
       padding: 20px;
-      margin-bottom: 10px;
+      margin-bottom: 10px !important;
+      height: 100% !important;
 
       h1 {
         margin-bottom: 10px;
+      }
+
+      h2 {
+        text-align: center;
       }
     }
 
@@ -231,19 +328,21 @@
       margin-bottom: 50px;
     }
 
-    .stats {
+    .statsVisuals {
       width: 90%;
-      margin-bottom: 50px;
-      section {
-        padding: 10px 20px;
-        min-height: 150px;
 
-        h2 {
-          font-weight: 500;
-          font-size: 2rem;
-        }
-        p {
-          font-size: 1rem;
+      .stats {
+        section {
+          padding: 10px 20px;
+          // min-height: 150px;
+
+          h2 {
+            // font-weight: 500;
+            font-size: 3.5rem;
+          }
+          p {
+            font-size: 1.4em;
+          }
         }
       }
     }
@@ -272,17 +371,64 @@
         width: 100%;
       }
     }
+
+    .closingNote {
+      margin: 0 !important;
+      padding-top: 30px !important;
+      background-color: inherit !important;
+      color: inherit !important;
+    }
+  }
+  .infoBlock {
+    margin: 0 !important;
   }
 }
 
 @media (max-width: 600px) {
-  .stats {
-    flex-direction: column;
+  .mainInfo {
+    height: 100% !important;
 
-    section {
-      margin: 10px 20px !important;
-      width: 70% !important;
-      min-height: 90% !important;
+    h2 {
+      font-size: 1.5rem !important;
     }
+  }
+
+  .statsVisuals {
+    width: 90%;
+    flex-wrap: wrap;
+    height: 100% !important;
+    margin-top: 0 !important;
+
+    .stats {
+      height: 100%;
+      align-items: center;
+      margin-bottom: 40px;
+
+      section {
+        margin: 10px 20px !important;
+        width: 90% !important;
+        min-height: 90% !important;
+      }
+    }
+
+    .video {
+      height: 100%;
+    }
+  }
+
+  .closingNote {
+    padding: 0 !important;
+    padding-bottom: 30px !important;
+    margin-top: 0 !important;
+    span {
+      width: 100%;
+      margin: 0 30px;
+      background-color: inherit !important;
+      color: inherit !important;
+    }
+  }
+
+  .infoBlock {
+    margin: 0 !important;
   }
 }

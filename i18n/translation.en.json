@@ -28,7 +28,28 @@
   },
   "aboutUs": {
     "header": "About us",
-    "description": "We are a boutique real estate agency specializing in helping clients find their perfect home in Turkey and Russia. With personalized attention and deep local knowledge, we guide you through every step of your property journey. We focus on understanding your unique requirements and preferences, connecting you with properties that truly match your vision. Our services include comprehensive property viewings, assistance with negotiations, and guidance through the legal aspects of purchasing in foreign markets. We pride ourselves on transparent communication and building genuine relationships with our clients, ensuring a comfortable and informed buying experience from start to finish.",
+    "description": "We are a boutique real estate consultancy operating in both Turkey and Russia. We treat every client with personalized attention, have deep knowledge of local markets, and support you at every stage of your international property journey. Our goal is to understand your unique needs and match you with the most suitable property. We organize property viewings, assist in negotiations, and guide you through the legal procedures. Open communication and trust are the foundation of our work. We do everything possible to ensure your buying experience is smooth and stress-free.",
+    "servicesHeader": "Our Services and Key Strengths",
+    "servicesList": {
+      "1": "Our company is based in Moscow and operates in compliance with Russian legal regulations.",
+      "2": "Our team includes native speakers of Russian, Turkish, and English, ensuring clear and professional communication.",
+      "3": "We offer prime property opportunities across Turkey, especially in Istanbul, Antalya, and Alanya, including apartments, villas, and commercial units.",
+      "4": "With our lawyers registered with the Istanbul Bar, we provide full legal assistance for all purchase, sale, and rental transactions.",
+      "5": "We present land and plot investment opportunities across various regions in Turkey.",
+      "6": "We provide comprehensive consultancy on obtaining Turkish citizenship or residence permit through property purchase.",
+      "7": "For those who already own property in Turkey, we ensure fast and effective sales or rentals through our local partners, targeting the right price in the right timeframe."
+    },
+    "supportHeader": "Additional Support and Consultancy Services",
+    "supportList": {
+      "1": "Land registry and tax support: We assist with title deeds, foreign currency conversion (DAB), tax filing, and SPK-approved property valuation.",
+      "2": "Translation and official guidance: Notary, banking, tax office, migration authority — with professional interpreters by your side.",
+      "3": "Rental income models: Short-term rentals, Airbnb management, guaranteed rental options, and site coordination services.",
+      "4": "Off-plan property purchases: Support with reputable developers, construction progress tracking, contract checks, and legal risk assessment.",
+      "5": "VIP services for premium clients: Private portfolio access, customized viewing trips, accommodation arrangements, full confidentiality.",
+      "6": "Fast response from our website: Inquiries through karayaka.ru are responded to within 24 hours.",
+      "7": "Post-sale assistance: Utility connections, residence permit applications, moving coordination — we guide you beyond the purchase."
+    },
+    "closingNote": "With Karayaka, you're not just buying property — you're building a secure and confident new life.",
     "stats": {
       "forSale": "100+",
       "forSaleLabel": "Apartments for sale",

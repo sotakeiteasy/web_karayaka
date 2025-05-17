@@ -6,11 +6,11 @@ import { useTranslation } from 'next-export-i18n';
 import dynamic from 'next/dynamic';
 
 const Select = dynamic(() => import('react-select'), {
-  ssr: false
+  ssr: false,
 });
 
 const { components } = require('react-select');
-  
+
 export function FilterSelect({
   options,
   onChange,

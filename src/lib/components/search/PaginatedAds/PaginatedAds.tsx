@@ -16,7 +16,7 @@ import {
   propertyTypeTranslations,
 } from '@/lib/translations';
 
-function Items({ currentItems, locale }: { currentItems: Ad[], locale: 'ru' | 'en'}) {
+function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'en' }) {
   const { t } = useTranslation();
 
   if (!currentItems || currentItems.length === 0) {
@@ -99,7 +99,7 @@ function Items({ currentItems, locale }: { currentItems: Ad[], locale: 'ru' | 'e
   );
 }
 
-export function PaginatedAds({ itemsPerPage, ads = [] }: {  itemsPerPage: number, ads: Ad[];}) {
+export function PaginatedAds({ itemsPerPage, ads = [] }: { itemsPerPage: number; ads: Ad[] }) {
   const router = useRouter();
   const { t } = useTranslation();
   const [query] = useLanguageQuery();

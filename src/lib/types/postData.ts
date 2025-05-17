@@ -4,4 +4,4 @@ export interface PostData {
   date: string;
   contentHtml?: string;
   excerpt?: string;
-};
+}

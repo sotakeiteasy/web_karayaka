@@ -22,9 +22,8 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="alternate" hrefLang="ru" href={`https://karayaka.ru${router.pathname}`} />
         <link rel="alternate" hrefLang="en" href={`https://karayaka.ru${router.pathname}?lang=en`} />
-        
-        {router.query.lang === 'ru' && (
-          <link rel="canonical" href={`https://karayaka.ru${router.pathname}`} />)}
+
+        {router.query.lang === 'ru' && <link rel="canonical" href={`https://karayaka.ru${router.pathname}`} />}
       </Head>
       {/* Yandex.Metrika counter */}
       <script type="text/javascript">

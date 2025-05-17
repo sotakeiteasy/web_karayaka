@@ -6,4 +6,4 @@ export type CustomArrowProps = {
   onClick?: React.MouseEventHandler<any> | undefined;
   currentSlide?: number | undefined;
   slideCount?: number | undefined;
-}
+};

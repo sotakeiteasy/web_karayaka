@@ -14,63 +14,50 @@ export function useFilterOptions(country: string | undefined, city: string | und
 
     switch (country) {
       case 'Russia':
-        return filterValues.cities.filter(city => 
-          FILTER_MAPPINGS.countries.russia.includes(city.en)
-        );
-      
+        return filterValues.cities.filter((city) => FILTER_MAPPINGS.countries.russia.includes(city.en));
+
       case 'Turkey':
-        return filterValues.cities.filter(city => 
-          FILTER_MAPPINGS.countries.turkey.includes(city.en)
-        );
-      
+        return filterValues.cities.filter((city) => FILTER_MAPPINGS.countries.turkey.includes(city.en));
+
       default:
         return filterValues.cities;
     }
-
   }, [country, filterValues.cities]);
 
   const filteredDistricts = useMemo(() => {
     if (city) {
       const normalizedCity = city.toLowerCase();
-      
+
       const cityKey = normalizedCity as keyof typeof FILTER_MAPPINGS.cities;
       const cityDistricts = FILTER_MAPPINGS.cities[cityKey] as string[];
       if (cityDistricts && Array.isArray(cityDistricts)) {
-        return filterValues.district.filter(district =>
-          cityDistricts.includes(district.en)
-        );
+        return filterValues.district.filter((district) => cityDistricts.includes(district.en));
       }
-      
+
       return filterValues.district;
     }
-    
+
     if (country === 'Turkey') {
       const turkishCities = FILTER_MAPPINGS.countries.turkey || [];
-      const turkishDistricts = turkishCities.flatMap(cityName => {
+      const turkishDistricts = turkishCities.flatMap((cityName) => {
         const key = cityName.toLowerCase() as keyof typeof FILTER_MAPPINGS.cities;
         return FILTER_MAPPINGS.cities[key];
       });
-      
-      return filterValues.district.filter(district => 
-        turkishDistricts.includes(district.en)
-      );
-    } 
-    else if (country === 'Russia') {
+
+      return filterValues.district.filter((district) => turkishDistricts.includes(district.en));
+    } else if (country === 'Russia') {
       const russianCities = FILTER_MAPPINGS.countries.russia || [];
-      const russianDistricts = russianCities.flatMap(cityName => {
+      const russianDistricts = russianCities.flatMap((cityName) => {
         const key = cityName.toLowerCase() as keyof typeof FILTER_MAPPINGS.cities;
         return FILTER_MAPPINGS.cities[key];
       });
-      
-      return filterValues.district.filter(district => 
-        russianDistricts.includes(district.en)
-      );
+
+      return filterValues.district.filter((district) => russianDistricts.includes(district.en));
     }
-    
+
     return filterValues.district;
   }, [city, country, filterValues.district]);
-  
-  
+
   // below useMemo doesn't so efficient, because parent component re-renders too often and UseMemo is slower than simple object
   const floorOptions = [
     // { value: '', label: t('search.filters.any') },

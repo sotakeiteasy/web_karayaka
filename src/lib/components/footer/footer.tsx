@@ -37,7 +37,7 @@ export function Footer() {
         <div className={styles.footerSection}>
           <h3>{t('footer.navigation')}</h3>
           <nav className={styles.footerNav}>
-            {navLinks.map(link => (
+            {navLinks.map((link) => (
               <LinkWithLocale key={link.href} href={link.href}>
                 <span>{link.label}</span>
               </LinkWithLocale>
@@ -57,7 +57,7 @@ export function Footer() {
           </div>
           <div className={styles.socialLinks}>
             <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer">
-              <img src='/assets/icons/TelegramIconFooter.svg' alt="Telegram" className={styles.telegramIcon}/>
+              <img src="/assets/icons/TelegramIconFooter.svg" alt="Telegram" className={styles.telegramIcon} />
             </a>
             <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <Icon path={mdiWhatsapp} size={1} />
