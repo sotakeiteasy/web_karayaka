@@ -4,9 +4,9 @@ import Head from 'next/head';
 import Image from 'next/image';
 import styles from './index.module.scss';
 
-import { PostData, getImageUrl } from '@/lib/utils';
+import { getImageUrl } from '@/lib/utils';
 import { getSortedPostsData } from '@/lib/utils/blogServer';
-import { MetaTags } from '@/lib/types';
+import { MetaTags, PostData } from '@/lib/types';
 
 export default function Blog({
   allBlogData,

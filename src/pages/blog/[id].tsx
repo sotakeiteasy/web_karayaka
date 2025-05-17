@@ -4,9 +4,9 @@ import { useLanguageQuery } from 'next-export-i18n';
 import Head from 'next/head';
 
 import { BlogPostSchema } from '@/lib/components';
-import { LocalizedPostData, getImageUrl } from '@/lib/utils';
+import { getImageUrl } from '@/lib/utils';
 import { getAllPostIds, getPostData } from '@/lib/utils/blogServer';
-import { MetaTags } from '@/lib/types';
+import { MetaTags, LocalizedPostData } from '@/lib/types';
 
 import { parseISO, format } from 'date-fns';
 
