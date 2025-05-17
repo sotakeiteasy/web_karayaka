@@ -96,4 +96,9 @@ export const districtTranslations: Record<string, { ru: string; en: string; tr: 
     en: 'Kaynarca',
     tr: 'Kaynarca',
   },
+  Kocaali: {
+    ru: 'Коджаали',
+    en: 'Kocaali',
+    tr: 'Kocaali',
+  },
 };

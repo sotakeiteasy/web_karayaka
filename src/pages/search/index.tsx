@@ -49,7 +49,7 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
   } = useSearchFilters();
 
   const { districtOptions, cityOptions, countryOptions, propertyTypeOptions, bedroomOptions, floorOptions, sortOptions } =
-    useFilterOptions(filter.country, lang);
+    useFilterOptions(filter.country, filter.city, lang);
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);

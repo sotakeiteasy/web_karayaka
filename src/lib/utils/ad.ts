@@ -123,15 +123,29 @@ export function getUniqueFilterValues() {
   const propertyTypesMap = new Map<string, { en: string; ru: string }>();
   const bedroomMap = new Map<string, { en: string; ru: string }>();
 
-  ads.forEach((ad) => {
+  ads.forEach((ad, index) => {
+    if (!countryTranslations[ad.location.country]) {
+      throw new Error(`Translation not found for country "${ad.location.country}" in ad #${index}, ID: ${ad.id || 'unknown'}`);
+    }
     countriesMap.set(ad.location.country, countryTranslations[ad.location.country]);
+
+    if (!cityTranslations[ad.location.city]) {
+      throw new Error(`Translation not found for city "${ad.location.city}" in ad #${index}, ID: ${ad.id || 'unknown'}`);
+    }
     citiesMap.set(ad.location.city, cityTranslations[ad.location.city]);
 
-    if (ad.location.district && districtTranslations[ad.location.district]) {
+    if (ad.location.district) {
+      if (!districtTranslations[ad.location.district]) {
+        throw new Error(`Translation not found for district "${ad.location.district}" in ad #${index}, ID: ${ad.id || 'unknown'}`);
+      }
       districtMap.set(ad.location.district, districtTranslations[ad.location.district]);
     }
 
+    if (!propertyTypeTranslations[ad.propertyType]) {
+      throw new Error(`Translation not found for property type "${ad.propertyType}" in ad #${index}, ID: ${ad.id || 'unknown'}`);
+    }
     propertyTypesMap.set(ad.propertyType, propertyTypeTranslations[ad.propertyType]);
+
     if (ad.rooms) {
       bedroomMap.set(ad.rooms, { en: ad.rooms, ru: ad.rooms});
     }
