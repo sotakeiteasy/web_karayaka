@@ -43,11 +43,9 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
     searchText,
     setSearchText,
     filteredAds,
-    sortOption,
     handleFilterChange,
     applyFilters,
     resetFilters,
-    handleSortOptionChange,
   } = useSearchFilters();
 
   const { districtOptions, cityOptions, countryOptions, propertyTypeOptions, bedroomOptions, floorOptions, sortOptions } =
@@ -198,11 +196,11 @@ export default function Search({ metaTags }: { metaTags: MetaTags }) {
                 className={styles.sortButton}
                 id="sort"
                 name="sort"
-                value={sortOptions.find((option) => option.value === sortOption)}
+                value={sortOptions.find((option) => option.value === filter.sortOption)}
                 onChange={(newValue) => {
                   const selectedOption = newValue as SelectOption;
                   const value = selectedOption?.value || 'price-cheap';
-                  handleSortOptionChange(value);
+                  handleFilterChange("sortOption", value);
                 }}
                 options={sortOptions}
                 isSearchable={false}

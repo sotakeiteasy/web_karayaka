@@ -5,11 +5,10 @@ import { filterAds } from '@/lib/utils';
 
 export function useSearchFilters() {
   const router = useRouter();
-  const [filter, setFilter] = useState<Filter>({});
+  const [filter, setFilter] = useState<Filter>({ sortOption: "price-cheap" });
   const [appliedFilters, setAppliedFilters] = useState({});
   const [searchText, setSearchText] = useState('');
   const [filteredAds, setFilteredAds] = useState<Ad[]>([]);
-  const [sortOption, setSortOption] = useState('price-cheap');
 
   const sortAds = (option: string, adsToSort: Ad[]) => {
     const sortedAds = [...adsToSort];
@@ -30,9 +29,9 @@ export function useSearchFilters() {
   };
 
   const updateResults = useCallback(
-    (currentFilter: Filter, currentSortOption: string, skipUrlUpdate = false) => {
+    (currentFilter: Filter, skipUrlUpdate = false) => {
       const ads = filterAds(currentFilter);
-      setFilteredAds(sortAds(currentSortOption, ads));
+      setFilteredAds(sortAds(currentFilter.sortOption, ads));
 
       if (!skipUrlUpdate) {
         const query: Record<string, string> = {};
@@ -51,6 +50,8 @@ export function useSearchFilters() {
         if (currentFilter.minArea) query.minArea = currentFilter.minArea.toString();
         if (currentFilter.maxArea) query.maxArea = currentFilter.maxArea.toString();
 
+        if (currentFilter.sortOption) query.sortOption = currentFilter.sortOption;
+
         // Save lang after page reload
         if (router.query.lang) {
           query.lang = router.query.lang as string;
@@ -66,7 +67,7 @@ export function useSearchFilters() {
   useEffect(() => {
     if (!router.isReady) return;
 
-    const initialFilter: Filter = {};
+    const initialFilter: Filter = { sortOption: "price-cheap" };
 
     const { type, country, city, district, propertyType, bedroom, address }: {
       type?: 'sale' | 'rent', country?: string, city?: string, district?: string, propertyType?: string, bedroom?: string, address?: string
@@ -89,12 +90,19 @@ export function useSearchFilters() {
     if (maxArea) initialFilter.maxArea = Number(maxArea);
     if (floor) initialFilter.floor = Number(floor);
 
+    const { sortOption: urlSortOption } : {sortOption?: string} = router.query;
+    if (urlSortOption) initialFilter.sortOption = urlSortOption;
+
     setFilter(initialFilter);
-    updateResults(initialFilter, sortOption, true);
-  }, [router.isReady, router.query, sortOption, updateResults]);
+    updateResults(initialFilter, true);
+
+  }, [router.isReady, router.query, updateResults]);
 
   const handleFilterChange = (name: string, value: string | number | string[] | undefined) => {
-    setFilter((prev) => ({ ...prev, [name]: value }));
+    const updatedFilter = { ...filter, [name]: value };
+    setFilter(updatedFilter);
+
+    if (name === 'sortOption') updateResults(updatedFilter);
   };
 
   const applyFilters = () => {
@@ -114,7 +122,7 @@ export function useSearchFilters() {
     });
 
     setAppliedFilters(newFilter);
-    updateResults(newFilter, sortOption);
+    updateResults(newFilter);
   };
 
   const resetFilters = () => {
@@ -127,21 +135,14 @@ export function useSearchFilters() {
     window.location.href = `/search${typeParam}${langParam}`;
   };
 
-  const handleSortOptionChange = (newSortOption: string) => {
-    setSortOption(newSortOption);
-    updateResults(filter, newSortOption);
-  };
-
   return {
     filter,
     appliedFilters,
     searchText,
     setSearchText,
     filteredAds,
-    sortOption,
     handleFilterChange,
     applyFilters,
     resetFilters,
-    handleSortOptionChange,
   };
 }

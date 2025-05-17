@@ -11,4 +11,5 @@ export interface Filter {
   maxArea?: number;
   floor?: number;
   address?: string;
+  sortOption: string;
 }
