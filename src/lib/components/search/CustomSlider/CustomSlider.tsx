@@ -37,13 +37,18 @@ export default function CustomSlider({ ad }: { ad: Ad }) {
     prevArrow: <SamplePrevArrow />,
   };
 
+  
   return (
     <div>
-      <Slider {...settings}>
-        {ad?.images.map((image, index) => (
-          <Image key={index} src={getImageUrl(image)} alt={''} width={400} height={400} priority />
-        ))}
-      </Slider>
+      {ad?.images.length > 1 ?
+        (<Slider {...settings}>
+          {ad?.images.map((image, index) => (
+            <Image key={index} src={getImageUrl(image)} alt={''} width={400} height={400} priority />
+          ))}
+        </Slider>
+        ) : (
+          <Image src={getImageUrl(ad.images[0])} alt={''} width={400} height={400} priority />
+        )}
     </div>
   );
 }
