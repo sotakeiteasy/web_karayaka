@@ -157,13 +157,13 @@
     }
 
     .videoContainer {
-      display: block;
+      display: inline-block;
       border-radius: 15px;
       overflow: hidden;
     }
 
     .video {
-      display: flex;
+      width: 475px;
       height: 100%;
     }
   }
