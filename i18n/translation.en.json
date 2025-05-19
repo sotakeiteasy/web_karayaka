@@ -170,6 +170,7 @@
     "previous": "Previous"
   },
   "ad": {
+    "copy": "copied",
     "property": {
       "area": "Area",
       "squareMeters": "m",

@@ -8,7 +8,8 @@
     width: 1000px;
     display: flex;
     justify-content: space-between;
-    margin: 50px 0;
+    margin-bottom: 30px;
+    margin-top: 50px;
     font-size: 1.1rem;
 
     .rightTitleInfo {
@@ -27,14 +28,49 @@
         align-items: center;
         gap: 10px;
       }
+
+      .id {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+
+        .tooltip {
+          transition: opacity .1s ease;
+          font-size: 1rem;
+          opacity: 0;
+          position: absolute;
+          bottom: -2px;
+          left: 95px;
+          box-shadow: 1px 1px 4px 1px rgb(244, 244, 244);
+          border-radius: 6px;
+          padding: 2px 6px;
+        }
+
+        .tooltip.active {
+          opacity: 1;
+        }
+
+        .copyButton {
+          padding: 0;
+          border: none;
+          background-color: inherit;
+          cursor: pointer;
+        }
+      }
     }
 
     .leftTitleInfo {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.2rem;
-      font-weight: 500;
+      flex-direction: column;
+
+      .price {
+        font-size: 2.2rem;
+        font-weight: 500;
+      }
     }
   }
 
@@ -71,8 +107,9 @@
           }
           span {
             display: flex;
+            align-items: center;
             gap: 5px;
-          }
+          }  
         }
       }
 
@@ -82,7 +119,7 @@
         text-align: left;
         margin: 0 5px 10px 5px;
         height: 30%;
-
+        
         div {
           padding: 10px 0;
 
@@ -113,8 +150,18 @@
           }
         }
 
-        div:first-of-type {
+        .infoBottomLeft {
           border-right: 1px solid $primary-color;
+        }
+
+        .infoBottomRight {
+          // font-size: 1.3rem;
+          // display: flex;
+          // justify-content: center;
+          // align-items: center;
+
+
+          
         }
       }
     }
