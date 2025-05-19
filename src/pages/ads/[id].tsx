@@ -155,13 +155,13 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
                   {ad.rooms}
                 </p>
               )}
-              {ad.floor && (
+              {ad.floorInHouse && (
                 <p>
                   <span>
                     <Icon path={mdiStairs} size={1} />
-                    {t('ad.property.floor')}
+                    {ad.floor ? t('ad.property.floor') : t('ad.property.floors')}
                   </span>
-                  {ad.floor || ''}/{ad.floorInHouse || ''}
+                  {ad.floor && ad.floorInHouse ? `${ad.floor|| ''}/${ad.floorInHouse || ''}` : ad.floorInHouse}
                 </p>
               )}
               <p>

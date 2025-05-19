@@ -120,6 +120,7 @@
       "squareMeters": "м",
       "bedrooms": "Спальни",
       "floor": "Этаж",
+      "floors": "Этажей",
       "type": "Тип",
       "listing": "Тип листинга",
       "buildingAge": "Возраст здания",

@@ -175,6 +175,7 @@
       "squareMeters": "m",
       "bedrooms": "Bedrooms",
       "floor": "Floor",
+      "floors": "Floors",
       "type": "Type",
       "listing": "Listing type",
       "buildingAge": "Building age",
