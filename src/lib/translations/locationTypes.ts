@@ -36,84 +36,84 @@ export const cityTranslations: Record<string, { ru: string; en: string; tr: stri
 };
 
 export const districtTranslations: Record<string, { ru: string; en: string; tr: string }> = {
-  Alanya: {
+  'Alanya': {
     ru: 'Алания',
     en: 'Alanya',
     tr: 'Alanya',
   },
-  Atasehir: {
+  'Atasehir': {
     ru: 'Аташехир',
     en: 'Atasehir',
     tr: 'Ataşehir',
   },
-  Bahcelievler: {
+  'Bahcelievler': {
     ru: 'Бахчелиэвлер',
     en: 'Bahcelievler',
     tr: 'Bahçelievler',
   },
-  Bakirkoy: {
+  'Bakirkoy': {
     ru: 'Бакыркёй',
     en: 'Bakirkoy',
     tr: 'Bakırköy',
   },
-  Besiktas: {
+  'Besiktas': {
     ru: 'Бешикташ',
     en: 'Besiktas',
     tr: 'Beşiktaş',
   },
-  Beykoz: {
+  'Beykoz': {
     ru: 'Бейкоз',
     en: 'Beykoz',
     tr: 'Beykoz',
   },
-  Kadikoy: {
+  'Kadikoy': {
     ru: 'Кадыкёй',
     en: 'Kadikoy',
     tr: 'Kadıköy',
   },
-  Kas: {
+  'Kas': {
     ru: 'Каш',
     en: 'Kas',
     tr: 'Kaş',
   },
-  Maltepe: {
+  'Maltepe': {
     ru: 'Малтепе',
     en: 'Maltepe',
     tr: 'Maltepe',
   },
-  Muratpasa: {
+  'Muratpasa': {
     ru: 'Муратпаша',
     en: 'Muratpasa',
     tr: 'Muratpaşa',
   },
-  Sariyer: {
+  'Sariyer': {
     ru: 'Сарыер',
     en: 'Sariyer',
     tr: 'Sarıyer',
   },
-  Kaynarca: {
+  'Kaynarca': {
     ru: 'Кайнарджа',
     en: 'Kaynarca',
     tr: 'Kaynarca',
   },
-  Kocaali: {
+  'Kocaali': {
     ru: 'Коджаали',
     en: 'Kocaali',
     tr: 'Kocaali',
   },
-  Sile: {
+  'Sile': {
     ru: 'Шиле',
     en: 'Sile',
-    tr: 'Şile'
+    tr: 'Şile',
   },
   'Южный': {
     ru: 'Южный',
-    en: 'South',
-    tr: 'South'
+    en: 'Southern',
+    tr: 'Southern',
   },
   'Северо-Западный': {
     ru: 'Северо-Западный',
-    en: 'northwest',
-    tr: 'northwest'
-  }
+    en: 'Northwestern',
+    tr: 'Northwestern',
+  },
 };

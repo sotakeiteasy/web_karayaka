@@ -73,7 +73,7 @@ function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'e
                 <p>
                   {ad.floorInHouse && (
                     <span>
-                      {ad.floor && ad.floorInHouse ? `${ad.floor|| ''}/${ad.floorInHouse || ''}` : ad.floorInHouse}
+                      {ad.floor && ad.floorInHouse ? `${ad.floor || ''}/${ad.floorInHouse || ''}` : ad.floorInHouse}
                       <Icon path={mdiStairs} size={1} />
                     </span>
                   )}

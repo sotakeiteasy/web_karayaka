@@ -223,7 +223,7 @@
             font-size: 0.9rem;
             overflow: hidden;
             display: -webkit-box;
-            -webkit-line-clamp: 12;
+            -webkit-line-clamp: 8;
             -webkit-box-orient: vertical;
             text-overflow: ellipsis;
             margin-top: 10px;
@@ -396,12 +396,12 @@
 @media (max-width: 400px) {
   .searchBlock {
     .buttonsContainer {
-        flex-direction: column;
+      flex-direction: column;
 
-        .moreButton {
-          // margin-left: 0 !important;
-          padding: 5px !important;
-        }
+      .moreButton {
+        // margin-left: 0 !important;
+        padding: 5px !important;
       }
     }
+  }
 }

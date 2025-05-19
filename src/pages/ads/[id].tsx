@@ -20,7 +20,7 @@ import {
   mdiCalendarMonth,
   mdiChevronRight,
   mdiChevronLeft,
-  mdiIdentifier
+  mdiIdentifier,
 } from '@mdi/js';
 
 import { getAllAds, getAdById, getImageUrl } from '@/lib/utils';
@@ -57,14 +57,11 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
   const location = [countryTranslations[ad.location.country][lang], cityTranslations[ad.location.city][lang]]
     .filter(Boolean)
     .join(', ');
-  
+
   const handleCopy = () => {
-    navigator.clipboard.writeText(ad.id)
-      .then(() => setTooltip(true)); 
-      setTimeout(() => setTooltip(false), 2000);
+    navigator.clipboard.writeText(ad.id).then(() => setTooltip(true));
+    setTimeout(() => setTooltip(false), 2000);
   };
-
-
 
   return (
     <>
@@ -133,25 +130,22 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
                 .filter(Boolean)
                 .join(', ')}
             </p>
-            <p className={styles.id}> 
-              <button className={styles.copyButton} onClick={handleCopy}
-              >
-                  <Icon path={mdiIdentifier} size={1.3}/>
+            <p className={styles.id}>
+              <button className={styles.copyButton} onClick={handleCopy}>
+                <Icon path={mdiIdentifier} size={1.3} />
               </button>
               {ad.id}
-              <span className={`${styles.tooltip} ${tooltip ? styles.active : ""}`}>
-                {t('ad.copy')}
-              </span>
+              <span className={`${styles.tooltip} ${tooltip ? styles.active : ''}`}>{t('ad.copy')}</span>
             </p>
           </div>
           <div className={styles.leftTitleInfo}>
-              <p className={styles.price}>
+            <p className={styles.price}>
               {ad.price.try !== undefined && ad.price.try !== null
                 ? `${new Intl.NumberFormat('ru-RU').format(ad.price.try)} ₺`
                 : ad.price.rub !== undefined && ad.price.rub !== null
                 ? `${new Intl.NumberFormat('ru-RU').format(ad.price.rub)} ₽`
-                  : ''}
-              </p>
+                : ''}
+            </p>
           </div>
         </div>
         <div className={styles.infoAndImage}>
@@ -183,7 +177,7 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
                     <Icon path={mdiStairs} size={1} />
                     {ad.floor ? t('ad.property.floor') : t('ad.property.floors')}
                   </span>
-                  {ad.floor && ad.floorInHouse ? `${ad.floor|| ''}/${ad.floorInHouse || ''}` : ad.floorInHouse}
+                  {ad.floor && ad.floorInHouse ? `${ad.floor || ''}/${ad.floorInHouse || ''}` : ad.floorInHouse}
                 </p>
               )}
               <p>
@@ -242,9 +236,7 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
                     : ''}
                 </ul>
               </div>
-              <div className={styles.infoBottomRight}>
-
-              </div>
+              <div className={styles.infoBottomRight}></div>
             </div>
           </div>
           <div className={styles.mainImage}>

@@ -162,7 +162,6 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
               controls={false}
               /* eslint-disable react/no-unknown-property */
               webkit-playsinline="true"
-              
             >
               <source src={getImageUrl('/videos/About_Us.mp4')} type="video/webm" />
               <source src={getImageUrl('/videos/About_Us.mov')} type="video/mov" />

@@ -5,8 +5,8 @@ export const FILTER_MAPPINGS = {
   },
   cities: {
     antalya: ['Muratpasa', 'Kas', 'Alanya'],
-    istanbul: ['Kadikoy', 'Atasehir', 'Bahcelievler', 'Bakirkoy', 'Besiktas', 'Beykoz', 'Maltepe', 'Sariyer'],
+    istanbul: ['Kadikoy', 'Atasehir', 'Bahcelievler', 'Bakirkoy', 'Besiktas', 'Beykoz', 'Maltepe', 'Sariyer', 'Sile'],
     sakarya: ['Kocaali', 'Kaynarca'],
-    moscow: [],
+    moscow: ['Northwestern', 'Southern'],
   },
 };
