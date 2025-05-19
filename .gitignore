@@ -24,6 +24,8 @@ out.zip
 # misc
 .DS_Store
 *.pem
+/scripts
+/src/data/ads/oldAds.tsx
 
 # debug
 npm-debug.log*

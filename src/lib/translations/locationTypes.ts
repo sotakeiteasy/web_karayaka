@@ -101,4 +101,19 @@ export const districtTranslations: Record<string, { ru: string; en: string; tr: 
     en: 'Kocaali',
     tr: 'Kocaali',
   },
+  Sile: {
+    ru: 'Шиле',
+    en: 'Sile',
+    tr: 'Şile'
+  },
+  'Южный': {
+    ru: 'Южный',
+    en: 'South',
+    tr: 'South'
+  },
+  'Северо-Западный': {
+    ru: 'Северо-Западный',
+    en: 'northwest',
+    tr: 'northwest'
+  }
 };

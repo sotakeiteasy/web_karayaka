@@ -112,13 +112,6 @@ export function useSearchFilters() {
     updateResults(initialFilter, true);
   }, [router.isReady, router.query, updateResults]);
 
-  // const handleFilterChange = (name: string, value: string | number | string[] | undefined) => {
-  //   const updatedFilter = { ...filter, [name]: value };
-  //   setFilter(updatedFilter);
-
-  //   if (name === 'sortOption') updateResults(updatedFilter);
-  // };
-
   const handleFilterChange = (name: string, value: string | number | string[] | undefined) => {
     const updatedFilter = { ...filter, [name]: value };
 

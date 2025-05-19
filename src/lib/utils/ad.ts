@@ -1,11 +1,14 @@
 import { Ad, Filter } from '@/lib/types';
-import { ads } from '@/data/ads/ads';
+import rawAds from '@/data/ads/ads.json';
+
 import {
   propertyTypeTranslations,
   countryTranslations,
   cityTranslations,
   districtTranslations,
 } from '@/lib/translations';
+
+const ads = rawAds as unknown as Ad[];
 
 export function getAllAds() {
   return ads.map((ad) => ({ params: { id: ad.id } }));

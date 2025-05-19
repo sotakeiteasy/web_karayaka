@@ -10,10 +10,12 @@ import { useTranslation, LinkWithLocale } from 'next-export-i18n';
 import Icon from '@mdi/react';
 import { mdiChevronRight, mdiChevronLeft, mdiMapMarkerOutline, mdiBedQueenOutline } from '@mdi/js';
 
-import { ads } from '@/data/ads/ads';
+import rawAds from '@/data/ads/ads.json';
 import { getImageUrl } from '@/lib/utils';
 import { cityTranslations, districtTranslations, propertyTypeTranslations } from '@/lib/translations';
 import { Ad } from '@/lib/types';
+
+const ads = rawAds as unknown as Ad[];
 
 const NextArrow = ({ onClick }: { onClick?: () => void }) => {
   return (
