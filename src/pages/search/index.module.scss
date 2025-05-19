@@ -244,7 +244,7 @@
   .filterBox {
     flex-direction: row;
     gap: 10px;
-    width: 400px !important;
+    max-width: 100%;
 
     .filter {
       height: 50px;
@@ -255,6 +255,7 @@
     .filterRow {
       margin-left: 0px !important;
       max-width: 100% !important;
+      width: 100%;
     }
 
     .filterActions {
@@ -272,17 +273,20 @@
     padding: 0;
 
     .controlPanel {
-      justify-self: center;
-      width: 400px !important;
+      justify-content: flex-end;
+      width: 100% !important;
 
       .searchPanel {
         width: 100%;
         flex-direction: column;
-        align-self: center;
+        align-items: flex-end;
 
         .searchButton {
           width: 200px;
-          align-self: self-end;
+        }
+
+        input {
+          width: 100%;
         }
       }
 
@@ -302,16 +306,10 @@
 @media (max-width: 400px) {
   .main {
     max-width: 100% !important;
+    padding: 10px 10px !important;
   }
 
   .filterBox {
     margin-top: 0px !important;
-    width: 350px !important;
-  }
-
-  .searchBlock {
-    .controlPanel {
-      width: 350px !important;
-    }
   }
 }
