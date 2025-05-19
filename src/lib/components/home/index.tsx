@@ -111,7 +111,7 @@ export function Home({ allBlogData, metaTags }: { allBlogData: Record<string, Po
                 <Icon path={mdiMagnify} size={1.5} />
               </button>
             </div>
-            <div>
+            <div className={styles.buttonsContainer}>
               {lang === 'ru' ? (
                 <button
                   className={`${styles.toggleButton} ${styles.toggleButtonRu} ${

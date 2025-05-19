@@ -392,3 +392,16 @@
     }
   }
 }
+
+@media (max-width: 400px) {
+  .searchBlock {
+    .buttonsContainer {
+        flex-direction: column;
+
+        .moreButton {
+          // margin-left: 0 !important;
+          padding: 5px !important;
+        }
+      }
+    }
+}
