@@ -203,5 +203,10 @@
         "free": "Free"
       }
     }
+  },
+  "cookies": {
+    "disclaimer": "By staying on our site, you agree to the use of cookies.",
+    "accept": "Accept",
+    "policy": "More"
   }
 }

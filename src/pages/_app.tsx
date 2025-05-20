@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { Montserrat } from 'next/font/google';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { CookieConsent } from '@/lib/components';
 
 const Header = dynamic(() => import('@/lib/components').then((mod) => mod.Header), { ssr: false });
 const Footer = dynamic(() => import('@/lib/components').then((mod) => mod.Footer), { ssr: false });
@@ -50,6 +51,7 @@ function App({ Component, pageProps }: AppProps) {
 
       <Header />
       <Component {...pageProps} />
+      <CookieConsent />
       <Footer />
     </div>
   );
