@@ -1,6 +1,5 @@
 @use '@styles/variables' as *;
 
-// Оверлей для затемнения фона
 .overlay {
   position: fixed;
   top: 0;
@@ -8,7 +7,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 1);
-  z-index: 1000; // Должен быть меньше, чем у меню, но больше чем у остального контента
+  z-index: 1000; 
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -30,7 +29,6 @@
   .nav {
     display: flex;
     align-items: center;
-    // gap: 40px;
 
     .logo {
       display: flex;
@@ -42,7 +40,7 @@
     }
 
     .burgerButton {
-      display: none; /* Скрыта на десктопе */
+      display: none; 
       flex-direction: column;
       justify-content: space-between;
       width: 30px;
@@ -77,7 +75,6 @@
 
       .navLink {
         padding: 0 30px;
-        // margin:
         height: 45px;
         line-height: 45px;
         position: relative;
@@ -188,41 +185,58 @@
 
 .dropdownMenu {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+
   top: 100%;
-  right: 0;
+  right: 7px;
   z-index: 1000;
-  margin-top: 5px;
-  min-width: 100px;
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  border-radius: 10px;
   overflow: hidden;
+  background-color: white;
+  box-shadow: $shadow;
+  padding: 5px 15px;
 }
 
 .menuItem {
-  display: block;
-  width: 100%;
-  padding: 10px 15px;
+  color: $primary-color;
+  width: fit-content;
+  padding: 10px 0px;
   text-align: left;
   background: none;
   border: none;
   cursor: pointer;
   transition: background-color 0.2s;
+  overflow: hidden;
+  position: relative;
+  transition: border .2s ease-out;
+  font-size: 1rem;
 
   &:hover {
-    background-color: #f5f5f5;
+    color: $secondary-color;
   }
 
-  &.active {
-    font-weight: bold;
-    background-color: #f0f0f0;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 7px;
+    width: 0;
+    height: 1px;
+    background-color: $secondary-color;
+  }
+
+  &:hover::after {
+    transition: all .2s ease-in;
+    width: 100%;
   }
 }
 
 @media (max-width: 1280px) {
   .nav {
     .logo {
-      margin-right: 50px !important;
+      margin-right: 100px !important;
       font-size: 1.5rem;
     }
     .navLink {
@@ -232,13 +246,7 @@
   }
 
   .buttons {
-    margin-left: 50px !important;
-    gap: 5px;
-
-    .button {
-      padding: 10px 15px;
-      font-size: 1rem;
-    }
+    margin-left: 100px !important;
   }
 }
 
@@ -277,10 +285,8 @@
         background-color: transparent;
         border: none;
         position: fixed;
-        // transform: translateX(700%);
         right: -60px;
         top: 20px;
-        // color: red;
         z-index: 20000;
 
         svg {
@@ -390,7 +396,6 @@
     }
   }
 
-  // Показываем мобильные элементы на мобильных устройствах
   .title,
   .mobileLangSwitcher,
   .contacts,
@@ -399,12 +404,6 @@
     display: flex !important;
   }
 }
-
-// body.menu-open {
-//   overflow: hidden;
-//   position: fixed;
-//   width: 100%;
-// }
 
 @media (max-width: 600px) {
   .nav {
