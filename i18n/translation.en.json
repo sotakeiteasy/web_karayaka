@@ -139,7 +139,12 @@
       "label": "Your message",
       "placeholder": "Describe what you're looking for: number of rooms, floor, must-have features. The more details you provide, the better we can help you find your perfect match!"
     },
-    "submit": "Send",
+    "submit": "Submit",
+    "agreement": {
+      "1": "By clicking the «Submit» button, you agree to",
+      "2": "Privacy Policy",
+      "3": "and consent to the processing of your personal data"
+    },
     "thankYou": {
       "title": "Thank you!",
       "message": "We've received your request and will contact you soon."

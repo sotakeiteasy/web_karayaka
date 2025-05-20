@@ -197,7 +197,17 @@
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: $primary-color;
+      background-color: $secondary-color;
+    }
+  }
+
+  .agreement {
+    margin-top: 20px;
+    font-size: .8rem;
+    text-align: center;
+
+    a {
+      text-decoration: underline;
     }
   }
 }
