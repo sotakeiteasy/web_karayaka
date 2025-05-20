@@ -203,15 +203,16 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
                   {ad.age}
                 </p>
               )}
-              <p>
+              { ad.situation && (<p>
                 <span>
                   <Icon path={mdiKeyChain} size={1} />
                   {t('ad.property.condition')}
                 </span>
                 {t(`ad.property.situation.${ad.situation}`)}
               </p>
+              )}
             </div>
-            <div className={styles.infoBottom}>
+            {(ad.parking || ad.bathroom) && (<div className={styles.infoBottom}>
               <div className={styles.infoBottomLeft}>
                 <ul>
                   {ad.parking === 'closed' && (
@@ -237,7 +238,7 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
                 </ul>
               </div>
               <div className={styles.infoBottomRight}></div>
-            </div>
+            </div>)}
           </div>
           <div className={styles.mainImage}>
             <CustomSlider ad={ad} />
