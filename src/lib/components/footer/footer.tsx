@@ -72,7 +72,7 @@ export function Footer() {
         </p>
         <div className={styles.legalLinks}>
           <a
-            href="https://www.privacypolicies.com/live/63ae38e1-d9a6-4d30-9a80-b8aa1a2e729c"
+            href="/privacyPolicy/"
             target="_blank"
             rel="noopener noreferrer"
           >
