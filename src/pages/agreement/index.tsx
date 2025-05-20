@@ -7,12 +7,14 @@ export function getStaticProps() {
   const content = fs.readFileSync(filePath, 'utf-8');
 
   return {
-    props: { content }
+    props: { content },
   };
 }
 
-export default function AgreementPage({ content } : {content: HTMLElement }) {
+export default function AgreementPage({ content }: { content: HTMLElement }) {
   return (
-    <div className={styles.agreement}><div dangerouslySetInnerHTML={{ __html: content }} /></div>
+    <div className={styles.agreement}>
+      <div dangerouslySetInnerHTML={{ __html: content }} />
+    </div>
   );
 }

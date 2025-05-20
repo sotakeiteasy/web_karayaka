@@ -263,11 +263,13 @@ export function ContactUs() {
           />
 
           <input className={styles.formBtn} type="submit" value={t('form.submit')} />
-            <p className={styles.agreement}>
-              {t("form.agreement.1") }&nbsp;
-              <a href="/agreement/" target="_blank" rel="noopener noreferrer">{t("form.agreement.2") }</a>
-              &nbsp;{t("form.agreement.3") }
-            </p>
+          <p className={styles.agreement}>
+            {t('form.agreement.1')}&nbsp;
+            <a href="/agreement/" target="_blank" rel="noopener noreferrer">
+              {t('form.agreement.2')}
+            </a>
+            &nbsp;{t('form.agreement.3')}
+          </p>
         </>
       )}
     </form>

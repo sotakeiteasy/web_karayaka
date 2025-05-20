@@ -1,57 +1,56 @@
 @use '@styles/variables' as *;
 
 .agreement {
-    color: #000;
-    background: #fff;
-    padding: 2rem 1.5rem 0 1.5rem;
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
+  color: #000;
+  background: #fff;
+  padding: 2rem 1.5rem 0 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  p:first-of-type {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: right;
+  }
+
+  p:nth-of-type(2) {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  /* Link styling inside module */
+  a {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  /* Responsive text size */
+  @media (max-width: 600px) {
+    padding: 1rem;
 
     p {
-        margin-bottom: 1rem;
-        line-height: 1.6;
-        font-size: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
     }
+  }
 
-    p:first-of-type {
-        font-size: 1.1rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        text-align: right;
-    }
-
-
-    p:nth-of-type(2) {
-        font-size: 1rem;
-        font-weight: 700;
-        margin-bottom: 3rem;
-        text-align: center;
-    }
-
-    /* Link styling inside module */
-    a {
-        text-decoration: underline;
-        cursor: pointer;
-    }
-
-    /* Responsive text size */
-    @media (max-width: 600px) {
-        padding: 1rem;
-
-        p {
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-    }
-
-    &::before {
-        position: absolute;
-        content: "";
-        left: 0;
-        top: 250px;
-        width: 2px;
-        background-color: $primary-color;
-        height: calc(100% - 270px);
-    }
+  &::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 250px;
+    width: 2px;
+    background-color: $primary-color;
+    height: calc(100% - 270px);
+  }
 }

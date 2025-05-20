@@ -203,42 +203,45 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
                   {ad.age}
                 </p>
               )}
-              { ad.situation && (<p>
-                <span>
-                  <Icon path={mdiKeyChain} size={1} />
-                  {t('ad.property.condition')}
-                </span>
-                {t(`ad.property.situation.${ad.situation}`)}
-              </p>
+              {ad.situation && (
+                <p>
+                  <span>
+                    <Icon path={mdiKeyChain} size={1} />
+                    {t('ad.property.condition')}
+                  </span>
+                  {t(`ad.property.situation.${ad.situation}`)}
+                </p>
               )}
             </div>
-            {(ad.parking || ad.bathroom) && (<div className={styles.infoBottom}>
-              <div className={styles.infoBottomLeft}>
-                <ul>
-                  {ad.parking === 'closed' && (
-                    <li>
-                      <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                      {t('ad.property.closedParking')}
-                    </li>
-                  )}
-                  {ad.parking === 'open' && (
-                    <li>
-                      <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                      {t('ad.property.openParking')}
-                    </li>
-                  )}
-                  {ad.bathroom
-                    ? ad.bathroom > 1 && (
-                        <li>
-                          <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
-                          {ad.bathroom} {t('ad.property.bathrooms')}
-                        </li>
-                      )
-                    : ''}
-                </ul>
+            {(ad.parking || ad.bathroom) && (
+              <div className={styles.infoBottom}>
+                <div className={styles.infoBottomLeft}>
+                  <ul>
+                    {ad.parking === 'closed' && (
+                      <li>
+                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
+                        {t('ad.property.closedParking')}
+                      </li>
+                    )}
+                    {ad.parking === 'open' && (
+                      <li>
+                        <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
+                        {t('ad.property.openParking')}
+                      </li>
+                    )}
+                    {ad.bathroom
+                      ? ad.bathroom > 1 && (
+                          <li>
+                            <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
+                            {ad.bathroom} {t('ad.property.bathrooms')}
+                          </li>
+                        )
+                      : ''}
+                  </ul>
+                </div>
+                <div className={styles.infoBottomRight}></div>
               </div>
-              <div className={styles.infoBottomRight}></div>
-            </div>)}
+            )}
           </div>
           <div className={styles.mainImage}>
             <CustomSlider ad={ad} />
