@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 60px;
+  margin: 60px 0;
 
   .article {
     display: flex;
@@ -26,13 +26,11 @@
       font-weight: 600;
     }
 
-    /* Стили для правильного отображения Markdown-контента */
     p {
       margin-bottom: 1em;
       line-height: 1.6;
     }
 
-    /* Добавляем отступы между всеми блочными элементами */
     h1,
     h2,
     h3,
@@ -46,7 +44,6 @@
       margin-bottom: 0.5em;
     }
 
-    /* Стили для списков */
     ul,
     ol {
       padding-left: 2em;
@@ -57,7 +54,6 @@
       margin-bottom: 0.5em;
     }
 
-    /* Стили для блоков кода */
     pre {
       background-color: #f5f5f5;
       padding: 1em;
@@ -66,7 +62,6 @@
       margin: 1em 0;
     }
 
-    /* Стили для цитат */
     blockquote {
       border-left: 4px solid $primary-color;
       padding-left: 1em;
@@ -74,7 +69,6 @@
       margin-left: 0;
     }
 
-    /* Стили для таблиц */
     table {
       border-collapse: collapse;
       width: 100%;
@@ -107,28 +101,45 @@
       display: flex;
       gap: 15px;
       margin-bottom: 20px;
+    }
 
-      button {
-        cursor: pointer;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 5px;
-        transition: all 0.3s ease;
+    .languageSwitcher [data-language-switcher] {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05rem;
+      padding: 0.5rem;
+      position: relative;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s ease-in;
 
-        &:hover {
-          background-color: #f5f5f5;
-        }
-      }
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
 
-      .activeLocale {
-        font-weight: bold;
-        background-color: $primary-color;
-        color: white;
+    .languageSwitcher [data-is-current='true'] {
+      cursor: default;
+      font-weight: bold;
+      background-color: $primary-color;
+      color: white;
+    }
 
-        &:hover {
-          background-color: $secondary-color;
-        }
-      }
+    .languageSwitcher [data-language-switcher]::after {
+      content: '';
+      bottom: 7px;
+      left: 7px;
+      width: 0;
+      height: 1px;
+      background-color: #e0e0e0;
+      position: absolute;
+    }
+
+    .languageSwitcher [data-is-current='false']:hover::after {
+      width: calc(100% - 15px);
+      background-color: $secondary-color;
+      transition: all 0.25s ease-in;
     }
   }
 }
@@ -152,13 +163,11 @@
 
       width: 100%;
       padding: 15px;
-      /* Стили для правильного отображения Markdown-контента */
       p {
         margin-bottom: 0.5em !important;
         line-height: 1.5;
       }
 
-      /* Добавляем отступы между всеми блочными элементами */
       h1,
       h2,
       h3,

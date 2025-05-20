@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import styles from './CookiesConsent.module.scss';
 import { useTranslation } from 'next-export-i18n';
 
-export function CookieConsent () {
+export function CookieConsent() {
   const [visible, setVisible] = useState(false);
   const { t } = useTranslation();
 
@@ -33,4 +33,4 @@ export function CookieConsent () {
       </button>
     </div>
   );
-};
+}

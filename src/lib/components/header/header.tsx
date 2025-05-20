@@ -53,14 +53,14 @@ export function Header() {
       active: router.pathname.startsWith('/about-us'),
     },
     {
-      href: '/custom-offers/',
+      href: '/custom-offers',
       text: t('header.customOffers'),
       active: router.pathname.startsWith('/custom-offers'),
     },
     {
-      href: '/blog/',
+      href: '/blog',
       text: t('header.blog'),
-      active: router.pathname.startsWith('/blog/'),
+      active: router.pathname.startsWith('/blog'),
     },
   ];
 

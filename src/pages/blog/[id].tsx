@@ -74,12 +74,8 @@ export default function Post({ postData, metaTags }: { postData: LocalizedPostDa
           <Date dateString={localizedPostData.date} />
           <br />
           <div className={styles.languageSwitcher}>
-            <button className={lang === 'ru' ? styles.activeLocale : ''}>
-              <LanguageSwitcher lang="ru">RU</LanguageSwitcher>
-            </button>
-            <button className={lang === 'en' ? styles.activeLocale : ''}>
-              <LanguageSwitcher lang="en">EN</LanguageSwitcher>
-            </button>
+            <LanguageSwitcher lang="ru">RU</LanguageSwitcher>
+            <LanguageSwitcher lang="en">EN</LanguageSwitcher>
           </div>
           <br />
           {localizedPostData.contentHtml && (
