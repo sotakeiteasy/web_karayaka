@@ -4,6 +4,7 @@
   position: fixed;
   bottom: 10px;
   left: 10px;
+  margin-right: 10px;
   background-color: white;
   box-shadow: $shadow;
   border-radius: 14px;
@@ -16,6 +17,7 @@
 
   @media (max-width: 768px) {
     flex-direction: column;
+
   }
 
   &.active {

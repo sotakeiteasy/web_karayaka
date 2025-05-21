@@ -325,11 +325,11 @@
         justify-content: start;
       }
 
-      div {
+      .buttonsContainer {
         justify-content: flex-end;
         gap: 20px;
 
-        button {
+        .toggleButton, .moreButton {
           margin-left: 0 !important;
         }
       }
@@ -383,13 +383,13 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 460px) {
   .searchBlock {
     .buttonsContainer {
       flex-direction: column;
 
       .moreButton {
-        padding: 5px !important;
+        padding: 10px !important;
       }
     }
   }
