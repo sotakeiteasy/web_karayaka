@@ -155,16 +155,20 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
           <div className={styles.videoContainer}>
             <video
               className={styles.video}
+              loop
               autoPlay
               muted
+              preload="auto"
+              height={875}
+              width={475}
               playsInline
-              loop
               controls={false}
               /* eslint-disable react/no-unknown-property */
               webkit-playsinline="true"
             >
               <source src={getImageUrl('/videos/About_Us.mp4')} type="video/webm" />
               <source src={getImageUrl('/videos/About_Us.mov')} type="video/mov" />
+              <source src={getImageUrl('/videos/About_Us_fallback.mp4')} type="video/mov" />
             </video>
           </div>
         </div>
