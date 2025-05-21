@@ -329,7 +329,8 @@
         justify-content: flex-end;
         gap: 20px;
 
-        .toggleButton, .moreButton {
+        .toggleButton,
+        .moreButton {
           margin-left: 0 !important;
         }
       }
