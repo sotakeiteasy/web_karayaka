@@ -1,9 +1,9 @@
 import Icon from '@mdi/react';
 import { mdiMapMarkerOutline, mdiIdentifier } from '@mdi/js';
-import styles from '../id.module.scss';
+import styles from '@/pages/ads/id.module.scss';
 import { countryTranslations, cityTranslations, districtTranslations } from '@/lib/translations';
 import { Ad } from '@/lib/types';
-import { getPropertyTitle } from '../utils/formatters';
+import { getPropertyTitle } from '../../utils/ads/formatters';
 
 interface Props {
   ad: Ad;
@@ -13,7 +13,7 @@ interface Props {
   onCopy: () => void;
 }
 
-export default function TitleInfo({ ad, lang, t, tooltip, onCopy }: Props) {
+export function TitleInfo({ ad, lang, t, tooltip, onCopy }: Props) {
   const typeStatus = ad.type === 'sale' ? t('ad.property.titleForSale') : t('ad.property.titleForRent');
 
   const propertyInfo = getPropertyTitle(ad, lang, t);

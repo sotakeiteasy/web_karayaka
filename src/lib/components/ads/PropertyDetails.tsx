@@ -10,7 +10,7 @@ import {
   mdiCalendarMonth,
   mdiCircleSmall,
 } from '@mdi/js';
-import styles from '../id.module.scss';
+import styles from '@/pages/ads/id.module.scss';
 import { Ad } from '@/lib/types';
 import { propertyTypeTranslations } from '@/lib/translations';
 
@@ -20,7 +20,7 @@ interface Props {
   t: any;
 }
 
-export default function PropertyDetails({ ad, lang, t }: Props) {
+export function PropertyDetails({ ad, lang, t }: Props) {
   return (
     <div className={styles.info}>
       <div className={styles.infoTop}>

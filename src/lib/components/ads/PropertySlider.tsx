@@ -3,11 +3,11 @@ import Slider from 'react-slick';
 import Image from 'antd/lib/image';
 import Icon from '@mdi/react';
 import { mdiChevronRight, mdiChevronLeft } from '@mdi/js';
-import styles from '../id.module.scss';
+import styles from '@/pages/ads/id.module.scss';
 import { Ad } from '@/lib/types';
 import { getImageUrl } from '@/lib/utils';
 
-export default function PropertySlider({ ad }: { ad: Ad }) {
+export function PropertySlider({ ad }: { ad: Ad }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const sliderRef = useRef<Slider | null>(null);
 

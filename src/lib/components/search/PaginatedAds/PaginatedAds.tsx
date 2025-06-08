@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import Icon from '@mdi/react';
 import { mdiMapMarkerOutline, mdiBedQueenOutline, mdiStairs } from '@mdi/js';
 
-import CustomSlider from '../CustomSlider/CustomSlider';
+import CustomSlider from './CustomSlider/CustomSlider';
 import { Ad } from '@/lib/types';
 import {
   countryTranslations,

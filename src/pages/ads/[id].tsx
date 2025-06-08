@@ -9,9 +9,8 @@ import { getAllAds, getAdById, getImageUrl } from '@/lib/utils';
 import { ContactUs } from '@/lib/components';
 import { Ad, MetaTags } from '@/lib/types';
 
-import { getLocationString, getPropertyTitle } from './utils/formatters';
-
-import { TitleInfo, PropertyDetails, PropertySlider } from './components';
+import { getLocationString, getPropertyTitle } from '@/lib/utils';
+import { TitleInfo, PropertyDetails, PropertySlider } from '@/lib/components';
 
 export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags }) {
   const { t } = useTranslation();
