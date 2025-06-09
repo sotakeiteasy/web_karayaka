@@ -16,6 +16,7 @@ import {
   districtTranslations,
   propertyTypeTranslations,
 } from '@/lib/translations';
+import { getPropertyTitle } from '@/lib/utils';
 
 function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'en' }) {
   const { t } = useTranslation();
@@ -142,11 +143,61 @@ export function PaginatedAds({ itemsPerPage, ads = [] }: { itemsPerPage: number;
                 ' ' +
                 (listingType === SearchType.Rent ? t('ad.property.forRentStatus') : t('ad.property.forSaleStatus')),
               'numberOfItems': currentAds.length,
-              'itemListElement': currentAds.map((ad, index) => ({
-                '@type': 'ListItem',
-                'position': index + 1,
-                'url': `https://karayaka.ru/${ad.type}/${ad.id}`,
-              })),
+              'itemListElement': currentAds.map((ad) => {
+                return {
+                  '@type': 'Product',
+                  'url': `https://karayaka.ru/${ad.type}/${ad.id}`,
+                  'name': getPropertyTitle(ad, lang, t),
+                  'description': ad.description?.[lang] || '',
+                  'image': `https://karayaka.ru${ad.images?.[0]}`,
+                  'offers': {
+                    '@type': 'Offer',
+                    'price': ad.price.try || ad.price.rub,
+                    'priceCurrency': ad.price.try ? 'TRY' : 'RUB',
+                    'availability': 'https://schema.org/InStock',
+                    'url': `https://karayaka.ru/${ad.type}/${ad.id}`,
+                  },
+                  'additionalProperty': [
+                    ad.area && {
+                      '@type': 'PropertyValue',
+                      'name': t('ad.property.area'),
+                      'value': ad.area,
+                      'unitCode': 'MTK',
+                    },
+                    ad.rooms && {
+                      '@type': 'PropertyValue',
+                      'name': t('ad.property.room'),
+                      'value': ad.rooms,
+                    },
+                    ad.floor && {
+                      '@type': 'PropertyValue',
+                      'name': t('ad.property.floor'),
+                      'value': ad.floor,
+                    },
+                    ad.floorInHouse && {
+                      '@type': 'PropertyValue',
+                      'name': t('ad.property.floors'),
+                      'value': ad.floorInHouse,
+                    },
+                    ad.propertyType && {
+                      '@type': 'PropertyValue',
+                      'name': t('ad.property.type'),
+                      'value': propertyTypeTranslations[ad.propertyType][lang],
+                    },
+                    ad.location && {
+                      '@type': 'PropertyValue',
+                      'name': t('ad.property.location'),
+                      'value': [
+                        countryTranslations[ad.location.country][lang],
+                        cityTranslations[ad.location.city][lang],
+                        ad.location.district ? districtTranslations[ad.location.district]?.[lang] : null,
+                      ]
+                        .filter(Boolean)
+                        .join(', '),
+                    },
+                  ].filter(Boolean),
+                };
+              }),
             }),
           }}
         />

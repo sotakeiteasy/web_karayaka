@@ -6,7 +6,7 @@ import { useLanguageQuery } from 'next-export-i18n';
 import Icon from '@mdi/react';
 import { mdiPhone, mdiEmail, mdiWhatsapp } from '@mdi/js';
 
-import { ContactUs, CustomOffersSchema } from '@/lib/components';
+import { ContactUs } from '@/lib/components';
 import { contactInfo } from '@/lib/constants/contactInfo';
 import { getImageUrl } from '@/lib/utils';
 import { MetaTags } from '@/lib/types';
@@ -37,12 +37,6 @@ export default function CustomOffers({ metaTags }: { metaTags: MetaTags }) {
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
       </Head>
-
-      <CustomOffersSchema
-        url="https://karayaka.ru/custom-offers"
-        description={meta.description}
-        contacts={contactInfo}
-      />
 
       <main className={styles.main}>
         <div className={styles.formContainer}>

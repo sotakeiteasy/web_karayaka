@@ -118,7 +118,6 @@ export async function getStaticProps() {
     allBlogData[lang] = await getSortedPostsData(lang);
   }
 
-  // Предварительно загружаем переводы для мета-тегов
   const metaTags = {
     ru: {
       title: 'Блог - Караяка | Статьи о недвижимости в Турции и России',

@@ -8,7 +8,7 @@ import { mdiMagnify } from '@mdi/js';
 
 import styles from './index.module.scss';
 import SimpleSlider from './SimpleSlider/SimpleSlider';
-import { ContactUs, OrganizationSchema } from '@/lib/components';
+import { ContactUs } from '@/lib/components';
 import { getImageUrl } from '@/lib/utils';
 import { PostData } from '@/lib/types';
 import { MetaTags } from '@/lib/types';
@@ -53,13 +53,6 @@ export function Home({ allBlogData, metaTags }: { allBlogData: Record<string, Po
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content="ru_RU" />
       </Head>
-
-      <OrganizationSchema
-        name="Karayaka"
-        description={meta.description}
-        logo="https://karayaka.ru/logo.png"
-        url="https://karayaka.ru"
-      />
 
       <main className={styles.main}>
         <div className={styles.mainImageContainer}>

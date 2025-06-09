@@ -8,7 +8,6 @@ import Icon from '@mdi/react';
 import { mdiChevronRight } from '@mdi/js';
 
 import { getImageUrl } from '@/lib/utils';
-import { OrganizationSchema, FAQPageSchema } from '@/lib/components';
 import { MetaTags } from '@/lib/types';
 
 export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
@@ -43,11 +42,6 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
     setActiveKey(key);
   }
 
-  const faqItems = Object.keys(questionsFAQ).map((key) => ({
-    question: questionsFAQ[key as FAQKey],
-    answer: answersFAQ[key as FAQKey],
-  }));
-
   return (
     <>
       <Head>
@@ -69,15 +63,6 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
       </Head>
-
-      <OrganizationSchema
-        name="Karayaka"
-        description={t('aboutUs.meta.description')}
-        logo="https://karayaka.ru/logo.png"
-        url="https://karayaka.ru/about-us"
-      />
-
-      <FAQPageSchema questions={faqItems} pageUrl="https://karayaka.ru/about-us" />
 
       <main className={styles.main}>
         <div className={styles.sloganBlock}>
