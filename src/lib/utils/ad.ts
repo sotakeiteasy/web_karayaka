@@ -11,7 +11,10 @@ import {
 const ads = rawAds as unknown as Ad[];
 
 export function getAllAds() {
-  return ads.map((ad) => ({ params: { id: ad.id } }));
+  return ads.map((ad) => ({
+    id: ad.id,
+    type: ad.type,
+  }));
 }
 
 export function getAdById(id: string): Ad | undefined {

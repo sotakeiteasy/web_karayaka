@@ -1,16 +1,16 @@
 import Head from 'next/head';
-import styles from './id.module.scss';
+import styles from './index.module.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import React, { useState } from 'react';
 import { useTranslation, useLanguageQuery } from 'next-export-i18n';
 
-import { getAllAds, getAdById, getImageUrl } from '@/lib/utils';
+import { getImageUrl } from '@/lib/utils';
 import { ContactUs } from '@/lib/components';
 import { Ad, MetaTags } from '@/lib/types';
 
 import { getLocationString, getPropertyTitle } from '@/lib/utils';
-import { TitleInfo, PropertyDetails, PropertySlider } from '@/lib/components';
+import { TitleInfo, PropertyDetails, PropertySlider } from './components';
 
 export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags }) {
   const { t } = useTranslation();
@@ -67,40 +67,4 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
       </div>
     </>
   );
-}
-
-export function getStaticPaths() {
-  const ads = getAllAds();
-
-  const paths = ads.map((ad) => ({
-    params: { id: ad.params.id },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }: { params: { id: string } }) {
-  const ad = getAdById(params.id);
-
-  const metaTags = {
-    ru: {
-      description: 'Подробная информация о недвижимости в {location}. Актуальные цены, фотографии, детальное описание.',
-      keywords: 'недвижимость, купить, аренда, квартира, вилла, дом, Турция, Россия',
-    },
-    en: {
-      description:
-        'Detailed information about real estate in {location}. Current prices, photos, and comprehensive description.',
-      keywords: 'real estate, buy, rent, apartment, villa, house, Turkey, Russia',
-    },
-  };
-
-  return {
-    props: {
-      ad,
-      metaTags,
-    },
-  };
 }

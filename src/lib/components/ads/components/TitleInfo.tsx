@@ -1,9 +1,9 @@
 import Icon from '@mdi/react';
 import { mdiMapMarkerOutline, mdiIdentifier } from '@mdi/js';
-import styles from '@/pages/ads/id.module.scss';
+import styles from '../index.module.scss';
 import { countryTranslations, cityTranslations, districtTranslations } from '@/lib/translations';
 import { Ad, SearchType } from '@/lib/types';
-import { getPropertyTitle } from '../../utils/ads/formatters';
+import { getPropertyTitle } from '@/lib/utils/ads/formatters';
 
 interface Props {
   ad: Ad;
