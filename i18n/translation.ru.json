@@ -81,6 +81,7 @@
     "header": "Предложение для вас"
   },
   "search": {
+    "name": "Объекты недвижимости",
     "photoAlt": "Фотография",
     "header": "Поиск",
     "filters": {
@@ -118,6 +119,7 @@
   "ad": {
     "copy": "скопировано",
     "property": {
+      "location": "Локация",
       "area": "Площадь",
       "squareMeters": "м",
       "bedrooms": "Спальни",

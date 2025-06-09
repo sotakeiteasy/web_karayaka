@@ -3,12 +3,13 @@ import ReactPaginate from 'react-paginate';
 import { useState, useEffect } from 'react';
 import { useTranslation, LinkWithLocale, useLanguageQuery } from 'next-export-i18n';
 import { useRouter } from 'next/router';
+import Head from 'next/head';
 
 import Icon from '@mdi/react';
 import { mdiMapMarkerOutline, mdiBedQueenOutline, mdiStairs } from '@mdi/js';
 
 import CustomSlider from './CustomSlider/CustomSlider';
-import { Ad } from '@/lib/types';
+import { Ad, SearchType } from '@/lib/types';
 import {
   countryTranslations,
   cityTranslations,
@@ -125,8 +126,31 @@ export function PaginatedAds({ itemsPerPage, ads = [] }: { itemsPerPage: number;
     });
   };
 
+  const listingType = router.pathname.split('/')[1] as 'rent' | 'buy';
+
   return (
     <>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'ItemList',
+              'name':
+                t('search.name') +
+                ' ' +
+                (listingType === SearchType.Rent ? t('ad.property.forRentStatus') : t('ad.property.forSaleStatus')),
+              'numberOfItems': currentAds.length,
+              'itemListElement': currentAds.map((ad, index) => ({
+                '@type': 'ListItem',
+                'position': index + 1,
+                'url': `https://karayaka.ru/${ad.type}/${ad.id}`,
+              })),
+            }),
+          }}
+        />
+      </Head>
       <Items currentItems={currentAds} locale={lang} />
       {pageCount > 1 && (
         <ReactPaginate

@@ -30,7 +30,7 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
       </Head>
-      <Search type={SearchType.Buy} />
+      <Search type={SearchType.Rent} />
     </>
   );
 }

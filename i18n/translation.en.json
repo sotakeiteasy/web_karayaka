@@ -82,6 +82,7 @@
     "header": "Offer for you"
   },
   "search": {
+    "name": "Real estate objects",
     "photoAlt": "Photo",
     "header": "Search",
     "filters": {
@@ -119,6 +120,7 @@
   "ad": {
     "copy": "copied",
     "property": {
+      "location": "Place",
       "area": "Area",
       "squareMeters": "m",
       "bedrooms": "Bedrooms",
