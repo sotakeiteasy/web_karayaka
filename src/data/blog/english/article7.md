@@ -4,7 +4,7 @@ date: '2025-03-31'
 ---
 
 A Title Cancellation and Registration Lawsuit is a legal action filed to cancel unlawfully or improperly registered title deeds and to correct the land registry in favor of the rightful owner. These lawsuits are typically initiated by individuals who claim that the land registry does not reflect the actual ownership status. No changes can be made to the land registry until the court decision becomes final.
-<img src="https://karayaka.ru/images/article7.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/images/articles/article7.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Who Can File a Title Cancellation and Registration Lawsuit?
 
@@ -24,7 +24,7 @@ These lawsuits must be filed in the civil court of first instance located in the
 - Adverse Possession and Occupation: Individuals who have continuously possessed and used the property like an owner for 20 years may request title registration.
 - Transfer by Forged Power of Attorney: Title deeds transferred using a forged power of attorney can be annulled through this lawsuit.
 
-<img src="https://karayaka.ru/images/article7.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/images/articles/article7.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Competent Court in Title Cancellation and Registration Lawsuits
 

@@ -4,7 +4,7 @@ date: '2025-03-31'
 ---
 
 Договор аренды — это юридический документ, содержащий обязательства как для арендатора, так и для арендодателя. Чтобы защититься от риска неуплаты арендных платежей, арендодатели часто требуют поручителя. Поручительство — это юридическая гарантия, при которой поручитель берет на себя обязательство погасить долг арендатора в случае его неуплаты. Однако перед подписанием поручительства необходимо учитывать ряд важных аспектов.
-<img src="https://karayaka.ru/images/article4.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/images/articles/article4.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Что такое договор поручительства?
 
@@ -29,7 +29,7 @@ date: '2025-03-31'
 - Если поручительство **ограничено сроком**, оно прекращает свое действие после окончания договора аренды.
 - При **бессрочном поручительстве** поручитель несет ответственность до полного погашения долга.
 
-<img src="https://karayaka.ru/images/article4.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;"/>
+<img src="https://karayaka.ru/images/articles/article4.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;"/>
 
 ## Условия действительности поручительства
 

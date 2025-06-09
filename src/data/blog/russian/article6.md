@@ -4,7 +4,7 @@ date: '2025-03-31'
 ---
 
 Взаимоотношения между арендаторами и арендодателями в Турции регулируются **Гражданским кодексом Турции (Закон № 6098 о задолженностях - TBK)**. По состоянию на 2025 год, основные права и обязанности арендаторов и владельцев недвижимости включают следующие положения:
-<img src="https://karayaka.ru/images/article6.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/images/articles/article6.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## 1. Договор аренды и его продление
 

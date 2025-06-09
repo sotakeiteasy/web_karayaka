@@ -41,13 +41,13 @@ export default function Post({
 
   const FirstRecomendation = posts[id1];
   const SecondRecomendation = posts[id2];
-  console.log(FirstRecomendation, SecondRecomendation);
+
   if (!localizedPostData) {
     return <div>Loading...</div>;
   }
 
   const pageUrl = `https://karayaka.ru/blog/${localizedPostData.id}`;
-  const imageUrl = getImageUrl(`/images/${localizedPostData.id}.jpg`);
+  const imageUrl = getImageUrl(`/images/articles/${localizedPostData.id}.jpg`);
 
   const meta = {
     title: `${localizedPostData.title} - ${baseMeta.title}`,

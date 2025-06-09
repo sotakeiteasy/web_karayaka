@@ -4,7 +4,7 @@ date: '2025-03-31'
 ---
 
 Выселение по причине необходимости — это судебный процесс, который арендодатель может инициировать для освобождения недвижимости от арендатора. Этот иск может быть подан в двух случаях:
-<img src="https://karayaka.ru/images/article3.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/images/articles/article3.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 1.  **Когда арендодатель или его близкие нуждаются в жилье или коммерческом помещении** (ст. 350 Турецкого Кодекса обязательств, ТКО).
 2.  **Когда новый владелец недвижимости заявляет о своей потребности** (ст. 351 ТКО).

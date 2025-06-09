@@ -6,7 +6,7 @@ date: '2025-03-31'
 ## Введение
 
 Программа получения турецкого гражданства через инвестиции продолжает привлекать иностранных инвесторов благодаря своей прозрачности, быстрой процедуре и **возможности одновременно получить вид на жительство**. В 2025 году основным способом остаётся приобретение недвижимости на сумму от 400.000 долларов США.
-<img src="https://karayaka.ru/images/article9.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto" />
+<img src="https://karayaka.ru/images/articles/article9.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto" />
 
 ## Условия и этапы получения гражданства
 
@@ -29,7 +29,7 @@ date: '2025-03-31'
 **6. Подача на гражданство**  
 После получения всех документов подаётся заявление в **Управление по делам гражданства**. Процедура занимает от **2 до 6 месяцев**.
 
-<img src="https://karayaka.ru/images/article9.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/images/articles/article9.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Дополнительные детали
 

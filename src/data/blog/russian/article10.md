@@ -6,7 +6,7 @@ date: '2025-05-19'
 ## Введение
 
 Покупка недвижимости в Турции даёт иностранным гражданам право подать заявление на получение **краткосрочного вида на жительство**. Этот способ особенно популярен среди **инвесторов, пенсионеров и семей**, желающих жить в Турции круглогодично или сезонно. В 2025 году действуют **обновлённые правила**, которые стоит учитывать перед покупкой.
-<img src="https://karayaka.ru/images/article10.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/images/articles/article10.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Основные условия
 
@@ -37,7 +37,7 @@ date: '2025-05-19'
 **5. Подача и получение карточки ВНЖ**  
 После подачи документов заявитель получает **вид на жительство сроком до 1 года** с возможностью **ежегодного продления при сохранении собственности**.
 
-<img src="https://karayaka.ru/images/article10.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/images/articles/article10.2.png" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Дополнительные замечания
 

@@ -4,7 +4,7 @@ date: '2025-03-31'
 ---
 
 In Turkey, rental agreements are generally made on a yearly basis. In case of a dispute between the tenant and the landlord, either party may apply to the court to determine a fair rental price. This article provides essential information about what a rent determination lawsuit is, who can file it, how the process works, and how court decisions are implemented.
-<img src="https://karayaka.ru/images/article5.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/images/articles/article5.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## 1. What is a Rent Determination Lawsuit?
 
@@ -45,7 +45,7 @@ When determining a new rent, the court evaluates:
 - Comparable rental prices in similar areas
 - Whether the tenant has lived in the property for a long time (a long-term tenant may be eligible for a reduction)
 
-<img src="https://karayaka.ru/images/article5.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/images/articles/article5.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## 7. Outcome and Implementation of the Lawsuit
 

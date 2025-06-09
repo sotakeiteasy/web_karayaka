@@ -60,7 +60,7 @@ export default function Blog({
                 'name': post.title,
                 'headline': post.title,
                 'description': post.excerpt || '',
-                'image': `https://karayaka.ru/images/${post.id}.jpg`,
+                'image': `https://karayaka.ru/images/articles/${post.id}.jpg`,
                 'datePublished': post.date + 'T08:00:00+08:00',
                 'author': {
                   '@type': 'Organization',

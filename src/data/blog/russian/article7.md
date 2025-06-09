@@ -6,7 +6,7 @@ date: '2025-03-31'
 Иск об **аннулировании и регистрации права собственности** (tapu iptali ve tescil davası) – это судебный процесс, направленный на **отмену незаконных или ошибочно зарегистрированных записей в земельном кадастре и внесение исправлений в пользу истинного владельца**. Такие иски подаются лицами, утверждающими, что **кадастровая запись не соответствует фактическому праву собственности**.
 
 До вынесения окончательного судебного решения **изменения в кадастровых записях невозможны**.
-<img src="https://karayaka.ru/images/article7.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/images/articles/article7.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Кто может подать иск об аннулировании и регистрации права собственности?
 
@@ -33,7 +33,7 @@ date: '2025-03-31'
 
 Если **доверенное лицо (например, поверенный) использовало доверенность в личных интересах**, передав недвижимость себе или третьим лицам, такая сделка может быть оспорена.
 
-<img src="https://karayaka.ru/images/article7.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/images/articles/article7.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ### Нарушение градостроительного законодательства
 
