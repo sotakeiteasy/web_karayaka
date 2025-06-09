@@ -10,7 +10,3 @@ export type Inputs = {
   email: string;
   message?: string;
 };
-
-export type LocationKey = 'Russia' | 'Turkey';
-
-export type PurposeKey = 'Buy' | 'Rent';

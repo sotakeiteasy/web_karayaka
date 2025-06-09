@@ -11,8 +11,8 @@ export function Footer() {
 
   const navLinks = [
     { href: '/', label: t('footer.home') },
-    { href: 'search/?type=rent', label: t('header.rent') },
-    { href: 'search/?type=sale', label: t('header.buy') },
+    { href: '/rent', label: t('header.rent') },
+    { href: '/buy', label: t('header.buy') },
     { href: '/about-us', label: t('header.aboutUs') },
     { href: '/custom-offers', label: t('header.customOffers') },
     { href: '/blog/', label: t('header.blog') },

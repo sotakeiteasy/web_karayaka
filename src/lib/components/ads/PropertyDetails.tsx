@@ -11,8 +11,9 @@ import {
   mdiCircleSmall,
 } from '@mdi/js';
 import styles from '@/pages/ads/id.module.scss';
-import { Ad } from '@/lib/types';
+import { Ad, SearchType } from '@/lib/types';
 import { propertyTypeTranslations } from '@/lib/translations';
+import { ParkingType } from '@/lib/types/FilterTypes';
 
 interface Props {
   ad: Ad;
@@ -64,7 +65,7 @@ export function PropertyDetails({ ad, lang, t }: Props) {
             <Icon path={mdiCheckbook} size={1} />
             {t('ad.property.listing')}
           </span>
-          {ad.type === 'sale' ? t('ad.property.forSale') : t('ad.property.forRent')}
+          {ad.type === SearchType.Buy ? t('ad.property.forSale') : t('ad.property.forRent')}
         </p>
         {ad.age && (
           <p>
@@ -89,13 +90,13 @@ export function PropertyDetails({ ad, lang, t }: Props) {
         <div className={styles.infoBottom}>
           <div className={styles.infoBottomLeft}>
             <ul>
-              {ad.parking === 'closed' && (
+              {ad.parking === ParkingType.Closed && (
                 <li>
                   <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
                   {t('ad.property.closedParking')}
                 </li>
               )}
-              {ad.parking === 'open' && (
+              {ad.parking === ParkingType.Open && (
                 <li>
                   <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
                   {t('ad.property.openParking')}

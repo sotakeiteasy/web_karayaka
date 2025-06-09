@@ -4,7 +4,8 @@ import styles from './ContactUs.module.scss';
 import { useState } from 'react';
 import { useTranslation } from 'next-export-i18n';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { Inputs, LocationKey, PurposeKey } from './types';
+import { Inputs } from './types';
+import { CountryType, SearchType } from '@/lib/types/FilterTypes';
 
 const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID || '';
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID || '';
@@ -68,29 +69,29 @@ export function ContactUs() {
     emailjs.init(PUBLIC_KEY);
   }, []);
 
-  const [purposes, setPurposes] = useState<Record<PurposeKey, boolean>>({
-    Buy: false,
-    Rent: false,
+  const [purposes, setPurposes] = useState<Record<SearchType, boolean>>({
+    buy: false,
+    rent: false,
   });
 
-  const [locations, setLocations] = useState<Record<LocationKey, boolean>>({
+  const [locations, setLocations] = useState<Record<CountryType, boolean>>({
     Russia: false,
     Turkey: false,
   });
 
-  const toggleLocation = (country: LocationKey) => {
+  const toggleLocation = (country: CountryType) => {
     setLocations((prev) => {
       const updated = { ...prev, [country]: !prev[country] };
-      const selectedLocations = Object.keys(updated).filter((key) => updated[key as LocationKey]) as string[];
+      const selectedLocations = Object.keys(updated).filter((key) => updated[key as CountryType]) as string[];
       setValue('location', selectedLocations);
       return updated;
     });
   };
 
-  const togglePurpose = (type: PurposeKey) => {
+  const togglePurpose = (type: SearchType) => {
     setPurposes((prev) => {
       const updated = { ...prev, [type]: !prev[type] };
-      const selectedTypes = Object.keys(updated).filter((key) => updated[key as PurposeKey]) as string[];
+      const selectedTypes = Object.keys(updated).filter((key) => updated[key as SearchType]) as string[];
       setValue('purpose', selectedTypes);
       return updated;
     });
@@ -154,7 +155,7 @@ export function ContactUs() {
                     name="location"
                     value={t('form.location.russia')}
                     className={locations.Russia ? `${styles.input} ${styles.selected}` : styles.input}
-                    onClick={() => toggleLocation('Russia')}
+                    onClick={() => toggleLocation(CountryType.Russia)}
                   />
                   <input
                     type="button"
@@ -162,7 +163,7 @@ export function ContactUs() {
                     name="location"
                     value={t('form.location.turkey')}
                     className={locations.Turkey ? `${styles.input} ${styles.selected}` : styles.input}
-                    onClick={() => toggleLocation('Turkey')}
+                    onClick={() => toggleLocation(CountryType.Turkey)}
                   />
                 </div>
               </fieldset>
@@ -175,16 +176,16 @@ export function ContactUs() {
                     id="purpose-buy"
                     name="purpose"
                     value={t('form.purpose.buy')}
-                    className={purposes.Buy ? `${styles.input} ${styles.selected}` : styles.input}
-                    onClick={() => togglePurpose('Buy')}
+                    className={purposes.buy ? `${styles.input} ${styles.selected}` : styles.input}
+                    onClick={() => togglePurpose(SearchType.Buy)}
                   />
                   <input
                     type="button"
                     id="purpose-rent"
                     name="purpose"
                     value={t('form.purpose.rent')}
-                    className={purposes.Rent ? `${styles.input} ${styles.selected}` : styles.input}
-                    onClick={() => togglePurpose('Rent')}
+                    className={purposes.rent ? `${styles.input} ${styles.selected}` : styles.input}
+                    onClick={() => togglePurpose(SearchType.Rent)}
                   />
                 </div>
               </fieldset>

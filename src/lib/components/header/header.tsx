@@ -38,14 +38,14 @@ export function Header() {
 
   const navLinks = [
     {
-      href: '/search?type=rent',
+      href: '/rent',
       text: t('header.rent'),
-      active: router.pathname.startsWith('/search') && router.query.type === 'rent',
+      active: router.pathname.startsWith('/rent'),
     },
     {
-      href: '/search?type=sale',
+      href: '/buy',
       text: t('header.buy'),
-      active: router.pathname.startsWith('/search') && router.query.type === 'sale',
+      active: router.pathname.startsWith('/buy'),
     },
     {
       href: '/about-us',

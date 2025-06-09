@@ -1,10 +1,12 @@
+import { SearchType } from './FilterTypes/SearchType';
+
 export interface Filter {
   country?: string;
   city?: string;
   district?: string[];
   propertyType?: string;
   bedroom?: string[];
-  type?: 'sale' | 'rent';
+  type: SearchType;
   minPrice?: number;
   maxPrice?: number;
   minArea?: number;

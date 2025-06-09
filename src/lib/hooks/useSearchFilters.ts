@@ -1,12 +1,12 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
-import { Ad, Filter } from '@/lib/types';
+import { Ad, Filter, SearchType } from '@/lib/types';
 import { filterAds } from '@/lib/utils';
 import { FILTER_MAPPINGS } from '@/lib/constants/filterOptions';
 
-export function useSearchFilters() {
+export function useSearchFilters(offerType: SearchType) {
   const router = useRouter();
-  const [filter, setFilter] = useState<Filter>({ sortOption: 'price-cheap' });
+  const [filter, setFilter] = useState<Filter>({ type: offerType, sortOption: 'price-cheap' });
   const [appliedFilters, setAppliedFilters] = useState({});
   const [searchText, setSearchText] = useState('');
   const [filteredAds, setFilteredAds] = useState<Ad[]>([]);
@@ -37,7 +37,7 @@ export function useSearchFilters() {
       if (!skipUrlUpdate) {
         const query: Record<string, string> = {};
 
-        if (currentFilter.type) query.type = currentFilter.type;
+        // if (currentFilter.type) query.type = currentFilter.type;
         if (currentFilter.country) query.country = currentFilter.country;
         if (currentFilter.city) query.city = currentFilter.city;
         if (currentFilter.district) query.district = currentFilter.district.join(',');
@@ -64,11 +64,11 @@ export function useSearchFilters() {
     [router]
   );
 
-  // Update if choose another type (sell/rent)
+  // Update if choose another type (buy/rent)
   useEffect(() => {
     if (!router.isReady) return;
 
-    const initialFilter: Filter = { sortOption: 'price-cheap' };
+    const initialFilter: Filter = { type: offerType, sortOption: 'price-cheap' };
 
     const {
       type,
@@ -79,7 +79,7 @@ export function useSearchFilters() {
       bedroom,
       address,
     }: {
-      type?: 'sale' | 'rent';
+      type?: SearchType;
       country?: string;
       city?: string;
       district?: string;
@@ -198,13 +198,8 @@ export function useSearchFilters() {
   };
 
   const resetFilters = () => {
-    const typeParam = router.query.type ? `?type=${router.query.type}` : '';
-    const langParam = router.query.lang
-      ? typeParam
-        ? `&lang=${router.query.lang}`
-        : `?lang=${router.query.lang}`
-      : '';
-    window.location.href = `/search${typeParam}${langParam}`;
+    const langParam = router.query.lang ? `?lang=${router.query.lang}` : '';
+    window.location.href = `/${offerType}${langParam}`;
   };
 
   return {

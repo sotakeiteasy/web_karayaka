@@ -1,3 +1,5 @@
+import { PriceType, CountryType, SearchType, PropertyType, SituationType, ParkingType } from './FilterTypes';
+
 export interface Ad {
   id: string;
   man: string | null;
@@ -7,33 +9,21 @@ export interface Ad {
     ru: string | null;
     en: string | null;
   };
-  price: Price;
+  price: PriceType;
   location: {
-    country: 'Turkey' | 'Russia';
+    country: CountryType;
     city: string;
     district: string | null;
   };
-  type: 'sale' | 'rent';
-  propertyType: 'apartment' | 'villa' | 'commercial' | 'land';
+  type: SearchType;
+  propertyType: PropertyType;
   area: number;
   rooms: string | null;
   bathroom: number | null;
   age: string | null;
-  situation: 'tenanted' | 'owner' | 'empty' | 'free';
+  situation: SituationType;
   floor: number | null;
   floorInHouse: number | null;
-  parking: 'open' | 'closed' | 'both' | null;
+  parking: ParkingType | null;
   images: string[];
 }
-
-type Price = {
-  rub?: number | null;
-  try?: number | null;
-} & (
-  | {
-      rub: number;
-    }
-  | {
-      try: number;
-    }
-);
