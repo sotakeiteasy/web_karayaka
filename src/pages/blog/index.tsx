@@ -46,17 +46,44 @@ export default function Blog({
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'ItemList',
+              'name': meta.title,
+              'numberOfItems': posts.length,
+              'itemListElement': posts.map((post, idx) => ({
+                '@type': 'Article',
+                'position': idx + 1,
+                'url': `https://karayaka.ru/blog/${post.id}`,
+                'name': post.title,
+                'headline': post.title,
+                'description': post.excerpt || '',
+                'image': `https://karayaka.ru/images/${post.id}.jpg`,
+                'datePublished': post.date+'T08:00:00+08:00',
+                'author': {
+                  '@type': 'Organization',
+                  'name': 'Karayaka',
+                  'url': 'https://karayaka.ru',
+                },
+              })),
+            }),
+          }}
+        />
       </Head>
 
       <main className={styles.main}>
-        {posts.map(({ id, title, excerpt }: PostData) => (
+        {posts.map(({ id, title, excerpt, date }: PostData) => (
           <div key={id} className={styles.articleCard}>
             <LinkWithLocale href={`/blog/${id}`}>
               <div className={styles.articleImage}>
                 <Image
                   src={getImageUrl(`/images/${id}.jpg`)}
                   fill={true}
-                  alt=" "
+                  alt={title}
+                  title={title}
                   sizes="100%"
                   style={{
                     objectFit: 'cover',
@@ -68,6 +95,7 @@ export default function Blog({
               </div>
               <section className={styles.articlePreview}>
                 <h2 className={styles.articleTitle}>{title}</h2>
+                <time dateTime={date} className={styles.articleDate}>{date}</time>
                 {excerpt && (
                   <div className={styles.articleText}>
                     <p>{excerpt}</p>

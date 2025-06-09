@@ -3,7 +3,6 @@ import { LanguageSwitcher } from 'next-export-i18n';
 import { useLanguageQuery } from 'next-export-i18n';
 import Head from 'next/head';
 
-import { BlogPostSchema } from '@/lib/components';
 import { getImageUrl } from '@/lib/utils';
 import { getAllPostIds, getPostData } from '@/lib/utils/blogServer';
 import { MetaTags, LocalizedPostData } from '@/lib/types';
@@ -56,16 +55,26 @@ export default function Post({ postData, metaTags }: { postData: LocalizedPostDa
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
         <meta property="article:published_time" content={localizedPostData.date} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Article',
+              'headline': localizedPostData.title,
+              'description': localizedPostData.excerpt || '',
+              'image': 'https://karayaka.ru' + imageUrl,
+              'url': pageUrl,
+              'datePublished': localizedPostData.date+'T08:00:00+08:00',
+              'author': {
+                '@type': 'Organization',
+                'name': 'Karayaka',
+                'url': 'https://karayaka.ru',
+              },
+            }),
+          }}
+        />
       </Head>
-
-      <BlogPostSchema
-        title={localizedPostData.title}
-        datePublished={localizedPostData.date}
-        description={localizedPostData.excerpt || ''}
-        imageUrl={imageUrl}
-        articleUrl={pageUrl}
-        authorName="Karayaka"
-      />
 
       <main className={styles.main}>
         <section className={styles.article}>
@@ -81,7 +90,10 @@ export default function Post({ postData, metaTags }: { postData: LocalizedPostDa
           {localizedPostData.contentHtml && (
             <div
               dangerouslySetInnerHTML={{
-                __html: localizedPostData.contentHtml,
+                __html: localizedPostData.contentHtml
+                  .replace(/<h3(.*?)>(.*?)<\/h3>/g, '<h2$1>$2</h2>')
+                  .replace(/<img ([^>]*?)alt="[^"]*"([^>]*?)>/g, `<img $1alt="${localizedPostData.title}" title="${localizedPostData.title}"$2>`)
+                  .replace(/<img ((?!alt=)[^>])*?>/g, `<img alt="${localizedPostData.title}" title="${localizedPostData.title}" $1>`)
               }}
             />
           )}
