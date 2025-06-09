@@ -1,26 +1,47 @@
 import styles from './id.module.scss';
-import { LanguageSwitcher } from 'next-export-i18n';
+import { LanguageSwitcher, LinkWithLocale, useTranslation } from 'next-export-i18n';
 import { useLanguageQuery } from 'next-export-i18n';
 import Head from 'next/head';
 
 import { getImageUrl } from '@/lib/utils';
-import { getAllPostIds, getPostData } from '@/lib/utils/blogServer';
-import { MetaTags, LocalizedPostData } from '@/lib/types';
+import { getAllPostIds, getPostData, getSortedPostsData } from '@/lib/utils/blogServer';
+import { MetaTags, LocalizedPostData, PostData } from '@/lib/types';
 
 import { parseISO, format } from 'date-fns';
+import { ArticleCard } from '@/lib/components';
 
 function Date({ dateString }: { dateString: string }) {
   const date = parseISO(dateString);
   return <time dateTime={dateString}>{format(date, 'LLLL d, yyyy')}</time>;
 }
 
-export default function Post({ postData, metaTags }: { postData: LocalizedPostData; metaTags: MetaTags }) {
+export default function Post({
+  postData,
+  allBlogData,
+  metaTags,
+}: {
+  postData: LocalizedPostData;
+  allBlogData: Record<string, PostData[]>;
+  metaTags: MetaTags;
+}) {
+  const { t } = useTranslation();
+
   const [query] = useLanguageQuery();
 
   const lang = (query?.lang as 'ru' | 'en') || 'ru';
-  const localizedPostData = postData[lang];
+  const localizedPostData = postData[lang]!;
   const baseMeta = metaTags[lang];
 
+  const posts = allBlogData[lang];
+
+  const number = Number(localizedPostData.id.match(/\d+/)?.[0])!;
+
+  const id1 = number + 1 < Object.keys(posts).length ? number + 1 : Object.keys(posts).length - 1;
+  const id2 = number + 2 < Object.keys(posts).length ? number + 2 : Object.keys(posts).length - 2;
+
+  const FirstRecomendation = posts[id1];
+  const SecondRecomendation = posts[id2];
+  console.log(FirstRecomendation, SecondRecomendation);
   if (!localizedPostData) {
     return <div>Loading...</div>;
   }
@@ -65,7 +86,7 @@ export default function Post({ postData, metaTags }: { postData: LocalizedPostDa
               'description': localizedPostData.excerpt || '',
               'image': 'https://karayaka.ru' + imageUrl,
               'url': pageUrl,
-              'datePublished': localizedPostData.date+'T08:00:00+08:00',
+              'datePublished': localizedPostData.date + 'T08:00:00+08:00',
               'author': {
                 '@type': 'Organization',
                 'name': 'Karayaka',
@@ -77,27 +98,50 @@ export default function Post({ postData, metaTags }: { postData: LocalizedPostDa
       </Head>
 
       <main className={styles.main}>
-        <section className={styles.article}>
+        <article className={styles.article}>
           <h1>{localizedPostData.title}</h1>
-          <br />
           <Date dateString={localizedPostData.date} />
-          <br />
           <div className={styles.languageSwitcher}>
             <LanguageSwitcher lang="ru">RU</LanguageSwitcher>
             <LanguageSwitcher lang="en">EN</LanguageSwitcher>
           </div>
-          <br />
           {localizedPostData.contentHtml && (
             <div
               dangerouslySetInnerHTML={{
                 __html: localizedPostData.contentHtml
                   .replace(/<h3(.*?)>(.*?)<\/h3>/g, '<h2$1>$2</h2>')
-                  .replace(/<img ([^>]*?)alt="[^"]*"([^>]*?)>/g, `<img $1alt="${localizedPostData.title}" title="${localizedPostData.title}"$2>`)
-                  .replace(/<img ((?!alt=)[^>])*?>/g, `<img alt="${localizedPostData.title}" title="${localizedPostData.title}" $1>`)
+                  .replace(
+                    /<img ([^>]*?)alt="[^"]*"([^>]*?)>/g,
+                    `<img $1alt="${localizedPostData.title}" title="${localizedPostData.title}"$2>`
+                  )
+                  .replace(
+                    /<img ((?!alt=)[^>])*?>/g,
+                    `<img alt="${localizedPostData.title}" title="${localizedPostData.title}" $1>`
+                  ),
               }}
             />
           )}
-        </section>
+        </article>
+        <p className={styles.recomendationsHeader}>
+          {' '}
+          <LinkWithLocale href={`/blog`}>{t('blog.anotherArticles')}</LinkWithLocale>
+        </p>
+        <div className={styles.recomendations}>
+          <ArticleCard
+            id={FirstRecomendation.id}
+            title={FirstRecomendation.title}
+            date={FirstRecomendation.date}
+            excerpt={FirstRecomendation.excerpt}
+            direction="column"
+          ></ArticleCard>
+          <ArticleCard
+            id={SecondRecomendation.id}
+            title={SecondRecomendation.title}
+            date={SecondRecomendation.date}
+            excerpt={SecondRecomendation.excerpt}
+            direction="column"
+          ></ArticleCard>
+        </div>
       </main>
     </>
   );
@@ -112,32 +156,33 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { id: string } }) {
-  try {
-    const postData = await getPostData(params.id);
+  const postData = await getPostData(params.id);
 
-    const metaTags = {
-      ru: {
-        title: 'Блог Караяка',
-        description: 'Статьи и новости о недвижимости в Турции и России',
-        keywords: 'блог о недвижимости, статьи о недвижимости, недвижимость в Турции, недвижимость в России',
-      },
-      en: {
-        title: 'Karayaka Blog',
-        description: 'Articles and news about real estate in Turkey and Russia',
-        keywords: 'real estate blog, real estate articles, property in Turkey, property in Russia',
-      },
-    };
+  const languages = ['en', 'ru'];
+  const allBlogData: { [key: string]: PostData[] } = {};
 
-    return {
-      props: {
-        postData,
-        metaTags,
-      },
-    };
-  } catch (error) {
-    console.error(`Error fetching post ${params.id}:`, error);
-    return {
-      notFound: true,
-    };
+  for (const lang of languages) {
+    allBlogData[lang] = await getSortedPostsData(lang);
   }
+
+  const metaTags = {
+    ru: {
+      title: 'Блог Караяка',
+      description: 'Статьи и новости о недвижимости в Турции и России',
+      keywords: 'блог о недвижимости, статьи о недвижимости, недвижимость в Турции, недвижимость в России',
+    },
+    en: {
+      title: 'Karayaka Blog',
+      description: 'Articles and news about real estate in Turkey and Russia',
+      keywords: 'real estate blog, real estate articles, property in Turkey, property in Russia',
+    },
+  };
+
+  return {
+    props: {
+      allBlogData,
+      postData,
+      metaTags,
+    },
+  };
 }

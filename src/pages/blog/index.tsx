@@ -1,12 +1,11 @@
-import { useTranslation, LinkWithLocale } from 'next-export-i18n';
+import { useTranslation } from 'next-export-i18n';
 import { useLanguageQuery } from 'next-export-i18n';
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from './index.module.scss';
 
-import { getImageUrl } from '@/lib/utils';
 import { getSortedPostsData } from '@/lib/utils/blogServer';
 import { MetaTags, PostData } from '@/lib/types';
+import { ArticleCard } from '@/lib/components';
 
 export default function Blog({
   allBlogData,
@@ -62,7 +61,7 @@ export default function Blog({
                 'headline': post.title,
                 'description': post.excerpt || '',
                 'image': `https://karayaka.ru/images/${post.id}.jpg`,
-                'datePublished': post.date+'T08:00:00+08:00',
+                'datePublished': post.date + 'T08:00:00+08:00',
                 'author': {
                   '@type': 'Organization',
                   'name': 'Karayaka',
@@ -76,34 +75,7 @@ export default function Blog({
 
       <main className={styles.main}>
         {posts.map(({ id, title, excerpt, date }: PostData) => (
-          <div key={id} className={styles.articleCard}>
-            <LinkWithLocale href={`/blog/${id}`}>
-              <div className={styles.articleImage}>
-                <Image
-                  src={getImageUrl(`/images/${id}.jpg`)}
-                  fill={true}
-                  alt={title}
-                  title={title}
-                  sizes="100%"
-                  style={{
-                    objectFit: 'cover',
-                    borderRadius: '15px 0px 0px 15px',
-                  }}
-                  loading="eager"
-                  priority
-                />
-              </div>
-              <section className={styles.articlePreview}>
-                <h2 className={styles.articleTitle}>{title}</h2>
-                <time dateTime={date} className={styles.articleDate}>{date}</time>
-                {excerpt && (
-                  <div className={styles.articleText}>
-                    <p>{excerpt}</p>
-                  </div>
-                )}
-              </section>
-            </LinkWithLocale>
-          </div>
+          <ArticleCard key={id} id={id} title={title} date={date} excerpt={excerpt}></ArticleCard>
         ))}
       </main>
     </>

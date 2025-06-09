@@ -1,6 +1,6 @@
 ---
-title: "Eviction Lawsuit Based on Personal Need in Turkey: A Brief and Clear Guide for Russian Citizens"
-date: "2025-03-31"
+title: 'Eviction Lawsuit Based on Personal Need in Turkey: A Brief and Clear Guide for Russian Citizens'
+date: '2025-03-31'
 ---
 
 An eviction lawsuit based on personal need is a legal process through which a property owner can request the eviction of a tenant. This type of lawsuit can be filed in two main situations:
@@ -9,10 +9,12 @@ An eviction lawsuit based on personal need is a legal process through which a pr
 2. When a new owner who has purchased the property needs it for themselves or their family (Article 351 of the Turkish Code of Obligations).
 
 The need must be genuine, sincere, and essential. Temporary, future, or speculative needs are not accepted as valid reasons for eviction.
+<img src="https://karayaka.ru/images/article3.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## 1. In Which Situations Can an Eviction Lawsuit Be Filed?
 
 ### a) Can the Landlord File for Eviction Due to Personal Need?
+
 Yes. A landlord can file an eviction lawsuit if they, their spouse, children, parents, or someone they are legally obligated to support needs the property for residential or business use.
 
 - If the property will be renovated or reconstructed, eviction may also be possible.
@@ -20,6 +22,7 @@ Yes. A landlord can file an eviction lawsuit if they, their spouse, children, pa
 - In open-ended leases, the landlord must notify termination and file the lawsuit within 1 month of the termination notice.
 
 ### b) Can a New Owner Evict the Tenant Due to Personal Need?
+
 Yes. A person who has newly purchased a property may request eviction if they or their family needs it, under the following conditions:
 
 - A written notice must be sent to the tenant within 1 month of acquiring the property.
@@ -29,6 +32,7 @@ Yes. A person who has newly purchased a property may request eviction if they or
 ## 2. Factors Considered in Eviction Lawsuits Based on Need
 
 To succeed in court, the need must be:
+
 - Genuine – the owner or their family truly needs the property
 - Sincere – not a fabricated reason to remove the tenant
 - Essential – the owner has no reasonable alternative
@@ -50,11 +54,11 @@ In such cases, the court examines whether the business need is truly essential.
 
 ## 5. Legal Deadlines in Eviction Lawsuits Based on Need
 
-| Situation | Deadline |
-|-----------|----------|
-| Landlord's own need | Within 1 month after the lease expires |
-| New owner's need | Notify tenant within 1 month of purchase, then file suit after 6 months |
-| If prior written warning was given | Lawsuit can be filed until the end of the extended lease term |
+| Situation                          | Deadline                                                                |
+| ---------------------------------- | ----------------------------------------------------------------------- |
+| Landlord's own need                | Within 1 month after the lease expires                                  |
+| New owner's need                   | Notify tenant within 1 month of purchase, then file suit after 6 months |
+| If prior written warning was given | Lawsuit can be filed until the end of the extended lease term           |
 
 - In fixed-term leases, prior notice is not mandatory.
 - In open-ended leases, a termination notice is required before filing a lawsuit.

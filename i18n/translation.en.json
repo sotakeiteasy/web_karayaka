@@ -24,7 +24,8 @@
   "blog": {
     "title": "Blog",
     "readMore": "Read More",
-    "noPosts": "No posts available"
+    "noPosts": "No posts available",
+    "anotherArticles": "Another Articles"
   },
   "aboutUs": {
     "header": "About us",

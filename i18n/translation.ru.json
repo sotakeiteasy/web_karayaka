@@ -23,7 +23,8 @@
   "blog": {
     "title": "Блог",
     "readMore": "Читать далее",
-    "noPosts": "Нет доступных постов"
+    "noPosts": "Нет доступных постов",
+    "anotherArticles": "Другие статьи"
   },
   "aboutUs": {
     "header": "О нас",

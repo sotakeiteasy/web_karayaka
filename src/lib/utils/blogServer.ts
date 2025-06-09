@@ -5,6 +5,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import remarkGfm from 'remark-gfm';
 import { PostData, LocalizedPostData } from '@/lib/types';
+import remarkImages from 'remark-images';
 
 function getBlogDirectory(locale: string = 'ru') {
   const basePath = path.join(process.cwd(), 'src/data/blog');
@@ -30,7 +31,13 @@ export async function getSortedPostsData(locale: string = 'ru'): Promise<PostDat
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const matterResult = matter(fileContents);
 
-    const processedContent = await remark().use(remarkGfm).use(html).process(matterResult.content);
+    const processedContent = await remark()
+      .use(remarkGfm)
+      .use(remarkImages)
+      .use(html, {
+        sanitize: false,
+      })
+      .process(matterResult.content);
     const contentHtml = processedContent.toString();
     const excerpt = createExcerpt(contentHtml);
 
@@ -71,7 +78,21 @@ export async function getPostDataStatic(id: string, locale: string = 'ru'): Prom
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const matterResult = matter(fileContents);
 
-  const processedContent = await remark().use(remarkGfm).use(html).process(matterResult.content);
+  const title = matterResult.data.title;
+
+  const modifiedContent = matterResult.content.replace(
+    /<img([^>]*?)(?:alt="[^"]*"|title="[^"]*")?([^>]*?)>/g,
+    `<img$1 alt="${title}" title="${title}"$2>`
+  );
+
+  const processedContent = await remark()
+    .use(remarkGfm)
+    .use(html, {
+      sanitize: false,
+      allowDangerousHtml: true,
+    })
+    .process(modifiedContent);
+
   const contentHtml = processedContent.toString();
 
   return {

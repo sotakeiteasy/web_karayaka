@@ -6,6 +6,7 @@ date: '2025-05-19'
 ## Introduction
 
 Buying real estate in Turkey grants foreign nationals the right to apply for a short-term residence permit. This option is especially favored by investors, retirees, and families who wish to live in Turkey either permanently or seasonally. As of 2025, updated rules apply and should be carefully considered before making a purchase.
+<img src="https://karayaka.ru/images/article10.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Key Requirements
 
@@ -35,6 +36,8 @@ Submit an application via **[e-ikamet.goc.gov.tr](https://e-ikamet.goc.gov.tr)**
 
 **5. Attend Interview & Receive Permit**  
 After document submission, the applicant receives a **1-year residence card**, which can be renewed annually as long as ownership is maintained.
+
+<img src="https://karayaka.ru/images/article10.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Additional Notes
 

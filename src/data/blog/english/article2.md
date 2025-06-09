@@ -1,11 +1,13 @@
 ---
-title: "What is a Preliminary Real Estate Sale Agreement?"
-date: "2025-03-31"
+title: 'What is a Preliminary Real Estate Sale Agreement?'
+date: '2025-03-31'
 ---
 
 A Preliminary Real Estate Sale Agreement is a bilateral contract in which both parties agree to transfer ownership of a property at a future date under specified conditions. In other words, it is a binding commitment to execute an official real estate sale agreement before a title deed officer at a later time.
 
 Through this agreement, the promisor (the party making the promise) commits to selling a specific property, and the promisee (the party receiving the promise) agrees to buy it. Both parties thus assume mutual obligations. The rights arising from this contract are relative rights, meaning they can only be enforced by and against the parties involved.
+
+<img src="https://karayaka.ru/images/article2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Can a Preliminary Sale Agreement Be Made for Property Not Owned by the Promisor?
 
@@ -24,6 +26,8 @@ According to Article 706 of the Turkish Civil Code, any agreement intending to t
 - The price to be paid by the buyer must be clearly stated in the agreement, along with the payment terms (installments or lump sum).
 - According to zoning regulations, co-owned parcels for development purposes cannot be subject to preliminary sale agreements.
 
+<img src="https://karayaka.ru/images/article1.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+
 ## Obligations of the Parties in a Preliminary Sale Agreement
 
 - The promisor (seller) is obligated to transfer the property to the buyer on the agreed date. At the time of transfer, they must be the legal owner.
@@ -34,6 +38,7 @@ According to Article 706 of the Turkish Civil Code, any agreement intending to t
 ## Termination of the Preliminary Real Estate Sale Agreement
 
 A preliminary sale agreement may be terminated in the following cases:
+
 - Fulfillment of the contract (i.e., the transfer is completed)
 - Expiry of the statute of limitations for performance
 - Mutual termination by both parties

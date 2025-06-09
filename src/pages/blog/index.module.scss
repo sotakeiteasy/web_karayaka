@@ -4,74 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 45px;
-
-  .articleCard {
-    display: flex;
-    width: 1000px;
-    height: 400px;
-    border-radius: 15px;
-    box-shadow: $shadow;
-    margin-bottom: 40px;
-
-    a {
-      display: flex;
-
-      .articleImage {
-        position: relative;
-        width: 60%;
-        height: 100%;
-        border-radius: 15px;
-      }
-
-      .articlePreview {
-        width: 40%;
-        display: flex;
-        flex-direction: column;
-        padding: 40px;
-
-        .articleTitle {
-          font-size: 1.3rem;
-          text-transform: uppercase;
-          font-weight: 400;
-          padding-bottom: 10px;
-          border-bottom: 1px solid $dark-text;
-          margin-bottom: 15px;
-        }
-
-        .articleText {
-          overflow: hidden;
-          display: -webkit-box;
-          font-size: 0.9rem;
-          -webkit-line-clamp: 5;
-          -webkit-box-orient: vertical;
-          text-overflow: ellipsis;
-          margin-top: 10px;
-
-          /* Стили для правильного отображения абзацев */
-          p {
-            margin-bottom: 1em;
-            line-height: 1.6;
-          }
-
-          /* Базовые отступы для элементов */
-          h1,
-          h2,
-          h3,
-          h4,
-          h5,
-          h6,
-          ul,
-          ol,
-          pre,
-          blockquote {
-            margin-top: 1em;
-            margin-bottom: 0.5em;
-          }
-        }
-      }
-    }
-  }
+  margin: 45px 0;
 }
 
 @media (max-width: 1280px) {
@@ -79,63 +12,12 @@
     div {
       display: flex;
     }
-
-    .articleCard {
-      width: 90%;
-
-      .articleImage {
-        width: 50%;
-      }
-
-      .articlePreview {
-        width: 50%;
-        padding: 25px;
-
-        .articleTitle {
-          font-size: 1.2rem;
-        }
-        .articleText {
-          -webkit-line-clamp: 7;
-          line-clamp: 7;
-        }
-      }
-    }
   }
 }
 
 @media (max-width: 900px) {
   .main {
     justify-content: center;
-    margin-top: 25px;
-    .articleCard {
-      margin-bottom: 20px;
-      width: 90%;
-      a {
-        flex-direction: column;
-
-        .articleImage {
-          width: 100%;
-          img {
-            border-radius: 15px 15px 0px 0px !important;
-          }
-        }
-
-        .articlePreview {
-          width: 100%;
-          padding: 15px;
-
-          .articleTitle {
-            font-size: 1.1rem;
-            padding-bottom: 5px;
-            margin-bottom: 0px;
-            border: 0;
-          }
-
-          .articleText {
-            display: none;
-          }
-        }
-      }
-    }
+    margin: 25px 0 !important;
   }
 }

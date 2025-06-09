@@ -1,9 +1,10 @@
 ---
-title: "Guarantees in Rental Agreements: What Guarantors Should Know"
-date: "2025-03-31"
+title: 'Guarantees in Rental Agreements: What Guarantors Should Know'
+date: '2025-03-31'
 ---
 
 Rental agreements are legal documents that create various obligations for both tenants and landlords. To protect themselves in case the tenant fails to pay rent, landlords often require a guarantor. A guarantee provides legal assurance that the guarantor will assume responsibility for the tenant's debt if the tenant fails to fulfill their rental obligations. However, there are several important aspects of guarantee agreements that need to be understood.
+<img src="https://karayaka.ru/images/article4.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## What is a Guarantee Agreement?
 
@@ -18,16 +19,21 @@ A guarantee agreement is a legal contract in which the guarantor agrees to assum
 The extent of a guarantor's liability depends on the type of guarantee agreed upon:
 
 ### Joint (Solidary) Guarantee
+
 - The guarantor is directly liable if the tenant fails to pay rent.
 - The landlord can demand payment from the guarantor without first pursuing the tenant.
 
 ### Ordinary Guarantee
+
 - The guarantor is liable only if the tenant fails to pay and it becomes clear that the debt cannot be collected from the tenant.
 - In this case, the landlord must first pursue the tenant before claiming from the guarantor.
 
 ### Fixed-term and Open-ended Guarantee
+
 - If the guarantee is for a specific period, it ends when the rental contract ends.
 - If it is open-ended, the guarantor remains liable as long as the rental obligation continues.
+
+<img src="https://karayaka.ru/images/article4.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto; " />
 
 ## Conditions for a Valid Guarantee
 
