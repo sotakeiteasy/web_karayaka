@@ -82,6 +82,7 @@
     "header": "Offer for you"
   },
   "search": {
+    "photoAlt": "Photo",
     "header": "Search",
     "filters": {
       "country": "Country",
@@ -114,6 +115,36 @@
       "largeFirst": "Area (large first)"
     },
     "noResults": "No results found for your search criteria"
+  },
+  "ad": {
+    "copy": "copied",
+    "property": {
+      "area": "Area",
+      "squareMeters": "m",
+      "bedrooms": "Bedrooms",
+      "floor": "Floor",
+      "floors": "Floors",
+      "type": "Type",
+      "listing": "Listing type",
+      "buildingAge": "Building age",
+      "condition": "Condition",
+      "openParking": "Open parking",
+      "closedParking": "Closed parking",
+      "bathrooms": "bathrooms",
+      "forSale": "For sale",
+      "forRent": "For rent",
+      "forSaleStatus": "for sale",
+      "forRentStatus": "for rent",
+      "titleForSale": "for sale",
+      "titleForRent": "for rent",
+      "room": "room",
+      "situation": {
+        "tenanted": "Tenanted",
+        "owner": "Owner",
+        "empty": "Empty",
+        "free": "Free"
+      }
+    }
   },
   "form": {
     "title": "Contact us",
@@ -173,36 +204,6 @@
   "pagination": {
     "next": "Next",
     "previous": "Previous"
-  },
-  "ad": {
-    "copy": "copied",
-    "property": {
-      "area": "Area",
-      "squareMeters": "m",
-      "bedrooms": "Bedrooms",
-      "floor": "Floor",
-      "floors": "Floors",
-      "type": "Type",
-      "listing": "Listing type",
-      "buildingAge": "Building age",
-      "condition": "Condition",
-      "openParking": "Open parking",
-      "closedParking": "Closed parking",
-      "bathrooms": "bathrooms",
-      "forSale": "For sale",
-      "forRent": "For rent",
-      "forSaleStatus": "for sale",
-      "forRentStatus": "for rent",
-      "titleForSale": "for sale",
-      "titleForRent": "for rent",
-      "room": "room",
-      "situation": {
-        "tenanted": "Tenanted",
-        "owner": "Owner",
-        "empty": "Empty",
-        "free": "Free"
-      }
-    }
   },
   "cookies": {
     "disclaimer": "By staying on our site, you agree to the use of cookies.",

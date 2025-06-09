@@ -27,13 +27,7 @@
     "floor": null,
     "floorInHouse": 2,
     "parking": "open",
-    "images": [
-      "/images/Photo/1001/1.jpg",
-      "/images/Photo/1001/2.jpg",
-      "/images/Photo/1001/3.jpg",
-      "/images/Photo/1001/4.jpg",
-      "/images/Photo/1001/5.jpg"
-    ]
+    "images": ["/images/Photo/1001/5.jpg"]
   },
   {
     "id": "1002",

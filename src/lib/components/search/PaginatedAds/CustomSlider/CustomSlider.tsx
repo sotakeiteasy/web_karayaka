@@ -7,9 +7,14 @@ import { CustomArrowProps } from './types';
 import Icon from '@mdi/react';
 import { mdiChevronRight, mdiChevronLeft } from '@mdi/js';
 import { Ad } from '@/lib/types';
-import { getImageUrl } from '@/lib/utils';
+import { getImageUrl, getPropertyTitle } from '@/lib/utils';
+import { useTranslation } from 'next-export-i18n';
+import { cityTranslations, districtTranslations } from '@/lib/translations';
 
-export default function CustomSlider({ ad }: { ad: Ad }) {
+export default function CustomSlider({ ad, locale }: { ad: Ad; locale: 'ru' | 'en' }) {
+  const { t } = useTranslation();
+  const altText = getPropertyTitle(ad, locale, t);
+
   function SampleNextArrow(props: CustomArrowProps) {
     const { onClick } = props;
     return (
@@ -42,11 +47,46 @@ export default function CustomSlider({ ad }: { ad: Ad }) {
       {ad?.images.length > 1 ? (
         <Slider {...settings}>
           {ad?.images.map((image, index) => (
-            <Image key={index} src={getImageUrl(image)} alt={''} width={400} height={400} priority />
+            <Image
+              key={index}
+              src={getImageUrl(image)}
+              title={`${altText}. ${[
+                cityTranslations[ad.location.city][locale],
+                ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
+              ]
+                .filter(Boolean)
+                .join(', ')}`}
+              alt={`${altText}. ${[
+                cityTranslations[ad.location.city][locale],
+                ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
+              ]
+                .filter(Boolean)
+                .join(', ')}`}
+              width={400}
+              height={400}
+              priority
+            />
           ))}
         </Slider>
       ) : (
-        <Image src={getImageUrl(ad.images[0])} alt={''} width={400} height={400} priority />
+        <Image
+          src={getImageUrl(ad.images[0])}
+          title={`${altText}. ${[
+            cityTranslations[ad.location.city][locale],
+            ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
+          ]
+            .filter(Boolean)
+            .join(', ')}`}
+          alt={`${altText}. ${[
+            cityTranslations[ad.location.city][locale],
+            ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
+          ]
+            .filter(Boolean)
+            .join(', ')}`}
+          width={400}
+          height={400}
+          priority
+        />
       )}
     </div>
   );

@@ -1,3 +1,3 @@
 export * from './TitleInfo';
-export * from './propertyDetails';
-export * from './propertySlider';
+export * from './PropertyDetails';
+export * from './PropertySlider';

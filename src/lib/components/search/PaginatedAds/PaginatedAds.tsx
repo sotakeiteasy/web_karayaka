@@ -28,7 +28,7 @@ function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'e
       {currentItems.map((ad: Ad) => (
         <div className={styles.adCard} key={ad.id}>
           <div className={styles.adCardImage}>
-            <CustomSlider ad={ad} />
+            <CustomSlider ad={ad} locale={locale} />
           </div>
           <LinkWithLocale href={`${ad.type}/${ad.id}`}>
             <div className={styles.adCardDescription}>
