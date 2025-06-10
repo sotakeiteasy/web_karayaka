@@ -9,6 +9,7 @@ import { mdiChevronRight } from '@mdi/js';
 
 import { getImageUrl } from '@/lib/utils';
 import { MetaTags } from '@/lib/types';
+import { ContainerWrapper } from '@/lib/components';
 
 export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();
@@ -86,11 +87,12 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
           </div>
         </div>
 
-        <section className={styles.mainInfo}>
-          <h1>{t('aboutUs.header')}</h1>
-          <p className={styles.description}>{t('aboutUs.description')}</p>
-        </section>
-
+        <ContainerWrapper width="standardPlus">
+          <section className={`${styles.mainInfo} ${styles.about}`}>
+            <h1>{t('aboutUs.header')}</h1>
+            <p className={styles.description}>{t('aboutUs.description')}</p>
+          </section>
+        </ContainerWrapper>
         <div className={styles.banner}>
           <Image
             src={getImageUrl('/images/line2.jpg')}
@@ -104,105 +106,109 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
           />
         </div>
 
-        <section className={styles.mainInfo}>
-          <div className={styles.mainList}>
-            <h2>{t('aboutUs.servicesHeader')}</h2>
-            <ul>
-              <li>{t('aboutUs.servicesList.1')}</li>
-              <li>{t('aboutUs.servicesList.2')}</li>
-              <li>{t('aboutUs.servicesList.3')}</li>
-              <li>{t('aboutUs.servicesList.4')}</li>
-              <li>{t('aboutUs.servicesList.5')}</li>
-              <li>{t('aboutUs.servicesList.6')}</li>
-              <li>{t('aboutUs.servicesList.7')}</li>
-            </ul>
+        <ContainerWrapper width="standardPlus">
+          <section className={styles.mainInfo}>
+            <div className={styles.mainList}>
+              <h2>{t('aboutUs.servicesHeader')}</h2>
+              <ul>
+                <li>{t('aboutUs.servicesList.1')}</li>
+                <li>{t('aboutUs.servicesList.2')}</li>
+                <li>{t('aboutUs.servicesList.3')}</li>
+                <li>{t('aboutUs.servicesList.4')}</li>
+                <li>{t('aboutUs.servicesList.5')}</li>
+                <li>{t('aboutUs.servicesList.6')}</li>
+                <li>{t('aboutUs.servicesList.7')}</li>
+              </ul>
+            </div>
+          </section>
+
+          <div className={styles.statsVisuals}>
+            <div className={styles.stats}>
+              <section>
+                <h2>{t('aboutUs.stats.forSale')}</h2>
+                <p>{t('aboutUs.stats.forSaleLabel')}</p>
+              </section>
+
+              <section>
+                <h2>{t('aboutUs.stats.regions')}</h2>
+                <p>{t('aboutUs.stats.regionsLabel')}</p>
+              </section>
+
+              <section>
+                <h2>{t('aboutUs.stats.forRent')}</h2>
+                <p>{t('aboutUs.stats.forRentLabel')}</p>
+              </section>
+            </div>
+
+            <div className={styles.videoContainer}>
+              <video
+                className={styles.video}
+                loop
+                autoPlay
+                muted
+                preload="auto"
+                height={875}
+                width={475}
+                playsInline
+                controls={false}
+                /* eslint-disable react/no-unknown-property */
+                webkit-playsinline="true"
+              >
+                <source src={getImageUrl('/videos/About_Us.mp4')} type="video/webm" />
+                <source src={getImageUrl('/videos/About_Us.mov')} type="video/mov" />
+                <source src={getImageUrl('/videos/About_Us_fallback.mp4')} type="video/mov" />
+              </video>
+            </div>
           </div>
-        </section>
 
-        <div className={styles.statsVisuals}>
-          <div className={styles.stats}>
-            <section>
-              <h2>{t('aboutUs.stats.forSale')}</h2>
-              <p>{t('aboutUs.stats.forSaleLabel')}</p>
-            </section>
-
-            <section>
-              <h2>{t('aboutUs.stats.regions')}</h2>
-              <p>{t('aboutUs.stats.regionsLabel')}</p>
-            </section>
-
-            <section>
-              <h2>{t('aboutUs.stats.forRent')}</h2>
-              <p>{t('aboutUs.stats.forRentLabel')}</p>
-            </section>
-          </div>
-
-          <div className={styles.videoContainer}>
-            <video
-              className={styles.video}
-              loop
-              autoPlay
-              muted
-              preload="auto"
-              height={875}
-              width={475}
-              playsInline
-              controls={false}
-              /* eslint-disable react/no-unknown-property */
-              webkit-playsinline="true"
-            >
-              <source src={getImageUrl('/videos/About_Us.mp4')} type="video/webm" />
-              <source src={getImageUrl('/videos/About_Us.mov')} type="video/mov" />
-              <source src={getImageUrl('/videos/About_Us_fallback.mp4')} type="video/mov" />
-            </video>
-          </div>
-        </div>
-
-        <section className={styles.mainInfo}>
-          <div className={styles.mainList}>
-            <h2>{t('aboutUs.supportHeader')}</h2>
-            <ul>
-              <li>{t('aboutUs.supportList.1')}</li>
-              <li>{t('aboutUs.supportList.2')}</li>
-              <li>{t('aboutUs.supportList.3')}</li>
-              <li>{t('aboutUs.supportList.4')}</li>
-              <li>{t('aboutUs.supportList.5')}</li>
-              <li>{t('aboutUs.supportList.6')}</li>
-              <li>{t('aboutUs.supportList.7')}</li>
-            </ul>
-          </div>
-        </section>
+          <section className={`${styles.mainInfo} ${styles.list}`}>
+            <div className={styles.mainList}>
+              <h2>{t('aboutUs.supportHeader')}</h2>
+              <ul>
+                <li>{t('aboutUs.supportList.1')}</li>
+                <li>{t('aboutUs.supportList.2')}</li>
+                <li>{t('aboutUs.supportList.3')}</li>
+                <li>{t('aboutUs.supportList.4')}</li>
+                <li>{t('aboutUs.supportList.5')}</li>
+                <li>{t('aboutUs.supportList.6')}</li>
+                <li>{t('aboutUs.supportList.7')}</li>
+              </ul>
+            </div>
+          </section>
+        </ContainerWrapper>
 
         <p className={styles.closingNote}>
           <span>{t('aboutUs.closingNote')}</span>
         </p>
 
-        <div className={styles.infoBlock}>
-          <section className={styles.faq}>
-            <h2>{t('aboutUs.faq.title')}</h2>
+        <ContainerWrapper width="standardPlus" withMarginBottom={true}>
+          <div className={styles.infoBlock}>
+            <section className={styles.faq}>
+              <h2>{t('aboutUs.faq.title')}</h2>
 
-            {(Object.keys(questionsFAQ) as FAQKey[]).map((key) => (
-              <div className={styles.faqRow} key={key}>
-                <Icon
-                  path={mdiChevronRight}
-                  size={1.5}
-                  style={{
-                    opacity: 0,
-                  }}
-                  className={activeKey === key ? styles.activeIcon : ''}
-                />
-                <button className={activeKey === key ? styles.activeButton : ''} onClick={() => toggleAnswers(key)}>
-                  {questionsFAQ[key]}
-                </button>
-              </div>
-            ))}
-          </section>
+              {(Object.keys(questionsFAQ) as FAQKey[]).map((key) => (
+                <div className={styles.faqRow} key={key}>
+                  <Icon
+                    path={mdiChevronRight}
+                    size={1.5}
+                    style={{
+                      opacity: 0,
+                    }}
+                    className={activeKey === key ? styles.activeIcon : ''}
+                  />
+                  <button className={activeKey === key ? styles.activeButton : ''} onClick={() => toggleAnswers(key)}>
+                    {questionsFAQ[key]}
+                  </button>
+                </div>
+              ))}
+            </section>
 
-          <section className={styles.answerBlock}>
-            <h2>{questionsFAQ[activeKey]}</h2>
-            <p>{answersFAQ[activeKey]}</p>
-          </section>
-        </div>
+            <section className={styles.answerBlock}>
+              <h2>{questionsFAQ[activeKey]}</h2>
+              <p>{answersFAQ[activeKey]}</p>
+            </section>
+          </div>
+        </ContainerWrapper>
       </main>
     </>
   );

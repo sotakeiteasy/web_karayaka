@@ -3,13 +3,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
   .titleInfo {
     width: 1000px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
-    margin-top: 50px;
+    margin: 0px auto 30px auto;
     font-size: 1.1rem;
 
     .rightTitleInfo {
@@ -79,7 +79,9 @@
     justify-content: center;
     width: 1000px;
     height: 400px;
-    margin-bottom: 50px;
+    margin: 0px auto 40px auto;
+    align-items: center;
+
     gap: 40px;
 
     .info {
@@ -132,14 +134,10 @@
 
             li {
               font-size: 0.9rem;
-
               display: flex;
               align-items: center;
 
               .dot {
-                // min-width: 35px;
-                // max-height: 45px;
-
                 margin-right: -8px;
                 color: $primary-color;
               }
@@ -178,11 +176,12 @@
   .form {
     border-radius: 15px;
     box-shadow: $shadow;
-    width: 700px;
+    width: 650px;
     flex: 1 0 auto;
     display: flex;
+    margin: 0 auto;
+    margin-top: 100px;
     justify-content: center;
-    margin: 100px 0px;
 
     form {
       width: 600px;
@@ -222,10 +221,11 @@
 
 @media (max-width: 1050px) {
   .main {
-    max-width: 650px;
     justify-self: center;
     .titleInfo {
-      width: 95%;
+      max-width: 650px;
+
+      width: 100%;
       flex-direction: column;
       align-items: flex-start;
       gap: 15px;
@@ -250,10 +250,11 @@
 
     .infoAndImage {
       flex-direction: column;
-      width: 95%;
+      width: 100%;
       height: auto;
-      margin: 20px 0;
+      margin: 20px auto;
       gap: 20px;
+      max-width: 650px;
 
       .info {
         width: 100%;
@@ -261,26 +262,21 @@
 
       .mainImage {
         width: 100%;
-        max-width: 650px;
         align-self: center;
         height: 400px;
       }
     }
 
     .description {
-      width: 95%;
+      width: 100%;
       margin: 0;
-    }
-
-    .form {
-      margin: 50px 0;
-      width: 95%;
     }
   }
 }
 
-@media (max-width: 650px) {
-  .main {
-    width: 100%;
+@media (max-width: 700px) {
+  .form {
+    margin-top: 40px;
+    width: 100% !important;
   }
 }

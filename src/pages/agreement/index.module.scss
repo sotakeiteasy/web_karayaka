@@ -3,8 +3,7 @@
 .agreement {
   color: #000;
   background: #fff;
-  padding: 2rem 1.5rem 0 1.5rem;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
 
@@ -28,16 +27,7 @@
     text-align: center;
   }
 
-  /* Link styling inside module */
-  a {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-
-  /* Responsive text size */
   @media (max-width: 600px) {
-    padding: 1rem;
-
     p {
       font-size: 0.9rem;
       line-height: 1.4;
@@ -48,7 +38,7 @@
     position: absolute;
     content: '';
     left: 0;
-    top: 250px;
+    top: 270px;
     width: 2px;
     background-color: $primary-color;
     height: calc(100% - 270px);

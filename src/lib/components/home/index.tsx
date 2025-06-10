@@ -29,7 +29,7 @@ export function Home({ allBlogData, metaTags }: { allBlogData: Record<string, Po
     if (!searchQuery.trim()) return;
 
     const encodedQuery = encodeURIComponent(searchQuery.trim());
-    router.push(`/search?type=${isBuy ? 'sale' : 'rent'}&address=${encodedQuery}&lang=${lang}`);
+    router.push(`/${isBuy ? 'buy' : 'rent'}&address=${encodedQuery}&lang=${lang}`);
   };
 
   return (
@@ -124,16 +124,14 @@ export function Home({ allBlogData, metaTags }: { allBlogData: Record<string, Po
                   <span>{t('home.buyBtn')}</span>
                 </button>
               )}
-              <button className={styles.moreButton}>
-                <LinkWithLocale href={`/search?type=${isBuy ? 'sale' : 'rent'}&lang=${lang}`}>
-                  {t('home.seeAll')}
-                </LinkWithLocale>
-              </button>
+              <div role="button" className={styles.moreButton}>
+                <LinkWithLocale href={`/${isBuy ? 'buy' : 'rent'}`}>{t('home.seeAll')}</LinkWithLocale>
+              </div>
             </div>
           </div>
         </div>
 
-        <SimpleSlider type="sale" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
+        <SimpleSlider type="buy" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
 
         <SimpleSlider type="rent" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
 

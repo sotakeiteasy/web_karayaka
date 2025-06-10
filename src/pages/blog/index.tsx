@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 
 import { getSortedPostsData } from '@/lib/utils/blogServer';
 import { MetaTags, PostData } from '@/lib/types';
-import { ArticleCard } from '@/lib/components';
+import { ArticleCard, Breadcrumbs, ContainerWrapper } from '@/lib/components';
 
 export default function Blog({
   allBlogData,
@@ -74,9 +74,14 @@ export default function Blog({
       </Head>
 
       <main className={styles.main}>
-        {posts.map(({ id, title, excerpt, date }: PostData) => (
-          <ArticleCard key={id} id={id} title={title} date={date} excerpt={excerpt}></ArticleCard>
-        ))}
+        <ContainerWrapper width="standard" withMarginBottom={true}>
+          <Breadcrumbs items={[{ t: 'header.blog' }]} />
+          <div className={styles.articles}>
+            {posts.map(({ id, title, excerpt, date }: PostData) => (
+              <ArticleCard key={id} id={id} title={title} date={date} excerpt={excerpt}></ArticleCard>
+            ))}
+          </div>
+        </ContainerWrapper>
       </main>
     </>
   );

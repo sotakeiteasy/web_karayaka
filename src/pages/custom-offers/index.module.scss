@@ -4,13 +4,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
+
   .formContainer {
     display: flex;
     gap: 40px;
-    margin: 40px;
+    margin: 0px auto 40px auto;
     box-shadow: $shadow;
     border-radius: 15px;
-    width: 1100px;
+    width: 1200px;
     height: 950px;
     margin-bottom: 60px;
     .formImg {
@@ -25,15 +27,15 @@
     align-items: center;
     justify-content: space-between;
     box-shadow: $shadow;
-    padding: 30px;
+    margin: 0px auto;
+    padding: 40px;
     border-radius: 15px;
-    margin-bottom: 60px;
     color: $primary-color;
     .contactsTraditional,
     .contactsSocial {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 25px;
       .telegramIcon {
         width: 33px;
         height: 33px;
@@ -61,9 +63,8 @@
   .formContainer {
     gap: 40px;
     margin: 40px;
-    width: 80% !important;
+    width: 100% !important;
     height: fit-content !important;
-    margin-bottom: 60px;
     .formImg {
       width: 30%;
     }
@@ -72,22 +73,27 @@
 
 @media (max-width: 900px) {
   .formContainer {
+    width: 650px !important;
+    .formImg {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .formContainer {
+    width: 100% !important;
     gap: 40px;
     margin: 40px;
-    width: 95% !important;
     height: fit-content !important;
-    margin-bottom: 60px;
     .formImg {
       display: none;
     }
   }
 
   .contacts {
-    width: 95% !important;
+    width: 100% !important;
     flex-wrap: wrap;
     gap: 20px;
-    // .customOffers{
-    //   flex-direction: column;
-    // }
   }
 }

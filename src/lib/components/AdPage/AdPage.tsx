@@ -1,12 +1,12 @@
 import Head from 'next/head';
-import styles from './index.module.scss';
+import styles from './AdPage.module.scss';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import React, { useState } from 'react';
 import { useTranslation, useLanguageQuery } from 'next-export-i18n';
 
 import { getImageUrl } from '@/lib/utils';
-import { ContactUs } from '@/lib/components';
+import { Breadcrumbs, ContactUs, ContainerWrapper } from '@/lib/components';
 import { Ad, MetaTags } from '@/lib/types';
 
 import { getLocationString, getPropertyTitle } from '@/lib/utils';
@@ -52,19 +52,31 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
       </Head>
-      <div className={styles.main}>
-        <TitleInfo ad={ad} lang={lang} t={t} tooltip={tooltip} onCopy={handleCopy} />
-        <div className={styles.infoAndImage}>
-          <PropertyDetails ad={ad} lang={lang} t={t} />
-          <div className={styles.mainImage}>
-            <PropertySlider ad={ad} />
+      <main className={styles.main}>
+        <ContainerWrapper width="standardPlus" withMarginBottom={true}>
+          <Breadcrumbs
+            items={[
+              {
+                title: propertyTitle,
+                href: `/${ad.type}`,
+                t: `${ad.type === 'rent' ? 'search.rentBreadcrumb' : 'search.buyBreadcrumb'}`,
+              },
+              { title: propertyTitle },
+            ]}
+          />
+          <TitleInfo ad={ad} lang={lang} t={t} tooltip={tooltip} onCopy={handleCopy} />
+          <div className={styles.infoAndImage}>
+            <PropertyDetails ad={ad} lang={lang} t={t} />
+            <div className={styles.mainImage}>
+              <PropertySlider ad={ad} />
+            </div>
           </div>
-        </div>
-        {ad.description[lang] && <div className={styles.description}>{ad.description[lang]}</div>}
-        <div className={styles.form}>
-          <ContactUs />
-        </div>
-      </div>
+          {ad.description[lang] && <div className={styles.description}>{ad.description[lang]}</div>}
+          <div className={styles.form}>
+            <ContactUs />
+          </div>
+        </ContainerWrapper>
+      </main>
     </>
   );
 }

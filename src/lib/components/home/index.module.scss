@@ -133,20 +133,21 @@
           span {
             position: relative;
             z-index: 2;
-            // width: 50%;
             text-align: center;
           }
         }
         .moreButton {
           font-size: 1.3rem;
-          border: none;
           cursor: pointer;
           margin-left: 60px;
-          padding: 0px 20px;
           border-radius: 10px;
           color: white;
           background-color: $primary-color;
           transition: background-color 0.1s ease;
+
+          a {
+            padding: 10px 25px;
+          }
 
           &:hover {
             background-color: $secondary-color;

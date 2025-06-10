@@ -1,3 +1,4 @@
+import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
 import { Search } from '@/lib/components/Search/index';
 import { MetaTags, SearchType } from '@/lib/types';
 import { useLanguageQuery } from 'next-export-i18n';
@@ -30,20 +31,23 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
       </Head>
-      <Search type={SearchType.Rent} />
+      <ContainerWrapper width="large" withMarginBottom={true}>
+        <Breadcrumbs items={[{ t: 'search.rentBreadcrumb' }]} />
+        <Search type={SearchType.Rent} />
+      </ContainerWrapper>
     </>
   );
 }
 export async function getStaticProps() {
   const metaTags = {
     ru: {
-      title: 'Поиск недвижимости - Караяка | Недвижимость в Турции и России',
+      title: 'Аренда недвижимости - Караяка | Недвижимость в Турции и России',
       description:
         'Поиск и подбор недвижимости в Турции и России. Удобные фильтры, большая база предложений, актуальные цены.',
       keywords: 'поиск недвижимости, аренда, недвижимость в Турции, недвижимость в России, квартиры, дома',
     },
     en: {
-      title: 'Property Search - Karayaka | Real Estate in Turkey and Russia',
+      title: 'Rental property - Karayaka | Real Estate in Turkey and Russia',
       description:
         'Search and find real estate in Turkey and Russia. Convenient filters, large database of offers, current prices.',
       keywords: 'property search, rent, real estate in Turkey, real estate in Russia, apartments, houses',

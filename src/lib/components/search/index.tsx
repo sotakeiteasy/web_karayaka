@@ -57,7 +57,7 @@ export function Search({ type }: { type: SearchType }) {
       handleFilterChange(name, value);
     }
   };
-  // HERE DECIDE WITH TYPE
+
   return (
     <main className={styles.main}>
       <div className={styles.filterBox}>

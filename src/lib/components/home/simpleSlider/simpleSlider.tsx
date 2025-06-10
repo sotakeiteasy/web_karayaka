@@ -45,7 +45,7 @@ const shuffleAds = (ads: Ad[]): Ad[] => {
 };
 
 interface SimpleSliderProps {
-  type: 'sale' | 'rent';
+  type: 'buy' | 'rent';
   country: string;
   locale: 'ru' | 'en';
 }
@@ -78,7 +78,7 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
     speed: 2000,
     autoplaySpeed: 2000,
     cssEase: 'ease-in-out',
-    // pauseOnHover: true
+    pauseOnHover: true,
     responsive: [
       {
         breakpoint: 1050,
@@ -119,7 +119,7 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
             {shuffledAds.map((card) => (
               <div key={card.id} className={styles.slide}>
                 <div className={styles.adCard}>
-                  <LinkWithLocale href={`/ads/${card.id}`}>
+                  <LinkWithLocale href={`/${type}/${card.id}`}>
                     <Image
                       width={400}
                       height={200}
@@ -166,7 +166,7 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
         </div>
       </div>
       <button className={styles.blockButton}>
-        <LinkWithLocale href={`/search?type=${type}&country=${country}`}>{t('home.seeAll')}</LinkWithLocale>
+        <LinkWithLocale href={`/${type}?country=${country}`}>{t('home.seeAll')}</LinkWithLocale>
       </button>
     </div>
   );

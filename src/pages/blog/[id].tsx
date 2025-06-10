@@ -2,13 +2,12 @@ import styles from './id.module.scss';
 import { LanguageSwitcher, LinkWithLocale, useTranslation } from 'next-export-i18n';
 import { useLanguageQuery } from 'next-export-i18n';
 import Head from 'next/head';
-
 import { getImageUrl } from '@/lib/utils';
 import { getAllPostIds, getPostData, getSortedPostsData } from '@/lib/utils/blogServer';
 import { MetaTags, LocalizedPostData, PostData } from '@/lib/types';
 
 import { parseISO, format } from 'date-fns';
-import { ArticleCard } from '@/lib/components';
+import { ArticleCard, Breadcrumbs, ContainerWrapper } from '@/lib/components';
 
 function Date({ dateString }: { dateString: string }) {
   const date = parseISO(dateString);
@@ -25,7 +24,6 @@ export default function Post({
   metaTags: MetaTags;
 }) {
   const { t } = useTranslation();
-
   const [query] = useLanguageQuery();
 
   const lang = (query?.lang as 'ru' | 'en') || 'ru';
@@ -33,12 +31,9 @@ export default function Post({
   const baseMeta = metaTags[lang];
 
   const posts = allBlogData[lang];
-
   const number = Number(localizedPostData.id.match(/\d+/)?.[0])!;
-
   const id1 = number + 1 < Object.keys(posts).length ? number + 1 : Object.keys(posts).length - 1;
   const id2 = number + 2 < Object.keys(posts).length ? number + 2 : Object.keys(posts).length - 2;
-
   const FirstRecomendation = posts[id1];
   const SecondRecomendation = posts[id2];
 
@@ -96,52 +91,56 @@ export default function Post({
           }}
         />
       </Head>
-
       <main className={styles.main}>
-        <article className={styles.article}>
-          <h1>{localizedPostData.title}</h1>
-          <Date dateString={localizedPostData.date} />
-          <div className={styles.languageSwitcher}>
-            <LanguageSwitcher lang="ru">RU</LanguageSwitcher>
-            <LanguageSwitcher lang="en">EN</LanguageSwitcher>
+        <ContainerWrapper width="standard" withMarginBottom={true}>
+          <Breadcrumbs
+            items={[{ title: 'Blog', href: '/blog', t: 'header.blog' }, { title: localizedPostData.title }]}
+          />
+          <article className={styles.article}>
+            <h1>{localizedPostData.title}</h1>
+            <Date dateString={localizedPostData.date} />
+            <div className={styles.languageSwitcher}>
+              <LanguageSwitcher lang="ru">RU</LanguageSwitcher>
+              <LanguageSwitcher lang="en">EN</LanguageSwitcher>
+            </div>
+            {localizedPostData.contentHtml && (
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: localizedPostData.contentHtml
+                    .replace(/<h3(.*?)>(.*?)<\/h3>/g, '<h2$1>$2</h2>')
+                    .replace(
+                      /<img ([^>]*?)alt="[^"]*"([^>]*?)>/g,
+                      `<img $1alt="${localizedPostData.title}" title="${localizedPostData.title}"$2>`
+                    )
+                    .replace(
+                      /<img ((?!alt=)[^>])*?>/g,
+                      `<img alt="${localizedPostData.title}" title="${localizedPostData.title}" $1>`
+                    ),
+                }}
+              />
+            )}
+          </article>
+          <p className={styles.recomendationsHeader}>
+            {' '}
+            <LinkWithLocale href={`/blog`}>{t('blog.anotherArticles')}</LinkWithLocale>
+          </p>
+          <div className={styles.recomendations}>
+            <ArticleCard
+              id={FirstRecomendation.id}
+              title={FirstRecomendation.title}
+              date={FirstRecomendation.date}
+              excerpt={FirstRecomendation.excerpt}
+              direction="column"
+            ></ArticleCard>
+            <ArticleCard
+              id={SecondRecomendation.id}
+              title={SecondRecomendation.title}
+              date={SecondRecomendation.date}
+              excerpt={SecondRecomendation.excerpt}
+              direction="column"
+            ></ArticleCard>
           </div>
-          {localizedPostData.contentHtml && (
-            <div
-              dangerouslySetInnerHTML={{
-                __html: localizedPostData.contentHtml
-                  .replace(/<h3(.*?)>(.*?)<\/h3>/g, '<h2$1>$2</h2>')
-                  .replace(
-                    /<img ([^>]*?)alt="[^"]*"([^>]*?)>/g,
-                    `<img $1alt="${localizedPostData.title}" title="${localizedPostData.title}"$2>`
-                  )
-                  .replace(
-                    /<img ((?!alt=)[^>])*?>/g,
-                    `<img alt="${localizedPostData.title}" title="${localizedPostData.title}" $1>`
-                  ),
-              }}
-            />
-          )}
-        </article>
-        <p className={styles.recomendationsHeader}>
-          {' '}
-          <LinkWithLocale href={`/blog`}>{t('blog.anotherArticles')}</LinkWithLocale>
-        </p>
-        <div className={styles.recomendations}>
-          <ArticleCard
-            id={FirstRecomendation.id}
-            title={FirstRecomendation.title}
-            date={FirstRecomendation.date}
-            excerpt={FirstRecomendation.excerpt}
-            direction="column"
-          ></ArticleCard>
-          <ArticleCard
-            id={SecondRecomendation.id}
-            title={SecondRecomendation.title}
-            date={SecondRecomendation.date}
-            excerpt={SecondRecomendation.excerpt}
-            direction="column"
-          ></ArticleCard>
-        </div>
+        </ContainerWrapper>
       </main>
     </>
   );

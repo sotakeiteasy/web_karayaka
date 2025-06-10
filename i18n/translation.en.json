@@ -116,7 +116,9 @@
       "smallFirst": "Area (small first)",
       "largeFirst": "Area (large first)"
     },
-    "noResults": "No results found for your search criteria"
+    "noResults": "No results found for your search criteria",
+    "rentBreadcrumb": "Rental Property",
+    "buyBreadcrumb": "Buying Property"
   },
   "ad": {
     "copy": "copied",

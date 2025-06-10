@@ -2,11 +2,9 @@
 
 .main {
   display: flex;
-  // justify-self: center;
   margin: 0 auto;
   justify-content: center;
   max-width: 1200px;
-  padding: 20px 20px;
 
   .filterBox {
     display: flex;
@@ -15,7 +13,6 @@
     font-size: 1rem;
     height: fit-content;
     min-height: 610px;
-    margin: 20px 0;
     background-color: $white-text;
     color: $primary-color;
     border: 3px solid $primary-color;
@@ -85,7 +82,7 @@
   .searchBlock {
     width: 700px;
     flex: 1;
-    padding: 20px;
+    padding: 0 20px;
 
     .controlPanel {
       width: 100%;
@@ -306,7 +303,6 @@
 @media (max-width: 400px) {
   .main {
     max-width: 100% !important;
-    padding: 10px 10px !important;
   }
 
   .filterBox {

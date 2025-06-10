@@ -1,23 +1,20 @@
 @use '@styles/variables' as *;
+
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 45px 0;
-}
 
-@media (max-width: 1280px) {
-  .main {
-    div {
-      display: flex;
-    }
+  .articles {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
 }
 
-@media (max-width: 900px) {
-  .main {
-    justify-content: center;
-    margin: 25px 0 !important;
+@media (max-width: 500px) {
+  .articles {
+    gap: 20px !important;
   }
 }
