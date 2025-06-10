@@ -7,7 +7,7 @@ import Icon from '@mdi/react';
 import { mdiMagnify } from '@mdi/js';
 
 import styles from './index.module.scss';
-import SimpleSlider from './SimpleSlider/SimpleSlider';
+import SimpleSlider from './SimpleSlider/simpleSlider';
 import { ContactUs } from '@/lib/components';
 import { getImageUrl } from '@/lib/utils';
 import { PostData } from '@/lib/types';
