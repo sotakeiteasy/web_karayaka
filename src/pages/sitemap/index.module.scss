@@ -1,3 +1,28 @@
 .main {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.treeGrid3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  :global(.ant-tree) {
+    font-size: 1rem;
+    color: black !important;
+
+    :global(.tree-level-0 .ant-tree-title) {
+      font-size: 1.3rem;
+    }
+  }
+
+  :global(.ant-tree a:hover) {
+    color: inherit !important;
+  }
 }

@@ -17,8 +17,21 @@ export default function SiteMap({
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
   const locale = (query?.lang as 'ru' | 'en') || 'ru';
-  const treeData = buildTree(meta, locale);
   const metaPage = metaTags[locale];
+
+  const buyPages = meta.filter((page) => page.path.startsWith('/buy'));
+  const rentPages = meta.filter((page) => page.path.startsWith('/rent'));
+  const otherPages = meta.filter((page) => !page.path.startsWith('/buy') && !page.path.startsWith('/rent'));
+
+  const buyTree = buildTree(buyPages, locale);
+  const rentTree = buildTree(rentPages, locale);
+  const generalTree = buildTree(otherPages, locale);
+
+  const renderNode = (nodeData: DataNode) => (
+    <a href={nodeData.key as string} target="_blank" rel="noopener noreferrer">
+      {nodeData.title as string}
+    </a>
+  );
 
   return (
     <>
@@ -29,18 +42,20 @@ export default function SiteMap({
         <meta charSet="utf-8" />
       </Head>
       <main className={styles.main}>
-        <ContainerWrapper width="standard" withMarginBottom={true}>
+        <ContainerWrapper width="standardPlus" withMarginBottom={true}>
           <Breadcrumbs items={[{ t: 'sitemap.header' }]} />
           <h1>{t('sitemap.header')}</h1>
-          <Tree
-            treeData={treeData}
-            defaultExpandAll
-            titleRender={(nodeData) => (
-              <a href={nodeData.key as string} target="_blank" rel="noopener noreferrer">
-                {nodeData.title as string}
-              </a>
-            )}
-          />
+          <div className={styles.treeGrid3}>
+            <div>
+              <Tree defaultExpandAll treeData={generalTree} titleRender={renderNode} />
+            </div>
+            <div>
+              <Tree defaultExpandAll treeData={buyTree} titleRender={renderNode} />
+            </div>
+            <div>
+              <Tree defaultExpandAll treeData={rentTree} titleRender={renderNode} />
+            </div>
+          </div>
         </ContainerWrapper>
       </main>
     </>
@@ -68,6 +83,7 @@ function buildTree(pages: { path: string; titleRu: string; titleEn: string }[], 
       if (!node) {
         node = {
           title: cleanTitle(rawTitle),
+          className: `tree-level-${idx}`,
           key: fullPath,
           children: [],
         };
@@ -83,7 +99,12 @@ function buildTree(pages: { path: string; titleRu: string; titleEn: string }[], 
     });
 
     if (parts.length === 0) {
-      current.push({ title: locale === 'en' ? 'Home' : 'Главная', key: '/', isLeaf: true });
+      current.push({
+        title: locale === 'en' ? 'Home' : 'Главная',
+        key: '/',
+        isLeaf: true,
+        className: 'tree-level-0',
+      });
     }
   });
 
