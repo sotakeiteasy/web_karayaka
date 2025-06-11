@@ -195,15 +195,15 @@
     }
   },
   "footer": {
-    "home": "Home page",
+    "home": "Home",
     "tagline": "If it is possible, we can",
     "officeAddress": "Address",
     "russia": "Russia",
     "navigation": "Navigation",
-    "contactUs": "Contact Us",
+    "contactUs": "Contact us",
     "phone": "Phone",
     "allRightsReserved": "Karayaka LLC. All Rights Reserved",
-    "privacyPolicy": "Privacy Policy",
+    "privacyPolicy": "Privacy policy",
     "termsOfService": "Terms of Service"
   },
   "pagination": {

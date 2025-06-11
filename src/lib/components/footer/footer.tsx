@@ -86,7 +86,7 @@ export function Footer() {
             © {currentYear} {t('footer.allRightsReserved')}
           </p>
           <div className={styles.legalLinks}>
-            <a href="/privacyPolicy" target="_blank" rel="noopener noreferrer">
+            <a href="/privacy-policy">
               <span>{t('footer.privacyPolicy')}</span>
             </a>
             <LinkWithLocale href="/sitemap">
