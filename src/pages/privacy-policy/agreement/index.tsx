@@ -42,7 +42,7 @@ export default function AgreementPage({ content, metaTags }: { content: HTMLElem
         <ContainerWrapper width="standard" withMarginBottom={true}>
           <Breadcrumbs
             items={[
-              { title: 'privacyPolicy', href: '/privacyPolicy', t: 'footer.privacyPolicy' },
+              { title: 'privacyPolicy', href: '/privacy-policy', t: 'footer.privacyPolicy' },
               { t: 'agreementForm.header' },
             ]}
           />

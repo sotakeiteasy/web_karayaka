@@ -5,8 +5,8 @@ export async function getPageMeta() {
   const staticPages = [
     { path: '/', file: 'index' },
     { path: '/about-us', file: 'about-us/index' },
-    { path: '/privacyPolicy', file: 'privacyPolicy/index' },
-    { path: '/privacyPolicy/agreement', file: 'privacyPolicy/agreement/index' },
+    { path: '/privacy-policy', file: 'privacy-policy/index' },
+    { path: '/privacy-policy/agreement', file: 'privacy-policy/agreement/index' },
     { path: '/blog', file: 'blog/index' },
     { path: '/custom-offers', file: 'custom-offers/index' },
     { path: '/rent', file: 'rent/index' },
