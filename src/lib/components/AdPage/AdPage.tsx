@@ -57,11 +57,10 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
           <Breadcrumbs
             items={[
               {
-                title: meta.title,
                 href: `/${ad.type}`,
                 t: `${ad.type === 'rent' ? 'search.rentBreadcrumb' : 'search.buyBreadcrumb'}`,
               },
-              { title: meta.title },
+              { href: `/${ad.type}/${ad.id}`, title: meta.title },
             ]}
           />
           <TitleInfo ad={ad} lang={lang} t={t} tooltip={tooltip} onCopy={handleCopy} />

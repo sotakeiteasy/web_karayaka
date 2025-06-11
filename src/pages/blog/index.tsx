@@ -75,7 +75,7 @@ export default function Blog({
 
       <main className={styles.main}>
         <ContainerWrapper width="standard" withMarginBottom={true}>
-          <Breadcrumbs items={[{ t: 'header.blog' }]} />
+          <Breadcrumbs items={[{ href: '/blog', t: 'header.blog' }]} />
           <div className={styles.articles}>
             {posts.map(({ id, title, excerpt, date }: PostData) => (
               <ArticleCard key={id} id={id} title={title} date={date} excerpt={excerpt}></ArticleCard>

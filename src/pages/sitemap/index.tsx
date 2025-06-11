@@ -43,7 +43,7 @@ export default function SiteMap({
       </Head>
       <main className={styles.main}>
         <ContainerWrapper width="standardPlus" withMarginBottom={true}>
-          <Breadcrumbs items={[{ t: 'sitemap.header' }]} />
+          <Breadcrumbs items={[{ href: '/sitemap', t: 'sitemap.header' }]} />
           <h1>{t('sitemap.header')}</h1>
           <div className={styles.treeGrid3}>
             <div>

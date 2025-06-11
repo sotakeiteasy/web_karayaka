@@ -39,7 +39,7 @@ export default function CustomOffers({ metaTags }: { metaTags: MetaTags }) {
       </Head>
       <main className={styles.main}>
         <ContainerWrapper width="1200px" withMarginBottom={true}>
-          <Breadcrumbs items={[{ t: 'header.customOffers' }]} />
+          <Breadcrumbs items={[{ href: '/custom-offers', t: 'header.customOffers' }]} />
           <div className={styles.formContainer}>
             <ContactUs />
             <div className={styles.formImg}>

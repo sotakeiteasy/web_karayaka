@@ -32,7 +32,7 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
       </Head>
       <ContainerWrapper width="large" withMarginBottom={true}>
-        <Breadcrumbs items={[{ t: 'search.buyBreadcrumb' }]} />
+        <Breadcrumbs items={[{ href: '/buy', t: 'search.buyBreadcrumb' }]} />
         <Search type={SearchType.Buy} />
       </ContainerWrapper>
     </>

@@ -88,7 +88,10 @@ export default function Post({
       <main className={styles.main}>
         <ContainerWrapper width="standard" withMarginBottom={true}>
           <Breadcrumbs
-            items={[{ title: 'Blog', href: '/blog', t: 'header.blog' }, { title: localizedPostData.title }]}
+            items={[
+              { href: '/blog', t: 'header.blog' },
+              { href: '/custom-offers', title: localizedPostData.title },
+            ]}
           />
           <article className={styles.article}>
             <h1>{localizedPostData.title}</h1>
