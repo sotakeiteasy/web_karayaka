@@ -1,6 +1,6 @@
 import AdPage from '@/lib/components/AdPage/AdPage';
 import { Ad, MetaTags, SearchType } from '@/lib/types';
-import { getAllAds, getAdById } from '@/lib/utils';
+import { getAllAds, getAdById, getPropertyTitle } from '@/lib/utils';
 
 export default function RentAd({ ad, metaTags }: { ad: Ad; metaTags: MetaTags }) {
   return <AdPage ad={ad} metaTags={metaTags} />;
@@ -21,17 +21,33 @@ export function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { id: string } }) {
-  const ad = getAdById(params.id);
+  const ru = require('../../../i18n/translation.ru.json');
+  const en = require('../../../i18n/translation.en.json');
+  const translations = { ru, en };
 
+  function getNestedTranslation(obj: any, key: string): string {
+    return key.split('.').reduce((acc: any, part: string) => acc[part], obj);
+  }
+
+  const tRu = (key: string) => getNestedTranslation(translations.ru, key);
+  const tEn = (key: string) => getNestedTranslation(translations.en, key);
+
+  const ad = getAdById(params.id)!;
+
+  const propertyTitle = {
+    ru: getPropertyTitle(ad, 'ru', tRu),
+    en: getPropertyTitle(ad, 'en', tEn),
+  };
   const metaTags = {
     ru: {
-      description: 'Подробная информация о недвижимости в {location}. Актуальные цены, фотографии, детальное описание.',
-      keywords: 'недвижимость, купить, аренда, квартира, вилла, дом, Турция, Россия',
+      title: propertyTitle.ru,
+      description: 'Подробная информация о недвижимости. Актуальные цены, фотографии, детальное описание.',
+      keywords: 'недвижимость, аренда, квартира, вилла, дом, Турция, Россия',
     },
     en: {
-      description:
-        'Detailed information about real estate in {location}. Current prices, photos, and comprehensive description.',
-      keywords: 'real estate, buy, rent, apartment, villa, house, Turkey, Russia',
+      title: propertyTitle.en,
+      description: 'Detailed information about real estate. Current prices, photos, and comprehensive description.',
+      keywords: 'real estate, rent, apartment, villa, house, Turkey, Russia',
     },
   };
 

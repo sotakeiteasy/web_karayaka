@@ -35,10 +35,10 @@ export function getStaticProps() {
 
   const metaTags = {
     ru: {
-      title: 'Политика конфеденциальности',
+      title: 'Политика конфеденциальности - Караяка | Агентство недвижимости в Турции и России',
     },
     en: {
-      title: 'Privacy Policy',
+      title: 'Privacy Policy - Karayaka | Real Estate Agency in Turkey and Russia',
     },
   };
 

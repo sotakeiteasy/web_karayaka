@@ -36,10 +36,18 @@ export async function getPageMeta() {
     meta.push({ path: `/blog/${id}`, title: (props as any).metaTags?.ru?.title || `Статья ${id}` });
   }
 
-  ads.forEach((ad) => {
-    const path = ad.type === 'buy' ? `/buy/${ad.id}` : `/rent/${ad.id}`;
-    meta.push({ path, title: (ad as any).description?.ru || `Объявление ${ad.id}` });
-  });
+  for (const ad of ads) {
+    const isBuy = ad.type === 'buy';
+    const path = isBuy ? `/buy/${ad.id}` : `/rent/${ad.id}`;
+
+    const { getStaticProps } = await import(`@/pages/${ad.type}/[id]`);
+    const { props } = await getStaticProps({ params: { id: ad.id, lang: 'ru' } });
+
+    meta.push({
+      path,
+      title: (props as any).metaTags?.ru?.title,
+    });
+  }
 
   return meta;
 }

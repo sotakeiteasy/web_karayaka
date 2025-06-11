@@ -161,12 +161,12 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   const metaTags = {
     ru: {
       title: `${postData.ru!.title} - Блог Караяка`,
-      description: postData.ru!.excerpt,
+      description: postData.ru?.excerpt ?? null,
       keywords: 'блог о недвижимости, статьи о недвижимости, недвижимость в Турции, недвижимость в России',
     },
     en: {
       title: `${postData.en!.title} - Karayaka Blog`,
-      description: postData.en!.excerpt,
+      description: postData.en?.excerpt ?? null,
       keywords: 'real estate blog, real estate articles, property in Turkey, property in Russia',
     },
   };

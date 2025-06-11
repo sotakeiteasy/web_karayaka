@@ -2,8 +2,8 @@ import { Tree } from 'antd';
 import 'antd/dist/reset.css';
 import { DataNode } from 'antd/lib/tree';
 
-export default function SiteMap({ urls }: { urls: string[] }) {
-  const treeData = buildTree(urls);
+export default function SiteMap({ meta }: { meta: { path: string; title: string }[] }) {
+  const treeData = buildTree(meta);
 
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: 32 }}>
@@ -21,66 +21,43 @@ export default function SiteMap({ urls }: { urls: string[] }) {
   );
 }
 
-function humanize(part: string): string {
-  const special: Record<string, string> = {
-    'about-us': 'О нас',
-    'blog': 'Блог',
-    'ads': 'Объявления',
-    'custom-offers': 'Индивидуальные предложения',
-    'privacyPolicy': 'Политика конфиденциальности',
-    'agreement': 'Пользовательское соглашение',
-  };
-  if (special[part]) return special[part];
-
-  if (part.startsWith('article')) {
-    const num = part.replace('article', '');
-    return `Статья ${num}`;
-  }
-
-  if (/^\d+$/.test(part)) {
-    return `Объявление ${part}`;
-  }
-
-  return part
-    .split('-')
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(' ');
+function cleanTitle(title: string): string {
+  return title.split(' - ')[0].trim();
 }
 
-function buildTree(urls: string[]): DataNode[] {
+function buildTree(pages: { path: string; title: string }[]): DataNode[] {
   const tree: DataNode[] = [];
   const map: Record<string, DataNode> = {};
 
-  urls.forEach((url) => {
-    const { pathname } = new URL(url);
-    const parts = pathname.split('/').filter(Boolean);
+  pages.forEach(({ path, title }) => {
+    const parts = path.split('/').filter(Boolean);
     let current = tree;
-    let path = '';
+    let fullPath = '';
 
     parts.forEach((part, idx) => {
-      path += '/' + part;
-      let node = current.find((n) => n.key === path);
+      fullPath += '/' + part;
+      let node = current.find((n) => n.key === fullPath);
+
       if (!node) {
         node = {
-          title: humanize(part),
-          key: path,
+          title: cleanTitle(title),
+          key: fullPath,
           children: [],
         };
         current.push(node);
-        map[path] = node;
+        map[fullPath] = node;
       }
+
       if (idx === parts.length - 1) {
         node.isLeaf = true;
       }
+
       current = node.children!;
     });
 
+    // Главная страница
     if (parts.length === 0) {
-      current.push({
-        title: 'Главная',
-        key: '/',
-        isLeaf: true,
-      });
+      current.push({ title: 'Главная', key: '/', isLeaf: true });
     }
   });
 
@@ -88,7 +65,7 @@ function buildTree(urls: string[]): DataNode[] {
 }
 
 export async function getStaticProps() {
-  const { getUrlsFromSitemap } = await import('@/lib/server/getSitemap');
-  const urls = await getUrlsFromSitemap();
-  return { props: { urls } };
+  const { getPageMeta } = await import('@/lib/server/getPageMeta');
+  const meta = await getPageMeta();
+  return { props: { meta } };
 }

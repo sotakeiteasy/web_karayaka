@@ -9,7 +9,7 @@ import { getImageUrl } from '@/lib/utils';
 import { Breadcrumbs, ContactUs, ContainerWrapper } from '@/lib/components';
 import { Ad, MetaTags } from '@/lib/types';
 
-import { getLocationString, getPropertyTitle } from '@/lib/utils';
+import { getLocationString } from '@/lib/utils';
 import { TitleInfo, PropertyDetails, PropertySlider } from './components';
 
 export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags }) {
@@ -20,7 +20,7 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
 
   const meta = metaTags[lang];
 
-  const propertyTitle = getPropertyTitle(ad, lang, t);
+  // const propertyTitle = getPropertyTitle(ad, lang, t);
   const location = getLocationString(ad, lang);
 
   const handleCopy = () => {
@@ -31,8 +31,8 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
   return (
     <>
       <Head>
-        <title>{propertyTitle}</title>
-        <meta name="description" content={meta.description.replace('{location}', location)} />
+        <title>{meta.title}</title>
+        <meta name="description" content={meta.description?.replace('{location}', location)} />
         <meta name="keywords" content={meta.keywords} />
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,13 +40,13 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`https://karayaka.ru/ads/${ad.id}`} />
-        <meta property="og:title" content={propertyTitle} />
-        <meta property="og:description" content={meta.description.replace('{location}', location)} />
+        <meta property="og:title" content={meta.title} />
+        <meta property="og:description" content={meta.description?.replace('{location}', location)} />
         <meta
           property="og:image"
           content={ad.images.length > 0 ? getImageUrl(ad.images[0]) : 'https://karayaka.ru/og-image.png'}
         />
-        <meta property="og:image:alt" content={propertyTitle} />
+        <meta property="og:image:alt" content={meta.title} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
@@ -57,11 +57,11 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
           <Breadcrumbs
             items={[
               {
-                title: propertyTitle,
+                title: meta.title,
                 href: `/${ad.type}`,
                 t: `${ad.type === 'rent' ? 'search.rentBreadcrumb' : 'search.buyBreadcrumb'}`,
               },
-              { title: propertyTitle },
+              { title: meta.title },
             ]}
           />
           <TitleInfo ad={ad} lang={lang} t={t} tooltip={tooltip} onCopy={handleCopy} />

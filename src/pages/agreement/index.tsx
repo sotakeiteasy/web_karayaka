@@ -12,10 +12,10 @@ export function getStaticProps() {
 
   const metaTags = {
     ru: {
-      title: 'Форма согласия на обработку персональных данных',
+      title: 'Форма согласия на обработку персональных данных - Караяка | Агентство недвижимости в Турции и России',
     },
     en: {
-      title: 'Consent form for personal data processing',
+      title: 'Consent form for personal data processing - Karayaka | Real Estate Agency in Turkey and Russia',
     },
   };
 
