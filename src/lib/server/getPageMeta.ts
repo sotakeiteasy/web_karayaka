@@ -1,7 +1,7 @@
 import ads from '@/data/ads/ads.json';
 
 export async function getPageMeta() {
-  const meta: { path: string; title: string }[] = [];
+  const meta: { path: string; titleRu: string; titleEn: string }[] = [];
   const staticPages = [
     { path: '/', file: 'index' },
     { path: '/about-us', file: 'about-us/index' },
@@ -15,7 +15,7 @@ export async function getPageMeta() {
   for (const { path, file } of staticPages) {
     const { getStaticProps } = await import(`@/pages/${file}`);
     const { props } = await getStaticProps({});
-    meta.push({ path, title: (props as any).metaTags?.ru?.title || path.split('/').pop() });
+    meta.push({ path, titleRu: (props as any).metaTags?.ru?.title, titleEn: (props as any).metaTags?.en?.title });
   }
 
   const blogIds = [
@@ -33,7 +33,11 @@ export async function getPageMeta() {
   for (const id of blogIds) {
     const { getStaticProps } = await import('@/pages/blog/[id]');
     const { props } = await getStaticProps({ params: { id } });
-    meta.push({ path: `/blog/${id}`, title: (props as any).metaTags?.ru?.title || `Статья ${id}` });
+    meta.push({
+      path: `/blog/${id}`,
+      titleRu: (props as any).metaTags?.ru?.title || `Статья ${id}`,
+      titleEn: (props as any).metaTags?.en?.title || `Article ${id}`,
+    });
   }
 
   for (const ad of ads) {
@@ -45,7 +49,8 @@ export async function getPageMeta() {
 
     meta.push({
       path,
-      title: (props as any).metaTags?.ru?.title,
+      titleRu: (props as any).metaTags?.ru?.title,
+      titleEn: (props as any).metaTags?.en?.title,
     });
   }
 

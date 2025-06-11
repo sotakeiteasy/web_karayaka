@@ -214,5 +214,9 @@
     "disclaimer": "By staying on our site, you agree to the use of cookies.",
     "accept": "Accept",
     "policy": "More"
+  },
+  "sitemap": {
+    "header": "Site map",
+    "main": "Home"
   }
 }
