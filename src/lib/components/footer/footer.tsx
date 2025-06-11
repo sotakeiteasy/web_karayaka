@@ -4,6 +4,7 @@ import styles from './Footer.module.scss';
 import Icon from '@mdi/react';
 import { mdiWhatsapp } from '@mdi/js';
 import { contactInfo } from '@/lib/constants/contactInfo';
+import Head from 'next/head';
 
 export function Footer() {
   const { t } = useTranslation();
@@ -15,67 +16,85 @@ export function Footer() {
     { href: '/buy', label: t('header.buy') },
     { href: '/about-us', label: t('header.aboutUs') },
     { href: '/custom-offers', label: t('header.customOffers') },
-    { href: '/blog/', label: t('header.blog') },
+    { href: '/blog', label: t('header.blog') },
   ];
 
+  const footerNavSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'itemListElement': navLinks.map((link) => ({
+      '@type': 'SiteNavigationElement',
+      'name': link.label,
+      'url': `https://karayaka.ru${link.href}`,
+    })),
+  };
+
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footerContainer}>
-        <div className={styles.footerSection}>
-          <div className={styles.logoSection}>
-            <h2 className={styles.logoText}>{t('header.home')}</h2>
-            <p className={styles.tagline}>{t('footer.tagline')}</p>
+    <>
+      <Head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(footerNavSchema) }} />
+      </Head>
+      <footer className={styles.footer}>
+        <div className={styles.footerContainer}>
+          <div className={styles.footerSection}>
+            <div className={styles.logoSection}>
+              <h2 className={styles.logoText}>{t('header.home')}</h2>
+              <p className={styles.tagline}>{t('footer.tagline')}</p>
+            </div>
+            <div className={styles.address}>
+              <h3>{t('footer.officeAddress')}</h3>
+              <p>
+                {t('footer.russia')}, {contactInfo.address}
+              </p>
+            </div>
           </div>
-          <div className={styles.address}>
-            <h3>{t('footer.officeAddress')}</h3>
-            <p>
-              {t('footer.russia')}, {contactInfo.address}
-            </p>
+
+          <div className={styles.footerSection}>
+            <h3>{t('footer.navigation')}</h3>
+            <nav className={styles.footerNav}>
+              {navLinks.map((link) => (
+                <LinkWithLocale key={link.href} href={link.href}>
+                  <span>{link.label}</span>
+                </LinkWithLocale>
+              ))}
+            </nav>
+          </div>
+
+          <div className={styles.footerSection}>
+            <h3>{t('footer.contactUs')}</h3>
+            <div className={styles.contactInfo}>
+              <p>
+                <strong>Email:</strong> {contactInfo.email}
+              </p>
+              <p>
+                <strong>{t('footer.phone')}:</strong> {contactInfo.phone}
+              </p>
+            </div>
+            <div className={styles.socialLinks}>
+              <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer">
+                <img src="/assets/icons/TelegramIconFooter.svg" alt="Telegram" className={styles.telegramIcon} />
+              </a>
+              <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <Icon path={mdiWhatsapp} size={1} />
+              </a>
+            </div>
           </div>
         </div>
 
-        <div className={styles.footerSection}>
-          <h3>{t('footer.navigation')}</h3>
-          <nav className={styles.footerNav}>
-            {navLinks.map((link) => (
-              <LinkWithLocale key={link.href} href={link.href}>
-                <span>{link.label}</span>
-              </LinkWithLocale>
-            ))}
-          </nav>
-        </div>
-
-        <div className={styles.footerSection}>
-          <h3>{t('footer.contactUs')}</h3>
-          <div className={styles.contactInfo}>
-            <p>
-              <strong>Email:</strong> {contactInfo.email}
-            </p>
-            <p>
-              <strong>{t('footer.phone')}:</strong> {contactInfo.phone}
-            </p>
-          </div>
-          <div className={styles.socialLinks}>
-            <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer">
-              <img src="/assets/icons/TelegramIconFooter.svg" alt="Telegram" className={styles.telegramIcon} />
+        <div className={styles.bottomFooter}>
+          <p className={styles.copyright}>
+            © {currentYear} {t('footer.allRightsReserved')}
+          </p>
+          <div className={styles.legalLinks}>
+            <a href="/privacyPolicy" target="_blank" rel="noopener noreferrer">
+              <span>{t('footer.privacyPolicy')}</span>
             </a>
-            <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-              <Icon path={mdiWhatsapp} size={1} />
-            </a>
+            <LinkWithLocale href="/sitemap">
+              <span>{t('sitemap.header')}</span>
+            </LinkWithLocale>
           </div>
         </div>
-      </div>
-
-      <div className={styles.bottomFooter}>
-        <p className={styles.copyright}>
-          © {currentYear} {t('footer.allRightsReserved')}
-        </p>
-        <div className={styles.legalLinks}>
-          <a href="/privacyPolicy" target="_blank" rel="noopener noreferrer">
-            <span>{t('footer.privacyPolicy')}</span>
-          </a>
-        </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }
