@@ -43,7 +43,7 @@ export default function AgreementPage({ content, metaTags }: { content: HTMLElem
           <Breadcrumbs
             items={[
               { title: 'privacyPolicy', href: '/privacyPolicy', t: 'footer.privacyPolicy' },
-              { title: meta.title },
+              { t: 'agreementForm.header' },
             ]}
           />
           <div dangerouslySetInnerHTML={{ __html: content }} />

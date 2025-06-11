@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage({ content, metaTags }: { content: HTML
       </Head>
       <main className={styles.privacyPolicy}>
         <ContainerWrapper width="standard" withMarginBottom={true}>
-          <Breadcrumbs items={[{ title: meta.title }]} />
+          <Breadcrumbs items={[{ t: 'footer.privacyPolicy' }]} />
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </ContainerWrapper>
       </main>

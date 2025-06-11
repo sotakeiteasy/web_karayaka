@@ -218,5 +218,8 @@
   "sitemap": {
     "header": "Site map",
     "main": "Home"
+  }, 
+  "agreementForm": {
+    "header": "Personal data processing consent form"
   }
 }
