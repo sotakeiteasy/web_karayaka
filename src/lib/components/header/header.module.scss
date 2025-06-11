@@ -233,6 +233,44 @@
   }
 }
 
+.telegramContact,
+.whatsappContact {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  img,
+  svg {
+    width: 25px;
+    height: auto;
+  }
+
+  .telegram {
+    margin-bottom: 0px;
+  }
+
+  .whatsapp {
+    margin-bottom: 0px;
+  }
+}
+
+.contactMenuItem {
+  color: black;
+  margin-bottom: 12px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+
+  &.workhours {
+    cursor: auto;
+    font-size: 0.9rem;
+
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 1280px) {
   .nav {
     .logo {
@@ -337,13 +375,12 @@
       }
       .mobileLangSwitcher {
         display: flex;
-        flex-direction: column;
-        margin: 25px 0;
+        margin: 40px 20px;
 
         .mobileLangButton {
           font-size: 1.2rem !important;
 
-          margin: 5px 30px;
+          margin: 5px 10px;
           background: none;
           border: none;
           color: $white-text;
@@ -367,17 +404,36 @@
 
       .contacts {
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
         margin: 0 40px 20px 40px;
-        margin-top: auto;
-        gap: 50px;
+        margin-top: 40px;
+        margin-bottom: auto;
+        gap: 25px;
 
-        a {
-          img {
-            width: 45px;
-            height: 45px;
-            fill: $white-text;
+        p {
+          font-size: 1.2rem;
+        }
+
+        .network {
+          display: flex;
+          gap: 40px;
+
+          a {
+            img {
+              width: 45px;
+              height: 45px;
+              fill: $white-text;
+            }
           }
+        }
+
+        .phoneMail {
+          font-size: 1.2rem;
+          display: flex;
+          flex-direction: column;
+          color: $white-text;
+          gap: 20px;
         }
       }
     }
