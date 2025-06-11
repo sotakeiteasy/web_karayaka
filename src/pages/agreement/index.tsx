@@ -3,22 +3,37 @@ import path from 'path';
 import styles from './index.module.scss';
 import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
 import Head from 'next/head';
+import { MetaTags } from '@/lib/types';
+import { useLanguageQuery } from 'next-export-i18n';
 
 export function getStaticProps() {
   const filePath = path.join(process.cwd(), './src/data/documents', 'agreement.html');
   const content = fs.readFileSync(filePath, 'utf-8');
 
+  const metaTags = {
+    ru: {
+      title: 'Форма согласия на обработку персональных данных',
+    },
+    en: {
+      title: 'Consent form for personal data processing',
+    },
+  };
+
   return {
-    props: { content },
+    props: { content, metaTags },
   };
 }
 
-export default function AgreementPage({ content }: { content: HTMLElement }) {
-  const title = 'Форма согласия на обработку персональных данных';
+export default function AgreementPage({ content, metaTags }: { content: HTMLElement; metaTags: MetaTags }) {
+  const [query] = useLanguageQuery();
+
+  const lang = (query?.lang as 'ru' | 'en') || 'ru';
+  const meta = metaTags[lang];
+
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{meta.title}</title>
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
@@ -26,7 +41,10 @@ export default function AgreementPage({ content }: { content: HTMLElement }) {
       <main className={styles.agreement}>
         <ContainerWrapper width="standard" withMarginBottom={true}>
           <Breadcrumbs
-            items={[{ title: 'privacyPolicy', href: '/privacyPolicy', t: 'footer.privacyPolicy' }, { title: title }]}
+            items={[
+              { title: 'privacyPolicy', href: '/privacyPolicy', t: 'footer.privacyPolicy' },
+              { title: meta.title },
+            ]}
           />
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </ContainerWrapper>

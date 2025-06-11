@@ -3,33 +3,46 @@ import path from 'path';
 import styles from './index.module.scss';
 import Head from 'next/head';
 import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
+import { MetaTags } from '@/lib/types';
+import { useLanguageQuery } from 'next-export-i18n';
 
-export function getStaticProps() {
-  const filePath = path.join(process.cwd(), './src/data/documents', 'privacyPolicy.html'); // укажите правильный путь
-  const content = fs.readFileSync(filePath, 'utf-8');
-
-  return {
-    props: { content },
-  };
-}
-
-export default function privacyPolicyPage({ content }: { content: HTMLElement }) {
-  const title = 'Политика конфеденциальности';
+export default function PrivacyPolicyPage({ content, metaTags }: { content: HTMLElement; metaTags: MetaTags }) {
+  const [query] = useLanguageQuery();
+  const locale = (query?.lang as 'ru' | 'en') || 'ru';
+  const meta = metaTags[locale];
 
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{meta.title}</title>
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
       </Head>
       <main className={styles.privacyPolicy}>
         <ContainerWrapper width="standard" withMarginBottom={true}>
-          <Breadcrumbs items={[{ title: title }]} />
+          <Breadcrumbs items={[{ title: meta.title }]} />
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </ContainerWrapper>
       </main>
     </>
   );
+}
+
+export function getStaticProps() {
+  const filePath = path.join(process.cwd(), './src/data/documents', 'privacyPolicy.html');
+  const content = fs.readFileSync(filePath, 'utf-8');
+
+  const metaTags = {
+    ru: {
+      title: 'Политика конфеденциальности',
+    },
+    en: {
+      title: 'Privacy Policy',
+    },
+  };
+
+  return {
+    props: { content, metaTags },
+  };
 }

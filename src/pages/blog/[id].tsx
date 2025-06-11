@@ -28,7 +28,7 @@ export default function Post({
 
   const lang = (query?.lang as 'ru' | 'en') || 'ru';
   const localizedPostData = postData[lang]!;
-  const baseMeta = metaTags[lang];
+  const meta = metaTags[lang];
 
   const posts = allBlogData[lang];
   const number = Number(localizedPostData.id.match(/\d+/)?.[0])!;
@@ -43,12 +43,6 @@ export default function Post({
 
   const pageUrl = `https://karayaka.ru/blog/${localizedPostData.id}`;
   const imageUrl = getImageUrl(`/images/articles/${localizedPostData.id}.jpg`);
-
-  const meta = {
-    title: `${localizedPostData.title} - ${baseMeta.title}`,
-    description: localizedPostData.excerpt || baseMeta.description,
-    keywords: baseMeta.keywords,
-  };
 
   return (
     <>
@@ -166,13 +160,13 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
 
   const metaTags = {
     ru: {
-      title: 'Блог Караяка',
-      description: 'Статьи и новости о недвижимости в Турции и России',
+      title: `${postData.ru!.title} - Блог Караяка`,
+      description: postData.ru!.excerpt,
       keywords: 'блог о недвижимости, статьи о недвижимости, недвижимость в Турции, недвижимость в России',
     },
     en: {
-      title: 'Karayaka Blog',
-      description: 'Articles and news about real estate in Turkey and Russia',
+      title: `${postData.en!.title} - Karayaka Blog`,
+      description: postData.en!.excerpt,
       keywords: 'real estate blog, real estate articles, property in Turkey, property in Russia',
     },
   };
