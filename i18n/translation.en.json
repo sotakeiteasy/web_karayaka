@@ -17,7 +17,6 @@
     "articles": "Latest Articles",
     "rentBtn": "Rent",
     "buyBtn": "Buy",
-    "hero": "House in Russia",
     "searchBtn": "Search",
     "searchPlaceholder": "Address, keywords",
     "moreFilters": "All ads"
@@ -32,6 +31,8 @@
     "header": "About us",
     "description": "We are a boutique real estate consultancy operating in both Turkey and Russia. We treat every client with personalized attention, have deep knowledge of local markets, and support you at every stage of your international property journey. Our goal is to understand your unique needs and match you with the most suitable property. We organize property viewings, assist in negotiations, and guide you through the legal procedures. Open communication and trust are the foundation of our work. We do everything possible to ensure your buying experience is smooth and stress-free.",
     "servicesHeader": "Our Services and Key Strengths",
+    "founderName": "Yavuz Selim Karayaka — founder of Karayaka Real Estate",
+    "founderInfo": "A licensed attorney registered with the Istanbul Bar Association, he has been active in the real estate sector for over 8 years. He is the managing director of the Karayaka company based in Moscow. His areas of expertise include investment consultancy, real estate law, rental law, and foreigners’ law (including citizenship procedures). He provides professional legal support to foreign investors seeking secure property transactions in Turkey.",
     "servicesList": {
       "1": "Our company is based in Moscow and operates in compliance with Russian legal regulations.",
       "2": "Our team includes native speakers of Russian, Turkish, and English, ensuring clear and professional communication.",
@@ -222,5 +223,9 @@
   }, 
   "agreementForm": {
     "header": "Personal data processing consent form"
+  },
+  "imagesAlt": {
+    "view": "view of Turkey",
+    "founder": "CEO"
   }
 }

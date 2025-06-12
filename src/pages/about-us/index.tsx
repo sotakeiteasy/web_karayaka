@@ -4,12 +4,29 @@ import { useTranslation, useLanguageQuery } from 'next-export-i18n';
 import { useState } from 'react';
 import Head from 'next/head';
 
+import {
+  mdiMapMarker,
+  mdiEarth,
+  mdiHomeCity,
+  mdiGavel,
+  mdiMapSearchOutline,
+  mdiPassport,
+  mdiCashMultiple,
+  mdiClipboardCheckMultipleOutline,
+  mdiTranslate,
+  mdiKeyVariant,
+  mdiAccountHardHat,
+  mdiStar,
+  mdiHours24,
+  mdiTruckFast,
+} from '@mdi/js';
 import Icon from '@mdi/react';
 import { mdiChevronRight } from '@mdi/js';
 
 import { getImageUrl } from '@/lib/utils';
 import { MetaTags } from '@/lib/types';
-import { ContainerWrapper } from '@/lib/components';
+import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
+import { Divider } from 'antd';
 
 export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();
@@ -43,6 +60,26 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
     setActiveKey(key);
   }
 
+  const serviceIcons = [
+    <Icon key="marker" path={mdiMapMarker} size={2} />,
+    <Icon key="earth" path={mdiEarth} size={2} />,
+    <Icon key="home" path={mdiHomeCity} size={2} />,
+    <Icon key="gavel" path={mdiGavel} size={2} />,
+    <Icon key="search" path={mdiMapSearchOutline} size={2} />,
+    <Icon key="passport" path={mdiPassport} size={2} />,
+    <Icon key="cash" path={mdiCashMultiple} size={2} />,
+  ];
+
+  const supportIcons = [
+    <Icon key="clipboard" path={mdiClipboardCheckMultipleOutline} size={2} />,
+    <Icon key="translate" path={mdiTranslate} size={2} />,
+    <Icon key="key" path={mdiKeyVariant} size={2} />,
+    <Icon key="hardhat" path={mdiAccountHardHat} size={2} />,
+    <Icon key="star" path={mdiStar} size={2} />,
+    <Icon key="24hours" path={mdiHours24} size={2} />,
+    <Icon key="truck" path={mdiTruckFast} size={2} />,
+  ];
+
   return (
     <>
       <Head>
@@ -69,7 +106,7 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
         <div className={styles.sloganBlock}>
           <Image
             src={getImageUrl('/images/line1.jpg')}
-            alt=""
+            alt={t('imagesAlt.view')}
             fill={true}
             style={{
               objectFit: 'cover',
@@ -78,7 +115,9 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
             draggable="false"
             priority
           />
-
+          <div className={styles.breadcrumbs}>
+            <Breadcrumbs items={[{ href: '/about-us', t: 'search.buyBreadcrumb' }]} color={'white'} />
+          </div>
           <div className={styles.slogan}>
             <p>dream</p>
             <p>find</p>
@@ -89,14 +128,51 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
 
         <ContainerWrapper width="standardPlus">
           <section className={`${styles.mainInfo} ${styles.about}`}>
-            <h1>{t('aboutUs.header')}</h1>
+            <Divider>
+              <h1> {t('aboutUs.header')}</h1>
+            </Divider>
+
             <p className={styles.description}>{t('aboutUs.description')}</p>
           </section>
+          <section className={`${styles.mainInfo} ${styles.advantages}`}>
+            <Divider>
+              <h2>{t('aboutUs.servicesHeader')}</h2>
+            </Divider>
+            <div className={styles.mainList}>
+              <div className={styles.grid}>
+                {[1, 2, 3, 4, 5, 6, 7].map((num, index) => (
+                  <div key={num} className={styles.item}>
+                    <div className={styles.icon}>{serviceIcons[index]}</div>
+                    <span className={styles.text}>{t(`aboutUs.servicesList.${num}`)}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+          <div className={`${styles.mainInfo} ${styles.founder}`}>
+            <Image
+              src={getImageUrl('/images/line2.jpg')}
+              alt={t('imagesAlt.founder')}
+              width={340}
+              height={340}
+              style={{
+                objectFit: 'cover',
+                borderRadius: '50%',
+              }}
+              loading="eager"
+              draggable="false"
+            />
+            <section className={styles.founderInfo}>
+              <h2>{t('aboutUs.founderName')}</h2>
+              <p className={styles.description}>{t('aboutUs.founderInfo')}</p>
+            </section>
+          </div>
         </ContainerWrapper>
+
         <div className={styles.banner}>
           <Image
             src={getImageUrl('/images/line2.jpg')}
-            alt=""
+            alt={t('imagesAlt.view')}
             fill={true}
             style={{
               objectFit: 'cover',
@@ -107,21 +183,6 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
         </div>
 
         <ContainerWrapper width="standardPlus">
-          <section className={styles.mainInfo}>
-            <div className={styles.mainList}>
-              <h2>{t('aboutUs.servicesHeader')}</h2>
-              <ul>
-                <li>{t('aboutUs.servicesList.1')}</li>
-                <li>{t('aboutUs.servicesList.2')}</li>
-                <li>{t('aboutUs.servicesList.3')}</li>
-                <li>{t('aboutUs.servicesList.4')}</li>
-                <li>{t('aboutUs.servicesList.5')}</li>
-                <li>{t('aboutUs.servicesList.6')}</li>
-                <li>{t('aboutUs.servicesList.7')}</li>
-              </ul>
-            </div>
-          </section>
-
           <div className={styles.statsVisuals}>
             <div className={styles.stats}>
               <section>
@@ -161,18 +222,19 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
             </div>
           </div>
 
-          <section className={`${styles.mainInfo} ${styles.list}`}>
-            <div className={styles.mainList}>
+          <section className={`${styles.mainInfo} ${styles.advantages}`}>
+            <Divider>
               <h2>{t('aboutUs.supportHeader')}</h2>
-              <ul>
-                <li>{t('aboutUs.supportList.1')}</li>
-                <li>{t('aboutUs.supportList.2')}</li>
-                <li>{t('aboutUs.supportList.3')}</li>
-                <li>{t('aboutUs.supportList.4')}</li>
-                <li>{t('aboutUs.supportList.5')}</li>
-                <li>{t('aboutUs.supportList.6')}</li>
-                <li>{t('aboutUs.supportList.7')}</li>
-              </ul>
+            </Divider>
+            <div className={styles.mainList}>
+              <div className={styles.grid}>
+                {[1, 2, 3, 4, 5, 6, 7].map((num, index) => (
+                  <div key={num} className={styles.item}>
+                    <div className={styles.icon}>{supportIcons[index]}</div>
+                    <span className={styles.text}>{t(`aboutUs.supportList.${num}`)}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
         </ContainerWrapper>
@@ -208,6 +270,25 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
               <p>{answersFAQ[activeKey]}</p>
             </section>
           </div>
+          <section className={`${styles.mainInfo} ${styles.regInfo}`}>
+            <h2>Регистрационные данные</h2>
+            <table className={styles.infoTable}>
+              <tbody>
+                <tr>
+                  <td>ИНН</td>
+                  <td>9726094809</td>
+                </tr>
+                <tr>
+                  <td>КПП</td>
+                  <td>772601001</td>
+                </tr>
+                <tr>
+                  <td>ОГРН</td>
+                  <td>1257700098875</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
         </ContainerWrapper>
       </main>
     </>

@@ -1,4 +1,4 @@
-import { Breadcrumb } from 'antd';
+import { Breadcrumb, ConfigProvider } from 'antd';
 import { LinkWithLocale, useTranslation } from 'next-export-i18n';
 
 import styles from './Breadcrumbs.module.scss';
@@ -13,8 +13,9 @@ interface BreadcrumbItem {
 
 interface BreadcrumbsProps {
   items: BreadcrumbItem[];
+  color?: string;
 }
-export function Breadcrumbs({ items }: BreadcrumbsProps) {
+export function Breadcrumbs({ items, color }: BreadcrumbsProps) {
   const { t } = useTranslation();
 
   const arrayLocalization = items.map((item, index) => {
@@ -56,12 +57,31 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
     },
   });
 
+  const breadcrumbContent = <Breadcrumb className={styles.BreadcrumbsPanel} items={arrayLocalization} />;
+
   return (
     <>
       <Head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbList) }} />
       </Head>
-      <Breadcrumb className={styles.BreadcrumbsPanel} items={arrayLocalization} />
+      {color ? (
+        <ConfigProvider
+          theme={{
+            components: {
+              Breadcrumb: {
+                itemColor: color,
+                linkColor: color,
+                lastItemColor: color,
+                separatorColor: color,
+              },
+            },
+          }}
+        >
+          {breadcrumbContent}
+        </ConfigProvider>
+      ) : (
+        breadcrumbContent
+      )}{' '}
     </>
   );
 }
