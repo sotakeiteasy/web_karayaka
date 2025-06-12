@@ -15,7 +15,8 @@ export function Footer() {
     { href: '/rent', label: t('header.rent') },
     { href: '/buy', label: t('header.buy') },
     { href: '/about-us', label: t('header.aboutUs') },
-    { href: '/custom-offers', label: t('header.customOffers') },
+    { href: '/offer', label: t('header.customOffers') },
+    { href: '/contacts', label: t('header.contacts') },
     { href: '/blog', label: t('header.blog') },
   ];
 
@@ -64,10 +65,14 @@ export function Footer() {
             <h3>{t('footer.contactUs')}</h3>
             <div className={styles.contactInfo}>
               <p>
-                <strong>Email:</strong> {contactInfo.email}
+                <strong>Email:</strong>{' '}
+                <a href={`mailto:${contactInfo.email}`} target="_blank" rel="noopener noreferrer">
+                  {contactInfo.email}
+                </a>
               </p>
               <p>
-                <strong>{t('footer.phone')}:</strong> {contactInfo.phone}
+                <strong>{t('footer.phone')}:</strong>{' '}
+                <a href={`tel:+${contactInfo.phone.replace(/\D/g, '')}`}>{contactInfo.phone}</a>
               </p>
             </div>
             <div className={styles.socialLinks}>
@@ -86,9 +91,9 @@ export function Footer() {
             © {currentYear} {t('footer.allRightsReserved')}
           </p>
           <div className={styles.legalLinks}>
-            <a href="/privacy-policy">
+            <LinkWithLocale href="/privacy-policy">
               <span>{t('footer.privacyPolicy')}</span>
-            </a>
+            </LinkWithLocale>
             <LinkWithLocale href="/sitemap">
               <span>{t('sitemap.header')}</span>
             </LinkWithLocale>

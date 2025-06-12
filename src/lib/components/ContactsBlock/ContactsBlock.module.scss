@@ -1,0 +1,68 @@
+@use '@styles/variables' as *;
+
+.contacts {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  box-shadow: $shadow;
+  margin: 0px auto;
+  padding: 30px;
+  border-radius: 15px;
+  color: $primary-color;
+  gap: 35px;
+
+  .contactsTraditional,
+  .contactsSocial {
+    width: fit-content;
+
+    display: flex;
+    gap: 35px;
+
+    .telegramIcon {
+      width: 33px;
+      height: 33px;
+    }
+
+    div {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+      svg {
+        cursor: pointer;
+      }
+      a {
+        font-style: normal;
+      }
+    }
+  }
+  .contactsSocial > div:first-of-type > a:last-child {
+    margin-left: 3px;
+  }
+}
+
+@media (max-width: 900px) {
+  .contacts {
+    gap: 30px;
+
+    .contactsTraditional,
+    .contactsSocial {
+      flex-wrap: wrap;
+      display: block;
+
+      justify-content: center;
+      align-items: center;
+
+      div:first-of-type {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .contacts {
+    box-shadow: none;
+    flex-wrap: wrap;
+  }
+}

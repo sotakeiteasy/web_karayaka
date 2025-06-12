@@ -3,10 +3,10 @@
     "home": "Karayaka",
     "rent": "Rent",
     "homeBurger": "Home",
-
     "buy": "Buy",
     "aboutUs": "About Us",
-    "customOffers": "For You",
+    "customOffers": "Services",
+    "contacts": "Contacts",
     "blog": "Blog",
     "workhours": "We are in touch 24/7, write at any time."
   },
@@ -80,9 +80,6 @@
         "personnel": "Yes, we have extensive knowledge of our operating areas. We regularly visit and research different neighborhoods to stay updated on market conditions, amenities, and community features. This allows us to provide accurate and helpful advice to our clients."
       }
     }
-  },
-  "custom-offers": {
-    "header": "Offer for you"
   },
   "search": {
     "name": "Real estate objects",
@@ -227,5 +224,127 @@
   "imagesAlt": {
     "view": "view of Turkey",
     "founder": "CEO"
-  }
+  },
+    "offer": {
+      "title": "Property Sale Process and Required Documents",
+      "intro": {
+        "part1": "This page outlines the step-by-step process of real estate sales in Turkey, specifically for foreign buyers.",
+        "part2": "It also lists the required documents for each stage.",
+        "part3": "If the purchase is intended for Turkish citizenship application, additional documents and procedures will apply, which are handled by our team."
+      },
+      
+      "stages": {
+        "1": {
+          "title": "Initial Contact & Needs Assessment",
+          "description": "When a potential buyer contacts us through our website about a listed property:",
+          "steps": [
+            "We first contact the property owner to verify the terms (price, payment, deed status, occupancy, etc.).",
+            "If the buyer and seller cannot agree, we offer new alternatives based on the buyer's criteria.",
+            "These preferences may include investment suitability, eligibility for citizenship or residence permit, central location, or a newly built unit.",
+            "At each step, we present 3 alternative listings. If those don't meet the criteria, we continue offering new sets of 3 until satisfaction is reached."
+          ],
+          "documents": {
+            "title": "Required Documents:",
+            "content": "None (consultation and information stage only)"
+          }
+        },
+        "2": {
+          "title": "Document Preparation & Deed Office Appointment",
+          "description": "Once a property is selected, documents are prepared and an appointment is scheduled with the Land Registry Office.",
+          "documents": {
+            "title": "Required Documents:",
+            "list": [
+              "National ID (for Turkish seller)",
+              "Passport copy (for buyer)",
+              "Turkish Tax ID (for foreign buyer)",
+              "Compulsory Earthquake Insurance (DASK)",
+              "Property Valuation Report (mandatory for foreign buyers)",
+              "Notarized Power of Attorney (if the transaction will be completed via representative)"
+            ]
+          },
+          "note": "If the sale is intended for Turkish citizenship application, the valuation report must be SPK-approved, and the sale price must be at least USD 400,000."
+        },
+        "3": {
+          "title": "Land Registry Procedures & Sale Execution",
+          "description": "On the appointment day, both parties or their representatives attend the Land Registry Office. The transaction is officially completed.",
+          "documents": {
+            "title": "Required Documents:",
+            "list": [
+              "Bank transfer receipt (mandatory for foreign buyers, along with foreign exchange purchase document)",
+              "Title deed fees and official payment receipts",
+              "Notarized Power of Attorney (if applicable)",
+              "Application documents for the Land Registry Office"
+            ]
+          },
+          "note": "If the sale is for citizenship purposes, a \"not to be sold for 3 years\" restriction must be registered on the deed."
+        },
+        "4": {
+          "title": "After Completion",
+          "description": "Once the transaction is completed, it is officially registered. The buyer is informed digitally or in print.",
+          "documents": {
+            "title": "Required Documents:",
+            "content": "None (official records accessible through government systems)"
+          }
+        }
+      },
+  
+      "commonDocs": {
+        "title": "Common Documents by Stage",
+        "items": [
+          {
+            "document": "Seller's Turkish ID",
+            "stage": "Stage 2"
+          },
+          {
+            "document": "Buyer's Passport Copy",
+            "stage": "Stages 2 & 3"
+          },
+          {
+            "document": "Turkish Tax ID (buyer)",
+            "stage": "Stage 2"
+          },
+          {
+            "document": "DASK Insurance",
+            "stage": "Stage 2"
+          },
+          {
+            "document": "Valuation Report",
+            "stage": "Stage 2 (mandatory for foreigners)"
+          },
+          {
+            "document": "Bank Transfer Receipt",
+            "stage": "Stage 3 (mandatory for foreigners)"
+          },
+          {
+            "document": "Title Deed Fees",
+            "stage": "Stage 3"
+          },
+          {
+            "document": "Notarized Power of Attorney",
+            "stage": "Stages 2 & 3 (if applicable)"
+          }
+        ]
+      },
+  
+      "citizenshipNote": {
+        "title": "Additional Note for Citizenship-Based Purchases",
+        "intro": "If the buyer intends to apply for Turkish citizenship:",
+        "requirements": [
+          "The property's valuation must be at least USD 400,000.",
+          "The payment must be made via bank transfer, with an official Foreign Exchange Purchase Certificate.",
+          "A 3-year resale restriction must be placed on the deed."
+        ],
+        "management": "We manage every step of this process with full legal compliance."
+      },
+  
+      "contact": {
+        "title": "Contact",
+        "email": {
+          "label": "Email:"
+        },
+        "phone": {
+          "label": "Phone:"
+        }
+      }
+    }
 }

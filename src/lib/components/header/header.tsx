@@ -61,9 +61,14 @@ export function Header() {
       active: router.pathname.startsWith('/about-us'),
     },
     {
-      href: '/custom-offers',
+      href: '/offer',
       text: t('header.customOffers'),
-      active: router.pathname.startsWith('/custom-offers'),
+      active: router.pathname.startsWith('/offer'),
+    },
+    {
+      href: '/contacts',
+      text: t('header.contacts'),
+      active: router.pathname.startsWith('/contacts'),
     },
     {
       href: '/blog',
@@ -142,7 +147,7 @@ export function Header() {
                 <p>{t('header.workhours')}</p>
 
                 <span className={styles.phoneMail}>
-                  <a href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`}>{contactInfo.phone}</a>
+                  <a href={`tel:+${contactInfo.phone.replace(/\D/g, '')}`}>{contactInfo.phone}</a>
                   <a href={`mailto:${contactInfo.email}`} target="_blank" rel="noopener noreferrer">
                     {contactInfo.email}
                   </a>

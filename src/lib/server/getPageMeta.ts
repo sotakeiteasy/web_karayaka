@@ -8,7 +8,8 @@ export async function getPageMeta() {
     { path: '/privacy-policy', file: 'privacy-policy/index' },
     { path: '/privacy-policy/agreement', file: 'privacy-policy/agreement/index' },
     { path: '/blog', file: 'blog/index' },
-    { path: '/custom-offers', file: 'custom-offers/index' },
+    { path: '/offer', file: 'offer/index' },
+    { path: '/contacts', file: 'contacts/index' },
     { path: '/rent', file: 'rent/index' },
     { path: '/buy', file: 'buy/index' },
   ];
