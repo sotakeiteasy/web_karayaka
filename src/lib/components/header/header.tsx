@@ -213,14 +213,14 @@ export function Header() {
                   <span className={`${styles.contactMenuItem} ${styles.whatsapp}`}>WhatsApp</span>
                 </a>
 
-                <a
+                {/* <a
                   className={`${styles.contactMenuItem} ${styles.email}`}
                   href={`mailto:${contactInfo.email}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   {contactInfo.email}
-                </a>
+                </a> */}
               </div>
             )}
           </div>
