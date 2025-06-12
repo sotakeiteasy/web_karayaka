@@ -1,0 +1,61 @@
+@use '@styles/variables' as *;
+.formContainer {
+  display: flex;
+  gap: 40px;
+  margin: 20px auto;
+  box-shadow: $shadow;
+  border-radius: 15px;
+  width: 100%;
+  height: 950px;
+
+  .formImg {
+    position: relative;
+    width: 50%;
+  }
+}
+
+.workhours {
+  font-size: 1.4rem;
+  padding: 45px;
+  text-align: center;
+  position: relative;
+}
+
+.workhours::after {
+  content: '';
+  display: block;
+  width: 160px;
+  height: 2px;
+  background-color: $primary-color;
+  margin: 10px auto 0;
+}
+
+@media (max-width: 1280px) {
+  .formContainer {
+    gap: 40px;
+    height: fit-content !important;
+    .formImg {
+      min-width: 30%;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .formContainer {
+    width: 650px !important;
+    .formImg {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .formContainer {
+    width: 100% !important;
+    gap: 40px;
+    height: fit-content !important;
+    .formImg {
+      display: none;
+    }
+  }
+}
