@@ -191,7 +191,7 @@
       "phoneInvalid": "Неверный формат номера телефона",
       "emailRequired": "Укажите эл. почту",
       "emailInvalid": "Неверный формат эл. почты",
-      "contactRequired": "Укажите телефон или эл. почту"
+      "contactRequired": "Укажите телефон"
     }
   },
   "footer": {

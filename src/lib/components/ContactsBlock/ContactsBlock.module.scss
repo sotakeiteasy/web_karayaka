@@ -5,9 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  // box-shadow: $shadow;
   margin: 0px auto;
-  padding: 30px;
+  padding: 30px 0;
   border-radius: 15px;
   color: $primary-color;
   gap: 35px;
@@ -18,7 +17,7 @@
     justify-content: space-around;
 
     display: flex;
-    gap: 35px;
+    gap: 30px;
 
     .telegramIcon {
       width: 33px;
@@ -55,6 +54,10 @@
       justify-content: center;
       align-items: center;
 
+      div {
+        justify-content: center;
+      }
+
       div:first-of-type {
         margin-bottom: 20px;
       }
@@ -66,5 +69,16 @@
   .contacts {
     box-shadow: none;
     flex-wrap: wrap;
+
+    .contactsTraditional,
+    .contactsSocial {
+      div:first-of-type {
+        margin-bottom: 30px;
+      }
+      div {
+        margin-left: 30px;
+        justify-content: flex-start;
+      }
+    }
   }
 }

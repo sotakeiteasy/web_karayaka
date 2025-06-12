@@ -35,8 +35,8 @@ export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
       </Head>
-      <main className={styles.offerContainer}>
-        <ContainerWrapper width="large" withMarginBottom={true}>
+      <main className={styles.contactsContainer}>
+        <ContainerWrapper width="standard" withMarginBottom={true}>
           <Breadcrumbs items={[{ href: '/contacts', t: 'header.contacts' }]} />
 
           <p className={styles.workhours}>{t('header.workhours')}</p>

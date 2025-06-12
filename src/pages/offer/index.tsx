@@ -217,7 +217,10 @@ const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
           </div>
         </ContainerWrapper>
 
-        <ContainerWrapper width="standardPlus">
+        <ContainerWrapper width="standard" withMarginBottom>
+          <p className={styles.workhours}>{t('header.workhours')}</p>
+
+          <ContactsBlock phone email showTraditional />
           <div className={styles.formContainer}>
             <ContactUs />
             <div className={styles.formImg}>
@@ -236,10 +239,6 @@ const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
               />
             </div>
           </div>
-        </ContainerWrapper>
-
-        <ContainerWrapper width="standard" withMarginBottom={true}>
-          <ContactsBlock phone email showTraditional />
         </ContainerWrapper>
       </main>
     </>

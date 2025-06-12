@@ -190,7 +190,7 @@
       "phoneInvalid": "Invalid phone number",
       "emailRequired": "Email is required",
       "emailInvalid": "Invalid email address",
-      "contactRequired": "Either phone or email is required"
+      "contactRequired": "Phone is required"
     }
   },
   "footer": {
