@@ -22,19 +22,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   min-height: 80px;
   background-color: $primary-color;
   color: $white-text;
 
+  // gap: clamp(0px, 2vw, 200px);
+
   .nav {
     display: flex;
+    flex-grow: 1;
     align-items: center;
+    justify-content: space-between;
 
     .logo {
       display: flex;
+      flex-grow: 1;
+
       align-items: center;
       gap: 10px;
-      margin-right: 100px;
+      margin-left: 20px;
+      margin-right: auto;
       font-size: 1.3rem;
       text-transform: uppercase;
     }
@@ -57,7 +65,8 @@
 
     .burgerMenu {
       display: flex;
-
+      margin-left: auto;
+      flex-grow: 1;
       .title,
       .mobileLangSwitcher,
       .contacts,
@@ -163,11 +172,12 @@
   .buttons {
     font-weight: 300;
 
-    margin-left: 100px;
+    margin-right: 20px;
     display: flex;
     gap: 10px;
 
     .button {
+      text-wrap: nowrap;
       border: none;
       background-color: inherit;
       color: inherit;
@@ -272,23 +282,24 @@
 }
 
 @media (max-width: 1280px) {
-  .nav {
-    .logo {
-      margin-right: 100px !important;
-      font-size: 1.5rem;
-    }
-    .navLink {
-      padding: 0 20px !important;
-      font-size: 1rem;
-    }
-  }
-
-  .buttons {
-    margin-left: 100px !important;
+  .navLink {
+    padding: 0 20px !important;
+    font-size: 1rem;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
+  .navLink {
+    padding: 0 14px !important;
+    font-size: 1rem;
+  }
+
+  .buttons {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 950px) {
   .header {
     min-height: 60px !important;
   }
@@ -344,9 +355,6 @@
           border: none;
           background-color: transparent;
           font-size: 2rem;
-        }
-
-        .logo {
         }
       }
 
