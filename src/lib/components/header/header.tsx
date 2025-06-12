@@ -143,7 +143,7 @@ export function Header() {
                 </div>
               ))}
 
-              <div className={styles.contacts}>
+              <address className={styles.contacts}>
                 <p>{t('header.workhours')}</p>
 
                 <span className={styles.phoneMail}>
@@ -160,7 +160,7 @@ export function Header() {
                     <img src="/assets/icons/TelegramIconHeader.svg" alt="Telegram" className={styles.telegramIcon} />
                   </a>
                 </span>
-              </div>
+              </address>
               <div className={styles.mobileLangSwitcher}>
                 <LanguageSwitcher lang="en">
                   <button className={`${styles.mobileLangButton} ${currentLang === 'en' ? styles.active : ''}`}>
@@ -190,7 +190,7 @@ export function Header() {
               />
             </button>
             {isContactsMenuOpen && (
-              <div className={styles.dropdownMenu}>
+              <address className={styles.dropdownMenu}>
                 <p className={`${styles.contactMenuItem} ${styles.workhours}`}>{t('header.workhours')}</p>
 
                 <a
@@ -221,7 +221,7 @@ export function Header() {
                 >
                   {contactInfo.email}
                 </a> */}
-              </div>
+              </address>
             )}
           </div>
           <div ref={langMenuRef} className={styles.dropdown} onClick={(e) => e.stopPropagation()}>

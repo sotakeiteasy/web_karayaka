@@ -63,7 +63,7 @@ export function Footer() {
 
           <div className={styles.footerSection}>
             <h3>{t('footer.contactUs')}</h3>
-            <div className={styles.contactInfo}>
+            <address className={styles.contactInfo}>
               <p>
                 <strong>Email:</strong>{' '}
                 <a href={`mailto:${contactInfo.email}`} target="_blank" rel="noopener noreferrer">
@@ -74,15 +74,15 @@ export function Footer() {
                 <strong>{t('footer.phone')}:</strong>{' '}
                 <a href={`tel:+${contactInfo.phone.replace(/\D/g, '')}`}>{contactInfo.phone}</a>
               </p>
-            </div>
-            <div className={styles.socialLinks}>
+            </address>
+            <address className={styles.socialLinks}>
               <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer">
                 <img src="/assets/icons/TelegramIconFooter.svg" alt="Telegram" className={styles.telegramIcon} />
               </a>
               <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
                 <Icon path={mdiWhatsapp} size={1} />
               </a>
-            </div>
+            </address>
           </div>
         </div>
 
