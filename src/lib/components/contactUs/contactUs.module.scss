@@ -2,7 +2,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
   padding: 30px;
 
   .thankYouMessage {
@@ -45,13 +45,13 @@
 
   .description {
     margin-bottom: 25px;
+    font-size: 1.1rem;
   }
 
   .errorMessage {
     color: #e74c3c;
     font-size: 0.8rem;
     margin-top: 5px;
-    // margin-bottom: 5px;
     font-weight: 500;
     min-height: 1.2rem;
   }
@@ -59,7 +59,6 @@
   .errorPlaceholder {
     min-height: 1.2rem;
     margin-top: 5px;
-    // margin-bottom: 5px;
   }
 
   input.error,
@@ -72,7 +71,7 @@
     text-wrap: nowrap;
     width: fit-content;
     align-self: start;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     padding-left: 0.5em;
     padding-right: 0.5em;
     position: absolute;
@@ -81,11 +80,12 @@
     background-color: $white-text;
     text-align: center;
   }
+
   .buttonsLabel {
-    font-size: 0.8rem;
+    font-size: 1rem;
     display: flex;
     padding: 0px;
-    padding-bottom: 2px;
+    padding-bottom: 5px;
     position: static;
     transform: none;
   }
@@ -94,7 +94,7 @@
   textarea {
     border-radius: 8px;
     border: 2px solid $primary-color;
-    padding: 8px 5px;
+    padding: 12px 8px;
     font-family: inherit;
     transition: border-color 0.3s;
 
@@ -104,29 +104,20 @@
     }
   }
 
-  .formRow:first-of-type {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
-    div {
-      width: 48%;
-      display: flex;
-      flex-direction: column;
-      // flex-grow: 1;
-      .input {
-        width: 100%;
-      }
-    }
-  }
   .formRow {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
+    width: 100%;
+
+    input {
+      padding-left: 15px;
+      font-size: 1.1rem;
+    }
   }
 
   textarea {
+    font-size: 1rem;
     resize: none;
     height: 200px;
     padding: 10px 15px;
@@ -139,48 +130,32 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 10px;
     width: 100%;
 
-    .leftDetails {
-      width: 48%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      margin-bottom: 15px;
+    margin-bottom: 15px;
 
-      .formLocation,
-      .formPurpose {
-        padding: 0;
+    .formLocation,
+    .formPurpose {
+      display: flex;
+      padding: 0;
+      border: none;
+      font-size: 1.1rem;
+
+      div {
         display: flex;
-        flex-direction: column;
-        border: none;
+        gap: 15px;
+        margin-bottom: 20px;
 
-        div {
-          display: flex;
-          gap: 15px;
-          margin-bottom: 20px;
-
-          input[type='button'] {
-            padding: 8px 16px;
-            background-color: $white-text;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-          }
-          input[type='button'].selected {
-            background-color: $primary-color;
-            color: $white-text;
-          }
+        input[type='button'] {
+          padding: 7px 14px;
+          background-color: $white-text;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
         }
-      }
-    }
-    .rightDetails {
-      width: 48%;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      input {
-        width: 100%;
+        input[type='button'].selected {
+          background-color: $primary-color;
+          color: $white-text;
+        }
       }
     }
   }
@@ -212,33 +187,6 @@
   }
 }
 
-@media (max-width: 1280px) {
-  .form {
-    font-size: 0.9rem;
-    width: 70%;
-    .legend {
-      font-size: 2rem;
-    }
-    .formDetails {
-      .rightDetails {
-        justify-self: stretch;
-      }
-      .formLocation,
-      .formPurpose {
-        padding: 5px 0px;
-        div {
-          gap: 10px;
-          margin-bottom: 20px;
-
-          input[type='button'] {
-            padding: 4px 6px !important;
-          }
-        }
-      }
-    }
-  }
-}
-
 @media (max-width: 900px) {
   .form {
     width: 100%;
@@ -248,42 +196,19 @@
       max-height: 200px !important;
     }
 
-    .formRow:first-of-type {
-      gap: 15px;
-      flex-direction: column;
-      div {
-        width: 100%;
-        flex-direction: column;
-        .input {
-          width: 100%;
-          margin-bottom: 15px;
-        }
-      }
-    }
-
-    textarea {
-      height: 400px !important;
-    }
-
     .formDetails {
       flex-direction: column;
       align-items: flex-start;
-      width: 100%;
 
-      .leftDetails {
-        .formLocation,
-        .formPurpose {
-          padding: 5px 0px;
-          div {
-            margin-bottom: 15px;
-            input[type='button'] {
-              padding: 8px 16px !important;
-            }
+      .formLocation,
+      .formPurpose {
+        padding: 5px 0px;
+        div {
+          margin-bottom: 15px;
+          input[type='button'] {
+            padding: 8px 16px !important;
           }
         }
-      }
-      .rightDetails {
-        width: 100%;
       }
     }
   }
