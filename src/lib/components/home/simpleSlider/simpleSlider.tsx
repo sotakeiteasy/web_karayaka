@@ -112,7 +112,7 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
 
   return (
     <div className={styles.carouselBlock}>
-      <h1 className={styles.header}>{type === 'rent' ? t('home.rent') : t('home.buy')}</h1>
+      <h2 className={styles.header}>{type === 'rent' ? t('home.rent') : t('home.buy')}</h2>
       <div className={styles.carousel}>
         <div className={styles.sliderWrapper}>
           <Slider {...settings}>
@@ -121,7 +121,7 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
                 <div className={styles.adCard}>
                   <LinkWithLocale href={`/${type}/${card.id}`}>
                     <Image
-                      width={400}
+                      width={500}
                       height={200}
                       className={styles.cardImage}
                       src={getImageUrl(card.images[0])}

@@ -3,7 +3,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 60px;
 
   .mainImageContainer {
     width: 100%;
@@ -162,18 +161,16 @@
     flex-direction: column;
     align-items: center;
     height: fit-content;
-    width: 1000px;
-    margin: 50px 0;
+    margin: 0 auto;
 
     .articleLink {
       box-shadow: $shadow;
-
       display: flex;
       height: 350px;
-      width: 950px;
       margin: 20px 0;
       border-radius: 5px;
       overflow: hidden;
+      width: 100%;
 
       a {
         display: flex;
@@ -223,20 +220,10 @@
       }
     }
   }
-
-  .contactBlock {
-    width: 600px;
-    justify-items: center;
-    box-shadow: $shadow;
-    border-radius: 20px;
-
-    form {
-      width: 600px;
-    }
-  }
 }
 
 .header {
+  font-size: 1.8rem;
   display: flex;
   width: 100%;
   text-transform: uppercase;
@@ -280,12 +267,6 @@
   }
 
   .articleBlock {
-    width: 90% !important;
-
-    .articleLink {
-      width: 90% !important;
-    }
-
     .articleDescription {
       padding: 15px !important;
       .articleTitle {
@@ -295,10 +276,6 @@
         -webkit-line-clamp: 7 !important;
       }
     }
-  }
-
-  .contactBlock {
-    width: 100%;
   }
 }
 
@@ -339,9 +316,6 @@
   }
 
   .articleBlock {
-    height: 100% !important;
-    width: 95% !important;
-
     .header {
       padding: 20px 0;
       text-align: center;
@@ -352,8 +326,6 @@
     }
 
     .articleLink {
-      width: 100% !important;
-
       a {
         flex-direction: column;
 
@@ -374,25 +346,14 @@
       }
     }
   }
-
-  .contactBlock {
-    width: 95% !important;
-    margin-bottom: 10px !important;
-
-    form {
-      width: 100% !important;
-    }
-  }
 }
 
-@media (max-width: 460px) {
-  .searchBlock {
-    .buttonsContainer {
-      flex-direction: column;
+@media (max-width: 480px) {
+  .buttonsContainer {
+    flex-direction: column;
 
-      .moreButton {
-        padding: 10px !important;
-      }
+    .moreButton {
+      padding: 0px !important;
     }
   }
 }

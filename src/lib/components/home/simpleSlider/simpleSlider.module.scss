@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   height: 550px;
-  margin: 50px 0;
+  margin: 50px auto;
   z-index: 2;
 
   .carousel {
@@ -142,6 +142,7 @@
   padding: 30px 0;
   color: $primary-color;
   font-weight: 200;
+  font-size: 1.8rem;
 }
 
 .header:after {
@@ -161,7 +162,6 @@
 
   .carouselBlock {
     gap: 0px;
-    width: 90%;
 
     .adCard {
       .cardDescription {
@@ -186,7 +186,6 @@
 
   .carouselBlock {
     gap: 0px;
-    width: 90%;
 
     .adCard {
       .cardDescription {
@@ -217,13 +216,17 @@
     }
   }
   .sliderWrapper {
-    width: 400px;
+    width: 500px;
     position: relative;
   }
 
   .carouselBlock {
     gap: 0px;
-    width: 90%;
+    margin: 50px 0;
+
+    .carousel {
+      margin: 0 auto !important;
+    }
 
     .adCard {
       .cardDescription {
@@ -244,6 +247,13 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .sliderWrapper {
+    width: 400px;
+    position: relative;
   }
 }
 

@@ -8,10 +8,11 @@ import { mdiMagnify } from '@mdi/js';
 
 import styles from './index.module.scss';
 import SimpleSlider from './SimpleSlider/simpleSlider';
-import { ContactUs } from '@/lib/components';
+import { ContactUs, ContainerWrapper } from '@/lib/components';
 import { getImageUrl } from '@/lib/utils';
 import { PostData } from '@/lib/types';
 import { MetaTags } from '@/lib/types';
+import { Divider } from 'antd';
 
 export function Home({ allBlogData, metaTags }: { allBlogData: Record<string, PostData[]>; metaTags: MetaTags }) {
   const router = useRouter();
@@ -131,40 +132,40 @@ export function Home({ allBlogData, metaTags }: { allBlogData: Record<string, Po
           </div>
         </div>
 
-        <SimpleSlider type="buy" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
+        <ContainerWrapper width="standardPlus" withMarginBottom>
+          <SimpleSlider type="buy" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
 
-        <SimpleSlider type="rent" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
+          <SimpleSlider type="rent" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
 
-        <div className={styles.articleBlock}>
-          <h1 className={styles.header}>{t('home.articles')}</h1>
-          {posts.slice(0, 2).map(({ id, title, excerpt }: PostData) => (
-            <div key={id} className={styles.articleLink}>
-              <LinkWithLocale href={`/blog/${id}`}>
-                <div className={styles.articleImage}>
-                  <Image
-                    src={getImageUrl(`/images/${id}.jpg`)}
-                    fill={true}
-                    alt={title}
-                    draggable="false"
-                    style={{ objectFit: 'cover' }}
-                  />
-                </div>
-                <div className={styles.articleDescription}>
-                  <h2 className={styles.articleTitle}>{title}</h2>
-                  {excerpt && (
-                    <div className={styles.articleText}>
-                      <p>{excerpt}</p>
-                    </div>
-                  )}
-                </div>
-              </LinkWithLocale>
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.contactBlock}>
+          <div className={styles.articleBlock}>
+            <h2 className={styles.header}>{t('home.articles')}</h2>
+            {posts.slice(0, 2).map(({ id, title, excerpt }: PostData) => (
+              <div key={id} className={styles.articleLink}>
+                <LinkWithLocale href={`/blog/${id}`}>
+                  <div className={styles.articleImage}>
+                    <Image
+                      src={getImageUrl(`/images/${id}.jpg`)}
+                      fill={true}
+                      alt={title}
+                      draggable="false"
+                      style={{ objectFit: 'cover' }}
+                    />
+                  </div>
+                  <div className={styles.articleDescription}>
+                    <h2 className={styles.articleTitle}>{title}</h2>
+                    {excerpt && (
+                      <div className={styles.articleText}>
+                        <p>{excerpt}</p>
+                      </div>
+                    )}
+                  </div>
+                </LinkWithLocale>
+              </div>
+            ))}
+          </div>
+          <Divider />
           <ContactUs />
-        </div>
+        </ContainerWrapper>
       </main>
     </>
   );
