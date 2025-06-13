@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation, LinkWithLocale } from 'next-export-i18n';
+import { useTranslation, LinkWithLocale, useLanguageQuery } from 'next-export-i18n';
 import styles from './Footer.module.scss';
 import Icon from '@mdi/react';
 import { mdiWhatsapp } from '@mdi/js';
@@ -9,6 +9,8 @@ import Head from 'next/head';
 export function Footer() {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
+  const [query] = useLanguageQuery();
+  const locale = (query?.lang as 'ru' | 'en') || 'ru';
 
   const navLinks = [
     { href: '/', label: t('footer.home') },
@@ -44,9 +46,7 @@ export function Footer() {
             </div>
             <div className={styles.address}>
               <h3>{t('footer.officeAddress')}</h3>
-              <p>
-                {t('footer.russia')}, {contactInfo.address}
-              </p>
+              <p>{locale === 'ru' ? contactInfo.addressShort : contactInfo.addressShortEn}</p>
             </div>
           </div>
 

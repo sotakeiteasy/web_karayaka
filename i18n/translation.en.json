@@ -349,6 +349,20 @@
     },
     "contacts": {
       "ourAddress": "Our address",
-      "contactUs": "You can contact us"
+      "contactUs": "You can reach us"
+    },
+    "regInfo": {
+      "companyName": "Company name",
+      "legalAddress": "Address",
+      "ogrn": "OGRN",
+      "inn": "INN",
+      "kpp": "KPP",
+      "checkingAccount": "Account No.",
+      "bankName": "In",
+      "bik": "BIC",
+      "correspondentAccount": "Corr. account",
+      "director": "Director",
+      "sectionTitleRegInfo": "Registration information",
+      "sectionTitleReqInfo": "Requisites"
     }
 }

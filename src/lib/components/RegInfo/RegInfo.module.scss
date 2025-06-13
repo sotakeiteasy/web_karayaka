@@ -1,0 +1,59 @@
+@use '@styles/variables' as *;
+
+.main {
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+.regInfo {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+
+  h2 {
+    width: 100%;
+    text-align: left !important;
+    margin-bottom: 10px;
+  }
+
+  table:first-of-type {
+    width: 60%;
+  }
+
+  table {
+    border-collapse: collapse;
+
+    td {
+      padding: 15px 20px 15px 6px;
+    }
+
+    tr:hover {
+      background-color: $lightest-gray-color;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .regInfo {
+    flex-direction: column;
+    justify-content: space-between;
+
+    table {
+      width: 100% !important;
+      table-layout: fixed;
+
+      td:first-child {
+        width: 40%;
+      }
+
+      td:last-child {
+        width: 60%;
+      }
+
+      td {
+        word-wrap: break-word;
+      }
+    }
+  }
+}

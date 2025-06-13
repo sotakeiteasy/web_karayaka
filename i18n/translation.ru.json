@@ -351,5 +351,19 @@
   "contacts": {
     "ourAddress": "Наш адрес",
     "contactUs": "Свяжитесь с нами"
+  },
+  "regInfo": {
+    "companyName": "Название",
+    "legalAddress": "Aдрес",
+    "ogrn": "ОГРН",
+    "inn": "ИНН",
+    "kpp": "КПП",
+    "checkingAccount": "Р/с",
+    "bankName": "В",
+    "bik": "БИК",
+    "correspondentAccount": "Корр. счет",
+    "director": "Директор",
+    "sectionTitleRegInfo": "Регистрационные данные",
+    "sectionTitleReqInfo": "Реквизиты"
   }
 }

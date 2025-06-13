@@ -298,6 +298,7 @@
     justify-content: center;
     justify-content: space-between;
     gap: 30px;
+    margin-bottom: 40px;
 
     .faq {
       padding: 20px 40px 20px 0px;
@@ -358,31 +359,22 @@
     }
   }
 
-  .regInfo {
-    box-shadow: none;
-    padding: 0;
-    margin-top: 50px;
-    width: 100%;
+  .workhours {
+    font-size: 1.4rem;
+    padding-top: 50px;
+    padding-bottom: 40px;
 
-    h2 {
-      width: 100%;
-      text-align: left !important;
-      margin-bottom: 10px;
-    }
+    text-align: center;
+    position: relative;
+  }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-
-      td {
-        padding: 12px 20px 12px 0px;
-        border-bottom: 1px solid #eee;
-      }
-
-      tr:hover {
-        background-color: $lightest-gray-color;
-      }
-    }
+  .workhours::after {
+    content: '';
+    display: block;
+    width: 160px;
+    height: 2px;
+    background-color: $primary-color;
+    margin: 10px auto 0;
   }
 }
 

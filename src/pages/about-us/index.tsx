@@ -25,8 +25,10 @@ import { mdiChevronRight } from '@mdi/js';
 
 import { getImageUrl } from '@/lib/utils';
 import { MetaTags } from '@/lib/types';
-import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
+import { Breadcrumbs, ContactsBlock, ContainerWrapper } from '@/lib/components';
 import { Divider } from 'antd';
+import { contactInfo } from '@/lib/constants';
+import CompanyRegistrationInfo from '@/lib/components/RegInfo/RegInfo';
 
 export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();
@@ -100,6 +102,33 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              'name': contactInfo.company,
+              'url': 'https://karayaka.ru',
+              'logo': 'https://karayaka.ru/logo.png',
+              'email': contactInfo.email,
+              'telephone': contactInfo.phone,
+              'founder': {
+                '@type': 'Person',
+                'name': contactInfo.founder,
+              },
+              'address': {
+                '@type': 'PostalAddress',
+                'streetAddress': contactInfo.address,
+                'addressLocality': contactInfo.city,
+                'postalCode': contactInfo.postcode,
+                'addressCountry': 'RU',
+              },
+              'sameAs': [contactInfo.telegram, contactInfo.whatsapp],
+            }),
+          }}
+        />
       </Head>
 
       <main className={styles.main}>
@@ -272,25 +301,10 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
               <p>{answersFAQ[activeKey]}</p>
             </section>
           </div>
-          <section className={`${styles.mainInfo} ${styles.regInfo}`}>
-            <h2>Регистрационные данные</h2>
-            <table className={styles.infoTable}>
-              <tbody>
-                <tr>
-                  <td>ИНН</td>
-                  <td>9726094809</td>
-                </tr>
-                <tr>
-                  <td>КПП</td>
-                  <td>772601001</td>
-                </tr>
-                <tr>
-                  <td>ОГРН</td>
-                  <td>1257700098875</td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
+          <CompanyRegistrationInfo />
+          <p className={styles.workhours}>{t('header.workhours')}</p>
+
+          <ContactsBlock phone email showTraditional />
         </ContainerWrapper>
       </main>
     </>

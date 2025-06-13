@@ -8,6 +8,7 @@ import { MetaTags } from '@/lib/types';
 import { getImageUrl } from '@/lib/utils';
 import Image from 'next/image';
 import { contactInfo } from '@/lib/constants';
+import CompanyRegistrationInfo from '@/lib/components/RegInfo/RegInfo';
 
 export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();
@@ -35,6 +36,33 @@ export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              'name': contactInfo.company,
+              'url': 'https://karayaka.ru',
+              'logo': 'https://karayaka.ru/logo.png',
+              'email': contactInfo.email,
+              'telephone': contactInfo.phone,
+              'founder': {
+                '@type': 'Person',
+                'name': contactInfo.founder,
+              },
+              'address': {
+                '@type': 'PostalAddress',
+                'streetAddress': contactInfo.address,
+                'addressLocality': contactInfo.city,
+                'postalCode': contactInfo.postcode,
+                'addressCountry': 'RU',
+              },
+              'sameAs': [contactInfo.telegram, contactInfo.whatsapp],
+            }),
+          }}
+        />
       </Head>
       <main className={styles.main}>
         <ContainerWrapper width="standardPlus" withMarginBottom={true}>
@@ -45,7 +73,7 @@ export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
             <div className={styles.contactsAndAdress}>
               <div className={styles.address}>
                 <h2>{t('contacts.ourAddress')}</h2>
-                <p>{contactInfo.addressShort}</p>
+                <p>{locale === 'ru' ? contactInfo.addressShort : contactInfo.addressShortEn}</p>
               </div>
               <div className={styles.contacts}>
                 <p>{t('contacts.contactUs')}!</p>
@@ -83,6 +111,7 @@ export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
               />
             </div>
           </div>
+          <CompanyRegistrationInfo />
         </ContainerWrapper>
       </main>
     </>
