@@ -10,6 +10,7 @@ import { MetaTags } from '@/lib/types';
 
 import { getImageUrl } from '@/lib/utils';
 import Image from 'next/image';
+import { contactInfo } from '@/lib/constants';
 
 const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
   const { t } = useTranslation();
@@ -128,6 +129,41 @@ const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
     },
   ];
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Offer',
+    'name': locale === 'ru' ? 'Индивидуальный подбор недвижимости' : 'Custom Real Estate Offer',
+    'description':
+      locale === 'ru'
+        ? 'Заполните форму и получите персональное предложение недвижимости, подобранное под ваши требования.'
+        : 'Fill out the form to receive a personalized property offer tailored to your requirements.',
+    'url': 'https://karayaka.ru/offer',
+    'availability': 'https://schema.org/InStock',
+    'validFrom': '2025-06-13T00:00:00+03:00',
+    'itemOffered': {
+      '@type': 'Service',
+      'serviceType': locale === 'ru' ? 'Подбор недвижимости' : 'Real Estate Selection',
+      'provider': {
+        '@type': 'RealEstateAgent',
+        'name': 'Karayaka',
+        'url': 'https://karayaka.ru',
+        'telephone': contactInfo.phone,
+        'logo': {
+          '@type': 'ImageObject',
+          'url': 'https://karayaka.ru/logo.png',
+        },
+        'image': {
+          '@type': 'ImageObject',
+          'url': 'https://karayaka.ru/logo.png',
+        },
+        'address': {
+          '@type': 'PostalAddress',
+          'addressCountry': 'RU',
+        },
+      },
+    },
+  };
+
   return (
     <>
       <Head>
@@ -148,11 +184,17 @@ const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </Head>
       <main className={styles.offerContainer}>
         <ContainerWrapper width="standard">
           <Breadcrumbs items={[{ href: '/offer', t: 'header.customOffers' }]} />
           <h1>{t('offer.title')}</h1>
+          <div className={styles.date}>
+            <time dateTime="2025-06-13">{locale === 'ru' ? 'Обновлено' : 'Last updated'}: 13.06.2025</time>
+          </div>
+
           <div className={styles.intro}>
             <p>
               {t('offer.intro.part1')} {t('offer.intro.part2')}

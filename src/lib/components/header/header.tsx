@@ -90,7 +90,7 @@ export function Header() {
                 {
                   '@type': 'SiteNavigationElement',
                   'name': t('header.home'),
-                  'url': 'https://karayaka.ru/',
+                  'url': 'https://karayaka.ru',
                 },
                 ...navLinks.map((link) => ({
                   '@type': 'SiteNavigationElement',

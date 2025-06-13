@@ -49,6 +49,11 @@
   max-width: 1200px;
   margin: 0 auto;
 
+  .date {
+    margin: 10px 0;
+    color: $gray-color;
+  }
+
   .timeline {
     font-family: inherit;
   }
@@ -56,6 +61,7 @@
     color: $primary-color;
   }
   h1 {
+    font-size: 1.6rem;
     margin-bottom: 24px;
   }
 
@@ -81,6 +87,7 @@
 
     h2 {
       margin-bottom: 10px;
+      font-size: 1.3rem;
     }
 
     .documentTitle {
@@ -132,6 +139,10 @@
   .commonDocs {
     margin-bottom: 32px;
 
+    h2 {
+      font-size: 1.3rem;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -158,6 +169,7 @@
 
     h2 {
       margin-bottom: 16px;
+      font-size: 1.3rem;
     }
 
     ul {

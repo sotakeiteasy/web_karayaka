@@ -118,6 +118,10 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
                 '@type': 'Person',
                 'name': contactInfo.founder,
               },
+              'image': {
+                '@type': 'ImageObject',
+                'url': 'https://karayaka.ru/logo.png',
+              },
               'address': {
                 '@type': 'PostalAddress',
                 'streetAddress': contactInfo.address,
