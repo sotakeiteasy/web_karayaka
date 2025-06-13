@@ -1,9 +1,43 @@
 @use '@styles/variables' as *;
 
-.contactsContainer {
+.main {
   display: flex;
   flex-direction: column;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  .mainBlock {
+    display: flex;
+
+    .contactsAndAdress {
+      display: flex;
+      flex-direction: column;
+
+      justify-content: space-between;
+      margin-right: 30px;
+
+      .contacts {
+        p {
+          font-size: 1.2rem;
+        }
+      }
+
+      .address {
+        h2 {
+          font-weight: 500;
+          margin-bottom: 5px;
+          color: $primary-color;
+          font-size: 1.2rem;
+        }
+
+        margin-bottom: 25px;
+      }
+    }
+  }
 }
+
 .formContainer {
   display: flex;
   gap: 40px;
@@ -19,7 +53,9 @@
 
 .workhours {
   font-size: 1.4rem;
-  padding: 45px;
+  padding-top: 35px;
+  padding-bottom: 45px;
+
   text-align: center;
   position: relative;
 }
@@ -40,6 +76,16 @@
       display: none;
     }
   }
+
+  .mainBlock {
+    flex-direction: column;
+    margin: 0 auto;
+    width: fit-content;
+
+    .contacts {
+      justify-content: flex-start;
+    }
+  }
 }
 
 @media (max-width: 650px) {
@@ -50,5 +96,24 @@
     .formImg {
       display: none;
     }
+  }
+}
+
+.yandexMap iframe {
+  width: 100%;
+  min-width: 600px;
+  height: 400px;
+}
+
+@media (max-width: 650px) {
+  .yandexMap iframe {
+    height: 300px; /* меньшая высота на мобильных */
+    min-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .yandexMap iframe {
+    height: 250px; /* еще меньшая высота на маленьких экранах */
   }
 }

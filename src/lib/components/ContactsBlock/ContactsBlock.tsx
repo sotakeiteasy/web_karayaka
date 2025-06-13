@@ -9,6 +9,7 @@ interface ContactsProps {
   telegram?: boolean;
   whatsapp?: boolean;
   showTraditional?: boolean;
+  column?: boolean;
 }
 
 export function ContactsBlock({
@@ -17,9 +18,10 @@ export function ContactsBlock({
   telegram = true,
   whatsapp = true,
   showTraditional = false,
+  column = false,
 }: ContactsProps) {
   return (
-    <address className={styles.contacts}>
+    <address className={`${styles.contacts} ${column ? styles.column : ''}`}>
       {showTraditional && (
         <div className={styles.contactsTraditional}>
           {phone && (

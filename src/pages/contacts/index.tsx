@@ -7,6 +7,7 @@ import { MetaTags } from '@/lib/types';
 
 import { getImageUrl } from '@/lib/utils';
 import Image from 'next/image';
+import { contactInfo } from '@/lib/constants';
 
 export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();
@@ -25,22 +26,44 @@ export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
         <meta charSet="utf-8" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://karayaka.ru/offer" />
+        <meta property="og:url" content="https://karayaka.ru/contacts" />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:image" content="https://karayaka.ru/og-image.png" />
-        <meta property="og:image:alt" content="Karayaka Offer" />
+        <meta property="og:image:alt" content="Karayaka Contacts" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
       </Head>
-      <main className={styles.contactsContainer}>
-        <ContainerWrapper width="standard" withMarginBottom={true}>
+      <main className={styles.main}>
+        <ContainerWrapper width="standardPlus" withMarginBottom={true}>
           <Breadcrumbs items={[{ href: '/contacts', t: 'header.contacts' }]} />
+          <h1>{t('header.contacts')}</h1>
+
+          <div className={styles.mainBlock}>
+            <div className={styles.contactsAndAdress}>
+              <div className={styles.address}>
+                <h2>{t('contacts.ourAddress')}</h2>
+                <p>{contactInfo.addressShort}</p>
+              </div>
+              <div className={styles.contacts}>
+                <p>{t('contacts.contactUs')}!</p>
+
+                <ContactsBlock phone email showTraditional column />
+              </div>
+            </div>
+            <div className={styles.yandexMap}>
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3Acce6310eda38e2ba4f4ddc6a0c70a3e4c7b31f682446b9217b19fe42b6c859d7&amp;source=constructor"
+                width="600"
+                height="400"
+                frameBorder="0"
+              ></iframe>
+            </div>
+          </div>
 
           <p className={styles.workhours}>{t('header.workhours')}</p>
-          <ContactsBlock phone email showTraditional />
 
           <div className={styles.formContainer}>
             <ContactUs />

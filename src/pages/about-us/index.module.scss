@@ -35,8 +35,7 @@
   }
 
   .mainInfo.about {
-    padding: 0;
-    // margin-bottom: 40px;
+    padding: 0 !important;
     box-shadow: none;
 
     h1 {
@@ -91,7 +90,9 @@
 
     @media (max-width: 480px) {
       .grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
       }
     }
   }
@@ -110,7 +111,7 @@
   .mainInfo.founder {
     justify-content: space-around;
 
-    padding: 0;
+    padding: 0 !important;
     box-shadow: none;
     margin-top: 30px;
 
@@ -118,10 +119,19 @@
     display: flex;
     flex-direction: row;
 
+    .founderPhoto {
+      border-radius: 3px;
+      min-width: 240px;
+      height: 280px;
+      overflow: hidden;
+    }
+
     .founderInfo {
-      max-width: 800px;
+      margin-left: 40px;
+      max-width: 700px;
 
       h2 {
+        display: inline-block;
         font-weight: 500;
         position: relative;
         margin-bottom: 20px;
@@ -131,7 +141,7 @@
           position: absolute;
           bottom: -5px;
           left: 0;
-          width: 60%;
+          width: 100%;
           height: 2px;
           background-color: $primary-color;
         }
@@ -431,16 +441,29 @@
   }
 }
 
-@media (max-width: 900px) {
-  .main {
-    .sloganBlock {
-      margin-bottom: 10px;
+@media (max-width: 950px) {
+  .breadcrumbs,
+  .slogan {
+    left: 55px !important;
+  }
+}
 
-      .breadcrumbs .slogan {
-        left: 20px;
-      }
+@media (max-width: 900px) {
+  .mainInfo.founder {
+    .founderPhoto {
+      height: 100% !important;
     }
 
+    .founderInfo {
+      margin: 20px 0;
+
+      h2 {
+        text-align: left;
+        font-size: 1.3rem;
+      }
+    }
+  }
+  .main {
     .mainInfo {
       width: 100% !important;
       box-shadow: none !important;
@@ -509,6 +532,28 @@
   }
 }
 
+@media (max-width: 800px) {
+  .mainInfo.founder {
+    flex-direction: column !important;
+
+    .founderPhoto {
+      img {
+        margin: 0 !important;
+      }
+    }
+
+    .founderInfo {
+      margin-left: 0 !important;
+    }
+  }
+
+  .mainInfo.advantages {
+    h2 {
+      text-wrap: wrap !important;
+    }
+  }
+}
+
 @media (max-width: 600px) {
   .mainInfo {
     height: 100% !important;
@@ -521,6 +566,11 @@
     h2 {
       font-size: 1.4rem !important;
     }
+  }
+
+  .breadcrumbs,
+  .slogan {
+    left: 30px !important;
   }
 
   .statsVisuals {
@@ -538,7 +588,8 @@
 
       section {
         margin-bottom: 25px;
-        width: 90% !important;
+        width: 100% !important;
+        max-width: 390px;
         min-height: 90% !important;
       }
     }

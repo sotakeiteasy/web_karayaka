@@ -1,5 +1,18 @@
 @use '@styles/variables' as *;
 
+.contacts.column {
+  flex-direction: column;
+
+  .contactsTraditional,
+  .contactsSocial {
+    flex-direction: column;
+
+    div {
+      justify-content: flex-start !important;
+    }
+  }
+}
+
 .contacts {
   width: 100%;
   display: flex;
@@ -56,6 +69,7 @@
 
       div {
         justify-content: center;
+        margin-left: 0 !important;
       }
 
       div:first-of-type {

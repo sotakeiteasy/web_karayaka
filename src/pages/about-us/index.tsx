@@ -150,18 +150,20 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
             </div>
           </section>
           <div className={`${styles.mainInfo} ${styles.founder}`}>
-            <Image
-              src={getImageUrl('/images/line2.jpg')}
-              alt={t('imagesAlt.founder')}
-              width={340}
-              height={340}
-              style={{
-                objectFit: 'cover',
-                borderRadius: '50%',
-              }}
-              loading="eager"
-              draggable="false"
-            />
+            <div className={styles.founderPhoto}>
+              <Image
+                src={getImageUrl('/images/founder.jpg')}
+                alt={t('imagesAlt.founder')}
+                width={240}
+                height={340}
+                style={{
+                  objectFit: 'cover',
+                  marginTop: '-25px',
+                }}
+                loading="eager"
+                draggable="false"
+              />
+            </div>
             <section className={styles.founderInfo}>
               <h2>{t('aboutUs.founderName')}</h2>
               <p className={styles.description}>{t('aboutUs.founderInfo')}</p>
