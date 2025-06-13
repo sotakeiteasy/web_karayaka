@@ -25,10 +25,9 @@ import { mdiChevronRight } from '@mdi/js';
 
 import { getImageUrl } from '@/lib/utils';
 import { MetaTags } from '@/lib/types';
-import { Breadcrumbs, ContactsBlock, ContainerWrapper } from '@/lib/components';
+import { Breadcrumbs, ContactsBlock, ContainerWrapper, CompanyRegistrationInfo } from '@/lib/components';
 import { Divider } from 'antd';
 import { contactInfo } from '@/lib/constants';
-import CompanyRegistrationInfo from '@/lib/components/RegInfo/RegInfo';
 
 export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();

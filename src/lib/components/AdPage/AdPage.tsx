@@ -71,9 +71,7 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
             </div>
           </div>
           {ad.description[lang] && <div className={styles.description}>{ad.description[lang]}</div>}
-          <div className={styles.form}>
-            <ContactUs />
-          </div>
+          <ContactUs />
         </ContainerWrapper>
       </main>
     </>

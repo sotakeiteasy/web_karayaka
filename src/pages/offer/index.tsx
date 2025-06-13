@@ -1,5 +1,5 @@
 import { useTranslation, useLanguageQuery } from 'next-export-i18n';
-import { Steps, Timeline } from 'antd';
+import { Divider, Steps, Timeline } from 'antd';
 import Icon from '@mdi/react';
 import { mdiFileDocument, mdiInformation } from '@mdi/js';
 import styles from './index.module.scss';
@@ -7,9 +7,6 @@ import { Breadcrumbs, ContactsBlock, ContactUs, ContainerWrapper } from '@/lib/c
 import { ClockCircleOutlined } from '@ant-design/icons';
 import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
-
-import { getImageUrl } from '@/lib/utils';
-import Image from 'next/image';
 import { contactInfo } from '@/lib/constants';
 
 const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
@@ -263,24 +260,8 @@ const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
           <p className={styles.workhours}>{t('header.workhours')}</p>
 
           <ContactsBlock phone email showTraditional />
-          <div className={styles.formContainer}>
-            <ContactUs />
-            <div className={styles.formImg}>
-              <Image
-                src={getImageUrl('/images/form.jpg')}
-                fill={true}
-                alt="form image"
-                draggable="false"
-                sizes="100%"
-                style={{
-                  objectFit: 'cover',
-                  borderRadius: '0px 15px 15px 0px',
-                }}
-                loading="eager"
-                priority
-              />
-            </div>
-          </div>
+          <Divider></Divider>
+          <ContactUs />
         </ContainerWrapper>
       </main>
     </>

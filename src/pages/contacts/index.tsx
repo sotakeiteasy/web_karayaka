@@ -1,14 +1,11 @@
 import { useTranslation, useLanguageQuery } from 'next-export-i18n';
-// import Icon from '@mdi/react';
 import styles from './index.module.scss';
-import { Breadcrumbs, ContactsBlock, ContactUs, ContainerWrapper } from '@/lib/components';
+import { Breadcrumbs, ContactsBlock, ContactUs, ContainerWrapper, CompanyRegistrationInfo } from '@/lib/components';
 import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
 
-import { getImageUrl } from '@/lib/utils';
-import Image from 'next/image';
 import { contactInfo } from '@/lib/constants';
-import CompanyRegistrationInfo from '@/lib/components/RegInfo/RegInfo';
+import { Divider } from 'antd';
 
 export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();
@@ -93,24 +90,8 @@ export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
 
           <p className={styles.workhours}>{t('header.workhours')}</p>
 
-          <div className={styles.formContainer}>
-            <ContactUs />
-            <div className={styles.formImg}>
-              <Image
-                src={getImageUrl('/images/form.jpg')}
-                fill={true}
-                alt="form image"
-                draggable="false"
-                sizes="100%"
-                style={{
-                  objectFit: 'cover',
-                  borderRadius: '0px 15px 15px 0px',
-                }}
-                loading="eager"
-                priority
-              />
-            </div>
-          </div>
+          <ContactUs />
+          <Divider></Divider>
           <CompanyRegistrationInfo />
         </ContainerWrapper>
       </main>

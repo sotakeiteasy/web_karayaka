@@ -213,3 +213,37 @@
     }
   }
 }
+
+.formContainer {
+  display: flex;
+  gap: 40px;
+  margin: 0 auto 0 auto;
+  box-shadow: $shadow;
+  border-radius: 15px;
+
+  .formImg {
+    position: relative;
+    width: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  .formContainer {
+    width: 600px !important;
+    .formImg {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .formContainer {
+    width: 100% !important;
+    gap: 40px;
+    height: fit-content !important;
+    margin-bottom: 30px !important;
+    .formImg {
+      display: none;
+    }
+  }
+}

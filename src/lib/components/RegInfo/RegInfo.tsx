@@ -2,7 +2,7 @@ import styles from './RegInfo.module.scss';
 import { companyInfo } from '@/lib/constants/companyData';
 import { useLanguageQuery, useTranslation } from 'next-export-i18n';
 
-const CompanyRegistrationInfo = ({ Req = true }: { Req?: boolean }) => {
+export function CompanyRegistrationInfo({ Req = true }: { Req?: boolean }) {
   const [query] = useLanguageQuery();
   const locale = (query?.lang as 'ru' | 'en') || 'ru';
   const { t } = useTranslation();
@@ -81,6 +81,4 @@ const CompanyRegistrationInfo = ({ Req = true }: { Req?: boolean }) => {
       </div>
     </div>
   );
-};
-
-export default CompanyRegistrationInfo;
+}

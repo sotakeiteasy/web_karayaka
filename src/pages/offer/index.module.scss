@@ -1,16 +1,4 @@
 @use '@styles/variables' as *;
-.formContainer {
-  display: flex;
-  gap: 40px;
-  margin: 40px auto 0 auto;
-  box-shadow: $shadow;
-  border-radius: 15px;
-
-  .formImg {
-    position: relative;
-    width: 50%;
-  }
-}
 
 .workhours {
   font-size: 1.4rem;
@@ -26,21 +14,6 @@
   height: 2px;
   background-color: $primary-color;
   margin: 10px auto 0;
-}
-
-@media (max-width: 900px) {
-  .formContainer {
-    width: 650px !important;
-    .formImg {
-      display: none;
-    }
-  }
-}
-
-@media (max-width: 700px) {
-  .formContainer {
-    width: 100% !important;
-  }
 }
 
 .offerContainer {
