@@ -19,7 +19,33 @@
     "buyBtn": "Buy",
     "searchBtn": "Search",
     "searchPlaceholder": "Address, keywords",
-    "moreFilters": "All ads"
+    "moreFilters": "All ads",
+      "advantages": {
+        "title": "Our Advantages",
+        "items": [
+          {
+            "title": "Legal Oversight",
+            "description": "Legal supervision throughout the entire investment process"
+          },
+          {
+            "title": "Personal Approach",
+            "description": "We offer personalized investment opportunities"
+          },
+          {
+            "title": "Full Expertise",
+            "description": "We specialize in real estate, rental law, and citizenship"
+          },
+          {
+            "title": "Multilingual Support",
+            "description": "Professional assistance in Russian, Turkish, and English"
+          },
+          {
+            "title": "Success-Based Payment",
+            "description": "No fees charged until successful completion of your transaction"
+          }
+        ]
+      }
+    
   },
   "blog": {
     "title": "Blog",

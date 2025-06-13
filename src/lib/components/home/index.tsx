@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useTranslation, LinkWithLocale, useLanguageQuery } from 'next-export-i18n';
 import Icon from '@mdi/react';
-import { mdiMagnify } from '@mdi/js';
+import { mdiMagnify, mdiCheckCircle, mdiEarth, mdiHomeCity, mdiPiggyBank, mdiGavel } from '@mdi/js';
 
 import styles from './index.module.scss';
 import SimpleSlider from './SimpleSlider/simpleSlider';
@@ -77,15 +77,24 @@ export function Home({ allBlogData, metaTags }: { allBlogData: Record<string, Po
               <source src={getImageUrl('/videos/new.mp4')} type="video/mp4" />
             </video>
           ) : (
-            <Image
-              src={getImageUrl('/images/moscow3.jpg')}
-              alt="views of moscow"
-              sizes="100vw"
-              quality={100}
-              fill
+            <video
+              className={styles.video}
+              loop
+              autoPlay
+              muted
+              preload="auto"
+              height={680}
+              width={1600}
               style={{ objectFit: 'cover' }}
-              priority
-            />
+              playsInline
+              /* eslint-disable react/no-unknown-property */
+              webkit-playsinline="true"
+              controls={false}
+            >
+              <source src={getImageUrl('/videos/moscow.webm')} type="video/webm" />
+              {/* Fallback source - MP4 for iOS */}
+              <source src={getImageUrl('/videos/moscow.mp4')} type="video/mp4" />
+            </video>
           )}
 
           <div className={styles.searchBlock}>
@@ -132,10 +141,50 @@ export function Home({ allBlogData, metaTags }: { allBlogData: Record<string, Po
           </div>
         </div>
 
-        <ContainerWrapper width="standardPlus" withMarginBottom>
+        <ContainerWrapper width="1100px" withMarginBottom>
           <SimpleSlider type="buy" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
 
           <SimpleSlider type="rent" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
+
+          <h2 className={styles.header}>{t('home.advantages.title')}</h2>
+
+          <div className={styles.advantages}>
+            <div className={styles.advantage}>
+              <Icon className={styles.image} path={mdiGavel} size={2.5} />
+              <section>
+                <h3>{t('home.advantages.items.0.title')}</h3>
+                <p>{t('home.advantages.items.0.description')}</p>
+              </section>
+            </div>
+            <div className={styles.advantage}>
+              <Icon className={styles.image} path={mdiPiggyBank} size={2.5} />
+              <section>
+                <h3>{t('home.advantages.items.1.title')}</h3>
+                <p>{t('home.advantages.items.1.description')}</p>
+              </section>
+            </div>
+            <div className={styles.advantage}>
+              <Icon className={styles.image} path={mdiHomeCity} size={2.5} />
+              <section>
+                <h3>{t('home.advantages.items.2.title')}</h3>
+                <p>{t('home.advantages.items.2.description')}</p>
+              </section>
+            </div>
+            <div className={styles.advantage}>
+              <Icon className={styles.image} path={mdiEarth} size={2.5} />
+              <section>
+                <h3>{t('home.advantages.items.3.title')}</h3>
+                <p>{t('home.advantages.items.3.description')}</p>
+              </section>
+            </div>
+            <div className={styles.advantage}>
+              <Icon className={styles.image} path={mdiCheckCircle} size={2.5} />
+              <section>
+                <h3>{t('home.advantages.items.4.title')}</h3>
+                <p>{t('home.advantages.items.4.description')}</p>
+              </section>
+            </div>
+          </div>
 
           <div className={styles.articleBlock}>
             <h2 className={styles.header}>{t('home.articles')}</h2>
