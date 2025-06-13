@@ -78,7 +78,7 @@
     display: flex;
     justify-content: center;
     width: 1000px;
-    height: 400px;
+    height: 450px;
     margin: 0px auto 40px auto;
     align-items: center;
 
@@ -94,6 +94,11 @@
 
       .infoTop {
         padding: 20px 20px 0 20px;
+
+        p:first-of-type {
+          font-weight: 500;
+          padding-bottom: 15px;
+        }
 
         p {
           display: flex;

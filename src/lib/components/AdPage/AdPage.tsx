@@ -70,7 +70,8 @@ export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags })
               <PropertySlider ad={ad} />
             </div>
           </div>
-          {ad.description[lang] && <div className={styles.description}>{ad.description[lang]}</div>}
+          {ad.description[lang] && <div className={styles.description}> {ad.description[lang]}</div>}
+
           <ContactUs />
         </ContainerWrapper>
       </main>

@@ -2,6 +2,7 @@ import { PriceType, CountryType, SearchType, PropertyType, SituationType, Parkin
 
 export interface Ad {
   id: string;
+  publicationDate: string | null;
   man: string | null;
   number: string | null;
   info: string | null;

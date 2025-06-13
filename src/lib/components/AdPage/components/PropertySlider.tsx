@@ -53,7 +53,7 @@ export function PropertySlider({ ad }: { ad: Ad }) {
       <Slider ref={sliderRef} {...settings}>
         {ad.images.map((image, index) => (
           <div key={index}>
-            <Image src={getImageUrl(image)} alt={`Property image ${index + 1}`} width={650} height={400} />
+            <Image src={getImageUrl(image)} alt={`Property image ${index + 1}`} width={650} height={450} />
           </div>
         ))}
       </Slider>

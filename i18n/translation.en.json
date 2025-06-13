@@ -148,6 +148,7 @@
   "ad": {
     "copy": "copied",
     "property": {
+      "updateDate": "Updated",
       "location": "Place",
       "area": "Area",
       "squareMeters": "m",

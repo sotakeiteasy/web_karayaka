@@ -9,6 +9,7 @@ import {
   mdiCheckbook,
   mdiCalendarMonth,
   mdiCircleSmall,
+  mdiUpdate,
 } from '@mdi/js';
 import styles from '../AdPage.module.scss';
 import { Ad, SearchType } from '@/lib/types';
@@ -25,6 +26,16 @@ export function PropertyDetails({ ad, lang, t }: Props) {
   return (
     <div className={styles.info}>
       <div className={styles.infoTop}>
+        {ad.publicationDate && (
+          <p>
+            {' '}
+            <span>
+              <Icon path={mdiUpdate} size={1} />
+              {t('ad.property.updateDate')}
+            </span>
+            {ad.publicationDate?.split(' ').slice(0, 1).join('').split('-').reverse().join('/')}
+          </p>
+        )}
         <p>
           <span>
             <Icon path={mdiArrowExpand} size={1} />
@@ -86,22 +97,27 @@ export function PropertyDetails({ ad, lang, t }: Props) {
           </p>
         )}
       </div>
+
       {(ad.parking || ad.bathroom) && (
         <div className={styles.infoBottom}>
           <div className={styles.infoBottomLeft}>
             <ul>
-              {ad.parking === ParkingType.Closed && (
+              {(ad.parking === ParkingType.Closed || ad.parking === ParkingType.Both) && (
                 <li>
                   <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
                   {t('ad.property.closedParking')}
                 </li>
               )}
-              {ad.parking === ParkingType.Open && (
+              {(ad.parking === ParkingType.Open || ad.parking === ParkingType.Both) && (
                 <li>
                   <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
                   {t('ad.property.openParking')}
                 </li>
               )}
+            </ul>
+          </div>
+          <div className={styles.infoBottomRight}>
+            <ul>
               {ad.bathroom && ad.bathroom > 1 && (
                 <li>
                   <Icon className={styles.dot} path={mdiCircleSmall} size={1.5} />
@@ -110,7 +126,6 @@ export function PropertyDetails({ ad, lang, t }: Props) {
               )}
             </ul>
           </div>
-          <div className={styles.infoBottomRight}></div>
         </div>
       )}
     </div>

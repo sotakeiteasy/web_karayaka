@@ -147,6 +147,7 @@
   "ad": {
     "copy": "скопировано",
     "property": {
+      "updateDate": "Обновлено",
       "location": "Локация",
       "area": "Площадь",
       "squareMeters": "м",
