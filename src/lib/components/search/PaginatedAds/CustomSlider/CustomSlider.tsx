@@ -8,12 +8,10 @@ import Icon from '@mdi/react';
 import { mdiChevronRight, mdiChevronLeft } from '@mdi/js';
 import { Ad } from '@/lib/types';
 import { getImageUrl, getPropertyTitle } from '@/lib/utils';
-import { useTranslation } from 'next-export-i18n';
 import { cityTranslations, districtTranslations } from '@/lib/translations';
 
 export default function CustomSlider({ ad, locale }: { ad: Ad; locale: 'ru' | 'en' }) {
-  const { t } = useTranslation();
-  const altText = getPropertyTitle(ad, locale, t);
+  const altText = getPropertyTitle(ad, locale);
 
   function SampleNextArrow(props: CustomArrowProps) {
     const { onClick } = props;

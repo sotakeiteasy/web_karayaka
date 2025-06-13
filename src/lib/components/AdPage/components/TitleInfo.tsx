@@ -16,7 +16,7 @@ interface Props {
 export function TitleInfo({ ad, lang, t, tooltip, onCopy }: Props) {
   const typeStatus = ad.type === SearchType.Buy ? t('ad.property.titleForSale') : t('ad.property.titleForRent');
 
-  const propertyInfo = getPropertyTitle(ad, lang, t);
+  const propertyInfo = getPropertyTitle(ad, lang);
 
   const titleText = lang === 'ru' ? `${typeStatus} ${propertyInfo}` : `${propertyInfo} ${typeStatus}`;
 
