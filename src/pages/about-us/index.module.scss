@@ -213,6 +213,7 @@
       margin: 10px 0;
     }
   }
+
   .closingNote {
     display: flex;
     justify-content: center;
@@ -224,7 +225,7 @@
     background-color: $primary-color;
     color: $white-text;
     padding: 80px 0;
-    margin: 0px 0 60px 0;
+    margin: 0px 0 40px 0;
 
     span {
       line-height: 2;
@@ -293,76 +294,57 @@
   }
 
   .infoBlock {
-    width: 1000px;
-    display: flex;
-    justify-content: center;
-    justify-content: space-between;
-    gap: 30px;
-    margin-bottom: 40px;
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 60px;
+    border-radius: 10px;
 
     .faq {
-      padding: 20px 40px 20px 0px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      width: 50%;
-      background-color: $primary-color;
-      border-radius: 15px;
-      color: $white-text;
-      box-shadow: $shadow;
+      min-width: 100%;
 
-      h2 {
-        padding-left: 50px;
-        font-size: 2.5rem;
-        font-weight: 400;
-        margin-bottom: 10px;
-      }
-      .faqRow {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        svg.activeIcon {
-          opacity: 1 !important;
-        }
-
-        button {
-          width: 95%;
-          color: $white-text;
-          border: 2px solid $dark-text;
-          border-radius: 15px;
-          background-color: #012047;
-          padding: 5px 8px;
-          text-align: left;
-          cursor: pointer;
-
-          &.activeButton {
-            outline: 2px solid $white-text;
-          }
-        }
-      }
-    }
-
-    .answerBlock {
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      width: 55%;
-      border-radius: 15px;
-      box-shadow: $shadow;
-      h2 {
-        margin-bottom: 15px;
-        font-size: 1.6rem;
+      .customCollapse :global(.ant-collapse-header) {
         font-weight: 500;
-        color: $primary-color;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .customCollapse :global(.ant-collapse-header-text) {
+        padding-top: 1px;
+      }
+
+      .customCollapse :global(.ant-collapse-expand-icon) {
+        min-width: 32px;
+      }
+
+      .customCollapse {
+        width: 100%;
+        background-color: $white-text;
+        border-color: $primary-color;
+        font-family: inherit;
+
+        div > div > span {
+          font-size: 1.2rem !important;
+          color: $secondary-color;
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      h2 {
+        padding: 20px;
+        font-size: 2rem;
+        font-weight: 400;
       }
     }
   }
 
   .workhours {
     font-size: 1.4rem;
-    padding-top: 50px;
-    padding-bottom: 40px;
+    padding-top: 60px;
+    padding-bottom: 50px;
 
     text-align: center;
     position: relative;
@@ -414,20 +396,6 @@
       }
       .video {
         object-fit: cover;
-      }
-    }
-
-    .infoBlock {
-      width: 100%;
-
-      .faq {
-        padding: 20px 40px 30px 0px;
-        gap: 10px;
-        width: 60%;
-      }
-
-      .answerBlock {
-        width: 40%;
       }
     }
   }
@@ -605,15 +573,8 @@
   }
 
   .infoBlock {
-    gap: 15px !important;
-
-    .faq {
-      width: calc(100% + $tablet-goriz-padding * 2) !important;
-      margin-left: calc(-1 * $tablet-goriz-padding);
-      padding-right: 10px !important;
-    }
-    .answerBlock {
-      padding: 0 !important;
+    .customCollapse {
+      border: none;
     }
   }
 }

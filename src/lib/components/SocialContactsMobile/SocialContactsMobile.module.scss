@@ -1,0 +1,45 @@
+.contactsSocial {
+  display: none;
+}
+@media (max-width: 950px) {
+  .contactsSocial {
+    position: fixed;
+    z-index: 10000;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    padding: 0px 15px;
+    transform: translateY(100px);
+    transition: all 0.3s ease;
+
+    &.active {
+      transform: translateY(0);
+    }
+
+    &.active.aboveCookie {
+      transform: translateY(-125px);
+    }
+
+    .telegramIcon {
+      width: 65px;
+      height: 65px;
+      rect {
+        border: 50%;
+      }
+    }
+
+    .roundIconWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: green; // белый фон
+      border-radius: 50%;
+      width: fit-content;
+      height: fit-content;
+      padding: 9px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

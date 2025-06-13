@@ -14,9 +14,14 @@
   z-index: 100;
   transform: translate(-110%);
   transition: transform 1s ease-in-out;
+  text-wrap: pretty;
 
   @media (max-width: 768px) {
     flex-direction: column;
+    bottom: 5px;
+    .message {
+      font-size: 0.9rem;
+    }
   }
 
   &.active {
@@ -48,7 +53,8 @@
 
     @media (max-width: 768px) {
       margin-left: 0;
-      margin-top: 10px;
+      margin-top: 7px;
+      padding: 8px 20px;
     }
   }
 }

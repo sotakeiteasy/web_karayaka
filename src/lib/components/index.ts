@@ -8,3 +8,4 @@ export * from './ContainerWrapper/ContainerWrapper';
 export * from './AdPage/AdPage';
 export * from './ContactsBlock/ContactsBlock';
 export * from './RegInfo/RegInfo';
+export * from './SocialContactsMobile/SocialContactsMobile';

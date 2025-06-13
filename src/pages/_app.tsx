@@ -4,7 +4,8 @@ import dynamic from 'next/dynamic';
 import { Montserrat } from 'next/font/google';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { CookieConsent } from '@/lib/components';
+import { CookieConsent, SocialContactsMobile } from '@/lib/components';
+import { useState } from 'react';
 
 const Header = dynamic(() => import('@/lib/components').then((mod) => mod.Header), { ssr: false });
 const Footer = dynamic(() => import('@/lib/components').then((mod) => mod.Footer), { ssr: false });
@@ -16,6 +17,8 @@ const montserrat = Montserrat({
 
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
+
+  const [Cookievisible, setCookieVisible] = useState(true);
 
   return (
     <div className={montserrat.className}>
@@ -51,7 +54,8 @@ function App({ Component, pageProps }: AppProps) {
 
       <Header />
       <Component {...pageProps} />
-      <CookieConsent />
+      <CookieConsent visible={Cookievisible} setVisible={setCookieVisible} />
+      <SocialContactsMobile cookieVisible={Cookievisible} />
       <Footer />
     </div>
   );

@@ -1,7 +1,6 @@
 import styles from './index.module.scss';
 import Image from 'next/image';
 import { useTranslation, useLanguageQuery } from 'next-export-i18n';
-import { useState } from 'react';
 import Head from 'next/head';
 
 import {
@@ -21,13 +20,14 @@ import {
   mdiTruckFast,
 } from '@mdi/js';
 import Icon from '@mdi/react';
-import { mdiChevronRight } from '@mdi/js';
 
 import { getImageUrl } from '@/lib/utils';
 import { MetaTags } from '@/lib/types';
 import { Breadcrumbs, ContactsBlock, ContainerWrapper, CompanyRegistrationInfo } from '@/lib/components';
 import { Divider } from 'antd';
 import { contactInfo } from '@/lib/constants';
+import { Collapse } from 'antd'; // если не импортировано выше
+import type { CollapseProps } from 'antd';
 
 export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();
@@ -55,11 +55,11 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
     personnel: t('aboutUs.faq.answers.personnel'),
   };
 
-  const [activeKey, setActiveKey] = useState<FAQKey>('location');
-
-  function toggleAnswers(key: FAQKey) {
-    setActiveKey(key);
-  }
+  const items: CollapseProps['items'] = (Object.keys(questionsFAQ) as FAQKey[]).map((key) => ({
+    key,
+    label: questionsFAQ[key],
+    children: <p>{answersFAQ[key]}</p>,
+  }));
 
   const serviceIcons = [
     <Icon key="marker" path={mdiMapMarker} size={2} />,
@@ -246,12 +246,10 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
                 width={475}
                 playsInline
                 controls={false}
-                /* eslint-disable react/no-unknown-property */
-                webkit-playsinline="true"
               >
-                <source src={getImageUrl('/videos/About_Us.mp4')} type="video/webm" />
+                <source src={getImageUrl('/videos/About_Us.mp4')} type="video/mp4" />
                 <source src={getImageUrl('/videos/About_Us.mov')} type="video/mov" />
-                <source src={getImageUrl('/videos/About_Us_fallback.mp4')} type="video/mov" />
+                <source src={getImageUrl('/videos/About_Us_fallback.mp4')} type="video/mp4" />
               </video>
             </div>
           </div>
@@ -281,27 +279,12 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
           <div className={styles.infoBlock}>
             <section className={styles.faq}>
               <h2>{t('aboutUs.faq.title')}</h2>
-
-              {(Object.keys(questionsFAQ) as FAQKey[]).map((key) => (
-                <div className={styles.faqRow} key={key}>
-                  <Icon
-                    path={mdiChevronRight}
-                    size={1.5}
-                    style={{
-                      opacity: 0,
-                    }}
-                    className={activeKey === key ? styles.activeIcon : ''}
-                  />
-                  <button className={activeKey === key ? styles.activeButton : ''} onClick={() => toggleAnswers(key)}>
-                    {questionsFAQ[key]}
-                  </button>
-                </div>
-              ))}
-            </section>
-
-            <section className={styles.answerBlock}>
-              <h2>{questionsFAQ[activeKey]}</h2>
-              <p>{answersFAQ[activeKey]}</p>
+              <Collapse
+                size="large"
+                items={items}
+                accordion
+                className={styles.customCollapse} // необязательно, если нет кастомизации
+              />
             </section>
           </div>
           <CompanyRegistrationInfo />

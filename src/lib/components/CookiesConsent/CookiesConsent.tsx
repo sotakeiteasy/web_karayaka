@@ -1,9 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import styles from './CookiesConsent.module.scss';
 import { useTranslation } from 'next-export-i18n';
 
-export function CookieConsent() {
-  const [visible, setVisible] = useState(false);
+export function CookieConsent({ visible, setVisible }: any) {
   const { t } = useTranslation();
 
   useEffect(() => {

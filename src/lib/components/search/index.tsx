@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
 import dynamic from 'next/dynamic';
 import { useTranslation, useLanguageQuery } from 'next-export-i18n';
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { PaginatedAds } from './PaginatedAds/PaginatedAds';
 import { LabelInput } from './LabelInput/LabelInput';
 import { FilterSelect } from './FilterSelect/FilterSelect';
@@ -18,6 +18,7 @@ export function Search({ type }: { type: SearchType }) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
   const lang = (query?.lang as 'ru' | 'en') || 'ru';
+  const [isFilerAppliedOnce, setIsFilterApplied] = useState(false);
 
   const {
     filter,
@@ -58,6 +59,20 @@ export function Search({ type }: { type: SearchType }) {
     }
   };
 
+  useEffect(() => {
+    const isFilterApplied = localStorage.getItem('isFilterApplied');
+
+    if (isFilterApplied) {
+      setIsFilterApplied(true);
+    }
+  }, []);
+
+  function handleApplyFilter() {
+    applyFilters();
+    setIsFilterApplied(true);
+    localStorage.setItem('isFilterApplied', 'true');
+  }
+
   return (
     <main className={styles.main}>
       <div className={styles.filterBox}>
@@ -91,48 +106,52 @@ export function Search({ type }: { type: SearchType }) {
           />
         </div>
 
-        <div className={styles.filter}>
-          <FilterSelect
-            name="propertyType"
-            label="search.filters.any"
-            value={filter.propertyType ?? ''}
-            options={propertyTypeOptions}
-            onChange={handleSelectChange}
-          />
-        </div>
+        {isFilerAppliedOnce && (
+          <>
+            <div className={styles.filter}>
+              <FilterSelect
+                name="propertyType"
+                label="search.filters.any"
+                value={filter.propertyType ?? ''}
+                options={propertyTypeOptions}
+                onChange={handleSelectChange}
+              />
+            </div>
+            <div className={styles.filter}>
+              <FilterSelect
+                name="floor"
+                label="search.filters.any"
+                value={filter.floor ?? ''}
+                options={floorOptions}
+                onChange={handleSelectChange}
+                isNumeric={true}
+              />
+            </div>
 
-        <div className={styles.filter}>
-          <FilterSelect
-            name="floor"
-            label="search.filters.any"
-            value={filter.floor ?? ''}
-            options={floorOptions}
-            onChange={handleSelectChange}
-            isNumeric={true}
-          />
-        </div>
+            <div className={styles.filter}>
+              <FilterSelect
+                name="bedroom"
+                label="search.filters.any2"
+                value={filter.bedroom ?? ''}
+                options={bedroomOptions}
+                onChange={handleSelectChange}
+                isMulti={true}
+              />
+            </div>
 
-        <div className={styles.filter}>
-          <FilterSelect
-            name="bedroom"
-            label="search.filters.any2"
-            value={filter.bedroom ?? ''}
-            options={bedroomOptions}
-            onChange={handleSelectChange}
-            isMulti={true}
-          />
-        </div>
+            <div className={styles.filterRow}>
+              <LabelInput name="minPrice" value={filter.minPrice} onChange={handleNumberInputChange} t={t} />
+              <LabelInput name="maxPrice" value={filter.maxPrice} onChange={handleNumberInputChange} t={t} />
+            </div>
+            <div className={styles.filterRow}>
+              <LabelInput name="minArea" value={filter.minArea} onChange={handleNumberInputChange} t={t} />
+              <LabelInput name="maxArea" value={filter.maxArea} onChange={handleNumberInputChange} t={t} />
+            </div>
+          </>
+        )}
 
-        <div className={styles.filterRow}>
-          <LabelInput name="minPrice" value={filter.minPrice} onChange={handleNumberInputChange} t={t} />
-          <LabelInput name="maxPrice" value={filter.maxPrice} onChange={handleNumberInputChange} t={t} />
-        </div>
-        <div className={styles.filterRow}>
-          <LabelInput name="minArea" value={filter.minArea} onChange={handleNumberInputChange} t={t} />
-          <LabelInput name="maxArea" value={filter.maxArea} onChange={handleNumberInputChange} t={t} />
-        </div>
         <div className={styles.filterActions}>
-          <button className={styles.applyButton} onClick={applyFilters}>
+          <button className={styles.applyButton} onClick={handleApplyFilter}>
             {t('search.filters.apply')}
           </button>
         </div>

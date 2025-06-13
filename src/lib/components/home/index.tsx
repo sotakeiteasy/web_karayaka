@@ -14,6 +14,13 @@ import { PostData } from '@/lib/types';
 import { MetaTags } from '@/lib/types';
 import { Divider } from 'antd';
 
+import dynamic from 'next/dynamic';
+
+const VideoPlayer = dynamic(() => import('@/lib/components/MainVideo'), {
+  ssr: false,
+  loading: () => <div style={{ height: 680, width: 1600 }}>Loading...</div>,
+});
+
 export function Home({ allBlogData, metaTags }: { allBlogData: Record<string, PostData[]>; metaTags: MetaTags }) {
   const router = useRouter();
 
@@ -57,46 +64,7 @@ export function Home({ allBlogData, metaTags }: { allBlogData: Record<string, Po
 
       <main className={styles.main}>
         <div className={styles.mainImageContainer}>
-          {lang === 'ru' ? (
-            <video
-              className={styles.video}
-              loop
-              autoPlay
-              muted
-              preload="auto"
-              height={680}
-              width={1600}
-              style={{ objectFit: 'cover' }}
-              playsInline
-              /* eslint-disable react/no-unknown-property */
-              webkit-playsinline="true"
-              controls={false}
-            >
-              <source src={getImageUrl('/videos/new.webm')} type="video/webm" />
-              {/* Fallback source - MP4 for iOS */}
-              <source src={getImageUrl('/videos/new.mp4')} type="video/mp4" />
-            </video>
-          ) : (
-            <video
-              className={styles.video}
-              loop
-              autoPlay
-              muted
-              preload="auto"
-              height={680}
-              width={1600}
-              style={{ objectFit: 'cover' }}
-              playsInline
-              /* eslint-disable react/no-unknown-property */
-              webkit-playsinline="true"
-              controls={false}
-            >
-              <source src={getImageUrl('/videos/moscow.webm')} type="video/webm" />
-              {/* Fallback source - MP4 for iOS */}
-              <source src={getImageUrl('/videos/moscow.mp4')} type="video/mp4" />
-            </video>
-          )}
-
+          <VideoPlayer lang={lang} />;
           <div className={styles.searchBlock}>
             <div className={styles.inputContainer}>
               <input
@@ -193,7 +161,7 @@ export function Home({ allBlogData, metaTags }: { allBlogData: Record<string, Po
                 <LinkWithLocale href={`/blog/${id}`}>
                   <div className={styles.articleImage}>
                     <Image
-                      src={getImageUrl(`/images/${id}.jpg`)}
+                      src={getImageUrl(`/images/articles/${id}.jpg`)}
                       fill={true}
                       alt={title}
                       draggable="false"

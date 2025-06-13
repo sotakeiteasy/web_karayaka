@@ -49,9 +49,7 @@
           font-weight: 300;
         }
 
-        &:hover {
-          background-color: rgba(0, 0, 0, 0.4);
-        }
+        background-color: rgba(0, 0, 0, 0.6);
 
         .searchButton {
           position: absolute;
@@ -61,11 +59,7 @@
           cursor: pointer;
 
           svg {
-            color: $tertiary-color;
-          }
-
-          svg:hover {
-            color: $secondary-color;
+            color: rgba(218, 218, 218, 0.7);
           }
         }
       }
@@ -83,16 +77,16 @@
           padding: 10px 15px;
           border-radius: 10px;
           color: white;
-          background-color: rgba(0, 0, 0, 0.2);
+          background-color: rgba(0, 0, 0, 0.6);
 
           display: flex;
           align-items: center;
           justify-content: space-between;
 
           transition: all 0.2s ease;
-          &:hover {
-            background-color: rgba(0, 0, 0, 0.4);
-          }
+          // &:hover {
+          // background-color: rgba(0, 0, 0, 0.4);
+          // }
           &Ru {
             width: 210px;
             gap: 15px;
