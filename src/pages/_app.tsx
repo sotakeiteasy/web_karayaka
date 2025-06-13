@@ -18,7 +18,7 @@ const montserrat = Montserrat({
 function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
-  const [Cookievisible, setCookieVisible] = useState(true);
+  const [Cookievisible, setCookieVisible] = useState(false);
 
   return (
     <div className={montserrat.className}>

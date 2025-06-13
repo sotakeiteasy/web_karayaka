@@ -11,7 +11,7 @@ export function CookieConsent({ visible, setVisible }: any) {
     if (cookieConsent === null) {
       setVisible(true);
     }
-  }, []);
+  }, [setVisible]);
 
   const handleAccept = () => {
     localStorage.setItem('cookieConsent', 'accepted');

@@ -22,12 +22,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   min-height: 80px;
   background-color: $primary-color;
   color: $white-text;
-
-  // gap: clamp(0px, 2vw, 200px);
 
   .nav {
     display: flex;
@@ -41,10 +38,12 @@
 
       align-items: center;
       gap: 10px;
-      margin-left: 20px;
-      margin-right: auto;
       font-size: 1.3rem;
       text-transform: uppercase;
+
+      a {
+        margin: 0 auto;
+      }
     }
 
     .burgerButton {
@@ -252,7 +251,12 @@
 
   img,
   svg {
-    width: 25px;
+    width: 35px;
+    height: auto;
+  }
+
+  svg {
+    width: 37px;
     height: auto;
   }
 
@@ -261,6 +265,7 @@
   }
 
   .whatsapp {
+    width: 45px;
     margin-bottom: 0px;
   }
 }

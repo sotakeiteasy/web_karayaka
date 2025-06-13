@@ -64,7 +64,7 @@ export function Home({ allBlogData, metaTags }: { allBlogData: Record<string, Po
 
       <main className={styles.main}>
         <div className={styles.mainImageContainer}>
-          <VideoPlayer lang={lang} />;
+          <VideoPlayer lang={lang} />
           <div className={styles.searchBlock}>
             <div className={styles.inputContainer}>
               <input
