@@ -16,8 +16,6 @@ export default function PrivacyPolicyPage({ content, metaTags }: { content: HTML
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charSet="utf-8" />
       </Head>
       <main className={styles.privacyPolicy}>
         <ContainerWrapper width="standard" withMarginBottom={true}>

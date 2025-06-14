@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
 import { contactInfo } from '@/lib/constants';
 import { Divider } from 'antd';
+import { organizationScheme } from '@/lib/seo';
 
 export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();
@@ -19,8 +20,6 @@ export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
         <meta name="description" content={meta.description} />
         <meta name="keywords" content={meta.keywords} />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charSet="utf-8" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/contacts" />
@@ -33,32 +32,9 @@ export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              'name': contactInfo.company,
-              'url': 'https://karayaka.ru',
-              'logo': 'https://karayaka.ru/logo.png',
-              'email': contactInfo.email,
-              'telephone': contactInfo.phone,
-              'founder': {
-                '@type': 'Person',
-                'name': contactInfo.founder,
-              },
-              'address': {
-                '@type': 'PostalAddress',
-                'streetAddress': contactInfo.address,
-                'addressLocality': contactInfo.city,
-                'postalCode': contactInfo.postcode,
-                'addressCountry': 'RU',
-              },
-              'sameAs': [contactInfo.telegram, contactInfo.whatsapp],
-            }),
-          }}
-        />
+        {locale === 'ru' && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationScheme) }} />
+        )}
       </Head>
       <main className={styles.main}>
         <ContainerWrapper width="standardPlus" withMarginBottom={true}>

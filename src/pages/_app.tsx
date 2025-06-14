@@ -23,7 +23,6 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <div className={montserrat.className}>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="alternate" hrefLang="ru" href={`https://karayaka.ru${router.pathname}`} />
         <link rel="alternate" hrefLang="en" href={`https://karayaka.ru${router.pathname}?lang=en`} />
 

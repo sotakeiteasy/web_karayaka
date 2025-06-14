@@ -17,8 +17,6 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
         <meta name="description" content={meta.description} />
         <meta name="keywords" content={meta.keywords} />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charSet="utf-8" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/buy" />

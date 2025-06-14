@@ -8,6 +8,7 @@ import { MetaTags, LocalizedPostData, PostData } from '@/lib/types';
 
 import { parseISO, format } from 'date-fns';
 import { ArticleCard, Breadcrumbs, ContainerWrapper } from '@/lib/components';
+import { articleScheme } from '@/lib/seo';
 
 function Date({ dateString }: { dateString: string }) {
   const date = parseISO(dateString);
@@ -51,8 +52,6 @@ export default function Post({
         <meta name="description" content={meta.description} />
         <meta name="keywords" content={meta.keywords} />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charSet="utf-8" />
 
         <meta property="og:type" content="article" />
         <meta property="og:url" content={pageUrl} />
@@ -65,25 +64,12 @@ export default function Post({
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
         <meta property="article:published_time" content={localizedPostData.date} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Article',
-              'headline': localizedPostData.title,
-              'description': localizedPostData.excerpt || '',
-              'image': 'https://karayaka.ru' + imageUrl,
-              'url': pageUrl,
-              'datePublished': localizedPostData.date + 'T08:00:00+08:00',
-              'author': {
-                '@type': 'Organization',
-                'name': 'Karayaka',
-                'url': 'https://karayaka.ru',
-              },
-            }),
-          }}
-        />
+        {lang === 'ru' && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(articleScheme(localizedPostData, pageUrl, imageUrl)) }}
+          />
+        )}
       </Head>
       <main className={styles.main}>
         <ContainerWrapper width="standard" withMarginBottom={true}>

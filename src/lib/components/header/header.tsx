@@ -7,15 +7,15 @@ import { mdiTriangleSmallDown, mdiWhatsapp, mdiClose } from '@mdi/js';
 import { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import { contactInfo } from '@/lib/constants';
+import { headerScheme } from '@/lib/seo';
 
 export function Header() {
   const { t } = useTranslation();
   const router = useRouter();
   const [query] = useLanguageQuery();
-  const currentLang = (query?.lang as 'ru' | 'en') || 'ru';
+  const lang = (query?.lang as 'ru' | 'en') || 'ru';
 
   const [isContactsMenuOpen, setIsContactsMenuOpen] = useState(false);
-
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
   const langMenuRef = useRef<HTMLDivElement>(null);
@@ -80,34 +80,20 @@ export function Header() {
   return (
     <>
       <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'ItemList',
-              'itemListElement': [
-                {
-                  '@type': 'SiteNavigationElement',
-                  'name': t('header.home'),
-                  'url': 'https://karayaka.ru',
-                },
-                ...navLinks.map((link) => ({
-                  '@type': 'SiteNavigationElement',
-                  'name': link.text,
-                  'url': `https://karayaka.ru${link.href}`,
-                })),
-              ],
-            }),
-          }}
-        />
+        {lang === 'ru' && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(headerScheme(t('header.home'), navLinks)),
+            }}
+          />
+        )}
       </Head>
       <header className={styles.header}>
         <div
           className={`${styles.overlay} ${isBurgerMenuOpen ? styles.active : ''}`}
           onClick={() => setIsBurgerMenuOpen(false)}
         ></div>
-
         <nav className={`${styles.nav} ${styles.fill}`}>
           <div className={styles.logo}>
             <LinkWithLocale href="/">{t('header.home')}</LinkWithLocale>
@@ -163,12 +149,12 @@ export function Header() {
               </address>
               <div className={styles.mobileLangSwitcher}>
                 <LanguageSwitcher lang="en">
-                  <button className={`${styles.mobileLangButton} ${currentLang === 'en' ? styles.active : ''}`}>
+                  <button className={`${styles.mobileLangButton} ${lang === 'en' ? styles.active : ''}`}>
                     English
                   </button>
                 </LanguageSwitcher>
                 <LanguageSwitcher lang="ru">
-                  <button className={`${styles.mobileLangButton} ${currentLang === 'ru' ? styles.active : ''}`}>
+                  <button className={`${styles.mobileLangButton} ${lang === 'ru' ? styles.active : ''}`}>
                     Русский
                   </button>
                 </LanguageSwitcher>
@@ -192,7 +178,6 @@ export function Header() {
             {isContactsMenuOpen && (
               <address className={styles.dropdownMenu}>
                 <p className={`${styles.contactMenuItem} ${styles.workhours}`}>{t('header.workhours')}</p>
-
                 <a
                   className={styles.telegramContact}
                   href={contactInfo.telegram}
@@ -202,7 +187,6 @@ export function Header() {
                   <img src="/assets/icons/TelegramIconContacts.svg" alt="Telegram" className={styles.telegramIcon} />
                   <span className={`${styles.contactMenuItem} ${styles.telegram}`}>Telegram</span>
                 </a>
-
                 <a
                   className={styles.whatsappContact}
                   href={contactInfo.whatsapp}
@@ -212,21 +196,12 @@ export function Header() {
                   <Icon path={mdiWhatsapp} color="green" />
                   <span className={`${styles.contactMenuItem} ${styles.whatsapp}`}>WhatsApp</span>
                 </a>
-
-                {/* <a
-                  className={`${styles.contactMenuItem} ${styles.email}`}
-                  href={`mailto:${contactInfo.email}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {contactInfo.email}
-                </a> */}
               </address>
             )}
           </div>
           <div ref={langMenuRef} className={styles.dropdown} onClick={(e) => e.stopPropagation()}>
             <button className={styles.button} onClick={() => setIsLanguageMenuOpen(!isLanguageMenuOpen)}>
-              {currentLang === 'en' ? 'English' : 'Русский'}
+              {lang === 'en' ? 'English' : 'Русский'}
               <Icon
                 path={mdiTriangleSmallDown}
                 size={1}
@@ -240,7 +215,7 @@ export function Header() {
               <div className={styles.dropdownMenu}>
                 <LanguageSwitcher lang="en">
                   <button
-                    className={`${styles.menuItem} ${currentLang === 'en' ? styles.active : ''}`}
+                    className={`${styles.menuItem} ${lang === 'en' ? styles.active : ''}`}
                     onClick={changeLanguage}
                   >
                     English
@@ -248,7 +223,7 @@ export function Header() {
                 </LanguageSwitcher>
                 <LanguageSwitcher lang="ru">
                   <button
-                    className={`${styles.menuItem} ${currentLang === 'ru' ? styles.active : ''}`}
+                    className={`${styles.menuItem} ${lang === 'ru' ? styles.active : ''}`}
                     onClick={changeLanguage}
                   >
                     Русский

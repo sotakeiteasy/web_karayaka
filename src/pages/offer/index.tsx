@@ -7,7 +7,7 @@ import { Breadcrumbs, ContactsBlock, ContactUs, ContainerWrapper } from '@/lib/c
 import { ClockCircleOutlined } from '@ant-design/icons';
 import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
-import { contactInfo } from '@/lib/constants';
+import { jsonLd } from '@/lib/seo/offerScheme';
 
 const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
   const { t } = useTranslation();
@@ -126,41 +126,6 @@ const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
     },
   ];
 
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Offer',
-    'name': locale === 'ru' ? 'Индивидуальный подбор недвижимости' : 'Custom Real Estate Offer',
-    'description':
-      locale === 'ru'
-        ? 'Заполните форму и получите персональное предложение недвижимости, подобранное под ваши требования.'
-        : 'Fill out the form to receive a personalized property offer tailored to your requirements.',
-    'url': 'https://karayaka.ru/offer',
-    'availability': 'https://schema.org/InStock',
-    'validFrom': '2025-06-13T00:00:00+03:00',
-    'itemOffered': {
-      '@type': 'Service',
-      'serviceType': locale === 'ru' ? 'Подбор недвижимости' : 'Real Estate Selection',
-      'provider': {
-        '@type': 'RealEstateAgent',
-        'name': 'Karayaka',
-        'url': 'https://karayaka.ru',
-        'telephone': contactInfo.phone,
-        'logo': {
-          '@type': 'ImageObject',
-          'url': 'https://karayaka.ru/logo.png',
-        },
-        'image': {
-          '@type': 'ImageObject',
-          'url': 'https://karayaka.ru/logo.png',
-        },
-        'address': {
-          '@type': 'PostalAddress',
-          'addressCountry': 'RU',
-        },
-      },
-    },
-  };
-
   return (
     <>
       <Head>
@@ -168,8 +133,6 @@ const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
         <meta name="description" content={meta.description} />
         <meta name="keywords" content={meta.keywords} />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charSet="utf-8" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/offer" />
@@ -181,8 +144,9 @@ const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={locale === 'ru' ? 'ru_RU' : 'en_US'} />
-
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        {locale === 'ru' && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        )}
       </Head>
       <main className={styles.offerContainer}>
         <ContainerWrapper width="standard">

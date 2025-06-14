@@ -6,6 +6,7 @@ import styles from './index.module.scss';
 import { getSortedPostsData } from '@/lib/utils/blogServer';
 import { MetaTags, PostData } from '@/lib/types';
 import { ArticleCard, Breadcrumbs, ContainerWrapper } from '@/lib/components';
+import { blogScheme } from '@/lib/seo';
 
 export default function Blog({
   allBlogData,
@@ -32,8 +33,6 @@ export default function Blog({
         <meta name="description" content={meta.description} />
         <meta name="keywords" content={meta.keywords} />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charSet="utf-8" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/blog" />
@@ -45,32 +44,12 @@ export default function Blog({
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'ItemList',
-              'name': meta.title,
-              'numberOfItems': posts.length,
-              'itemListElement': posts.map((post, idx) => ({
-                '@type': 'Article',
-                'position': idx + 1,
-                'url': `https://karayaka.ru/blog/${post.id}`,
-                'name': post.title,
-                'headline': post.title,
-                'description': post.excerpt || '',
-                'image': `https://karayaka.ru/images/articles/${post.id}.jpg`,
-                'datePublished': post.date + 'T08:00:00+08:00',
-                'author': {
-                  '@type': 'Organization',
-                  'name': 'Karayaka',
-                  'url': 'https://karayaka.ru',
-                },
-              })),
-            }),
-          }}
-        />
+        {lang === 'ru' && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(blogScheme(lang, meta.title, posts)) }}
+          />
+        )}
       </Head>
 
       <main className={styles.main}>

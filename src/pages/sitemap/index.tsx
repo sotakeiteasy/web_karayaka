@@ -1,11 +1,14 @@
-import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
+import styles from './index.module.scss';
+
+import Head from 'next/head';
 import { Tree } from 'antd';
 import 'antd/dist/reset.css';
 import { DataNode } from 'antd/lib/tree';
 import { useLanguageQuery, useTranslation } from 'next-export-i18n';
-import styles from './index.module.scss';
+
+import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
+import { buildTree } from '@/lib/utils';
 import { MetaTags } from '@/lib/types';
-import Head from 'next/head';
 
 export default function SiteMap({
   meta,
@@ -38,8 +41,6 @@ export default function SiteMap({
       <Head>
         <title>{metaPage.title}</title>
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charSet="utf-8" />
       </Head>
       <main className={styles.main}>
         <ContainerWrapper width="standardPlus" withMarginBottom={true}>
@@ -60,55 +61,6 @@ export default function SiteMap({
       </main>
     </>
   );
-}
-
-function cleanTitle(title: string): string {
-  return title.split(' - ')[0].trim();
-}
-
-function buildTree(pages: { path: string; titleRu: string; titleEn: string }[], locale: 'ru' | 'en'): DataNode[] {
-  const tree: DataNode[] = [];
-  const map: Record<string, DataNode> = {};
-
-  pages.forEach(({ path, titleRu, titleEn }) => {
-    const rawTitle = locale === 'en' ? titleEn : titleRu;
-    const parts = path.split('/').filter(Boolean);
-    let current = tree;
-    let fullPath = '';
-
-    parts.forEach((part, idx) => {
-      fullPath += '/' + part;
-      let node = current.find((n) => n.key === fullPath);
-
-      if (!node) {
-        node = {
-          title: cleanTitle(rawTitle),
-          className: `tree-level-${idx}`,
-          key: fullPath,
-          children: [],
-        };
-        current.push(node);
-        map[fullPath] = node;
-      }
-
-      if (idx === parts.length - 1) {
-        node.isLeaf = true;
-      }
-
-      current = node.children!;
-    });
-
-    if (parts.length === 0) {
-      current.push({
-        title: locale === 'en' ? 'Home' : 'Главная',
-        key: '/',
-        isLeaf: true,
-        className: 'tree-level-0',
-      });
-    }
-  });
-
-  return tree;
 }
 
 export async function getStaticProps() {

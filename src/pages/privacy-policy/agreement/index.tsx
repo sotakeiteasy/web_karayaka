@@ -6,6 +6,33 @@ import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
 import { useLanguageQuery } from 'next-export-i18n';
 
+export default function AgreementPage({ content, metaTags }: { content: HTMLElement; metaTags: MetaTags }) {
+  const [query] = useLanguageQuery();
+
+  const lang = (query?.lang as 'ru' | 'en') || 'ru';
+  const meta = metaTags[lang];
+
+  return (
+    <>
+      <Head>
+        <title>{meta.title}</title>
+        <meta name="robots" content="index, follow" />
+      </Head>
+      <main className={styles.agreement}>
+        <ContainerWrapper width="standard" withMarginBottom={true}>
+          <Breadcrumbs
+            items={[
+              { href: '/privacy-policy', t: 'footer.privacyPolicy' },
+              { href: '/privacy-policy/agreement', t: 'agreementForm.header' },
+            ]}
+          />
+          <div dangerouslySetInnerHTML={{ __html: content }} />
+        </ContainerWrapper>
+      </main>
+    </>
+  );
+}
+
 export function getStaticProps() {
   const filePath = path.join(process.cwd(), './src/data/documents', 'agreement.html');
   const content = fs.readFileSync(filePath, 'utf-8');
@@ -22,33 +49,4 @@ export function getStaticProps() {
   return {
     props: { content, metaTags },
   };
-}
-
-export default function AgreementPage({ content, metaTags }: { content: HTMLElement; metaTags: MetaTags }) {
-  const [query] = useLanguageQuery();
-
-  const lang = (query?.lang as 'ru' | 'en') || 'ru';
-  const meta = metaTags[lang];
-
-  return (
-    <>
-      <Head>
-        <title>{meta.title}</title>
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charSet="utf-8" />
-      </Head>
-      <main className={styles.agreement}>
-        <ContainerWrapper width="standard" withMarginBottom={true}>
-          <Breadcrumbs
-            items={[
-              { href: '/privacy-policy', t: 'footer.privacyPolicy' },
-              { href: '/privacy-policy/agreement', t: 'agreementForm.header' },
-            ]}
-          />
-          <div dangerouslySetInnerHTML={{ __html: content }} />
-        </ContainerWrapper>
-      </main>
-    </>
-  );
 }

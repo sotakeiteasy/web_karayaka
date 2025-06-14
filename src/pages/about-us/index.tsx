@@ -24,10 +24,8 @@ import Icon from '@mdi/react';
 import { getImageUrl } from '@/lib/utils';
 import { MetaTags } from '@/lib/types';
 import { Breadcrumbs, ContactsBlock, ContainerWrapper, CompanyRegistrationInfo } from '@/lib/components';
-import { Divider } from 'antd';
-import { contactInfo } from '@/lib/constants';
-import { Collapse } from 'antd'; // если не импортировано выше
-import type { CollapseProps } from 'antd';
+import { Divider, CollapseProps, Collapse } from 'antd';
+import { organizationScheme } from '@/lib/seo';
 
 export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();
@@ -35,9 +33,7 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
   const lang = (query?.lang as 'ru' | 'en') || 'ru';
   const meta = metaTags[lang];
 
-  type FAQKey = 'location' | 'period' | 'tour' | 'contact' | 'area' | 'personnel';
-
-  const questionsFAQ: Record<FAQKey, string> = {
+  const questionsFAQ = {
     location: t('aboutUs.faq.questions.location'),
     period: t('aboutUs.faq.questions.period'),
     tour: t('aboutUs.faq.questions.tour'),
@@ -46,7 +42,7 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
     personnel: t('aboutUs.faq.questions.personnel'),
   };
 
-  const answersFAQ: Record<FAQKey, string> = {
+  const answersFAQ = {
     location: t('aboutUs.faq.answers.location'),
     period: t('aboutUs.faq.answers.period'),
     tour: t('aboutUs.faq.answers.tour'),
@@ -55,10 +51,10 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
     personnel: t('aboutUs.faq.answers.personnel'),
   };
 
-  const items: CollapseProps['items'] = (Object.keys(questionsFAQ) as FAQKey[]).map((key) => ({
+  const items: CollapseProps['items'] = Object.keys(questionsFAQ).map((key) => ({
     key,
-    label: questionsFAQ[key],
-    children: <p>{answersFAQ[key]}</p>,
+    label: questionsFAQ[key as keyof typeof questionsFAQ],
+    children: <p>{answersFAQ[key as keyof typeof answersFAQ]}</p>,
   }));
 
   const serviceIcons = [
@@ -88,8 +84,6 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
         <meta name="description" content={meta.description} />
         <meta name="keywords" content={meta.keywords} />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charSet="utf-8" />
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://karayaka.ru/about-us" />
@@ -101,37 +95,9 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content={lang === 'ru' ? 'ru_RU' : 'en_US'} />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Organization',
-              'name': contactInfo.company,
-              'url': 'https://karayaka.ru',
-              'logo': 'https://karayaka.ru/logo.png',
-              'email': contactInfo.email,
-              'telephone': contactInfo.phone,
-              'founder': {
-                '@type': 'Person',
-                'name': contactInfo.founder,
-              },
-              'image': {
-                '@type': 'ImageObject',
-                'url': 'https://karayaka.ru/logo.png',
-              },
-              'address': {
-                '@type': 'PostalAddress',
-                'streetAddress': contactInfo.address,
-                'addressLocality': contactInfo.city,
-                'postalCode': contactInfo.postcode,
-                'addressCountry': 'RU',
-              },
-              'sameAs': [contactInfo.telegram, contactInfo.whatsapp],
-            }),
-          }}
-        />
+        {lang === 'ru' && (
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationScheme) }} />
+        )}
       </Head>
 
       <main className={styles.main}>
@@ -279,12 +245,7 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
           <div className={styles.infoBlock}>
             <section className={styles.faq}>
               <h2>{t('aboutUs.faq.title')}</h2>
-              <Collapse
-                size="large"
-                items={items}
-                accordion
-                className={styles.customCollapse} // необязательно, если нет кастомизации
-              />
+              <Collapse size="large" items={items} accordion className={styles.customCollapse} />
             </section>
           </div>
           <CompanyRegistrationInfo />

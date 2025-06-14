@@ -5,12 +5,14 @@ import Icon from '@mdi/react';
 import { mdiWhatsapp } from '@mdi/js';
 import { contactInfo } from '@/lib/constants/contactInfo';
 import Head from 'next/head';
+import { footerScheme } from '@/lib/seo';
 
 export function Footer() {
   const { t } = useTranslation();
-  const currentYear = new Date().getFullYear();
   const [query] = useLanguageQuery();
-  const locale = (query?.lang as 'ru' | 'en') || 'ru';
+  const lang = (query?.lang as 'ru' | 'en') || 'ru';
+
+  const currentYear = new Date().getFullYear();
 
   const navLinks = [
     { href: '/', label: t('footer.home') },
@@ -22,20 +24,15 @@ export function Footer() {
     { href: '/blog', label: t('header.blog') },
   ];
 
-  const footerNavSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'ItemList',
-    'itemListElement': navLinks.map((link) => ({
-      '@type': 'SiteNavigationElement',
-      'name': link.label,
-      'url': `https://karayaka.ru${link.href}`,
-    })),
-  };
-
   return (
     <>
       <Head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(footerNavSchema) }} />
+        {lang === 'ru' && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(footerScheme(navLinks)) }}
+          />
+        )}
       </Head>
       <footer className={styles.footer}>
         <div className={styles.footerContainer}>
@@ -46,7 +43,7 @@ export function Footer() {
             </div>
             <div className={styles.address}>
               <h3>{t('footer.officeAddress')}</h3>
-              <p>{locale === 'ru' ? contactInfo.addressShort : contactInfo.addressShortEn}</p>
+              <p>{lang === 'ru' ? contactInfo.addressShort : contactInfo.addressShortEn}</p>
             </div>
           </div>
 

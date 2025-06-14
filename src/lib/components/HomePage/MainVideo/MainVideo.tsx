@@ -1,4 +1,4 @@
-import { getImageUrl } from '../utils';
+import { getImageUrl } from '@/lib/utils';
 import styles from '@/lib/components/Home/index.module.scss';
 import { useEffect, useRef } from 'react';
 

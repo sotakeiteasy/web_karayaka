@@ -16,7 +16,7 @@ import { Divider } from 'antd';
 
 import dynamic from 'next/dynamic';
 
-const VideoPlayer = dynamic(() => import('@/lib/components/MainVideo'), {
+const VideoPlayer = dynamic(() => import('./MainVideo/MainVideo'), {
   ssr: false,
   loading: () => <div style={{ height: 680, width: 1600 }}>Loading...</div>,
 });

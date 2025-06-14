@@ -1,4 +1,4 @@
-import { Home } from '@/lib/components/Home';
+import { Home } from '@/lib/components/HomePage';
 import { getSortedPostsData } from '@/lib/utils/blogServer';
 import { PostData } from '@/lib/types';
 
