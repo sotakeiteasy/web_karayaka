@@ -313,6 +313,12 @@
     justify-content: space-between !important;
     margin: 0 40px;
 
+    .logo {
+      a {
+        margin-left: 20px !important;
+      }
+    }
+
     .burgerButton {
       display: flex !important;
     }

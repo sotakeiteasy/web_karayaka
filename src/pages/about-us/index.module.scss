@@ -63,8 +63,6 @@
         }
 
         .icon {
-          width: 32px;
-          height: 32px;
           flex-shrink: 0;
           margin-bottom: 10px;
 
@@ -101,7 +99,7 @@
     box-shadow: none;
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.5 rem;
       text-transform: uppercase;
       text-wrap: nowrap;
       font-weight: 600;
@@ -410,12 +408,15 @@
 
 @media (max-width: 900px) {
   .mainInfo.founder {
+    margin-bottom: 40px;
+
     .founderPhoto {
       height: 100% !important;
+      margin-bottom: 40px;
     }
 
     .founderInfo {
-      margin: 20px 0;
+      margin-bottom: 40px;
 
       h2 {
         text-align: left;
@@ -484,10 +485,7 @@
     }
 
     .closingNote {
-      margin: 0 !important;
-      padding-top: 30px !important;
-      background-color: inherit !important;
-      color: inherit !important;
+      padding: 40px !important;
     }
   }
 }
@@ -504,6 +502,10 @@
 
     .founderInfo {
       margin-left: 0 !important;
+
+      h2 {
+        text-align: center;
+      }
     }
   }
 

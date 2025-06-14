@@ -204,8 +204,8 @@ const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
             <table>
               <thead>
                 <tr>
-                  <th>Document</th>
-                  <th>Required At</th>
+                  <th>{t('offer.commonDocs.tableTitleDoc')}</th>
+                  <th>{t('offer.commonDocs.tableTitleStage')}</th>
                 </tr>
               </thead>
               <tbody>

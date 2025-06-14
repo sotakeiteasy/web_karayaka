@@ -1,8 +1,8 @@
 # *
 User-agent: *
-Disallow: /search
 Disallow: /video/
 Disallow: /images/
+Clean-param: lang&etext&type
 
 # Host
 Host: https://karayaka.ru

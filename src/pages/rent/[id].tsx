@@ -21,22 +21,22 @@ export function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { id: string } }) {
-  const ru = require('../../../i18n/translation.ru.json');
-  const en = require('../../../i18n/translation.en.json');
-  const translations = { ru, en };
+  // const ru = require('../../../i18n/translation.ru.json');
+  // const en = require('../../../i18n/translation.en.json');
+  // const translations = { ru, en };
 
-  function getNestedTranslation(obj: any, key: string): string {
-    return key.split('.').reduce((acc: any, part: string) => acc[part], obj);
-  }
+  // function getNestedTranslation(obj: any, key: string): string {
+  //   return key.split('.').reduce((acc: any, part: string) => acc[part], obj);
+  // }
 
-  const tRu = (key: string) => getNestedTranslation(translations.ru, key);
-  const tEn = (key: string) => getNestedTranslation(translations.en, key);
+  // const tRu = (key: string) => getNestedTranslation(translations.ru, key);
+  // const tEn = (key: string) => getNestedTranslation(translations.en, key);
 
   const ad = getAdById(params.id)!;
 
   const propertyTitle = {
-    ru: getPropertyTitle(ad, 'ru', tRu),
-    en: getPropertyTitle(ad, 'en', tEn),
+    ru: getPropertyTitle(ad, 'ru'),
+    en: getPropertyTitle(ad, 'en'),
   };
   const metaTags = {
     ru: {

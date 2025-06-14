@@ -317,6 +317,8 @@
   
       "commonDocs": {
         "title": "Common Documents by Stage",
+        "tableTitleDoc" : "Document",
+        "tableTitleStage": "Required at",
         "items": [
           {
             "document": "Seller's Turkish ID",

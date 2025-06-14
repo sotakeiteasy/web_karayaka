@@ -3,7 +3,6 @@ import styles from './index.module.scss';
 import { Breadcrumbs, ContactsBlock, ContactUs, ContainerWrapper, CompanyRegistrationInfo } from '@/lib/components';
 import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
-
 import { contactInfo } from '@/lib/constants';
 import { Divider } from 'antd';
 

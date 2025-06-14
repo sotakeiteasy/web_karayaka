@@ -8,8 +8,7 @@ import { useState } from 'react';
 export function SocialContactsMobile({ cookieVisible }: any) {
   const [contactsShown, setContactShown] = useState(false);
 
-  setTimeout(() => setContactShown(true), 1000);
-  console.log(cookieVisible);
+  setTimeout(() => setContactShown(true), 10000);
 
   return (
     <div

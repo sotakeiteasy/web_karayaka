@@ -147,7 +147,7 @@ export function PaginatedAds({ itemsPerPage, ads = [] }: { itemsPerPage: number;
                 return {
                   '@type': 'Product',
                   'url': `https://karayaka.ru/${ad.type}/${ad.id}`,
-                  'name': getPropertyTitle(ad, lang, t),
+                  'name': getPropertyTitle(ad, lang),
                   'description': ad.description?.[lang] || '',
                   'image': `https://karayaka.ru${ad.images?.[0]}`,
                   'offers': {

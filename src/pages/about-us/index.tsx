@@ -148,7 +148,7 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
             priority
           />
           <div className={styles.breadcrumbs}>
-            <Breadcrumbs items={[{ href: '/about-us', t: 'search.buyBreadcrumb' }]} color={'white'} />
+            <Breadcrumbs items={[{ href: '/about-us', t: 'header.aboutUs' }]} color={'white'} />
           </div>
           <div className={styles.slogan}>
             <p>dream</p>
