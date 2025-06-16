@@ -2,7 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import styles from './index.module.scss';
 import Head from 'next/head';
-import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
+import { Breadcrumbs } from '@/lib/components/Breadcrumbs/Breadcrumbs';
+import { ContainerWrapper } from '@/lib/components/ContainerWrapper/ContainerWrapper';
 import { MetaTags } from '@/lib/types';
 import { useLanguageQuery } from 'next-export-i18n';
 

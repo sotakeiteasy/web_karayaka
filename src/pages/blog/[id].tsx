@@ -7,7 +7,9 @@ import { getAllPostIds, getPostData, getSortedPostsData } from '@/lib/server/blo
 import { MetaTags, LocalizedPostData, PostData } from '@/lib/types';
 
 import { parseISO, format } from 'date-fns';
-import { ArticleCard, Breadcrumbs, ContainerWrapper } from '@/lib/components';
+import { ArticleCard } from '@/lib/components/Blog/ArticleCard';
+import { Breadcrumbs } from '@/lib/components/Breadcrumbs/Breadcrumbs';
+import { ContainerWrapper } from '@/lib/components/ContainerWrapper/ContainerWrapper';
 import { articleScheme } from '@/lib/seo';
 
 function Date({ dateString }: { dateString: string }) {

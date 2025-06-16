@@ -6,16 +6,22 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-const Header = dynamic(() => import('@/lib/components').then((mod) => mod.Header), { ssr: false });
-const Footer = dynamic(() => import('@/lib/components').then((mod) => mod.Footer), { ssr: false });
-const CookieConsent = dynamic(() => import('@/lib/components').then((mod) => mod.CookieConsent), {
-  ssr: false,
-  loading: () => null,
-});
-const SocialContactsMobile = dynamic(() => import('@/lib/components').then((mod) => mod.SocialContactsMobile), {
-  ssr: false,
-  loading: () => null,
-});
+const Header = dynamic(() => import('@/lib/components/Header/Header').then((mod) => mod.Header), { ssr: false });
+const Footer = dynamic(() => import('@/lib/components/Footer/Footer').then((mod) => mod.Footer), { ssr: false });
+const CookieConsent = dynamic(
+  () => import('@/lib/components/CookiesConsent/CookiesConsent').then((mod) => mod.CookieConsent),
+  {
+    ssr: false,
+    loading: () => null,
+  }
+);
+const SocialContactsMobile = dynamic(
+  () => import('@/lib/components/SocialContactsMobile/SocialContactsMobile').then((mod) => mod.SocialContactsMobile),
+  {
+    ssr: false,
+    loading: () => null,
+  }
+);
 
 const montserrat = Montserrat({
   variable: '--font-geist-sans',

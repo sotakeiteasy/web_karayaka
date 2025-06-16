@@ -6,7 +6,9 @@ import React, { useState } from 'react';
 import { useTranslation, useLanguageQuery } from 'next-export-i18n';
 
 import { getImageUrl } from '@/lib/utils';
-import { Breadcrumbs, ContactUs, ContainerWrapper } from '@/lib/components';
+import { Breadcrumbs } from '@/lib/components/Breadcrumbs/Breadcrumbs';
+import { ContactUs } from '@/lib/components/ContactUs/ContactUs';
+import { ContainerWrapper } from '@/lib/components/ContainerWrapper/ContainerWrapper';
 import { Ad, MetaTags } from '@/lib/types';
 
 import { getLocationString } from '@/lib/utils';

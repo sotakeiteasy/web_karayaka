@@ -8,7 +8,8 @@ import { mdiMagnify, mdiCheckCircle, mdiEarth, mdiHomeCity, mdiPiggyBank, mdiGav
 
 import styles from './index.module.scss';
 import SimpleSlider from './SimpleSlider/simpleSlider';
-import { ContactUs, ContainerWrapper } from '@/lib/components';
+import { ContactUs } from '@/lib/components/ContactUs/ContactUs';
+import { ContainerWrapper } from '@/lib/components/ContainerWrapper/ContainerWrapper';
 import { getImageUrl } from '@/lib/utils';
 import { PostData } from '@/lib/types';
 import { MetaTags } from '@/lib/types';

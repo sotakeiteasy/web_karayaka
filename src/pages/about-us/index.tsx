@@ -23,7 +23,10 @@ import Icon from '@mdi/react';
 
 import { getImageUrl } from '@/lib/utils';
 import { MetaTags } from '@/lib/types';
-import { Breadcrumbs, ContactsBlock, ContainerWrapper, CompanyRegistrationInfo } from '@/lib/components';
+import { Breadcrumbs } from '@/lib/components/Breadcrumbs/Breadcrumbs';
+import { ContactsBlock } from '@/lib/components/ContactsBlock/ContactsBlock';
+import { ContainerWrapper } from '@/lib/components/ContainerWrapper/ContainerWrapper';
+import { CompanyRegistrationInfo } from '@/lib/components/RegInfo/RegInfo';
 import { Divider, CollapseProps, Collapse } from 'antd';
 import { organizationScheme } from '@/lib/seo';
 
