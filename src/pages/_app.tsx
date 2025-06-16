@@ -4,11 +4,18 @@ import dynamic from 'next/dynamic';
 import { Montserrat } from 'next/font/google';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { CookieConsent, SocialContactsMobile } from '@/lib/components';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Header = dynamic(() => import('@/lib/components').then((mod) => mod.Header), { ssr: false });
 const Footer = dynamic(() => import('@/lib/components').then((mod) => mod.Footer), { ssr: false });
+const CookieConsent = dynamic(() => import('@/lib/components').then((mod) => mod.CookieConsent), {
+  ssr: false,
+  loading: () => null,
+});
+const SocialContactsMobile = dynamic(() => import('@/lib/components').then((mod) => mod.SocialContactsMobile), {
+  ssr: false,
+  loading: () => null,
+});
 
 const montserrat = Montserrat({
   variable: '--font-geist-sans',
@@ -16,9 +23,16 @@ const montserrat = Montserrat({
 });
 
 function App({ Component, pageProps }: AppProps) {
+  const [Cookievisible, setCookieVisible] = useState(false);
   const router = useRouter();
 
-  const [Cookievisible, setCookieVisible] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const consent = localStorage.getItem('cookieConsent');
+      if (!consent) setCookieVisible(true);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className={montserrat.className}>
@@ -26,6 +40,8 @@ function App({ Component, pageProps }: AppProps) {
         <link rel="alternate" hrefLang="ru" href={`https://karayaka.ru${router.pathname}`} />
         <link rel="alternate" hrefLang="en" href={`https://karayaka.ru${router.pathname}?lang=en`} />
 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charSet="utf-8" />
         {router.query.lang === 'ru' && <link rel="canonical" href={`https://karayaka.ru${router.pathname}`} />}
       </Head>
       {/* Yandex.Metrika counter */}

@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { getUniqueFilterValues } from '@/lib/utils';
 import { useTranslation } from 'next-export-i18n';
 import { FILTER_MAPPINGS } from '@/lib/constants/filterOptions';
+import { CountryType } from '../types/FilterTypes';
 
 export function useFilterOptions(country: string | undefined, city: string | undefined, lang: 'ru' | 'en') {
   const { t } = useTranslation();
@@ -37,7 +38,7 @@ export function useFilterOptions(country: string | undefined, city: string | und
       return filterValues.district;
     }
 
-    if (country === 'Turkey') {
+    if (country === CountryType.Turkey) {
       const turkishCities = FILTER_MAPPINGS.countries.turkey || [];
       const turkishDistricts = turkishCities.flatMap((cityName) => {
         const key = cityName.toLowerCase() as keyof typeof FILTER_MAPPINGS.cities;
@@ -45,7 +46,7 @@ export function useFilterOptions(country: string | undefined, city: string | und
       });
 
       return filterValues.district.filter((district) => turkishDistricts.includes(district.en));
-    } else if (country === 'Russia') {
+    } else if (country === CountryType.Russia) {
       const russianCities = FILTER_MAPPINGS.countries.russia || [];
       const russianDistricts = russianCities.flatMap((cityName) => {
         const key = cityName.toLowerCase() as keyof typeof FILTER_MAPPINGS.cities;

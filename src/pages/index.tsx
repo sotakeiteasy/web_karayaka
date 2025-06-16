@@ -1,5 +1,5 @@
 import { Home } from '@/lib/components/HomePage';
-import { getSortedPostsData } from '@/lib/utils/blogServer';
+import { getSortedPostsData } from '@/lib/server/blogServer';
 import { PostData } from '@/lib/types';
 
 export default Home;

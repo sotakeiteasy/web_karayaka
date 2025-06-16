@@ -252,21 +252,35 @@
 
 @media (max-width: 500px) {
   .sliderWrapper {
-    width: 400px;
+    width: 370px;
     position: relative;
   }
 }
 
 @media (max-width: 400px) {
   .sliderWrapper {
-    width: 350px;
+    width: 340px;
+    position: relative;
+  }
+}
+
+@media (max-width: 375px) {
+  .sliderWrapper {
+    width: 320px;
     position: relative;
   }
 }
 
 @media (max-width: 350px) {
   .sliderWrapper {
-    width: 320px;
+    width: 300px;
+    position: relative;
+  }
+}
+
+@media (max-width: 325px) {
+  .sliderWrapper {
+    width: 290px;
     position: relative;
   }
 }

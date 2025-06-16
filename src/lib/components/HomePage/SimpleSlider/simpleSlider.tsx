@@ -128,6 +128,7 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
                       alt={`${propertyTypeTranslations[card.propertyType][locale]} in ${
                         cityTranslations[card.location.city][locale]
                       }`}
+                      loading="lazy"
                     />
                     <div className={styles.cardDescription}>
                       <div className={styles.topRow}>

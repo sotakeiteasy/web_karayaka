@@ -329,7 +329,7 @@
     .mainImageContainer {
       max-width: 1280px;
       min-width: 100%;
-      height: 500px;
+      height: 600px;
 
       video {
         height: 100%;
@@ -342,8 +342,25 @@
       }
 
       .searchBlock {
-        max-width: 90%;
-        bottom: 70px;
+        bottom: 60px !important;
+        flex-direction: column;
+        gap: 10px;
+        width: 90%;
+
+        .inputContainer {
+          width: 100% !important;
+          justify-content: start;
+        }
+
+        .buttonsContainer {
+          justify-content: flex-end;
+          gap: 20px;
+
+          .toggleButton,
+          .moreButton {
+            margin-left: 0 !important;
+          }
+        }
       }
     }
   }
@@ -366,34 +383,12 @@
     .mainImageContainer {
       max-width: 900px;
       min-width: 100%;
-      height: 400px;
+      // height: 500px;
 
-      video {
-        height: 400px;
-        width: auto;
-      }
-    }
-
-    .searchBlock {
-      bottom: 20px !important;
-      flex-direction: column;
-      gap: 10px;
-      width: 90%;
-
-      .inputContainer {
-        width: 100% !important;
-        justify-content: start;
-      }
-
-      .buttonsContainer {
-        justify-content: flex-end;
-        gap: 20px;
-
-        .toggleButton,
-        .moreButton {
-          margin-left: 0 !important;
-        }
-      }
+      // video {
+      //   height: 500px;
+      //   width: auto;
+      // }
     }
   }
 
@@ -433,9 +428,10 @@
 @media (max-width: 480px) {
   .buttonsContainer {
     flex-direction: column;
+    gap: 30px !important;
+    margin-top: 20px;
 
     .moreButton {
-      padding: 0px !important;
       width: fit-content;
     }
   }

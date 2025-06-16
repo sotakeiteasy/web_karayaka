@@ -3,7 +3,7 @@ import { LanguageSwitcher, LinkWithLocale, useTranslation } from 'next-export-i1
 import { useLanguageQuery } from 'next-export-i18n';
 import Head from 'next/head';
 import { getImageUrl } from '@/lib/utils';
-import { getAllPostIds, getPostData, getSortedPostsData } from '@/lib/utils/blogServer';
+import { getAllPostIds, getPostData, getSortedPostsData } from '@/lib/server/blogServer';
 import { MetaTags, LocalizedPostData, PostData } from '@/lib/types';
 
 import { parseISO, format } from 'date-fns';

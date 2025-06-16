@@ -3,7 +3,7 @@ import { useLanguageQuery } from 'next-export-i18n';
 import Head from 'next/head';
 import styles from './index.module.scss';
 
-import { getSortedPostsData } from '@/lib/utils/blogServer';
+import { getSortedPostsData } from '@/lib/server/blogServer';
 import { MetaTags, PostData } from '@/lib/types';
 import { ArticleCard, Breadcrumbs, ContainerWrapper } from '@/lib/components';
 import { blogScheme } from '@/lib/seo';

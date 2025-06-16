@@ -40,7 +40,6 @@ export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
         <ContainerWrapper width="standardPlus" withMarginBottom={true}>
           <Breadcrumbs items={[{ href: '/contacts', t: 'header.contacts' }]} />
           <h1>{t('header.contacts')}</h1>
-
           <div className={styles.mainBlock}>
             <div className={styles.contactsAndAdress}>
               <div className={styles.address}>
@@ -49,7 +48,6 @@ export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
               </div>
               <div className={styles.contacts}>
                 <p>{t('contacts.contactUs')}!</p>
-
                 <ContactsBlock phone email showTraditional column />
               </div>
             </div>
@@ -62,9 +60,7 @@ export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
               ></iframe>
             </div>
           </div>
-
           <p className={styles.workhours}>{t('header.workhours')}</p>
-
           <ContactUs />
           <Divider></Divider>
           <CompanyRegistrationInfo />

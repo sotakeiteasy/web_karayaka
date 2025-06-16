@@ -9,7 +9,7 @@ import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
 import { jsonLd } from '@/lib/seo/offerScheme';
 
-const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
+export default function OfferPage({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
   const locale = (query?.lang as 'ru' | 'en') || 'ru';
@@ -153,7 +153,7 @@ const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
           <Breadcrumbs items={[{ href: '/offer', t: 'header.customOffers' }]} />
           <h1>{t('offer.title')}</h1>
           <div className={styles.date}>
-            <time dateTime="2025-06-13">{locale === 'ru' ? 'Обновлено' : 'Last updated'}: 13.06.2025</time>
+            <time dateTime="2025-06-13">{t('offer.updated')}: 13.06.2025</time>
           </div>
 
           <div className={styles.intro}>
@@ -230,9 +230,7 @@ const OfferPage = ({ metaTags }: { metaTags: MetaTags }) => {
       </main>
     </>
   );
-};
-
-export default OfferPage;
+}
 
 export async function getStaticProps() {
   const metaTags = {

@@ -8,9 +8,6 @@ export default function Document() {
         <link rel="icon" href="https://karayaka.ru/favicon.svg" type="image/svg+xml" />
         <link rel="icon" href="https://karayaka.ru/favicon.png" type="image/png" />
         <link rel="apple-touch-icon" href="https://karayaka.ru/apple-touch-icon.png" />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta charSet="utf-8" />
       </Head>
       <body>
         <Main />

@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { Ad, Filter, SearchType } from '@/lib/types';
 import { filterAds } from '@/lib/utils';
 import { FILTER_MAPPINGS } from '@/lib/constants/filterOptions';
+import { CountryType } from '../types/FilterTypes';
 
 export function useSearchFilters(offerType: SearchType) {
   const router = useRouter();
@@ -110,7 +111,7 @@ export function useSearchFilters(offerType: SearchType) {
 
     setFilter(initialFilter);
     updateResults(initialFilter, true);
-  }, [router.isReady, router.query, updateResults]);
+  }, [router.isReady, router.query, updateResults, offerType]);
 
   const handleFilterChange = (name: string, value: string | number | string[] | undefined) => {
     const updatedFilter = { ...filter, [name]: value };
@@ -151,9 +152,9 @@ export function useSearchFilters(offerType: SearchType) {
   // Вспомогательные функции для определения валидных городов и районов
   function getValidCitiesForCountry(country: string): string[] {
     switch (country) {
-      case 'Russia':
+      case CountryType.Russia:
         return FILTER_MAPPINGS.countries.russia;
-      case 'Turkey':
+      case CountryType.Turkey:
         return FILTER_MAPPINGS.countries.turkey;
       default:
         return [];

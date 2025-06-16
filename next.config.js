@@ -1,5 +1,10 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+const nextConfig = withBundleAnalyzer({
   reactStrictMode: true,
   output: 'export',
   trailingSlash: true,
@@ -42,6 +47,6 @@ const nextConfig = {
     return config;
   },
   poweredByHeader: false,
-};
+});
 
 module.exports = nextConfig;
