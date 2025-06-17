@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './ContainerWrapper.module.scss';
+
 interface ContainerProps {
   children: React.ReactNode;
   width: 'standard' | 'standardPlus' | 'large' | string;

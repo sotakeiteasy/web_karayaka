@@ -6,7 +6,19 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
-const Header = dynamic(() => import('@/lib/components/Header/Header').then((mod) => mod.Header), { ssr: false });
+const Header = dynamic(() => import('@/lib/components/Header/Header').then((mod) => mod.Header), {
+  ssr: false,
+  loading: () => (
+    <div
+      style={{
+        height: '80px',
+        width: '100%',
+        backgroundColor: '#002f6c', // Цвет как у хедера
+      }}
+    />
+  ),
+});
+
 const Footer = dynamic(() => import('@/lib/components/Footer/Footer').then((mod) => mod.Footer), { ssr: false });
 const CookieConsent = dynamic(
   () => import('@/lib/components/CookiesConsent/CookiesConsent').then((mod) => mod.CookieConsent),
@@ -15,6 +27,7 @@ const CookieConsent = dynamic(
     loading: () => null,
   }
 );
+
 const SocialContactsMobile = dynamic(
   () => import('@/lib/components/SocialContactsMobile/SocialContactsMobile').then((mod) => mod.SocialContactsMobile),
   {
@@ -36,7 +49,7 @@ function App({ Component, pageProps }: AppProps) {
     const timer = setTimeout(() => {
       const consent = localStorage.getItem('cookieConsent');
       if (!consent) setCookieVisible(true);
-    }, 2000);
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -45,10 +58,12 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="alternate" hrefLang="ru" href={`https://karayaka.ru${router.pathname}`} />
         <link rel="alternate" hrefLang="en" href={`https://karayaka.ru${router.pathname}?lang=en`} />
+        <link rel="alternate" hrefLang="x-default" href={`https://karayaka.ru${router.pathname}`} />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
-        {router.query.lang === 'ru' && <link rel="canonical" href={`https://karayaka.ru${router.pathname}`} />}
+        {!router.query.lang ||
+          (router.query.lang === 'ru' && <link rel="canonical" href={`https://karayaka.ru${router.pathname}`} />)}
       </Head>
       {/* Yandex.Metrika counter */}
       <script type="text/javascript">

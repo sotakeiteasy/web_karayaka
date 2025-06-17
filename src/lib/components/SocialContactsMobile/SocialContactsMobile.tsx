@@ -1,9 +1,9 @@
 import styles from './SocialContactsMobile.module.scss';
-import { contactInfo } from '@/lib/constants/contactInfo';
-import { mdiWhatsapp } from '@mdi/js';
-
 import Icon from '@mdi/react';
 import { useState } from 'react';
+
+import { contactInfo } from '@/lib/constants';
+import { mdiWhatsapp } from '@mdi/js';
 
 export function SocialContactsMobile({ cookieVisible }: any) {
   const [contactsShown, setContactShown] = useState(false);

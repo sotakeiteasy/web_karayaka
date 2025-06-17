@@ -7,7 +7,7 @@ A Preliminary Real Estate Sale Agreement is a bilateral contract in which both p
 
 Through this agreement, the promisor (the party making the promise) commits to selling a specific property, and the promisee (the party receiving the promise) agrees to buy it. Both parties thus assume mutual obligations. The rights arising from this contract are relative rights, meaning they can only be enforced by and against the parties involved.
 
-<img src="https://karayaka.ru/images/articles/article2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/assets/images/articles/article2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Can a Preliminary Sale Agreement Be Made for Property Not Owned by the Promisor?
 
@@ -26,7 +26,7 @@ According to Article 706 of the Turkish Civil Code, any agreement intending to t
 - The price to be paid by the buyer must be clearly stated in the agreement, along with the payment terms (installments or lump sum).
 - According to zoning regulations, co-owned parcels for development purposes cannot be subject to preliminary sale agreements.
 
-<img src="https://karayaka.ru/images/articles/article1.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/assets/images/articles/article1.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Obligations of the Parties in a Preliminary Sale Agreement
 

@@ -8,9 +8,11 @@
     "customOffers": "Services",
     "contacts": "Contacts",
     "blog": "Blog",
-    "workhours": "We are in touch 24/7, write at any time."
+    "workhours": "We are in touch 24/7, write at any time.",
+    "closeBtn": "Close"
   },
   "home": {
+    "slogan": "If it is possible, we can",
     "rent": "Rent in Russia",
     "buy": "Buy in Russia",
     "seeAll": "See all",
@@ -182,6 +184,7 @@
     "description": "Didn't find what you're looking for? Share your contact details and property wishes. We'll get back to you with recommendations.",
     "name": "Name",
     "surname": "Surname",
+    "imageAlt": "Modern house",
     "location": {
       "label": "Where are you looking?",
       "russia": "Russia",
@@ -239,7 +242,8 @@
   "cookies": {
     "disclaimer": "By staying on our site, you agree to the use of cookies.",
     "accept": "Accept",
-    "policy": "More"
+    "policy": "More",
+    "policyAreaLabel": "Privacy Policy"
   },
   "sitemap": {
     "header": "Site map",
@@ -379,7 +383,8 @@
     },
     "contacts": {
       "ourAddress": "Our address",
-      "contactUs": "You can reach us"
+      "contactUs": "You can reach us",
+      "mapTitle": "Office location map"
     },
     "regInfo": {
       "companyName": "Company name",
@@ -394,5 +399,11 @@
       "director": "Director",
       "sectionTitleRegInfo": "Registration information",
       "sectionTitleReqInfo": "Requisites"
+    },
+    "contactsBlock": {
+      "phone": "Call us",
+      "email": "Send email",
+      "telegram": "Message on Telegram",
+      "whatsapp": "Message on WhatsApp"
     }
 }

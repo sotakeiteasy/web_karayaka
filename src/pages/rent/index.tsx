@@ -1,5 +1,4 @@
-import { Breadcrumbs } from '@/lib/components/Breadcrumbs/Breadcrumbs';
-import { ContainerWrapper } from '@/lib/components/ContainerWrapper/ContainerWrapper';
+import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
 import { Search } from '@/lib/components/Search/index';
 import { MetaTags, SearchType } from '@/lib/types';
 import { useLanguageQuery } from 'next-export-i18n';

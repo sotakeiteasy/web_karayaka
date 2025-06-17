@@ -1,17 +1,8 @@
-import { useEffect } from 'react';
 import styles from './CookiesConsent.module.scss';
 import { useTranslation } from 'next-export-i18n';
 
 export function CookieConsent({ visible, setVisible }: any) {
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const cookieConsent = localStorage.getItem('cookieConsent');
-
-    if (cookieConsent === null) {
-      setVisible(true);
-    }
-  }, [setVisible]);
 
   const handleAccept = () => {
     localStorage.setItem('cookieConsent', 'accepted');
@@ -23,7 +14,7 @@ export function CookieConsent({ visible, setVisible }: any) {
       <p className={styles.message}>
         {t('cookies.disclaimer')}
         <br />
-        <a href="/privacyPolicy" target="_blank" rel="noopener noreferrer">
+        <a href="/privacy-policy" target="_blank" rel="noopener noreferrer" aria-label={t('cookies.policyAreaLabel')}>
           <span>{t('cookies.policy')}</span>
         </a>
       </p>

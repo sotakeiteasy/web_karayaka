@@ -104,7 +104,11 @@ export function Header() {
             <span></span>
           </div>
           <div className={`${styles.burgerMenu} ${isBurgerMenuOpen ? styles.open : ''}`}>
-            <button className={styles.closeButton} onClick={() => setIsBurgerMenuOpen(false)}>
+            <button
+              className={styles.closeButton}
+              onClick={() => setIsBurgerMenuOpen(false)}
+              aria-label={t('header.closeBtn')}
+            >
               <Icon path={mdiClose} size={1.5}></Icon>
             </button>
             <div className={styles.navLinks}>
@@ -139,7 +143,7 @@ export function Header() {
                   </a>
                 </span>
                 <span className={styles.network}>
-                  <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer">
+                  <a href={contactInfo.whatsapp} target="_blank" aria-label="WhatsApp" rel="noopener noreferrer">
                     <Icon path={mdiWhatsapp} size={2} />
                   </a>
                   <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer">
@@ -192,6 +196,7 @@ export function Header() {
                   href={contactInfo.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="WhatsApp"
                 >
                   <Icon path={mdiWhatsapp} color="green" />
                   <span className={`${styles.contactMenuItem} ${styles.whatsapp}`}>WhatsApp</span>

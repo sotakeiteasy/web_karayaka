@@ -1,11 +1,8 @@
-import { useTranslation, useLanguageQuery } from 'next-export-i18n';
 import styles from './index.module.scss';
-import { Breadcrumbs } from '@/lib/components/Breadcrumbs/Breadcrumbs';
-import { ContactsBlock } from '@/lib/components/ContactsBlock/ContactsBlock';
-import { ContactUs } from '@/lib/components/ContactUs/ContactUs';
-import { ContainerWrapper } from '@/lib/components/ContainerWrapper/ContainerWrapper';
-import { CompanyRegistrationInfo } from '@/lib/components/RegInfo/RegInfo';
 import Head from 'next/head';
+import { useTranslation, useLanguageQuery } from 'next-export-i18n';
+
+import { Breadcrumbs, ContactsBlock, ContactUs, ContainerWrapper, CompanyRegistrationInfo } from '@/lib/components';
 import { MetaTags } from '@/lib/types';
 import { contactInfo } from '@/lib/constants';
 import { Divider } from 'antd';
@@ -61,6 +58,7 @@ export default function ContactsPage({ metaTags }: { metaTags: MetaTags }) {
                 width="600"
                 height="400"
                 frameBorder="0"
+                title={t('contacts.mapTitle')}
               ></iframe>
             </div>
           </div>

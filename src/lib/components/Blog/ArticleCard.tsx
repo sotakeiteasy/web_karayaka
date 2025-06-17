@@ -21,7 +21,7 @@ export function ArticleCard({
       <LinkWithLocale href={`/blog/${id}`}>
         <div className={styles.articleImage}>
           <Image
-            src={getImageUrl(`/images/articles/${id}.jpg`)}
+            src={getImageUrl(`assets/images/articles/${id}.jpg`)}
             fill={true}
             alt={title}
             title={title}

@@ -1,7 +1,6 @@
 # *
 User-agent: *
-Disallow: /video/
-Disallow: /images/
+Disallow: /assets/
 Clean-param: lang&etext&type
 
 # Host

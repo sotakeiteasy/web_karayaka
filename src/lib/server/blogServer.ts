@@ -53,6 +53,50 @@ export async function getSortedPostsData(locale: string = 'ru'): Promise<PostDat
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
+export async function getLatestTwoPosts(locale: string = 'ru'): Promise<PostData[]> {
+  const postsDirectory = getBlogDirectory(locale);
+  const fileNames = fs.readdirSync(postsDirectory).filter((file) => file.endsWith('.md'));
+
+  const postsMetadata = fileNames.map((fileName) => {
+    const id = fileName.replace(/\.md$/, '');
+    const fullPath = path.join(postsDirectory, fileName);
+    const { data } = matter.read(fullPath);
+
+    return {
+      id,
+      date: data.date,
+      fullPath,
+    };
+  });
+
+  const latestTwo = postsMetadata.sort((a, b) => (a.date < b.date ? 1 : -1)).slice(0, 2);
+
+  const latestTwoPostsPromises = latestTwo.map(async ({ id, fullPath }) => {
+    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fileContents);
+
+    const processedContent = await remark()
+      .use(remarkGfm)
+      .use(remarkImages)
+      .use(html, {
+        sanitize: false,
+      })
+      .process(matterResult.content);
+
+    const contentHtml = processedContent.toString();
+    const excerpt = createExcerpt(contentHtml);
+
+    return {
+      id,
+      contentHtml,
+      excerpt,
+      ...(matterResult.data as Omit<PostData, 'id'>),
+    } as PostData;
+  });
+
+  return Promise.all(latestTwoPostsPromises);
+}
+
 export function getAllPostIds() {
   const paths: Array<{ params: { id: string } }> = [];
   const languages = ['ru', 'en'];

@@ -3,7 +3,7 @@ import { useTranslation, LinkWithLocale, useLanguageQuery } from 'next-export-i1
 import styles from './Footer.module.scss';
 import Icon from '@mdi/react';
 import { mdiWhatsapp } from '@mdi/js';
-import { contactInfo } from '@/lib/constants/contactInfo';
+import { contactInfo } from '@/lib/constants';
 import Head from 'next/head';
 import { footerScheme } from '@/lib/seo';
 

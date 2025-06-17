@@ -1,7 +1,8 @@
-import { contactInfo } from '@/lib/constants/contactInfo';
+import { contactInfo } from '@/lib/constants';
 import { mdiWhatsapp, mdiEmail, mdiPhone } from '@mdi/js';
 import styles from './ContactsBlock.module.scss';
 import Icon from '@mdi/react';
+import { useTranslation } from 'next-export-i18n';
 
 interface ContactsProps {
   phone?: boolean;
@@ -20,22 +21,24 @@ export function ContactsBlock({
   showTraditional = false,
   column = false,
 }: ContactsProps) {
+  const { t } = useTranslation();
+
   return (
     <address className={`${styles.contacts} ${column ? styles.column : ''}`}>
       {showTraditional && (
         <div className={styles.contactsTraditional}>
           {phone && (
             <div>
-              <a href={`tel:+${contactInfo.phone.replace(/\D/g, '')}`}>
-                <Icon path={mdiPhone} size={1.5} />
+              <a href={`tel:+${contactInfo.phone.replace(/\D/g, '')}`} aria-label={t('contactsBlock.phone')}>
+                <Icon path={mdiPhone} size={1.5} aria-hidden="true" />
               </a>
               <a href={`tel:+${contactInfo.phone.replace(/\D/g, '')}`}>{contactInfo.phone}</a>
             </div>
           )}
           {email && (
             <div>
-              <a href={`mailto:${email}`}>
-                <Icon path={mdiEmail} size={1.5} />
+              <a href={`mailto:${email}`} aria-label={t('contactsBlock.email')}>
+                <Icon path={mdiEmail} size={1.5} aria-hidden="true" />
               </a>
               <a href={`mailto:${email}`}>{contactInfo.email}</a>
             </div>
@@ -46,8 +49,14 @@ export function ContactsBlock({
       <div className={styles.contactsSocial}>
         {telegram && (
           <div>
-            <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer">
+            <a
+              href={contactInfo.telegram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t('contactsBlock.telegram')}
+            >
               <svg
+                aria-hidden="true"
                 className={styles.telegramIcon}
                 fill="#002F6C"
                 viewBox="0 0 32 32"
@@ -69,8 +78,13 @@ export function ContactsBlock({
         )}
         {whatsapp && (
           <div>
-            <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer">
-              <Icon path={mdiWhatsapp} size={1.5} />
+            <a
+              href={contactInfo.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t('contactsBlock.whatsapp')}
+            >
+              <Icon path={mdiWhatsapp} size={1.5} aria-hidden="true" />
             </a>
             <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer">
               Whatsapp

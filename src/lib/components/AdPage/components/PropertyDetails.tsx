@@ -12,9 +12,8 @@ import {
   mdiUpdate,
 } from '@mdi/js';
 import styles from '../AdPage.module.scss';
-import { Ad, SearchType } from '@/lib/types';
+import { Ad, SearchType, ParkingType } from '@/lib/types';
 import { propertyTypeTranslations } from '@/lib/translations';
-import { ParkingType } from '@/lib/types/FilterTypes';
 
 interface Props {
   ad: Ad;

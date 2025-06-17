@@ -1,13 +1,11 @@
 import styles from './index.module.scss';
-
 import Head from 'next/head';
 import { Tree } from 'antd';
 import 'antd/dist/reset.css';
 import { DataNode } from 'antd/lib/tree';
 import { useLanguageQuery, useTranslation } from 'next-export-i18n';
 
-import { Breadcrumbs } from '@/lib/components/Breadcrumbs/Breadcrumbs';
-import { ContainerWrapper } from '@/lib/components/ContainerWrapper/ContainerWrapper';
+import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
 import { buildTree } from '@/lib/utils';
 import { MetaTags } from '@/lib/types';
 

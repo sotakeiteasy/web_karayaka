@@ -9,7 +9,7 @@ An eviction lawsuit based on personal need is a legal process through which a pr
 2. When a new owner who has purchased the property needs it for themselves or their family (Article 351 of the Turkish Code of Obligations).
 
 The need must be genuine, sincere, and essential. Temporary, future, or speculative needs are not accepted as valid reasons for eviction.
-<img src="https://karayaka.ru/images/articles/article3.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/assets/images/articles/article3.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## 1. In Which Situations Can an Eviction Lawsuit Be Filed?
 

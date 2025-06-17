@@ -5,9 +5,7 @@ import styles from './index.module.scss';
 
 import { getSortedPostsData } from '@/lib/server/blogServer';
 import { MetaTags, PostData } from '@/lib/types';
-import { ArticleCard } from '@/lib/components/Blog/ArticleCard';
-import { Breadcrumbs } from '@/lib/components/Breadcrumbs/Breadcrumbs';
-import { ContainerWrapper } from '@/lib/components/ContainerWrapper/ContainerWrapper';
+import { ArticleCard, ContainerWrapper, Breadcrumbs } from '@/lib/components';
 import { blogScheme } from '@/lib/seo';
 
 export default function Blog({

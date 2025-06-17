@@ -4,7 +4,7 @@ date: '2025-03-31'
 ---
 
 In Turkey, the relationship between tenants and landlords is governed by the Turkish Code of Obligations No. 6098. As of 2025, the key rights and responsibilities of tenants and landlords are outlined below:
-<img src="https://karayaka.ru/images/articles/article6.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/assets/images/articles/article6.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## 1. Rental Agreement and Duration
 

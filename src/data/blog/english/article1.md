@@ -5,7 +5,7 @@ date: '2025-03-31'
 
 Russian citizens looking to purchase real estate in Turkey must follow specific procedures. This guide explains the property buying process step by step, helping you navigate the requirements with ease.
 
-<img src="https://karayaka.ru/images/articles/article1.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/assets/images/articles/article1.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## 1. Foreigners Buying Real Estate in Turkey
 

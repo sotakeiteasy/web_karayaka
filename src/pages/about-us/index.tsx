@@ -23,10 +23,7 @@ import Icon from '@mdi/react';
 
 import { getImageUrl } from '@/lib/utils';
 import { MetaTags } from '@/lib/types';
-import { Breadcrumbs } from '@/lib/components/Breadcrumbs/Breadcrumbs';
-import { ContactsBlock } from '@/lib/components/ContactsBlock/ContactsBlock';
-import { ContainerWrapper } from '@/lib/components/ContainerWrapper/ContainerWrapper';
-import { CompanyRegistrationInfo } from '@/lib/components/RegInfo/RegInfo';
+import { Breadcrumbs, ContactsBlock, ContainerWrapper, CompanyRegistrationInfo } from '@/lib/components';
 import { Divider, CollapseProps, Collapse } from 'antd';
 import { organizationScheme } from '@/lib/seo';
 
@@ -106,8 +103,9 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
       <main className={styles.main}>
         <div className={styles.sloganBlock}>
           <Image
-            src={getImageUrl('/images/line1.jpg')}
+            src={getImageUrl('assets/images/aboutUsPage/line1.jpg')}
             alt={t('imagesAlt.view')}
+            title={t('imagesAlt.view')}
             fill={true}
             style={{
               objectFit: 'cover',
@@ -153,7 +151,7 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
           <div className={`${styles.mainInfo} ${styles.founder}`}>
             <div className={styles.founderPhoto}>
               <Image
-                src={getImageUrl('/images/founder.jpg')}
+                src={getImageUrl('assets/images/aboutUsPage/founder.jpg')}
                 alt={t('imagesAlt.founder')}
                 width={240}
                 height={340}
@@ -174,8 +172,9 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
 
         <div className={styles.banner}>
           <Image
-            src={getImageUrl('/images/line2.jpg')}
+            src={getImageUrl('assets/images/aboutUsPage/line2.jpg')}
             alt={t('imagesAlt.view')}
+            title={t('imagesAlt.view')}
             fill={true}
             style={{
               objectFit: 'cover',
@@ -216,9 +215,9 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
                 playsInline
                 controls={false}
               >
-                <source src={getImageUrl('/videos/About_Us.mp4')} type="video/mp4" />
-                <source src={getImageUrl('/videos/About_Us.mov')} type="video/mov" />
-                <source src={getImageUrl('/videos/About_Us_fallback.mp4')} type="video/mp4" />
+                <source src={getImageUrl('assets/videos/About_Us.mp4')} type="video/mp4" />
+                <source src={getImageUrl('assets/videos/About_Us.mov')} type="video/mov" />
+                <source src={getImageUrl('assets/videos/About_Us_fallback.mp4')} type="video/mp4" />
               </video>
             </div>
           </div>

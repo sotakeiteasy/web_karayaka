@@ -2,19 +2,18 @@
 module.exports = {
   siteUrl: 'https://karayaka.ru',
   generateRobotsTxt: true,
-  exclude: ['/video/*', '/images/*'],
+  exclude: ['/assets/*'],
   robotsTxtOptions: {
     policies: [
       {
         userAgent: '*',
-        disallow: ['/video/', '/images/'],
+        disallow: ['/assets/'],
       },
     ],
     transformRobotsTxt: async () => {
       return `# *
 User-agent: *
-Disallow: /video/
-Disallow: /images/
+Disallow: /assets/
 Clean-param: lang&etext&type
 
 # Host

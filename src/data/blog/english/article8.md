@@ -4,7 +4,7 @@ date: '2025-03-31'
 ---
 
 In Turkey, the rights and obligations of landlords and tenants are regulated under the Turkish Code of Obligations No. 6098 and related legislation. This guide explains in detail the legal rights of both parties during the rental process and outlines the steps that can be taken in case of disputes.
-<img src="https://karayaka.ru/images/articles/article8.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/assets/images/articles/article8.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Landlord Rights and Obligations
 
@@ -41,7 +41,7 @@ As of 2025, rental increases are limited to the Consumer Price Index (CPI) rate.
 - Can increase the rent upon annual contract renewal, not exceeding the CPI rate.
 - Any increase above CPI without tenant agreement can be deemed invalid by the courts.
 
-<img src="https://karayaka.ru/images/articles/article8.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/assets/images/articles/article8.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ### 2. Landlord Obligations
 

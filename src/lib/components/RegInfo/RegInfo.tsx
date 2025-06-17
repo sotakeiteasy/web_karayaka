@@ -1,5 +1,5 @@
 import styles from './RegInfo.module.scss';
-import { companyInfo } from '@/lib/constants/companyData';
+import { companyInfo } from '@/lib/constants';
 import { useLanguageQuery, useTranslation } from 'next-export-i18n';
 
 export function CompanyRegistrationInfo({ Req = true }: { Req?: boolean }) {

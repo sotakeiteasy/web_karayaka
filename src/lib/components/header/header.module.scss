@@ -288,14 +288,14 @@
 
 @media (max-width: 1280px) {
   .navLink {
-    padding: 0 20px !important;
+    padding: 0 18px !important;
     font-size: 1rem;
   }
 }
 
 @media (max-width: 1050px) {
   .navLink {
-    padding: 0 14px !important;
+    padding: 0 10px !important;
     font-size: 1rem;
   }
 
@@ -306,7 +306,7 @@
 
 @media (max-width: 950px) {
   .header {
-    min-height: 60px !important;
+    // min-height: 60px !important;
   }
   .nav {
     width: 100% !important;

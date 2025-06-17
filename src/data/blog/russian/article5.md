@@ -4,7 +4,7 @@ date: '2025-03-31'
 ---
 
 В Турции договоры аренды обычно заключаются сроком на один год. Если стороны не могут прийти к соглашению по поводу арендной платы, они могут обратиться в суд с иском об определении арендной платы. В этой статье рассматриваются основные аспекты этого процесса: кто может подать иск, как проходит судебное разбирательство и как исполняются решения суда.
-<img src="https://karayaka.ru/images/articles/article5.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/assets/images/articles/article5.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## 1. Что такое иск об определении арендной платы?
 
@@ -43,7 +43,7 @@ date: '2025-03-31'
 ✔ Рыночные арендные ставки для аналогичных объектов.  
 ✔ Длительность проживания арендатора (для старых арендаторов может быть предусмотрена скидка).
 
-<img src="https://karayaka.ru/images/articles/article5.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto" />
+<img src="https://karayaka.ru/assets/images/articles/article5.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto" />
 
 ## 7. Итоги судебного разбирательства и исполнение решения
 

@@ -7,7 +7,7 @@ import { CustomArrowProps } from './types';
 import Icon from '@mdi/react';
 import { mdiChevronRight, mdiChevronLeft } from '@mdi/js';
 import { Ad } from '@/lib/types';
-import { getImageUrl, getPropertyTitle } from '@/lib/utils';
+import { getOptimizedImageUrl, getPropertyTitle } from '@/lib/utils';
 import { cityTranslations, districtTranslations } from '@/lib/translations';
 
 export default function CustomSlider({ ad, locale }: { ad: Ad; locale: 'ru' | 'en' }) {
@@ -44,47 +44,56 @@ export default function CustomSlider({ ad, locale }: { ad: Ad; locale: 'ru' | 'e
     <div>
       {ad?.images.length > 1 ? (
         <Slider {...settings}>
-          {ad?.images.map((image, index) => (
-            <Image
-              key={index}
-              src={getImageUrl(image)}
-              title={`${altText}. ${[
-                cityTranslations[ad.location.city][locale],
-                ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
-              ]
-                .filter(Boolean)
-                .join(', ')}`}
-              alt={`${altText}. ${[
-                cityTranslations[ad.location.city][locale],
-                ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
-              ]
-                .filter(Boolean)
-                .join(', ')}`}
-              width={400}
-              height={400}
-              priority
-            />
-          ))}
+          {ad?.images.map((image, index) => {
+            const imgSrc = getOptimizedImageUrl(image);
+
+            return (
+              <picture key={index}>
+                <source srcSet={imgSrc.webp} type="image/webp" />
+                <Image
+                  src={imgSrc.original}
+                  title={`${altText}. ${[
+                    cityTranslations[ad.location.city][locale],
+                    ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
+                  ]
+                    .filter(Boolean)
+                    .join(', ')}`}
+                  alt={`${altText}. ${[
+                    cityTranslations[ad.location.city][locale],
+                    ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
+                  ]
+                    .filter(Boolean)
+                    .join(', ')}`}
+                  width={400}
+                  height={400}
+                  priority
+                />
+              </picture>
+            );
+          })}
         </Slider>
       ) : (
-        <Image
-          src={getImageUrl(ad.images[0])}
-          title={`${altText}. ${[
-            cityTranslations[ad.location.city][locale],
-            ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
-          ]
-            .filter(Boolean)
-            .join(', ')}`}
-          alt={`${altText}. ${[
-            cityTranslations[ad.location.city][locale],
-            ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
-          ]
-            .filter(Boolean)
-            .join(', ')}`}
-          width={400}
-          height={400}
-          priority
-        />
+        <picture>
+          <source srcSet={getOptimizedImageUrl(ad.images[0]).webp} type="image/webp" />
+          <Image
+            src={getOptimizedImageUrl(ad.images[0]).original}
+            title={`${altText}. ${[
+              cityTranslations[ad.location.city][locale],
+              ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
+            ]
+              .filter(Boolean)
+              .join(', ')}`}
+            alt={`${altText}. ${[
+              cityTranslations[ad.location.city][locale],
+              ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
+            ]
+              .filter(Boolean)
+              .join(', ')}`}
+            width={450}
+            height={300}
+            priority
+          />
+        </picture>
       )}
     </div>
   );

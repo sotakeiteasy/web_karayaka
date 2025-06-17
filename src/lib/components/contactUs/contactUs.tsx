@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useTranslation } from 'next-export-i18n';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { Inputs } from './types';
-import { CountryType, SearchType } from '@/lib/types/FilterTypes';
+import { CountryType, SearchType } from '@/lib/types';
 import { getImageUrl } from '@/lib/utils';
 import Image from 'next/image';
 
@@ -201,9 +201,10 @@ export function ContactUs() {
       </form>
       <div className={styles.formImg}>
         <Image
-          src={getImageUrl('/images/form.jpg')}
+          src={getImageUrl('assets/images/form.jpg')}
           fill={true}
-          alt="form image"
+          alt={t('form.imageAlt')}
+          title={t('form.imageAlt')}
           draggable="false"
           sizes="100%"
           style={{

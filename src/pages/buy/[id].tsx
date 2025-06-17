@@ -1,4 +1,4 @@
-import AdPage from '@/lib/components/AdPage/AdPage';
+import { AdPage } from '@/lib/components';
 import { Ad, MetaTags, SearchType } from '@/lib/types';
 import { getAllAds, getAdById, getPropertyTitle } from '@/lib/utils';
 

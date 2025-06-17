@@ -11,6 +11,7 @@
     },
     "price": {
       "try": 26800000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -23,17 +24,17 @@
     "area": 250,
     "rooms": "4+1",
     "bathroom": 4,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": null,
     "floorInHouse": 2,
     "parking": "open",
     "images": [
-      "/images/Photo/1001/1.jpg",
-      "/images/Photo/1001/2.jpg",
-      "/images/Photo/1001/3.jpg",
-      "/images/Photo/1001/4.jpg",
-      "/images/Photo/1001/5.jpg"
+      "assets/images/listings/1001/1.jpg",
+      "assets/images/listings/1001/2.jpg",
+      "assets/images/listings/1001/3.jpg",
+      "assets/images/listings/1001/4.jpg",
+      "assets/images/listings/1001/5.jpg"
     ]
   },
   {
@@ -48,6 +49,7 @@
     },
     "price": {
       "try": 25000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -60,17 +62,17 @@
     "area": 160,
     "rooms": "4+1",
     "bathroom": 2,
-    "age": "0",
+    "age": null,
     "situation": "owner",
     "floor": 12,
     "floorInHouse": 12,
     "parking": "open",
     "images": [
-      "/images/Photo/1002/1.jpg",
-      "/images/Photo/1002/2.jpg",
-      "/images/Photo/1002/3.jpg",
-      "/images/Photo/1002/4.jpg",
-      "/images/Photo/1002/5.jpg"
+      "assets/images/listings/1002/1.jpg",
+      "assets/images/listings/1002/2.jpg",
+      "assets/images/listings/1002/3.jpg",
+      "assets/images/listings/1002/4.jpg",
+      "assets/images/listings/1002/5.jpg"
     ]
   },
   {
@@ -85,6 +87,7 @@
     },
     "price": {
       "try": 13250000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -97,18 +100,18 @@
     "area": 180,
     "rooms": "3+2",
     "bathroom": 2,
-    "age": "4",
+    "age": null,
     "situation": "empty",
     "floor": 1,
     "floorInHouse": 4,
     "parking": "open",
     "images": [
-      "/images/Photo/1003/1.jpg",
-      "/images/Photo/1003/2.jpg",
-      "/images/Photo/1003/3.jpg",
-      "/images/Photo/1003/4.jpg",
-      "/images/Photo/1003/5.jpg",
-      "/images/Photo/1003/6.jpg"
+      "assets/images/listings/1003/1.jpg",
+      "assets/images/listings/1003/2.jpg",
+      "assets/images/listings/1003/3.jpg",
+      "assets/images/listings/1003/4.jpg",
+      "assets/images/listings/1003/5.jpg",
+      "assets/images/listings/1003/6.jpg"
     ]
   },
   {
@@ -123,6 +126,7 @@
     },
     "price": {
       "try": 14000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -135,17 +139,17 @@
     "area": 180,
     "rooms": "4+1",
     "bathroom": 3,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 1,
     "floorInHouse": 3,
     "parking": "open",
     "images": [
-      "/images/Photo/1004/1.jpg",
-      "/images/Photo/1004/2.jpg",
-      "/images/Photo/1004/3.jpg",
-      "/images/Photo/1004/4.jpg",
-      "/images/Photo/1004/5.jpg"
+      "assets/images/listings/1004/1.jpg",
+      "assets/images/listings/1004/2.jpg",
+      "assets/images/listings/1004/3.jpg",
+      "assets/images/listings/1004/4.jpg",
+      "assets/images/listings/1004/5.jpg"
     ]
   },
   {
@@ -160,6 +164,7 @@
     },
     "price": {
       "try": 7800000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -172,16 +177,16 @@
     "area": 130,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "1",
+    "age": null,
     "situation": "empty",
     "floor": 9,
     "floorInHouse": 9,
     "parking": "open",
     "images": [
-      "/images/Photo/1006/1.jpg",
-      "/images/Photo/1006/2.jpg",
-      "/images/Photo/1006/3.jpg",
-      "/images/Photo/1006/4.jpg"
+      "assets/images/listings/1006/1.jpg",
+      "assets/images/listings/1006/2.jpg",
+      "assets/images/listings/1006/3.jpg",
+      "assets/images/listings/1006/4.jpg"
     ]
   },
   {
@@ -196,7 +201,8 @@
     },
     "price": {
       "try": 32500000,
-      "rub": 45000000
+      "try_old": 45000000,
+      "rub": null
     },
     "location": {
       "country": "Turkey",
@@ -208,16 +214,16 @@
     "area": 1300,
     "rooms": "4+1",
     "bathroom": 4,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": null,
     "floorInHouse": 2,
     "parking": "open",
     "images": [
-      "/images/Photo/1007/1.jpg",
-      "/images/Photo/1007/2.jpg",
-      "/images/Photo/1007/3.jpg",
-      "/images/Photo/1007/4.jpg"
+      "assets/images/listings/1007/1.jpg",
+      "assets/images/listings/1007/2.jpg",
+      "assets/images/listings/1007/3.jpg",
+      "assets/images/listings/1007/4.jpg"
     ]
   },
   {
@@ -232,7 +238,8 @@
     },
     "price": {
       "try": 17500000,
-      "rub": 26000000
+      "try_old": 26000000,
+      "rub": null
     },
     "location": {
       "country": "Turkey",
@@ -244,17 +251,17 @@
     "area": 230,
     "rooms": "3+1",
     "bathroom": 3,
-    "age": "11-15",
+    "age": null,
     "situation": "empty",
     "floor": null,
     "floorInHouse": 3,
     "parking": "open",
     "images": [
-      "/images/Photo/1008/1.jpg",
-      "/images/Photo/1008/2.jpg",
-      "/images/Photo/1008/3.jpg",
-      "/images/Photo/1008/4.jpg",
-      "/images/Photo/1008/5.jpg"
+      "assets/images/listings/1008/1.jpg",
+      "assets/images/listings/1008/2.jpg",
+      "assets/images/listings/1008/3.jpg",
+      "assets/images/listings/1008/4.jpg",
+      "assets/images/listings/1008/5.jpg"
     ]
   },
   {
@@ -269,6 +276,7 @@
     },
     "price": {
       "try": 15500000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -281,17 +289,17 @@
     "area": 115,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "4",
+    "age": null,
     "situation": "owner",
     "floor": null,
     "floorInHouse": 2,
     "parking": "closed",
     "images": [
-      "/images/Photo/1009/1.jpg",
-      "/images/Photo/1009/2.jpg",
-      "/images/Photo/1009/3.jpg",
-      "/images/Photo/1009/4.jpg",
-      "/images/Photo/1009/5.jpg"
+      "assets/images/listings/1009/1.jpg",
+      "assets/images/listings/1009/2.jpg",
+      "assets/images/listings/1009/3.jpg",
+      "assets/images/listings/1009/4.jpg",
+      "assets/images/listings/1009/5.jpg"
     ]
   },
   {
@@ -306,6 +314,7 @@
     },
     "price": {
       "try": 35000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -318,18 +327,18 @@
     "area": 265,
     "rooms": "5+2",
     "bathroom": 5,
-    "age": "11-15",
+    "age": null,
     "situation": "empty",
     "floor": null,
     "floorInHouse": 3,
     "parking": "open",
     "images": [
-      "/images/Photo/1010/1.jpg",
-      "/images/Photo/1010/2.jpg",
-      "/images/Photo/1010/3.jpg",
-      "/images/Photo/1010/4.jpg",
-      "/images/Photo/1010/5.jpg",
-      "/images/Photo/1010/6.jpg"
+      "assets/images/listings/1010/1.jpg",
+      "assets/images/listings/1010/2.jpg",
+      "assets/images/listings/1010/3.jpg",
+      "assets/images/listings/1010/4.jpg",
+      "assets/images/listings/1010/5.jpg",
+      "assets/images/listings/1010/6.jpg"
     ]
   },
   {
@@ -344,6 +353,7 @@
     },
     "price": {
       "try": 8000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -356,17 +366,17 @@
     "area": 80,
     "rooms": "2+1",
     "bathroom": 2,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": null,
     "floorInHouse": 2,
     "parking": "open",
     "images": [
-      "/images/Photo/1014/1.jpg",
-      "/images/Photo/1014/2.jpg",
-      "/images/Photo/1014/3.jpg",
-      "/images/Photo/1014/4.jpg",
-      "/images/Photo/1014/5.jpg"
+      "assets/images/listings/1014/1.jpg",
+      "assets/images/listings/1014/2.jpg",
+      "assets/images/listings/1014/3.jpg",
+      "assets/images/listings/1014/4.jpg",
+      "assets/images/listings/1014/5.jpg"
     ]
   },
   {
@@ -381,6 +391,7 @@
     },
     "price": {
       "try": 11450000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -393,16 +404,16 @@
     "area": 100,
     "rooms": "2+1",
     "bathroom": 2,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": null,
     "floorInHouse": 1,
     "parking": "open",
     "images": [
-      "/images/Photo/1015/1.jpg",
-      "/images/Photo/1015/2.jpg",
-      "/images/Photo/1015/3.jpg",
-      "/images/Photo/1015/4.jpg"
+      "assets/images/listings/1015/1.jpg",
+      "assets/images/listings/1015/2.jpg",
+      "assets/images/listings/1015/3.jpg",
+      "assets/images/listings/1015/4.jpg"
     ]
   },
   {
@@ -417,6 +428,7 @@
     },
     "price": {
       "try": 10450000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -429,16 +441,16 @@
     "area": 100,
     "rooms": "1+1",
     "bathroom": 1,
-    "age": "4",
+    "age": null,
     "situation": "owner",
     "floor": null,
     "floorInHouse": 1,
     "parking": "open",
     "images": [
-      "/images/Photo/1016/1.jpg",
-      "/images/Photo/1016/2.jpg",
-      "/images/Photo/1016/3.jpg",
-      "/images/Photo/1016/4.jpg"
+      "assets/images/listings/1016/1.jpg",
+      "assets/images/listings/1016/2.jpg",
+      "assets/images/listings/1016/3.jpg",
+      "assets/images/listings/1016/4.jpg"
     ]
   },
   {
@@ -453,6 +465,7 @@
     },
     "price": {
       "try": 6390000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -465,17 +478,17 @@
     "area": 90,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "4",
+    "age": null,
     "situation": "owner",
     "floor": 1,
     "floorInHouse": 2,
     "parking": "open",
     "images": [
-      "/images/Photo/1018/1.jpg",
-      "/images/Photo/1018/2.jpg",
-      "/images/Photo/1018/3.jpg",
-      "/images/Photo/1018/4.jpg",
-      "/images/Photo/1018/5.jpg"
+      "assets/images/listings/1018/1.jpg",
+      "assets/images/listings/1018/2.jpg",
+      "assets/images/listings/1018/3.jpg",
+      "assets/images/listings/1018/4.jpg",
+      "assets/images/listings/1018/5.jpg"
     ]
   },
   {
@@ -490,6 +503,7 @@
     },
     "price": {
       "try": 6200000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -502,16 +516,16 @@
     "area": 60,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 2,
     "floorInHouse": 5,
     "parking": "closed",
     "images": [
-      "/images/Photo/1019/1.jpg",
-      "/images/Photo/1019/2.jpg",
-      "/images/Photo/1019/3.jpg",
-      "/images/Photo/1019/4.jpg"
+      "assets/images/listings/1019/1.jpg",
+      "assets/images/listings/1019/2.jpg",
+      "assets/images/listings/1019/3.jpg",
+      "assets/images/listings/1019/4.jpg"
     ]
   },
   {
@@ -526,6 +540,7 @@
     },
     "price": {
       "try": 4400000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -538,16 +553,16 @@
     "area": 50,
     "rooms": "1+1",
     "bathroom": 1,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 3,
     "floorInHouse": 4,
     "parking": "open",
     "images": [
-      "/images/Photo/1020/1.jpg",
-      "/images/Photo/1020/2.jpg",
-      "/images/Photo/1020/3.jpg",
-      "/images/Photo/1020/4.jpg"
+      "assets/images/listings/1020/1.jpg",
+      "assets/images/listings/1020/2.jpg",
+      "assets/images/listings/1020/3.jpg",
+      "assets/images/listings/1020/4.jpg"
     ]
   },
   {
@@ -562,6 +577,7 @@
     },
     "price": {
       "try": 5850000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -574,17 +590,17 @@
     "area": 160,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "4",
+    "age": null,
     "situation": "empty",
     "floor": 3,
     "floorInHouse": 4,
     "parking": "open",
     "images": [
-      "/images/Photo/1023/1.jpg",
-      "/images/Photo/1023/2.jpg",
-      "/images/Photo/1023/3.jpg",
-      "/images/Photo/1023/4.jpg",
-      "/images/Photo/1023/5.jpg"
+      "assets/images/listings/1023/1.jpg",
+      "assets/images/listings/1023/2.jpg",
+      "assets/images/listings/1023/3.jpg",
+      "assets/images/listings/1023/4.jpg",
+      "assets/images/listings/1023/5.jpg"
     ]
   },
   {
@@ -599,6 +615,7 @@
     },
     "price": {
       "try": 11250000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -611,20 +628,20 @@
     "area": 147,
     "rooms": "3+2",
     "bathroom": 2,
-    "age": "4",
+    "age": null,
     "situation": "owner",
     "floor": 6,
     "floorInHouse": 7,
     "parking": "both",
     "images": [
-      "/images/Photo/1024/1.jpg",
-      "/images/Photo/1024/2.jpg",
-      "/images/Photo/1024/3.jpg",
-      "/images/Photo/1024/4.jpg",
-      "/images/Photo/1024/5.jpg",
-      "/images/Photo/1024/6.jpg",
-      "/images/Photo/1024/7.jpg",
-      "/images/Photo/1024/8.jpg"
+      "assets/images/listings/1024/1.jpg",
+      "assets/images/listings/1024/2.jpg",
+      "assets/images/listings/1024/3.jpg",
+      "assets/images/listings/1024/4.jpg",
+      "assets/images/listings/1024/5.jpg",
+      "assets/images/listings/1024/6.jpg",
+      "assets/images/listings/1024/7.jpg",
+      "assets/images/listings/1024/8.jpg"
     ]
   },
   {
@@ -639,6 +656,7 @@
     },
     "price": {
       "try": 12250000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -651,17 +669,17 @@
     "area": 85,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 1,
     "floorInHouse": 20,
     "parking": "closed",
     "images": [
-      "/images/Photo/1026/1.jpg",
-      "/images/Photo/1026/2.jpg",
-      "/images/Photo/1026/3.jpg",
-      "/images/Photo/1026/4.jpg",
-      "/images/Photo/1026/5.jpg"
+      "assets/images/listings/1026/1.jpg",
+      "assets/images/listings/1026/2.jpg",
+      "assets/images/listings/1026/3.jpg",
+      "assets/images/listings/1026/4.jpg",
+      "assets/images/listings/1026/5.jpg"
     ]
   },
   {
@@ -676,7 +694,8 @@
     },
     "price": {
       "try": 10500000,
-      "rub": 10800000
+      "try_old": 10800000,
+      "rub": null
     },
     "location": {
       "country": "Turkey",
@@ -688,16 +707,16 @@
     "area": 86,
     "rooms": "2+1",
     "bathroom": 2,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 3,
     "floorInHouse": 4,
     "parking": "closed",
     "images": [
-      "/images/Photo/1027/1.jpg",
-      "/images/Photo/1027/2.jpg",
-      "/images/Photo/1027/3.jpg",
-      "/images/Photo/1027/4.jpg"
+      "assets/images/listings/1027/1.jpg",
+      "assets/images/listings/1027/2.jpg",
+      "assets/images/listings/1027/3.jpg",
+      "assets/images/listings/1027/4.jpg"
     ]
   },
   {
@@ -712,7 +731,8 @@
     },
     "price": {
       "try": 22000000,
-      "rub": 23250000
+      "try_old": 23250000,
+      "rub": null
     },
     "location": {
       "country": "Turkey",
@@ -724,17 +744,17 @@
     "area": 135,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "11-15",
+    "age": null,
     "situation": "owner",
     "floor": 1,
     "floorInHouse": 5,
     "parking": "closed",
     "images": [
-      "/images/Photo/1028/1.jpg",
-      "/images/Photo/1028/2.jpg",
-      "/images/Photo/1028/3.jpg",
-      "/images/Photo/1028/4.jpg",
-      "/images/Photo/1028/5.jpg"
+      "assets/images/listings/1028/1.jpg",
+      "assets/images/listings/1028/2.jpg",
+      "assets/images/listings/1028/3.jpg",
+      "assets/images/listings/1028/4.jpg",
+      "assets/images/listings/1028/5.jpg"
     ]
   },
   {
@@ -749,6 +769,7 @@
     },
     "price": {
       "try": 42000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -761,17 +782,17 @@
     "area": 172,
     "rooms": "4+1",
     "bathroom": 2,
-    "age": "0",
+    "age": null,
     "situation": "owner",
     "floor": 1,
     "floorInHouse": 3,
     "parking": "closed",
     "images": [
-      "/images/Photo/1029/1.jpg",
-      "/images/Photo/1029/2.jpg",
-      "/images/Photo/1029/3.jpg",
-      "/images/Photo/1029/4.jpg",
-      "/images/Photo/1029/5.jpg"
+      "assets/images/listings/1029/1.jpg",
+      "assets/images/listings/1029/2.jpg",
+      "assets/images/listings/1029/3.jpg",
+      "assets/images/listings/1029/4.jpg",
+      "assets/images/listings/1029/5.jpg"
     ]
   },
   {
@@ -786,6 +807,7 @@
     },
     "price": {
       "try": 8000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -798,16 +820,16 @@
     "area": 65,
     "rooms": "1+1",
     "bathroom": 1,
-    "age": "5-10",
+    "age": null,
     "situation": "empty",
     "floor": 10,
     "floorInHouse": 15,
     "parking": "closed",
     "images": [
-      "/images/Photo/1030/1.jpg",
-      "/images/Photo/1030/2.jpg",
-      "/images/Photo/1030/3.jpg",
-      "/images/Photo/1030/4.jpg"
+      "assets/images/listings/1030/1.jpg",
+      "assets/images/listings/1030/2.jpg",
+      "assets/images/listings/1030/3.jpg",
+      "assets/images/listings/1030/4.jpg"
     ]
   },
   {
@@ -822,6 +844,7 @@
     },
     "price": {
       "try": 20750000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -834,19 +857,19 @@
     "area": 82,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 4,
     "floorInHouse": 5,
     "parking": "both",
     "images": [
-      "/images/Photo/1031/1.jpg",
-      "/images/Photo/1031/2.jpg",
-      "/images/Photo/1031/3.jpg",
-      "/images/Photo/1031/4.jpg",
-      "/images/Photo/1031/5.jpg",
-      "/images/Photo/1031/6.jpg",
-      "/images/Photo/1031/7.jpg"
+      "assets/images/listings/1031/1.jpg",
+      "assets/images/listings/1031/2.jpg",
+      "assets/images/listings/1031/3.jpg",
+      "assets/images/listings/1031/4.jpg",
+      "assets/images/listings/1031/5.jpg",
+      "assets/images/listings/1031/6.jpg",
+      "assets/images/listings/1031/7.jpg"
     ]
   },
   {
@@ -861,6 +884,7 @@
     },
     "price": {
       "try": 76000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -873,17 +897,17 @@
     "area": 200,
     "rooms": "4+1",
     "bathroom": 2,
-    "age": "5-10",
+    "age": null,
     "situation": "empty",
     "floor": 2,
     "floorInHouse": 4,
     "parking": "both",
     "images": [
-      "/images/Photo/1032/1.jpg",
-      "/images/Photo/1032/2.jpg",
-      "/images/Photo/1032/3.jpg",
-      "/images/Photo/1032/4.jpg",
-      "/images/Photo/1032/5.jpg"
+      "assets/images/listings/1032/1.jpg",
+      "assets/images/listings/1032/2.jpg",
+      "assets/images/listings/1032/3.jpg",
+      "assets/images/listings/1032/4.jpg",
+      "assets/images/listings/1032/5.jpg"
     ]
   },
   {
@@ -898,6 +922,7 @@
     },
     "price": {
       "try": 67850000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -910,18 +935,18 @@
     "area": 464,
     "rooms": "5+2",
     "bathroom": 5,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 4,
     "floorInHouse": 5,
     "parking": "closed",
     "images": [
-      "/images/Photo/1033/1.jpg",
-      "/images/Photo/1033/2.jpg",
-      "/images/Photo/1033/3.jpg",
-      "/images/Photo/1033/4.jpg",
-      "/images/Photo/1033/5.jpg",
-      "/images/Photo/1033/6.jpg"
+      "assets/images/listings/1033/1.jpg",
+      "assets/images/listings/1033/2.jpg",
+      "assets/images/listings/1033/3.jpg",
+      "assets/images/listings/1033/4.jpg",
+      "assets/images/listings/1033/5.jpg",
+      "assets/images/listings/1033/6.jpg"
     ]
   },
   {
@@ -936,7 +961,8 @@
     },
     "price": {
       "try": 8300000,
-      "rub": 8500000
+      "try_old": 8500000,
+      "rub": null
     },
     "location": {
       "country": "Turkey",
@@ -948,17 +974,17 @@
     "area": 87,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 4,
     "floorInHouse": 5,
     "parking": "both",
     "images": [
-      "/images/Photo/1036/1.jpg",
-      "/images/Photo/1036/2.jpg",
-      "/images/Photo/1036/3.jpg",
-      "/images/Photo/1036/4.jpg",
-      "/images/Photo/1036/5.jpg"
+      "assets/images/listings/1036/1.jpg",
+      "assets/images/listings/1036/2.jpg",
+      "assets/images/listings/1036/3.jpg",
+      "assets/images/listings/1036/4.jpg",
+      "assets/images/listings/1036/5.jpg"
     ]
   },
   {
@@ -973,7 +999,8 @@
     },
     "price": {
       "try": 13500000,
-      "rub": 14500000
+      "try_old": 14500000,
+      "rub": null
     },
     "location": {
       "country": "Turkey",
@@ -985,18 +1012,18 @@
     "area": 150,
     "rooms": "2+1",
     "bathroom": 3,
-    "age": "4",
+    "age": null,
     "situation": "owner",
     "floor": 4,
     "floorInHouse": 4,
     "parking": "closed",
     "images": [
-      "/images/Photo/1037/1.jpg",
-      "/images/Photo/1037/2.jpg",
-      "/images/Photo/1037/3.jpg",
-      "/images/Photo/1037/4.jpg",
-      "/images/Photo/1037/5.jpg",
-      "/images/Photo/1037/6.jpg"
+      "assets/images/listings/1037/1.jpg",
+      "assets/images/listings/1037/2.jpg",
+      "assets/images/listings/1037/3.jpg",
+      "assets/images/listings/1037/4.jpg",
+      "assets/images/listings/1037/5.jpg",
+      "assets/images/listings/1037/6.jpg"
     ]
   },
   {
@@ -1011,6 +1038,7 @@
     },
     "price": {
       "try": 14650000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1023,16 +1051,16 @@
     "area": 84,
     "rooms": "2+1",
     "bathroom": 2,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 2,
     "floorInHouse": 14,
     "parking": "closed",
     "images": [
-      "/images/Photo/1038/1.jpg",
-      "/images/Photo/1038/2.jpg",
-      "/images/Photo/1038/3.jpg",
-      "/images/Photo/1038/4.jpg"
+      "assets/images/listings/1038/1.jpg",
+      "assets/images/listings/1038/2.jpg",
+      "assets/images/listings/1038/3.jpg",
+      "assets/images/listings/1038/4.jpg"
     ]
   },
   {
@@ -1047,6 +1075,7 @@
     },
     "price": {
       "try": 4600000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1059,16 +1088,16 @@
     "area": 45,
     "rooms": "1+1",
     "bathroom": 1,
-    "age": "5-10",
+    "age": null,
     "situation": "tenanted",
     "floor": 4,
     "floorInHouse": 8,
     "parking": "both",
     "images": [
-      "/images/Photo/1039/1.jpg",
-      "/images/Photo/1039/2.jpg",
-      "/images/Photo/1039/3.jpg",
-      "/images/Photo/1039/4.jpg"
+      "assets/images/listings/1039/1.jpg",
+      "assets/images/listings/1039/2.jpg",
+      "assets/images/listings/1039/3.jpg",
+      "assets/images/listings/1039/4.jpg"
     ]
   },
   {
@@ -1083,6 +1112,7 @@
     },
     "price": {
       "try": 19000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1100,7 +1130,10 @@
     "floor": null,
     "floorInHouse": null,
     "parking": null,
-    "images": ["/images/Photo/1040/1.png", "/images/Photo/1040/2.png"]
+    "images": [
+      "assets/images/listings/1040/1.png",
+      "assets/images/listings/1040/2.png"
+    ]
   },
   {
     "id": "1041",
@@ -1114,6 +1147,7 @@
     },
     "price": {
       "try": 7000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1131,7 +1165,11 @@
     "floor": null,
     "floorInHouse": null,
     "parking": null,
-    "images": ["/images/Photo/1041/1.png", "/images/Photo/1041/2.jpeg", "/images/Photo/1041/3.jpeg"]
+    "images": [
+      "assets/images/listings/1041/1.png",
+      "assets/images/listings/1041/2.jpeg",
+      "assets/images/listings/1041/3.jpeg"
+    ]
   },
   {
     "id": "1042",
@@ -1145,6 +1183,7 @@
     },
     "price": {
       "try": 25000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1162,7 +1201,11 @@
     "floor": null,
     "floorInHouse": null,
     "parking": null,
-    "images": ["/images/Photo/1042/1.png", "/images/Photo/1042/2.png", "/images/Photo/1042/3.jpeg"]
+    "images": [
+      "assets/images/listings/1042/1.png",
+      "assets/images/listings/1042/2.png",
+      "assets/images/listings/1042/3.jpeg"
+    ]
   },
   {
     "id": "1043",
@@ -1176,6 +1219,7 @@
     },
     "price": {
       "try": 11300000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1194,10 +1238,10 @@
     "floorInHouse": null,
     "parking": null,
     "images": [
-      "/images/Photo/1043/1.png",
-      "/images/Photo/1043/2.jpeg",
-      "/images/Photo/1043/3.jpeg",
-      "/images/Photo/1043/4.jpeg"
+      "assets/images/listings/1043/1.png",
+      "assets/images/listings/1043/2.jpeg",
+      "assets/images/listings/1043/3.jpeg",
+      "assets/images/listings/1043/4.jpeg"
     ]
   },
   {
@@ -1212,7 +1256,8 @@
     },
     "price": {
       "try": 23000000,
-      "rub": 24000000
+      "try_old": 24000000,
+      "rub": null
     },
     "location": {
       "country": "Turkey",
@@ -1224,24 +1269,24 @@
     "area": 110,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "+20",
+    "age": null,
     "situation": "tenanted",
     "floor": 1,
     "floorInHouse": 14,
     "parking": "open",
     "images": [
-      "/images/Photo/1044/1.jpeg",
-      "/images/Photo/1044/2.jpeg",
-      "/images/Photo/1044/3.jpeg",
-      "/images/Photo/1044/4.jpeg",
-      "/images/Photo/1044/5.jpeg",
-      "/images/Photo/1044/6.jpeg",
-      "/images/Photo/1044/7.jpeg",
-      "/images/Photo/1044/8.jpeg",
-      "/images/Photo/1044/9.jpeg",
-      "/images/Photo/1044/10.jpeg",
-      "/images/Photo/1044/11.jpeg",
-      "/images/Photo/1044/12.jpeg"
+      "assets/images/listings/1044/1.jpeg",
+      "assets/images/listings/1044/2.jpeg",
+      "assets/images/listings/1044/3.jpeg",
+      "assets/images/listings/1044/4.jpeg",
+      "assets/images/listings/1044/5.jpeg",
+      "assets/images/listings/1044/6.jpeg",
+      "assets/images/listings/1044/7.jpeg",
+      "assets/images/listings/1044/8.jpeg",
+      "assets/images/listings/1044/9.jpeg",
+      "assets/images/listings/1044/10.jpeg",
+      "assets/images/listings/1044/11.jpeg",
+      "assets/images/listings/1044/12.jpeg"
     ]
   },
   {
@@ -1256,6 +1301,7 @@
     },
     "price": {
       "try": 4000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1268,16 +1314,16 @@
     "area": 95,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "11-15",
+    "age": null,
     "situation": "owner",
     "floor": 3,
     "floorInHouse": 5,
     "parking": "open",
     "images": [
-      "/images/Photo/1045/1.jpg",
-      "/images/Photo/1045/2.jpg",
-      "/images/Photo/1045/3.jpg",
-      "/images/Photo/1045/4.jpg"
+      "assets/images/listings/1045/1.jpg",
+      "assets/images/listings/1045/2.jpg",
+      "assets/images/listings/1045/3.jpg",
+      "assets/images/listings/1045/4.jpg"
     ]
   },
   {
@@ -1292,6 +1338,7 @@
     },
     "price": {
       "try": 4200000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1304,18 +1351,18 @@
     "area": 110,
     "rooms": "3+1",
     "bathroom": 1,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 1,
     "floorInHouse": 5,
     "parking": "open",
     "images": [
-      "/images/Photo/1046/1.jpg",
-      "/images/Photo/1046/2.jpg",
-      "/images/Photo/1046/3.jpg",
-      "/images/Photo/1046/4.jpg",
-      "/images/Photo/1046/5.jpg",
-      "/images/Photo/1046/6.jpg"
+      "assets/images/listings/1046/1.jpg",
+      "assets/images/listings/1046/2.jpg",
+      "assets/images/listings/1046/3.jpg",
+      "assets/images/listings/1046/4.jpg",
+      "assets/images/listings/1046/5.jpg",
+      "assets/images/listings/1046/6.jpg"
     ]
   },
   {
@@ -1330,6 +1377,7 @@
     },
     "price": {
       "try": 4300000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1342,17 +1390,17 @@
     "area": 50,
     "rooms": "1+1",
     "bathroom": 1,
-    "age": "5-10",
+    "age": null,
     "situation": "empty",
     "floor": 2,
     "floorInHouse": 3,
     "parking": "open",
     "images": [
-      "/images/Photo/1048/1.jpg",
-      "/images/Photo/1048/2.jpg",
-      "/images/Photo/1048/3.jpg",
-      "/images/Photo/1048/4.jpg",
-      "/images/Photo/1048/5.jpg"
+      "assets/images/listings/1048/1.jpg",
+      "assets/images/listings/1048/2.jpg",
+      "assets/images/listings/1048/3.jpg",
+      "assets/images/listings/1048/4.jpg",
+      "assets/images/listings/1048/5.jpg"
     ]
   },
   {
@@ -1367,7 +1415,8 @@
     },
     "price": {
       "try": 10750000,
-      "rub": 11000000
+      "try_old": 11000000,
+      "rub": null
     },
     "location": {
       "country": "Turkey",
@@ -1379,19 +1428,19 @@
     "area": 140,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "1",
+    "age": null,
     "situation": "owner",
     "floor": 2,
     "floorInHouse": 4,
     "parking": "open",
     "images": [
-      "/images/Photo/1049/1.jpg",
-      "/images/Photo/1049/2.jpg",
-      "/images/Photo/1049/3.jpg",
-      "/images/Photo/1049/4.jpg",
-      "/images/Photo/1049/5.jpg",
-      "/images/Photo/1049/6.jpg",
-      "/images/Photo/1049/7.jpg"
+      "assets/images/listings/1049/1.jpg",
+      "assets/images/listings/1049/2.jpg",
+      "assets/images/listings/1049/3.jpg",
+      "assets/images/listings/1049/4.jpg",
+      "assets/images/listings/1049/5.jpg",
+      "assets/images/listings/1049/6.jpg",
+      "assets/images/listings/1049/7.jpg"
     ]
   },
   {
@@ -1406,6 +1455,7 @@
     },
     "price": {
       "try": 5000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1418,19 +1468,19 @@
     "area": 105,
     "rooms": "3+1",
     "bathroom": 3,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 1,
     "floorInHouse": 4,
     "parking": "open",
     "images": [
-      "/images/Photo/1050/1.jpg",
-      "/images/Photo/1050/2.jpg",
-      "/images/Photo/1050/3.jpg",
-      "/images/Photo/1050/4.jpg",
-      "/images/Photo/1050/5.jpg",
-      "/images/Photo/1050/6.jpg",
-      "/images/Photo/1050/7.jpg"
+      "assets/images/listings/1050/1.jpg",
+      "assets/images/listings/1050/2.jpg",
+      "assets/images/listings/1050/3.jpg",
+      "assets/images/listings/1050/4.jpg",
+      "assets/images/listings/1050/5.jpg",
+      "assets/images/listings/1050/6.jpg",
+      "assets/images/listings/1050/7.jpg"
     ]
   },
   {
@@ -1445,6 +1495,7 @@
     },
     "price": {
       "try": 8000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1457,20 +1508,20 @@
     "area": 130,
     "rooms": "3+1",
     "bathroom": 1,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 4,
     "floorInHouse": 5,
     "parking": "open",
     "images": [
-      "/images/Photo/1051/1.jpg",
-      "/images/Photo/1051/2.jpg",
-      "/images/Photo/1051/3.jpg",
-      "/images/Photo/1051/4.jpg",
-      "/images/Photo/1051/5.jpg",
-      "/images/Photo/1051/6.jpg",
-      "/images/Photo/1051/7.jpg",
-      "/images/Photo/1051/8.jpg"
+      "assets/images/listings/1051/1.jpg",
+      "assets/images/listings/1051/2.jpg",
+      "assets/images/listings/1051/3.jpg",
+      "assets/images/listings/1051/4.jpg",
+      "assets/images/listings/1051/5.jpg",
+      "assets/images/listings/1051/6.jpg",
+      "assets/images/listings/1051/7.jpg",
+      "assets/images/listings/1051/8.jpg"
     ]
   },
   {
@@ -1485,6 +1536,7 @@
     },
     "price": {
       "try": 4800000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1497,17 +1549,17 @@
     "area": 101,
     "rooms": "2+1",
     "bathroom": 2,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 5,
     "floorInHouse": 5,
     "parking": "open",
     "images": [
-      "/images/Photo/1057/1.jpg",
-      "/images/Photo/1057/2.jpg",
-      "/images/Photo/1057/3.jpg",
-      "/images/Photo/1057/4.jpg",
-      "/images/Photo/1057/5.jpg"
+      "assets/images/listings/1057/1.jpg",
+      "assets/images/listings/1057/2.jpg",
+      "assets/images/listings/1057/3.jpg",
+      "assets/images/listings/1057/4.jpg",
+      "assets/images/listings/1057/5.jpg"
     ]
   },
   {
@@ -1522,6 +1574,7 @@
     },
     "price": {
       "try": 11300000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1534,18 +1587,18 @@
     "area": 46,
     "rooms": "1+1",
     "bathroom": 1,
-    "age": "1",
+    "age": null,
     "situation": "owner",
     "floor": 1,
     "floorInHouse": 5,
     "parking": "open",
     "images": [
-      "/images/Photo/1058/1.jpg",
-      "/images/Photo/1058/2.jpg",
-      "/images/Photo/1058/3.jpg",
-      "/images/Photo/1058/4.jpg",
-      "/images/Photo/1058/5.jpg",
-      "/images/Photo/1058/6.jpg"
+      "assets/images/listings/1058/1.jpg",
+      "assets/images/listings/1058/2.jpg",
+      "assets/images/listings/1058/3.jpg",
+      "assets/images/listings/1058/4.jpg",
+      "assets/images/listings/1058/5.jpg",
+      "assets/images/listings/1058/6.jpg"
     ]
   },
   {
@@ -1560,7 +1613,8 @@
     },
     "price": {
       "try": 10900000,
-      "rub": 11000000
+      "try_old": 11000000,
+      "rub": null
     },
     "location": {
       "country": "Turkey",
@@ -1572,21 +1626,21 @@
     "area": 111,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "1",
+    "age": null,
     "situation": "owner",
     "floor": 1,
     "floorInHouse": 5,
     "parking": "both",
     "images": [
-      "/images/Photo/1059/1.jpg",
-      "/images/Photo/1059/2.jpg",
-      "/images/Photo/1059/3.jpg",
-      "/images/Photo/1059/4.jpg",
-      "/images/Photo/1059/5.jpg",
-      "/images/Photo/1059/6.jpg",
-      "/images/Photo/1059/7.jpg",
-      "/images/Photo/1059/8.jpg",
-      "/images/Photo/1059/9.jpg"
+      "assets/images/listings/1059/1.jpg",
+      "assets/images/listings/1059/2.jpg",
+      "assets/images/listings/1059/3.jpg",
+      "assets/images/listings/1059/4.jpg",
+      "assets/images/listings/1059/5.jpg",
+      "assets/images/listings/1059/6.jpg",
+      "assets/images/listings/1059/7.jpg",
+      "assets/images/listings/1059/8.jpg",
+      "assets/images/listings/1059/9.jpg"
     ]
   },
   {
@@ -1601,6 +1655,7 @@
     },
     "price": {
       "try": 6600000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1613,17 +1668,17 @@
     "area": 140,
     "rooms": "3+1",
     "bathroom": 1,
-    "age": "5-10",
+    "age": null,
     "situation": "empty",
     "floor": 1,
     "floorInHouse": 5,
     "parking": "open",
     "images": [
-      "/images/Photo/1060/1.jpg",
-      "/images/Photo/1060/2.jpg",
-      "/images/Photo/1060/3.jpg",
-      "/images/Photo/1060/4.jpg",
-      "/images/Photo/1060/5.jpg"
+      "assets/images/listings/1060/1.jpg",
+      "assets/images/listings/1060/2.jpg",
+      "assets/images/listings/1060/3.jpg",
+      "assets/images/listings/1060/4.jpg",
+      "assets/images/listings/1060/5.jpg"
     ]
   },
   {
@@ -1638,6 +1693,7 @@
     },
     "price": {
       "try": 23200000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1650,18 +1706,18 @@
     "area": 104,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 2,
     "floorInHouse": 3,
     "parking": "both",
     "images": [
-      "/images/Photo/1061/1.jpg",
-      "/images/Photo/1061/2.jpg",
-      "/images/Photo/1061/3.jpg",
-      "/images/Photo/1061/4.jpg",
-      "/images/Photo/1061/5.jpg",
-      "/images/Photo/1061/6.jpg"
+      "assets/images/listings/1061/1.jpg",
+      "assets/images/listings/1061/2.jpg",
+      "assets/images/listings/1061/3.jpg",
+      "assets/images/listings/1061/4.jpg",
+      "assets/images/listings/1061/5.jpg",
+      "assets/images/listings/1061/6.jpg"
     ]
   },
   {
@@ -1676,7 +1732,8 @@
     },
     "price": {
       "try": 13900000,
-      "rub": 14400000
+      "try_old": 14400000,
+      "rub": null
     },
     "location": {
       "country": "Turkey",
@@ -1688,18 +1745,18 @@
     "area": 76,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 2,
     "floorInHouse": 11,
     "parking": "closed",
     "images": [
-      "/images/Photo/1062/1.jpg",
-      "/images/Photo/1062/2.jpg",
-      "/images/Photo/1062/3.jpg",
-      "/images/Photo/1062/4.jpg",
-      "/images/Photo/1062/5.jpg",
-      "/images/Photo/1062/6.jpg"
+      "assets/images/listings/1062/1.jpg",
+      "assets/images/listings/1062/2.jpg",
+      "assets/images/listings/1062/3.jpg",
+      "assets/images/listings/1062/4.jpg",
+      "assets/images/listings/1062/5.jpg",
+      "assets/images/listings/1062/6.jpg"
     ]
   },
   {
@@ -1714,6 +1771,7 @@
     },
     "price": {
       "try": 13750000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1726,18 +1784,18 @@
     "area": 85,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 2,
     "floorInHouse": 14,
     "parking": "both",
     "images": [
-      "/images/Photo/1064/1.jpg",
-      "/images/Photo/1064/2.jpg",
-      "/images/Photo/1064/3.jpg",
-      "/images/Photo/1064/4.jpg",
-      "/images/Photo/1064/5.jpg",
-      "/images/Photo/1064/6.jpg"
+      "assets/images/listings/1064/1.jpg",
+      "assets/images/listings/1064/2.jpg",
+      "assets/images/listings/1064/3.jpg",
+      "assets/images/listings/1064/4.jpg",
+      "assets/images/listings/1064/5.jpg",
+      "assets/images/listings/1064/6.jpg"
     ]
   },
   {
@@ -1752,6 +1810,7 @@
     },
     "price": {
       "try": 21000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1764,22 +1823,22 @@
     "area": 115,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "4",
+    "age": null,
     "situation": "owner",
     "floor": 6,
     "floorInHouse": 8,
     "parking": "closed",
     "images": [
-      "/images/Photo/1065/1.jpg",
-      "/images/Photo/1065/2.jpg",
-      "/images/Photo/1065/3.jpg",
-      "/images/Photo/1065/4.jpg",
-      "/images/Photo/1065/5.jpg",
-      "/images/Photo/1065/6.jpg",
-      "/images/Photo/1065/7.jpg",
-      "/images/Photo/1065/8.jpg",
-      "/images/Photo/1065/9.jpg",
-      "/images/Photo/1065/10.jpg"
+      "assets/images/listings/1065/1.jpg",
+      "assets/images/listings/1065/2.jpg",
+      "assets/images/listings/1065/3.jpg",
+      "assets/images/listings/1065/4.jpg",
+      "assets/images/listings/1065/5.jpg",
+      "assets/images/listings/1065/6.jpg",
+      "assets/images/listings/1065/7.jpg",
+      "assets/images/listings/1065/8.jpg",
+      "assets/images/listings/1065/9.jpg",
+      "assets/images/listings/1065/10.jpg"
     ]
   },
   {
@@ -1794,7 +1853,8 @@
     },
     "price": {
       "try": 4900000,
-      "rub": 5000000
+      "try_old": 5000000,
+      "rub": null
     },
     "location": {
       "country": "Turkey",
@@ -1806,19 +1866,19 @@
     "area": 85,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 3,
     "floorInHouse": 11,
     "parking": "closed",
     "images": [
-      "/images/Photo/1066/1.jpg",
-      "/images/Photo/1066/2.jpg",
-      "/images/Photo/1066/3.jpg",
-      "/images/Photo/1066/4.jpg",
-      "/images/Photo/1066/5.jpg",
-      "/images/Photo/1066/6.jpg",
-      "/images/Photo/1066/7.jpg"
+      "assets/images/listings/1066/1.jpg",
+      "assets/images/listings/1066/2.jpg",
+      "assets/images/listings/1066/3.jpg",
+      "assets/images/listings/1066/4.jpg",
+      "assets/images/listings/1066/5.jpg",
+      "assets/images/listings/1066/6.jpg",
+      "assets/images/listings/1066/7.jpg"
     ]
   },
   {
@@ -1833,6 +1893,7 @@
     },
     "price": {
       "try": 90000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1845,18 +1906,18 @@
     "area": 120,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "16-20",
+    "age": null,
     "situation": "empty",
     "floor": 7,
     "floorInHouse": 8,
     "parking": "open",
     "images": [
-      "/images/Photo/1067/1.jpg",
-      "/images/Photo/1067/2.jpg",
-      "/images/Photo/1067/3.jpg",
-      "/images/Photo/1067/4.jpg",
-      "/images/Photo/1067/5.jpg",
-      "/images/Photo/1067/6.jpg"
+      "assets/images/listings/1067/1.jpg",
+      "assets/images/listings/1067/2.jpg",
+      "assets/images/listings/1067/3.jpg",
+      "assets/images/listings/1067/4.jpg",
+      "assets/images/listings/1067/5.jpg",
+      "assets/images/listings/1067/6.jpg"
     ]
   },
   {
@@ -1871,6 +1932,7 @@
     },
     "price": {
       "try": 50000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1883,16 +1945,16 @@
     "area": 90,
     "rooms": "1+1",
     "bathroom": 1,
-    "age": "4",
+    "age": null,
     "situation": "empty",
     "floor": 1,
     "floorInHouse": 4,
     "parking": "closed",
     "images": [
-      "/images/Photo/1068/1.jpg",
-      "/images/Photo/1068/2.jpg",
-      "/images/Photo/1068/3.jpg",
-      "/images/Photo/1068/4.jpg"
+      "assets/images/listings/1068/1.jpg",
+      "assets/images/listings/1068/2.jpg",
+      "assets/images/listings/1068/3.jpg",
+      "assets/images/listings/1068/4.jpg"
     ]
   },
   {
@@ -1907,7 +1969,8 @@
     },
     "price": {
       "try": 195000,
-      "rub": 215000
+      "try_old": 215000,
+      "rub": null
     },
     "location": {
       "country": "Turkey",
@@ -1919,16 +1982,16 @@
     "area": 320,
     "rooms": "3+2",
     "bathroom": 3,
-    "age": "11-15",
+    "age": null,
     "situation": "empty",
     "floor": null,
     "floorInHouse": 3,
     "parking": "open",
     "images": [
-      "/images/Photo/1069/1.jpg",
-      "/images/Photo/1069/2.jpg",
-      "/images/Photo/1069/3.jpg",
-      "/images/Photo/1069/4.jpg"
+      "assets/images/listings/1069/1.jpg",
+      "assets/images/listings/1069/2.jpg",
+      "assets/images/listings/1069/3.jpg",
+      "assets/images/listings/1069/4.jpg"
     ]
   },
   {
@@ -1943,6 +2006,7 @@
     },
     "price": {
       "try": 45000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1955,16 +2019,16 @@
     "area": 55,
     "rooms": "1+1",
     "bathroom": 1,
-    "age": "5-10",
+    "age": null,
     "situation": "empty",
     "floor": 17,
     "floorInHouse": 30,
     "parking": "closed",
     "images": [
-      "/images/Photo/1070/1.jpg",
-      "/images/Photo/1070/2.jpg",
-      "/images/Photo/1070/3.jpg",
-      "/images/Photo/1070/4.jpg"
+      "assets/images/listings/1070/1.jpg",
+      "assets/images/listings/1070/2.jpg",
+      "assets/images/listings/1070/3.jpg",
+      "assets/images/listings/1070/4.jpg"
     ]
   },
   {
@@ -1979,6 +2043,7 @@
     },
     "price": {
       "try": 60000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -1991,19 +2056,19 @@
     "area": 90,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "16-20",
+    "age": null,
     "situation": "empty",
     "floor": 2,
     "floorInHouse": 18,
     "parking": "open",
     "images": [
-      "/images/Photo/1071/1.jpg",
-      "/images/Photo/1071/2.jpg",
-      "/images/Photo/1071/3.jpg",
-      "/images/Photo/1071/4.jpg",
-      "/images/Photo/1071/5.jpg",
-      "/images/Photo/1071/6.jpg",
-      "/images/Photo/1071/7.jpg"
+      "assets/images/listings/1071/1.jpg",
+      "assets/images/listings/1071/2.jpg",
+      "assets/images/listings/1071/3.jpg",
+      "assets/images/listings/1071/4.jpg",
+      "assets/images/listings/1071/5.jpg",
+      "assets/images/listings/1071/6.jpg",
+      "assets/images/listings/1071/7.jpg"
     ]
   },
   {
@@ -2018,6 +2083,7 @@
     },
     "price": {
       "try": 41500,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2030,19 +2096,19 @@
     "area": 60,
     "rooms": "1+1",
     "bathroom": 1,
-    "age": "2",
+    "age": null,
     "situation": "empty",
     "floor": 1,
     "floorInHouse": 5,
     "parking": "closed",
     "images": [
-      "/images/Photo/1072/1.jpg",
-      "/images/Photo/1072/2.jpg",
-      "/images/Photo/1072/3.jpg",
-      "/images/Photo/1072/4.jpg",
-      "/images/Photo/1072/5.jpg",
-      "/images/Photo/1072/6.jpg",
-      "/images/Photo/1072/7.jpg"
+      "assets/images/listings/1072/1.jpg",
+      "assets/images/listings/1072/2.jpg",
+      "assets/images/listings/1072/3.jpg",
+      "assets/images/listings/1072/4.jpg",
+      "assets/images/listings/1072/5.jpg",
+      "assets/images/listings/1072/6.jpg",
+      "assets/images/listings/1072/7.jpg"
     ]
   },
   {
@@ -2057,6 +2123,7 @@
     },
     "price": {
       "try": 45000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2069,18 +2136,18 @@
     "area": 78,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "11-15",
+    "age": null,
     "situation": "empty",
     "floor": 4,
     "floorInHouse": 4,
     "parking": "open",
     "images": [
-      "/images/Photo/1074/1.jpg",
-      "/images/Photo/1074/2.jpg",
-      "/images/Photo/1074/3.jpg",
-      "/images/Photo/1074/4.jpg",
-      "/images/Photo/1074/5.jpg",
-      "/images/Photo/1074/6.jpg"
+      "assets/images/listings/1074/1.jpg",
+      "assets/images/listings/1074/2.jpg",
+      "assets/images/listings/1074/3.jpg",
+      "assets/images/listings/1074/4.jpg",
+      "assets/images/listings/1074/5.jpg",
+      "assets/images/listings/1074/6.jpg"
     ]
   },
   {
@@ -2095,6 +2162,7 @@
     },
     "price": {
       "try": 48000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2107,18 +2175,18 @@
     "area": 75,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "11-15",
+    "age": null,
     "situation": "empty",
     "floor": 4,
     "floorInHouse": 4,
     "parking": "open",
     "images": [
-      "/images/Photo/1075/1.jpg",
-      "/images/Photo/1075/2.jpg",
-      "/images/Photo/1075/3.jpg",
-      "/images/Photo/1075/4.jpg",
-      "/images/Photo/1075/5.jpg",
-      "/images/Photo/1075/6.jpg"
+      "assets/images/listings/1075/1.jpg",
+      "assets/images/listings/1075/2.jpg",
+      "assets/images/listings/1075/3.jpg",
+      "assets/images/listings/1075/4.jpg",
+      "assets/images/listings/1075/5.jpg",
+      "assets/images/listings/1075/6.jpg"
     ]
   },
   {
@@ -2133,6 +2201,7 @@
     },
     "price": {
       "try": null,
+      "try_old": null,
       "rub": 14200000
     },
     "location": {
@@ -2145,12 +2214,15 @@
     "area": 82,
     "rooms": "2",
     "bathroom": 1,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 1,
     "floorInHouse": 7,
     "parking": "both",
-    "images": ["/images/Photo/1076/1.png", "/images/Photo/1076/2.png"]
+    "images": [
+      "assets/images/listings/1076/1.png",
+      "assets/images/listings/1076/2.png"
+    ]
   },
   {
     "id": "1077",
@@ -2164,6 +2236,7 @@
     },
     "price": {
       "try": null,
+      "try_old": null,
       "rub": 16210000
     },
     "location": {
@@ -2176,12 +2249,15 @@
     "area": 83,
     "rooms": "2",
     "bathroom": 1,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 6,
     "floorInHouse": 7,
     "parking": "both",
-    "images": ["/images/Photo/1077/1.png", "/images/Photo/1077/2.png"]
+    "images": [
+      "assets/images/listings/1077/1.png",
+      "assets/images/listings/1077/2.png"
+    ]
   },
   {
     "id": "1078",
@@ -2195,6 +2271,7 @@
     },
     "price": {
       "try": null,
+      "try_old": null,
       "rub": 23280000
     },
     "location": {
@@ -2207,12 +2284,15 @@
     "area": 126,
     "rooms": "3",
     "bathroom": 1,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 13,
     "floorInHouse": 13,
     "parking": "both",
-    "images": ["/images/Photo/1078/1.png", "/images/Photo/1078/2.png"]
+    "images": [
+      "assets/images/listings/1078/1.png",
+      "assets/images/listings/1078/2.png"
+    ]
   },
   {
     "id": "1079",
@@ -2226,6 +2306,7 @@
     },
     "price": {
       "try": null,
+      "try_old": null,
       "rub": 13440000
     },
     "location": {
@@ -2238,12 +2319,15 @@
     "area": 20,
     "rooms": "1",
     "bathroom": 1,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 3,
     "floorInHouse": 26,
     "parking": "both",
-    "images": ["/images/Photo/1079/1.png", "/images/Photo/1079/2.png"]
+    "images": [
+      "assets/images/listings/1079/1.png",
+      "assets/images/listings/1079/2.png"
+    ]
   },
   {
     "id": "1080",
@@ -2257,6 +2341,7 @@
     },
     "price": {
       "try": null,
+      "try_old": null,
       "rub": 32500000
     },
     "location": {
@@ -2269,12 +2354,15 @@
     "area": 63,
     "rooms": "3",
     "bathroom": 1,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 25,
     "floorInHouse": 26,
     "parking": "both",
-    "images": ["/images/Photo/1080/1.png", "/images/Photo/1080/2.png"]
+    "images": [
+      "assets/images/listings/1080/1.png",
+      "assets/images/listings/1080/2.png"
+    ]
   },
   {
     "id": "1081",
@@ -2288,6 +2376,7 @@
     },
     "price": {
       "try": null,
+      "try_old": null,
       "rub": 46500000
     },
     "location": {
@@ -2300,12 +2389,15 @@
     "area": 155,
     "rooms": "3",
     "bathroom": 2,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 25,
     "floorInHouse": 25,
     "parking": "open",
-    "images": ["/images/Photo/1081/1.png", "/images/Photo/1081/2.png"]
+    "images": [
+      "assets/images/listings/1081/1.png",
+      "assets/images/listings/1081/2.png"
+    ]
   },
   {
     "id": "1082",
@@ -2319,6 +2411,7 @@
     },
     "price": {
       "try": 4150000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2331,24 +2424,24 @@
     "area": 70,
     "rooms": "1+1",
     "bathroom": 1,
-    "age": "4",
+    "age": null,
     "situation": "empty",
     "floor": 8,
     "floorInHouse": 11,
     "parking": "open",
     "images": [
-      "/images/Photo/1082/1.jpg",
-      "/images/Photo/1082/2.jpg",
-      "/images/Photo/1082/3.jpg",
-      "/images/Photo/1082/4.jpg",
-      "/images/Photo/1082/5.jpg",
-      "/images/Photo/1082/6.jpg",
-      "/images/Photo/1082/7.jpg",
-      "/images/Photo/1082/8.jpg",
-      "/images/Photo/1082/9.jpg",
-      "/images/Photo/1082/10.jpg",
-      "/images/Photo/1082/11.jpg",
-      "/images/Photo/1082/12.jpg"
+      "assets/images/listings/1082/1.jpg",
+      "assets/images/listings/1082/2.jpg",
+      "assets/images/listings/1082/3.jpg",
+      "assets/images/listings/1082/4.jpg",
+      "assets/images/listings/1082/5.jpg",
+      "assets/images/listings/1082/6.jpg",
+      "assets/images/listings/1082/7.jpg",
+      "assets/images/listings/1082/8.jpg",
+      "assets/images/listings/1082/9.jpg",
+      "assets/images/listings/1082/10.jpg",
+      "assets/images/listings/1082/11.jpg",
+      "assets/images/listings/1082/12.jpg"
     ]
   },
   {
@@ -2363,6 +2456,7 @@
     },
     "price": {
       "try": 12500000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2375,24 +2469,24 @@
     "area": 85,
     "rooms": "2+1",
     "bathroom": 2,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 3,
     "floorInHouse": 5,
     "parking": "both",
     "images": [
-      "/images/Photo/1083/1.jpg",
-      "/images/Photo/1083/2.jpg",
-      "/images/Photo/1083/3.jpg",
-      "/images/Photo/1083/4.jpg",
-      "/images/Photo/1083/5.jpg",
-      "/images/Photo/1083/6.jpg",
-      "/images/Photo/1083/7.jpg",
-      "/images/Photo/1083/8.jpg",
-      "/images/Photo/1083/9.jpg",
-      "/images/Photo/1083/10.jpg",
-      "/images/Photo/1083/11.jpg",
-      "/images/Photo/1083/12.jpg"
+      "assets/images/listings/1083/1.jpg",
+      "assets/images/listings/1083/2.jpg",
+      "assets/images/listings/1083/3.jpg",
+      "assets/images/listings/1083/4.jpg",
+      "assets/images/listings/1083/5.jpg",
+      "assets/images/listings/1083/6.jpg",
+      "assets/images/listings/1083/7.jpg",
+      "assets/images/listings/1083/8.jpg",
+      "assets/images/listings/1083/9.jpg",
+      "assets/images/listings/1083/10.jpg",
+      "assets/images/listings/1083/11.jpg",
+      "assets/images/listings/1083/12.jpg"
     ]
   },
   {
@@ -2407,6 +2501,7 @@
     },
     "price": {
       "try": 5250000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2419,19 +2514,19 @@
     "area": 120,
     "rooms": "2+1",
     "bathroom": 2,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 2,
     "floorInHouse": 6,
     "parking": "open",
     "images": [
-      "/images/Photo/1084/1.jpg",
-      "/images/Photo/1084/2.jpg",
-      "/images/Photo/1084/3.jpg",
-      "/images/Photo/1084/4.jpg",
-      "/images/Photo/1084/5.jpg",
-      "/images/Photo/1084/6.jpg",
-      "/images/Photo/1084/7.jpg"
+      "assets/images/listings/1084/1.jpg",
+      "assets/images/listings/1084/2.jpg",
+      "assets/images/listings/1084/3.jpg",
+      "assets/images/listings/1084/4.jpg",
+      "assets/images/listings/1084/5.jpg",
+      "assets/images/listings/1084/6.jpg",
+      "assets/images/listings/1084/7.jpg"
     ]
   },
   {
@@ -2446,6 +2541,7 @@
     },
     "price": {
       "try": 7000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2458,22 +2554,22 @@
     "area": 95,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "1",
+    "age": null,
     "situation": "empty",
     "floor": 9,
     "floorInHouse": 12,
     "parking": "both",
     "images": [
-      "/images/Photo/1085/1.jpg",
-      "/images/Photo/1085/2.jpg",
-      "/images/Photo/1085/3.jpg",
-      "/images/Photo/1085/4.jpg",
-      "/images/Photo/1085/5.jpg",
-      "/images/Photo/1085/6.jpg",
-      "/images/Photo/1085/7.jpg",
-      "/images/Photo/1085/8.jpg",
-      "/images/Photo/1085/9.jpg",
-      "/images/Photo/1085/10.jpg"
+      "assets/images/listings/1085/1.jpg",
+      "assets/images/listings/1085/2.jpg",
+      "assets/images/listings/1085/3.jpg",
+      "assets/images/listings/1085/4.jpg",
+      "assets/images/listings/1085/5.jpg",
+      "assets/images/listings/1085/6.jpg",
+      "assets/images/listings/1085/7.jpg",
+      "assets/images/listings/1085/8.jpg",
+      "assets/images/listings/1085/9.jpg",
+      "assets/images/listings/1085/10.jpg"
     ]
   },
   {
@@ -2488,6 +2584,7 @@
     },
     "price": {
       "try": 5800000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2500,20 +2597,20 @@
     "area": 100,
     "rooms": "2+1",
     "bathroom": 2,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 10,
     "floorInHouse": 10,
     "parking": "closed",
     "images": [
-      "/images/Photo/1086/1.jpg",
-      "/images/Photo/1086/2.jpg",
-      "/images/Photo/1086/3.jpg",
-      "/images/Photo/1086/4.jpg",
-      "/images/Photo/1086/5.jpg",
-      "/images/Photo/1086/6.jpg",
-      "/images/Photo/1086/7.jpg",
-      "/images/Photo/1086/8.jpg"
+      "assets/images/listings/1086/1.jpg",
+      "assets/images/listings/1086/2.jpg",
+      "assets/images/listings/1086/3.jpg",
+      "assets/images/listings/1086/4.jpg",
+      "assets/images/listings/1086/5.jpg",
+      "assets/images/listings/1086/6.jpg",
+      "assets/images/listings/1086/7.jpg",
+      "assets/images/listings/1086/8.jpg"
     ]
   },
   {
@@ -2528,6 +2625,7 @@
     },
     "price": {
       "try": 6700000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2540,19 +2638,19 @@
     "area": 110,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 8,
     "floorInHouse": 8,
     "parking": "open",
     "images": [
-      "/images/Photo/1087/1.jpg",
-      "/images/Photo/1087/2.jpg",
-      "/images/Photo/1087/3.jpg",
-      "/images/Photo/1087/4.jpg",
-      "/images/Photo/1087/5.jpg",
-      "/images/Photo/1087/6.jpg",
-      "/images/Photo/1087/7.jpg"
+      "assets/images/listings/1087/1.jpg",
+      "assets/images/listings/1087/2.jpg",
+      "assets/images/listings/1087/3.jpg",
+      "assets/images/listings/1087/4.jpg",
+      "assets/images/listings/1087/5.jpg",
+      "assets/images/listings/1087/6.jpg",
+      "assets/images/listings/1087/7.jpg"
     ]
   },
   {
@@ -2567,6 +2665,7 @@
     },
     "price": {
       "try": 14750000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2579,20 +2678,20 @@
     "area": 120,
     "rooms": "2+1",
     "bathroom": 2,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 4,
     "floorInHouse": 4,
     "parking": "closed",
     "images": [
-      "/images/Photo/1088/1.jpg",
-      "/images/Photo/1088/2.jpg",
-      "/images/Photo/1088/3.jpg",
-      "/images/Photo/1088/4.jpg",
-      "/images/Photo/1088/5.jpg",
-      "/images/Photo/1088/6.jpg",
-      "/images/Photo/1088/7.jpg",
-      "/images/Photo/1088/8.jpg"
+      "assets/images/listings/1088/1.jpg",
+      "assets/images/listings/1088/2.jpg",
+      "assets/images/listings/1088/3.jpg",
+      "assets/images/listings/1088/4.jpg",
+      "assets/images/listings/1088/5.jpg",
+      "assets/images/listings/1088/6.jpg",
+      "assets/images/listings/1088/7.jpg",
+      "assets/images/listings/1088/8.jpg"
     ]
   },
   {
@@ -2607,6 +2706,7 @@
     },
     "price": {
       "try": 4250000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2619,17 +2719,17 @@
     "area": 65,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 3,
     "floorInHouse": 3,
     "parking": "open",
     "images": [
-      "/images/Photo/1089/1.jpg",
-      "/images/Photo/1089/2.jpg",
-      "/images/Photo/1089/3.jpg",
-      "/images/Photo/1089/4.jpg",
-      "/images/Photo/1089/5.jpg"
+      "assets/images/listings/1089/1.jpg",
+      "assets/images/listings/1089/2.jpg",
+      "assets/images/listings/1089/3.jpg",
+      "assets/images/listings/1089/4.jpg",
+      "assets/images/listings/1089/5.jpg"
     ]
   },
   {
@@ -2644,6 +2744,7 @@
     },
     "price": {
       "try": 7500000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2656,23 +2757,23 @@
     "area": 135,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 3,
     "floorInHouse": 4,
     "parking": null,
     "images": [
-      "/images/Photo/1090/1.jpg",
-      "/images/Photo/1090/2.jpg",
-      "/images/Photo/1090/3.jpg",
-      "/images/Photo/1090/4.jpg",
-      "/images/Photo/1090/5.jpg",
-      "/images/Photo/1090/6.jpg",
-      "/images/Photo/1090/7.jpg",
-      "/images/Photo/1090/8.jpg",
-      "/images/Photo/1090/9.jpg",
-      "/images/Photo/1090/10.jpg",
-      "/images/Photo/1090/11.jpg"
+      "assets/images/listings/1090/1.jpg",
+      "assets/images/listings/1090/2.jpg",
+      "assets/images/listings/1090/3.jpg",
+      "assets/images/listings/1090/4.jpg",
+      "assets/images/listings/1090/5.jpg",
+      "assets/images/listings/1090/6.jpg",
+      "assets/images/listings/1090/7.jpg",
+      "assets/images/listings/1090/8.jpg",
+      "assets/images/listings/1090/9.jpg",
+      "assets/images/listings/1090/10.jpg",
+      "assets/images/listings/1090/11.jpg"
     ]
   },
   {
@@ -2687,6 +2788,7 @@
     },
     "price": {
       "try": 5300000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2699,19 +2801,19 @@
     "area": 100,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 1,
     "floorInHouse": 7,
     "parking": null,
     "images": [
-      "/images/Photo/1091/1.jpg",
-      "/images/Photo/1091/2.jpg",
-      "/images/Photo/1091/3.jpg",
-      "/images/Photo/1091/4.jpg",
-      "/images/Photo/1091/5.jpg",
-      "/images/Photo/1091/6.jpg",
-      "/images/Photo/1091/7.jpg"
+      "assets/images/listings/1091/1.jpg",
+      "assets/images/listings/1091/2.jpg",
+      "assets/images/listings/1091/3.jpg",
+      "assets/images/listings/1091/4.jpg",
+      "assets/images/listings/1091/5.jpg",
+      "assets/images/listings/1091/6.jpg",
+      "assets/images/listings/1091/7.jpg"
     ]
   },
   {
@@ -2726,6 +2828,7 @@
     },
     "price": {
       "try": 9300000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2738,24 +2841,24 @@
     "area": 150,
     "rooms": "3+1",
     "bathroom": 3,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 1,
     "floorInHouse": 3,
     "parking": "open",
     "images": [
-      "/images/Photo/1092/1.jpg",
-      "/images/Photo/1092/2.jpg",
-      "/images/Photo/1092/3.jpg",
-      "/images/Photo/1092/4.jpg",
-      "/images/Photo/1092/5.jpg",
-      "/images/Photo/1092/6.jpg",
-      "/images/Photo/1092/7.jpg",
-      "/images/Photo/1092/8.jpg",
-      "/images/Photo/1092/9.jpg",
-      "/images/Photo/1092/10.jpg",
-      "/images/Photo/1092/11.jpg",
-      "/images/Photo/1092/12.jpg"
+      "assets/images/listings/1092/1.jpg",
+      "assets/images/listings/1092/2.jpg",
+      "assets/images/listings/1092/3.jpg",
+      "assets/images/listings/1092/4.jpg",
+      "assets/images/listings/1092/5.jpg",
+      "assets/images/listings/1092/6.jpg",
+      "assets/images/listings/1092/7.jpg",
+      "assets/images/listings/1092/8.jpg",
+      "assets/images/listings/1092/9.jpg",
+      "assets/images/listings/1092/10.jpg",
+      "assets/images/listings/1092/11.jpg",
+      "assets/images/listings/1092/12.jpg"
     ]
   },
   {
@@ -2770,6 +2873,7 @@
     },
     "price": {
       "try": 6900000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2782,24 +2886,24 @@
     "area": 73,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "3",
+    "age": null,
     "situation": "owner",
     "floor": 3,
     "floorInHouse": 3,
     "parking": "open",
     "images": [
-      "/images/Photo/1093/1.jpg",
-      "/images/Photo/1093/2.jpg",
-      "/images/Photo/1093/3.jpg",
-      "/images/Photo/1093/4.jpg",
-      "/images/Photo/1093/5.jpg",
-      "/images/Photo/1093/6.jpg",
-      "/images/Photo/1093/7.jpg",
-      "/images/Photo/1093/8.jpg",
-      "/images/Photo/1093/9.jpg",
-      "/images/Photo/1093/10.jpg",
-      "/images/Photo/1093/11.jpg",
-      "/images/Photo/1093/12.jpg"
+      "assets/images/listings/1093/1.jpg",
+      "assets/images/listings/1093/2.jpg",
+      "assets/images/listings/1093/3.jpg",
+      "assets/images/listings/1093/4.jpg",
+      "assets/images/listings/1093/5.jpg",
+      "assets/images/listings/1093/6.jpg",
+      "assets/images/listings/1093/7.jpg",
+      "assets/images/listings/1093/8.jpg",
+      "assets/images/listings/1093/9.jpg",
+      "assets/images/listings/1093/10.jpg",
+      "assets/images/listings/1093/11.jpg",
+      "assets/images/listings/1093/12.jpg"
     ]
   },
   {
@@ -2814,6 +2918,7 @@
     },
     "price": {
       "try": 3200000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2826,17 +2931,17 @@
     "area": 46,
     "rooms": "1+1",
     "bathroom": 1,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 1,
     "floorInHouse": 3,
     "parking": "open",
     "images": [
-      "/images/Photo/1094/1.jpg",
-      "/images/Photo/1094/2.jpg",
-      "/images/Photo/1094/3.jpg",
-      "/images/Photo/1094/4.jpg",
-      "/images/Photo/1094/5.jpg"
+      "assets/images/listings/1094/1.jpg",
+      "assets/images/listings/1094/2.jpg",
+      "assets/images/listings/1094/3.jpg",
+      "assets/images/listings/1094/4.jpg",
+      "assets/images/listings/1094/5.jpg"
     ]
   },
   {
@@ -2851,6 +2956,7 @@
     },
     "price": {
       "try": 13000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2863,21 +2969,21 @@
     "area": 215,
     "rooms": "4+1",
     "bathroom": 4,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 3,
     "floorInHouse": 3,
     "parking": "closed",
     "images": [
-      "/images/Photo/1095/1.jpg",
-      "/images/Photo/1095/2.jpg",
-      "/images/Photo/1095/3.jpg",
-      "/images/Photo/1095/4.jpg",
-      "/images/Photo/1095/5.jpg",
-      "/images/Photo/1095/6.jpg",
-      "/images/Photo/1095/7.jpg",
-      "/images/Photo/1095/8.jpg",
-      "/images/Photo/1095/9.jpg"
+      "assets/images/listings/1095/1.jpg",
+      "assets/images/listings/1095/2.jpg",
+      "assets/images/listings/1095/3.jpg",
+      "assets/images/listings/1095/4.jpg",
+      "assets/images/listings/1095/5.jpg",
+      "assets/images/listings/1095/6.jpg",
+      "assets/images/listings/1095/7.jpg",
+      "assets/images/listings/1095/8.jpg",
+      "assets/images/listings/1095/9.jpg"
     ]
   },
   {
@@ -2892,6 +2998,7 @@
     },
     "price": {
       "try": 12700000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2904,18 +3011,18 @@
     "area": 58,
     "rooms": "2+1",
     "bathroom": 1,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 9,
     "floorInHouse": 10,
     "parking": "both",
     "images": [
-      "/images/Photo/1096/1.jpg",
-      "/images/Photo/1096/2.jpg",
-      "/images/Photo/1096/3.jpg",
-      "/images/Photo/1096/4.jpg",
-      "/images/Photo/1096/5.jpg",
-      "/images/Photo/1096/6.jpg"
+      "assets/images/listings/1096/1.jpg",
+      "assets/images/listings/1096/2.jpg",
+      "assets/images/listings/1096/3.jpg",
+      "assets/images/listings/1096/4.jpg",
+      "assets/images/listings/1096/5.jpg",
+      "assets/images/listings/1096/6.jpg"
     ]
   },
   {
@@ -2930,6 +3037,7 @@
     },
     "price": {
       "try": 21500000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2942,20 +3050,20 @@
     "area": 110,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "0",
+    "age": null,
     "situation": "empty",
     "floor": 5,
     "floorInHouse": 5,
     "parking": "open",
     "images": [
-      "/images/Photo/1097/1.jpg",
-      "/images/Photo/1097/2.jpg",
-      "/images/Photo/1097/3.jpg",
-      "/images/Photo/1097/4.jpg",
-      "/images/Photo/1097/5.jpg",
-      "/images/Photo/1097/6.jpg",
-      "/images/Photo/1097/7.jpg",
-      "/images/Photo/1097/8.jpg"
+      "assets/images/listings/1097/1.jpg",
+      "assets/images/listings/1097/2.jpg",
+      "assets/images/listings/1097/3.jpg",
+      "assets/images/listings/1097/4.jpg",
+      "assets/images/listings/1097/5.jpg",
+      "assets/images/listings/1097/6.jpg",
+      "assets/images/listings/1097/7.jpg",
+      "assets/images/listings/1097/8.jpg"
     ]
   },
   {
@@ -2970,6 +3078,7 @@
     },
     "price": {
       "try": 16000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -2982,19 +3091,19 @@
     "area": 93,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "5-10",
+    "age": null,
     "situation": "owner",
     "floor": 7,
     "floorInHouse": 7,
     "parking": "both",
     "images": [
-      "/images/Photo/1098/1.jpg",
-      "/images/Photo/1098/2.jpg",
-      "/images/Photo/1098/3.jpg",
-      "/images/Photo/1098/4.jpg",
-      "/images/Photo/1098/5.jpg",
-      "/images/Photo/1098/6.jpg",
-      "/images/Photo/1098/7.jpg"
+      "assets/images/listings/1098/1.jpg",
+      "assets/images/listings/1098/2.jpg",
+      "assets/images/listings/1098/3.jpg",
+      "assets/images/listings/1098/4.jpg",
+      "assets/images/listings/1098/5.jpg",
+      "assets/images/listings/1098/6.jpg",
+      "assets/images/listings/1098/7.jpg"
     ]
   },
   {
@@ -3009,7 +3118,8 @@
     },
     "price": {
       "try": 17500000,
-      "rub": 18000000
+      "try_old": 18000000,
+      "rub": null
     },
     "location": {
       "country": "Turkey",
@@ -3021,25 +3131,25 @@
     "area": 115,
     "rooms": "3+1",
     "bathroom": 2,
-    "age": "16-20",
+    "age": null,
     "situation": "owner",
     "floor": 2,
     "floorInHouse": 2,
     "parking": "open",
     "images": [
-      "/images/Photo/1099/1.jpg",
-      "/images/Photo/1099/2.jpg",
-      "/images/Photo/1099/3.jpg",
-      "/images/Photo/1099/4.jpg",
-      "/images/Photo/1099/5.jpg",
-      "/images/Photo/1099/6.jpg",
-      "/images/Photo/1099/7.jpg",
-      "/images/Photo/1099/8.jpg",
-      "/images/Photo/1099/9.jpg",
-      "/images/Photo/1099/10.jpg",
-      "/images/Photo/1099/11.jpg",
-      "/images/Photo/1099/12.jpg",
-      "/images/Photo/1099/13.jpg"
+      "assets/images/listings/1099/1.jpg",
+      "assets/images/listings/1099/2.jpg",
+      "assets/images/listings/1099/3.jpg",
+      "assets/images/listings/1099/4.jpg",
+      "assets/images/listings/1099/5.jpg",
+      "assets/images/listings/1099/6.jpg",
+      "assets/images/listings/1099/7.jpg",
+      "assets/images/listings/1099/8.jpg",
+      "assets/images/listings/1099/9.jpg",
+      "assets/images/listings/1099/10.jpg",
+      "assets/images/listings/1099/11.jpg",
+      "assets/images/listings/1099/12.jpg",
+      "assets/images/listings/1099/13.jpg"
     ]
   },
   {
@@ -3054,6 +3164,7 @@
     },
     "price": {
       "try": 10000000,
+      "try_old": null,
       "rub": null
     },
     "location": {
@@ -3066,21 +3177,70 @@
     "area": 130,
     "rooms": "4+1",
     "bathroom": 2,
-    "age": "11-15",
+    "age": null,
     "situation": "owner",
     "floor": 4,
     "floorInHouse": 4,
     "parking": "open",
     "images": [
-      "/images/Photo/1100/1.jpg",
-      "/images/Photo/1100/2.jpg",
-      "/images/Photo/1100/3.jpg",
-      "/images/Photo/1100/4.jpg",
-      "/images/Photo/1100/5.jpg",
-      "/images/Photo/1100/6.jpg",
-      "/images/Photo/1100/7.jpg",
-      "/images/Photo/1100/8.jpg",
-      "/images/Photo/1100/9.jpg"
+      "assets/images/listings/1100/1.jpg",
+      "assets/images/listings/1100/2.jpg",
+      "assets/images/listings/1100/3.jpg",
+      "assets/images/listings/1100/4.jpg",
+      "assets/images/listings/1100/5.jpg",
+      "assets/images/listings/1100/6.jpg",
+      "assets/images/listings/1100/7.jpg",
+      "assets/images/listings/1100/8.jpg",
+      "assets/images/listings/1100/9.jpg"
+    ]
+  },
+  {
+    "id": "1101",
+    "publicationDate": "2025-06-10 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "Объект расположен в одном из самых центральных и престижных районов Стамбула — Бешикташе. В настоящее время он сдан в аренду спортивному клубу «Бешикташ» по договору, действующему до 2027 года. Текущий ежемесячный арендный доход составляет 600 000 турецких лир. После окончания контракта место обладает высоким потенциалом благодаря отличной локации и проходимости.",
+      "en": "This property is located in one of the most central and prestigious areas of Istanbul – Beşiktaş. It is currently leased by Beşiktaş Sports Club with a rental agreement valid until 2027. The current monthly rental income is 600,000 TL. After the contract ends, the location offers excellent potential due to its high visibility and prime position."
+    },
+    "price": {
+      "try": 185000000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Istanbul",
+      "district": "Besiktas"
+    },
+    "type": "buy",
+    "propertyType": "commercial",
+    "area": 400,
+    "rooms": "10",
+    "bathroom": 5,
+    "age": null,
+    "situation": "tenanted",
+    "floor": null,
+    "floorInHouse": 6,
+    "parking": "open",
+    "images": [
+      "assets/images/listings/1101/1.jpeg",
+      "assets/images/listings/1101/2.jpeg",
+      "assets/images/listings/1101/3.jpeg",
+      "assets/images/listings/1101/4.jpeg",
+      "assets/images/listings/1101/5.jpeg",
+      "assets/images/listings/1101/6.jpeg",
+      "assets/images/listings/1101/7.jpeg",
+      "assets/images/listings/1101/8.jpeg",
+      "assets/images/listings/1101/9.jpeg",
+      "assets/images/listings/1101/10.jpeg",
+      "assets/images/listings/1101/11.jpeg",
+      "assets/images/listings/1101/12.jpeg",
+      "assets/images/listings/1101/13.jpeg",
+      "assets/images/listings/1101/14.jpeg",
+      "assets/images/listings/1101/15.jpeg",
+      "assets/images/listings/1101/16.jpeg"
     ]
   }
 ]

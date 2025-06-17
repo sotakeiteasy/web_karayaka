@@ -6,7 +6,7 @@ date: '2025-05-19'
 ## Introduction
 
 Turkey continues to offer one of the most efficient and attractive citizenship-by-investment programs globally. As of 2025, the real estate route remains the most popular, requiring a minimum property investment of **USD 400,000**.
-<img src="https://karayaka.ru/images/articles/article9.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto; "/>
+<img src="https://karayaka.ru/assets/images/articles/article9.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto; "/>
 
 ## Requirements and Step-by-Step Process
 
@@ -29,7 +29,7 @@ The investor then applies for a **short-term residence permit** based on propert
 **6. Citizenship Application**  
 Finally, all documents are submitted to the **General Directorate of Population and Citizenship Affairs**. Processing time is typically **2 to 6 months**.
 
-<img src="https://karayaka.ru/images/articles/article9.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/assets/images/articles/article9.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Additional Notes
 

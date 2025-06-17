@@ -1,15 +1,15 @@
 import { Home } from '@/lib/components/HomePage';
-import { getSortedPostsData } from '@/lib/server/blogServer';
+import { getLatestTwoPosts } from '@/lib/server/blogServer';
 import { PostData } from '@/lib/types';
 
 export default Home;
 
 export async function getStaticProps() {
   const languages = ['en', 'ru'];
-  const allBlogData: Record<string, PostData[]> = {};
+  const blogData: Record<string, PostData[]> = {};
 
   for (const lang of languages) {
-    allBlogData[lang] = await getSortedPostsData(lang);
+    blogData[lang] = await getLatestTwoPosts(lang);
   }
 
   const metaTags = {
@@ -29,7 +29,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      allBlogData,
+      blogData,
       metaTags,
     },
   };

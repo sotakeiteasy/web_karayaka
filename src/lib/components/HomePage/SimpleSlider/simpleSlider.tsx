@@ -10,57 +10,36 @@ import { useTranslation, LinkWithLocale } from 'next-export-i18n';
 import Icon from '@mdi/react';
 import { mdiChevronRight, mdiChevronLeft, mdiMapMarkerOutline, mdiBedQueenOutline } from '@mdi/js';
 
-import rawAds from '@/data/ads/ads.json';
-import { getImageUrl } from '@/lib/utils';
+import { getOptimizedImageUrl } from '@/lib/utils';
 import { cityTranslations, districtTranslations, propertyTypeTranslations } from '@/lib/translations';
 import { Ad } from '@/lib/types';
-
-const ads = rawAds as unknown as Ad[];
-
-const NextArrow = ({ onClick }: { onClick?: () => void }) => {
-  return (
-    <div className={styles.nextArrow} onClick={onClick}>
-      <Icon path={mdiChevronRight} size={1.4} />
-    </div>
-  );
-};
-
-const PrevArrow = ({ onClick }: { onClick?: () => void }) => {
-  return (
-    <div className={styles.prevArrow} onClick={onClick}>
-      <Icon path={mdiChevronLeft} size={1.4} />
-    </div>
-  );
-};
-
-const shuffleAds = (ads: Ad[]): Ad[] => {
-  const copy = [...ads];
-
-  for (let i = copy.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [copy[i], copy[j]] = [copy[j], copy[i]];
-  }
-
-  return copy;
-};
 
 interface SimpleSliderProps {
   type: 'buy' | 'rent';
   country: string;
   locale: 'ru' | 'en';
 }
+
 export default function SimpleSlider({ type, country, locale }: SimpleSliderProps) {
   const { t } = useTranslation();
-  const filteredAds = useMemo(
-    () => ads.filter((ad) => ad.type === type && ad.location.country === country),
-    [type, country]
-  );
-  const [shuffledAds, setShuffledAds] = useState<Ad[]>(filteredAds);
+  const [ads, setAds] = useState<Ad[]>([]);
 
   useEffect(() => {
+    import('@/data/ads/ads.json').then((module) => {
+      setAds(module.default as unknown as Ad[]);
+    });
+  }, []);
+
+  const filteredAds = useMemo(
+    () => ads.filter((ad) => ad.type === type && ad.location.country === country),
+    [ads, type, country]
+  );
+
+  const shuffledAds = useMemo(() => {
     if (filteredAds.length >= 3) {
-      setShuffledAds(shuffleAds(filteredAds));
+      return shuffleAds(filteredAds);
     }
+    return [];
   }, [filteredAds]);
 
   if (filteredAds.length < 3) {
@@ -119,17 +98,22 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
             {shuffledAds.map((card) => (
               <div key={card.id} className={styles.slide}>
                 <div className={styles.adCard}>
-                  <LinkWithLocale href={`/${type}/${card.id}`}>
-                    <Image
-                      width={500}
-                      height={200}
-                      className={styles.cardImage}
-                      src={getImageUrl(card.images[0])}
-                      alt={`${propertyTypeTranslations[card.propertyType][locale]} in ${
-                        cityTranslations[card.location.city][locale]
-                      }`}
-                      loading="lazy"
-                    />
+                  <LinkWithLocale href={`/${type}/${card.id}/`}>
+                    <picture className={styles.cardImage}>
+                      <source srcSet={getOptimizedImageUrl(card.images[0]).webp} type="image/webp" />
+                      <Image
+                        width={500}
+                        height={300}
+                        src={getOptimizedImageUrl(card.images[0]).original}
+                        alt={`${propertyTypeTranslations[card.propertyType][locale]}. ${
+                          cityTranslations[card.location.city][locale]
+                        }`}
+                        title={`${propertyTypeTranslations[card.propertyType][locale]}. ${
+                          cityTranslations[card.location.city][locale]
+                        }`}
+                        loading="lazy"
+                      />
+                    </picture>
                     <div className={styles.cardDescription}>
                       <div className={styles.topRow}>
                         <p className={styles.title}>{propertyTypeTranslations[card.propertyType][locale]}</p>
@@ -172,3 +156,30 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
     </div>
   );
 }
+
+const NextArrow = ({ onClick }: { onClick?: () => void }) => {
+  return (
+    <div className={styles.nextArrow} onClick={onClick}>
+      <Icon path={mdiChevronRight} size={1.4} />
+    </div>
+  );
+};
+
+const PrevArrow = ({ onClick }: { onClick?: () => void }) => {
+  return (
+    <div className={styles.prevArrow} onClick={onClick}>
+      <Icon path={mdiChevronLeft} size={1.4} />
+    </div>
+  );
+};
+
+const shuffleAds = (ads: Ad[]): Ad[] => {
+  const copy = [...ads];
+
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+
+  return copy;
+};

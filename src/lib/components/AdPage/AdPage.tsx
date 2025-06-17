@@ -6,15 +6,13 @@ import React, { useState } from 'react';
 import { useTranslation, useLanguageQuery } from 'next-export-i18n';
 
 import { getImageUrl } from '@/lib/utils';
-import { Breadcrumbs } from '@/lib/components/Breadcrumbs/Breadcrumbs';
-import { ContactUs } from '@/lib/components/ContactUs/ContactUs';
-import { ContainerWrapper } from '@/lib/components/ContainerWrapper/ContainerWrapper';
+import { ContainerWrapper, ContactUs, Breadcrumbs } from '@/lib/components';
 import { Ad, MetaTags } from '@/lib/types';
 
 import { getLocationString } from '@/lib/utils';
 import { TitleInfo, PropertyDetails, PropertySlider } from './components';
 
-export default function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags }) {
+export function AdPage({ ad, metaTags }: { ad: Ad; metaTags: MetaTags }) {
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
   const lang = (query?.lang as 'ru' | 'en') || 'ru';

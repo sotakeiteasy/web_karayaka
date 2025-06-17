@@ -4,4 +4,4 @@ export * from './search';
 export * from './metaTags';
 export * from './postData';
 export * from './localizedPostData';
-export * from './FilterTypes/SearchType';
+export * from './FilterTypes';
