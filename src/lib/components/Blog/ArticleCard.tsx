@@ -30,8 +30,7 @@ export function ArticleCard({
               objectFit: 'cover',
               borderRadius: '15px 0px 0px 15px',
             }}
-            loading="eager"
-            priority
+            loading="lazy"
           />
         </div>
         <section className={styles.articlePreview}>

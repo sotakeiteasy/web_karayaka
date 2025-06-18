@@ -105,7 +105,7 @@ export default function Post({
           </article>
           <p className={styles.recomendationsHeader}>
             {' '}
-            <LinkWithLocale href={`/blog`}>{t('blog.anotherArticles')}</LinkWithLocale>
+            <LinkWithLocale href={`/blog/`}>{t('blog.anotherArticles')}</LinkWithLocale>
           </p>
           <div className={styles.recomendations}>
             <ArticleCard

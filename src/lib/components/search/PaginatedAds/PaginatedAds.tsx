@@ -32,7 +32,7 @@ function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'e
           <div className={styles.adCardImage}>
             <CustomSlider ad={ad} locale={locale} />
           </div>
-          <LinkWithLocale href={`${ad.type}/${ad.id}`}>
+          <LinkWithLocale href={`${ad.type}/${ad.id}/`}>
             <div className={styles.adCardDescription}>
               <div className={styles.upDescription}>
                 <h2 className={styles.cardTitle}>
@@ -64,13 +64,11 @@ function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'e
               <div className={styles.middleDescription}>{ad.description[locale]}</div>
               <div className={styles.bottomDescription}>
                 <p className={styles.cardPrice}>
-                  <strong>
-                    {ad.price.try !== undefined && ad.price.try !== null
-                      ? `${new Intl.NumberFormat('ru-RU').format(ad.price.try)} ₺`
-                      : ad.price.rub !== undefined && ad.price.rub !== null
-                      ? `${new Intl.NumberFormat('ru-RU').format(ad.price.rub)} ₽`
-                      : ''}
-                  </strong>
+                  {ad.price.try !== undefined && ad.price.try !== null
+                    ? `${new Intl.NumberFormat('ru-RU').format(ad.price.try)} ₺`
+                    : ad.price.rub !== undefined && ad.price.rub !== null
+                    ? `${new Intl.NumberFormat('ru-RU').format(ad.price.rub)} ₽`
+                    : ''}
                 </p>
                 <p>
                   {ad.floorInHouse && (

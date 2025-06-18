@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage({ content, metaTags }: { content: HTML
       </Head>
       <main className={styles.privacyPolicy}>
         <ContainerWrapper width="standard" withMarginBottom={true}>
-          <Breadcrumbs items={[{ href: '/privacy-policy', t: 'footer.privacyPolicy' }]} />
+          <Breadcrumbs items={[{ href: '/privacy-policy/', t: 'footer.privacyPolicy' }]} />
           <div dangerouslySetInnerHTML={{ __html: content }} />
         </ContainerWrapper>
       </main>

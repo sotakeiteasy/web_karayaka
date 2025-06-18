@@ -90,7 +90,6 @@ export default function CustomSlider({ ad, locale }: { ad: Ad; locale: 'ru' | 'e
               .join(', ')}`}
             width={450}
             height={300}
-            priority
           />
         </picture>
       )}

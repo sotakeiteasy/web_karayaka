@@ -34,7 +34,7 @@ function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'e
           <div className={styles.adCardImage}>
             <CustomSlider ad={ad} locale={locale} />
           </div>
-          <LinkWithLocale href={`${ad.type}/${ad.id}`}>
+          <LinkWithLocale href={`${ad.type}/${ad.id}/`}>
             <div className={styles.adCardDescription}>
               <div className={styles.cardPrice}>
                 <span className={styles.message}>
@@ -222,7 +222,7 @@ export default function DiscountsPage({ metaTags }: { metaTags: MetaTags }) {
         ></img>
         <div className={styles.imageText}>
           <div className={styles.breadcrumbs}>
-            <Breadcrumbs items={[{ href: '/discounts', t: 'discounts.breadcrumb' }]} color={'white'} />
+            <Breadcrumbs items={[{ href: '/discounts/', t: 'discounts.breadcrumb' }]} color={'white'} />
           </div>
           <h1 className={styles.header}>
             {t('discounts.header')} <br /> <span>{t('discounts.slogan')}</span>

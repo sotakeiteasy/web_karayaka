@@ -46,32 +46,32 @@ export function Header() {
 
   const navLinks = [
     {
-      href: '/rent',
+      href: '/rent/',
       text: t('header.rent'),
       active: router.pathname.startsWith('/rent'),
     },
     {
-      href: '/buy',
+      href: '/buy/',
       text: t('header.buy'),
       active: router.pathname.startsWith('/buy'),
     },
     {
-      href: '/about-us',
+      href: '/about-us/',
       text: t('header.aboutUs'),
       active: router.pathname.startsWith('/about-us'),
     },
     {
-      href: '/offer',
+      href: '/offer/',
       text: t('header.customOffers'),
       active: router.pathname.startsWith('/offer'),
     },
     {
-      href: '/contacts',
+      href: '/contacts/',
       text: t('header.contacts'),
       active: router.pathname.startsWith('/contacts'),
     },
     {
-      href: '/discounts',
+      href: '/discounts/',
       text: t('header.discounts'),
       active: router.pathname.startsWith('/discounts'),
     },

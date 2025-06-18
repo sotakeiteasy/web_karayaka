@@ -16,13 +16,13 @@ export function Footer() {
 
   const navLinks = [
     { href: '/', label: t('footer.home') },
-    { href: '/rent', label: t('header.rent') },
-    { href: '/buy', label: t('header.buy') },
-    { href: '/about-us', label: t('header.aboutUs') },
-    { href: '/offer', label: t('header.customOffers') },
-    { href: '/contacts', label: t('header.contacts') },
-    { href: '/discounts', label: t('header.discounts') },
-    { href: '/blog', label: t('header.blog') },
+    { href: '/rent/', label: t('header.rent') },
+    { href: '/buy/', label: t('header.buy') },
+    { href: '/about-us/', label: t('header.aboutUs') },
+    { href: '/offer/', label: t('header.customOffers') },
+    { href: '/contacts/', label: t('header.contacts') },
+    { href: '/discounts/', label: t('header.discounts') },
+    { href: '/blog/', label: t('header.blog') },
   ];
 
   return (

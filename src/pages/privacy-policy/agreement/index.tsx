@@ -22,8 +22,8 @@ export default function AgreementPage({ content, metaTags }: { content: HTMLElem
         <ContainerWrapper width="standard" withMarginBottom={true}>
           <Breadcrumbs
             items={[
-              { href: '/privacy-policy', t: 'footer.privacyPolicy' },
-              { href: '/privacy-policy/agreement', t: 'agreementForm.header' },
+              { href: '/privacy-policy/', t: 'footer.privacyPolicy' },
+              { href: '/privacy-policy/agreement/', t: 'agreementForm.header' },
             ]}
           />
           <div dangerouslySetInnerHTML={{ __html: content }} />

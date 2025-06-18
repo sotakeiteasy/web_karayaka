@@ -114,14 +114,16 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
             draggable="false"
             priority
           />
-          <div className={styles.breadcrumbs}>
-            <Breadcrumbs items={[{ href: '/about-us', t: 'header.aboutUs' }]} color={'white'} />
-          </div>
-          <div className={styles.slogan}>
-            <p>dream</p>
-            <p>find</p>
-            <p>buy</p>
-            <p>live</p>
+          <div className={styles.imageText}>
+            <div className={styles.breadcrumbs}>
+              <Breadcrumbs items={[{ href: '/about-us/', t: 'header.aboutUs' }]} color={'white'} />
+            </div>
+            <div className={styles.slogan}>
+              <p>dream</p>
+              <p>find</p>
+              <p>buy</p>
+              <p>live</p>
+            </div>
           </div>
         </div>
 

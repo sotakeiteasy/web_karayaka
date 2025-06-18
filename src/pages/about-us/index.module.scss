@@ -8,121 +8,133 @@
     width: 100%;
     max-width: 1700px;
 
-    height: 380px;
+    height: 500px;
     position: relative;
-    margin-bottom: 30px;
+    z-index: 10;
 
-    .breadcrumbs {
+    .imageText {
+      backdrop-filter: brightness(75%);
+
       position: absolute;
+      left: 0px;
       top: 0px;
-      left: 250px;
-    }
+      height: 100%;
+      padding: 0 30px;
 
-    .slogan {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      top: 80px;
-      left: 250px;
-      text-align: left;
-      p {
-        user-select: none;
-        text-transform: uppercase;
-        color: $white-text;
-        font-size: 2.5rem;
+      width: 100%;
+
+      .breadcrumbs {
+        position: absolute;
+        left: 250px;
+      }
+
+      .slogan {
+        position: absolute;
+        top: 60px;
+
+        left: 250px;
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        font-weight: 500;
+
+        p {
+          margin-top: 10px;
+          user-select: none;
+          text-transform: uppercase;
+          color: $white-text;
+          font-size: 3rem;
+        }
       }
     }
   }
 
   .mainInfo.about {
-    padding: 0 !important;
-    box-shadow: none;
-
+    margin: 40px 0;
     h1 {
       text-wrap: nowrap;
     }
   }
 
-  .mainList {
-    margin: 30px 0;
+  .mainInfo.advantages {
+    margin: 60px 0;
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    .mainList {
+      margin-top: 20px;
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
 
-      .item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 12px;
+        .item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 12px;
 
-        &:last-child {
-          grid-column: 2;
-        }
+          &:last-child {
+            grid-column: 2;
+          }
 
-        .icon {
-          flex-shrink: 0;
-          margin-bottom: 10px;
+          .icon {
+            flex-shrink: 0;
+            margin-bottom: 10px;
 
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+            }
+          }
+
+          .text {
+            font-size: 16px;
+            line-height: 1.4;
           }
         }
+      }
 
-        .text {
-          font-size: 16px;
-          line-height: 1.4;
+      @media (max-width: 768px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .grid {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
         }
       }
     }
 
-    @media (max-width: 768px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 480px) {
-      .grid {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-      }
-    }
-  }
-
-  .mainInfo.advantages {
-    box-shadow: none;
-
     h2 {
-      font-size: 1.5 rem;
+      font-size: 1.6rem;
       text-transform: uppercase;
       text-wrap: nowrap;
-      font-weight: 600;
+      font-weight: 400;
     }
   }
 
   .mainInfo.founder {
     justify-content: space-around;
-
-    padding: 0 !important;
-    box-shadow: none;
-    margin-top: 30px;
-
-    margin-bottom: 60px;
     display: flex;
     flex-direction: row;
+    margin-top: 100px;
 
     .founderPhoto {
       flex-shrink: 0;
-      border-radius: 3px;
       width: 240px;
       overflow: hidden;
       height: 320px;
+      border-radius: 2px;
+
+      img {
+        border-radius: 2px;
+      }
     }
 
     .founderInfo {
@@ -155,61 +167,19 @@
     }
   }
 
-  .mainInfo.list {
-    height: 600px;
-    flex-direction: row;
-    padding: 0;
-    justify-content: space-between;
-
-    .mainList {
-      padding: 25px;
-    }
-  }
-
   .mainInfo {
-    box-shadow: $shadow;
     margin-bottom: 0px;
     line-height: 1.7;
-    width: 1000px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 25px;
     border-radius: 15px;
-
-    ul {
-      line-height: 1.5;
-
-      li {
-        margin-bottom: 10px;
-
-        &::marker {
-          color: $primary-color;
-        }
-      }
-    }
-
-    .mainList {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      h2 {
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        font-weight: 500;
-      }
-    }
 
     h1 {
       font-size: 2rem;
       text-transform: uppercase;
-      font-weight: 500;
-    }
-
-    .description {
-      margin: 10px 0;
+      font-weight: 400;
     }
   }
 
@@ -218,13 +188,14 @@
     justify-content: center;
     width: 100%;
     max-width: 1700px;
-
     font-size: 1.5rem;
     text-align: center;
     background-color: $primary-color;
     color: $white-text;
-    padding: 80px 0;
-    margin: 0px 0 40px 0;
+    margin-top: 20px;
+
+    margin-bottom: 60px;
+    padding: 60px 0;
 
     span {
       line-height: 2;
@@ -238,15 +209,13 @@
     width: 100%;
     max-width: 1700px;
     height: 300px;
-    margin-bottom: 60px;
+    margin: 80px 0;
   }
 
   .statsVisuals {
     display: flex;
-    margin: 60px 0;
     justify-content: space-between;
     height: 850px;
-    width: 1000px;
 
     .stats {
       display: flex;
@@ -295,8 +264,8 @@
   .infoBlock {
     height: fit-content;
     width: 100%;
-    margin-bottom: 60px;
     border-radius: 10px;
+    margin-bottom: 70px;
 
     .faq {
       min-width: 100%;
@@ -342,8 +311,8 @@
 
   .workhours {
     font-size: 1.4rem;
-    padding-top: 60px;
-    padding-bottom: 50px;
+    margin-top: 80px;
+    margin-bottom: 60px;
 
     text-align: center;
     position: relative;
@@ -408,28 +377,25 @@
 }
 
 @media (max-width: 900px) {
-  .mainInfo.founder {
-    margin-bottom: 40px;
-
-    .founderPhoto {
-      margin-bottom: 40px;
-    }
-
-    .founderInfo {
-      margin-bottom: 40px;
-
-      h2 {
-        text-align: left;
-        font-size: 1.3rem;
-      }
+  .about {
+    margin: 20px 0 !important;
+  }
+  .advantages {
+    margin: 20px 0 !important;
+  }
+  .founder {
+    margin-top: 30px !important;
+  }
+  .founderInfo {
+    margin-top: 40px;
+    h2 {
+      text-align: left;
+      font-size: 1.3rem;
     }
   }
   .main {
     .mainInfo {
       width: 100% !important;
-      box-shadow: none !important;
-      padding: 20px;
-      margin-bottom: 0px !important;
       height: 100% !important;
 
       h1 {
@@ -443,7 +409,7 @@
 
     .banner {
       height: 300px;
-      margin-bottom: 35px;
+      margin-top: 30px;
     }
 
     .statsVisuals {
@@ -466,6 +432,7 @@
     .infoBlock {
       flex-direction: column;
       width: 100%;
+      margin-bottom: 40px;
 
       .faq {
         border-radius: 2px;
@@ -479,13 +446,13 @@
 
       .answerBlock {
         border-radius: 0;
-        box-shadow: none;
         width: 100%;
       }
     }
 
     .closingNote {
       padding: 40px !important;
+      margin-bottom: 40px;
     }
   }
 }

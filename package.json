@@ -6,7 +6,7 @@
     "styles/globals.scss"
   ],
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "npx serve out",

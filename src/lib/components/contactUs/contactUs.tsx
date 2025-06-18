@@ -211,8 +211,7 @@ export function ContactUs() {
             objectFit: 'cover',
             borderRadius: '0px 15px 15px 0px',
           }}
-          loading="eager"
-          priority
+          loading="lazy"
         />
       </div>
     </div>

@@ -4,7 +4,6 @@ import React from 'react';
 import { useState, useEffect, useMemo } from 'react';
 import Slider from 'react-slick';
 import styles from './SimpleSlider.module.scss';
-import Image from 'next/image';
 import { useTranslation, LinkWithLocale } from 'next-export-i18n';
 
 import Icon from '@mdi/react';
@@ -106,9 +105,7 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
                   <LinkWithLocale href={`/${card.type}/${card.id}/`}>
                     <picture className={`${styles.cardImage} ${type === 'discounts' && styles.discount}`}>
                       <source srcSet={getOptimizedImageUrl(card.images[0]).webp} type="image/webp" />
-                      <Image
-                        width={500}
-                        height={300}
+                      <img
                         src={getOptimizedImageUrl(card.images[0]).original}
                         alt={`${propertyTypeTranslations[card.propertyType][locale]}. ${
                           cityTranslations[card.location.city][locale]
@@ -116,7 +113,6 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
                         title={`${propertyTypeTranslations[card.propertyType][locale]}. ${
                           cityTranslations[card.location.city][locale]
                         }`}
-                        loading="lazy"
                       />
                     </picture>
                     {card.price.try_old && (

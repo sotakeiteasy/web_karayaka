@@ -9,6 +9,7 @@ import { Breadcrumbs, ContactsBlock, ContactUs, ContainerWrapper } from '@/lib/c
 import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
 import { jsonLd } from '@/lib/seo';
+import { getImageUrl } from '@/lib/utils';
 
 export default function OfferPage({ metaTags }: { metaTags: MetaTags }) {
   const { t } = useTranslation();
@@ -150,9 +151,19 @@ export default function OfferPage({ metaTags }: { metaTags: MetaTags }) {
         )}
       </Head>
       <main className={styles.offerContainer}>
+        <div className={styles.mainImage}>
+          <img src={getImageUrl('/assets/images/offerPage/offer-main.jpg')} alt="" draggable="false"></img>
+          <div className={styles.imageText}>
+            <div className={styles.breadcrumbs}>
+              <Breadcrumbs items={[{ href: '/offer/', t: 'header.customOffers' }]} color={'white'} />
+            </div>
+            <div className={styles.header}>
+              {t('offer.slogan')} <p>{t('offer.sloganComment')}</p>
+            </div>
+          </div>
+        </div>
         <ContainerWrapper width="standard">
-          <Breadcrumbs items={[{ href: '/offer', t: 'header.customOffers' }]} />
-          <h1>{t('offer.title')}</h1>
+          <h1 className={styles.title}>{t('offer.title')}</h1>
           <div className={styles.date}>
             <time dateTime="2025-06-13">{t('offer.updated')}: 13.06.2025</time>
           </div>

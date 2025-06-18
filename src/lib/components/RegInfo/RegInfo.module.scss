@@ -4,18 +4,19 @@
   p {
     font-size: 1.1rem;
   }
+
+  h2 {
+    width: 100%;
+    text-align: left !important;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
 }
 
 .regInfo {
   margin-top: 20px;
   width: 100%;
   display: flex;
-
-  h2 {
-    width: 100%;
-    text-align: left !important;
-    margin-bottom: 10px;
-  }
 
   table:first-of-type {
     width: 60%;

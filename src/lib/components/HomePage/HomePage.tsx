@@ -207,7 +207,7 @@ export function Home({ blogData, metaTags }: { blogData: Record<string, PostData
             <h2 className={styles.header}>{t('home.articles')}</h2>
             {posts.map(({ id, title, excerpt }: PostData) => (
               <div key={id} className={styles.articleLink}>
-                <LinkWithLocale href={`/blog/${id}/`}>
+                <LinkWithLocale href={`/blog/${id}`}>
                   <div className={styles.articleImage}>
                     <Image
                       src={getImageUrl(`assets/images/articles/${id}.jpg`)}
