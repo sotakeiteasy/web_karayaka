@@ -15,7 +15,7 @@ import { cityTranslations, districtTranslations, propertyTypeTranslations } from
 import { Ad } from '@/lib/types';
 
 interface SimpleSliderProps {
-  type: 'buy' | 'rent';
+  type: 'buy' | 'rent' | 'discount';
   country: string;
   locale: 'ru' | 'en';
 }
@@ -30,10 +30,13 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
     });
   }, []);
 
-  const filteredAds = useMemo(
-    () => ads.filter((ad) => ad.type === type && ad.location.country === country),
-    [ads, type, country]
-  );
+  let filteredAds: Ad[];
+
+  if (type !== 'discount') {
+    filteredAds = ads.filter((ad) => ad.type === type && ad.location.country === country && ad.price.try_old === null);
+  } else {
+    filteredAds = ads.filter((ad) => ad.price.try_old);
+  }
 
   const shuffledAds = useMemo(() => {
     if (filteredAds.length >= 3) {
@@ -91,15 +94,17 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
 
   return (
     <div className={styles.carouselBlock}>
-      <h2 className={styles.header}>{type === 'rent' ? t('home.rent') : t('home.buy')}</h2>
+      <h2 className={styles.header}>
+        {type === 'discount' ? t('home.discount') : type === 'rent' ? t('home.rent') : t('home.buy')}
+      </h2>
       <div className={styles.carousel}>
         <div className={styles.sliderWrapper}>
           <Slider {...settings}>
             {shuffledAds.map((card) => (
               <div key={card.id} className={styles.slide}>
                 <div className={styles.adCard}>
-                  <LinkWithLocale href={`/${type}/${card.id}/`}>
-                    <picture className={styles.cardImage}>
+                  <LinkWithLocale href={`/${card.type}/${card.id}/`}>
+                    <picture className={`${styles.cardImage} ${type === 'discount' && styles.discount}`}>
                       <source srcSet={getOptimizedImageUrl(card.images[0]).webp} type="image/webp" />
                       <Image
                         width={500}
@@ -114,16 +119,38 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
                         loading="lazy"
                       />
                     </picture>
+                    {card.price.try_old && (
+                      <div className={styles.priceTag}>
+                        <span className={styles.message}>
+                          <img src="assets/icons/discount.svg" alt="" />
+                        </span>
+                        <div className={styles.discount}>
+                          <span className={styles.oldPrice}>
+                            {new Intl.NumberFormat('ru-RU').format(card.price.try_old)} ₺
+                          </span>
+                          <span className={styles.newPrice}>
+                            {new Intl.NumberFormat('ru-RU').format(card.price.try!)} ₺
+                          </span>
+                        </div>
+                      </div>
+                    )}
                     <div className={styles.cardDescription}>
                       <div className={styles.topRow}>
                         <p className={styles.title}>{propertyTypeTranslations[card.propertyType][locale]}</p>
-                        <p className={styles.price}>
-                          {card.price.try !== undefined && card.price.try !== null
-                            ? `${new Intl.NumberFormat('ru-RU').format(card.price.try)} ₺`
-                            : card.price.rub !== undefined && card.price.rub !== null
-                            ? `${new Intl.NumberFormat('ru-RU').format(card.price.rub)} ₽`
-                            : ''}
-                        </p>
+                        {!card.price.try_old && (
+                          <p className={styles.price}>
+                            {card.price.try !== undefined && card.price.try !== null
+                              ? `${new Intl.NumberFormat('ru-RU').format(card.price.try)} ₺`
+                              : card.price.rub !== undefined && card.price.rub !== null
+                              ? `${new Intl.NumberFormat('ru-RU').format(card.price.rub)} ₽`
+                              : ''}
+                          </p>
+                        )}
+                        {card.price.try_old && (
+                          <p className={styles.propertyType}>
+                            {card.type === 'rent' ? t('ad.property.forRentStatus') : t('ad.property.forSaleStatus')}
+                          </p>
+                        )}
                       </div>
                       <div className={styles.bottomRow}>
                         <p className={styles.iconRow}>

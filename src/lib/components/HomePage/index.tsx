@@ -1,5 +1,8 @@
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import {
+  // useEffect,
+  useState,
+} from 'react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { useTranslation, LinkWithLocale, useLanguageQuery } from 'next-export-i18n';
@@ -7,7 +10,10 @@ import Icon from '@mdi/react';
 import { mdiMagnify, mdiCheckCircle, mdiEarth, mdiHomeCity, mdiPiggyBank, mdiGavel } from '@mdi/js';
 
 import styles from './index.module.scss';
-import { ContainerWrapper, Skeleton } from '@/lib/components';
+import {
+  ContainerWrapper,
+  // Skeleton
+} from '@/lib/components';
 import { getImageUrl } from '@/lib/utils';
 import { PostData, MetaTags } from '@/lib/types';
 import { Divider } from 'antd';
@@ -53,15 +59,15 @@ export function Home({ blogData, metaTags }: { blogData: Record<string, PostData
     router.push(`/${isBuy ? 'buy/' : 'rent/'}&address=${encodedQuery}&lang=${lang}`);
   };
 
-  const [videoLoaded, setVideoLoaded] = useState(false);
+  // const [videoLoaded, setVideoLoaded] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setVideoLoaded(true);
-    }, 300);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setVideoLoaded(true);
+  //   }, 300);
 
-    return () => clearTimeout(timer);
-  }, []);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <>
@@ -139,62 +145,64 @@ export function Home({ blogData, metaTags }: { blogData: Record<string, PostData
         <p className={styles.slogan}>{t('home.slogan')}</p>
 
         <ContainerWrapper width="1100px" withMarginBottom>
-          {!videoLoaded ? (
-            <Skeleton height="550px" width="100%" marginTop="50px" marginBottom="50px" />
-          ) : (
-            <SimpleSlider type="buy" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
-          )}
+          <SimpleSlider type="discount" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
 
-          {!videoLoaded ? (
+          {/* {!videoLoaded ? (
             <Skeleton height="550px" width="100%" marginTop="50px" marginBottom="50px" />
-          ) : (
-            <SimpleSlider type="rent" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
-          )}
+          ) : ( */}
+          <SimpleSlider type="buy" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
+          {/* )} */}
 
-          {!videoLoaded ? (
+          {/* {!videoLoaded ? (
+            <Skeleton height="550px" width="100%" marginTop="50px" marginBottom="50px" />
+          ) : ( */}
+          <SimpleSlider type="rent" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
+          {/* )} */}
+
+          {/* {!videoLoaded ? (
             <Skeleton height="100%" />
-          ) : (
-            <div className={styles.advantagesBlock}>
-              <h2 className={styles.header}>{t('home.advantages.title')}</h2>
-              <div className={styles.advantages}>
-                <div className={styles.advantage}>
-                  <Icon className={styles.image} path={mdiGavel} size={2.5} />
-                  <section>
-                    <h3>{t('home.advantages.items.0.title')}</h3>
-                    <p>{t('home.advantages.items.0.description')}</p>
-                  </section>
-                </div>
-                <div className={styles.advantage}>
-                  <Icon className={styles.image} path={mdiPiggyBank} size={2.5} />
-                  <section>
-                    <h3>{t('home.advantages.items.1.title')}</h3>
-                    <p>{t('home.advantages.items.1.description')}</p>
-                  </section>
-                </div>
-                <div className={styles.advantage}>
-                  <Icon className={styles.image} path={mdiHomeCity} size={2.5} />
-                  <section>
-                    <h3>{t('home.advantages.items.2.title')}</h3>
-                    <p>{t('home.advantages.items.2.description')}</p>
-                  </section>
-                </div>
-                <div className={styles.advantage}>
-                  <Icon className={styles.image} path={mdiEarth} size={2.5} />
-                  <section>
-                    <h3>{t('home.advantages.items.3.title')}</h3>
-                    <p>{t('home.advantages.items.3.description')}</p>
-                  </section>
-                </div>
-                <div className={styles.advantage}>
-                  <Icon className={styles.image} path={mdiCheckCircle} size={2.5} />
-                  <section>
-                    <h3>{t('home.advantages.items.4.title')}</h3>
-                    <p>{t('home.advantages.items.4.description')}</p>
-                  </section>
-                </div>
+          ) : ( */}
+          <div className={styles.advantagesBlock}>
+            <h2 className={styles.header}>{t('home.advantages.title')}</h2>
+            <div className={styles.advantages}>
+              <div className={styles.advantage}>
+                <Icon className={styles.image} path={mdiGavel} size={2.5} />
+                <section>
+                  <h3>{t('home.advantages.items.0.title')}</h3>
+                  <p>{t('home.advantages.items.0.description')}</p>
+                </section>
+              </div>
+              <div className={styles.advantage}>
+                <Icon className={styles.image} path={mdiPiggyBank} size={2.5} />
+                <section>
+                  <h3>{t('home.advantages.items.1.title')}</h3>
+                  <p>{t('home.advantages.items.1.description')}</p>
+                </section>
+              </div>
+              <div className={styles.advantage}>
+                <Icon className={styles.image} path={mdiHomeCity} size={2.5} />
+                <section>
+                  <h3>{t('home.advantages.items.2.title')}</h3>
+                  <p>{t('home.advantages.items.2.description')}</p>
+                </section>
+              </div>
+              <div className={styles.advantage}>
+                <Icon className={styles.image} path={mdiEarth} size={2.5} />
+                <section>
+                  <h3>{t('home.advantages.items.3.title')}</h3>
+                  <p>{t('home.advantages.items.3.description')}</p>
+                </section>
+              </div>
+              <div className={styles.advantage}>
+                <Icon className={styles.image} path={mdiCheckCircle} size={2.5} />
+                <section>
+                  <h3>{t('home.advantages.items.4.title')}</h3>
+                  <p>{t('home.advantages.items.4.description')}</p>
+                </section>
               </div>
             </div>
-          )}
+          </div>
+          {/* )} */}
           <div className={styles.articleBlock}>
             <h2 className={styles.header}>{t('home.articles')}</h2>
             {posts.map(({ id, title, excerpt }: PostData) => (
