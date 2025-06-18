@@ -71,9 +71,9 @@ export function Header() {
       active: router.pathname.startsWith('/contacts'),
     },
     {
-      href: '/blog',
-      text: t('header.blog'),
-      active: router.pathname.startsWith('/blog'),
+      href: '/discounts',
+      text: t('header.discounts'),
+      active: router.pathname.startsWith('/discounts'),
     },
   ];
 
