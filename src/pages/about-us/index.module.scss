@@ -118,10 +118,11 @@
     flex-direction: row;
 
     .founderPhoto {
+      flex-shrink: 0;
       border-radius: 3px;
-      min-width: 240px;
-      height: 280px;
+      width: 240px;
       overflow: hidden;
+      height: 320px;
     }
 
     .founderInfo {
@@ -411,7 +412,6 @@
     margin-bottom: 40px;
 
     .founderPhoto {
-      height: 100% !important;
       margin-bottom: 40px;
     }
 
@@ -586,5 +586,19 @@
     max-width: calc(100% + $mobile-goriz-padding * 2) !important;
     margin-left: calc(-1 * $mobile-goriz-padding) !important;
     // margin-left: calc(-1 * $mobile-goriz-padding) !important;
+  }
+}
+
+@media (max-width: 450px) {
+  .founderPhoto {
+    height: 100% !important;
+    width: 100% !important;
+
+    img {
+      height: 100% !important;
+      width: 100% !important;
+      clip-path: inset(15% 0 0 0) !important;
+      transform: scale(1.2) !important;
+    }
   }
 }

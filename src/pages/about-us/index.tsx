@@ -153,11 +153,14 @@ export default function AboutUs({ metaTags }: { metaTags: MetaTags }) {
               <Image
                 src={getImageUrl('assets/images/aboutUsPage/founder.jpg')}
                 alt={t('imagesAlt.founder')}
-                width={240}
-                height={340}
+                width={400}
+                height={400}
                 style={{
                   objectFit: 'cover',
-                  marginTop: '-25px',
+                  width: '100%',
+                  height: '125%',
+                  transform: 'translateY(-20%)',
+                  objectPosition: 'center center',
                 }}
                 loading="eager"
                 draggable="false"
