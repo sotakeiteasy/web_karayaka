@@ -21,6 +21,7 @@ export function Footer() {
     { href: '/about-us', label: t('header.aboutUs') },
     { href: '/offer', label: t('header.customOffers') },
     { href: '/contacts', label: t('header.contacts') },
+    { href: '/discounts', label: t('header.discounts') },
     { href: '/blog', label: t('header.blog') },
   ];
 

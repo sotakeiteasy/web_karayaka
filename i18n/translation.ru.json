@@ -8,6 +8,7 @@
     "customOffers": "Услуги",
     "contacts": "Контакты",
     "blog": "Блог",
+    "discounts": "Скидки",
     "workhours": "Мы на связи 24/7, пишите в любое время",
     "closeBtn": "Закрыть"
   },
@@ -402,10 +403,17 @@
     "sectionTitleRegInfo": "Регистрационные данные",
     "sectionTitleReqInfo": "Реквизиты"
   },
-  "contactsBlock": {
-  "phone": "Позвонить",
-  "email": "Написать на email",
-  "telegram": "Написать в Telegram",
-  "whatsapp": "Написать в WhatsApp"
-}
+    "contactsBlock": {
+    "phone": "Позвонить",
+    "email": "Написать на email",
+    "telegram": "Написать в Telegram",
+    "whatsapp": "Написать в WhatsApp"
+  },
+  "discounts": {
+    "breadcrumb": "Скидки",
+    "header": "Низкие цены",
+    "slogan": "Которые мы нашли для вас",
+    "toRent": "Аренда",
+    "toBuy": "Покупка"
+  }
 }

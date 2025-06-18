@@ -1,4 +1,4 @@
-import { Home } from '@/lib/components/HomePage';
+import { Home } from '@/lib/components/HomePage/HomePage';
 import { getLatestTwoPosts } from '@/lib/server/blogServer';
 import { PostData } from '@/lib/types';
 

@@ -1,5 +1,5 @@
 import { getVideoUrl, getOptimizedImageUrl } from '@/lib/utils';
-import styles from '@/lib/components/HomePage/index.module.scss';
+import styles from '@/lib/components/HomePage/HomePage.module.scss';
 import { useEffect, useRef, useState } from 'react';
 
 function VideoPlayer({ lang }: any) {

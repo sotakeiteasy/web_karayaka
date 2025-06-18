@@ -9,7 +9,7 @@ import { useTranslation, LinkWithLocale, useLanguageQuery } from 'next-export-i1
 import Icon from '@mdi/react';
 import { mdiMagnify, mdiCheckCircle, mdiEarth, mdiHomeCity, mdiPiggyBank, mdiGavel } from '@mdi/js';
 
-import styles from './index.module.scss';
+import styles from './HomePage.module.scss';
 import {
   ContainerWrapper,
   // Skeleton
@@ -145,7 +145,7 @@ export function Home({ blogData, metaTags }: { blogData: Record<string, PostData
         <p className={styles.slogan}>{t('home.slogan')}</p>
 
         <ContainerWrapper width="1100px" withMarginBottom>
-          <SimpleSlider type="discount" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
+          <SimpleSlider type="discounts" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
 
           {/* {!videoLoaded ? (
             <Skeleton height="550px" width="100%" marginTop="50px" marginBottom="50px" />

@@ -9,5 +9,5 @@ export * from './Skeleton/Skeleton';
 export * from './SocialContactsMobile/SocialContactsMobile';
 
 export * from './AdPage/AdPage';
-export * from './HomePage/index';
+export * from './HomePage/HomePage';
 export * from './Search/index';

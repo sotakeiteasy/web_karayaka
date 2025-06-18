@@ -9,6 +9,7 @@ export async function getPageMeta() {
     { path: '/privacy-policy/agreement', file: 'privacy-policy/agreement/index' },
     { path: '/blog', file: 'blog/index' },
     { path: '/offer', file: 'offer/index' },
+    { path: '/discounts', file: 'discounts/index' },
     { path: '/contacts', file: 'contacts/index' },
     { path: '/rent', file: 'rent/index' },
     { path: '/buy', file: 'buy/index' },

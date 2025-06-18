@@ -8,6 +8,7 @@
     "customOffers": "Services",
     "contacts": "Contacts",
     "blog": "Blog",
+    "discounts": "Discounts",
     "workhours": "We are in touch 24/7, write at any time.",
     "closeBtn": "Close"
   },
@@ -406,5 +407,12 @@
       "email": "Send email",
       "telegram": "Message on Telegram",
       "whatsapp": "Message on WhatsApp"
+    },
+    "discounts": {
+      "breadcrumb": "Discounts",
+      "header": "Discounts",
+      "slogan": "Special offers we found for you",
+      "toRent": "For rent",
+      "toBuy": "For sale"
     }
 }

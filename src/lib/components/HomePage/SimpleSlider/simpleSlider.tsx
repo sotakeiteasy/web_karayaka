@@ -15,7 +15,7 @@ import { cityTranslations, districtTranslations, propertyTypeTranslations } from
 import { Ad } from '@/lib/types';
 
 interface SimpleSliderProps {
-  type: 'buy' | 'rent' | 'discount';
+  type: 'buy' | 'rent' | 'discounts';
   country: string;
   locale: 'ru' | 'en';
 }
@@ -32,7 +32,7 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
 
   let filteredAds: Ad[];
 
-  if (type !== 'discount') {
+  if (type !== 'discounts') {
     filteredAds = ads.filter((ad) => ad.type === type && ad.location.country === country && ad.price.try_old === null);
   } else {
     filteredAds = ads.filter((ad) => ad.price.try_old);
@@ -95,7 +95,7 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
   return (
     <div className={styles.carouselBlock}>
       <h2 className={styles.header}>
-        {type === 'discount' ? t('home.discount') : type === 'rent' ? t('home.rent') : t('home.buy')}
+        {type === 'discounts' ? t('home.discount') : type === 'rent' ? t('home.rent') : t('home.buy')}
       </h2>
       <div className={styles.carousel}>
         <div className={styles.sliderWrapper}>
@@ -104,7 +104,7 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
               <div key={card.id} className={styles.slide}>
                 <div className={styles.adCard}>
                   <LinkWithLocale href={`/${card.type}/${card.id}/`}>
-                    <picture className={`${styles.cardImage} ${type === 'discount' && styles.discount}`}>
+                    <picture className={`${styles.cardImage} ${type === 'discounts' && styles.discount}`}>
                       <source srcSet={getOptimizedImageUrl(card.images[0]).webp} type="image/webp" />
                       <Image
                         width={500}
@@ -177,9 +177,15 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
           </Slider>
         </div>
       </div>
-      <button className={styles.blockButton}>
-        <LinkWithLocale href={`/${type}?country=${country}`}>{t('home.seeAll')}</LinkWithLocale>
-      </button>
+      {type === 'discounts' ? (
+        <button className={styles.blockButton}>
+          <LinkWithLocale href={`/${type}/`}>{t('home.seeAll')}</LinkWithLocale>
+        </button>
+      ) : (
+        <button className={styles.blockButton}>
+          <LinkWithLocale href={`/${type}/?country=${country}`}>{t('home.seeAll')}</LinkWithLocale>
+        </button>
+      )}
     </div>
   );
 }

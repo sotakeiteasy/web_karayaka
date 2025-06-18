@@ -132,75 +132,77 @@ export function PaginatedAds({ itemsPerPage, ads = [] }: { itemsPerPage: number;
   return (
     <>
       <Head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'ItemList',
-              'name':
-                t('search.name') +
-                ' ' +
-                (listingType === SearchType.Rent ? t('ad.property.forRentStatus') : t('ad.property.forSaleStatus')),
-              'numberOfItems': currentAds.length,
-              'itemListElement': currentAds.map((ad) => {
-                return {
-                  '@type': 'Product',
-                  'url': `https://karayaka.ru/${ad.type}/${ad.id}`,
-                  'name': getPropertyTitle(ad, lang),
-                  'description': ad.description?.[lang] || '',
-                  'image': `https://karayaka.ru${ad.images?.[0]}`,
-                  'offers': {
-                    '@type': 'Offer',
-                    'price': ad.price.try || ad.price.rub,
-                    'priceCurrency': ad.price.try ? 'TRY' : 'RUB',
-                    'availability': 'https://schema.org/InStock',
+        {lang === 'ru' && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'ItemList',
+                'name':
+                  t('search.name') +
+                  ' ' +
+                  (listingType === SearchType.Rent ? t('ad.property.forRentStatus') : t('ad.property.forSaleStatus')),
+                'numberOfItems': currentAds.length,
+                'itemListElement': currentAds.map((ad) => {
+                  return {
+                    '@type': 'Product',
                     'url': `https://karayaka.ru/${ad.type}/${ad.id}`,
-                  },
-                  'additionalProperty': [
-                    ad.area && {
-                      '@type': 'PropertyValue',
-                      'name': t('ad.property.area'),
-                      'value': ad.area,
-                      'unitCode': 'MTK',
+                    'name': getPropertyTitle(ad, lang),
+                    'description': ad.description?.[lang] || '',
+                    'image': `https://karayaka.ru${ad.images?.[0]}`,
+                    'offers': {
+                      '@type': 'Offer',
+                      'price': ad.price.try || ad.price.rub,
+                      'priceCurrency': ad.price.try ? 'TRY' : 'RUB',
+                      'availability': 'https://schema.org/InStock',
+                      'url': `https://karayaka.ru/${ad.type}/${ad.id}`,
                     },
-                    ad.rooms && {
-                      '@type': 'PropertyValue',
-                      'name': t('ad.property.room'),
-                      'value': ad.rooms,
-                    },
-                    ad.floor && {
-                      '@type': 'PropertyValue',
-                      'name': t('ad.property.floor'),
-                      'value': ad.floor,
-                    },
-                    ad.floorInHouse && {
-                      '@type': 'PropertyValue',
-                      'name': t('ad.property.floors'),
-                      'value': ad.floorInHouse,
-                    },
-                    ad.propertyType && {
-                      '@type': 'PropertyValue',
-                      'name': t('ad.property.type'),
-                      'value': propertyTypeTranslations[ad.propertyType][lang],
-                    },
-                    ad.location && {
-                      '@type': 'PropertyValue',
-                      'name': t('ad.property.location'),
-                      'value': [
-                        countryTranslations[ad.location.country][lang],
-                        cityTranslations[ad.location.city][lang],
-                        ad.location.district ? districtTranslations[ad.location.district]?.[lang] : null,
-                      ]
-                        .filter(Boolean)
-                        .join(', '),
-                    },
-                  ].filter(Boolean),
-                };
+                    'additionalProperty': [
+                      ad.area && {
+                        '@type': 'PropertyValue',
+                        'name': t('ad.property.area'),
+                        'value': ad.area,
+                        'unitCode': 'MTK',
+                      },
+                      ad.rooms && {
+                        '@type': 'PropertyValue',
+                        'name': t('ad.property.room'),
+                        'value': ad.rooms,
+                      },
+                      ad.floor && {
+                        '@type': 'PropertyValue',
+                        'name': t('ad.property.floor'),
+                        'value': ad.floor,
+                      },
+                      ad.floorInHouse && {
+                        '@type': 'PropertyValue',
+                        'name': t('ad.property.floors'),
+                        'value': ad.floorInHouse,
+                      },
+                      ad.propertyType && {
+                        '@type': 'PropertyValue',
+                        'name': t('ad.property.type'),
+                        'value': propertyTypeTranslations[ad.propertyType][lang],
+                      },
+                      ad.location && {
+                        '@type': 'PropertyValue',
+                        'name': t('ad.property.location'),
+                        'value': [
+                          countryTranslations[ad.location.country][lang],
+                          cityTranslations[ad.location.city][lang],
+                          ad.location.district ? districtTranslations[ad.location.district]?.[lang] : null,
+                        ]
+                          .filter(Boolean)
+                          .join(', '),
+                      },
+                    ].filter(Boolean),
+                  };
+                }),
               }),
-            }),
-          }}
-        />
+            }}
+          />
+        )}
       </Head>
       <Items currentItems={currentAds} locale={lang} />
       {pageCount > 1 && (
