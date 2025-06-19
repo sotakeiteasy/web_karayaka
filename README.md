@@ -9,20 +9,26 @@ Website of Turkish-Russian real estate agency.
 ### Pages
 
 ```
-└── Home
-└── Search
-    └── Property Ad
-└── About us
-└── Custom offers
-└── Blog
-    └── Article
+├── Home
+├── Buy
+│   └── Listing
+├── Rent
+│   └── Listing
+├── About us
+├── Contacts
+├── Discounts
+├── Offer
+├── Blog
+│   └── Article
+├── Sitemap
+└── Privacy Policy
+    └── Agreement
 ```
 
 ### Features
 
 - Client-side data filtering for listings
-- Multilingual support (Ru/En)
-- Markdown articles pre-rendered at build time with getStaticProps for static export compatibility.
+- Multilingual support (ru/en)
 - Custom contact form with validation
 - Responsive layout across mobile and desktop.
 - SEO (metatags, open graph, JSON-scheme, search-engine verification)
@@ -32,7 +38,7 @@ Website of Turkish-Russian real estate agency.
 
 - **Framework**: Next.js (static export), TypeScript
 - **Styling**: SCSS Modules
-- **UI Components**: React Select (filterable dropdowns), React Slick (image sliders), Material Design Icons
+- **UI Components**: React Select (filterable dropdowns), React Slick (image sliders), Material Design Icons, antd
 - **Forms**: React Hook Form (validation), email.js (send email)
 - **Data**: Markdown (blog), JSON (listings)
 - **Internalization**: next-export-i18n (static export compatible)
@@ -47,7 +53,7 @@ cd web_karayaka
 # Install dependencies
 npm install
 
-# For faster performance, build and start the production server. Recommended =)
+# For better performance, build and start the production server. Recommended =)
 npm run build
 npm start
 
