@@ -9,9 +9,6 @@
     top: 0;
     right: 350px;
 
-    .breadcrumbs {
-    }
-
     .header {
       margin-top: 100px;
       color: white;
@@ -327,10 +324,6 @@
           }
         }
 
-        .upDescription {
-          // margin-bottom: 15px;
-        }
-
         .bottomDescription {
           display: none !important;
         }
@@ -339,19 +332,19 @@
   }
 }
 
-@media (max-width: 750) {
+@media (max-width: 820px) {
   .header {
     margin-top: 50px !important;
   }
 }
 
-@media (max-width: 500) {
+@media (max-width: 500px) {
   .message {
     margin-left: 0px !important;
   }
 }
 
-@media (max-width: 400) {
+@media (max-width: 400px) {
   .imageText {
     left: 30px !important;
 

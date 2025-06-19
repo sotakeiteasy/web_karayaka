@@ -37,7 +37,7 @@ date: '2025-05-19'
 **5. Подача и получение карточки ВНЖ**  
 После подачи документов заявитель получает **вид на жительство сроком до 1 года** с возможностью **ежегодного продления при сохранении собственности**.
 
-<img src="https://karayaka.ru/assets/images/articles/article10.2.png" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/assets/images/articles/article10.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Дополнительные замечания
 

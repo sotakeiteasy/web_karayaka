@@ -37,7 +37,7 @@ Submit an application via **[e-ikamet.goc.gov.tr](https://e-ikamet.goc.gov.tr)**
 **5. Attend Interview & Receive Permit**  
 After document submission, the applicant receives a **1-year residence card**, which can be renewed annually as long as ownership is maintained.
 
-<img src="https://karayaka.ru/assets/images/articles/article10.2.png" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
+<img src="https://karayaka.ru/assets/images/articles/article10.2.jpg" width=100% height="400" style="object-fit: cover; border-radius: 3px; margin: 30px auto;" />
 
 ## Additional Notes
 

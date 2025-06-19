@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { Tree } from 'antd';
 import 'antd/dist/reset.css';
 import { DataNode } from 'antd/lib/tree';
-import { useLanguageQuery, useTranslation } from 'next-export-i18n';
+import { LinkWithLocale, useLanguageQuery, useTranslation } from 'next-export-i18n';
 
 import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
 import { buildTree } from '@/lib/utils';
@@ -30,9 +30,7 @@ export default function SiteMap({
   const generalTree = buildTree(otherPages, locale);
 
   const renderNode = (nodeData: DataNode) => (
-    <a href={nodeData.key as string} target="_blank" rel="noopener noreferrer">
-      {nodeData.title as string}
-    </a>
+    <LinkWithLocale href={nodeData.key as string}>{nodeData.title as string}</LinkWithLocale>
   );
 
   return (

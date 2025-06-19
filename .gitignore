@@ -25,10 +25,13 @@ out.zip
 .DS_Store
 *.pem
 
-# my scriptss
+# my scripts
 /_scripts
 /_scripts-node
 /_files
+
+todo.md
+.vscode/
 
 # debug
 npm-debug.log*
