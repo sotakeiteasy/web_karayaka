@@ -1,3 +1,4 @@
+import { LocalStorageAlert } from '@/lib/components';
 import '@styles/globals.scss';
 import type { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
@@ -5,6 +6,12 @@ import { Montserrat } from 'next/font/google';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+
+declare global {
+  interface Window {
+    LS_OK: boolean;
+  }
+}
 
 const Header = dynamic(() => import('@/lib/components/Header/Header').then((mod) => mod.Header), {
   ssr: false,
@@ -18,7 +25,6 @@ const Header = dynamic(() => import('@/lib/components/Header/Header').then((mod)
     />
   ),
 });
-
 const Footer = dynamic(() => import('@/lib/components/Footer/Footer').then((mod) => mod.Footer), { ssr: false });
 const CookieConsent = dynamic(
   () => import('@/lib/components/CookiesConsent/CookiesConsent').then((mod) => mod.CookieConsent),
@@ -27,7 +33,6 @@ const CookieConsent = dynamic(
     loading: () => null,
   }
 );
-
 const SocialContactsMobile = dynamic(
   () => import('@/lib/components/SocialContactsMobile/SocialContactsMobile').then((mod) => mod.SocialContactsMobile),
   {
@@ -44,6 +49,13 @@ const montserrat = Montserrat({
 function App({ Component, pageProps }: AppProps) {
   const [Cookievisible, setCookieVisible] = useState(false);
   const router = useRouter();
+  const [showAlert, setShowAlert] = useState(false);
+
+  useEffect(() => {
+    if (window.LS_OK === false) {
+      setShowAlert(true);
+    }
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -90,6 +102,7 @@ function App({ Component, pageProps }: AppProps) {
 
       <Header />
       <Component {...pageProps} />
+      {showAlert && <LocalStorageAlert />}
       <CookieConsent visible={Cookievisible} setVisible={setCookieVisible} />
       <SocialContactsMobile cookieVisible={Cookievisible} />
       <Footer />

@@ -11,3 +11,4 @@ export * from './SocialContactsMobile/SocialContactsMobile';
 export * from './AdPage/AdPage';
 export * from './HomePage/HomePage';
 export * from './Search/index';
+export * from './LocalStorageAlert/LocalStorageAlert';

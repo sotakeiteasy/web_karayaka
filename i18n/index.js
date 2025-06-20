@@ -7,8 +7,8 @@ const i18n = {
     ru,
   },
   defaultLang: "ru",
-  languageDataStore : "localStorage" , 
-  useBrowserDefault: false,
+  languageDataStore : "localStorage", 
+  useBrowserDefault: true,
 };
 
 module.exports = i18n;
