@@ -107,6 +107,9 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
                       <source srcSet={getOptimizedImageUrl(card.images[0]).webp} type="image/webp" />
                       <img
                         src={getOptimizedImageUrl(card.images[0]).original}
+                        loading="lazy"
+                        width="450"
+                        height="300"
                         alt={`${propertyTypeTranslations[card.propertyType][locale]}. ${
                           cityTranslations[card.location.city][locale]
                         }`}
@@ -118,7 +121,7 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
                     {card.price.try_old && (
                       <div className={styles.priceTag}>
                         <span className={styles.message}>
-                          <img src="assets/icons/discount.svg" alt="" />
+                          <img src="assets/icons/discount.svg" alt="" width={60} height={60} />
                         </span>
                         <div className={styles.discount}>
                           <span className={styles.oldPrice}>

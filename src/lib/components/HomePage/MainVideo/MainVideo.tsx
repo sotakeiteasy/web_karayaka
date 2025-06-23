@@ -9,7 +9,10 @@ function VideoPlayer({ lang }: any) {
 
   const videoSrc = getVideoUrl(`assets/videos/${baseName}.webm`);
   const videoSrcFallback = getVideoUrl(`assets/videos/${baseName}.mp4`);
-  const videoMobileSrc = getVideoUrl(`assets/videos/${baseName}_mobile.webm`);
+  const videoMobileSrc =
+    baseName === 'moscow'
+      ? getVideoUrl(`assets/videos/${baseName}_mobile.webm`)
+      : getVideoUrl(`assets/videos/${baseName}_mobile.mp4`);
   const videoMobileSrcFallback = getVideoUrl(`assets/videos/${baseName}_mobile.mp4`);
 
   useEffect(() => {
