@@ -50,7 +50,7 @@ export function Home({ blogData, metaTags }: { blogData: Record<string, PostData
     if (!searchQuery.trim()) return;
 
     const encodedQuery = encodeURIComponent(searchQuery.trim());
-    router.push(`/${isBuy ? 'buy/' : 'rent/'}&address=${encodedQuery}&lang=${lang}`);
+    router.push(`/${isBuy ? 'buy/' : 'rent/'}?address=${encodedQuery}`);
   };
 
   const [videoLoaded, setVideoLoaded] = useState(false);
