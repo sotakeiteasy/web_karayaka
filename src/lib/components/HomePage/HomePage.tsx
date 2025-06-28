@@ -16,6 +16,7 @@ import dynamic from 'next/dynamic';
 
 import VideoPlayer from './MainVideo/MainVideo';
 import SimpleSlider from './SimpleSlider/SimpleSlider';
+import HomeCEOText from './HomeCEOText/HomeCEOText';
 
 const ContactUs = dynamic(() => import('@/lib/components/ContactUs/ContactUs').then((mod) => mod.ContactUs), {
   ssr: false,
@@ -140,19 +141,16 @@ export function Home({ blogData, metaTags }: { blogData: Record<string, PostData
 
         <ContainerWrapper width="1100px" withMarginBottom>
           <SimpleSlider type="discounts" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
-
           {!videoLoaded ? (
             <Skeleton height="550px" width="100%" marginTop="50px" marginBottom="50px" />
           ) : (
             <SimpleSlider type="buy" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
           )}
-
           {!videoLoaded ? (
             <Skeleton height="550px" width="100%" marginTop="50px" marginBottom="50px" />
           ) : (
             <SimpleSlider type="rent" country={lang === 'en' ? 'Russia' : 'Turkey'} locale={lang} />
           )}
-
           {!videoLoaded ? (
             <Skeleton height="100%" />
           ) : (
@@ -226,6 +224,7 @@ export function Home({ blogData, metaTags }: { blogData: Record<string, PostData
           </div>
           <Divider />
           <ContactUs />
+          {lang === 'ru' && <HomeCEOText />}
         </ContainerWrapper>
       </main>
     </>
