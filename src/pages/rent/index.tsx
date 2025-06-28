@@ -3,6 +3,7 @@ import { Search } from '@/lib/components/Search/index';
 import { MetaTags, SearchType } from '@/lib/types';
 import { useLanguageQuery } from 'next-export-i18n';
 import Head from 'next/head';
+import RentCEOText from '@/lib/components/Search/CEOTexts/RentCEOText';
 
 export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
@@ -32,6 +33,7 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
       <ContainerWrapper width="large" withMarginBottom={true}>
         <Breadcrumbs items={[{ href: '/rent', t: 'search.rentBreadcrumb' }]} />
         <Search type={SearchType.Rent} />
+        {lang === 'ru' && <RentCEOText />}
       </ContainerWrapper>
     </>
   );
