@@ -67,6 +67,7 @@ export function FilterSelect({
         isMulti={isMulti}
         placeholder={t(`${label}`)}
         isClearable
+        searchInput={{ autoComplete: 'new-password' }}
         noOptionsMessage={() => t('search.filters.noOptions')}
         removeValue={removeValue}
         components={isMulti ? { SelectContainer } : undefined}
