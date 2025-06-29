@@ -1,6 +1,6 @@
 @use '@styles/variables' as *;
 .CEOText {
-  margin-top: 50px;
+  margin-top: $laptop-padding-bottom;
   .header {
     font-size: 1.8rem;
     display: flex;
@@ -20,12 +20,14 @@
     display: block;
   }
   .imageContainer {
+    position: relative;
+    height: 400px;
     width: 100%;
+    margin-bottom: 30px;
   }
   .subheader {
     font-weight: 400;
     padding-bottom: 15px;
-    color: $primary-color;
   }
   p {
     padding-bottom: 10px;
@@ -51,5 +53,21 @@
   .header {
     text-align: center;
     padding: 20px 0;
+  }
+}
+@media (max-width: 900px) {
+  .CEOText {
+    margin-top: $tablet-padding-bottom;
+    .imageContainer {
+      height: 350px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .CEOText {
+    margin-top: $mobile-padding-bottom;
+    .imageContainer {
+      height: 250px;
+    }
   }
 }

@@ -1,7 +1,7 @@
 import { useTranslation, LinkWithLocale } from 'next-export-i18n';
 import Image from 'next/image';
-import styles from './BuyCEOText.module.scss';
-
+import styles from './SearchCEOText.module.scss';
+import { getImageUrl } from '@/lib/utils';
 export default function CEOsTexts() {
   const { t } = useTranslation();
 
@@ -13,12 +13,13 @@ export default function CEOsTexts() {
 
         <div className={styles.imageContainer}>
           <Image
-            src="/images/buy-turkey.jpg"
+            src={getImageUrl(`assets/images/search/ceo-buy-turkey.jpg`)}
             alt={t('buy.CEOText.title')}
             fill
             title={t('buy.CEOText.title')}
             style={{ objectFit: 'cover' }}
           />
+          <div className={styles.textBackdrop}></div>
         </div>
 
         <p>
@@ -56,12 +57,13 @@ export default function CEOsTexts() {
 
         <div className={styles.imageContainer}>
           <Image
-            src="/images/rent-apartment.jpg"
+            src={getImageUrl(`assets/images/search/ceo-rent-apartment.jpg`)}
             alt={t('rentApartment.CEOText.title')}
             fill
             title={t('rentApartment.CEOText.title')}
             style={{ objectFit: 'cover' }}
           />
+          <div className={styles.textBackdrop}></div>
         </div>
 
         <p>
@@ -105,12 +107,13 @@ export default function CEOsTexts() {
 
         <div className={styles.imageContainer}>
           <Image
-            src="/images/rent-villa.jpg"
+            src={getImageUrl(`assets/images/search/ceo-rent-villa.jpg`)}
             alt={t('rentVilla.CEOText.title')}
             fill
             title={t('rentVilla.CEOText.title')}
             style={{ objectFit: 'cover' }}
           />
+          <div className={styles.textBackdrop}></div>
         </div>
 
         <p>
@@ -152,12 +155,13 @@ export default function CEOsTexts() {
 
         <div className={styles.imageContainer}>
           <Image
-            src="/images/buy-flat-turkey.jpg"
+            src={getImageUrl(`assets/images/search/ceo-buy-flat-turkey.jpg`)}
             alt={t('buyFlat.CEOText.title')}
             fill
             title={t('buyFlat.CEOText.title')}
             style={{ objectFit: 'cover' }}
           />
+          <div className={styles.textBackdrop}></div>
         </div>
 
         <p>
@@ -192,12 +196,13 @@ export default function CEOsTexts() {
 
         <div className={styles.imageContainer}>
           <Image
-            src="/images/property-istanbul.jpg"
+            src={getImageUrl(`assets/images/search/ceo-property-istanbul.jpg`)}
             alt={t('istanbul.CEOText.title')}
             fill
             title={t('istanbul.CEOText.title')}
             style={{ objectFit: 'cover' }}
           />
+          <div className={styles.textBackdrop}></div>
         </div>
 
         <p>
@@ -210,7 +215,7 @@ export default function CEOsTexts() {
           <LinkWithLocale href="/about-us/">{t('istanbul.CEOText.p2.link')}</LinkWithLocale>
           {t('istanbul.CEOText.p2.afterLink')}
         </p>
-
+        <h3 className={styles.subheader}>{t('istanbul.CEOText.h3')}</h3>
         <ul className={styles.list}>
           <li>{t('istanbul.CEOText.bullets.0')}</li>
           <li>{t('istanbul.CEOText.bullets.1')}</li>
@@ -237,12 +242,13 @@ export default function CEOsTexts() {
 
         <div className={styles.imageContainer}>
           <Image
-            src="/images/property-antalya.jpg"
+            src={getImageUrl(`assets/images/search/ceo-property-antalya.jpg`)}
             alt={t('antalya.CEOText.title')}
             fill
             title={t('antalya.CEOText.title')}
             style={{ objectFit: 'cover' }}
           />
+          <div className={styles.textBackdrop}></div>
         </div>
 
         <p>
@@ -256,12 +262,18 @@ export default function CEOsTexts() {
           {t('antalya.CEOText.p2.afterLink')}
         </p>
 
-        <ul className={styles.list}>
+        <ul className={styles.bulletList}>
           <li>{t('antalya.CEOText.bullets.0')}</li>
           <li>{t('antalya.CEOText.bullets.1')}</li>
           <li>{t('antalya.CEOText.bullets.2')}</li>
+        </ul>
+        <h3 className={styles.subheader}>{t('antalya.CEOText.h3')}</h3>
+        <ul className={styles.list}>
           <li>{t('antalya.CEOText.bullets.3')}</li>
           <li>{t('antalya.CEOText.bullets.4')}</li>
+          <li>{t('antalya.CEOText.bullets.5')}</li>
+          <li>{t('antalya.CEOText.bullets.6')}</li>
+          <li>{t('antalya.CEOText.bullets.7')}</li>
         </ul>
 
         <p>
@@ -277,12 +289,13 @@ export default function CEOsTexts() {
 
         <div className={styles.imageContainer}>
           <Image
-            src="/images/rent-antalya.jpg"
+            src={getImageUrl(`assets/images/search/ceo-rent-antalya.jpg`)}
             alt={t('antalyaRent.CEOText.title')}
             fill
             title={t('antalyaRent.CEOText.title')}
             style={{ objectFit: 'cover' }}
           />
+          <div className={styles.textBackdrop}></div>
         </div>
 
         <p>

@@ -1,7 +1,7 @@
 import { useTranslation, LinkWithLocale } from 'next-export-i18n';
 import Image from 'next/image';
-import styles from './RentCEOText.module.scss';
-
+import styles from './SearchCEOText.module.scss';
+import { getImageUrl } from '@/lib/utils';
 export default function RentCEOText() {
   const { t } = useTranslation();
 
@@ -11,12 +11,13 @@ export default function RentCEOText() {
 
       <div className={styles.imageContainer}>
         <Image
-          src="/images/rent-turkey.jpg"
+          src={getImageUrl(`assets/images/search/ceo-rent-turkey.jpg`)}
           alt={t('rent.CEOText.title')}
           fill
           title={t('rent.CEOText.title')}
           style={{ objectFit: 'cover' }}
         />
+        <div className={styles.textBackdrop}></div>
       </div>
 
       <p>

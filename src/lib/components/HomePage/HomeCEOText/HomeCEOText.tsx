@@ -1,6 +1,7 @@
 import { useTranslation, LinkWithLocale } from 'next-export-i18n';
 import Image from 'next/image';
 import styles from './HomeCEOText.module.scss';
+import { getImageUrl } from '@/lib/utils';
 
 export default function HomeCEOText() {
   const { t } = useTranslation();
@@ -11,7 +12,7 @@ export default function HomeCEOText() {
 
       <div className={styles.imageContainer}>
         <Image
-          src="/images/real-estate-turkey.jpg"
+          src={getImageUrl(`assets/images/homePage/ceo-real-estate-turkey.jpg`)}
           alt={t('home.CEOText.title')}
           fill
           title={t('home.CEOText.title')}
