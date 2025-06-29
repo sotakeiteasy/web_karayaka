@@ -1,0 +1,73 @@
+@use '@styles/variables' as *;
+.CEOText {
+  margin-top: $laptop-padding-bottom;
+  .header {
+    font-size: 1.8rem;
+    display: flex;
+    width: 100%;
+    text-transform: uppercase;
+    align-items: center;
+    padding: 30px 0;
+    color: $primary-color;
+    font-weight: 200;
+  }
+
+  .header:after {
+    content: '';
+    flex: 1 0 auto;
+    margin-left: 40px;
+    border-bottom: 1px solid $primary-color;
+    display: block;
+  }
+  .imageContainer {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .subheader {
+    font-weight: 400;
+    padding-bottom: 15px;
+  }
+  p {
+    padding-bottom: 10px;
+  }
+  a {
+    color: $primary-color;
+  }
+  .bulletList,
+  .list {
+    padding-bottom: 10px;
+  }
+  .list li::marker {
+    color: $primary-color;
+  }
+  .bulletList li {
+    list-style-type: '—  ';
+  }
+}
+@media (width <= 900px) {
+  .CEOText {
+    margin-top: 15px;
+  }
+  .header {
+    text-align: center;
+    padding: 20px 0;
+  }
+}
+@media (max-width: 900px) {
+  .CEOText {
+    margin-top: $tablet-padding-bottom;
+    .imageContainer {
+      height: 350px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .CEOText {
+    margin-top: $mobile-padding-bottom;
+    .imageContainer {
+      height: 250px;
+    }
+  }
+}

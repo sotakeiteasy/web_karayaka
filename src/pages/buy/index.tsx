@@ -2,6 +2,7 @@ import { Breadcrumbs, ContainerWrapper, Search } from '@/lib/components';
 import { MetaTags, SearchType } from '@/lib/types';
 import { useLanguageQuery } from 'next-export-i18n';
 import Head from 'next/head';
+import BuyCEOText from '../../lib/components/Search/CEOTexts/BuyCEOText';
 
 export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
@@ -31,6 +32,7 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
       <ContainerWrapper width="large" withMarginBottom={true}>
         <Breadcrumbs items={[{ href: '/buy/', t: 'search.buyBreadcrumb' }]} />
         <Search type={SearchType.Buy} />
+        {lang === 'ru' && <BuyCEOText />}
       </ContainerWrapper>
     </>
   );
