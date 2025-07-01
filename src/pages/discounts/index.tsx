@@ -16,7 +16,7 @@ import { getImageUrl, getPropertyTitle } from '@/lib/utils';
 import { useEffect, useState } from 'react';
 import { Breadcrumbs, ContactsBlock, ContainerWrapper } from '@/lib/components';
 import { Divider } from 'antd';
-
+import { Price } from '@/lib/components/Price/Price';
 function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'en' }) {
   const { t } = useTranslation();
 
@@ -40,13 +40,25 @@ function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'e
                 <span className={styles.message}>
                   <img src="/assets/icons/discount.svg" alt="" />
                 </span>
-                {ad.price.try_old && (
+                {/* {ad.price.try_old && (
                   <div className={styles.priceTag}>
                     <div className={styles.discount}>
                       <span className={styles.oldPrice}>
                         {new Intl.NumberFormat('ru-RU').format(ad.price.try_old)} ₺
                       </span>
                       <span className={styles.newPrice}>{new Intl.NumberFormat('ru-RU').format(ad.price.try!)} ₺</span>
+                    </div>
+                  </div>
+                )} */}
+                {ad.price.try_old && (
+                  <div className={styles.priceTag}>
+                    <div className={styles.discount}>
+                      <span className={styles.oldPrice}>
+                        <Price locale={locale} price={{ try_old: ad.price.try_old }} />
+                      </span>
+                      <span className={styles.newPrice}>
+                        <Price locale={locale} price={{ try: ad.price.try }} />
+                      </span>
                     </div>
                   </div>
                 )}

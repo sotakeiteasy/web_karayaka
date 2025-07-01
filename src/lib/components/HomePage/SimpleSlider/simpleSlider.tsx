@@ -12,6 +12,7 @@ import { mdiChevronRight, mdiChevronLeft, mdiMapMarkerOutline, mdiBedQueenOutlin
 import { getOptimizedImageUrl } from '@/lib/utils';
 import { cityTranslations, districtTranslations, propertyTypeTranslations } from '@/lib/translations';
 import { Ad } from '@/lib/types';
+import { Price } from '@/lib/components/Price/Price';
 
 interface SimpleSliderProps {
   type: 'buy' | 'rent' | 'discounts';
@@ -64,7 +65,7 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
       {
         breakpoint: 1050,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           speed: 200,
           autoplay: false,
           cssEase: 'linear',
@@ -125,10 +126,10 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
                         </span>
                         <div className={styles.discount}>
                           <span className={styles.oldPrice}>
-                            {new Intl.NumberFormat('ru-RU').format(card.price.try_old)} ₺
+                            <Price locale={locale} price={{ try_old: card.price.try_old }} />
                           </span>
                           <span className={styles.newPrice}>
-                            {new Intl.NumberFormat('ru-RU').format(card.price.try!)} ₺
+                            <Price locale={locale} price={{ try: card.price.try }} stylesName="white" />
                           </span>
                         </div>
                       </div>
@@ -137,14 +138,11 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
                       <div className={styles.topRow}>
                         <p className={styles.title}>{propertyTypeTranslations[card.propertyType][locale]}</p>
                         {!card.price.try_old && (
-                          <p className={styles.price}>
-                            {card.price.try !== undefined && card.price.try !== null
-                              ? `${new Intl.NumberFormat('ru-RU').format(card.price.try)} ₺`
-                              : card.price.rub !== undefined && card.price.rub !== null
-                              ? `${new Intl.NumberFormat('ru-RU').format(card.price.rub)} ₽`
-                              : ''}
-                          </p>
+                          <span className={styles.price}>
+                            <Price locale={locale} price={{ try: card.price.try, rub: card.price.rub }} />
+                          </span>
                         )}
+
                         {card.price.try_old && (
                           <p className={styles.propertyType}>
                             {card.type === 'rent' ? t('ad.property.forRentStatus') : t('ad.property.forSaleStatus')}

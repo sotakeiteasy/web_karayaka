@@ -140,6 +140,7 @@
         }
         svg {
           margin-left: -2px;
+          min-width: 20px;
         }
       }
 
@@ -278,6 +279,9 @@
           font-size: 1.1rem;
         }
       }
+      .newPrice {
+        font-size: 1.5rem !important;
+      }
     }
   }
 }
@@ -286,6 +290,13 @@
   .sliderWrapper {
     width: 600px;
     position: relative;
+  }
+  .carouselBlock {
+    .adCard {
+      .newPrice {
+        font-size: 1.4rem !important;
+      }
+    }
   }
 }
 
@@ -328,6 +339,9 @@
           font-size: 1.1rem;
         }
       }
+      .newPrice {
+        font-size: 1.6rem !important;
+      }
     }
   }
 }
@@ -344,6 +358,9 @@
     width: 340px;
     position: relative;
   }
+  .carouselBlock .adCard .newPrice {
+    font-size: 1.4rem !important;
+  }
 }
 
 @media (max-width: 375px) {
@@ -357,6 +374,17 @@
   .sliderWrapper {
     width: 300px;
     position: relative;
+  }
+  .carouselBlock .adCard .cardDescription {
+    .topRow,
+    .title,
+    .propertyType {
+      font-size: 1.1rem !important;
+    }
+    .price,
+    .iconRow {
+      font-size: 1rem !important;
+    }
   }
 }
 
