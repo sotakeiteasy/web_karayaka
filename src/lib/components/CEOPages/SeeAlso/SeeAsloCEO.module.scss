@@ -1,0 +1,61 @@
+@use '@styles/variables' as *;
+
+.articlesBlock {
+  margin-top: $laptop-padding-bottom;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  padding: 20px 0;
+  text-align: center;
+  font-weight: 400;
+}
+
+.articlesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.articleLink {
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.articleImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.articleTitle {
+  font-weight: 400;
+  font-size: 1.2rem;
+  padding-top: 15px;
+}
+
+@media (max-width: 600px) {
+  .articlesBlock {
+    margin-top: $mobile-padding-bottom;
+  }
+  .articlesWrapper {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+
+  .articleLink {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .articleImage {
+    aspect-ratio: 3 / 2;
+  }
+}

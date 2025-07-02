@@ -8,7 +8,7 @@ export default function HomeCEOText() {
 
   return (
     <div className={styles.CEOText}>
-      <h2 className={styles.header}>{t('home.CEOText.title')}</h2>
+      <h1 className={styles.header}>{t('home.CEOText.title')}</h1>
 
       <div className={styles.imageContainer}>
         <Image
@@ -37,7 +37,7 @@ export default function HomeCEOText() {
         <li>{t('home.CEOText.bullets.3')}</li>
       </ul>
 
-      <h3 className={styles.subheader}>{t('home.CEOText.advantagesTitle')}</h3>
+      <h2 className={styles.subheader}>{t('home.CEOText.advantagesTitle')}</h2>
 
       <ul className={styles.list}>
         <li>{t('home.CEOText.advantages.0')}</li>
