@@ -18,7 +18,7 @@ export const PriceInRub = ({ priceInTry, stylesName, mySize = 1 }: Props) => {
     return <span>{new Intl.NumberFormat('ru-RU').format(priceInTry)} ₺</span>;
   }
 
-  const converted = priceInTry / rate;
+  const converted = priceInTry * rate;
   const roundedToThousands = Math.round(converted / 1000) * 1000;
   const rubPrice = roundedToThousands.toLocaleString('ru-RU');
 

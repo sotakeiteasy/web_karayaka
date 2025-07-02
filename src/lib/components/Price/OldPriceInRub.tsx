@@ -12,7 +12,7 @@ export function OldPriceInRub({ priceInTry, locale }: Props) {
   }
 
   if (loading) return <span>считаем...</span>;
-  const converted = priceInTry / rate;
+  const converted = priceInTry * rate;
   const roundedToThousands = Math.round(converted / 1000) * 1000;
   const rubPrice = roundedToThousands.toLocaleString('ru-RU');
   if (locale === 'ru') return <span> {rubPrice} ₽</span>;
