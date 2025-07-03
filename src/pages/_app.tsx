@@ -6,6 +6,8 @@ import { Montserrat } from 'next/font/google';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { RateProvider } from '@/lib/components/Price/RateContext';
+import { useLanguageQuery } from 'next-export-i18n';
 
 declare global {
   interface Window {
@@ -50,6 +52,8 @@ function App({ Component, pageProps }: AppProps) {
   const [Cookievisible, setCookieVisible] = useState(false);
   const router = useRouter();
   const [showAlert, setShowAlert] = useState(false);
+  const [query] = useLanguageQuery();
+  const locale = (query?.lang as 'ru' | 'en') || 'ru';
 
   useEffect(() => {
     if (window.LS_OK === false) {
@@ -74,11 +78,10 @@ function App({ Component, pageProps }: AppProps) {
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
-        {!router.query.lang ||
-          (router.query.lang === 'ru' && <link rel="canonical" href={`https://karayaka.ru${router.pathname}`} />)}
+        {!locale || (locale === 'ru' && <link rel="canonical" href={`https://karayaka.ru${router.pathname}`} />)}
       </Head>
       {/* Yandex.Metrika counter */}
-      {/* <script type="text/javascript">
+      <script type="text/javascript">
         {`
           (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
           m[i].l=1*new Date();
@@ -97,11 +100,13 @@ function App({ Component, pageProps }: AppProps) {
         <div>
           <img src="https://mc.yandex.ru/watch/100868560" style={{ position: 'absolute', left: '-9999px' }} alt="" />
         </div>
-      </noscript> */}
+      </noscript>
       {/* /Yandex.Metrika counter */}
 
       <Header />
-      <Component {...pageProps} />
+      <RateProvider locale={locale}>
+        <Component {...pageProps} />
+      </RateProvider>
       {showAlert && <LocalStorageAlert />}
       <CookieConsent visible={Cookievisible} setVisible={setCookieVisible} />
       <SocialContactsMobile cookieVisible={Cookievisible} />

@@ -1,0 +1,103 @@
+@use '@styles/variables' as *;
+
+.articlesBlock {
+  margin-top: $laptop-padding-bottom;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  font-size: 2rem;
+  padding: 20px 0;
+  text-align: center;
+  font-weight: 400;
+}
+
+.articlesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.articleLink {
+  flex: 1 1 calc(33.333% - 20px);
+  max-width: calc(33.333% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+
+.articleImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 10px;
+  border: none;
+}
+.articleDescription {
+  backdrop-filter: brightness(60%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  .articleTitle {
+    width: 100%;
+    padding: 0px 10px 0px 10px;
+    text-wrap: pretty;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (width <= 900px) {
+  .articleDescription {
+    backdrop-filter: brightness(55%) !important;
+    .articleTitle {
+      font-size: 1.3rem;
+    }
+  }
+}
+@media (width <= 700px) {
+  .articleDescription {
+    .articleTitle {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .articlesBlock {
+    margin-top: 0px !important;
+  }
+  .articlesWrapper {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+
+  .articleLink {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .articleImage {
+    aspect-ratio: 3 / 2;
+  }
+  .articleDescription {
+    backdrop-filter: brightness(50%) !important;
+    .articleTitle {
+      font-size: 1.7rem;
+    }
+  }
+}

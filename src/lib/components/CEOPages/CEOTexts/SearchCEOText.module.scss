@@ -1,0 +1,114 @@
+@use '@styles/variables' as *;
+.CEOText {
+  width: 100%;
+  max-width: 900px;
+  // margin-right: auto;
+  // margin-left: auto;
+  margin-top: $laptop-padding-bottom;
+  // position: relative;
+  line-height: 1.5;
+
+  .header {
+    color: $white-text;
+    position: absolute;
+    z-index: 2;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.3rem;
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    text-transform: uppercase;
+    align-items: center;
+    padding: 30px 0px 0px 30px;
+    font-weight: 500;
+  }
+
+  .header:after {
+    content: '';
+    flex: 1 0 auto;
+    margin-top: 100px;
+    margin-left: -100px;
+    border-bottom: 3px solid $white-text;
+    display: block;
+  }
+
+  .subheader {
+    font-weight: 400;
+    padding-top: 5px;
+    padding-bottom: 15px;
+  }
+  p {
+    padding-bottom: 10px;
+  }
+  a {
+    color: $primary-color;
+  }
+  .bulletList,
+  .list {
+    padding-bottom: 10px;
+  }
+  .list li::marker {
+    color: $primary-color;
+  }
+  .bulletList li {
+    list-style-type: '—  ';
+  }
+}
+
+@media (width <= 900px) {
+  .CEOText {
+    margin-top: $tablet-padding-bottom;
+    .header {
+      top: 150px !important;
+      left: 0px !important;
+      transform: none;
+    }
+    .imageContainer {
+      // height: 350px;
+      .textBackdrop {
+        backdrop-filter: brightness(55%);
+      }
+    }
+  }
+  .header {
+    display: block !important;
+    text-wrap: pretty;
+    font-size: 2.5rem !important;
+    text-align: center;
+    padding: 20px !important;
+    left: 0px !important;
+  }
+  .header:after {
+    width: 0px;
+    content: none;
+    margin: 0 !important;
+    border-bottom: none !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .CEOText {
+    margin-top: $mobile-padding-bottom;
+    .header {
+      left: 0px !important;
+      top: 130px !important;
+      font-size: 2rem !important;
+      padding: 20px !important;
+    }
+    .imageContainer {
+      // height: 250px;
+      .textBackdrop {
+        backdrop-filter: brightness(50%);
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .CEOText .header {
+    font-size: 1.6rem !important;
+    top: 130px !important;
+  }
+}

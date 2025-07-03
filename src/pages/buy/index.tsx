@@ -1,13 +1,13 @@
 import { Breadcrumbs, ContainerWrapper, Search } from '@/lib/components';
 import { MetaTags, SearchType } from '@/lib/types';
-import { useLanguageQuery } from 'next-export-i18n';
+import { useLanguageQuery, useTranslation } from 'next-export-i18n';
 import Head from 'next/head';
 import BuyCEOText from '../../lib/components/Search/CEOTexts/BuyCEOText';
-
+import { SeeAlsoCEO } from '@/lib/components/CEOPages/SeeAlso/SeeAlsoCEO';
 export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
   const lang = (query?.lang as 'ru' | 'en') || 'ru';
-
+  const { t } = useTranslation();
   const meta = metaTags[lang];
 
   return (
@@ -33,6 +33,29 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
         <Breadcrumbs items={[{ href: '/buy/', t: 'search.buyBreadcrumb' }]} />
         <Search type={SearchType.Buy} />
         {lang === 'ru' && <BuyCEOText />}
+        {lang === 'ru' && (
+          <SeeAlsoCEO
+            pages={[
+              {
+                title: t('antalya.CEOText.title'),
+                link: 'property-antalya',
+                image: `assets/images/search/ceo-property-antalya.jpg`,
+              },
+              {
+                title: t('buyFlat.CEOText.title'),
+                link: 'flat-turkey',
+                image: `assets/images/search/ceo-buy-flat-turkey.jpg`,
+              },
+
+              {
+                title: t('istanbul.CEOText.title'),
+                link: 'property-istanbul',
+                image: `assets/images/search/ceo-property-istanbul.jpg`,
+              },
+            ]}
+            rootLink="/buy/"
+          />
+        )}
       </ContainerWrapper>
     </>
   );
@@ -41,15 +64,15 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
 export async function getStaticProps() {
   const metaTags = {
     ru: {
-      title: 'Покупка недвижимости - Караяка | Недвижимость в Турции и России',
+      title: 'Покупка недвижимости в Турции — Karayaka.ru: квартиры, виллы, инвестиции',
       description:
-        'Поиск и подбор недвижимости в Турции и России. Удобные фильтры, большая база предложений, актуальные цены.',
+        'Karayaka.ru — российское агентство: покупка недвижимости в Турции по цене застройщика, полный юрсопровождение, онлайн-подбор и сервис «под ключ».',
       keywords: 'поиск недвижимости, покупка, недвижимость в Турции, недвижимость в России, квартиры, дома',
     },
     en: {
-      title: 'Buying property - Karayaka | Real Estate in Turkey and Russia',
+      title: 'Buying Property in Turkey — Karayaka.ru: Apartments, Villas, Investments',
       description:
-        'Search and find real estate in Turkey and Russia. Convenient filters, large database of offers, current prices.',
+        'Karayaka.ru is a Russian real estate agency offering property purchases in Turkey at developer prices, full legal support, online selection, and turnkey service.',
       keywords: 'property search, buy, real estate in Turkey, real estate in Russia, apartments, houses',
     },
   };

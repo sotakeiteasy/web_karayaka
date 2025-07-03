@@ -7,7 +7,7 @@ export default function RentCEOText() {
 
   return (
     <div className={styles.CEOText}>
-      <h2 className={styles.header}>{t('rent.CEOText.title')}</h2>
+      <h1 className={styles.header}>{t('rent.CEOText.title')}</h1>
 
       <div className={styles.imageContainer}>
         <Image

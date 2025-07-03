@@ -4,7 +4,7 @@ import styles from '../AdPage.module.scss';
 import { countryTranslations, cityTranslations, districtTranslations } from '@/lib/translations';
 import { Ad, SearchType } from '@/lib/types';
 import { getPropertyTitle } from '@/lib/utils';
-
+import { Price } from '@/lib/components/Price/Price';
 interface Props {
   ad: Ad;
   lang: 'ru' | 'en';
@@ -28,13 +28,6 @@ export function TitleInfo({ ad, lang, t, tooltip, onCopy }: Props) {
     .filter(Boolean)
     .join(', ');
 
-  const price =
-    ad.price.try !== undefined && ad.price.try !== null
-      ? `${new Intl.NumberFormat('ru-RU').format(ad.price.try)} ₺`
-      : ad.price.rub !== undefined && ad.price.rub !== null
-      ? `${new Intl.NumberFormat('ru-RU').format(ad.price.rub)} ₽`
-      : '';
-
   return (
     <div className={styles.titleInfo}>
       <div className={styles.rightTitleInfo}>
@@ -52,7 +45,9 @@ export function TitleInfo({ ad, lang, t, tooltip, onCopy }: Props) {
         </p>
       </div>
       <div className={styles.leftTitleInfo}>
-        <p className={styles.price}>{price}</p>
+        <span className={styles.price}>
+          <Price locale={lang} price={{ try: ad.price.try, rub: ad.price.rub }} mySize={1.5} />
+        </span>
       </div>
     </div>
   );

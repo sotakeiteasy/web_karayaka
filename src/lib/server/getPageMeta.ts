@@ -12,8 +12,15 @@ export async function getPageMeta() {
     { path: '/discounts', file: 'discounts/index' },
     { path: '/contacts', file: 'contacts/index' },
     { path: '/rent', file: 'rent/index' },
+    { path: '/rent/flat-antalya', file: 'rent/flat-antalya/index' },
+    { path: '/rent/flat-turkey', file: 'rent/flat-turkey/index' },
+    { path: '/rent/villa-turkey', file: 'rent/villa-turkey/index' },
     { path: '/buy', file: 'buy/index' },
+    { path: '/buy/flat-turkey', file: 'buy/flat-turkey/index' },
+    { path: '/buy/property-antalya', file: 'buy/property-antalya/index' },
+    { path: '/buy/property-istanbul', file: 'buy/property-istanbul/index' },
   ];
+
   for (const { path, file } of staticPages) {
     const { getStaticProps } = await import(`@/pages/${file}`);
     const { props } = await getStaticProps({});

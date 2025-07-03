@@ -1,0 +1,31 @@
+.imageContainer {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  max-width: 900px;
+  //   margin-bottom: 30px;
+  margin: 0 auto 30px auto;
+  .textBackdrop {
+    backdrop-filter: brightness(70%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+@media (width <= 900px) {
+  .imageContainer {
+    .textBackdrop {
+      backdrop-filter: brightness(55%) !important;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .imageContainer {
+    .textBackdrop {
+      backdrop-filter: brightness(50%) !important;
+    }
+  }
+}

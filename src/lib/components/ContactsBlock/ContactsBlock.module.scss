@@ -55,6 +55,24 @@
   }
 }
 
+.workhours {
+  font-size: 1.4rem;
+  padding-top: 60px;
+  padding-bottom: 50px;
+
+  text-align: center;
+  position: relative;
+}
+
+.workhours::after {
+  content: '';
+  display: block;
+  width: 160px;
+  height: 2px;
+  background-color: $primary-color;
+  margin: 10px auto 0;
+}
+
 @media (max-width: 900px) {
   .contacts {
     gap: 30px;

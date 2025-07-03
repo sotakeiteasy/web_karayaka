@@ -89,13 +89,19 @@
             font-size: 1.3rem;
             margin-bottom: 5px;
             font-weight: 500;
+            margin-left: auto;
+            p {
+              background-color: $white-text;
+            }
           }
 
-          p {
+          p.bottomLineDescription {
             align-self: flex-end;
             display: flex;
             gap: 5px;
-
+            background-color: $light-gray-color;
+            padding: 3px 6px;
+            border-radius: 8px;
             span {
               display: flex;
               padding-left: 5px;
@@ -105,12 +111,6 @@
             span:not(span:first-of-type) {
               border-left: 1px solid black;
             }
-          }
-
-          p:last-of-type {
-            background-color: $light-gray-color;
-            padding: 3px 6px;
-            border-radius: 8px;
           }
         }
 

@@ -17,7 +17,7 @@ import {
   propertyTypeTranslations,
 } from '@/lib/translations';
 import { getPropertyTitle } from '@/lib/utils';
-
+import { Price } from '@/lib/components/Price/Price';
 function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'en' }) {
   const { t } = useTranslation();
 
@@ -63,14 +63,10 @@ function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'e
               </div>
               <div className={styles.middleDescription}>{ad.description[locale]}</div>
               <div className={styles.bottomDescription}>
-                <p className={styles.cardPrice}>
-                  {ad.price.try !== undefined && ad.price.try !== null
-                    ? `${new Intl.NumberFormat('ru-RU').format(ad.price.try)} ₺`
-                    : ad.price.rub !== undefined && ad.price.rub !== null
-                    ? `${new Intl.NumberFormat('ru-RU').format(ad.price.rub)} ₽`
-                    : ''}
-                </p>
-                <p>
+                <div className={styles.cardPrice}>
+                  <Price locale={locale} price={{ try: ad.price.try, rub: ad.price.rub }} />
+                </div>
+                <p className={styles.bottomLineDescription}>
                   {ad.floorInHouse && (
                     <span>
                       {ad.floor && ad.floorInHouse ? `${ad.floor || ''}/${ad.floorInHouse || ''}` : ad.floorInHouse}

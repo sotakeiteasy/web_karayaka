@@ -1,14 +1,14 @@
 import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
 import { Search } from '@/lib/components/Search/index';
 import { MetaTags, SearchType } from '@/lib/types';
-import { useLanguageQuery } from 'next-export-i18n';
+import { useLanguageQuery, useTranslation } from 'next-export-i18n';
 import Head from 'next/head';
 import RentCEOText from '@/lib/components/Search/CEOTexts/RentCEOText';
-
+import { SeeAlsoCEO } from '@/lib/components/CEOPages/SeeAlso/SeeAlsoCEO';
 export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
   const lang = (query?.lang as 'ru' | 'en') || 'ru';
-
+  const { t } = useTranslation();
   const meta = metaTags[lang];
 
   return (
@@ -34,6 +34,29 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
         <Breadcrumbs items={[{ href: '/rent', t: 'search.rentBreadcrumb' }]} />
         <Search type={SearchType.Rent} />
         {lang === 'ru' && <RentCEOText />}
+
+        {lang === 'ru' && (
+          <SeeAlsoCEO
+            pages={[
+              {
+                title: t('antalyaRent.CEOText.title'),
+                link: 'flat-antalya',
+                image: `assets/images/search/ceo-rent-antalya.jpg`,
+              },
+              {
+                title: t('rentApartment.CEOText.title'),
+                link: 'flat-turkey',
+                image: `assets/images/search/ceo-rent-apartment.jpg`,
+              },
+              {
+                title: t('rentVilla.CEOText.title'),
+                link: 'villa-turkey',
+                image: `assets/images/search/ceo-rent-villa.jpg`,
+              },
+            ]}
+            rootLink="/rent/"
+          />
+        )}
       </ContainerWrapper>
     </>
   );
@@ -41,15 +64,15 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
 export async function getStaticProps() {
   const metaTags = {
     ru: {
-      title: 'Аренда недвижимости - Караяка | Недвижимость в Турции и России',
+      title: 'Аренда недвижимости в Турции — актуальные предложения от агентства Karayaka.ru',
       description:
-        'Поиск и подбор недвижимости в Турции и России. Удобные фильтры, большая база предложений, актуальные цены.',
+        'Karayaka.ru предлагает аренду недвижимости в Турции для жителей России: проверенное жилье, прозрачная цена, сопровождение сделки на русском языке.',
       keywords: 'поиск недвижимости, аренда, недвижимость в Турции, недвижимость в России, квартиры, дома',
     },
     en: {
-      title: 'Rental property - Karayaka | Real Estate in Turkey and Russia',
+      title: 'Rental Property in Turkey — Current Offers from Karayaka.ru',
       description:
-        'Search and find real estate in Turkey and Russia. Convenient filters, large database of offers, current prices.',
+        'Karayaka.ru offers property rentals in Turkey for residents of Russia: verified listings, transparent pricing, and full support throughout the rental process.',
       keywords: 'property search, rent, real estate in Turkey, real estate in Russia, apartments, houses',
     },
   };

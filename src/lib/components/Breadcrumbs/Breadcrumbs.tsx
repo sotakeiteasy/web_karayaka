@@ -73,6 +73,7 @@ export function Breadcrumbs({ items, color }: BreadcrumbsProps) {
                 linkColor: color,
                 lastItemColor: color,
                 separatorColor: color,
+                linkHoverColor: color,
               },
             },
           }}
