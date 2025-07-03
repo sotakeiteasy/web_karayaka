@@ -8,6 +8,7 @@ import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
 import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
 import { jsonLd } from '@/lib/seo';
+import { FullContacts } from '@/lib/components/ContactsBlock/FullContacts';
 
 export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
@@ -61,6 +62,7 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
                 />
               </div>
               <RentAntalya />
+              <FullContacts />
             </ContainerWrapper>
           </>
         )}
@@ -75,15 +77,11 @@ export async function getStaticProps() {
       title: 'Аренда квартиры в Анталии — Karayaka.ru: долгосрочно и посуточно без посредников',
       description:
         'Аренда квартиры в Анталии на сайте Karayaka.ru: проверенное жилье, честная цена в рублях, полное сопровождение российского агентства.',
-      keywords:
-        'индивидуальный подбор недвижимости, персональные предложения, недвижимость в Турции, недвижимость в России, помощь в поиске недвижимости',
     },
     en: {
       title: 'Apartment Rentals in Antalya — Karayaka.ru: Long-Term and Daily, No Middlemen',
       description:
         'Find apartment rentals in Antalya on Karayaka.ru: verified properties, fair prices, and full support from a Russian real estate agency.',
-      keywords:
-        'personalized real estate selection, custom property offers, real estate in Turkey, real estate in Russia, property search assistance',
     },
   };
 

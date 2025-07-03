@@ -8,6 +8,7 @@ import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
 import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
 import { jsonLd } from '@/lib/seo';
+import { FullContacts } from '@/lib/components/ContactsBlock/FullContacts';
 
 export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
@@ -60,6 +61,7 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
                 />
               </div>
               <RentVilla />
+              <FullContacts />
             </ContainerWrapper>
           </>
         )}
@@ -74,15 +76,11 @@ export async function getStaticProps() {
       title: 'Аренда виллы в Турции — Karayaka.ru: премиальное жилье у моря',
       description:
         'Аренда виллы в Турции на сайте Karayaka.ru: проверенное жилье по честной цене, полное юрсопровождение российского агентства и бронирование онлайн.',
-      keywords:
-        'индивидуальный подбор недвижимости, персональные предложения, недвижимость в Турции, недвижимость в России, помощь в поиске недвижимости',
     },
     en: {
       title: 'Villa Rentals in Turkey — Karayaka.ru: Premium Seaside Properties',
       description:
         'Rent a villa in Turkey on Karayaka.ru: verified properties at fair prices, full legal support from a Russian agency, and online booking.',
-      keywords:
-        'personalized real estate selection, custom property offers, real estate in Turkey, real estate in Russia, property search assistance',
     },
   };
 

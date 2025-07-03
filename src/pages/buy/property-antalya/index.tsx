@@ -8,6 +8,7 @@ import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
 import { jsonLd } from '@/lib/seo';
 import CEOImage from '@/lib/components/CEOPages/CEOTexts/CEOImage';
+import { FullContacts } from '@/lib/components/ContactsBlock/FullContacts';
 
 export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
   //   const { t } = useTranslation();
@@ -61,6 +62,7 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
                 />
               </div>
               <PropertyAntalya />
+              <FullContacts />
             </ContainerWrapper>
           </>
         )}
@@ -75,15 +77,11 @@ export async function getStaticProps() {
       title: 'Недвижимость в Анталии — Karayaka.ru: квартиры и виллы у моря по выгодной цене',
       description:
         'Недвижимость в Анталии на сайте Karayaka.ru: продажа и аренда, проверенное жилье, прозрачная цена, полное сопровождение российского агентства.',
-      keywords:
-        'индивидуальный подбор недвижимости, персональные предложения, недвижимость в Турции, недвижимость в России, помощь в поиске недвижимости',
     },
     en: {
       title: 'Real Estate in Antalya — Karayaka.ru: Apartments and Villas by the Sea at Great Prices',
       description:
         'Real estate in Antalya on Karayaka.ru: sales and rentals, verified properties, transparent pricing, and full support from a Russian agency.',
-      keywords:
-        'personalized real estate selection, custom property offers, real estate in Turkey, real estate in Russia, property search assistance',
     },
   };
 

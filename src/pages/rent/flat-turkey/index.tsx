@@ -8,6 +8,7 @@ import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
 import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
 import { jsonLd } from '@/lib/seo';
+import { FullContacts } from '@/lib/components/ContactsBlock/FullContacts';
 
 export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
@@ -60,6 +61,7 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
                 />
               </div>
               <RentTurkey />
+              <FullContacts />
             </ContainerWrapper>
           </>
         )}
@@ -74,15 +76,11 @@ export async function getStaticProps() {
       title: 'Аренда квартиры в Турции — Karayaka.ru: быстро, безопасно, без посредников',
       description:
         'Karayaka.ru — российское агентство: аренда квартиры в Турции по фиксированной цене, проверенное жилье, юридическое сопровождение и поддержка 24/7.',
-      keywords:
-        'индивидуальный подбор недвижимости, персональные предложения, недвижимость в Турции, недвижимость в России, помощь в поиске недвижимости',
     },
     en: {
       title: 'Apartment Rentals in Turkey — Karayaka.ru: Fast, Secure, No Middlemen',
       description:
         'Karayaka.ru is a Russian real estate agency offering apartment rentals in Turkey at fixed prices, with verified properties, legal support, and 24/7 assistance.',
-      keywords:
-        'personalized real estate selection, custom property offers, real estate in Turkey, real estate in Russia, property search assistance',
     },
   };
 

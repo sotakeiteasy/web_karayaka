@@ -52,7 +52,7 @@ export default function HomeCEOText() {
       </ul>
 
       <p>
-        {t('home.CEOText.p2.beforeLink')} <LinkWithLocale href="/contact/">{t('home.CEOText.p2.link')}</LinkWithLocale>
+        {t('home.CEOText.p2.beforeLink')} <LinkWithLocale href="/contacts/">{t('home.CEOText.p2.link')}</LinkWithLocale>
         {t('home.CEOText.p2.afterLink')}
       </p>
     </div>

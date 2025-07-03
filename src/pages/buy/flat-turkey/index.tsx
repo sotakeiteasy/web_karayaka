@@ -8,6 +8,7 @@ import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
 import { jsonLd } from '@/lib/seo';
 import CEOImage from '@/lib/components/CEOPages/CEOTexts/CEOImage';
+import { FullContacts } from '@/lib/components/ContactsBlock/FullContacts';
 export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
   const router = useRouter();
@@ -60,6 +61,7 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
                 />
               </div>
               <BuyTurkey />
+              <FullContacts />
             </ContainerWrapper>
           </>
         )}
@@ -74,15 +76,11 @@ export async function getStaticProps() {
       title: 'Покупка квартиры в Турции — Karayaka.ru: цены от застройщика и полное сопровождение',
       description:
         'Покупка квартиры в Турции на сайте Karayaka.ru: проверенное жилье по честной цене, российское агентство, дистанционная сделка и юридическая защита.',
-      keywords:
-        'индивидуальный подбор недвижимости, персональные предложения, недвижимость в Турции, недвижимость в России, помощь в поиске недвижимости',
     },
     en: {
       title: 'Buying an Apartment in Turkey — Karayaka.ru: Developer Prices and Full Support',
       description:
         'Buying an Apartment in Turkey on Karayaka.ru: Verified Properties at Fair Prices, Russian Agency, Remote Transactions, and Legal Protection',
-      keywords:
-        'personalized real estate selection, custom property offers, real estate in Turkey, real estate in Russia, property search assistance',
     },
   };
 

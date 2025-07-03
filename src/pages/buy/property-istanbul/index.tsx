@@ -8,6 +8,7 @@ import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
 import { jsonLd } from '@/lib/seo';
 import CEOImage from '@/lib/components/CEOPages/CEOTexts/CEOImage';
+import { FullContacts } from '@/lib/components/ContactsBlock/FullContacts';
 export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
   const locale = (query?.lang as 'ru' | 'en') || 'ru';
@@ -59,6 +60,7 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
                 />
               </div>
               <PropertyIstanbul />
+              <FullContacts />
             </ContainerWrapper>
           </>
         )}
@@ -73,15 +75,11 @@ export async function getStaticProps() {
       title: 'Недвижимость в Стамбуле — Karayaka.ru: продажа, аренда, инвестиции',
       description:
         'Karayaka.ru — агентство: недвижимость в Стамбуле по прозрачной цене, проверенное жилье, онлайн-подбор, юрсопровождение и сервис «под ключ».',
-      keywords:
-        'индивидуальный подбор недвижимости, персональные предложения, недвижимость в Турции, недвижимость в России, помощь в поиске недвижимости',
     },
     en: {
       title: 'Real Estate in Istanbul — Karayaka.ru: Sales, Rentals, Investments',
       description:
         'Karayaka.ru is an agency offering real estate in Istanbul with transparent pricing, verified properties, online selection, legal support, and turnkey service.',
-      keywords:
-        'personalized real estate selection, custom property offers, real estate in Turkey, real estate in Russia, property search assistance',
     },
   };
 
