@@ -28,7 +28,7 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
         <meta name="robots" content="index, follow" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://karayaka.ru/rent-turkey" />
+        <meta property="og:url" content="https://karayaka.ru/rent/flat-turkey" />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:image" content="https://karayaka.ru/og-image.png" />
@@ -54,7 +54,7 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
                 <Breadcrumbs
                   items={[
                     { href: '/rent/', t: 'search.rentBreadcrumb' },
-                    { href: '/rent-turkey/', t: 'rentApartment.CEOText.title' },
+                    { href: '/flat-turkey/', t: 'rentApartment.CEOText.title' },
                   ]}
                   color="white"
                 />

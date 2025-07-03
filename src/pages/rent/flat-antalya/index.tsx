@@ -1,21 +1,22 @@
 import styles from './index.module.scss';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import { useLanguageQuery } from 'next-export-i18n';
-import BuyTurkey from '../../../lib/components/CEOPages/CEOTexts/BuyTurkey';
+import RentAntalya from '../../../lib/components/CEOPages/CEOTexts/RentAntalya';
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import CEOImage from '@/lib/components/CEOPages/CEOTexts/CEOImage';
 import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
 import Head from 'next/head';
 import { MetaTags } from '@/lib/types';
 import { jsonLd } from '@/lib/seo';
-import CEOImage from '@/lib/components/CEOPages/CEOTexts/CEOImage';
+
 export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
-  const router = useRouter();
   const locale = (query?.lang as 'ru' | 'en') || 'ru';
   const meta = metaTags[locale];
+  const router = useRouter();
   useEffect(() => {
     if (locale !== 'ru') {
-      router.replace('/buy', undefined, { locale });
+      router.replace('/rent', undefined, { locale });
     }
   }, [locale, router]);
   return (
@@ -27,11 +28,11 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
         <meta name="robots" content="index, follow" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://karayaka.ru/buy/buy-turkey" />
+        <meta property="og:url" content="https://karayaka.ru/rent/flat-antalya" />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:image" content="https://karayaka.ru/og-image.png" />
-        <meta property="og:image:alt" content="Karayaka Buy In Turkey" />
+        <meta property="og:image:alt" content="Karayaka Rent In Turkey" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
@@ -48,18 +49,18 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
       >
         {locale === 'ru' && (
           <>
-            <CEOImage imageSrc="assets/images/search/ceo-buy-flat-turkey.jpg" title="buyFlat.CEOText.title" />
+            <CEOImage imageSrc="assets/images/search/ceo-rent-antalya.jpg" title="antalyaRent.CEOText.title" />
             <ContainerWrapper width="standard" withMarginBottom>
               <div className={styles.breadcrumbs}>
                 <Breadcrumbs
                   items={[
-                    { href: '/buy/', t: 'search.buyBreadcrumb' },
-                    { href: '/buy-turkey/', t: 'buyFlat.CEOText.title' },
+                    { href: '/rent/', t: 'search.rentBreadcrumb' },
+                    { href: '/flat-antalya/', t: 'antalyaRent.CEOText.title' },
                   ]}
                   color="white"
                 />
               </div>
-              <BuyTurkey />
+              <RentAntalya />
             </ContainerWrapper>
           </>
         )}
@@ -71,16 +72,16 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
 export async function getStaticProps() {
   const metaTags = {
     ru: {
-      title: 'Покупка квартиры в Турции — Karayaka.ru: цены от застройщика и полное сопровождение',
+      title: 'Аренда квартиры в Анталии — Karayaka.ru: долгосрочно и посуточно без посредников',
       description:
-        'Покупка квартиры в Турции на сайте Karayaka.ru: проверенное жилье по честной цене, российское агентство, дистанционная сделка и юридическая защита.',
+        'Аренда квартиры в Анталии на сайте Karayaka.ru: проверенное жилье, честная цена в рублях, полное сопровождение российского агентства.',
       keywords:
         'индивидуальный подбор недвижимости, персональные предложения, недвижимость в Турции, недвижимость в России, помощь в поиске недвижимости',
     },
     en: {
-      title: 'Buying an Apartment in Turkey — Karayaka.ru: Developer Prices and Full Support',
+      title: 'Apartment Rentals in Antalya — Karayaka.ru: Long-Term and Daily, No Middlemen',
       description:
-        'Buying an Apartment in Turkey on Karayaka.ru: Verified Properties at Fair Prices, Russian Agency, Remote Transactions, and Legal Protection',
+        'Find apartment rentals in Antalya on Karayaka.ru: verified properties, fair prices, and full support from a Russian real estate agency.',
       keywords:
         'personalized real estate selection, custom property offers, real estate in Turkey, real estate in Russia, property search assistance',
     },

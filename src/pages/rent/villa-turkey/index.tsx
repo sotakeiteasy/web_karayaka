@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 import { useLanguageQuery } from 'next-export-i18n';
-import RentAntalya from '../../../lib/components/CEOPages/CEOTexts/RentAntalya';
+import RentVilla from '../../../lib/components/CEOPages/CEOTexts/RentVilla';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import CEOImage from '@/lib/components/CEOPages/CEOTexts/CEOImage';
@@ -28,7 +28,7 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
         <meta name="robots" content="index, follow" />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://karayaka.ru/rent-antalya" />
+        <meta property="og:url" content="https://karayaka.ru/rent/villa-turkey" />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
         <meta property="og:image" content="https://karayaka.ru/og-image.png" />
@@ -41,7 +41,6 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         )}
       </Head>
-
       <main
         style={{
           position: 'relative',
@@ -49,18 +48,18 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
       >
         {locale === 'ru' && (
           <>
-            <CEOImage imageSrc="assets/images/search/ceo-rent-antalya.jpg" title="antalyaRent.CEOText.title" />
+            <CEOImage imageSrc="assets/images/search/ceo-rent-villa.jpg" title="rentVilla.CEOText.title" />
             <ContainerWrapper width="standard" withMarginBottom>
               <div className={styles.breadcrumbs}>
                 <Breadcrumbs
                   items={[
                     { href: '/rent/', t: 'search.rentBreadcrumb' },
-                    { href: '/rent-antalya/', t: 'antalyaRent.CEOText.title' },
+                    { href: '/villa-turkey/', t: 'rentVilla.CEOText.title' },
                   ]}
                   color="white"
                 />
               </div>
-              <RentAntalya />
+              <RentVilla />
             </ContainerWrapper>
           </>
         )}
@@ -72,16 +71,16 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
 export async function getStaticProps() {
   const metaTags = {
     ru: {
-      title: 'Аренда квартиры в Анталии — Karayaka.ru: долгосрочно и посуточно без посредников',
+      title: 'Аренда виллы в Турции — Karayaka.ru: премиальное жилье у моря',
       description:
-        'Аренда квартиры в Анталии на сайте Karayaka.ru: проверенное жилье, честная цена в рублях, полное сопровождение российского агентства.',
+        'Аренда виллы в Турции на сайте Karayaka.ru: проверенное жилье по честной цене, полное юрсопровождение российского агентства и бронирование онлайн.',
       keywords:
         'индивидуальный подбор недвижимости, персональные предложения, недвижимость в Турции, недвижимость в России, помощь в поиске недвижимости',
     },
     en: {
-      title: 'Apartment Rentals in Antalya — Karayaka.ru: Long-Term and Daily, No Middlemen',
+      title: 'Villa Rentals in Turkey — Karayaka.ru: Premium Seaside Properties',
       description:
-        'Find apartment rentals in Antalya on Karayaka.ru: verified properties, fair prices, and full support from a Russian real estate agency.',
+        'Rent a villa in Turkey on Karayaka.ru: verified properties at fair prices, full legal support from a Russian agency, and online booking.',
       keywords:
         'personalized real estate selection, custom property offers, real estate in Turkey, real estate in Russia, property search assistance',
     },

@@ -43,7 +43,7 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
               },
               {
                 title: t('buyFlat.CEOText.title'),
-                link: 'buy-turkey',
+                link: 'flat-turkey',
                 image: `assets/images/search/ceo-buy-flat-turkey.jpg`,
               },
 

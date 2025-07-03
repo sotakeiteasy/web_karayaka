@@ -40,17 +40,17 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
             pages={[
               {
                 title: t('antalyaRent.CEOText.title'),
-                link: 'rent-antalya',
+                link: 'flat-antalya',
                 image: `assets/images/search/ceo-rent-antalya.jpg`,
               },
               {
                 title: t('rentApartment.CEOText.title'),
-                link: 'rent-turkey',
+                link: 'flat-turkey',
                 image: `assets/images/search/ceo-rent-apartment.jpg`,
               },
               {
                 title: t('rentVilla.CEOText.title'),
-                link: 'rent-villa',
+                link: 'villa-turkey',
                 image: `assets/images/search/ceo-rent-villa.jpg`,
               },
             ]}

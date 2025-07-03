@@ -14,3 +14,18 @@
     left: 0;
   }
 }
+@media (width <= 900px) {
+  .imageContainer {
+    .textBackdrop {
+      backdrop-filter: brightness(55%) !important;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .imageContainer {
+    .textBackdrop {
+      backdrop-filter: brightness(50%) !important;
+    }
+  }
+}
