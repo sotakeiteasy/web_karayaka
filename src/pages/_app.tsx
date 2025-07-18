@@ -50,10 +50,11 @@ const montserrat = Montserrat({
 
 function App({ Component, pageProps }: AppProps) {
   const [Cookievisible, setCookieVisible] = useState(false);
-  const router = useRouter();
   const [showAlert, setShowAlert] = useState(false);
   const [query] = useLanguageQuery();
   const locale = (query?.lang as 'ru' | 'en') || 'ru';
+
+  const { asPath } = useRouter();
 
   useEffect(() => {
     if (window.LS_OK === false) {
@@ -69,16 +70,16 @@ function App({ Component, pageProps }: AppProps) {
     return () => clearTimeout(timer);
   }, []);
 
+  const url = new URL(`https://karayaka.ru${asPath}`);
+  url.searchParams.delete('lang');
+
   return (
     <div className={montserrat.className}>
       <Head>
-        <link rel="alternate" hrefLang="ru" href={`https://karayaka.ru${router.pathname}`} />
-        <link rel="alternate" hrefLang="en" href={`https://karayaka.ru${router.pathname}?lang=en`} />
-        <link rel="alternate" hrefLang="x-default" href={`https://karayaka.ru${router.pathname}`} />
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="utf-8" />
-        {!locale || (locale === 'ru' && <link rel="canonical" href={`https://karayaka.ru${router.pathname}`} />)}
+        <link rel="canonical" href={url.toString()} />
+        <meta name="robots" content="noarchive" />
       </Head>
       {/* Yandex.Metrika counter */}
       <script type="text/javascript">

@@ -7,7 +7,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const nextConfig = withBundleAnalyzer({
   reactStrictMode: true,
   output: 'export',
-  // trailingSlash: true,
+  trailingSlash: true,
+  generateBuildId: async () => {
+    return `build-${Date.now()}`;
+  },
   images: {
     unoptimized: true,
     remotePatterns: [

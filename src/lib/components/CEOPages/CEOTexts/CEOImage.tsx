@@ -10,7 +10,7 @@ export default function CEOImage({ imageSrc, title }: { imageSrc: string; title:
       <Image
         src={getImageUrl(imageSrc)}
         alt={t(title)}
-        title={t('buyFlat.CEOText.title')}
+        title={t(title)}
         width={900}
         height={400}
         style={{
