@@ -52,6 +52,7 @@
     
   },
   "blog": {
+    "header": "Our articles",
     "title": "Blog",
     "readMore": "Read More",
     "noPosts": "No posts available",

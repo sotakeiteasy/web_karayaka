@@ -7,6 +7,7 @@ import { getSortedPostsData } from '@/lib/server/blogServer';
 import { MetaTags, PostData } from '@/lib/types';
 import { ArticleCard, ContainerWrapper, Breadcrumbs } from '@/lib/components';
 import { blogScheme } from '@/lib/seo';
+import { Divider } from 'antd';
 
 export default function Blog({
   allBlogData,
@@ -55,6 +56,9 @@ export default function Blog({
       <main className={styles.main}>
         <ContainerWrapper width="standard" withMarginBottom={true}>
           <Breadcrumbs items={[{ href: '/blog', t: 'header.blog' }]} />
+          <Divider>
+            <h1 className={styles.header}>{t('blog.header')}</h1>
+          </Divider>
           <div className={styles.articles}>
             {posts.map(({ id, title, excerpt, date }: PostData) => (
               <ArticleCard key={id} id={id} title={title} date={date} excerpt={excerpt}></ArticleCard>

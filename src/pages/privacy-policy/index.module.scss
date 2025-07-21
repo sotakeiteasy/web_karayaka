@@ -13,13 +13,15 @@
     font-size: 1rem;
   }
 
-  p:first-of-type {
+  h1 {
+    margin-bottom: 1rem;
+    line-height: 1.6;
     font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 2rem;
   }
 
-  p:nth-of-type(2) {
+  p:nth-of-type(1) {
     font-size: 0.9rem;
     font-style: italic;
     margin-bottom: 3rem;
