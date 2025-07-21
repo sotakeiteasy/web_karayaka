@@ -1,0 +1,194 @@
+@use '@styles/variables' as *;
+.adsList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .adCard {
+    position: relative;
+    display: flex;
+    height: 300px;
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: $shadow;
+    min-height: 300px;
+
+    .adCardImage {
+      height: 100%;
+      width: 55%;
+      min-height: 300px;
+      background-color: aliceblue;
+      position: relative;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 300px;
+      }
+    }
+
+    a {
+      display: flex;
+      width: 45%;
+
+      .adCardDescription {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        padding: 15px;
+        max-height: 300px;
+
+        p {
+          display: flex;
+          align-items: center;
+          margin-left: -4px;
+          gap: 5px;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        .middleDescription {
+          font-size: 0.9rem;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          line-clamp: 4;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+        }
+
+        .upDescription {
+          .cardTitle {
+            font-size: 1.3rem;
+            line-height: 1.2;
+            text-transform: lowercase;
+            margin-bottom: 10px;
+            font-weight: 500;
+          }
+          p {
+            margin-bottom: 10px;
+          }
+          .cardTitle:first-letter {
+            text-transform: uppercase;
+          }
+        }
+
+        .bottomDescription {
+          align-self: flex-end;
+          color: #414141;
+
+          .cardPrice {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            font-weight: 500;
+            margin-left: auto;
+            p {
+              background-color: $white-text;
+            }
+          }
+
+          p.bottomLineDescription {
+            align-self: flex-end;
+            display: flex;
+            gap: 5px;
+            background-color: $light-gray-color;
+            padding: 3px 6px;
+            border-radius: 8px;
+            span {
+              display: flex;
+              padding-left: 5px;
+              gap: 2px;
+            }
+
+            span:not(span:first-of-type) {
+              border-left: 1px solid black;
+            }
+          }
+        }
+
+        h2 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.paginate {
+  list-style: none;
+  margin-top: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+  gap: 20px;
+  width: fit-content;
+  box-shadow: $shadow;
+  border-radius: 10px;
+
+  li {
+    a {
+      background-color: #e8e8e8;
+      padding: 8px 14px;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+
+  li.activePage {
+    color: $white-text;
+
+    a {
+      background-color: $primary-color;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .paginate {
+    margin-top: 15px;
+    width: fit-content;
+  }
+
+  .paginate li[class*='next'],
+  .paginate li[class*='previous'] {
+    display: none !important;
+  }
+
+  .adsList {
+    align-items: center;
+  }
+
+  .adCard {
+    flex-direction: column !important;
+    height: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+
+    .cardPrice {
+      margin-top: 15px;
+    }
+
+    .adCardImage {
+      width: 100% !important;
+      height: 250px !important;
+    }
+
+    a {
+      width: 100% !important;
+    }
+  }
+}
