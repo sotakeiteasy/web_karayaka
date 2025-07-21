@@ -262,14 +262,14 @@ export async function getStaticProps() {
     ru: {
       title: 'Скидки - Караяка | Подбор недвижимости под ваши требования',
       description:
-        'Свяжитесь с агентством Караяка. Наши представители в Турции и России готовы ответить на ваши вопросы и помочь с недвижимостью.',
+        'Специальные предложения и скидки на аренду и покупку недвижимости в Турции. Эксклюзивные акции от агентства Караяка для выгодных инвестиций в турецкую недвижимость.',
       keywords:
         'Караяка, связь с агентством, недвижимость Турция, недвижимость Россия, скидки, специальное предложение',
     },
     en: {
       title: 'Discounts - Karayaka | Personalized Real Estate Solutions',
       description:
-        'Get in touch with Karayaka. Our representatives in Turkey and Russia are ready to assist you with your real estate questions.',
+        'Special offers and discounts on real estate rental and purchase in Turkey. Exclusive deals from Karayaka agency for profitable investments in Turkish property.',
       keywords: 'Karayaka, real estate Turkey, real estate Russia, discounts, special offer',
     },
   };
