@@ -2,7 +2,7 @@ import styles from './id.module.scss';
 import { LanguageSwitcher, LinkWithLocale, useTranslation } from 'next-export-i18n';
 import { useLanguageQuery } from 'next-export-i18n';
 import Head from 'next/head';
-import { getImageUrl } from '@/lib/utils';
+import { createExcerpt, getImageUrl } from '@/lib/utils';
 import { getAllPostIds, getPostData, getSortedPostsData } from '@/lib/server/blogServer';
 import { MetaTags, LocalizedPostData, PostData } from '@/lib/types';
 
@@ -146,16 +146,18 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   for (const lang of languages) {
     allBlogData[lang] = await getSortedPostsData(lang);
   }
+  const ruExcerpt = postData.ru && postData.ru.contentHtml ? createExcerpt(postData.ru.contentHtml) : null;
+  const enExcerpt = postData.en && postData.en.contentHtml ? createExcerpt(postData.en.contentHtml) : null;
 
   const metaTags = {
     ru: {
       title: `${postData.ru!.title} - Блог Караяка`,
-      description: postData.ru?.excerpt ?? null,
+      description: ruExcerpt,
       keywords: 'блог о недвижимости, статьи о недвижимости, недвижимость в Турции, недвижимость в России',
     },
     en: {
       title: `${postData.en!.title} - Karayaka Blog`,
-      description: postData.en?.excerpt ?? null,
+      description: enExcerpt,
       keywords: 'real estate blog, real estate articles, property in Turkey, property in Russia',
     },
   };
