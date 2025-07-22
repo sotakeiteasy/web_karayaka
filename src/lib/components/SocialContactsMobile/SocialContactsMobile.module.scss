@@ -6,14 +6,19 @@
     position: fixed;
     z-index: 100;
     bottom: 20px;
-    left: 0;
-    width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     display: flex;
-    padding: 0px 15px;
+    padding: 0px;
     transform: translateY(100px);
     transition: all 0.3s ease;
-
+    &.left {
+      left: 0;
+      padding-left: 15px;
+    }
+    &.right {
+      right: 0;
+      padding-right: 15px;
+    }
     &.active {
       transform: translateY(0);
     }
@@ -34,7 +39,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: green; // белый фон
+      background-color: green;
       border-radius: 50%;
       width: fit-content;
       height: fit-content;

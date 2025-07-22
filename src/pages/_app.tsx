@@ -110,7 +110,8 @@ function App({ Component, pageProps }: AppProps) {
       </RateProvider>
       {showAlert && <LocalStorageAlert />}
       <CookieConsent visible={Cookievisible} setVisible={setCookieVisible} />
-      <SocialContactsMobile cookieVisible={Cookievisible} />
+      <SocialContactsMobile cookieVisible={Cookievisible} position="left" />
+      <SocialContactsMobile cookieVisible={Cookievisible} position="right" />
       <Footer />
     </div>
   );
