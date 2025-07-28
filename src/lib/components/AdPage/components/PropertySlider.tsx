@@ -51,7 +51,7 @@ export function PropertySlider({ ad }: { ad: Ad }) {
       }}
     >
       <Slider ref={sliderRef} {...settings}>
-        {ad.images.map((image, index) => (
+        {(ad.images.length > 0 ? ad.images : ['/logo.png']).map((image, index) => (
           <div key={index}>
             <Image src={getImageUrl(image)} alt={`Property image ${index + 1}`} width="100%" height={450} />
           </div>
