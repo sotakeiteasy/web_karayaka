@@ -53,6 +53,16 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
                 link: 'villa-turkey',
                 image: `assets/images/search/ceo-rent-villa.jpg`,
               },
+              {
+                title: t('villaAntalya.CEOText.title'),
+                link: 'villa-antalya',
+                image: `assets/images/search/ceo-villa-antalya.jpg`,
+              },
+              {
+                title: t('rentIstanbul.CEOText.title'),
+                link: 'rent-istanbul',
+                image: `assets/images/search/ceo-rent-istanbul.jpg`,
+              },
             ]}
             rootLink="/rent/"
           />

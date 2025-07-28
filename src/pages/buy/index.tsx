@@ -52,6 +52,31 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
                 link: 'property-istanbul',
                 image: `assets/images/search/ceo-property-istanbul.jpg`,
               },
+              {
+                title: t('flatsAlanya.CEOText.title'),
+                link: 'flats-alanya',
+                image: `assets/images/search/ceo-flats-alanya.jpg`,
+              },
+              {
+                title: t('propertyForResidence.CEOText.title'),
+                link: 'property-for-residence',
+                image: `assets/images/search/ceo-property-for-residence.jpg`,
+              },
+              {
+                title: t('flatForResidence.CEOText.title'),
+                link: 'flat-for-residence',
+                image: `assets/images/search/ceo-flat-for-residence.jpg`,
+              },
+              {
+                title: t('landInvestments.CEOText.title'),
+                link: 'land-investments',
+                image: `assets/images/search/ceo-land-investments.jpg`,
+              },
+              {
+                title: t('realEstateLawyer.CEOText.title'),
+                link: 'real-estate-lawyer',
+                image: `assets/images/search/ceo-real-estate-lawyer.jpg`,
+              },
             ]}
             rootLink="/buy/"
           />
