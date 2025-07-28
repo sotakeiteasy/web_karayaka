@@ -15,10 +15,17 @@ export async function getPageMeta() {
     { path: '/rent/flat-antalya', file: 'rent/flat-antalya/index' },
     { path: '/rent/flat-turkey', file: 'rent/flat-turkey/index' },
     { path: '/rent/villa-turkey', file: 'rent/villa-turkey/index' },
+    { path: '/rent/rent-istanbul', file: 'rent/rent-istanbul/index' },
+    { path: '/rent/villa-antalya', file: 'rent/villa-antalya/index' },
     { path: '/buy', file: 'buy/index' },
     { path: '/buy/flat-turkey', file: 'buy/flat-turkey/index' },
     { path: '/buy/property-antalya', file: 'buy/property-antalya/index' },
     { path: '/buy/property-istanbul', file: 'buy/property-istanbul/index' },
+    { path: '/buy/flat-for-residence', file: 'buy/flat-for-residence/index' },
+    { path: '/buy/flats-alanya', file: 'buy/flats-alanya/index' },
+    { path: '/buy/land-investments', file: 'buy/land-investments/index' },
+    { path: '/buy/property-for-residence', file: 'buy/property-for-residence/index' },
+    { path: '/buy/property-for-residence', file: 'buy/property-for-residence/index' },
   ];
 
   for (const { path, file } of staticPages) {
@@ -38,6 +45,11 @@ export async function getPageMeta() {
     'article8',
     'article9',
     'article10',
+    'article11',
+    'article12',
+    'article13',
+    'article14',
+    'article15',
   ];
   for (const id of blogIds) {
     const { getStaticProps } = await import('@/pages/blog/[id]');
