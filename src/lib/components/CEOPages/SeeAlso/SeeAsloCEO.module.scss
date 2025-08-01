@@ -22,7 +22,8 @@
 
 .articleLink {
   flex: 1 1 calc(33.333% - 20px);
-  max-width: calc(33.333% - 20px);
+  height: 300px;
+  max-width: max(calc(33.333% - 20px), 100%);
   box-sizing: border-box;
   text-align: center;
   position: relative;
@@ -31,7 +32,8 @@
 .articleImage {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: 100%;
+  // aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: 10px;
   border: none;

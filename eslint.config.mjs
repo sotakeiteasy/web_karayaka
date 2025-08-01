@@ -26,6 +26,16 @@ const eslintConfig = [
       'eol-last': ['warn', 'always'],
     },
   },
+  {
+    files: ['**/*.test.ts', '**/*.spec.ts'],
+    env: {
+      jest: true,
+    },
+    plugins: {
+      jest: (await import('eslint-plugin-jest')).default,
+    },
+    extends: ['plugin:jest/recommended'],
+  },
 ];
 
 export default eslintConfig;
