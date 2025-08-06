@@ -18,7 +18,7 @@ export default function FlatsAlaniaPage({ metaTags }: { metaTags: MetaTags }) {
   const locale = (query?.lang as 'ru' | 'en') || 'ru';
   const meta = metaTags[locale];
   const { filteredAds } = useSearchFilters(SearchType.Buy);
-  const ads = filteredAds.filter((ad) => ad.location.city === 'Alanya' && ad.propertyType === 'apartment');
+  const ads = filteredAds.filter((ad) => ad.location.district === 'Alanya' && ad.propertyType === 'apartment');
   useEffect(() => {
     if (locale !== 'ru') {
       router.replace('/buy', undefined, { locale });
