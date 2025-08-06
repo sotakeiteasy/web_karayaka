@@ -6,15 +6,19 @@ import { useRouter } from 'next/router';
 import CEOImage from '@/lib/components/CEOPages/CEOTexts/CEOImage';
 import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
 import Head from 'next/head';
-import { MetaTags } from '@/lib/types';
+import { MetaTags, SearchType } from '@/lib/types';
 import { jsonLd } from '@/lib/seo';
 import { FullContacts } from '@/lib/components/ContactsBlock/FullContacts';
+import { PaginatedAds } from '@/lib/components/Search/PaginatedAds/PaginatedAds';
+import { useSearchFilters } from '@/lib/hooks';
 
 export default function RentIstanbulPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
   const locale = (query?.lang as 'ru' | 'en') || 'ru';
   const meta = metaTags[locale];
   const router = useRouter();
+  const { filteredAds } = useSearchFilters(SearchType.Rent);
+  const ads = filteredAds.filter((ad) => ad.location.city === 'Istanbul');
   useEffect(() => {
     if (locale !== 'ru') {
       router.replace('/rent', undefined, { locale });
@@ -60,6 +64,7 @@ export default function RentIstanbulPage({ metaTags }: { metaTags: MetaTags }) {
                   color="white"
                 />
               </div>
+              {ads.length > 0 && <PaginatedAds itemsPerPage={8} ads={ads} />}
               <RentIstanbul />
               <FullContacts />
             </ContainerWrapper>

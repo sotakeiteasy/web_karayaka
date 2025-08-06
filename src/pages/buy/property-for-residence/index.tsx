@@ -5,15 +5,20 @@ import { useLanguageQuery } from 'next-export-i18n';
 import PropertyForResidence from '@/lib/components/CEOPages/CEOTexts/PropertyForResidence';
 import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
 import Head from 'next/head';
-import { MetaTags } from '@/lib/types';
+import { MetaTags, SearchType } from '@/lib/types';
 import { jsonLd } from '@/lib/seo';
 import CEOImage from '@/lib/components/CEOPages/CEOTexts/CEOImage';
 import { FullContacts } from '@/lib/components/ContactsBlock/FullContacts';
+import { PaginatedAds } from '@/lib/components/Search/PaginatedAds/PaginatedAds';
+import { useSearchFilters } from '@/lib/hooks';
+
 export default function PropertyForResidencePage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
   const router = useRouter();
   const locale = (query?.lang as 'ru' | 'en') || 'ru';
   const meta = metaTags[locale];
+  const { filteredAds } = useSearchFilters(SearchType.Buy);
+  const ads = filteredAds.filter((ad) => ad.location.country === 'Turkey' && ad.price.try && ad.price.try > 16500000);
   useEffect(() => {
     if (locale !== 'ru') {
       router.replace('/buy', undefined, { locale });
@@ -63,6 +68,7 @@ export default function PropertyForResidencePage({ metaTags }: { metaTags: MetaT
                   color="white"
                 />
               </div>
+              {ads.length > 0 && <PaginatedAds itemsPerPage={8} ads={ads} />}
               <PropertyForResidence />
               <FullContacts />
             </ContainerWrapper>

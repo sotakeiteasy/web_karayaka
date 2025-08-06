@@ -949,10 +949,7 @@
     "floor": null,
     "floorInHouse": null,
     "parking": null,
-    "images": [
-      "assets/images/listings/1040/1.png",
-      "assets/images/listings/1040/2.png"
-    ]
+    "images": ["assets/images/listings/1040/1.png", "assets/images/listings/1040/2.png"]
   },
   {
     "id": "1041",
@@ -1399,10 +1396,7 @@
     "floor": 1,
     "floorInHouse": 7,
     "parking": "both",
-    "images": [
-      "assets/images/listings/1076/1.png",
-      "assets/images/listings/1076/2.png"
-    ]
+    "images": ["assets/images/listings/1076/1.png", "assets/images/listings/1076/2.png"]
   },
   {
     "id": "1077",
@@ -1434,10 +1428,7 @@
     "floor": 6,
     "floorInHouse": 7,
     "parking": "both",
-    "images": [
-      "assets/images/listings/1077/1.png",
-      "assets/images/listings/1077/2.png"
-    ]
+    "images": ["assets/images/listings/1077/1.png", "assets/images/listings/1077/2.png"]
   },
   {
     "id": "1078",
@@ -1469,10 +1460,7 @@
     "floor": 13,
     "floorInHouse": 13,
     "parking": "both",
-    "images": [
-      "assets/images/listings/1078/1.png",
-      "assets/images/listings/1078/2.png"
-    ]
+    "images": ["assets/images/listings/1078/1.png", "assets/images/listings/1078/2.png"]
   },
   {
     "id": "1079",
@@ -1504,10 +1492,7 @@
     "floor": 3,
     "floorInHouse": 26,
     "parking": "both",
-    "images": [
-      "assets/images/listings/1079/1.png",
-      "assets/images/listings/1079/2.png"
-    ]
+    "images": ["assets/images/listings/1079/1.png", "assets/images/listings/1079/2.png"]
   },
   {
     "id": "1080",
@@ -1539,10 +1524,7 @@
     "floor": 25,
     "floorInHouse": 26,
     "parking": "both",
-    "images": [
-      "assets/images/listings/1080/1.png",
-      "assets/images/listings/1080/2.png"
-    ]
+    "images": ["assets/images/listings/1080/1.png", "assets/images/listings/1080/2.png"]
   },
   {
     "id": "1081",
@@ -1574,10 +1556,7 @@
     "floor": 25,
     "floorInHouse": 25,
     "parking": "open",
-    "images": [
-      "assets/images/listings/1081/1.png",
-      "assets/images/listings/1081/2.png"
-    ]
+    "images": ["assets/images/listings/1081/1.png", "assets/images/listings/1081/2.png"]
   },
   {
     "id": "1082",
@@ -3445,8 +3424,8 @@
     "number": null,
     "info": null,
     "description": {
-      "ru": "Located in a highly accessible and central area, this apartment is ideal for families with children. 🔹 Offered fully furnished, but can also be discussed unfurnished upon request. 🔹 All furniture and appliances are top quality and custom-designed with a modern aesthetic. 🔹 A perfect combination of comfort and investment potential!",
-      "en": "Квартира расположена в центральной части города, в районе с развитой инфраструктурой и благоприятной средой для семей с детьми. 🔹 Продается с мебелью, но возможно обсуждение покупки без мебели. 🔹 Вся мебель и техника премиум-класса, выполнены по индивидуальному дизайну. 🔹 Отличный вариант для комфортной жизни или выгодного вложения!"
+      "ru": "Квартира расположена в центральной части города, в районе с развитой инфраструктурой и благоприятной средой для семей с детьми. 🔹 Продается с мебелью, но возможно обсуждение покупки без мебели. 🔹 Вся мебель и техника премиум-класса, выполнены по индивидуальному дизайну. 🔹 Отличный вариант для комфортной жизни или выгодного вложения!",
+      "en": "Located in a highly accessible and central area, this apartment is ideal for families with children. 🔹 Offered fully furnished, but can also be discussed unfurnished upon request. 🔹 All furniture and appliances are top quality and custom-designed with a modern aesthetic. 🔹 A perfect combination of comfort and investment potential!"
     },
     "price": {
       "try": 17000000,

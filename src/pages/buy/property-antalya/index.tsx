@@ -5,10 +5,12 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { Breadcrumbs, ContainerWrapper } from '@/lib/components';
 import Head from 'next/head';
-import { MetaTags } from '@/lib/types';
+import { MetaTags, SearchType } from '@/lib/types';
 import { jsonLd } from '@/lib/seo';
 import CEOImage from '@/lib/components/CEOPages/CEOTexts/CEOImage';
 import { FullContacts } from '@/lib/components/ContactsBlock/FullContacts';
+import { PaginatedAds } from '@/lib/components/Search/PaginatedAds/PaginatedAds';
+import { useSearchFilters } from '@/lib/hooks';
 
 export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
   //   const { t } = useTranslation();
@@ -16,6 +18,8 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
   const locale = (query?.lang as 'ru' | 'en') || 'ru';
   const meta = metaTags[locale];
   const router = useRouter();
+  const { filteredAds } = useSearchFilters(SearchType.Buy);
+  const ads = filteredAds.filter((ad) => ad.location.city === 'Antalya');
   useEffect(() => {
     if (locale !== 'ru') {
       router.replace('/buy', undefined, { locale });
@@ -61,6 +65,7 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
                   color="white"
                 />
               </div>
+              {ads.length > 0 && <PaginatedAds itemsPerPage={8} ads={ads} />}
               <PropertyAntalya />
               <FullContacts />
             </ContainerWrapper>

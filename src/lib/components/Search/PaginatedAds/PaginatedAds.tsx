@@ -32,7 +32,7 @@ function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'e
           <div className={styles.adCardImage}>
             <CustomSlider ad={ad} locale={locale} />
           </div>
-          <LinkWithLocale href={`${ad.type}/${ad.id}/`}>
+          <LinkWithLocale href={`/${ad.type}/${ad.id}/`}>
             <div className={styles.adCardDescription}>
               <div className={styles.upDescription}>
                 <h2 className={styles.cardTitle}>
