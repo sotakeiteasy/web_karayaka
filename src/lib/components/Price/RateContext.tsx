@@ -2,7 +2,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { getTryRate } from '@/lib/utils/priceConversion/getTryRate';
 
-interface RateContextValue {
+export interface RateContextValue {
   rate: number | null;
   date: string | null;
   loading: boolean;

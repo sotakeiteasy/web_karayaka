@@ -1,13 +1,14 @@
 import styles from './index.module.scss';
 import dynamic from 'next/dynamic';
 import { useTranslation, useLanguageQuery } from 'next-export-i18n';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import { PaginatedAds } from './PaginatedAds/PaginatedAds';
 import { LabelInput } from './LabelInput/LabelInput';
 import { FilterSelect } from './FilterSelect/FilterSelect';
 
 import { SelectOption, SearchType } from '@/lib/types';
 import { useSearchFilters, useFilterOptions } from '@/lib/hooks';
+import { RateContext } from '../Price/RateContext';
 
 // problem with static export - https://github.com/JedWatson/react-select/issues/5459
 const Select = dynamic(() => import('react-select'), {
@@ -19,7 +20,8 @@ export function Search({ type }: { type: SearchType }) {
   const [query] = useLanguageQuery();
   const lang = (query?.lang as 'ru' | 'en') || 'ru';
   const [isFilerAppliedOnce, setIsFilterApplied] = useState(false);
-
+  const rateContext = useContext(RateContext);
+  const rate = rateContext?.rate;
   const {
     filter,
     appliedFilters,
@@ -29,7 +31,7 @@ export function Search({ type }: { type: SearchType }) {
     handleFilterChange,
     applyFilters,
     resetFilters,
-  } = useSearchFilters(type);
+  } = useSearchFilters(type, rate);
 
   const {
     districtOptions,
@@ -72,6 +74,8 @@ export function Search({ type }: { type: SearchType }) {
     setIsFilterApplied(true);
     localStorage.setItem('isFilterApplied', 'true');
   }
+
+  if (rate == null) return null;
 
   return (
     <main className={styles.main}>

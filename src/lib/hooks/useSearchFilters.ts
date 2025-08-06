@@ -1,16 +1,20 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { Ad, Filter, SearchType } from '@/lib/types';
 import { filterAds } from '@/lib/utils';
 import { FILTER_MAPPINGS } from '@/lib/constants/filterOptions';
 import { CountryType } from '../types/FilterTypes';
+import { RateContext } from '../components/Price/RateContext';
+import { useLanguageQuery } from 'next-export-i18n';
 
-export function useSearchFilters(offerType: SearchType) {
+export function useSearchFilters(offerType: SearchType, rate?: number | null | undefined) {
   const router = useRouter();
   const [filter, setFilter] = useState<Filter>({ type: offerType, sortOption: 'price-cheap' });
   const [appliedFilters, setAppliedFilters] = useState({});
   const [searchText, setSearchText] = useState('');
   const [filteredAds, setFilteredAds] = useState<Ad[]>([]);
+  const [query] = useLanguageQuery();
+  const locale = query?.lang as 'ru' | 'en';
 
   const sortAds = (option: string, adsToSort: Ad[]) => {
     const sortedAds = [...adsToSort];
@@ -32,7 +36,7 @@ export function useSearchFilters(offerType: SearchType) {
 
   const updateResults = useCallback(
     (currentFilter: Filter, skipUrlUpdate = false) => {
-      const ads = filterAds(currentFilter);
+      const ads = filterAds(currentFilter, rate, locale);
       setFilteredAds(sortAds(currentFilter.sortOption, ads));
 
       if (!skipUrlUpdate) {
@@ -62,7 +66,7 @@ export function useSearchFilters(offerType: SearchType) {
         router.replace({ pathname: router.pathname, query }, undefined);
       }
     },
-    [router]
+    [router, rate, locale] // Добавляем rate и locale в зависимости
   );
 
   // Update if choose another type (buy/rent)
@@ -111,7 +115,7 @@ export function useSearchFilters(offerType: SearchType) {
 
     setFilter(initialFilter);
     updateResults(initialFilter, true);
-  }, [router.isReady, router.query, updateResults, offerType]);
+  }, [router.isReady, router.query, updateResults, offerType, rate]); // Добавляем rate в зависимости
 
   const handleFilterChange = (name: string, value: string | number | string[] | undefined) => {
     const updatedFilter = { ...filter, [name]: value };

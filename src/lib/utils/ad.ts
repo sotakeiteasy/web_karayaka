@@ -21,7 +21,7 @@ export function getAdById(id: string): Ad | undefined {
   return ads.find((ad) => ad.id === id);
 }
 
-export function filterAds(filters: Filter): Ad[] {
+export function filterAds(filters: Filter, rate: number | null | undefined, locale: 'ru' | 'en'): Ad[] {
   if (Object.keys(filters).length === 0) {
     return ads;
   }
@@ -29,12 +29,24 @@ export function filterAds(filters: Filter): Ad[] {
   return ads.filter((ad) => {
     if (filters.type && ad.type !== filters.type) return false;
 
+    // see PriceRub for conversion calculation
+    const priceRub =
+      !ad.price.rub && ad.price.try && rate ? Math.round((ad.price.try * rate) / 1000) * 1000 : ad.price.rub || 0;
     if (filters.minPrice || filters.maxPrice) {
-      const adPriceRub = ad.price.rub || 0;
+      // const adPriceRub = ad.price.rub || 0;
       const adPriceTry = ad.price.try || 0;
 
-      const passesMinPrice = !filters.minPrice || (adPriceRub >= filters.minPrice && adPriceTry >= filters.minPrice);
-      const passesMaxPrice = !filters.maxPrice || (adPriceRub <= filters.maxPrice && adPriceTry <= filters.maxPrice);
+      const passesMinPrice =
+        locale === 'ru'
+          ? !filters.minPrice || priceRub >= filters.minPrice
+          : !filters.minPrice || (ad.price.rub && ad.price.rub >= filters.minPrice) || adPriceTry >= filters.minPrice;
+
+      const passesMaxPrice =
+        locale === 'ru'
+          ? !filters.maxPrice || priceRub <= filters.maxPrice
+          : !filters.maxPrice ||
+            (ad.price.rub && ad.price.rub <= filters.maxPrice) ||
+            (ad.price.try && ad.price.try <= filters.maxPrice);
 
       if (!passesMinPrice || !passesMaxPrice) return false;
     }

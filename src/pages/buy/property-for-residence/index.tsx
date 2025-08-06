@@ -18,6 +18,7 @@ export default function PropertyForResidencePage({ metaTags }: { metaTags: MetaT
   const locale = (query?.lang as 'ru' | 'en') || 'ru';
   const meta = metaTags[locale];
   const { filteredAds } = useSearchFilters(SearchType.Buy);
+  // price is more than 16500000 as property for residence (внж) should cost at least 400000 dollars
   const ads = filteredAds.filter((ad) => ad.location.country === 'Turkey' && ad.price.try && ad.price.try > 16500000);
   useEffect(() => {
     if (locale !== 'ru') {
