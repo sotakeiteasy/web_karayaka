@@ -949,7 +949,10 @@
     "floor": null,
     "floorInHouse": null,
     "parking": null,
-    "images": ["assets/images/listings/1040/1.png", "assets/images/listings/1040/2.png"]
+    "images": [
+      "assets/images/listings/1040/1.png",
+      "assets/images/listings/1040/2.png"
+    ]
   },
   {
     "id": "1041",
@@ -1396,7 +1399,10 @@
     "floor": 1,
     "floorInHouse": 7,
     "parking": "both",
-    "images": ["assets/images/listings/1076/1.png", "assets/images/listings/1076/2.png"]
+    "images": [
+      "assets/images/listings/1076/1.png",
+      "assets/images/listings/1076/2.png"
+    ]
   },
   {
     "id": "1077",
@@ -1428,7 +1434,10 @@
     "floor": 6,
     "floorInHouse": 7,
     "parking": "both",
-    "images": ["assets/images/listings/1077/1.png", "assets/images/listings/1077/2.png"]
+    "images": [
+      "assets/images/listings/1077/1.png",
+      "assets/images/listings/1077/2.png"
+    ]
   },
   {
     "id": "1078",
@@ -1460,7 +1469,10 @@
     "floor": 13,
     "floorInHouse": 13,
     "parking": "both",
-    "images": ["assets/images/listings/1078/1.png", "assets/images/listings/1078/2.png"]
+    "images": [
+      "assets/images/listings/1078/1.png",
+      "assets/images/listings/1078/2.png"
+    ]
   },
   {
     "id": "1079",
@@ -1492,7 +1504,10 @@
     "floor": 3,
     "floorInHouse": 26,
     "parking": "both",
-    "images": ["assets/images/listings/1079/1.png", "assets/images/listings/1079/2.png"]
+    "images": [
+      "assets/images/listings/1079/1.png",
+      "assets/images/listings/1079/2.png"
+    ]
   },
   {
     "id": "1080",
@@ -1524,7 +1539,10 @@
     "floor": 25,
     "floorInHouse": 26,
     "parking": "both",
-    "images": ["assets/images/listings/1080/1.png", "assets/images/listings/1080/2.png"]
+    "images": [
+      "assets/images/listings/1080/1.png",
+      "assets/images/listings/1080/2.png"
+    ]
   },
   {
     "id": "1081",
@@ -1556,7 +1574,10 @@
     "floor": 25,
     "floorInHouse": 25,
     "parking": "open",
-    "images": ["assets/images/listings/1081/1.png", "assets/images/listings/1081/2.png"]
+    "images": [
+      "assets/images/listings/1081/1.png",
+      "assets/images/listings/1081/2.png"
+    ]
   },
   {
     "id": "1082",
@@ -3424,8 +3445,8 @@
     "number": null,
     "info": null,
     "description": {
-      "ru": "Квартира расположена в центральной части города, в районе с развитой инфраструктурой и благоприятной средой для семей с детьми. 🔹 Продается с мебелью, но возможно обсуждение покупки без мебели. 🔹 Вся мебель и техника премиум-класса, выполнены по индивидуальному дизайну. 🔹 Отличный вариант для комфортной жизни или выгодного вложения!",
-      "en": "Located in a highly accessible and central area, this apartment is ideal for families with children. 🔹 Offered fully furnished, but can also be discussed unfurnished upon request. 🔹 All furniture and appliances are top quality and custom-designed with a modern aesthetic. 🔹 A perfect combination of comfort and investment potential!"
+      "ru": "Located in a highly accessible and central area, this apartment is ideal for families with children. 🔹 Offered fully furnished, but can also be discussed unfurnished upon request. 🔹 All furniture and appliances are top quality and custom-designed with a modern aesthetic. 🔹 A perfect combination of comfort and investment potential!",
+      "en": "Квартира расположена в центральной части города, в районе с развитой инфраструктурой и благоприятной средой для семей с детьми. 🔹 Продается с мебелью, но возможно обсуждение покупки без мебели. 🔹 Вся мебель и техника премиум-класса, выполнены по индивидуальному дизайну. 🔹 Отличный вариант для комфортной жизни или выгодного вложения!"
     },
     "price": {
       "try": 17000000,
@@ -4066,6 +4087,605 @@
       "assets/images/listings/1155/5.jpg",
       "assets/images/listings/1155/6.jpg",
       "assets/images/listings/1155/7.jpg"
+    ]
+  },
+  {
+    "id": "1156",
+    "publicationDate": "2025-08-06 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "Полностью меблированная квартира 2+1 в аренду, на центральной улице, рядом с автобусными маршрутами! Предлагается в аренду уютная и просторная квартира 2+1, расположенная на 3-м этаже 5-этажного здания, всего в 4 года постройки. Идеальный вариант как для краткосрочной, так и для долгосрочной аренды! 🔹 Общая площадь: 120 м² 🔹 Жилая площадь: 100 м² 🔹 Планировка: 2 спальни и гостиная 🔹 Отопление: кондиционер 🔹 Кухня: отдельная (закрытого типа) 🔹 Балкон: есть 🔹 Санузел: 1 🔹 Лифт: имеется 🔹 Парковка: открытая 🔹 Мебель: полностью меблирована 🔹 Расположение: на главной дороге, удобный доступ к общественному транспорту (маршруты автобусов и маршруток) Не упустите шанс жить с комфортом и в отличном районе! Свяжитесь с нами для получения дополнительной информации и организации просмотра.",
+      "en": "Fully Furnished 2+1 Apartment for Rent on the Main Road with Public Transport Access! A spacious and modern 2+1 apartment is available for both short-term and long-term rental. Located on the 3rd floor of a 5-storey building that’s only 4 years old. Ideal for comfortable city living! 🔹 Gross Area: 120 m² 🔹 Net Area: 100 m² 🔹 Layout: 2 bedrooms + 1 living room 🔹 Heating: Air conditioning 🔹 Kitchen: Closed-type 🔹 Balcony: Yes 🔹 Bathroom: 1 🔹 Elevator: Available 🔹 Parking: Open parking area 🔹 Furnished: Fully furnished 🔹 Location: On the main road, directly on public bus and minibus routes Don’t miss this great opportunity to rent a fully equipped home in a prime location! Contact us now for more details or to schedule a viewing."
+    },
+    "price": {
+      "try": 42000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Antalya",
+      "district": "Muratpasa"
+    },
+    "type": "rent",
+    "propertyType": "apartment",
+    "area": 100,
+    "rooms": "2+1",
+    "bathroom": 1,
+    "age": null,
+    "situation": "empty",
+    "floor": 3,
+    "floorInHouse": 4,
+    "parking": "open",
+    "images": [
+      "assets/images/listings/1156/1.jpg",
+      "assets/images/listings/1156/2.jpg",
+      "assets/images/listings/1156/3.jpg",
+      "assets/images/listings/1156/4.jpg",
+      "assets/images/listings/1156/5.jpg",
+      "assets/images/listings/1156/6.jpg",
+      "assets/images/listings/1156/7.jpg"
+    ]
+  },
+  {
+    "id": "1157",
+    "publicationDate": "2025-08-05 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "Полностью меблированная квартира 2+1 в аренду рядом с Международной школой в Москве! Сдаётся уютная квартира 2+1 с новой мебелью и бытовой техникой. Идеальна для комфортного проживания, как на короткий, так и на длительный срок. 📍 Отличное расположение — за зданием Международной школы в Москве 🚍 На главной дороге, рядом с маршрутами общественного транспорта 🏖️ До моря и аэропорта — всего 10–15 минут 🏢 Новое здание с внешней теплоизоляцией 🌞 Есть солнечный водонагреватель (гюнысы) и электрический бойлер 🛋️ Полностью меблирована, всё новое 🚗 Открытая парковка 📦 Закрытая кухня 🛁 1 ванная комната 🛗 Лифт в здании 🌿 Балкон + крыльцо (кранклез) Свяжитесь с нами для получения подробной информации и организации просмотра!",
+      "en": "Fully Furnished 2+1 Apartment for Rent Behind the Private International School in Moscow! A modern and cozy apartment with brand new furniture and appliances, available for both short- and long-term rent. 📍 Prime location – just behind the Private International School of Moscow 🚍 On the main road, close to bus and minibus routes 🌊 Only 10–15 minutes to the sea and the airport 🏢 New building with exterior insulation 🌞 Equipped with solar water heater and electric boiler 🛋️ Fully furnished with all new items 🚗 Open parking available 🍽️ Closed kitchen 🛁 1 bathroom 🛗 Elevator in the building 🌿 Balcony + small porch (cranklez style space) Contact us now to arrange a viewing or get more information!"
+    },
+    "price": {
+      "try": 24000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Antalya",
+      "district": "Muratpasa"
+    },
+    "type": "rent",
+    "propertyType": "apartment",
+    "area": 55,
+    "rooms": "1+1",
+    "bathroom": 1,
+    "age": null,
+    "situation": "empty",
+    "floor": 1,
+    "floorInHouse": 3,
+    "parking": "open",
+    "images": [
+      "assets/images/listings/1157/1.jpg",
+      "assets/images/listings/1157/2.jpg",
+      "assets/images/listings/1157/3.jpg",
+      "assets/images/listings/1157/4.jpg",
+      "assets/images/listings/1157/5.jpg",
+      "assets/images/listings/1157/6.jpg",
+      "assets/images/listings/1157/7.jpg",
+      "assets/images/listings/1157/8.jpg"
+    ]
+  },
+  {
+    "id": "1158",
+    "publicationDate": "2025-08-02 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "Центральная меблированная квартира 2+1 в Анталье, район Согуксу – рядом с больницей и налоговой! Сдаётся уютная и просторная квартира 2+1 с новой мебелью и всей необходимой бытовой техникой. Подходит для краткосрочной и долгосрочной аренды. 📍 Центральное расположение в районе Согуксу, Анталья 🏥 5 минут до Государственной больницы и налоговой инспекции 🏖️ 10–15 минут до моря и аэропорта 🚍 На главной дороге, рядом с автобусными маршрутами 🏢 Новое здание с внешней теплоизоляцией 🔹 Общая площадь: 120 м² | Жилая площадь: 100 м² 🛋️ Планировка: 2 спальни + гостиная 🌬️ Отопление: 3 кондиционера 🌞 Есть солнечный водонагреватель и электрический бойлер 🍽️ Отдельная кухня: природный газ, встроенная плита, микроволновка, стиральная и посудомоечная машины 🪟 Балкон + небольшая терраса (крыльцо) 🛗 Лифт 🚗 Открытая парковка 🧳 Просторный встроенный шкаф в коридоре 🛁 1 ванная комната 📦 Полностью меблирована, всё новое 📞 Свяжитесь с нами прямо сейчас, чтобы записаться на просмотр!",
+      "en": "Fully Furnished 2+1 Apartment in Central Antalya – Soğuksu Area, Close to Hospital and Tax Office! A modern and spacious 2+1 apartment located in a central area of Antalya, ideal for both short-term and long-term stays. 📍 Prime location in Soğuksu – Antalya city center 🏥 Only 5 minutes to the public hospital and tax office 🌊 10–15 minutes to the sea and airport 🚍 Located on the main road with access to public transport 🏢 New building with external thermal insulation 🔹 Gross Area: 120 m² | Net Area: 100 m² 🛋️ Layout: 2 bedrooms + living room 🌬️ Air conditioning (3 units) for heating and cooling 🌞 Equipped with solar water heater and electric boiler 🍽️ Closed kitchen with natural gas line, built-in stove, microwave, washing machine & dishwasher 🌿 Balcony and small porch (cranklez style) 🛗 Elevator 🚗 Open parking 🧳 Large built-in storage closet in the hallway 🛁 1 bathroom 📦 Fully furnished with all new furniture and appliances 📞 Contact us now to schedule a viewing!"
+    },
+    "price": {
+      "try": 35000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Antalya",
+      "district": "Muratpasa"
+    },
+    "type": "rent",
+    "propertyType": "apartment",
+    "area": 115,
+    "rooms": "3+1",
+    "bathroom": 1,
+    "age": null,
+    "situation": "empty",
+    "floor": 2,
+    "floorInHouse": 5,
+    "parking": "open",
+    "images": [
+      "assets/images/listings/1158/1.jpg",
+      "assets/images/listings/1158/10.jpg",
+      "assets/images/listings/1158/11.jpg",
+      "assets/images/listings/1158/12.jpg",
+      "assets/images/listings/1158/2.jpg",
+      "assets/images/listings/1158/3.jpg",
+      "assets/images/listings/1158/4.jpg",
+      "assets/images/listings/1158/5.jpg",
+      "assets/images/listings/1158/6.jpg",
+      "assets/images/listings/1158/7.jpg",
+      "assets/images/listings/1158/8.jpg",
+      "assets/images/listings/1158/9.jpg"
+    ]
+  },
+  {
+    "id": "1159",
+    "publicationDate": "2025-07-29 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "Полностью меблированная квартира 2+1 в Ларе, район Шириньялы — 50 м до моря! Новый и чистый дом! Предлагается в аренду светлая, просторная и стильная квартира 2+1 с качественной техникой и мебелью, расположенная всего в 50 метрах от моря — прямо перед домом оборудованный спуск к воде! 📍 Центральное расположение в Шириньялы (Лара) 🛍️ Пешая доступность до всех супермаркетов (Carrefour, Migros, Şok, A101), кафе, ресторанов и пляжей 🏥 Медицинский центр — 5 минут пешком 🏖️ Akra Barut Hotel — 15 минут пешком ✈️ Аэропорт — 20 минут на автомобиле 🔹 Планировка: 2 спальни + гостиная 🔹 Площадь: 115 м² 🔹 Кухня: американская (открытая) 🔹 Этаж: 1-й 🔹 Ванная: 1 (душевая кабина) 🔹 Отопление и охлаждение: 2 кондиционера Daikin (18.000 BTU в зале, 12.000 BTU в спальне) 🔹 Газовое отопление: центральное, активное 🔹 Бытовая техника: Стиральная машина Холодильник Samsung Варочная панель Franke (газовая, стеклокерамика) Духовка Samsung Телевизор Samsung 🔹 Кухонная утварь: вся необходимая посуда и принадлежности (тарелки, кастрюли, ножи, вилки, чаши и т.д.) 🔹 Постельное белье и полотенца включены 📶 Интернет, кабельное ТВ, горячая вода и газовое отопление — ВКЛЮЧЕНО в арендную плату! 💡 Электричество и вода оплачиваются отдельно 💰 Ежемесячная плата за обслуживание (айдат): 400 TL 📅 Оплата аренды производится за 1 год ВПЕРЕД 📞 Свяжитесь с нами для просмотра — идеальный вариант для тех, кто ищет комфорт и качество в центре Антальи!",
+      "en": "Fully Furnished 2+1 Apartment in Central Lara – Şirinyalı! Only 50 meters to the Sea! Brand New and Spotless! A bright and modern 2+1 apartment for rent in the heart of Lara, just 50 meters from direct sea access! Perfect location for comfortable long-term living in Antalya. 📍 Located in Şirinyalı, Lara – Central and Walkable 🛍️ Walking distance to Carrefour, Migros, Şok, A101, cafes, restaurants, and all major beaches 🏥 5 min walk to Medikal Hospital 🏨 15 min walk to Akra Barut Hotel ✈️ 20 min drive to Antalya Airport 🔹 Layout: 2 bedrooms + living room 🔹 Area: 115 m² 🔹 Kitchen: Open-plan (American style) 🔹 Floor: 1st 🔹 Bathroom: 1 with glass shower cabin 🔹 Heating/Cooling: 2 Daikin air conditioners (18,000 BTU in living room, 12,000 BTU in master bedroom) 🔹 Natural Gas Radiator Heating: Fully operational and installed 🔹 Appliances: Samsung refrigerator Franke gas ceramic hob Samsung oven Samsung TV Washing machine 🔹 Kitchenware: All necessary utensils included (plates, pots, forks, knives, bowls, etc.) 🔹 Linens and Towels Provided 📶 Internet, cable TV, hot water, and gas heating — INCLUDED in the rent 💡 Electricity & water are billed separately 💰 Maintenance (aidat): 400 TL/month 📅 Full 1-year rent must be paid upfront 📞 Contact us now to arrange a viewing! This is a rare opportunity to live by the sea in a clean, fully equipped apartment in one of Antalya’s most sought-after locations!"
+    },
+    "price": {
+      "try": 65000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Antalya",
+      "district": "Muratpasa"
+    },
+    "type": "rent",
+    "propertyType": "apartment",
+    "area": 115,
+    "rooms": "2+1",
+    "bathroom": 1,
+    "age": null,
+    "situation": "empty",
+    "floor": 2,
+    "floorInHouse": 4,
+    "parking": "open",
+    "images": [
+      "assets/images/listings/1159/1.jpg",
+      "assets/images/listings/1159/10.jpg",
+      "assets/images/listings/1159/11.jpg",
+      "assets/images/listings/1159/2.jpg",
+      "assets/images/listings/1159/3.jpg",
+      "assets/images/listings/1159/4.jpg",
+      "assets/images/listings/1159/5.jpg",
+      "assets/images/listings/1159/6.jpg",
+      "assets/images/listings/1159/7.jpg",
+      "assets/images/listings/1159/8.jpg",
+      "assets/images/listings/1159/9.jpg"
+    ]
+  },
+  {
+    "id": "1160",
+    "publicationDate": "2025-07-09 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "Стильная меблированная квартира в Махмутларе – всего 300 метров до песчаного пляжа и торговых центров! Прямо от собственника предлагается уютная, полностью меблированная квартира в самом центре района Махмутлар — одном из самых популярных районов Аланьи! 📍 Расположение: Махмутлар, Аланья 🌊 До песчаного пляжа – всего 3 минуты пешком 🛍️ Akdeniz AVM – 3 минуты пешком 🛍️ Торговый пассаж – 4 минуты пешком 🍽️ Рестораны, кафе и развлекательные заведения – в шаговой доступности 🏰 Аланийская крепость – 15 минут 🏙️ Центр Аланьи – 12 минут ✈️ Аэропорт Газипаша – 35 минут на машине 🏠 Квартира с современным интерьером, полностью оборудована всей необходимой техникой и мебелью. 🔹 Идеально подходит для тех, кто ценит комфорт, шаговую доступность к морю и развитую инфраструктуру. 📞 Не упустите возможность — свяжитесь с нами для получения подробной информации и записи на просмотр!",
+      "en": "Stylish Furnished Apartment in Alanya Mahmutlar – Just 300 Meters from the Sandy Beach and Shopping Center! Directly from the owner: A beautifully designed, fully furnished apartment in the heart of Mahmutlar, one of Alanya’s most desirable districts! 📍 Location: Mahmutlar, Alanya 🌊 3-minute walk to the sandy beach 🛍️ 3-minute walk to Akdeniz Shopping Mall 🛍️ 4-minute walk to famous shopping bazaar 🍴 Surrounded by cafés, restaurants, and nightlife – all within walking distance 🏰 Alanya Castle – 15 minutes away 🏙️ Alanya city center – 12 minutes ✈️ Gazipaşa Airport – 35 minutes by car 🏠 The apartment is fully furnished with modern decor and equipped with all essentials for comfortable living. 🔹 Perfect for those seeking a central, beachside lifestyle with all amenities nearby. 📞 Don’t miss out — contact us today to schedule a viewing or request more details!"
+    },
+    "price": {
+      "try": 40000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Antalya",
+      "district": "Alanya"
+    },
+    "type": "rent",
+    "propertyType": "apartment",
+    "area": 60,
+    "rooms": "1+1",
+    "bathroom": 1,
+    "age": null,
+    "situation": "empty",
+    "floor": 1,
+    "floorInHouse": 5,
+    "parking": "open",
+    "images": [
+      "assets/images/listings/1160/1.jpg",
+      "assets/images/listings/1160/2.jpg",
+      "assets/images/listings/1160/3.jpg",
+      "assets/images/listings/1160/4.jpg",
+      "assets/images/listings/1160/5.jpg",
+      "assets/images/listings/1160/6.jpg",
+      "assets/images/listings/1160/7.jpg"
+    ]
+  },
+  {
+    "id": "1161",
+    "publicationDate": "2025-08-01 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "Меблированный дуплекс 2+1 в резиденции Oba Privilege — с трансфером до моря и полной инфраструктурой! Просторный и уютный дуплекс 2+1 в престижном жилом комплексе Oba Privilege, идеально подходит для комфортной жизни или отдыха в Аланье! 📍 Район Oba — один из самых популярных и развитых районов Аланьи 🏖️ Бесплатный трансфер до пляжа 🏋️‍♂️ На территории: хамам, сауна, фитнес-зал 🛋️ Квартира полностью меблирована и готова к заселению 🏢 Современный жилой комплекс с качественной инфраструктурой и ухоженной территорией 🔹 Планировка: 2 спальни + гостиная (дуплекс) 🔹 Встроенная кухня, кондиционеры 🔹 Подходит для получения ВНЖ (ikamet) 🔹 Безопасный комплекс с охраной и видеонаблюдением 📞 Свяжитесь с нами, чтобы получить подробности и организовать просмотр!",
+      "en": "Furnished 2+1 Duplex in Oba Privilege Residence — Residence Permit Eligible, Transfer to the Beach, Spa Facilities Included! Spacious and elegant 2+1 duplex apartment located in the sought-after Oba Privilege Residence, perfect for comfortable living or a holiday home in Alanya. 📍 Located in Oba – one of Alanya’s most popular and well-developed areas 🏖️ Free shuttle service to the beach 💆‍♀️ On-site amenities: Turkish bath (hamam), sauna, gym 🛋️ Fully furnished and ready to move in 🏢 Modern residence with top-class infrastructure and security 🔹 Duplex layout with 2 bedrooms and a living room 🔹 Open-plan kitchen, air conditioners installed 🔹 Suitable for residence permit (ikamet) application 🔹 Secure complex with 24/7 surveillance 📞 Contact us now for more details or to schedule a viewing!"
+    },
+    "price": {
+      "try": 55000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Antalya",
+      "district": "Alanya"
+    },
+    "type": "rent",
+    "propertyType": "apartment",
+    "area": 86,
+    "rooms": "2+1",
+    "bathroom": 2,
+    "age": null,
+    "situation": "empty",
+    "floor": 4,
+    "floorInHouse": 4,
+    "parking": "closed",
+    "images": [
+      "assets/images/listings/1161/1.jpg",
+      "assets/images/listings/1161/10.jpg",
+      "assets/images/listings/1161/2.jpg",
+      "assets/images/listings/1161/3.jpg",
+      "assets/images/listings/1161/4.jpg",
+      "assets/images/listings/1161/5.jpg",
+      "assets/images/listings/1161/6.jpg",
+      "assets/images/listings/1161/7.jpg",
+      "assets/images/listings/1161/8.jpg",
+      "assets/images/listings/1161/9.jpg"
+    ]
+  },
+  {
+    "id": "1162",
+    "publicationDate": "2025-07-09 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "Меблированная квартира 3+1 в жилом комплексе с бассейном и инфраструктурой – 1-й этаж! Предлагается просторная квартира 3+1 площадью 140 м², расположенная на первом этаже жилого комплекса с полной инфраструктурой. Идеальный вариант для комфортной жизни и отдыха. 🏠 Планировка: 3 спальни + гостиная 📐 Площадь: 140 м² 📍 Этаж: 1 🏢 Тип: квартира в жилом комплексе (site içi) 🌊 Вид на бассейн 🛋️ Полностью меблирована Инфраструктура комплекса: ✅ Большой общий бассейн ✅ Шифрованный вход в здание ✅ Барбекю-зона ✅ Беседка (камелия) для отдыха ✅ Уборщик / смотритель (капиджи) 📞 Свяжитесь с нами для подробной информации и организации просмотра!",
+      "en": "Fully Furnished 3+1 Apartment in Gated Complex with Pool View – Ground Floor! Spacious and comfortable 3-bedroom apartment located on the 1st floor of a secure residential complex with full amenities. Perfect for both year-round living and holiday use. 🏠 Layout: 3 bedrooms + living room 📐 Size: 140 m² 📍 Floor: 1st (ground floor) 🏢 Location: Inside a gated residential complex 🌊 Pool view 🛋️ Fully furnished and ready to move in Complex Features: ✅ Large swimming pool ✅ Secure code-entry system ✅ On-site caretaker ✅ BBQ area ✅ Garden pavilion (gazebo) 📞 Contact us today to schedule a viewing or learn more details!"
+    },
+    "price": {
+      "try": 40000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Antalya",
+      "district": "Alanya"
+    },
+    "type": "rent",
+    "propertyType": "apartment",
+    "area": 130,
+    "rooms": "3+1",
+    "bathroom": 2,
+    "age": null,
+    "situation": "empty",
+    "floor": 1,
+    "floorInHouse": 9,
+    "parking": "open",
+    "images": [
+      "assets/images/listings/1162/1.jpg",
+      "assets/images/listings/1162/2.jpg",
+      "assets/images/listings/1162/3.jpg",
+      "assets/images/listings/1162/4.jpg",
+      "assets/images/listings/1162/5.jpg",
+      "assets/images/listings/1162/6.jpg",
+      "assets/images/listings/1162/7.jpg",
+      "assets/images/listings/1162/8.jpg"
+    ]
+  },
+  {
+    "id": "1163",
+    "publicationDate": "2025-07-21 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "Роскошная меблированная вилла класса люкс — только для семей, аренда на 10 месяцев! ‼️ Внимание! Это не сезонная аренда и не посуточный дом. Только для порядочных семей. Предлагается элитная вилла с эксклюзивной мебелью и техникой от лучших брендов. Дом обставлялся для собственного проживания — всё выполнено со вкусом и качеством. Вам нужно только взять чемодан и заехать! 🏡 Полностью меблированная вилла 🛋️ Всё новое и от ведущих брендов 👨‍👩‍👧‍👦 Только для семейных арендаторов 🗓️ Долгосрочная аренда: строго на 10 месяцев (договор на 10 месяцев) 🛏️ Просторные и светлые комнаты 🌿 Уютная территория, атмосфера настоящего семейного дома 📞 Свяжитесь с нами для подробностей. Осмотр возможен по предварительной договорённости.",
+      "en": "Fully Luxury Furnished Villa – Available for 10-Month Rental Only – Family Use Only! ‼️ Important: This is NOT a daily rental or seasonal holiday home. This is a true family residence and will only be rented to families. This exclusive villa is furnished with top-of-the-line brands and high-quality materials — chosen with care because the owners lived here themselves. All you need is your suitcase and personal belongings! 🏡 Fully furnished luxury villa 🛋️ All furniture and appliances are premium quality and like new 👨‍👩‍👧‍👦 Suitable only for families (no short-term tenants) 📆 Rental contract will be signed for exactly 10 months 🛏️ Spacious and stylish interiors 🌿 A proper family home with peaceful surroundings 📞 Contact us today for full details and to arrange a private viewing."
+    },
+    "price": {
+      "try": 40000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Antalya",
+      "district": "Alanya"
+    },
+    "type": "rent",
+    "propertyType": "villa",
+    "area": 200,
+    "rooms": "3+1",
+    "bathroom": 2,
+    "age": null,
+    "situation": "empty",
+    "floor": null,
+    "floorInHouse": 2,
+    "parking": "both",
+    "images": [
+      "assets/images/listings/1163/1.jpg",
+      "assets/images/listings/1163/10.jpg",
+      "assets/images/listings/1163/11.jpg",
+      "assets/images/listings/1163/12.jpg",
+      "assets/images/listings/1163/2.jpg",
+      "assets/images/listings/1163/3.jpg",
+      "assets/images/listings/1163/4.jpg",
+      "assets/images/listings/1163/5.jpg",
+      "assets/images/listings/1163/6.jpg",
+      "assets/images/listings/1163/7.jpg",
+      "assets/images/listings/1163/8.jpg",
+      "assets/images/listings/1163/9.jpg"
+    ]
+  },
+  {
+    "id": "1164",
+    "publicationDate": "2025-08-02 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "Аренда роскошной виллы с частным бассейном, панорамным видом на море и город в районе Тепе, Аланья! 📍 ТЕПЕ / АЛАНЬЯ 🏡 Просторная трёхэтажная вилла 4+2 — 250 м² 🌅 Панорамный вид на море и город 🌳 В окружении природы, тихое и престижное место 🛁 4 ванных комнаты 🛋️ Полностью меблирована 🌞 1 балкон + большая терраса 🚗 Закрытый гараж Удобства внутри виллы: ✅ Частный бассейн ✅ Сауна ✅ Джакузи ✅ Камин ✅ Бильярд ✅ Настольный футбол (кикер) ✅ Смотритель комплекса 💎 Идеальный выбор для тех, кто ищет комфорт, уединение и шикарную атмосферу в сердце Аланьи. 📞 Свяжитесь с нами для получения полной информации и организации просмотра!",
+      "en": "Luxury Villa for Rent in Alanya / Tepe – Private Pool, Panoramic Sea & City Views, Full Amenities! 📍 TEPE / ALANYA 🏡 Spacious 3-storey villa with 4 bedrooms + 2 living rooms – 250 m² 🌅 Stunning panoramic views of the sea and Alanya city 🌿 Surrounded by nature in a peaceful, elite neighborhood 🛁 4 bathrooms 🛋️ Fully furnished 🌞 1 balcony + large terrace 🚗 Private closed garage Villa Features: ✅ Private swimming pool ✅ Sauna ✅ Jacuzzi ✅ Fireplace ✅ Billiard table ✅ Foosball (table football) ✅ On-site caretaker 💎 Ideal for families or those seeking a serene luxury lifestyle in Alanya with top-tier comfort and entertainment options. 📞 Contact us today to arrange a private viewing or get more information! İ"
+    },
+    "price": {
+      "try": 140000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Antalya",
+      "district": "Alanya"
+    },
+    "type": "rent",
+    "propertyType": "villa",
+    "area": 250,
+    "rooms": "4+2",
+    "bathroom": 4,
+    "age": null,
+    "situation": "empty",
+    "floor": null,
+    "floorInHouse": 3,
+    "parking": "closed",
+    "images": [
+      "assets/images/listings/1164/1.jpg",
+      "assets/images/listings/1164/10.jpg",
+      "assets/images/listings/1164/11.jpg",
+      "assets/images/listings/1164/12.jpg",
+      "assets/images/listings/1164/13.jpg",
+      "assets/images/listings/1164/14.jpg",
+      "assets/images/listings/1164/2.jpg",
+      "assets/images/listings/1164/3.jpg",
+      "assets/images/listings/1164/4.jpg",
+      "assets/images/listings/1164/5.jpg",
+      "assets/images/listings/1164/6.jpg",
+      "assets/images/listings/1164/7.jpg",
+      "assets/images/listings/1164/8.jpg",
+      "assets/images/listings/1164/9.jpg"
+    ]
+  },
+  {
+    "id": "1165",
+    "publicationDate": "2025-08-03 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "УНИКАЛЬНАЯ ВИЛЛА С ПАНОРАМНЫМ ВИДОМ НА МОРЕ И СОБСТВЕННЫМ БАССЕЙНОМ! Предлагается в аренду/на продажу меблированная вилла класса люкс, с потрясающим морским видом из каждой комнаты! 📍 Престижное расположение, тишина и приватность 🌊 Панорамный вид на море из всех комнат 🏡 Полностью отдельная, частная вилла 🏊‍♂️ Собственный бассейн 🛋️ Полностью меблирована стильной и качественной мебелью 🌅 Большие окна, терраса с видом на закат 🚗 Парковка/гараж 💎 Уникальное предложение для тех, кто ценит комфорт, простор и настоящий вид на Средиземное море.",
+      "en": "EXCLUSIVE SEA-VIEW VILLA – PRIVATE POOL & FULL PANORAMIC VIEWS FROM EVERY ROOM! Available for rent/sale: A truly luxurious, fully furnished detached villa offering uninterrupted sea views from every room! 📍 Located in a peaceful, prestigious area 🌊 Panoramic Mediterranean sea views from all rooms 🏡 Detached private villa with full privacy 🏊‍♂️ Private swimming pool 🛋️ Fully furnished with high-quality, elegant furniture 🌅 Large windows and sea-facing terrace – perfect sunset spot 🚗 Private parking / garage 💎 A rare opportunity for those seeking luxury, space, and breathtaking views in one of the most desirable locations on the coast. 📞 Contact us now for details or to schedule a private viewing!"
+    },
+    "price": {
+      "try": 100000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Antalya",
+      "district": "Kas"
+    },
+    "type": "rent",
+    "propertyType": "villa",
+    "area": 300,
+    "rooms": "3+1",
+    "bathroom": 3,
+    "age": null,
+    "situation": "empty",
+    "floor": null,
+    "floorInHouse": 3,
+    "parking": "closed",
+    "images": [
+      "assets/images/listings/1165/1.jpg",
+      "assets/images/listings/1165/10.jpg",
+      "assets/images/listings/1165/11.jpg",
+      "assets/images/listings/1165/12.jpg",
+      "assets/images/listings/1165/13.jpg",
+      "assets/images/listings/1165/14.jpg",
+      "assets/images/listings/1165/2.jpg",
+      "assets/images/listings/1165/3.jpg",
+      "assets/images/listings/1165/4.jpg",
+      "assets/images/listings/1165/5.jpg",
+      "assets/images/listings/1165/6.jpg",
+      "assets/images/listings/1165/7.jpg",
+      "assets/images/listings/1165/8.jpg",
+      "assets/images/listings/1165/9.jpg"
+    ]
+  },
+  {
+    "id": "1166",
+    "publicationDate": "2025-08-03 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "1+1 ВИЛЛА С МОРСКИМ ВИДОМ В ЭЛИТНОМ КЛУБНОМ КОМПЛЕКСЕ CLUB PATARA! Предлагается стильная и полностью обновлённая вилла в одном из самых престижных курортных комплексов — Club Patara Holiday Resort! 🏝️ Прямой вид на море 🏡 Формат: 1+1 вилла с очень просторной террасой 🛋️ Полностью отремонтирована, качественная мебель 🌿 Атмосфера уюта, стиля и тишины Преимущества: ✅ Право пользоваться всей инфраструктурой комплекса: — Бассейны — Частный пляж — Рестораны, бары — Спортзал, теннис, SPA и т.д. 📍 Идеальный выбор для тех, кто ищет настоящую виллу у моря с высоким уровнем сервиса и комфорта. 📞 Свяжитесь с нами для подробностей и просмотра.",
+      "en": "SEA-VIEW 1+1 VILLA WITH LARGE TERRACE IN LUXURY CLUB PATARA HOLIDAY RESORT! We are proud to offer a fully renovated and stylishly furnished 1-bedroom villa located in the prestigious Club Patara Holiday Resort. 🌊 Direct sea view 🏡 Villa-style home with a spacious private terrace 🛋️ Recently renovated with high-end furniture and materials 💫 Perfect for peaceful, high-quality living or vacation stays Full access to resort facilities included: ✅ Swimming pools ✅ Private beach ✅ Restaurants & bars ✅ Gym, tennis courts, spa, and more 📍 A rare opportunity to live in one of the most exclusive seaside resorts in the region. 📞 Contact us now for full details and to book a private tour."
+    },
+    "price": {
+      "try": 45000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Antalya",
+      "district": "Kas"
+    },
+    "type": "rent",
+    "propertyType": "villa",
+    "area": 75,
+    "rooms": "1+1",
+    "bathroom": 1,
+    "age": null,
+    "situation": "empty",
+    "floor": null,
+    "floorInHouse": 1,
+    "parking": "open",
+    "images": [
+      "assets/images/listings/1166/1.jpg",
+      "assets/images/listings/1166/10.jpg",
+      "assets/images/listings/1166/11.jpg",
+      "assets/images/listings/1166/2.jpg",
+      "assets/images/listings/1166/3.jpg",
+      "assets/images/listings/1166/4.jpg",
+      "assets/images/listings/1166/5.jpg",
+      "assets/images/listings/1166/6.jpg",
+      "assets/images/listings/1166/7.jpg",
+      "assets/images/listings/1166/8.jpg",
+      "assets/images/listings/1166/9.jpg"
+    ]
+  },
+  {
+    "id": "1167",
+    "publicationDate": "2025-07-14 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "СОВРЕМЕННАЯ 1+1 ВИЛЛА С ЧАСТНЫМ БАССЕЙНОМ И ПОЛНОЙ ИНТМИНОСТЬЮ – ВСЕГО 10 МИН ОТ ЦЕНТРА КАША 📍 Вилла расположена всего в 10 минутах езды от центра Каша (около 10 км) — идеальный выбор для тех, кто ценит тишину, комфорт и природу. 🏡 1 спальня + гостиная 🌳 Окружена природой – тихая и уединённая атмосфера 🌞 Просторная гостиная с панорамными стеклянными дверями 🛏️ Спальня с выходом к частному бассейну 🏊‍♂️ Полностью закрытый бассейн 7x3 м – полная конфиденциальность 🔥 Сад с зоной барбекю 🪵 Деревянные акценты, современная ванная с просторной душевой ❄️ Кондиционеры в спальне и в гостиной 🛋️ Полностью меблирована качественной и стильной мебелью 🍽️ Полный комплект бытовой техники и кухонных принадлежностей + Бутик-комплекс с общей зоной отдыха и развлечений + Чистый горный воздух – идеально для летнего отдыха + Подходит для семей, ищущих уединение и комфорт 📞 Свяжитесь с нами, чтобы узнать цену, доступность и записаться на просмотр!",
+      "en": "MODERN 1+1 PRIVATE POOL VILLA NEAR KAS CENTER – NATURE, PRIVACY & COMFORT! 📍 Located just 10 minutes (approx. 10 km) from the heart of Kaş, this modern 1-bedroom villa offers the perfect blend of privacy, nature, and luxury. 🏡 1 Bedroom + Living Room 🌳 Surrounded by nature – peaceful and quiet atmosphere 🌞 Bright living area with large sliding glass doors 🛏️ Bedroom opens directly to the private pool 🏊‍♂️ 7x3m fully secluded private pool – 100% privacy guaranteed 🔥 Private BBQ area in the garden 🪵 Natural wood details, modern bathroom with wide walk-in shower ❄️ Air-conditioning in both bedroom and living room 🛋️ Fully furnished with luxury and functional furniture 🍽️ Full set of white goods and kitchen equipment + Boutique Complex with Shared Lounge & Social Area + Clean, Fresh Mountain Air – Ideal for Summer Retreats + Suitable for Conservative Guests / Privacy-Oriented Families 📞 Contact us for availability, pricing, and private viewing options!"
+    },
+    "price": {
+      "try": 39000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Antalya",
+      "district": "Kas"
+    },
+    "type": "rent",
+    "propertyType": "villa",
+    "area": 80,
+    "rooms": "3+1",
+    "bathroom": 1,
+    "age": null,
+    "situation": "empty",
+    "floor": null,
+    "floorInHouse": 1,
+    "parking": "open",
+    "images": [
+      "assets/images/listings/1167/1.jpg",
+      "assets/images/listings/1167/2.jpg",
+      "assets/images/listings/1167/3.jpg",
+      "assets/images/listings/1167/4.jpg",
+      "assets/images/listings/1167/5.jpg",
+      "assets/images/listings/1167/6.jpg",
+      "assets/images/listings/1167/7.jpg",
+      "assets/images/listings/1167/8.jpg",
+      "assets/images/listings/1167/9.jpg"
+    ]
+  },
+  {
+    "id": "1168",
+    "publicationDate": "2025-08-05 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "СДАЕТСЯ В АРЕНДУ СОВРЕМЕННАЯ ВИЛЛА 1+1 С ПРИВАТНЫМ САДОМ Современная, уютная и полностью меблированная вилла — идеальный выбор для тех, кто ищет спокойствие, комфорт и уединение. 📍 Основные характеристики: 🏡 1 спальня + гостиная (1+1) 📐 90 м² жилая / 110 м² общая площадь 🌿 250 м² частный участок с садом и террасой 🛋️ Полностью меблирована стильной мебелью ❄️ Отопление и охлаждение: сплит-системы 🍽️ Открытая кухня (американского типа) 🚿 1 современная ванная комната 🚗 Парковка: открытая и крытая 🏢 Дом всего 3 года 🏠 Один этаж – удобно и практично 📦 Подходит для долгосрочной аренды. Просто заезжайте с чемоданом! 📞 Свяжитесь с нами для уточнения стоимости, сроков и просмотра!",
+      "en": "This beautiful single-storey villa offers a peaceful and modern living experience, ideal for a couple or an individual seeking privacy and comfort. 📍 Property Highlights: 🏡 1 Bedroom / 1 Living Room (1+1) 📐 90 m² net / 110 m² gross indoor space 🌿 250 m² private outdoor garden & terrace area 🛋️ Fully furnished with modern design ❄️ Heating & Cooling: Air conditioners 🍽️ Open-plan kitchen (American style) 🚿 1 spacious bathroom 🚗 Private parking: Open & closed options 🏢 Only 3 years old ☀️ Single-floor living – ideal for easy access Perfect for long-term stays in nature, yet close to town amenities. Private, secure, and ready to move in with just your suitcase. 📞 Contact us today for availability, pricing, and viewing appointments!"
+    },
+    "price": {
+      "try": 50000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Antalya",
+      "district": "Kas"
+    },
+    "type": "rent",
+    "propertyType": "villa",
+    "area": 90,
+    "rooms": "1+1",
+    "bathroom": 1,
+    "age": null,
+    "situation": "empty",
+    "floor": null,
+    "floorInHouse": 1,
+    "parking": "both",
+    "images": [
+      "assets/images/listings/1168/1.jpg",
+      "assets/images/listings/1168/2.jpg",
+      "assets/images/listings/1168/3.jpg",
+      "assets/images/listings/1168/4.jpg",
+      "assets/images/listings/1168/5.jpg",
+      "assets/images/listings/1168/6.jpg",
+      "assets/images/listings/1168/7.jpg",
+      "assets/images/listings/1168/8.jpg"
+    ]
+  },
+  {
+    "id": "1169",
+    "publicationDate": "2025-08-31 00:00:00",
+    "man": null,
+    "number": null,
+    "info": null,
+    "description": {
+      "ru": "Элегантная и ухоженная квартира с потрясающим видом на Калкан, расположена в зелёной зоне элитного комплекса Club Patara. 🛏 1 спальня с ванной комнатой 🛋 Просторная гостиная с кухней открытого типа 🚻 Дополнительный санузел 🌅 Частная терраса с панорамным видом 🛏 Удобно размещаются до 4 человек ❄️ Каменные стены и мощный кондиционер с функцией очистки воздуха 📺 LED ТВ, кабельное, вся бытовая техника 🧺 Стиральная и посудомоечная машины, пылесос 🚏 В шаговой доступности от остановки шаттла Palmiye 📞 Идеально для семьи или пары. Свяжитесь с нами для аренды на сезон или длительный срок!",
+      "en": "Located in the lush, scenic grounds of prestigious Club Patara, this stylish and well-maintained 1+1 apartment offers stunning panoramic views of Kalkan. 🛏 1 bedroom + en-suite bathroom 🛋 Spacious living room with open kitchen 🛁 1 guest WC + 1 en-suite bathroom 🏡 Large private terrace with full Kalkan view 🛋 Sofa beds for up to 4 guests total ❄️ Cool stone interior + high-capacity air conditioning with air purifier 📺 LED TV with cable, full kitchen equipment 🧺 Washing machine, dishwasher, vacuum cleaner 🌿 Walking distance to Palmiye Shuttle Point 📞 Ideal for families or couples – Contact now for seasonal or long-term rental options!"
+    },
+    "price": {
+      "try": 45000,
+      "try_old": null,
+      "rub": null
+    },
+    "location": {
+      "country": "Turkey",
+      "city": "Antalya",
+      "district": "Kas"
+    },
+    "type": "rent",
+    "propertyType": "villa",
+    "area": 48,
+    "rooms": "1+1",
+    "bathroom": 2,
+    "age": null,
+    "situation": "empty",
+    "floor": null,
+    "floorInHouse": 1,
+    "parking": "open",
+    "images": [
+      "assets/images/listings/1169/1.jpg",
+      "assets/images/listings/1169/2.jpg",
+      "assets/images/listings/1169/3.jpg",
+      "assets/images/listings/1169/4.jpg",
+      "assets/images/listings/1169/5.jpg",
+      "assets/images/listings/1169/6.jpg"
     ]
   }
 ]

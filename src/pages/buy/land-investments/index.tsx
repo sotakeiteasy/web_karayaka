@@ -11,6 +11,7 @@ import CEOImage from '@/lib/components/CEOPages/CEOTexts/CEOImage';
 import { FullContacts } from '@/lib/components/ContactsBlock/FullContacts';
 import { PaginatedAds } from '@/lib/components/Search/PaginatedAds/PaginatedAds';
 import { useSearchFilters } from '@/lib/hooks';
+import SimpleSlider from '@/lib/components/HomePage/SimpleSlider/SimpleSlider';
 
 export default function LandInvestmentsPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
@@ -66,6 +67,10 @@ export default function LandInvestmentsPage({ metaTags }: { metaTags: MetaTags }
                 />
               </div>
               {ads.length > 0 && <PaginatedAds itemsPerPage={8} ads={ads} />}
+              {ads.length > 0 && ads.length < 8 && (
+                <SimpleSlider type="buy" country={'Turkey'} locale={locale} idsToExclude={ads.map((ad) => ad.id)} />
+              )}
+              {ads.length <= 0 && <SimpleSlider type="buy" country={'Turkey'} locale={locale} />}
               <LandInvestments />
               <FullContacts />
             </ContainerWrapper>

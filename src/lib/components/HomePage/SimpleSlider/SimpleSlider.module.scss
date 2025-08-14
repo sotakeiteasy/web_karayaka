@@ -6,7 +6,9 @@
   align-items: center;
   margin: 50px auto;
   z-index: 2;
-
+  &.ceoPage {
+    margin: 15px auto;
+  }
   .carousel {
     display: flex;
     justify-content: center;
@@ -185,6 +187,10 @@
 .sliderWrapper {
   max-width: 1000px;
   position: relative;
+
+  &.ceoPage {
+    max-width: 900px;
+  }
 }
 
 .nextArrow,
@@ -235,6 +241,28 @@
   margin-left: 40px;
   border-bottom: 1px solid $primary-color;
   display: block;
+}
+
+// for seo text pages
+.blockButton {
+  display: flex;
+  border: 2px solid $primary-color;
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 30px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  a {
+    padding: 10px 30px;
+  }
+}
+
+.blockButton:hover {
+  transform: translateY(2px);
+  transition: all 0.2s ease;
 }
 
 @media (max-width: 1050px) {
@@ -303,6 +331,7 @@
 @media (max-width: 600px) {
   .header {
     padding: 20px 0;
+    justify-content: center;
 
     &:after {
       display: none !important;

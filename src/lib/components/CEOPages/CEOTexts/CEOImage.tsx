@@ -11,8 +11,9 @@ export default function CEOImage({ imageSrc, title }: { imageSrc: string; title:
         src={getImageUrl(imageSrc)}
         alt={t(title)}
         title={t(title)}
-        width={900}
-        height={400}
+        // width={900}
+        // height={400}
+        fill={true}
         style={{
           objectFit: 'cover',
         }}

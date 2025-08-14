@@ -11,6 +11,7 @@ import { jsonLd } from '@/lib/seo';
 import { FullContacts } from '@/lib/components/ContactsBlock/FullContacts';
 import { PaginatedAds } from '@/lib/components/Search/PaginatedAds/PaginatedAds';
 import { useSearchFilters } from '@/lib/hooks';
+import SimpleSlider from '@/lib/components/HomePage/SimpleSlider/SimpleSlider';
 
 export default function VillaAntalyaPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
@@ -65,6 +66,10 @@ export default function VillaAntalyaPage({ metaTags }: { metaTags: MetaTags }) {
                 />
               </div>
               {ads.length > 0 && <PaginatedAds itemsPerPage={8} ads={ads} />}
+              {ads.length > 0 && ads.length < 8 && (
+                <SimpleSlider type="rent" country={'Turkey'} locale={locale} idsToExclude={ads.map((ad) => ad.id)} />
+              )}
+              {ads.length <= 0 && <SimpleSlider type="rent" country={'Turkey'} locale={locale} />}
               <VillaAntalya />
               <FullContacts />
             </ContainerWrapper>

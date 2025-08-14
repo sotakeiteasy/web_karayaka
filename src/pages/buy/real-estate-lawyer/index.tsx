@@ -9,6 +9,7 @@ import { MetaTags } from '@/lib/types';
 import { jsonLd } from '@/lib/seo';
 import CEOImage from '@/lib/components/CEOPages/CEOTexts/CEOImage';
 import { FullContacts } from '@/lib/components/ContactsBlock/FullContacts';
+import SimpleSlider from '@/lib/components/HomePage/SimpleSlider/SimpleSlider';
 export default function RealEstateLawyerPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
   const router = useRouter();
@@ -63,6 +64,7 @@ export default function RealEstateLawyerPage({ metaTags }: { metaTags: MetaTags 
                   color="white"
                 />
               </div>
+              <SimpleSlider type="buy" country={'Turkey'} locale={locale} />
               <RealEstateLawyer />
               <FullContacts />
             </ContainerWrapper>

@@ -18,9 +18,10 @@ interface SimpleSliderProps {
   type: 'buy' | 'rent' | 'discounts';
   country: string;
   locale: 'ru' | 'en';
+  idsToExclude?: string[];
 }
 
-export default function SimpleSlider({ type, country, locale }: SimpleSliderProps) {
+export default function SimpleSlider({ type, country, locale, idsToExclude }: SimpleSliderProps) {
   const { t } = useTranslation();
   const [ads, setAds] = useState<Ad[]>([]);
 
@@ -34,6 +35,10 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
 
   if (type !== 'discounts') {
     filteredAds = ads.filter((ad) => ad.type === type && ad.location.country === country && ad.price.try_old === null);
+    if (idsToExclude) {
+      filteredAds = filteredAds.filter((ad) => !idsToExclude.includes(ad.id));
+      console.log(filteredAds);
+    }
   } else {
     filteredAds = ads.filter((ad) => ad.price.try_old);
   }
@@ -46,17 +51,24 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
   }, [filteredAds]);
 
   if (filteredAds.length < 3) {
-    return null;
+    // reference button for ceo pages if not enough ads for slider
+    if (idsToExclude) {
+      return (
+        <button className={styles.blockButton}>
+          <LinkWithLocale href={`/${type}/`}>{t('home.seeAll')}</LinkWithLocale>
+        </button>
+      );
+    } else return null;
   }
 
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: idsToExclude ? 2 : 3,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    autoplay: true,
+    autoplay: idsToExclude ? false : true,
     speed: 2000,
     autoplaySpeed: 2000,
     cssEase: 'ease-in-out',
@@ -93,12 +105,18 @@ export default function SimpleSlider({ type, country, locale }: SimpleSliderProp
   };
 
   return (
-    <div className={styles.carouselBlock}>
+    <div className={`${styles.carouselBlock} ${idsToExclude ? styles.ceoPage : ''}`}>
       <h2 className={styles.header}>
-        {type === 'discounts' ? t('home.discount') : type === 'rent' ? t('home.rent') : t('home.buy')}
+        {idsToExclude
+          ? 'Другие предложения'
+          : type === 'discounts'
+          ? t('home.discount')
+          : type === 'rent'
+          ? t('home.rent')
+          : t('home.buy')}
       </h2>
       <div className={styles.carousel}>
-        <div className={styles.sliderWrapper}>
+        <div className={`${styles.sliderWrapper} ${idsToExclude ? styles.ceoPage : ''}`}>
           <Slider {...settings}>
             {shuffledAds.map((card) => (
               <div key={card.id} className={styles.slide}>
