@@ -3,11 +3,12 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useLanguageQuery, useTranslation, LinkWithLocale, LanguageSwitcher } from 'next-export-i18n';
 import Icon from '@mdi/react';
-import { mdiTriangleSmallDown, mdiWhatsapp, mdiClose } from '@mdi/js';
-import { useState, useEffect, useRef } from 'react';
+import { mdiTriangleSmallDown, mdiWhatsapp, mdiClose, mdiChevronDown } from '@mdi/js';
+import { useState, useEffect, useRef, Fragment } from 'react';
 import Head from 'next/head';
 import { contactInfo } from '@/lib/constants';
 import { headerScheme } from '@/lib/seo';
+import Link from 'next/link';
 
 export function Header() {
   const { t } = useTranslation();
@@ -18,6 +19,8 @@ export function Header() {
   const [isContactsMenuOpen, setIsContactsMenuOpen] = useState(false);
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
+  const [isBuyMenuOpen, setIsBuyMenuOpen] = useState(false);
+  const [isRentMenuOpen, setIsRentMenuOpen] = useState(false);
   const langMenuRef = useRef<HTMLDivElement>(null);
   const contactsMenuRef = useRef<HTMLDivElement>(null);
 
@@ -49,11 +52,83 @@ export function Header() {
       href: '/rent/',
       text: t('header.rent'),
       active: router.pathname.startsWith('/rent'),
+      subsections: [
+        {
+          href: 'flat-turkey/',
+          text: t('rentApartment.CEOText.navTitle'),
+          active: router.pathname.includes('flat-turkey'),
+        },
+        {
+          href: 'flat-antalya/',
+          text: t('antalyaRent.CEOText.navTitle'),
+          active: router.pathname.includes('flat-antalya'),
+        },
+
+        {
+          href: 'rent-istanbul/',
+          text: t('rentIstanbul.CEOText.navTitle'),
+          active: router.pathname.includes('rent-istanbul'),
+        },
+        {
+          href: 'villa-turkey/',
+          text: t('rentVilla.CEOText.navTitle'),
+          active: router.pathname.includes('villa-turkey'),
+        },
+        {
+          href: 'villa-antalya/',
+          text: t('villaAntalya.CEOText.navTitle'),
+          active: router.pathname.includes('villa-antalya'),
+        },
+      ],
     },
     {
       href: '/buy/',
       text: t('header.buy'),
       active: router.pathname.startsWith('/buy'),
+      subsections: [
+        {
+          href: 'flat-turkey/',
+          text: t('buyFlat.CEOText.navTitle'),
+          active: router.pathname.includes('flat-turkey'),
+        },
+        {
+          href: 'flats-alanya/',
+          text: t('flatsAlanya.CEOText.navTitle'),
+          active: router.pathname.includes('flats-alanya'),
+        },
+        {
+          href: 'flat-for-residence/',
+          text: t('flatForResidence.CEOText.navTitle'),
+          active: router.pathname.includes('flat-for-residence'),
+        },
+        {
+          href: 'property-for-residence/',
+          text: t('propertyForResidence.CEOText.navTitle'),
+          active: router.pathname.includes('property-for-residence'),
+        },
+
+        {
+          href: 'property-antalya/',
+          text: t('antalya.CEOText.navTitle'),
+          active: router.pathname.includes('property-antalya'),
+        },
+
+        {
+          href: 'property-istanbul/',
+          text: t('istanbul.CEOText.navTitle'),
+          active: router.pathname.includes('property-istanbul'),
+        },
+        {
+          href: 'land-investments/',
+          text: t('landInvestments.CEOText.navTitle'),
+          active: router.pathname.includes('land-investments'),
+        },
+        {
+          href: 'real-estate-lawyer/',
+          text: t('realEstateLawyer.CEOText.navTitle'),
+          active: router.pathname.includes('real-estate-lawyer'),
+        },
+      ],
     },
     {
       href: '/about-us/',
@@ -126,10 +201,91 @@ export function Header() {
                 </LinkWithLocale>
               </div>
               {navLinks.map((link, index) => (
-                <div key={index} className={`${styles.navLink} ${link.active ? styles.active : ''}`}>
-                  <LinkWithLocale href={link.href} onClick={() => setIsBurgerMenuOpen(false)}>
-                    {link.text}
-                  </LinkWithLocale>
+                <div key={index} className={styles.dropdown}>
+                  {(link.href.includes('buy') || link.href.includes('rent')) && (
+                    <button
+                      key={index}
+                      className={`${styles.navLink} ${link.active ? styles.active : ''}`}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (link.href.includes('rent')) setIsRentMenuOpen(!isRentMenuOpen);
+                        if (link.href.includes('buy')) setIsBuyMenuOpen(!isBuyMenuOpen);
+                      }}
+                    >
+                      <Link
+                        href={link.href}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setIsBurgerMenuOpen(false);
+                        }}
+                      >
+                        {link.text}
+                      </Link>
+                      {lang === 'ru' && (
+                        <Icon
+                          key={index}
+                          className={styles.mobileBurgerMenuIcon}
+                          path={mdiChevronDown}
+                          size={1.4}
+                          style={{
+                            transform:
+                              (link.href.includes('buy') && isBuyMenuOpen) ||
+                              (link.href.includes('rent') && isRentMenuOpen)
+                                ? 'rotate(180deg)'
+                                : 'rotate(0deg)',
+                            transition: 'transform 0.5s ease',
+                          }}
+                        />
+                      )}
+                    </button>
+                  )}
+                  {!link.subsections && !link.subsections && (
+                    <div className={`${styles.navLink} ${link.active ? styles.active : ''}`}>
+                      <LinkWithLocale
+                        href={link.href}
+                        onClick={() => {
+                          setIsBurgerMenuOpen(false);
+                        }}
+                      >
+                        {link.text}
+                      </LinkWithLocale>
+                    </div>
+                  )}
+                  {lang === 'ru' && link.subsections && (
+                    <ul
+                      key={link.href}
+                      className={`${styles.subLinksMobile} ${
+                        (link.href.includes('buy') && isBuyMenuOpen) || (link.href.includes('rent') && isRentMenuOpen)
+                          ? styles.open
+                          : ''
+                      }`}
+                    >
+                      <li key={-1} className={styles.subLinkMobile}>
+                        <Link
+                          key={-1}
+                          href={link.href}
+                          onClick={() => {
+                            setIsBurgerMenuOpen(false);
+                          }}
+                        >
+                          Все объявления
+                        </Link>
+                      </li>
+                      {link.subsections?.map((subsectionLink, subIndex) => (
+                        <li key={subIndex} className={styles.subLinkMobile}>
+                          <LinkWithLocale
+                            key={subIndex}
+                            href={link.href + subsectionLink.href}
+                            onClick={() => {
+                              setIsBurgerMenuOpen(false);
+                            }}
+                          >
+                            {t(subsectionLink.text)}
+                          </LinkWithLocale>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
 
