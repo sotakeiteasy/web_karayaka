@@ -2,7 +2,7 @@ import styles from './index.module.scss';
 import dynamic from 'next/dynamic';
 import { useTranslation, useLanguageQuery } from 'next-export-i18n';
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
-import { PaginatedAds } from './PaginatedAds/PaginatedAds';
+import Ads from './PaginatedAds/Ads';
 import { LabelInput } from './LabelInput/LabelInput';
 import { FilterSelect } from './FilterSelect/FilterSelect';
 
@@ -200,7 +200,7 @@ export function Search({ type }: { type: SearchType }) {
             />
           </div>
         </div>
-        <PaginatedAds itemsPerPage={8} ads={filteredAds} />
+        <Ads filteredAds={filteredAds} />
       </div>
     </main>
   );

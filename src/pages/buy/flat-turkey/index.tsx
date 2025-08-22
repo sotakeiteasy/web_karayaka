@@ -9,9 +9,9 @@ import { MetaTags, SearchType } from '@/lib/types';
 import { jsonLd } from '@/lib/seo';
 import CEOImage from '@/lib/components/CEOPages/CEOTexts/CEOImage';
 import { FullContacts } from '@/lib/components/ContactsBlock/FullContacts';
-import { PaginatedAds } from '@/lib/components/Search/PaginatedAds/PaginatedAds';
 import { useSearchFilters } from '@/lib/hooks';
 import SimpleSlider from '@/lib/components/HomePage/SimpleSlider/SimpleSlider';
+import Ads from '@/lib/components/Search/PaginatedAds/Ads';
 
 export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
@@ -68,7 +68,7 @@ export default function BuyTurkeyPage({ metaTags }: { metaTags: MetaTags }) {
                   color="white"
                 />
               </div>
-              {ads.length > 0 && <PaginatedAds itemsPerPage={8} ads={ads} />}
+              {ads.length > 0 && <Ads filteredAds={ads} />}
               {ads.length > 0 && ads.length < 8 && (
                 <SimpleSlider type="buy" country={'Turkey'} locale={locale} idsToExclude={ads.map((ad) => ad.id)} />
               )}

@@ -121,40 +121,61 @@
     }
   }
 }
-
-.paginate {
-  list-style: none;
-  margin-top: 50px;
-  padding: 10px;
+.paginateContainer {
   display: flex;
   justify-content: center;
-  justify-self: center;
-  gap: 20px;
-  width: fit-content;
-  box-shadow: $shadow;
-  border-radius: 10px;
+  align-items: center;
+  .paginate {
+    list-style: none;
+    margin-top: 50px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    gap: 20px;
+    width: fit-content;
+    box-shadow: $shadow;
+    border-radius: 10px;
 
-  li {
-    a {
-      background-color: #e8e8e8;
-      padding: 8px 14px;
-      border-radius: 5px;
-      text-align: center;
-      cursor: pointer;
+    li {
+      a {
+        background-color: #e8e8e8;
+        padding: 8px 14px;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+      }
     }
-  }
 
-  li.activePage {
-    color: $white-text;
+    li.activePage {
+      color: $white-text;
 
-    a {
-      background-color: $primary-color;
+      a {
+        background-color: $primary-color;
+      }
     }
   }
 }
 
 .hidden {
   display: none;
+}
+
+.loadMoreContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .loadMoreButton {
+    margin-top: 15px;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    background-color: $primary-color;
+    color: $white-text;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 800px) {

@@ -1,5 +1,4 @@
 import styles from './Ads.module.scss';
-import ReactPaginate from 'react-paginate';
 import { useState, useEffect } from 'react';
 import { useTranslation, LinkWithLocale, useLanguageQuery } from 'next-export-i18n';
 import { useRouter } from 'next/router';
@@ -8,7 +7,6 @@ import Head from 'next/head';
 import Icon from '@mdi/react';
 import { mdiMapMarkerOutline, mdiBedQueenOutline, mdiStairs } from '@mdi/js';
 
-import CustomSlider from './CustomSlider/CustomSlider';
 import { Ad, SearchType } from '@/lib/types';
 import {
   countryTranslations,
@@ -18,6 +16,8 @@ import {
 } from '@/lib/translations';
 import { getPropertyTitle } from '@/lib/utils';
 import { Price } from '@/lib/components/Price/Price';
+import CustomSlider from './CustomSlider/CustomSlider';
+
 function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'en' }) {
   const { t } = useTranslation();
 
@@ -95,30 +95,24 @@ function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'e
   );
 }
 
-export function PaginatedAds({ itemsPerPage, ads = [] }: { itemsPerPage: number; ads: Ad[] }) {
+export function ScrollAds({ itemsPerPage, ads = [] }: { itemsPerPage: number; ads: Ad[] }) {
   const router = useRouter();
   const { t } = useTranslation();
   const [query] = useLanguageQuery();
 
   const lang = (query?.lang as 'ru' | 'en') || 'ru';
-  const pageNumber = Number(router.query.page) || 1;
-  const [itemOffset, setItemOffset] = useState(0);
+
+  const [visibleCount, setVisibleCount] = useState(itemsPerPage);
 
   useEffect(() => {
-    const offset = (pageNumber - 1) * itemsPerPage;
-    setItemOffset(offset);
-  }, [pageNumber, itemsPerPage]);
+    setVisibleCount(itemsPerPage);
+  }, [itemsPerPage, ads]);
 
-  const endOffset = itemOffset + itemsPerPage;
-  const currentAds = Array.isArray(ads) ? ads.slice(itemOffset, endOffset) : [];
-  const pageCount = Array.isArray(ads) ? Math.ceil(ads.length / itemsPerPage) : 0;
+  const visibleAds = Array.isArray(ads) ? ads.slice(0, visibleCount) : [];
+  const canShowMore = visibleAds.length < (Array.isArray(ads) ? ads.length : 0);
 
-  const handlePageClick = (event: { selected: number }) => {
-    const newPage = event.selected + 1;
-    router.push({
-      pathname: router.pathname,
-      query: { ...router.query, page: newPage.toString() },
-    });
+  const handleShowMore = () => {
+    setVisibleCount((prev) => Math.min(prev + itemsPerPage, ads.length));
   };
 
   const listingType = router.pathname.split('/')[1] as 'rent' | 'buy';
@@ -137,8 +131,8 @@ export function PaginatedAds({ itemsPerPage, ads = [] }: { itemsPerPage: number;
                   t('search.name') +
                   ' ' +
                   (listingType === SearchType.Rent ? t('ad.property.forRentStatus') : t('ad.property.forSaleStatus')),
-                'numberOfItems': currentAds.length,
-                'itemListElement': currentAds.map((ad) => {
+                'numberOfItems': visibleAds.length,
+                'itemListElement': visibleAds.map((ad) => {
                   return {
                     '@type': 'Product',
                     'url': `https://karayaka.ru/${ad.type}/${ad.id}`,
@@ -198,24 +192,14 @@ export function PaginatedAds({ itemsPerPage, ads = [] }: { itemsPerPage: number;
           />
         )}
       </Head>
-      <Items currentItems={currentAds} locale={lang} />
-      {pageCount > 1 && (
-        <div className={styles.paginateContainer}>
-          <ReactPaginate
-            breakLabel="..."
-            nextLabel={t('pagination.next')}
-            previousLabel={t('pagination.previous')}
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={3}
-            marginPagesDisplayed={1}
-            pageCount={pageCount}
-            renderOnZeroPageCount={null}
-            className={styles.paginate}
-            activeClassName={styles.activePage}
-            disabledClassName={styles.hidden}
-            pageClassName={'page-item'}
-            forcePage={pageNumber - 1}
-          />
+
+      <Items currentItems={visibleAds} locale={lang} />
+
+      {canShowMore && (
+        <div className={styles.loadMoreContainer}>
+          <button type="button" className={styles.loadMoreButton} onClick={handleShowMore}>
+            {lang === 'ru' ? 'Показать ещё' : 'Show more'}
+          </button>
         </div>
       )}
     </>
