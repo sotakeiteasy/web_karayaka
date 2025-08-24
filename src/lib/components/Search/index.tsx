@@ -8,7 +8,7 @@ import { FilterSelect } from './FilterSelect/FilterSelect';
 
 import { SelectOption, SearchType } from '@/lib/types';
 import { useSearchFilters, useFilterOptions } from '@/lib/hooks';
-import { RateContext } from '../Price/RateContext';
+import { RateContext } from '../../contexts/RateContext';
 
 // problem with static export - https://github.com/JedWatson/react-select/issues/5459
 const Select = dynamic(() => import('react-select'), {

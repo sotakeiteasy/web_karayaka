@@ -4,7 +4,7 @@ import { Ad, Filter, SearchType } from '@/lib/types';
 import { filterAds } from '@/lib/utils';
 import { FILTER_MAPPINGS } from '@/lib/constants/filterOptions';
 import { CountryType } from '../types/FilterTypes';
-import { RateContext } from '../components/Price/RateContext';
+import { RateContext } from '../contexts/RateContext';
 import { useLanguageQuery } from 'next-export-i18n';
 
 export function useSearchFilters(offerType: SearchType, rate?: number | null | undefined) {

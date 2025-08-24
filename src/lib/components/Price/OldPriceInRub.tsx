@@ -1,5 +1,5 @@
+import { RateContext } from '@/lib/contexts/RateContext';
 import { useContext } from 'react';
-import { RateContext } from './RateContext';
 interface Props {
   priceInTry: number;
   locale: 'ru' | 'en';

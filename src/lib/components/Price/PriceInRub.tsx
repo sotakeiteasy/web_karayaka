@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { RateContext } from './RateContext';
+import { RateContext } from '../../contexts/RateContext';
 import Icon from '@mdi/react';
 import { mdiInformationOutline } from '@mdi/js';
 import { Tooltip } from 'antd';

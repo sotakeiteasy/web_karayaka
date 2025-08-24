@@ -6,8 +6,10 @@ import { Montserrat } from 'next/font/google';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { RateProvider } from '@/lib/components/Price/RateContext';
+import { RateProvider } from '@/lib/contexts/RateContext';
 import { useLanguageQuery } from 'next-export-i18n';
+
+import { DeviceProvider } from '@/lib/contexts/DeviceContext';
 
 declare global {
   interface Window {
@@ -43,6 +45,8 @@ const SocialContactsMobile = dynamic(
   }
 );
 
+const Loader = dynamic(() => import('@/lib/components/Loader/Loader'), { ssr: false, loading: () => null });
+
 const montserrat = Montserrat({
   variable: '--font-geist-sans',
   subsets: ['latin', 'cyrillic-ext'],
@@ -53,7 +57,6 @@ function App({ Component, pageProps }: AppProps) {
   const [showAlert, setShowAlert] = useState(false);
   const [query] = useLanguageQuery();
   const locale = (query?.lang as 'ru' | 'en') || 'ru';
-
   const { asPath } = useRouter();
 
   useEffect(() => {
@@ -72,6 +75,28 @@ function App({ Component, pageProps }: AppProps) {
 
   const url = new URL(`https://karayaka.ru${asPath}`);
   url.searchParams.delete('lang');
+
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const handleStart = (url: string) => {
+      if (url !== router.asPath) {
+        setLoading(true);
+      }
+    };
+    const handleComplete = () => setLoading(false);
+
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleComplete);
+    router.events.on('routeChangeError', handleComplete);
+
+    return () => {
+      router.events.off('routeChangeStart', handleStart);
+      router.events.off('routeChangeComplete', handleComplete);
+      router.events.off('routeChangeError', handleComplete);
+    };
+  }, [router.asPath]);
 
   return (
     <div className={montserrat.className}>
@@ -105,14 +130,17 @@ function App({ Component, pageProps }: AppProps) {
       {/* /Yandex.Metrika counter */}
 
       <Header />
-      <RateProvider locale={locale}>
-        <Component {...pageProps} />
-      </RateProvider>
-      {showAlert && <LocalStorageAlert />}
-      <CookieConsent visible={Cookievisible} setVisible={setCookieVisible} />
-      <SocialContactsMobile cookieVisible={Cookievisible} position="left" />
-      <SocialContactsMobile cookieVisible={Cookievisible} position="right" />
-      <Footer />
+      <DeviceProvider>
+        {loading && <Loader />}
+        <RateProvider locale={locale}>
+          <Component {...pageProps} />
+        </RateProvider>
+        {showAlert && <LocalStorageAlert />}
+        <CookieConsent visible={Cookievisible} setVisible={setCookieVisible} />
+        <SocialContactsMobile cookieVisible={Cookievisible} position="left" />
+        <SocialContactsMobile cookieVisible={Cookievisible} position="right" />
+        <Footer />
+      </DeviceProvider>
     </div>
   );
 }
