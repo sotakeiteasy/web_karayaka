@@ -99,6 +99,11 @@
       @media (max-width: 768px) {
         .grid {
           grid-template-columns: repeat(2, 1fr);
+          .item:last-child {
+            grid-column: 1 / -1;
+            justify-self: center;
+            width: calc((100% - 24px) / 2);
+          }
         }
       }
 
@@ -107,6 +112,9 @@
           display: flex;
           flex-direction: column;
           gap: 30px;
+          .item:last-child {
+            width: 100%;
+          }
         }
       }
     }
@@ -156,9 +164,6 @@
           height: 1.5px;
           background-color: $primary-color;
         }
-      }
-
-      .description {
       }
     }
 
