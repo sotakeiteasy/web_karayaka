@@ -10,6 +10,7 @@ import { RateProvider } from '@/lib/contexts/RateContext';
 import { useLanguageQuery } from 'next-export-i18n';
 
 import { DeviceProvider } from '@/lib/contexts/DeviceContext';
+import '@ant-design/v5-patch-for-react-19';
 
 declare global {
   interface Window {
@@ -80,23 +81,29 @@ function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const handleStart = (url: string) => {
-      if (url !== router.asPath) {
+    const start = (url: string) => {
+      const nextNoHash = (url || '').split('#')[0];
+      const curNoHash = (router.asPath || '').split('#')[0];
+      if (nextNoHash !== curNoHash) {
         setLoading(true);
       }
     };
-    const handleComplete = () => setLoading(false);
+    const stop = () => setLoading(false);
 
-    router.events.on('routeChangeStart', handleStart);
-    router.events.on('routeChangeComplete', handleComplete);
-    router.events.on('routeChangeError', handleComplete);
+    router.events.on('routeChangeStart', start);
+    router.events.on('beforeHistoryChange', start);
+
+    router.events.on('routeChangeComplete', stop);
+    router.events.on('routeChangeError', stop);
 
     return () => {
-      router.events.off('routeChangeStart', handleStart);
-      router.events.off('routeChangeComplete', handleComplete);
-      router.events.off('routeChangeError', handleComplete);
+      router.events.off('routeChangeStart', start);
+      router.events.off('beforeHistoryChange', start);
+
+      router.events.off('routeChangeComplete', stop);
+      router.events.off('routeChangeError', stop);
     };
-  }, [router.asPath]);
+  }, [router]);
 
   return (
     <div className={montserrat.className}>

@@ -186,6 +186,43 @@
     }
   }
 }
+.leaveModal {
+  :global(.ant-modal-title) {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #1a1a1d;
+  }
+  :global(.ant-modal-body) {
+    color: #555252;
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+  :global(.ant-btn-primary:hover) {
+    color: #e8e8e8 !important;
+  }
+  :global(.ant-modal-footer) {
+    text-align: start;
+  }
+  :global(.ant-btn-primary:hover) {
+    color: #e8e8e8 !important;
+  }
+
+  :global(.ant-btn-variant-solid:not(:disabled):hover),
+  :global(.ant-btn-variant-solid:not(:disabled):focus-visible) {
+    color: #fff;
+  }
+  :global(.ant-btn-variant-solid:not(:disabled):active) {
+    color: #fff;
+  }
+
+  :global(.ant-btn-variant-outlined:not(:disabled):hover),
+  :global(.ant-btn-variant-outlined:not(:disabled):focus-visible) {
+    color: #555252;
+  }
+  :global(.ant-btn-variant-outlined:not(:disabled):active) {
+    color: #1a1a1d;
+  }
+}
 
 @media (max-width: 900px) {
   .form {

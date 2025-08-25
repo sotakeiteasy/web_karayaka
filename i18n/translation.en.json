@@ -224,6 +224,12 @@
       "emailRequired": "Email is required",
       "emailInvalid": "Invalid email address",
       "contactRequired": "Phone is required"
+    },
+    "leaveModal":{
+      "title": "Leave this page?",
+      "message": "You have unsent changes in form. If you leave, your data will be lost.",
+      "cancel":"Stay",
+      "ok": "Leave"
     }
   },
   "footer": {

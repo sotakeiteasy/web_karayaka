@@ -8,6 +8,8 @@ import { Inputs } from './types';
 import { CountryType, SearchType } from '@/lib/types';
 import { getImageUrl } from '@/lib/utils';
 import Image from 'next/image';
+import { Modal } from 'antd';
+import { useRouter } from 'next/router';
 
 const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID || '';
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID || '';
@@ -21,7 +23,7 @@ export function ContactUs() {
     handleSubmit,
     setValue,
     reset,
-    formState: { errors },
+    formState: { errors, isDirty },
   } = useForm<Inputs>({
     defaultValues: {
       name: '',
@@ -71,7 +73,7 @@ export function ContactUs() {
     setLocations((prev) => {
       const updated = { ...prev, [country]: !prev[country] };
       const selectedLocations = Object.keys(updated).filter((key) => updated[key as CountryType]) as string[];
-      setValue('location', selectedLocations);
+      setValue('location', selectedLocations, { shouldDirty: true });
       return updated;
     });
   };
@@ -80,10 +82,76 @@ export function ContactUs() {
     setPurposes((prev) => {
       const updated = { ...prev, [type]: !prev[type] };
       const selectedTypes = Object.keys(updated).filter((key) => updated[key as SearchType]) as string[];
-      setValue('purpose', selectedTypes);
+      setValue('purpose', selectedTypes, { shouldDirty: true });
       return updated;
     });
   };
+
+  const router = useRouter();
+
+  const [showLeaveModal, setShowLeaveModal] = useState(false);
+  const [nextUrl, setNextUrl] = useState<string | null>(null);
+  const [suppressRouteBlock, setSuppressRouteBlock] = useState(false);
+
+  const confirmLeave = async () => {
+    setShowLeaveModal(false);
+    setSuppressRouteBlock(true);
+    const url = nextUrl;
+    setNextUrl(null);
+    if (url) {
+      await router.push(url);
+    }
+  };
+
+  const cancelLeave = () => {
+    setShowLeaveModal(false);
+    setNextUrl(null);
+  };
+  // show modal on route changes inside karayaka website
+  useEffect(() => {
+    if (suppressRouteBlock) return;
+
+    const handleRouteChangeStart = (url: string) => {
+      if (!isDirty || isSubmitted) return;
+      if (url === router.asPath) return;
+      setNextUrl(url);
+      setShowLeaveModal(true);
+      router.events.emit('routeChangeError');
+
+      throw 'Route change aborted (unsaved form)';
+    };
+
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+    return () => router.events.off('routeChangeStart', handleRouteChangeStart);
+  }, [isDirty, isSubmitted, suppressRouteBlock, router]);
+
+  // warn on browser back/forward
+  useEffect(() => {
+    const handleBeforePopState = ({ url, as }: any) => {
+      if (!isDirty || isSubmitted) return true;
+      setNextUrl(as ?? url);
+      setShowLeaveModal(true);
+      return false;
+    };
+
+    router.beforePopState(handleBeforePopState);
+    return () => {
+      // restore default behavior
+      router.beforePopState(() => true);
+    };
+  }, [isDirty, isSubmitted, router]);
+
+  // warn on page refresh/close
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (!isDirty || isSubmitted) return;
+      e.preventDefault();
+      e.returnValue = '';
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [isDirty, isSubmitted]);
 
   return (
     <div className={styles.formContainer}>
@@ -214,6 +282,32 @@ export function ContactUs() {
           loading="lazy"
         />
       </div>
+      <Modal
+        open={showLeaveModal}
+        title={t('form.leaveModal.title')}
+        onOk={confirmLeave}
+        onCancel={cancelLeave}
+        okText={t('form.leaveModal.ok')}
+        cancelText={t('form.leaveModal.cancel')}
+        maskClosable={false}
+        closable={false}
+        rootClassName={styles.leaveModal}
+        okButtonProps={{
+          style: {
+            backgroundColor: '#002f6c',
+            borderColor: '#002f6c',
+            color: '#fff',
+            padding: '20px 15px',
+            fontSize: '1rem',
+            marginLeft: '25px',
+          },
+        }}
+        cancelButtonProps={{
+          style: { borderColor: '#555252', padding: '20px 15px', fontSize: '1rem' },
+        }}
+      >
+        <p>{t('form.leaveModal.message')}</p>
+      </Modal>
     </div>
   );
 }

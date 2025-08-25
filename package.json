@@ -16,6 +16,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@ant-design/v5-patch-for-react-19": "^1.0.3",
     "@emailjs/browser": "^4.4.1",
     "@mdi/js": "^7.4.47",
     "@mdi/react": "^1.6.1",
