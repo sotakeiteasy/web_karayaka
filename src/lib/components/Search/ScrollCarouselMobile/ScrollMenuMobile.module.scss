@@ -1,0 +1,42 @@
+@use '@styles/variables' as *;
+.upperMenu {
+  display: none;
+}
+.upperMenu::-webkit-scrollbar {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+@media (max-width: 950px) {
+  .upperMenu {
+    display: block !important;
+    margin-top: 30px;
+    margin-bottom: 25px;
+    overflow: auto;
+    white-space: nowrap;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    .menuItem {
+      display: inline-block !important;
+      padding: 0px 8px;
+      white-space: normal;
+      word-break: normal;
+      vertical-align: top;
+      .menuLink {
+        font-size: 0.8rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid $primary-color;
+        border-radius: 8px;
+        min-height: 72px;
+        max-width: 120px;
+        padding: 5px 10px;
+      }
+    }
+  }
+}

@@ -3,13 +3,78 @@ import { MetaTags, SearchType } from '@/lib/types';
 import { useLanguageQuery, useTranslation } from 'next-export-i18n';
 import Head from 'next/head';
 import BuyCEOText from '../../lib/components/Search/CEOTexts/BuyCEOText';
-import { SeeAlsoCEO } from '@/lib/components/CEOPages/SeeAlso/SeeAlsoCEO';
+import dynamic from 'next/dynamic';
+
+const ScrollMenuMobile = dynamic(() => import('@/lib/components/Search/ScrollCarouselMobile/ScrollMenuMobile'), {
+  ssr: false,
+  loading: () => null,
+});
+const SeeAlsoCEO = dynamic(() => import('@/lib/components/Search/SeeAlso/SeeAlsoCEO'), {
+  ssr: false,
+  loading: () => null,
+});
+
 export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
   const lang = (query?.lang as 'ru' | 'en') || 'ru';
   const { t } = useTranslation();
   const meta = metaTags[lang];
+  const pages = [
+    {
+      title: t('buyFlat.CEOText.title'),
+      navTitle: t('buyFlat.CEOText.navTitle'),
+      link: 'flat-turkey',
+      image: `assets/images/search/ceo-buy-flat-turkey.jpg`,
+    },
+    {
+      title: t('flatsAlanya.CEOText.title'),
+      navTitle: t('flatsAlanya.CEOText.navTitle'),
+      link: 'flats-alanya',
+      image: `assets/images/search/ceo-flats-alanya.jpg`,
+    },
+    {
+      title: t('flatForResidence.CEOText.title'),
+      navTitle: t('flatForResidence.CEOText.navTitle'),
+      link: 'flat-for-residence',
+      image: `assets/images/search/ceo-flat-for-residence.jpg`,
+    },
+    {
+      title: t('propertyForResidence.CEOText.title'),
+      navTitle: t('propertyForResidence.CEOText.navTitle'),
+      link: 'property-for-residence',
+      image: `assets/images/search/ceo-property-for-residence.jpg`,
+    },
+    {
+      title: t('antalya.CEOText.title'),
+      navTitle: t('antalya.CEOText.navTitle'),
+      link: 'property-antalya',
+      image: `assets/images/search/ceo-property-antalya.jpg`,
+    },
 
+    {
+      title: t('istanbul.CEOText.title'),
+      navTitle: t('istanbul.CEOText.navTitle'),
+      link: 'property-istanbul',
+      image: `assets/images/search/ceo-property-istanbul.jpg`,
+    },
+
+    {
+      title: t('landInvestments.CEOText.title'),
+      navTitle: t('landInvestments.CEOText.navTitle'),
+      link: 'land-investments',
+      image: `assets/images/search/ceo-land-investments.jpg`,
+    },
+    {
+      title: t('realEstateLawyer.CEOText.title'),
+      navTitle: t('realEstateLawyer.CEOText.navTitle'),
+      link: 'real-estate-lawyer',
+      image: `assets/images/search/ceo-real-estate-lawyer.jpg`,
+    },
+  ];
+
+  const pagesForDesktop = pages.map(({ navTitle, ...rest }) => rest);
+  const pagesForMobileMenu = pages.map(({ image, title, ...rest }) => rest);
+  const rootLink = '/buy/';
   return (
     <>
       <Head>
@@ -31,56 +96,10 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
       </Head>
       <ContainerWrapper width="large" withMarginBottom={true}>
         <Breadcrumbs items={[{ href: '/buy/', t: 'search.buyBreadcrumb' }]} />
+        {lang === 'ru' && <ScrollMenuMobile pages={pagesForMobileMenu} rootLink={rootLink} />}
         <Search type={SearchType.Buy} />
         {lang === 'ru' && <BuyCEOText />}
-        {lang === 'ru' && (
-          <SeeAlsoCEO
-            pages={[
-              {
-                title: t('antalya.CEOText.title'),
-                link: 'property-antalya',
-                image: `assets/images/search/ceo-property-antalya.jpg`,
-              },
-              {
-                title: t('buyFlat.CEOText.title'),
-                link: 'flat-turkey',
-                image: `assets/images/search/ceo-buy-flat-turkey.jpg`,
-              },
-
-              {
-                title: t('istanbul.CEOText.title'),
-                link: 'property-istanbul',
-                image: `assets/images/search/ceo-property-istanbul.jpg`,
-              },
-              {
-                title: t('flatsAlanya.CEOText.title'),
-                link: 'flats-alanya',
-                image: `assets/images/search/ceo-flats-alanya.jpg`,
-              },
-              {
-                title: t('propertyForResidence.CEOText.title'),
-                link: 'property-for-residence',
-                image: `assets/images/search/ceo-property-for-residence.jpg`,
-              },
-              {
-                title: t('flatForResidence.CEOText.title'),
-                link: 'flat-for-residence',
-                image: `assets/images/search/ceo-flat-for-residence.jpg`,
-              },
-              {
-                title: t('landInvestments.CEOText.title'),
-                link: 'land-investments',
-                image: `assets/images/search/ceo-land-investments.jpg`,
-              },
-              {
-                title: t('realEstateLawyer.CEOText.title'),
-                link: 'real-estate-lawyer',
-                image: `assets/images/search/ceo-real-estate-lawyer.jpg`,
-              },
-            ]}
-            rootLink="/buy/"
-          />
-        )}
+        {lang === 'ru' && <SeeAlsoCEO pages={pagesForDesktop} rootLink={rootLink} />}
       </ContainerWrapper>
     </>
   );

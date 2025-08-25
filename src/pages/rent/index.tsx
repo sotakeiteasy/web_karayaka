@@ -4,13 +4,59 @@ import { MetaTags, SearchType } from '@/lib/types';
 import { useLanguageQuery, useTranslation } from 'next-export-i18n';
 import Head from 'next/head';
 import RentCEOText from '@/lib/components/Search/CEOTexts/RentCEOText';
-import { SeeAlsoCEO } from '@/lib/components/CEOPages/SeeAlso/SeeAlsoCEO';
+// import { SeeAlsoCEO } from '@/lib/components/Search/SeeAlso/SeeAlsoCEO';
+import dynamic from 'next/dynamic';
+
+const ScrollMenuMobile = dynamic(() => import('@/lib/components/Search/ScrollCarouselMobile/ScrollMenuMobile'), {
+  ssr: false,
+  loading: () => null,
+});
+const SeeAlsoCEO = dynamic(() => import('@/lib/components/Search/SeeAlso/SeeAlsoCEO'), {
+  ssr: false,
+  loading: () => null,
+});
+
 export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
   const [query] = useLanguageQuery();
   const lang = (query?.lang as 'ru' | 'en') || 'ru';
   const { t } = useTranslation();
   const meta = metaTags[lang];
+  const pages = [
+    {
+      title: t('rentApartment.CEOText.title'),
+      navTitle: t('rentApartment.CEOText.navTitle'),
+      link: 'flat-turkey',
+      image: `assets/images/search/ceo-rent-apartment.jpg`,
+    },
+    {
+      title: t('antalyaRent.CEOText.title'),
+      navTitle: t('antalyaRent.CEOText.navTitle'),
+      link: 'flat-antalya',
+      image: `assets/images/search/ceo-rent-antalya.jpg`,
+    },
+    {
+      title: t('rentIstanbul.CEOText.title'),
+      navTitle: t('rentIstanbul.CEOText.navTitle'),
+      link: 'rent-istanbul',
+      image: `assets/images/search/ceo-rent-istanbul.jpg`,
+    },
 
+    {
+      title: t('rentVilla.CEOText.title'),
+      navTitle: t('rentVilla.CEOText.navTitle'),
+      link: 'villa-turkey',
+      image: `assets/images/search/ceo-rent-villa.jpg`,
+    },
+    {
+      title: t('villaAntalya.CEOText.title'),
+      navTitle: t('villaAntalya.CEOText.navTitle'),
+      link: 'villa-antalya',
+      image: `assets/images/search/ceo-villa-antalya.jpg`,
+    },
+  ];
+  const pagesForDesktop = pages.map(({ navTitle, ...rest }) => rest);
+  const pagesForMobileMenu = pages.map(({ image, title, ...rest }) => rest);
+  const rootLink = '/rent/';
   return (
     <>
       <Head>
@@ -32,41 +78,11 @@ export default function RentPage({ metaTags }: { metaTags: MetaTags }) {
       </Head>
       <ContainerWrapper width="large" withMarginBottom={true}>
         <Breadcrumbs items={[{ href: '/rent', t: 'search.rentBreadcrumb' }]} />
+        {lang === 'ru' && <ScrollMenuMobile pages={pagesForMobileMenu} rootLink={rootLink} />}
         <Search type={SearchType.Rent} />
         {lang === 'ru' && <RentCEOText />}
 
-        {lang === 'ru' && (
-          <SeeAlsoCEO
-            pages={[
-              {
-                title: t('antalyaRent.CEOText.title'),
-                link: 'flat-antalya',
-                image: `assets/images/search/ceo-rent-antalya.jpg`,
-              },
-              {
-                title: t('rentApartment.CEOText.title'),
-                link: 'flat-turkey',
-                image: `assets/images/search/ceo-rent-apartment.jpg`,
-              },
-              {
-                title: t('rentVilla.CEOText.title'),
-                link: 'villa-turkey',
-                image: `assets/images/search/ceo-rent-villa.jpg`,
-              },
-              {
-                title: t('villaAntalya.CEOText.title'),
-                link: 'villa-antalya',
-                image: `assets/images/search/ceo-villa-antalya.jpg`,
-              },
-              {
-                title: t('rentIstanbul.CEOText.title'),
-                link: 'rent-istanbul',
-                image: `assets/images/search/ceo-rent-istanbul.jpg`,
-              },
-            ]}
-            rootLink="/rent/"
-          />
-        )}
+        {lang === 'ru' && <SeeAlsoCEO pages={pagesForDesktop} rootLink={rootLink} />}
       </ContainerWrapper>
     </>
   );
