@@ -73,7 +73,7 @@ export function useSearchFilters(offerType: SearchType, rate?: number | null | u
   useEffect(() => {
     if (!router.isReady) return;
 
-    const initialFilter: Filter = { type: offerType, sortOption: 'price-cheap' };
+    const initialFilter: Filter = { type: offerType, country: CountryType.Turkey, sortOption: 'price-cheap' };
 
     const {
       type,

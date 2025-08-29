@@ -4,6 +4,7 @@ import { SelectOption } from '@/lib/types';
 import { useMemo, useCallback } from 'react';
 import { useTranslation } from 'next-export-i18n';
 import dynamic from 'next/dynamic';
+import styles from '../index.module.scss';
 
 const Select = dynamic(() => import('react-select'), {
   ssr: false,
@@ -72,6 +73,9 @@ export function FilterSelect({
         removeValue={removeValue}
         components={isMulti ? { SelectContainer } : undefined}
         controlShouldRenderValue={!isMulti}
+        className={styles.selectContainer}
+        closeMenuOnSelect={isMulti ? false : true}
+        blurInputOnSelect={isMulti ? false : true}
       />
     </>
   );

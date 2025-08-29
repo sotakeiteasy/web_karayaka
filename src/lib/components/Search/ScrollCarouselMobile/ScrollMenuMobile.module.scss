@@ -15,16 +15,19 @@
     margin-bottom: 25px;
     overflow: auto;
     white-space: nowrap;
-
+    text-align: center;
     -ms-overflow-style: none;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
     .menuItem {
       display: inline-block !important;
-      padding: 0px 8px;
+      padding-right: 8px;
       white-space: normal;
       word-break: normal;
       vertical-align: top;
+      &:last-of-type {
+        padding-right: 0px !important;
+      }
       .menuLink {
         font-size: 0.8rem;
         text-align: center;

@@ -5,74 +5,153 @@
   margin: 0 auto;
   justify-content: center;
   max-width: 1200px;
-
-  .filterBox {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-size: 1rem;
-    height: fit-content;
-    background-color: $white-text;
-    color: $primary-color;
-    border: 3px solid $primary-color;
-    width: 350px;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    margin-right: 20px;
-
-    .filter {
-      margin-bottom: 10px;
-      width: 100%;
-
-      label {
-        display: block;
-        margin-bottom: 3px;
-        font-weight: 600;
-        font-size: 13px;
-      }
-
-      input {
-        background-color: $white-text;
-        color: $primary-color;
+  .filterBlock {
+    width: 370px;
+    padding-right: 20px;
+    .filterControls {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      .filterBtn {
+        align-self: flex-start;
+        display: flex;
+        gap: 8px;
+        color: $white-text;
+        text-align: center;
+        padding: 6px 14px;
+        background-color: $primary-color;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        border-radius: 8px;
         border: 2px solid $primary-color;
-        outline: none;
-        width: 100%;
-        padding: 6px 10px;
-        border-radius: 4px;
+        margin-bottom: 15px;
       }
     }
 
-    .filterRow {
+    .filterBox {
       display: flex;
-      gap: 8px;
-      margin-bottom: 10px;
+      flex-direction: column;
+      gap: 5px;
+      font-size: 1rem;
+      height: fit-content;
+      background-color: $white-text;
+      color: $primary-color;
+      border: 3px solid $primary-color;
+      width: 350px;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
 
       .filter {
-        flex: 1;
-        margin-bottom: 0;
+        margin-bottom: 10px;
+        width: 100%;
+
+        label,
+        legend {
+          display: block;
+          margin-bottom: 3px;
+          font-weight: 600;
+          font-size: 13px;
+        }
+
+        input {
+          background-color: $white-text;
+          color: $primary-color;
+          border: 2px solid $primary-color;
+          outline: none;
+          width: 100%;
+          padding: 6px 25px 6px 10px;
+          border-radius: 4px;
+        }
+
+        &.filterRelative {
+          position: relative;
+
+          &::before {
+            content: var(--unit);
+            display: block;
+            position: absolute;
+            right: 10px;
+            bottom: 5.5px;
+          }
+        }
+
+        fieldset.filter {
+          border: none !important;
+          border-width: 0px !important;
+          padding: 0px;
+        }
+        .countryFilters {
+          display: flex;
+          justify-content: flex-start;
+          gap: 20px;
+          align-items: center;
+
+          .filterButton {
+            text-align: center;
+            padding: 6px 14px;
+            background-color: $white-text;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border-radius: 8px;
+            border: 2px solid $primary-color;
+            color: $gray-color;
+
+            &.active {
+              background-color: $primary-color;
+              color: $white-text;
+            }
+          }
+        }
       }
-    }
 
-    .filterActions {
-      display: flex;
-      gap: 10px;
-      margin-top: 20px;
-      width: 100%;
+      .filterRow {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 10px;
+        max-height: 60px;
 
-      .applyButton {
-        width: 50%;
-        flex: 1;
-        padding: 8px 15px;
-        background-color: $primary-color;
-        color: $white-text;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 1.1rem;
+        .filter {
+          flex: 1;
+          margin-bottom: 0;
+        }
+      }
 
-        &:hover {
-          background-color: $secondary-color;
+      .filterActions {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+        width: 100%;
+
+        .applyButton {
+          width: calc(50% - 10px);
+          flex: 1;
+          padding: 8px 15px;
+          background-color: $primary-color;
+          color: $white-text;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 1.1rem;
+
+          &:hover {
+            background-color: $secondary-color;
+          }
+        }
+        .resetButton {
+          width: calc(50% - 10px);
+          align-self: left;
+          padding: 4px 15px;
+          background-color: #f8f9fa;
+          color: #212529;
+          border: 1px solid #dee2e6;
+          border-radius: 4px;
+          cursor: pointer;
+          font-size: 16px;
+
+          &:hover {
+            background-color: #e2e6ea;
+          }
         }
       }
     }
@@ -114,31 +193,6 @@
           cursor: pointer;
         }
       }
-
-      .addPanel {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 0;
-
-        .resetButton {
-          align-self: left;
-          padding: 4px 15px;
-          background-color: #f8f9fa;
-          color: #212529;
-          border: 1px solid #dee2e6;
-          border-radius: 4px;
-          cursor: pointer;
-          font-size: 16px;
-
-          &:hover {
-            background-color: #e2e6ea;
-          }
-        }
-
-        div {
-          margin-left: auto;
-        }
-      }
     }
   }
 }
@@ -158,64 +212,76 @@
     align-items: center;
     width: 800px;
 
-    .filterBox > .filter:nth-child(2) {
-      margin-left: 40px;
-    }
-
-    .filterBox > .filter:nth-child(3) {
-      height: 100%;
-      width: 650px;
-    }
-
-    .filterBox > .filter:nth-child(5) {
-      margin-left: 40px;
-    }
-
-    .filterBox > .filter:nth-child(6) {
-      height: 100%;
-      width: 650px;
-    }
-
-    .filterBox {
-      flex-direction: row;
-      gap: 10px;
+    .filterBlock {
       width: 700px;
-      min-height: 250px !important;
-      margin-right: 0;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-      display: flex;
-      justify-content: center;
-
-      .filter {
-        height: 60px;
-        width: 300px;
-        margin-bottom: 0px;
+      padding-right: 0px !important;
+      .filterControls {
+        justify-content: flex-start;
+        gap: 20px;
+        margin-right: 0px !important;
+        .filterBtn {
+          display: flex !important;
+        }
       }
 
-      .filterRow {
-        max-width: 300px;
-      }
-
-      .filterRow:nth-last-of-type(2) {
+      .filterBox > .filter:nth-child(2) {
         margin-left: 40px;
       }
 
-      .filterActions {
-        margin: 0 !important;
-        width: 300px;
+      .filterBox > .filter:nth-child(3) {
+        height: 100%;
+        width: 650px;
+      }
+
+      .filterBox > .filter:nth-child(5) {
+        margin-left: 40px;
+      }
+
+      .filterBox > .filter:nth-child(6) {
+        height: 100%;
+        width: 650px;
+      }
+
+      .filterBox {
+        flex-direction: row;
+        gap: 10px;
+        width: 700px;
+        min-height: 250px !important;
+        margin-right: 0;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
         display: flex;
-        justify-content: right;
-        height: 60px;
-        margin-left: 40px;
+        justify-content: center;
 
-        .applyButton {
-          width: 300px !important;
+        .filter {
+          height: 60px;
+          width: 300px;
+          margin-bottom: 0px;
+        }
+
+        .filterRow {
           max-width: 300px;
-          margin: 0;
-          height: 35px;
-          align-self: end;
-          padding: 0;
+        }
+
+        .filterRow:nth-last-of-type(2) {
+          margin-left: 40px;
+        }
+
+        .filterActions {
+          margin: 0 !important;
+          width: 300px;
+          display: flex;
+          justify-content: right;
+          height: 60px;
+          margin-left: 40px;
+
+          .applyButton,
+          .resetButton {
+            margin: 0;
+            height: 35px;
+            align-self: end;
+            padding: 0;
+          }
         }
       }
     }
@@ -236,30 +302,56 @@
   .main {
     max-width: 100% !important;
   }
+  .filterBlock {
+    width: 100% !important;
+    .filterBox {
+      flex-direction: row;
+      gap: 14px !important;
+      max-width: 100%;
 
-  .filterBox {
-    flex-direction: row;
-    gap: 10px;
-    max-width: 100%;
+      .filter {
+        height: 50px;
+        width: 100% !important;
+        margin-left: 0 !important;
+        font-size: 1.1rem !important;
 
-    .filter {
-      height: 50px;
-      width: 100% !important;
-      margin-left: 0 !important;
-    }
+        &.filterRelative {
+          &::before {
+            font-size: 1.1rem !important;
+            bottom: 1.5px !important;
+          }
+        }
+      }
 
-    .filterRow {
-      margin-left: 0px !important;
-      max-width: 100% !important;
-      width: 100%;
-    }
+      .selectContainer {
+        .css-13cymwt-control {
+          min-height: 50px;
+        }
+      }
 
-    .filterActions {
-      margin: 0 !important;
-      width: 100% !important;
+      .applyButton,
+      .resetButton,
+      .filterButton {
+        height: 45px !important;
+      }
 
-      .applyButton {
+      .filterRow {
+        margin-left: 0px !important;
         max-width: 100% !important;
+        width: 100%;
+        input {
+          height: 45px;
+          font-size: 1.1rem;
+        }
+      }
+
+      .filterActions {
+        margin: 0 !important;
+        width: 100% !important;
+
+        .applyButton {
+          max-width: 100% !important;
+        }
       }
     }
   }
@@ -267,6 +359,7 @@
   .searchBlock {
     width: 100% !important;
     padding: 0;
+    font-size: 1.1rem;
 
     .controlPanel {
       justify-content: flex-end;
@@ -279,20 +372,12 @@
 
         .searchButton {
           width: 200px;
+          height: 45px;
         }
 
         input {
           width: 100%;
-        }
-      }
-
-      .addPanel {
-        gap: 20px;
-        flex-direction: column;
-
-        .resetButton {
-          width: 200px;
-          align-self: self-end;
+          height: 45px !important;
         }
       }
     }
@@ -303,8 +388,9 @@
   .main {
     max-width: 100% !important;
   }
-
-  .filterBox {
-    margin-top: 0px !important;
+  .filterBlock {
+    .filterBox {
+      margin-top: 0px !important;
+    }
   }
 }

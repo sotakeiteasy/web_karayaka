@@ -1,4 +1,4 @@
-import { Ad, Filter } from '@/lib/types';
+import { Ad, Filter, SearchType } from '@/lib/types';
 import rawAds from '@/data/ads/ads.json';
 
 import {
@@ -104,7 +104,7 @@ export function filterAds(filters: Filter, rate: number | null | undefined, loca
     if (filters.bedroom && filters.bedroom?.length > 0) {
       if (
         !ad.rooms ||
-        !filters.bedroom.some((d) => ad.rooms !== null && hasTranslationMatch({ ru: ad.rooms, en: ad.rooms }, d))
+        !filters.bedroom.some((d) => ad.rooms !== null && hasExactBedroomMatch({ ru: ad.rooms, en: ad.rooms }, d))
       ) {
         return false;
       }
@@ -135,48 +135,135 @@ function hasTranslationMatch(translationObj: Record<string, string | null>, sear
   return Object.values(translationObj).some((value) => value && value.toLowerCase().includes(normalizedSearch));
 }
 
-export function getUniqueFilterValues() {
-  const countriesMap = new Map<string, { en: string; ru: string }>();
-  const citiesMap = new Map<string, { en: string; ru: string }>();
-  const districtMap = new Map<string, { en: string; ru: string }>();
-  const propertyTypesMap = new Map<string, { en: string; ru: string }>();
-  const bedroomMap = new Map<string, { en: string; ru: string }>();
+function hasExactBedroomMatch(translationObj: Record<string, string | null>, searchText: string): boolean {
+  if (!translationObj) return false;
+  return Object.values(translationObj).some((value) => value === searchText);
+}
 
-  ads.forEach((ad, index) => {
-    if (!countryTranslations[ad.location.country]) {
+export function getUniqueFilterValues(type: SearchType) {
+  type Localized = { en: string; ru: string };
+
+  const countriesMap = new Map<string, Localized>();
+  const citiesMap = new Map<string, Localized>();
+  const districtMap = new Map<string, Localized>();
+  const propertyTypesMap = new Map<string, Localized>();
+  const bedroomMap = new Map<string, Localized>();
+
+  type CountryBucket = {
+    propertyType: Map<string, Localized>;
+    bedroom: Map<string, Localized>;
+    price: { minRub?: number; maxRub?: number; minTry?: number; maxTry?: number };
+    area: { minArea?: number; maxArea?: number };
+  };
+
+  const byCountry = new Map<string, CountryBucket>();
+  const ensureBucket = (countryKey: string): CountryBucket => {
+    if (!byCountry.has(countryKey)) {
+      byCountry.set(countryKey, {
+        propertyType: new Map(),
+        bedroom: new Map(),
+        price: {},
+        area: {},
+      });
+    }
+    return byCountry.get(countryKey)!;
+  };
+
+  const updMin = (cur: number | undefined, v: number) => (cur == null ? v : Math.min(cur, v));
+  const updMax = (cur: number | undefined, v: number) => (cur == null ? v : Math.max(cur, v));
+
+  const source = ads.filter((ad) => ad.type === type);
+
+  source.forEach((ad, index) => {
+    const countryTr = countryTranslations[ad.location.country];
+    if (!countryTr) {
       throw new Error(
         `Translation not found for country "${ad.location.country}" in ad #${index}, ID: ${ad.id || 'unknown'}`
       );
     }
-    countriesMap.set(ad.location.country, countryTranslations[ad.location.country]);
+    countriesMap.set(ad.location.country, countryTr);
 
-    if (!cityTranslations[ad.location.city]) {
+    const cityTr = cityTranslations[ad.location.city];
+    if (!cityTr) {
       throw new Error(
         `Translation not found for city "${ad.location.city}" in ad #${index}, ID: ${ad.id || 'unknown'}`
       );
     }
-    citiesMap.set(ad.location.city, cityTranslations[ad.location.city]);
+    citiesMap.set(ad.location.city, cityTr);
 
     if (ad.location.district) {
-      if (!districtTranslations[ad.location.district]) {
+      const districtTr = districtTranslations[ad.location.district];
+      if (!districtTr) {
         throw new Error(
           `Translation not found for district "${ad.location.district}" in ad #${index}, ID: ${ad.id || 'unknown'}`
         );
       }
-      districtMap.set(ad.location.district, districtTranslations[ad.location.district]);
+      districtMap.set(ad.location.district, districtTr);
     }
 
-    if (!propertyTypeTranslations[ad.propertyType]) {
+    const propTr = propertyTypeTranslations[ad.propertyType];
+    if (!propTr) {
       throw new Error(
         `Translation not found for property type "${ad.propertyType}" in ad #${index}, ID: ${ad.id || 'unknown'}`
       );
     }
-    propertyTypesMap.set(ad.propertyType, propertyTypeTranslations[ad.propertyType]);
+    propertyTypesMap.set(ad.propertyType, propTr);
 
     if (ad.rooms) {
-      bedroomMap.set(ad.rooms, { en: ad.rooms, ru: ad.rooms });
+      const roomsLabel = String(ad.rooms);
+      bedroomMap.set(roomsLabel, { en: roomsLabel, ru: roomsLabel });
+    }
+
+    const bucket = ensureBucket(ad.location.country);
+    bucket.propertyType.set(ad.propertyType, propTr);
+    if (ad.rooms) {
+      const roomsLabel = String(ad.rooms);
+      bucket.bedroom.set(roomsLabel, { en: roomsLabel, ru: roomsLabel });
+    }
+
+    if (typeof ad.area === 'number') {
+      bucket.area.minArea = updMin(bucket.area.minArea, ad.area);
+      bucket.area.maxArea = updMax(bucket.area.maxArea, ad.area);
+    }
+    const rub = typeof ad.price.rub === 'number' ? ad.price.rub : undefined;
+    const tryPrice = typeof ad.price.try === 'number' ? ad.price.try : undefined;
+
+    if (ad.location.country === 'Russia' && rub != null) {
+      bucket.price.minRub = updMin(bucket.price.minRub, rub);
+      bucket.price.maxRub = updMax(bucket.price.maxRub, rub);
+    }
+    if (ad.location.country === 'Turkey' && tryPrice != null) {
+      bucket.price.minTry = updMin(bucket.price.minTry, tryPrice);
+      bucket.price.maxTry = updMax(bucket.price.maxTry, tryPrice);
     }
   });
+
+  const byCountryObj = Object.fromEntries(
+    Array.from(byCountry.entries()).map(([countryKey, b]) => {
+      let currency: 'rub' | 'try' | null = null;
+      let min: number | null = null;
+      let max: number | null = null;
+
+      if (countryKey === 'Russia') {
+        currency = 'rub';
+        min = b.price.minRub ?? null;
+        max = b.price.maxRub ?? null;
+      } else if (countryKey === 'Turkey') {
+        currency = 'try';
+        min = b.price.minTry ?? null;
+        max = b.price.maxTry ?? null;
+      }
+      return [
+        countryKey,
+        {
+          propertyType: Array.from(b.propertyType.values()),
+          bedroom: Array.from(b.bedroom.values()),
+          price: { currency, min, max },
+          area: { min: b.area.minArea ?? null, max: b.area.maxArea ?? null },
+        },
+      ];
+    })
+  );
 
   return {
     countries: Array.from(countriesMap.values()),
@@ -184,5 +271,6 @@ export function getUniqueFilterValues() {
     district: Array.from(districtMap.values()),
     propertyType: Array.from(propertyTypesMap.values()),
     bedroom: Array.from(bedroomMap.values()),
+    byCountry: byCountryObj,
   };
 }

@@ -2,13 +2,19 @@ import { useMemo } from 'react';
 import { getUniqueFilterValues } from '@/lib/utils';
 import { useTranslation } from 'next-export-i18n';
 import { FILTER_MAPPINGS } from '@/lib/constants/filterOptions';
-import { CountryType } from '../types/FilterTypes';
+import { CountryType, SearchType } from '../types/FilterTypes';
 
-export function useFilterOptions(country: string | undefined, city: string | undefined, lang: 'ru' | 'en') {
+export function useFilterOptions(
+  country: string | undefined,
+  city: string | undefined,
+  lang: 'ru' | 'en',
+  type: SearchType,
+  rate: number | null | undefined
+) {
   const { t } = useTranslation();
 
   // useMemo have a sense, because we call getUniqieFilterValues only once
-  const filterValues = useMemo(() => getUniqueFilterValues(), []);
+  const filterValues = useMemo(() => getUniqueFilterValues(type), []);
 
   const filteredCities = useMemo(() => {
     if (!country) return filterValues.cities;
@@ -96,19 +102,121 @@ export function useFilterOptions(country: string | undefined, city: string | und
     })),
   ];
 
-  const propertyTypeOptions = [
-    ...filterValues.propertyType.map((propertyType) => ({
-      value: propertyType.en,
-      label: propertyType[lang],
-    })),
-  ];
+  const propertyTypeSource =
+    country && filterValues.byCountry?.[country]?.propertyType?.length
+      ? filterValues.byCountry[country].propertyType
+      : filterValues.propertyType;
 
-  const bedroomOptions = [
-    ...filterValues.bedroom.map((bedroom) => ({
+  const propertyTypeOptions = propertyTypeSource.map((propertyType) => ({
+    value: propertyType.en,
+    label: propertyType[lang],
+  }));
+
+  function parseBedroom(value: string) {
+    const [bedroom, guestRoom] = value.split('+');
+    return {
+      bedroom: Number(bedroom),
+      guestRoom: guestRoom !== undefined ? Number(guestRoom) : null,
+    };
+  }
+
+  const bedroomSource =
+    country && filterValues.byCountry?.[country]?.bedroom?.length
+      ? filterValues.byCountry[country].bedroom
+      : filterValues.bedroom;
+
+  const bedroomOptions = bedroomSource
+    .map((bedroom) => ({
       value: bedroom.en,
       label: bedroom[lang],
-    })),
-  ];
+    }))
+    .sort((a, b) => {
+      const aParsed = parseBedroom(a.value);
+      const bParsed = parseBedroom(b.value);
+      if (aParsed.bedroom !== bParsed.bedroom) {
+        return aParsed.bedroom - bParsed.bedroom;
+      }
+      if (aParsed.guestRoom === null && bParsed.guestRoom !== null) return -1;
+      if (aParsed.guestRoom !== null && bParsed.guestRoom === null) return 1;
+      if (aParsed.guestRoom !== null && bParsed.guestRoom !== null) {
+        return aParsed.guestRoom - bParsed.guestRoom;
+      }
+      return 0;
+    });
+
+  const countryBucket = country ? filterValues.byCountry?.[country] : undefined;
+
+  const allBuckets = Object.values(filterValues.byCountry ?? {});
+  const globalAreaMin = allBuckets
+    .map((b: any) => b.area?.min)
+    .filter((v) => typeof v === 'number')
+    .reduce((acc, v) => Math.min(acc, v), Number.POSITIVE_INFINITY);
+  const globalAreaMax = allBuckets
+    .map((b: any) => b.area?.max)
+    .filter((v) => typeof v === 'number')
+    .reduce((acc, v) => Math.max(acc, v), Number.NEGATIVE_INFINITY);
+
+  const areaRange = {
+    min: countryBucket?.area?.min ?? (isFinite(globalAreaMin) ? globalAreaMin : 0),
+    max: countryBucket?.area?.max ?? (isFinite(globalAreaMax) ? globalAreaMax : 0),
+  };
+
+  const isNum = (v: unknown): v is number => typeof v === 'number' && Number.isFinite(v);
+  const toRub = (tryVal: number) => Math.round(((tryVal || 0) * (rate ?? 0)) / 1000) * 1000;
+
+  const globalRubMin = allBuckets
+    .map((b) => (b.price?.currency === 'rub' ? b.price?.min : null))
+    .filter(isNum)
+    .reduce((acc, v) => Math.min(acc, v), Number.POSITIVE_INFINITY);
+
+  const globalRubMax = allBuckets
+    .map((b) => (b.price?.currency === 'rub' ? b.price?.max : null))
+    .filter(isNum)
+    .reduce((acc, v) => Math.max(acc, v), Number.NEGATIVE_INFINITY);
+
+  const globalTryMin = allBuckets
+    .map((b) => (b.price?.currency === 'try' ? b.price?.min : null))
+    .filter(isNum)
+    .reduce((acc, v) => Math.min(acc, v), Number.POSITIVE_INFINITY);
+
+  const globalTryMax = allBuckets
+    .map((b) => (b.price?.currency === 'try' ? b.price?.max : null))
+    .filter(isNum)
+    .reduce((acc, v) => Math.max(acc, v), Number.NEGATIVE_INFINITY);
+
+  let priceRange: { currency: 'rub' | 'try'; min: number; max: number };
+
+  if (country === 'Russia') {
+    priceRange = {
+      currency: 'rub',
+      min: isNum(countryBucket?.price?.min) ? countryBucket!.price.min! : isFinite(globalRubMin) ? globalRubMin : 0,
+      max: isNum(countryBucket?.price?.max) ? countryBucket!.price.max! : isFinite(globalRubMax) ? globalRubMax : 0,
+    };
+  } else {
+    // Turkey
+    if (lang === 'en') {
+      priceRange = {
+        currency: 'try',
+        min: isNum(countryBucket?.price?.min) ? countryBucket!.price.min! : isFinite(globalTryMin) ? globalTryMin : 0,
+        max: isNum(countryBucket?.price?.max) ? countryBucket!.price.max! : isFinite(globalTryMax) ? globalTryMax : 0,
+      };
+    } else {
+      // lang === 'ru' → рубли (конвертируем из TRY)
+      priceRange = {
+        currency: 'rub',
+        min: isNum(countryBucket?.price?.min)
+          ? toRub(countryBucket!.price.min!)
+          : isFinite(globalTryMin)
+          ? toRub(globalTryMin)
+          : 0,
+        max: isNum(countryBucket?.price?.max)
+          ? toRub(countryBucket!.price.max!)
+          : isFinite(globalTryMax)
+          ? toRub(globalTryMax)
+          : 0,
+      };
+    }
+  }
 
   return {
     districtOptions,
@@ -118,5 +226,7 @@ export function useFilterOptions(country: string | undefined, city: string | und
     floorOptions,
     bedroomOptions,
     sortOptions,
+    areaRange,
+    priceRange,
   };
 }

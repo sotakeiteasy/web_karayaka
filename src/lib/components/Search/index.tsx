@@ -1,14 +1,17 @@
 import styles from './index.module.scss';
 import dynamic from 'next/dynamic';
 import { useTranslation, useLanguageQuery } from 'next-export-i18n';
-import { ChangeEvent, useContext, useEffect, useState } from 'react';
+import { ChangeEvent, useContext, useEffect, useRef, useState } from 'react';
 import Ads from './PaginatedAds/Ads';
 import { LabelInput } from './LabelInput/LabelInput';
 import { FilterSelect } from './FilterSelect/FilterSelect';
 
-import { SelectOption, SearchType } from '@/lib/types';
+import { SelectOption, SearchType, CountryType } from '@/lib/types';
 import { useSearchFilters, useFilterOptions } from '@/lib/hooks';
 import { RateContext } from '../../contexts/RateContext';
+import { mdiTuneVariant } from '@mdi/js';
+import Icon from '@mdi/react';
+import { DeviceContext } from '@/lib/contexts/DeviceContext';
 
 // problem with static export - https://github.com/JedWatson/react-select/issues/5459
 const Select = dynamic(() => import('react-select'), {
@@ -41,7 +44,9 @@ export function Search({ type }: { type: SearchType }) {
     bedroomOptions,
     floorOptions,
     sortOptions,
-  } = useFilterOptions(filter.country, filter.city, lang);
+    areaRange,
+    priceRange,
+  } = useFilterOptions(filter.country, filter.city, lang, type, rate);
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchText(e.target.value);
@@ -75,90 +80,177 @@ export function Search({ type }: { type: SearchType }) {
     localStorage.setItem('isFilterApplied', 'true');
   }
 
+  const handleCountryClick = (value: string) => {
+    if (filter.country === value) return;
+    handleFilterChange('country', value);
+  };
+
+  const currentMinArea = typeof filter.minArea === 'number' ? filter.minArea : areaRange.min;
+  const currentMaxArea = typeof filter.maxArea === 'number' ? filter.maxArea : areaRange.max;
+
+  const currentMinPrice = typeof filter.minPrice === 'number' ? filter.minPrice : priceRange.min;
+  const currentMaxPrice = typeof filter.maxPrice === 'number' ? filter.maxPrice : priceRange.max;
+
+  const { isMobile } = useContext(DeviceContext);
+  const [isOpen, setIsOpen] = useState(isMobile ? false : true);
+
   if (rate == null) return null;
 
   return (
     <main className={styles.main}>
-      <div className={styles.filterBox}>
-        <div className={styles.filter}>
-          <FilterSelect
-            name="country"
-            label="search.filters.allCountries"
-            value={filter.country ?? ''}
-            options={countryOptions}
-            onChange={handleSelectChange}
+      <div className={styles.filterBlock}>
+        <div className={styles.filterControls}>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className={styles.filterBtn}
+            type="button"
+            aria-label={lang === 'ru' ? 'Показать фильтры' : 'Toggle filters'}
+          >
+            <Icon path={mdiTuneVariant} size={1} />
+          </button>
+          <Select
+            className={styles.sortButton}
+            id="sort"
+            name="sort"
+            value={sortOptions.find((option) => option.value === filter.sortOption)}
+            onChange={(newValue) => {
+              const selectedOption = newValue as SelectOption;
+              const value = selectedOption?.value || 'price-cheap';
+              handleFilterChange('sortOption', value);
+            }}
+            options={sortOptions}
+            isSearchable={false}
+            classNamePrefix="react-select"
           />
         </div>
-        <div className={styles.filter}>
-          <FilterSelect
-            name="city"
-            label="search.filters.allCities"
-            value={filter.city ?? ''}
-            options={cityOptions}
-            onChange={handleSelectChange}
-          />
-        </div>
-
-        <div className={styles.filter}>
-          <FilterSelect
-            name="district"
-            label="search.filters.allDistricts"
-            value={filter.district ?? ''}
-            options={districtOptions}
-            onChange={handleSelectChange}
-            isMulti={true}
-          />
-        </div>
-
-        {isFilerAppliedOnce && (
-          <>
+        {isOpen && (
+          <div className={styles.filterBox}>
             <div className={styles.filter}>
-              <FilterSelect
-                name="propertyType"
-                label="search.filters.any"
-                value={filter.propertyType ?? ''}
-                options={propertyTypeOptions}
-                onChange={handleSelectChange}
-              />
+              <legend>{t('search.filters.country')}</legend>
+              <div id="countryFilter" className={styles.countryFilters}>
+                {countryOptions.map(({ value, label }) => (
+                  <input
+                    key={value}
+                    id={value}
+                    type="button"
+                    value={label}
+                    name="country-option"
+                    onClick={() => handleCountryClick(value)}
+                    aria-pressed={filter.country === value}
+                    className={`${styles.filterButton} ${filter.country === value ? styles.active : ''}`}
+                  />
+                ))}
+              </div>
             </div>
             <div className={styles.filter}>
               <FilterSelect
-                name="floor"
-                label="search.filters.any"
-                value={filter.floor ?? ''}
-                options={floorOptions}
+                name="city"
+                label="search.filters.allCities"
+                value={filter.city ?? ''}
+                options={cityOptions}
                 onChange={handleSelectChange}
-                isNumeric={true}
               />
             </div>
 
             <div className={styles.filter}>
               <FilterSelect
-                name="bedroom"
-                label="search.filters.any2"
-                value={filter.bedroom ?? ''}
-                options={bedroomOptions}
+                name="district"
+                label="search.filters.allDistricts"
+                value={filter.district ?? ''}
+                options={districtOptions}
                 onChange={handleSelectChange}
                 isMulti={true}
               />
             </div>
 
-            <div className={styles.filterRow}>
-              <LabelInput name="minPrice" value={filter.minPrice} onChange={handleNumberInputChange} t={t} />
-              <LabelInput name="maxPrice" value={filter.maxPrice} onChange={handleNumberInputChange} t={t} />
-            </div>
-            <div className={styles.filterRow}>
-              <LabelInput name="minArea" value={filter.minArea} onChange={handleNumberInputChange} t={t} />
-              <LabelInput name="maxArea" value={filter.maxArea} onChange={handleNumberInputChange} t={t} />
-            </div>
-          </>
-        )}
+            {isFilerAppliedOnce && (
+              <>
+                <div className={styles.filter}>
+                  <FilterSelect
+                    name="propertyType"
+                    label="search.filters.any"
+                    value={filter.propertyType ?? ''}
+                    options={propertyTypeOptions}
+                    onChange={handleSelectChange}
+                  />
+                </div>
+                <div className={styles.filter}>
+                  <FilterSelect
+                    name="floor"
+                    label="search.filters.any"
+                    value={filter.floor ?? ''}
+                    options={floorOptions}
+                    onChange={handleSelectChange}
+                    isNumeric={true}
+                  />
+                </div>
 
-        <div className={styles.filterActions}>
-          <button className={styles.applyButton} onClick={handleApplyFilter}>
-            {t('search.filters.apply')}
-          </button>
-        </div>
+                <div className={styles.filter}>
+                  <FilterSelect
+                    name="bedroom"
+                    label="search.filters.any2"
+                    value={filter.bedroom ?? ''}
+                    options={bedroomOptions}
+                    onChange={handleSelectChange}
+                    isMulti={true}
+                  />
+                </div>
+
+                <div className={styles.filterRow}>
+                  <LabelInput
+                    name="minPrice"
+                    value={filter.minPrice}
+                    onChange={handleNumberInputChange}
+                    t={t}
+                    placeholder={new Intl.NumberFormat('ru-RU').format(currentMinPrice)}
+                    unit={lang === 'en' && filter.country === CountryType.Turkey ? '₺' : '₽'}
+                    maxLength={12}
+                  />
+                  <LabelInput
+                    name="maxPrice"
+                    value={filter.maxPrice}
+                    onChange={handleNumberInputChange}
+                    t={t}
+                    placeholder={new Intl.NumberFormat('ru-RU').format(currentMaxPrice)}
+                    unit={lang === 'en' && filter.country === CountryType.Turkey ? '₺' : '₽'}
+                    maxLength={12}
+                  />
+                </div>
+                <div className={styles.filterRow}>
+                  <LabelInput
+                    name="minArea"
+                    value={filter.minArea}
+                    onChange={handleNumberInputChange}
+                    t={t}
+                    placeholder={new Intl.NumberFormat('ru-RU').format(currentMinArea)}
+                    unit={lang === 'ru' ? 'м²' : 'm²'}
+                    maxLength={7}
+                  />
+                  <LabelInput
+                    name="maxArea"
+                    value={filter.maxArea}
+                    onChange={handleNumberInputChange}
+                    t={t}
+                    placeholder={new Intl.NumberFormat('ru-RU').format(currentMaxArea)}
+                    unit={lang === 'ru' ? 'м²' : 'm²'}
+                    maxLength={7}
+                  />
+                </div>
+              </>
+            )}
+
+            <div className={styles.filterActions}>
+              <button className={styles.applyButton} onClick={handleApplyFilter}>
+                {t('search.filters.apply')}
+              </button>
+              {Object.keys(appliedFilters).length > 1 && (
+                <button onClick={resetFilters} className={styles.resetButton}>
+                  {t('search.filters.reset')}
+                </button>
+              )}
+            </div>
+          </div>
+        )}
       </div>
 
       <div className={styles.searchBlock}>
@@ -175,29 +267,6 @@ export function Search({ type }: { type: SearchType }) {
             <button className={styles.searchButton} onClick={applyFilters}>
               {t('search.filters.searchButton')}
             </button>
-          </div>
-
-          <div className={styles.addPanel}>
-            {Object.keys(appliedFilters).length > 1 && (
-              <button onClick={resetFilters} className={styles.resetButton}>
-                {t('search.filters.reset')}
-              </button>
-            )}
-
-            <Select
-              className={styles.sortButton}
-              id="sort"
-              name="sort"
-              value={sortOptions.find((option) => option.value === filter.sortOption)}
-              onChange={(newValue) => {
-                const selectedOption = newValue as SelectOption;
-                const value = selectedOption?.value || 'price-cheap';
-                handleFilterChange('sortOption', value);
-              }}
-              options={sortOptions}
-              isSearchable={false}
-              classNamePrefix="react-select"
-            />
           </div>
         </div>
         <Ads filteredAds={filteredAds} />
