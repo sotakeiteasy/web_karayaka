@@ -50,6 +50,12 @@ export async function getPageMeta() {
     'article13',
     'article14',
     'article15',
+    'article16',
+    'article17',
+    'article18',
+    'article19',
+    'article20',
+    'article21',
   ];
   for (const id of blogIds) {
     const { getStaticProps } = await import('@/pages/blog/[id]');

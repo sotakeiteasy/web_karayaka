@@ -76,6 +76,12 @@ export function FilterSelect({
         className={styles.selectContainer}
         closeMenuOnSelect={isMulti ? false : true}
         blurInputOnSelect={isMulti ? false : true}
+        styles={{
+          control: (provided, state) => ({
+            ...provided,
+            cursor: 'pointer',
+          }),
+        }}
       />
     </>
   );

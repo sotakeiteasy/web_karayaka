@@ -137,6 +137,7 @@
       "reset": "Reset",
       "searchPlaceholder": "Search by address",
       "searchButton": "Search",
+      "resetSearch": "Clear",
       "noOptions": "There is no such option yet.",
       "point": "..."
     },
@@ -227,7 +228,7 @@
     },
     "leaveModal":{
       "title": "Leave this page?",
-      "message": "You have unsent changes in form. If you leave, your data will be lost.",
+      "message": "You have unsubmitted changes in the form. If you leave, your data will be lost",
       "cancel":"Stay",
       "ok": "Leave"
     }

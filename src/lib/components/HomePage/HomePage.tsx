@@ -8,7 +8,7 @@ import { mdiMagnify, mdiCheckCircle, mdiEarth, mdiHomeCity, mdiPiggyBank, mdiGav
 
 import styles from './HomePage.module.scss';
 import { ContainerWrapper, Skeleton } from '@/lib/components';
-import { getImageUrl } from '@/lib/utils';
+import { getImageUrl, getOptimizedImageUrl } from '@/lib/utils';
 import { PostData, MetaTags } from '@/lib/types';
 import { Divider } from 'antd';
 
@@ -46,7 +46,8 @@ export function Home({ blogData, metaTags }: { blogData: Record<string, PostData
 
   const [isBuy, setIsBuy] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
-
+  const poster = getOptimizedImageUrl(`assets/images/homePage/video-skeleton-${lang}.jpg`);
+  const posterSrc = poster.webp || poster.original;
   const handleSearch = () => {
     if (!searchQuery.trim()) return;
 
@@ -84,11 +85,12 @@ export function Home({ blogData, metaTags }: { blogData: Record<string, PostData
         <meta property="og:image:height" content="630" />
         <meta property="og:site_name" content="Karayaka" />
         <meta property="og:locale" content="ru_RU" />
+        <link rel="preload" as="image" href={posterSrc} fetchPriority="high" />
       </Head>
 
       <main className={styles.main}>
         <div className={styles.mainImageContainer}>
-          <VideoPlayer lang={lang} />
+          <VideoPlayer lang={lang} poster={posterSrc} />
           <div className={styles.searchBlock}>
             <div className={styles.inputContainer}>
               <input

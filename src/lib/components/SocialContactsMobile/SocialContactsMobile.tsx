@@ -28,7 +28,7 @@ export function SocialContactsMobile({
               cookieVisible && styles.aboveCookie
             }`}
           >
-            <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer">
+            <a href={contactInfo.telegram} target="_blank" rel="noopener noreferrer" aria-label="Telegram">
               <svg
                 className={styles.telegramIcon}
                 fill="#002F6C"
@@ -53,7 +53,7 @@ export function SocialContactsMobile({
               cookieVisible && styles.aboveCookie
             }`}
           >
-            <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer">
+            <a href={contactInfo.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="Whatsapp">
               <div className={styles.roundIconWrapper}>
                 <Icon path={mdiWhatsapp} color="white" size={2} />
               </div>

@@ -175,22 +175,40 @@
         flex-grow: 1;
         justify-content: space-between;
         gap: 20px;
+        position: relative;
 
         input {
-          flex-grow: 1;
+          width: 100%;
           outline: none;
           border: 2px solid $primary-color;
           border-radius: 8px;
-          padding: 5px 10px;
+          padding: 5px 100px 5px 10px;
         }
 
         .searchButton {
           background-color: $primary-color;
           color: $white-text;
           border: none;
-          padding: 5px 25px;
-          border-radius: 8px;
+          padding: 6px 25px;
+          border-radius: 0 8px 8px 0;
           cursor: pointer;
+          position: absolute;
+          right: 0px;
+          bottom: 0px;
+          max-width: 74px;
+          height: 100%;
+        }
+        .resetSearchButton {
+          background-color: transparent;
+          color: $light-gray-color;
+          border: none;
+          padding: 5px;
+          border-radius: 0;
+          cursor: pointer;
+          position: absolute;
+          right: 74px;
+          bottom: 0px;
+          height: 100%;
         }
       }
     }
@@ -216,7 +234,6 @@
       width: 700px;
       padding-right: 0px !important;
       .filterControls {
-        justify-content: flex-start;
         gap: 20px;
         margin-right: 0px !important;
         .filterBtn {
@@ -370,8 +387,8 @@
         flex-direction: column;
         align-items: flex-end;
 
-        .searchButton {
-          width: 200px;
+        .searchButton,
+        .resetSearchButton {
           height: 45px;
         }
 

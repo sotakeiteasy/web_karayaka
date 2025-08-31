@@ -9,7 +9,7 @@ import { FilterSelect } from './FilterSelect/FilterSelect';
 import { SelectOption, SearchType, CountryType } from '@/lib/types';
 import { useSearchFilters, useFilterOptions } from '@/lib/hooks';
 import { RateContext } from '../../contexts/RateContext';
-import { mdiTuneVariant } from '@mdi/js';
+import { mdiClose, mdiMagnify, mdiTuneVariant } from '@mdi/js';
 import Icon from '@mdi/react';
 import { DeviceContext } from '@/lib/contexts/DeviceContext';
 
@@ -264,9 +264,26 @@ export function Search({ type }: { type: SearchType }) {
               placeholder={t('search.filters.searchPlaceholder')}
               onKeyDown={(e) => e.key === 'Enter' && applyFilters()}
             />
-            <button className={styles.searchButton} onClick={applyFilters}>
-              {t('search.filters.searchButton')}
+
+            <button
+              className={styles.searchButton}
+              onClick={applyFilters}
+              aria-label={t('search.filters.searchButton')}
+            >
+              <Icon path={mdiMagnify} size={1} />
             </button>
+
+            {searchText.trim() !== '' && (
+              <button
+                className={styles.resetSearchButton}
+                onClick={() => {
+                  setSearchText('');
+                }}
+                aria-label={t('search.filters.resetSearch')}
+              >
+                <Icon path={mdiClose} size={1} />
+              </button>
+            )}
           </div>
         </div>
         <Ads filteredAds={filteredAds} />
