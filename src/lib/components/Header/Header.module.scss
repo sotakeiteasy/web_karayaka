@@ -88,9 +88,13 @@
         position: relative;
         color: inherit;
         background-color: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
 
         .mobileBurgerMenuIcon {
-          display: none;
+          display: block !important;
         }
       }
 
@@ -176,16 +180,75 @@
         transform: rotate(0deg) translateX(50%);
       }
       .subLinksMobile {
-        display: none;
+        position: absolute;
+        z-index: 12;
+        top: 100%;
+        padding: 0px;
+        border-radius: 10px;
+        margin-top: 10px;
+        background-color: $white-text;
+        box-shadow: $shadow;
+        display: flex;
+        flex-direction: column;
+
+        //transition
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(-6px);
+        transition: max-height 200ms ease, opacity 200ms ease, transform 200ms ease;
+        &.open {
+          max-height: 600px;
+          opacity: 1;
+          transform: translateY(0);
+
+          .subLinkMobile {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .subLinkMobile {
+          font-size: 0.9rem;
+          padding: 8px 10px;
+          list-style: none;
+          text-align: center;
+          border-bottom: 1px solid $primary-color;
+          //transition
+          opacity: 0;
+          transform: translateY(-6px);
+          transition: transform 200ms ease, opacity 200ms ease;
+
+          a {
+            display: block;
+            width: 100%;
+            color: $secondary-color;
+            font-weight: 400;
+          }
+
+          &:hover {
+            transition: background-color 0.2s ease;
+            background-color: $light-blue-color;
+          }
+        }
+      }
+
+      .subLinkMobile:first-child {
+        padding-top: 12px;
+      }
+      .subLinkMobile:last-child {
+        padding-bottom: 12px;
+        border-bottom: none;
       }
     }
   }
 
   .buttons {
     font-weight: 300;
-
+    height: 45px;
     margin-right: 20px;
     display: flex;
+    align-items: center;
     gap: 10px;
 
     .button {
@@ -213,7 +276,7 @@
   top: 100%;
   right: 7px;
   z-index: 1000;
-  margin-top: 10px;
+  margin-top: 19px;
   border-radius: 10px;
   overflow: hidden;
   background-color: white;
@@ -318,6 +381,14 @@
 }
 
 @media (max-width: 1050px) {
+  .burgerMenu {
+    flex-grow: 0 !important;
+    margin-right: 5px;
+  }
+  .buttons {
+    margin-right: 10px !important;
+    gap: 0px !important;
+  }
   .navLink::before,
   .navLink::after {
     display: none;
@@ -339,7 +410,7 @@
   }
 }
 
-@media (max-width: 950px) {
+@media (max-width: 991px) {
   .nav {
     width: 100% !important;
     justify-content: space-between !important;
@@ -403,10 +474,6 @@
       }
 
       .navLink {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 5px;
         width: 100%;
         height: auto !important;
         font-size: 1.2rem;
@@ -421,10 +488,6 @@
 
         &.active {
           font-weight: 600;
-        }
-
-        .mobileBurgerMenuIcon {
-          display: block !important;
         }
       }
       .dropdown:nth-of-type(4) {
@@ -448,49 +511,42 @@
       }
 
       .subLinksMobile {
-        display: flex !important;
-        flex-direction: column;
-        padding: 0px 0px 0px 55px;
-        //transition
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transform: translateY(-6px);
-        transition: max-height 200ms ease, opacity 200ms ease, transform 200ms ease;
-        &.open {
-          max-height: 500px;
-          opacity: 1;
-          transform: translateY(0);
-
-          .subLinkMobile {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+        padding: 0px 0px 0px 55px !important;
+        text-align: right !important;
+        border-bottom: none !important;
+        border-radius: 0px !important;
+        position: static !important;
+        z-index: 1;
+        margin-top: 0px !important;
+        background-color: inherit !important;
+        box-shadow: none !important;
 
         .subLinkMobile {
-          font-size: 1rem;
-          padding: 5px 5px 6px 0px;
+          color: $light-blue-color !important;
+          font-size: 1rem !important;
+          padding: 5px 5px 6px 0px !important;
           list-style: none;
-          //transition
-          opacity: 0;
-          transform: translateY(-6px);
-          transition: transform 200ms ease, opacity 200ms ease;
+          border-bottom: none !important;
 
           a {
+            text-align: left !important;
             display: block;
             width: 100%;
             color: $light-blue-color !important;
-            font-weight: 300;
+            font-weight: 300 !important;
+          }
+          &:hover {
+            transition: none !important;
+            background-color: inherit !important;
           }
         }
       }
 
       .subLinkMobile:first-child {
-        padding-top: 8px;
+        padding-top: 8px !important;
       }
       .subLinkMobile:last-child {
-        padding-bottom: 20px;
+        padding-bottom: 20px !important;
       }
 
       .langDivider {

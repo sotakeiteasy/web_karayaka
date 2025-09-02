@@ -3,7 +3,20 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useLanguageQuery, useTranslation, LinkWithLocale, LanguageSwitcher } from 'next-export-i18n';
 import Icon from '@mdi/react';
-import { mdiTriangleSmallDown, mdiWhatsapp, mdiClose, mdiChevronDown } from '@mdi/js';
+import {
+  mdiTriangleSmallDown,
+  mdiWhatsapp,
+  mdiClose,
+  mdiChevronDown,
+  mdiMenu,
+  mdiMenuDown,
+  mdiBackburger,
+  mdiMenuOpen,
+  mdiMinus,
+  mdiRhombusOutline,
+  mdiRhombusSplit,
+  mdiRhombus,
+} from '@mdi/js';
 import { useState, useEffect, useRef, Fragment } from 'react';
 import Head from 'next/head';
 import { contactInfo } from '@/lib/constants';
@@ -23,6 +36,8 @@ export function Header() {
   const [isRentMenuOpen, setIsRentMenuOpen] = useState(false);
   const langMenuRef = useRef<HTMLDivElement>(null);
   const contactsMenuRef = useRef<HTMLDivElement>(null);
+  const buyMenuRef = useRef<HTMLDivElement>(null);
+  const rentMenuRef = useRef<HTMLDivElement>(null);
 
   const changeLanguage = () => {
     setIsLanguageMenuOpen(false);
@@ -41,10 +56,26 @@ export function Header() {
       if (langMenuRef.current && !langMenuRef.current.contains(event.target as Node)) {
         setIsLanguageMenuOpen(false);
       }
+
+      if (!isOfTabletWidth && rentMenuRef.current && !rentMenuRef.current.contains(event.target as Node)) {
+        setIsRentMenuOpen(false);
+      }
+      if (!isOfTabletWidth && buyMenuRef.current && !buyMenuRef.current.contains(event.target as Node)) {
+        setIsBuyMenuOpen(false);
+      }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const [isOfTabletWidth, setIsOfTabletWidth] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsOfTabletWidth(window.innerWidth <= 990);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const navLinks = [
@@ -166,7 +197,7 @@ export function Header() {
       </Head>
       <header className={styles.header}>
         <div
-          className={`${styles.overlay} ${isBurgerMenuOpen ? styles.active : ''}`}
+          className={`${styles.overlay} ${isBurgerMenuOpen && isOfTabletWidth ? styles.active : ''}`}
           onClick={() => setIsBurgerMenuOpen(false)}
         ></div>
         <nav className={`${styles.nav} ${styles.fill}`}>
@@ -201,7 +232,11 @@ export function Header() {
                 </LinkWithLocale>
               </div>
               {navLinks.map((link, index) => (
-                <div key={index} className={styles.dropdown}>
+                <div
+                  key={index}
+                  className={styles.dropdown}
+                  ref={link.href.includes('rent') ? rentMenuRef : link.href.includes('buy') ? buyMenuRef : null}
+                >
                   {(link.href.includes('buy') || link.href.includes('rent')) && (
                     <button
                       key={index}
@@ -221,13 +256,15 @@ export function Header() {
                       >
                         {link.text}
                       </Link>
+
                       {lang === 'ru' && (
                         <Icon
                           key={index}
                           className={styles.mobileBurgerMenuIcon}
-                          path={mdiChevronDown}
-                          size={1.4}
+                          path={isOfTabletWidth ? mdiChevronDown : mdiMenu}
+                          size={isOfTabletWidth ? 1.4 : 0.9}
                           style={{
+                            cursor: 'pointer',
                             transform:
                               (link.href.includes('buy') && isBuyMenuOpen) ||
                               (link.href.includes('rent') && isRentMenuOpen)
@@ -235,6 +272,7 @@ export function Header() {
                                 : 'rotate(0deg)',
                             transition: 'transform 0.5s ease',
                           }}
+                          aria-label={lang === 'ru' ? 'Открыть меню' : 'Toggle menu'}
                         />
                       )}
                     </button>
@@ -266,6 +304,8 @@ export function Header() {
                           href={link.href}
                           onClick={() => {
                             setIsBurgerMenuOpen(false);
+                            setIsBuyMenuOpen(false);
+                            setIsRentMenuOpen(false);
                           }}
                         >
                           Все объявления
@@ -278,6 +318,10 @@ export function Header() {
                             href={link.href + subsectionLink.href}
                             onClick={() => {
                               setIsBurgerMenuOpen(false);
+                              if (!isOfTabletWidth) {
+                                setIsBuyMenuOpen(false);
+                                setIsRentMenuOpen(false);
+                              }
                             }}
                           >
                             {t(subsectionLink.text)}
