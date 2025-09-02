@@ -9,7 +9,9 @@
     width: 370px;
     padding-right: 20px;
     .filterControls {
+      width: 100%;
       display: flex;
+      gap: 5px;
       justify-content: space-between;
       align-items: flex-start;
       .filterBtn {
@@ -224,7 +226,7 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1110px) {
   .main {
     flex-direction: column;
     align-items: center;
@@ -322,6 +324,7 @@
   .filterBlock {
     width: 100% !important;
     .filterBox {
+      width: 100% !important;
       flex-direction: row;
       gap: 14px !important;
       max-width: 100%;

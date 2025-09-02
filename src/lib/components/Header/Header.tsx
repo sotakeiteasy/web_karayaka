@@ -3,20 +3,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useLanguageQuery, useTranslation, LinkWithLocale, LanguageSwitcher } from 'next-export-i18n';
 import Icon from '@mdi/react';
-import {
-  mdiTriangleSmallDown,
-  mdiWhatsapp,
-  mdiClose,
-  mdiChevronDown,
-  mdiMenu,
-  mdiMenuDown,
-  mdiBackburger,
-  mdiMenuOpen,
-  mdiMinus,
-  mdiRhombusOutline,
-  mdiRhombusSplit,
-  mdiRhombus,
-} from '@mdi/js';
+import { mdiTriangleSmallDown, mdiWhatsapp, mdiClose, mdiChevronDown, mdiMenu } from '@mdi/js';
 import { useState, useEffect, useRef, Fragment } from 'react';
 import Head from 'next/head';
 import { contactInfo } from '@/lib/constants';

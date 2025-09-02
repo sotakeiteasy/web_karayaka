@@ -26,7 +26,7 @@ const adjectives = {
 };
 
 const units = {
-  room: { ru: '-комн.', en: '-room' },
+  room: { ru: '\u2011комн.', en: '\u2011room' },
   squareMeters: { ru: 'м²', en: 'm²' },
 };
 
