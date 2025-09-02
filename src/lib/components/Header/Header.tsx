@@ -168,6 +168,11 @@ export function Header() {
       text: t('header.discounts'),
       active: router.pathname.startsWith('/discounts'),
     },
+    {
+      href: '/blog/',
+      text: t('header.blog'),
+      active: router.pathname.startsWith('/blog'),
+    },
   ];
 
   return (
@@ -264,7 +269,19 @@ export function Header() {
                       )}
                     </button>
                   )}
-                  {!link.subsections && !link.subsections && (
+                  {!link.subsections && !link.href.includes('blog') && (
+                    <div className={`${styles.navLink} ${link.active ? styles.active : ''}`}>
+                      <LinkWithLocale
+                        href={link.href}
+                        onClick={() => {
+                          setIsBurgerMenuOpen(false);
+                        }}
+                      >
+                        {link.text}
+                      </LinkWithLocale>
+                    </div>
+                  )}
+                  {isOfTabletWidth && link.href.includes('blog') && (
                     <div className={`${styles.navLink} ${link.active ? styles.active : ''}`}>
                       <LinkWithLocale
                         href={link.href}
