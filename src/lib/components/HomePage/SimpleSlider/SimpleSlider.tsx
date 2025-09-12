@@ -7,7 +7,14 @@ import styles from './SimpleSlider.module.scss';
 import { useTranslation, LinkWithLocale } from 'next-export-i18n';
 
 import Icon from '@mdi/react';
-import { mdiChevronRight, mdiChevronLeft, mdiMapMarkerOutline, mdiBedQueenOutline } from '@mdi/js';
+import {
+  mdiChevronRight,
+  mdiChevronLeft,
+  mdiMapMarkerOutline,
+  mdiBedQueenOutline,
+  mdiLandPlots,
+  mdiArrowExpand,
+} from '@mdi/js';
 
 import { getOptimizedImageUrl } from '@/lib/utils';
 import { cityTranslations, districtTranslations, propertyTypeTranslations } from '@/lib/translations';
@@ -154,34 +161,41 @@ export default function SimpleSlider({ type, country, locale, idsToExclude }: Si
                     )}
                     <div className={styles.cardDescription}>
                       <div className={styles.topRow}>
-                        <p className={styles.title}>{propertyTypeTranslations[card.propertyType][locale]}</p>
+                        <p className={`${styles.title} ${card.price.try_old && styles.discountTitle}`}>
+                          {propertyTypeTranslations[card.propertyType][locale]}{' '}
+                          {card.price.try_old && (
+                            <span>
+                              {card.type === 'rent' ? t('ad.property.forRentStatus') : t('ad.property.forSaleStatus')}
+                            </span>
+                          )}
+                        </p>
                         {!card.price.try_old && (
                           <span className={styles.price}>
                             <Price locale={locale} price={{ try: card.price.try, rub: card.price.rub }} />
                           </span>
                         )}
-
-                        {card.price.try_old && (
-                          <p className={styles.propertyType}>
-                            {card.type === 'rent' ? t('ad.property.forRentStatus') : t('ad.property.forSaleStatus')}
-                          </p>
-                        )}
                       </div>
                       <div className={styles.bottomRow}>
                         <p className={styles.iconRow}>
                           <Icon path={mdiMapMarkerOutline} size={0.8} />
-                          {[
-                            cityTranslations[card.location.city][locale],
-                            card.location.district ? districtTranslations[card.location.district]?.[locale] : null,
-                          ]
-                            .filter(Boolean)
-                            .join(', ')}
+                          <span className={styles.address}>
+                            {[
+                              cityTranslations[card.location.city][locale],
+                              card.location.district ? districtTranslations[card.location.district]?.[locale] : null,
+                            ]
+                              .filter(Boolean)
+                              .join(', ')}
+                          </span>
                         </p>
                         <p className={styles.iconRow}>
                           <span className={styles.iconSpan}>
                             {' '}
-                            <Icon path={mdiBedQueenOutline} size={0.9} /> {card.rooms}{' '}
+                            {card.propertyType !== 'commercial' && card.propertyType !== 'land' && (
+                              <Icon path={mdiBedQueenOutline} size={0.9} />
+                            )}
+                            {card.propertyType === 'commercial' && <Icon path={mdiLandPlots} size={0.9} />}
                           </span>
+                          <span>{card.rooms}</span>
                         </p>
                       </div>
                     </div>

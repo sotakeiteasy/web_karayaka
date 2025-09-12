@@ -9,3 +9,8 @@
     flex-shrink: 0;
   }
 }
+@media (max-width: 380px) {
+  .priceInfo {
+    gap: 0px;
+  }
+}

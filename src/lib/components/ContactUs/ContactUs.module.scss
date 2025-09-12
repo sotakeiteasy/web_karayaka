@@ -38,6 +38,7 @@
   }
 
   .legend {
+    word-break: pretty;
     font-size: 2rem;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -265,8 +266,14 @@
 }
 
 @media (max-width: 900px) {
+  .form {
+    .legend {
+      font-size: 1.8rem;
+    }
+  }
   .formContainer {
     width: 600px !important;
+
     .formImg {
       display: none;
     }

@@ -46,15 +46,7 @@
     list-style-type: '—  ';
   }
 }
-@media (width <= 900px) {
-  .CEOText {
-    margin-top: 15px;
-  }
-  .header {
-    text-align: center;
-    padding: 20px 0;
-  }
-}
+
 @media (max-width: 900px) {
   .CEOText {
     margin-top: $tablet-padding-bottom;
@@ -64,6 +56,12 @@
   }
 }
 @media (max-width: 600px) {
+  .header {
+    text-align: center;
+  }
+  .header:after {
+    margin-left: 0px !important;
+  }
   .CEOText {
     margin-top: $mobile-padding-bottom;
     .imageContainer {
