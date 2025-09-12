@@ -39,7 +39,7 @@ export const PriceInRub = ({ priceInTry, stylesName, mySize = 1 }: Props) => {
       {date && (
         <Tooltip
           trigger={['hover', 'click']}
-          placement="top"
+          placement="topRight"
           color="#000000d9"
           fresh
           style={{ justifyContent: 'space-between' }}
@@ -71,7 +71,6 @@ export const PriceInRub = ({ priceInTry, stylesName, mySize = 1 }: Props) => {
                   fontSize: 10,
                   backgroundColor: 'transparent',
                   marginLeft: 10,
-                  marginRight: 10,
                   display: 'inline-flex',
                   gap: 5,
                   width: '100%',

@@ -159,6 +159,7 @@
       "area": "Area",
       "squareMeters": "m",
       "bedrooms": "Bedrooms",
+      "commercial": "Premises",
       "floor": "Floor",
       "floors": "Floors",
       "type": "Type",

@@ -323,7 +323,6 @@
             background-color: rgb(250, 250, 250) !important;
           }
         }
-
         .bottomDescription {
           display: none !important;
         }
@@ -359,5 +358,14 @@
 
   .cardPrice {
     padding: 10px 10px !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .cardPrice {
+    gap: 0px !important;
+  }
+  .newPrice {
+    font-size: 1.5rem !important;
   }
 }

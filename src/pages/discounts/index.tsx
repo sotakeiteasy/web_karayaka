@@ -19,7 +19,16 @@ import { Divider } from 'antd';
 import { Price } from '@/lib/components/Price/Price';
 function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'en' }) {
   const { t } = useTranslation();
+  const [isTablet, setIsTablet] = useState(false);
 
+  useEffect(() => {
+    function handleResize() {
+      setIsTablet(window.innerWidth <= 900);
+    }
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   if (!currentItems || currentItems.length === 0) {
     return <div className={styles.noResults}>{t('search.noResults')}</div>;
   }
@@ -40,16 +49,6 @@ function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'e
                 <span className={styles.message}>
                   <img src="/assets/icons/discount.svg" alt="" />
                 </span>
-                {/* {ad.price.try_old && (
-                  <div className={styles.priceTag}>
-                    <div className={styles.discount}>
-                      <span className={styles.oldPrice}>
-                        {new Intl.NumberFormat('ru-RU').format(ad.price.try_old)} ₺
-                      </span>
-                      <span className={styles.newPrice}>{new Intl.NumberFormat('ru-RU').format(ad.price.try!)} ₺</span>
-                    </div>
-                  </div>
-                )} */}
                 {ad.price.try_old && (
                   <div className={styles.priceTag}>
                     <div className={styles.discount}>
@@ -57,7 +56,7 @@ function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'e
                         <Price locale={locale} price={{ try_old: ad.price.try_old }} />
                       </span>
                       <span className={styles.newPrice}>
-                        <Price locale={locale} price={{ try: ad.price.try }} />
+                        <Price locale={locale} price={{ try: ad.price.try }} stylesName={isTablet ? 'white' : ''} />
                       </span>
                     </div>
                   </div>

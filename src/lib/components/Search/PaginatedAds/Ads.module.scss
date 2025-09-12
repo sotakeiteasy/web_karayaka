@@ -73,6 +73,13 @@
             margin-bottom: 10px;
             font-weight: 500;
           }
+          .address {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 0px;
+            flex: 1;
+          }
           p {
             margin-bottom: 10px;
           }
@@ -211,5 +218,12 @@
     a {
       width: 100% !important;
     }
+  }
+}
+
+@media (max-width: 400px) {
+  .middleDescription {
+    -webkit-line-clamp: 3 !important;
+    line-clamp: 3 !important;
   }
 }

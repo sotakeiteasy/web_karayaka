@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 
 import Icon from '@mdi/react';
-import { mdiMapMarkerOutline, mdiBedQueenOutline, mdiStairs } from '@mdi/js';
+import { mdiMapMarkerOutline, mdiBedQueenOutline, mdiStairs, mdiLandPlots } from '@mdi/js';
 
 import { Ad, SearchType } from '@/lib/types';
 import {
@@ -52,13 +52,15 @@ function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'e
                 </h2>
                 <p>
                   <Icon path={mdiMapMarkerOutline} size={0.8} />
-                  {[
-                    countryTranslations[ad.location.country][locale],
-                    cityTranslations[ad.location.city][locale],
-                    ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
-                  ]
-                    .filter(Boolean)
-                    .join(', ')}
+                  <span className={styles.address}>
+                    {[
+                      countryTranslations[ad.location.country][locale],
+                      cityTranslations[ad.location.city][locale],
+                      ad.location.district ? districtTranslations[ad.location.district]?.[locale] : null,
+                    ]
+                      .filter(Boolean)
+                      .join(', ')}
+                  </span>
                 </p>
               </div>
               <div className={styles.middleDescription}>{ad.description[locale]}</div>
@@ -76,7 +78,10 @@ function Items({ currentItems, locale }: { currentItems: Ad[]; locale: 'ru' | 'e
                   {ad.rooms && (
                     <span>
                       {ad.rooms}
-                      <Icon path={mdiBedQueenOutline} size={1} />
+                      {(ad.propertyType === 'apartment' || ad.propertyType === 'villa') && (
+                        <Icon path={mdiBedQueenOutline} size={1} />
+                      )}
+                      {ad.propertyType === 'commercial' && <Icon path={mdiLandPlots} size={1} />}
                     </span>
                   )}
                   {ad.area && (
